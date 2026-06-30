@@ -92,19 +92,12 @@ a {
   font-weight: 900;
 }
 
-.brand strong,
-.brand small {
+.brand strong {
   display: block;
 }
 
 .brand strong {
   font-size: 1rem;
-}
-
-.brand small {
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: 0.76rem;
 }
 
 .nav-list {
@@ -149,24 +142,6 @@ a {
   place-items: center;
   border-radius: 6px;
   background: #171919;
-  color: var(--gold);
-}
-
-.sidebar-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: auto;
-  padding: 13px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  color: var(--muted);
-  background: #0d0f0f;
-  font-size: 0.82rem;
-}
-
-.sidebar-foot strong {
   color: var(--gold);
 }
 
@@ -380,12 +355,40 @@ h3 {
 
 .collection-toolbar {
   display: grid;
-  grid-template-columns: minmax(260px, 460px);
+  grid-template-columns: minmax(220px, 1fr) auto minmax(180px, 240px);
+  align-items: end;
   gap: 12px;
   position: relative;
   z-index: 20;
   margin-bottom: 14px;
   animation: fade-up 420ms ease both;
+}
+
+.segmented-control {
+  display: inline-grid;
+  grid-template-columns: repeat(3, minmax(96px, 1fr));
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid #303535;
+  border-radius: 8px;
+  background: #080909;
+}
+
+.segmented-control button {
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.segmented-control button.is-active {
+  color: #050505;
+  background: var(--accent);
 }
 
 label {
@@ -572,22 +575,7 @@ textarea:focus {
 }
 
 .victory-progress::before {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  z-index: 1;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    transparent 0 24.8%,
-    rgb(255 255 255 / 18%) 24.8% 25.2%,
-    transparent 25.2% 49.8%,
-    rgb(255 255 255 / 18%) 49.8% 50.2%,
-    transparent 50.2% 74.8%,
-    rgb(255 255 255 / 18%) 74.8% 75.2%,
-    transparent 75.2% 100%
-  );
-  pointer-events: none;
+  display: none;
 }
 
 .victory-progress::after {
@@ -637,13 +625,13 @@ textarea:focus {
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 12px;
 }
 
 .metric-card {
-  min-height: 104px;
+  min-height: 92px;
   padding: 15px;
   transition:
     border-color 150ms ease,
@@ -668,12 +656,6 @@ textarea:focus {
   font-weight: 900;
 }
 
-.metric-note {
-  margin-top: 8px;
-  color: var(--faint);
-  font-size: 0.84rem;
-}
-
 .split-layout,
 .account-grid {
   display: grid;
@@ -681,7 +663,8 @@ textarea:focus {
   gap: 12px;
 }
 
-.account-overlay {
+.account-overlay,
+.champion-detail-overlay {
   position: fixed;
   inset: 0;
   z-index: 120;
@@ -691,7 +674,8 @@ textarea:focus {
   padding: 24px;
 }
 
-.account-overlay.is-open {
+.account-overlay.is-open,
+.champion-detail-overlay.is-open {
   display: flex;
 }
 
@@ -718,6 +702,62 @@ textarea:focus {
   background: #252832;
   box-shadow: 0 28px 90px rgb(0 0 0 / 58%);
   animation: modal-in 180ms ease both;
+}
+
+.champion-detail-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 24px;
+  border: 1px solid #343845;
+  border-radius: 8px;
+  background: #20232b;
+  box-shadow: 0 28px 90px rgb(0 0 0 / 58%);
+  animation: modal-in 180ms ease both;
+}
+
+.champion-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.champion-detail-head h2 {
+  font-size: 1.6rem;
+}
+
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.detail-stat,
+.detail-history-row,
+.partner-card {
+  border: 1px solid #343838;
+  border-radius: 8px;
+  background: #0c0d0d;
+}
+
+.detail-stat {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.detail-stat span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.detail-stat strong {
+  font-size: 1.08rem;
 }
 
 .account-dialog h2 {
@@ -782,13 +822,33 @@ textarea:focus {
 
 .match-list,
 .champion-strip,
-.champion-collection {
+.champion-collection,
+.partner-stats,
+.detail-history {
   display: grid;
   gap: 10px;
 }
 
 .champion-strip {
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.partner-panel {
+  margin-bottom: 12px;
+}
+
+.partner-stats {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.partner-card {
+  display: grid;
+  gap: 6px;
+  padding: 13px;
+}
+
+.partner-card span {
+  color: var(--muted);
 }
 
 .champion-collection {
@@ -816,6 +876,15 @@ textarea:focus {
     border-color 150ms ease;
 }
 
+.champion-pill,
+.champion-collection-card {
+  width: 100%;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
 .champion-pill:hover,
 .champion-collection-card:hover {
   border-color: #444949;
@@ -824,6 +893,10 @@ textarea:focus {
 
 .champion-collection-card.is-complete {
   border-color: rgb(135 212 141 / 42%);
+}
+
+.champion-collection-card.is-missing {
+  opacity: 0.68;
 }
 
 .champion-pill strong,
@@ -856,6 +929,18 @@ textarea:focus {
 .match-card {
   display: grid;
   gap: 10px;
+}
+
+.detail-history-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px;
+  padding: 11px 12px;
+}
+
+.detail-history-row strong {
+  color: var(--green);
+  margin: 0;
 }
 
 .match-topline,
@@ -900,6 +985,14 @@ textarea:focus {
 .status-pill.is-ready {
   border-color: rgb(135 212 141 / 46%);
   color: var(--green);
+}
+
+.collection-status {
+  min-height: 34px;
+  border-color: rgb(201 170 98 / 52%);
+  color: var(--gold);
+  background: rgb(201 170 98 / 10%);
+  font-size: 0.86rem;
 }
 
 .match-actions {
@@ -1006,6 +1099,18 @@ textarea:focus {
   color: var(--text);
 }
 
+.account-status.is-error {
+  border-color: rgb(255 112 120 / 50%);
+  color: #ffd8dc;
+  background: rgb(255 112 120 / 10%);
+}
+
+.account-status.is-success {
+  border-color: rgb(135 212 141 / 46%);
+  color: #d9f3dc;
+  background: rgb(135 212 141 / 10%);
+}
+
 .status-box > * + * {
   display: block;
   margin-top: 6px;
@@ -1035,7 +1140,7 @@ textarea:focus {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  z-index: 20;
+  z-index: 220;
   max-width: min(360px, calc(100vw - 36px));
   padding: 12px 14px;
   border: 1px solid #444949;
@@ -1117,11 +1222,7 @@ textarea:focus {
   }
 
   .nav-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sidebar-foot {
-    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .split-layout,
@@ -1147,15 +1248,19 @@ textarea:focus {
   .split-layout,
   .account-grid,
   .form-grid,
-  .compact-grid {
+  .compact-grid,
+  .detail-stats,
+  .segmented-control {
     grid-template-columns: 1fr;
   }
 
-  .account-overlay {
+  .account-overlay,
+  .champion-detail-overlay {
     padding: 14px;
   }
 
-  .account-dialog {
+  .account-dialog,
+  .champion-detail-dialog {
     width: min(360px, calc(100vw - 28px));
     padding: 24px 28px;
   }

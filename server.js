@@ -14,7 +14,8 @@ const SESSION_COOKIE = "arena_session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 1_000_000;
-const ARENA_QUEUE_IDS = [1700, 1710];
+const ARENA_QUEUE_IDS = [1750];
+const ARENA_MAX_PLACEMENT = 6;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -341,9 +342,11 @@ async function saveRiotProfile(req, res, user) {
   const body = await readJsonBody(req);
   const profile = normalizeRiotProfile(body);
   let account = null;
+  let summoner = null;
 
   if (process.env.RIOT_API_KEY) {
     account = await fetchRiotAccount(profile);
+    summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
     profile.puuid = account.puuid;
   }
 
@@ -351,6 +354,7 @@ async function saveRiotProfile(req, res, user) {
     const stored = db.users.find((item) => item.id === user.id);
     stored.riotProfile = {
       ...profile,
+      profileIconId: summoner?.profileIconId || null,
       verifiedAt: account ? new Date().toISOString() : null,
     };
   });
@@ -372,11 +376,12 @@ async function syncRiotMatches(req, res, user) {
   const profile = user.riotProfile;
 
   if (!profile?.gameName || !profile?.tagLine) {
-    sendJson(res, 400, { error: "Najpierw zapisz Riot ID w profilu." });
+    sendJson(res, 400, { error: "Najpierw zapisz konto League w profilu." });
     return;
   }
 
   const account = profile.puuid ? profile : await fetchRiotAccount(profile);
+  const summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
   const matchIds = await fetchArenaMatchIds(account, profile.routing, limit);
   const matchDetails = [];
 
@@ -395,10 +400,14 @@ async function syncRiotMatches(req, res, user) {
     storedUser.riotProfile = {
       ...profile,
       puuid: account.puuid,
+      profileIconId: summoner?.profileIconId || profile.profileIconId || null,
       verifiedAt: new Date().toISOString(),
       lastSyncedAt: new Date().toISOString(),
     };
 
+    db.matches = db.matches.filter(
+      (match) => !(match.userId === user.id && match.source?.type === "riot"),
+    );
     const existingKeys = new Set(db.matches.map(matchDedupeKey));
     imported.forEach((match) => {
       const key = matchDedupeKey(match);
@@ -459,6 +468,10 @@ async function fetchRiotAccount(profile) {
   return riotFetch(profile.routing, `/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}`);
 }
 
+async function fetchSummonerByPuuid(region, puuid) {
+  return riotFetch(region, `/lol/summoner/v4/summoners/by-puuid/${encodeURIComponent(puuid)}`);
+}
+
 async function fetchArenaMatchIds(account, routing, limit) {
   const ids = [];
   for (const queueId of ARENA_QUEUE_IDS) {
@@ -476,7 +489,7 @@ async function riotFetch(routing, pathName) {
   const response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
     headers: {
       "X-Riot-Token": process.env.RIOT_API_KEY,
-      "User-Agent": "ArenaTracker/0.4 local dev",
+      "User-Agent": "ArenaTracker/0.5 local dev",
     },
   });
 
@@ -500,13 +513,17 @@ function mapRiotMatch(detail, puuid, userId) {
   if (!ARENA_QUEUE_IDS.includes(Number(detail.info?.queueId))) return null;
   const participant = detail.info.participants.find((item) => item.puuid === puuid);
   if (!participant) return null;
-  const partner = detail.info.participants.find(
-    (item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId,
-  );
+  const teammates = detail.info.participants
+    .filter((item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId)
+    .map((item) => ({
+      champion: item.championName || "Unknown",
+      riotId: formatRiotId(item),
+      puuid: item.puuid,
+    }));
 
   const patch = cleanText(detail.info.gameVersion).split(".").slice(0, 2).join(".") || "unknown";
   const date = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString().slice(0, 10);
-  const placement = Number(participant.placement || participant.subteamPlacement || (participant.win ? 1 : 8));
+  const placement = Number(participant.placement || participant.subteamPlacement || (participant.win ? 1 : ARENA_MAX_PLACEMENT));
   const items = [0, 1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`item${slot}`])
     .filter(Boolean)
@@ -522,8 +539,9 @@ function mapRiotMatch(detail, puuid, userId) {
     date,
     patch,
     champion: participant.championName || "Unknown",
-    partner: partner?.championName || "",
-    placement: clamp(placement, 1, 8),
+    partner: teammates.map((teammate) => teammate.champion).join(" + "),
+    teammates,
+    placement: clamp(placement, 1, ARENA_MAX_PLACEMENT),
     ratingDelta: 0,
     augments,
     items,
@@ -545,7 +563,7 @@ function normalizeRiotProfile(body) {
   const region = cleanText(body.region || "eun1").toLowerCase();
 
   if (!gameName || !tagLine) {
-    const error = new Error("Podaj Riot ID w formacie nazwa + tag.");
+    const error = new Error("Podaj konto League w formacie nazwa + tag.");
     error.status = 400;
     throw error;
   }
@@ -561,6 +579,9 @@ function normalizeRiotProfile(body) {
 
 function normalizeMatch(match, userId, sourceType) {
   const source = match.source && typeof match.source === "object" ? match.source : { type: sourceType };
+  const teammates = Array.isArray(match.teammates)
+    ? match.teammates.map(normalizeTeammate).filter(Boolean)
+    : [];
   return {
     id: cleanText(match.id) || makeId("match"),
     userId,
@@ -568,7 +589,8 @@ function normalizeMatch(match, userId, sourceType) {
     patch: cleanText(match.patch) || "unknown",
     champion: cleanText(match.champion) || "Unknown",
     partner: cleanText(match.partner),
-    placement: clamp(Number(match.placement || 8), 1, 8),
+    teammates,
+    placement: clamp(Number(match.placement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
       ? match.augments.map(resolveAugmentName).map(cleanText).filter(Boolean)
@@ -681,11 +703,37 @@ function publicUser(user) {
           tagLine: user.riotProfile.tagLine,
           routing: user.riotProfile.routing,
           region: user.riotProfile.region,
+          profileIconId: user.riotProfile.profileIconId || null,
+          profileIconUrl: profileIconUrl(user.riotProfile.profileIconId),
           verifiedAt: user.riotProfile.verifiedAt,
           lastSyncedAt: user.riotProfile.lastSyncedAt,
         }
       : null,
   };
+}
+
+function formatRiotId(participant) {
+  const gameName = cleanText(participant.riotIdGameName || participant.summonerName);
+  const tagLine = cleanText(participant.riotIdTagline);
+  return tagLine ? `${gameName}#${tagLine}` : gameName;
+}
+
+function normalizeTeammate(value) {
+  if (!value || typeof value !== "object") return null;
+  const champion = cleanText(value.champion);
+  const riotId = cleanText(value.riotId);
+  if (!champion && !riotId) return null;
+  return {
+    champion,
+    riotId,
+    puuid: cleanText(value.puuid),
+  };
+}
+
+function profileIconUrl(profileIconId) {
+  return profileIconId
+    ? `https://ddragon.leagueoflegends.com/cdn/${GAME_DATA.version || "16.13.1"}/img/profileicon/${profileIconId}.png`
+    : "";
 }
 
 function hashPassword(password) {

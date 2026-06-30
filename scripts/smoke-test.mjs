@@ -11,6 +11,60 @@ const profileDir = join(root, "work", `edge-profile-${Date.now()}`);
 const appUrl = "http://127.0.0.1:4173/";
 const storageKey = "arenatracker.matches.v1";
 const errors = [];
+const smokeMatches = [
+  {
+    id: "smoke-1",
+    date: "2026-06-30",
+    patch: "16.13",
+    champion: "Vi",
+    teammates: [
+      { champion: "Galio", riotId: "GalioMain#EUNE" },
+      { champion: "Lulu", riotId: "ShieldBot#EUNE" },
+    ],
+    placement: 1,
+    augments: ["Mystic Punch"],
+    items: ["Black Cleaver"],
+  },
+  {
+    id: "smoke-2",
+    date: "2026-06-29",
+    patch: "16.13",
+    champion: "Kayn",
+    teammates: [
+      { champion: "Yuumi", riotId: "ShieldBot#EUNE" },
+      { champion: "Malphite", riotId: "RockSolid#EUNE" },
+    ],
+    placement: 1,
+    augments: ["Blade Waltz"],
+    items: ["Serylda's Grudge"],
+  },
+  {
+    id: "smoke-3",
+    date: "2026-06-28",
+    patch: "16.13",
+    champion: "Vi",
+    teammates: [
+      { champion: "Braum", riotId: "BraumEnjoyer#EUNE" },
+      { champion: "Lulu", riotId: "ShieldBot#EUNE" },
+    ],
+    placement: 3,
+    augments: ["Goliath"],
+    items: ["Sterak's Gage"],
+  },
+  {
+    id: "smoke-4",
+    date: "2026-06-27",
+    patch: "16.13",
+    champion: "Jhin",
+    teammates: [
+      { champion: "Maokai", riotId: "TreePlayer#EUNE" },
+      { champion: "Nami", riotId: "WaveMain#EUNE" },
+    ],
+    placement: 5,
+    augments: ["Scoped Weapons"],
+    items: ["Infinity Edge"],
+  },
+];
 
 await mkdir(profileDir, { recursive: true });
 
@@ -41,15 +95,20 @@ try {
   const loadPromise = cdp.waitFor("Page.loadEventFired");
   await cdp.send("Page.navigate", { url: appUrl });
   await loadPromise;
-  await evalPage(cdp, `localStorage.removeItem(${JSON.stringify(storageKey)})`);
-  await evalPage(cdp, `document.querySelector("#seedSampleButton").click()`);
+  await evalPage(
+    cdp,
+    `localStorage.setItem(${JSON.stringify(storageKey)}, ${JSON.stringify(JSON.stringify(smokeMatches))})`,
+  );
+  const reloadPromise = cdp.waitFor("Page.loadEventFired");
+  await cdp.send("Page.reload");
+  await reloadPromise;
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 150))`, true);
 
   const seededCount = await evalPage(
     cdp,
     `JSON.parse(localStorage.getItem(${JSON.stringify(storageKey)})).length`,
   );
-  assert(seededCount === 8, `Expected 8 demo matches, got ${seededCount}`);
+  assert(seededCount === 4, `Expected 4 smoke matches, got ${seededCount}`);
 
   const progressText = await evalPage(cdp, `document.querySelector("#progressCounter").textContent`);
   assert(progressText.startsWith("2 / "), `Unexpected progress: ${progressText}`);
@@ -58,42 +117,50 @@ try {
     cdp,
     `[...document.querySelectorAll(".metric-card")].map((card) => card.innerText)`,
   );
-  assert(metrics[0].includes("8"), "Matches metric did not update");
+  assert(metrics.length === 2, `Expected 2 metric cards, got ${metrics.length}`);
+  assert(metrics[0].includes("4"), "Matches metric did not update");
   assert(metrics[1].includes("2"), "Wins metric did not update");
-  assert(metrics[2].includes("2"), "Won champions metric did not update");
-  const dashboardPickerCount = await evalPage(
+  const dashboardNavMissing = await evalPage(
     cdp,
-    `document.querySelector('#dashboardView #championPicker') == null`,
+    `document.querySelector('[data-route="dashboard"]') == null`,
   );
-  assert(dashboardPickerCount, "Dashboard should not contain champion search");
+  assert(dashboardNavMissing, "Sidebar should not contain duplicate Dashboard link");
 
   await evalPage(cdp, `location.hash = "champions"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const collectionText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
   assert(collectionText.includes("Vi"), "Won champion Vi missing from collection");
   assert(collectionText.includes("Kayn"), "Won champion Kayn missing from collection");
-  assert(!collectionText.includes("brak wygranej"), "Collection should only list won champions");
+  assert(!collectionText.includes("Brakuje wygranej"), "Default collection should only list won champions");
   const collectionIconCount = await evalPage(
     cdp,
     `document.querySelectorAll("#championCollection .champion-icon").length`,
   );
   assert(collectionIconCount === 2, `Expected 2 won champion icons, got ${collectionIconCount}`);
 
-  await evalPage(cdp, `document.querySelector("#championPickerButton").click()`);
-  const allOptionHasAllText = await evalPage(
-    cdp,
-    `document.querySelector("#championFilterIcon").textContent.trim()`,
-  );
-  assert(allOptionHasAllText === "", "All-wins picker icon should not render ALL text");
-  const pickerIconCount = await evalPage(
-    cdp,
-    `document.querySelectorAll("#championPickerMenu .champion-icon").length`,
-  );
-  assert(pickerIconCount === 2, `Expected 2 won champion option icons, got ${pickerIconCount}`);
-  await evalPage(cdp, `document.querySelector('[data-champion="Vi"]').click()`);
+  await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Vi"`);
+  await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
   const filteredCollectionText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
   assert(filteredCollectionText.includes("Vi"), "Filtered collection should contain Vi");
   assert(!filteredCollectionText.includes("Kayn"), "Filtered collection should hide Kayn");
+  await evalPage(cdp, `document.querySelector('[data-collection-mode="missing"]').click()`);
+  await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Aatrox"`);
+  await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
+  const missingText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
+  assert(missingText.includes("Aatrox"), "Missing filter should include unwon champions");
+
+  await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Vi"`);
+  await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
+  await evalPage(cdp, `document.querySelector('[data-collection-mode="all"]').click()`);
+  await evalPage(cdp, `document.querySelector('[data-champion-detail="Vi"]').click()`);
+  const detailOpen = await evalPage(
+    cdp,
+    `document.querySelector("#championDetailOverlay").classList.contains("is-open")`,
+  );
+  assert(detailOpen, "Champion detail modal should open after clicking a champion");
+  const detailText = await evalPage(cdp, `document.querySelector("#championDetailOverlay").innerText`);
+  assert(detailText.includes("Najczęstszy duo"), "Champion detail stats missing");
+  await evalPage(cdp, `document.querySelector("#championDetailClose").click()`);
 
   await evalPage(cdp, `document.querySelector("#accountMenuButton").click()`);
   const accountOverlayOpen = await evalPage(
@@ -106,6 +173,17 @@ try {
     `document.querySelector("#profilePanel").classList.contains("is-hidden")`,
   );
   assert(profileHidden, "Riot profile panel should stay hidden while logged out");
+  const authAvatar = await evalPage(cdp, `document.querySelector("#accountDialogAvatar").src`);
+  assert(authAvatar.includes("Malphite.png"), "Logged-out auth avatar should use Malphite");
+  await evalPage(cdp, `document.querySelector("#loginEmail").value = "wrong@example.com"`);
+  await evalPage(cdp, `document.querySelector("#loginPassword").value = "badpass123"`);
+  await evalPage(cdp, `document.querySelector("#loginForm").requestSubmit()`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 250))`, true);
+  const loginErrorVisible = await evalPage(
+    cdp,
+    `document.querySelector("#accountStatus").classList.contains("is-error") && !document.querySelector("#accountStatus").classList.contains("is-hidden")`,
+  );
+  assert(loginErrorVisible, "Login errors should be shown inside the account modal");
   await evalPage(cdp, `document.querySelector('[data-auth-switch="reset"]').click()`);
   const resetVisible = await evalPage(
     cdp,
@@ -114,7 +192,7 @@ try {
   assert(resetVisible, "Reset password tab did not become visible");
 
   if (errors.length) throw new Error(`Browser errors: ${errors.join("; ")}`);
-  console.log("Smoke test passed: demo seed, progress, champion collection and account modal.");
+  console.log("Smoke test passed: auto data seed, filters, champion details and account modal.");
 } finally {
   browserProcess.kill();
 }

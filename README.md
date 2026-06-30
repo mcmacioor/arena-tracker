@@ -35,23 +35,23 @@ W `.env` wpisz:
 RIOT_API_KEY=RGAPI-your-development-key
 ```
 
-Następnie uruchom serwer ponownie. W aplikacji kliknij `Konto` w prawym górnym rogu, utwórz konto, zapisz Riot ID w panelu profilu i kliknij `Synchronizuj Arenę`.
+Następnie uruchom serwer ponownie. W aplikacji kliknij `Konto` w prawym górnym rogu, utwórz konto i zapisz konto League. Od tego momentu ArenaTracker synchronizuje Arenę automatycznie przy wejściu na stronę.
 
 Import korzysta z:
 
-- Account-V1: Riot ID -> PUUID;
+- Account-V1: nazwa + tag -> PUUID;
+- Summoner-V4: profilowa ikonka konta League;
 - Match-V5: historia meczów po PUUID;
-- kolejek Arena `1700` i `1710`.
+- aktualnej kolejki Arena 3x6 `1750`.
 
 ## Funkcje
 
 - Minimalistyczny dashboard z progressem wygranych championów.
-- Kolekcja pokazująca wyłącznie championów, którymi masz już pierwsze miejsce.
-- Wyszukiwarka w zakładce `Wygrane`, oparta o listę wygranych championów i ich ikony.
-- Historia meczów pobrana z synchronizacji Riot API lub importu JSON.
+- Kolekcja championów z filtrami: szukaj championa, wygrani, brakujący, wszyscy, A-Z i liczba winów.
+- Szczegóły championa po kliknięciu karty: gry, wygrane, najczęstszy duet, najlepszy patch i historia.
+- Historia meczów oraz statystyki partnerów z Areny z automatycznej synchronizacji Riot API.
 - Konto lokalne, logowanie, rejestracja i reset hasła przez link wysyłany na e-mail.
-- Import i eksport danych JSON.
-- Import meczów Arena z Riot Match-V5, jeśli `RIOT_API_KEY` jest ustawiony.
+- Import meczów Arena 3x6 z Riot Match-V5, jeśli `RIOT_API_KEY` jest ustawiony.
 
 ## Założenia
 

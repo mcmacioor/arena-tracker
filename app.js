@@ -1,8 +1,10 @@
-const APP_VERSION = "0.4.0";
+const APP_VERSION = "0.5.0";
 const GAME_DATA = globalThis.ARENA_GAME_DATA || {};
 const DATA_DRAGON_VERSION = GAME_DATA.version || "16.13.1";
 const STORAGE_KEY = "arenatracker.matches.v1";
 const CHAMPION_ICONS = GAME_DATA.championIcons || {};
+const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
+const ARENA_MAX_PLACEMENT = 6;
 
 const CHAMPIONS = GAME_DATA.champions || [
   "Aatrox",
@@ -180,97 +182,6 @@ const CHAMPIONS = GAME_DATA.champions || [
   "Zyra",
 ];
 
-const SAMPLE_MATCHES = [
-  {
-    date: "2026-06-30",
-    patch: "16.13",
-    champion: "Vi",
-    partner: "Galio",
-    placement: 1,
-    ratingDelta: 84,
-    augments: ["Mystic Punch", "Goliath", "Heavy Hitter"],
-    items: ["Black Cleaver", "Gargoyle Stoneplate", "Sterak's Gage"],
-    note: "Galio peel pozwolił wchodzić agresywnie po drugim augmentcie.",
-  },
-  {
-    date: "2026-06-30",
-    patch: "16.13",
-    champion: "Gwen",
-    partner: "Alistar",
-    placement: 2,
-    ratingDelta: 58,
-    augments: ["Jeweled Gauntlet", "Thread the Needle", "Recursion"],
-    items: ["Riftmaker", "Nashor's Tooth", "Zhonya's Hourglass"],
-    note: "Trzymać cooldown W na prismatic burst, nie na pierwszy engage.",
-  },
-  {
-    date: "2026-06-29",
-    patch: "16.13",
-    champion: "Jhin",
-    partner: "Maokai",
-    placement: 5,
-    ratingDelta: -22,
-    augments: ["Scoped Weapons", "Deft", "Executioner"],
-    items: ["Infinity Edge", "Rapid Firecannon", "Lord Dominik's Regards"],
-    note: "Za mało narzędzi na podwójny dive, potrzebny wcześniejszy armor pen.",
-  },
-  {
-    date: "2026-06-28",
-    patch: "16.13",
-    champion: "Kayn",
-    partner: "Yuumi",
-    placement: 1,
-    ratingDelta: 91,
-    augments: ["Blade Waltz", "Goredrink", "Spin to Win"],
-    items: ["Sundered Sky", "Death's Dance", "Spirit Visage"],
-    note: "Snowball po pierwszym revive; banować mocny disengage.",
-  },
-  {
-    date: "2026-06-27",
-    patch: "16.12",
-    champion: "Vi",
-    partner: "Lulu",
-    placement: 3,
-    ratingDelta: 21,
-    augments: ["Goliath", "Perseverance", "Courage of the Colossus"],
-    items: ["Black Cleaver", "Sterak's Gage", "Force of Nature"],
-    note: "Dobry sustain, ale brakowało damage'u przeciw tankom.",
-  },
-  {
-    date: "2026-06-26",
-    patch: "16.12",
-    champion: "Brand",
-    partner: "Rammus",
-    placement: 2,
-    ratingDelta: 63,
-    augments: ["Magic Missile", "Eureka", "Witchful Thinking"],
-    items: ["Liandry's Torment", "Rylai's Crystal Scepter", "Rabadon's Deathcap"],
-    note: "Rammus wymuszał stackowanie wrogów pod pasywkę.",
-  },
-  {
-    date: "2026-06-25",
-    patch: "16.12",
-    champion: "Samira",
-    partner: "Rell",
-    placement: 6,
-    ratingDelta: -38,
-    augments: ["Outlaw's Grit", "Vulnerability", "Lightning Strikes"],
-    items: ["The Collector", "Immortal Shieldbow", "Bloodthirster"],
-    note: "Duet działa tylko, jeśli pierwszy reset wchodzi przed ring close.",
-  },
-  {
-    date: "2026-06-24",
-    patch: "16.12",
-    champion: "Vi",
-    partner: "Galio",
-    placement: 2,
-    ratingDelta: 47,
-    augments: ["Mystic Punch", "Frost Wraith", "Goliath"],
-    items: ["Black Cleaver", "Randuin's Omen", "Sterak's Gage"],
-    note: "Powtórzyć: stabilne top 2 przeciw carry + enchanter.",
-  },
-];
-
 const state = {
   activeRoute: "dashboard",
   matches: [],
@@ -278,8 +189,11 @@ const state = {
   backendAvailable: false,
   riotStatus: null,
   resetToken: "",
+  isAutoSyncing: false,
   filters: {
-    champion: "",
+    championSearch: "",
+    collectionMode: "won",
+    collectionSort: "wins",
   },
 };
 
@@ -289,7 +203,6 @@ document.documentElement.dataset.appVersion = APP_VERSION;
 
 document.addEventListener("DOMContentLoaded", () => {
   cacheDom();
-  fillChampionPicker();
   setDefaultFormValues();
   bindEvents();
   state.matches = loadMatches();
@@ -301,8 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cacheDom() {
   Object.assign(dom, {
-    dataPatch: document.getElementById("dataPatch"),
-    seedSampleButton: document.getElementById("seedSampleButton"),
     accountMenu: document.getElementById("accountMenu"),
     accountMenuButton: document.getElementById("accountMenuButton"),
     accountAvatar: document.getElementById("accountAvatar"),
@@ -311,21 +222,25 @@ function cacheDom() {
     accountOverlayBackdrop: document.getElementById("accountOverlayBackdrop"),
     accountOverlayClose: document.getElementById("accountOverlayClose"),
     accountDialogAvatar: document.getElementById("accountDialogAvatar"),
-    championPicker: document.getElementById("championPicker"),
-    championPickerButton: document.getElementById("championPickerButton"),
-    championPickerMenu: document.getElementById("championPickerMenu"),
-    championFilterIcon: document.getElementById("championFilterIcon"),
-    championFilterLabel: document.getElementById("championFilterLabel"),
+    championSearchInput: document.getElementById("championSearchInput"),
+    championSortSelect: document.getElementById("championSortSelect"),
+    collectionModeButtons: document.querySelectorAll("[data-collection-mode]"),
     progressCounter: document.getElementById("progressCounter"),
     victoryProgress: document.getElementById("victoryProgress"),
     metricsGrid: document.getElementById("metricsGrid"),
     wonChampionStrip: document.getElementById("wonChampionStrip"),
+    partnerStats: document.getElementById("partnerStats"),
     recentMatches: document.getElementById("recentMatches"),
     matchList: document.getElementById("matchList"),
-    exportButton: document.getElementById("exportButton"),
-    importInput: document.getElementById("importInput"),
     collectionStatus: document.getElementById("collectionStatus"),
     championCollection: document.getElementById("championCollection"),
+    championDetailOverlay: document.getElementById("championDetailOverlay"),
+    championDetailBackdrop: document.getElementById("championDetailBackdrop"),
+    championDetailClose: document.getElementById("championDetailClose"),
+    championDetailIcon: document.getElementById("championDetailIcon"),
+    championDetailTitle: document.getElementById("championDetailTitle"),
+    championDetailStats: document.getElementById("championDetailStats"),
+    championDetailHistory: document.getElementById("championDetailHistory"),
     accountTitle: document.getElementById("accountTitle"),
     accountStatus: document.getElementById("accountStatus"),
     authForms: document.getElementById("authForms"),
@@ -342,50 +257,15 @@ function cacheDom() {
     profileAvatar: document.getElementById("profileAvatar"),
     profileName: document.getElementById("profileName"),
     profileEmail: document.getElementById("profileEmail"),
-    riotKeyStatus: document.getElementById("riotKeyStatus"),
     riotProfileForm: document.getElementById("riotProfileForm"),
     riotGameName: document.getElementById("riotGameName"),
     riotTagLine: document.getElementById("riotTagLine"),
     riotRouting: document.getElementById("riotRouting"),
     riotRegion: document.getElementById("riotRegion"),
-    riotSyncButton: document.getElementById("riotSyncButton"),
     riotSyncStatus: document.getElementById("riotSyncStatus"),
     toast: document.getElementById("toast"),
     emptyStateTemplate: document.getElementById("emptyStateTemplate"),
   });
-
-  dom.dataPatch.textContent = DATA_DRAGON_VERSION;
-}
-
-function fillChampionPicker() {
-  renderChampionPicker([]);
-}
-
-function renderChampionPicker(wonStats) {
-  const current = state.filters.champion;
-  const hasCurrent = !current || wonStats.some((stat) => stat.champion === current);
-  if (!hasCurrent) state.filters.champion = "";
-
-  const fragment = document.createDocumentFragment();
-  fragment.append(renderChampionPickerOption("", "Wszyscy wygrani"));
-  wonStats.forEach((stat) => {
-    fragment.append(renderChampionPickerOption(stat.champion, stat.champion));
-  });
-  dom.championPickerMenu.replaceChildren(fragment);
-  updateChampionFilterButton();
-}
-
-function renderChampionPickerOption(value, label) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "champion-picker-option";
-  button.classList.toggle("is-all-option", !value);
-  button.dataset.champion = value;
-  button.setAttribute("role", "option");
-  button.setAttribute("aria-selected", value === state.filters.champion ? "true" : "false");
-  if (value) button.append(renderChampionIcon(value));
-  button.append(el("span", "", label));
-  return button;
 }
 
 function setDefaultFormValues() {
@@ -401,6 +281,8 @@ async function initializeBackend() {
       const session = await apiRequest("/api/auth/me");
       state.user = session.user;
       await loadServerMatches();
+      render();
+      await syncRiotMatches({ automatic: true });
     } catch (error) {
       if (error.status !== 401) throw error;
     }
@@ -430,90 +312,40 @@ function bindEvents() {
   dom.accountOverlayBackdrop.addEventListener("click", closeAccountOverlay);
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
 
-  dom.championPickerButton.addEventListener("click", () => {
-    const open = dom.championPicker.classList.toggle("is-open");
-    dom.championPickerButton.setAttribute("aria-expanded", String(open));
+  dom.championSearchInput.addEventListener("input", () => {
+    state.filters.championSearch = dom.championSearchInput.value;
+    renderChampionCollection(getSortedMatches());
   });
 
-  dom.championPickerMenu.addEventListener("click", (event) => {
-    const option = event.target.closest("[data-champion]");
-    if (!option) return;
-    setChampionFilter(option.dataset.champion);
+  dom.championSortSelect.addEventListener("change", () => {
+    state.filters.collectionSort = dom.championSortSelect.value;
+    renderChampionCollection(getSortedMatches());
   });
 
-  document.addEventListener("click", (event) => {
-    if (dom.championPicker.contains(event.target)) return;
-    closeChampionPicker();
+  dom.collectionModeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.filters.collectionMode = button.dataset.collectionMode;
+      renderChampionCollection(getSortedMatches());
+    });
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      closeChampionPicker();
       closeAccountOverlay();
+      closeChampionDetail();
     }
   });
 
-  dom.seedSampleButton.addEventListener("click", async () => {
-    const canSeed =
-      state.matches.length === 0 ||
-      window.confirm("Zastąpić obecne dane przykładową sesją demo?");
-    if (!canSeed) return;
-
-    const sampleMatches = SAMPLE_MATCHES.map((match, index) => ({
-      ...match,
-      id: `demo-${index + 1}`,
-      createdAt: new Date().toISOString(),
-    }));
-
-    try {
-      if (state.user) {
-        const data = await apiRequest("/api/matches/import", {
-          method: "POST",
-          body: { mode: "replace", matches: sampleMatches },
-        });
-        state.matches = data.matches.map(normalizeMatch).filter(Boolean);
-      } else {
-        state.matches = sampleMatches;
-        persistMatches();
-      }
-      announce("Wczytano przykładową sesję demo.");
-      render();
-    } catch (error) {
-      announce(error.message);
-    }
-  });
-
-  [dom.matchList, dom.recentMatches].forEach((list) => {
-    list.addEventListener("click", async (event) => {
-      const button = event.target.closest("[data-delete]");
-      if (!button) return;
-
-      const match = state.matches.find((item) => item.id === button.dataset.delete);
-      if (!match) return;
-
-      const ok = window.confirm(
-        `Usunąć mecz ${match.champion}${match.partner ? ` + ${match.partner}` : ""}?`,
-      );
-      if (!ok) return;
-
-      try {
-        if (state.user) {
-          await apiRequest(`/api/matches/${encodeURIComponent(match.id)}`, {
-            method: "DELETE",
-          });
-        }
-        state.matches = state.matches.filter((item) => item.id !== match.id);
-        if (!state.user) persistMatches();
-        announce("Mecz usunięty.");
-        render();
-      } catch (error) {
-        announce(error.message);
-      }
+  [dom.championCollection, dom.wonChampionStrip].forEach((container) => {
+    container.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-champion-detail]");
+      if (!card) return;
+      openChampionDetail(card.dataset.championDetail);
     });
   });
 
-  dom.exportButton.addEventListener("click", exportMatches);
-  dom.importInput.addEventListener("change", importMatches);
+  dom.championDetailBackdrop.addEventListener("click", closeChampionDetail);
+  dom.championDetailClose.addEventListener("click", closeChampionDetail);
 
   dom.authSwitches.forEach((switchButton) => {
     switchButton.addEventListener("click", () => setAuthTab(switchButton.dataset.authSwitch));
@@ -545,8 +377,6 @@ function bindEvents() {
     event.preventDefault();
     await saveRiotProfile();
   });
-
-  dom.riotSyncButton.addEventListener("click", syncRiotMatches);
 }
 
 function setActiveRoute(route) {
@@ -569,35 +399,11 @@ function setAuthTab(tabName) {
   if (!state.user) {
     dom.accountStatus.replaceChildren();
     dom.accountStatus.classList.add("is-hidden");
+    dom.accountStatus.classList.remove("is-error", "is-success");
   }
   dom.authPanels.forEach((panel) => {
     panel.classList.toggle("is-visible", panel.dataset.authPanel === tabName);
   });
-}
-
-function setChampionFilter(champion) {
-  state.filters.champion = champion;
-  updateChampionFilterButton();
-  closeChampionPicker();
-  render();
-}
-
-function updateChampionFilterButton() {
-  const champion = state.filters.champion;
-  dom.championFilterLabel.textContent = champion || "Wszyscy wygrani";
-  const icon = renderChampionIcon(champion);
-  icon.id = "championFilterIcon";
-  dom.championFilterIcon.replaceWith(icon);
-  dom.championFilterIcon = document.getElementById("championFilterIcon");
-  dom.championPickerButton.classList.toggle("is-all-selected", !champion);
-  dom.championPickerMenu.querySelectorAll("[data-champion]").forEach((option) => {
-    option.setAttribute("aria-selected", String(option.dataset.champion === champion));
-  });
-}
-
-function closeChampionPicker() {
-  dom.championPicker.classList.remove("is-open");
-  dom.championPickerButton.setAttribute("aria-expanded", "false");
 }
 
 function openAccountOverlay(tabName = "login") {
@@ -611,6 +417,54 @@ function openAccountOverlay(tabName = "login") {
       : dom.accountOverlay.querySelector("[data-auth-panel].is-visible input");
     target?.focus();
   });
+}
+
+function openChampionDetail(champion) {
+  const matches = getSortedMatches().filter((match) => match.champion === champion);
+  const stat = getChampionStats(matches)[0] || {
+    champion,
+    games: 0,
+    wins: 0,
+    bestPartner: "",
+  };
+  const wonMatches = matches.filter((match) => match.placement === 1);
+  const patchCounts = new Map();
+  wonMatches.forEach((match) => increment(patchCounts, match.patch));
+  const bestPatch = mapLeader(patchCounts) || "-";
+
+  dom.championDetailIcon.replaceChildren(renderChampionIcon(champion));
+  dom.championDetailTitle.textContent = champion;
+  dom.championDetailStats.replaceChildren(
+    renderDetailStat("Wygrane", stat.wins),
+    renderDetailStat("Gry", stat.games),
+    renderDetailStat("Najczęstszy duo", stat.bestPartner || "-"),
+    renderDetailStat("Najlepszy patch", bestPatch),
+  );
+  dom.championDetailHistory.replaceChildren(
+    ...(matches.length
+      ? matches.map((match) => {
+          const row = el("article", "detail-history-row");
+          row.append(
+            el("strong", "", `#${match.placement}`),
+            el("span", "", formatTeamTitle(match)),
+          );
+          return row;
+        })
+      : [el("article", "detail-history-row", "Brak zapisanych gier tym championem.")]),
+  );
+  dom.championDetailOverlay.classList.add("is-open");
+  dom.championDetailOverlay.setAttribute("aria-hidden", "false");
+}
+
+function closeChampionDetail() {
+  dom.championDetailOverlay.classList.remove("is-open");
+  dom.championDetailOverlay.setAttribute("aria-hidden", "true");
+}
+
+function renderDetailStat(label, value) {
+  const root = el("article", "detail-stat");
+  root.append(el("span", "", label), el("strong", "", value));
+  return root;
 }
 
 function closeAccountOverlay() {
@@ -639,7 +493,7 @@ function updateRoute() {
 }
 
 function syncFiltersFromDom() {
-  // Dashboard no longer has global filters; collection filtering is handled by setChampionFilter.
+  // Collection filters are owned by the Wygrane view.
 }
 
 function render() {
@@ -647,6 +501,7 @@ function render() {
   renderVictoryProgress(matches);
   renderMetrics(matches);
   renderWonChampionStrip(matches);
+  renderPartnerStats(matches);
   renderMatchList(dom.recentMatches, matches.slice(0, 5), { compact: true });
   renderMatchList(dom.matchList, matches);
   renderChampionCollection(matches);
@@ -673,20 +528,13 @@ function renderAccount() {
   dom.authForms.classList.toggle("is-hidden", Boolean(state.user));
   dom.profilePanel.classList.toggle("is-hidden", !state.user);
 
-  dom.riotSyncButton.disabled = !state.user;
-
-  const hasKey = Boolean(state.riotStatus?.riotApiKey);
-  dom.riotKeyStatus.textContent = hasKey ? "RIOT_API_KEY OK" : "Brak RIOT_API_KEY";
-  dom.riotKeyStatus.classList.toggle("is-ready", hasKey);
-  dom.riotKeyStatus.classList.toggle("is-missing", !hasKey);
-
   if (!state.user) {
     dom.accountTitle.textContent ||= "Zaloguj";
     dom.profileName.textContent = "Konto";
     dom.profileEmail.textContent = "";
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Po zalogowaniu zapiszesz Riot ID."),
-      el("span", "", state.backendAvailable ? "API jest gotowe." : "Uruchom node server.js."),
+      el("strong", "", "Po zalogowaniu zapiszesz konto League."),
+      el("span", "", state.backendAvailable ? "Synchronizacja ruszy automatycznie." : "Uruchom node server.js."),
     );
     return;
   }
@@ -700,8 +548,8 @@ function renderAccount() {
   const profile = state.user.riotProfile;
   if (!profile) {
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Riot ID nie jest jeszcze zapisane."),
-      el("span", "", hasKey ? "Możesz zweryfikować konto i importować mecze Areny." : "Ustaw RIOT_API_KEY przed importem."),
+      el("strong", "", "Konto League nie jest jeszcze zapisane."),
+      el("span", "", "Po zapisaniu synchronizacja Areny uruchomi się automatycznie."),
     );
     return;
   }
@@ -729,14 +577,7 @@ function updateAccountAvatars() {
 }
 
 function getAccountAvatarSrc() {
-  const bestChampion = findBestChampion(getSortedMatches());
-  return (
-    CHAMPION_ICONS[bestChampion?.champion] ||
-    CHAMPION_ICONS.Vi ||
-    CHAMPION_ICONS.Lux ||
-    Object.values(CHAMPION_ICONS)[0] ||
-    ""
-  );
+  return state.user?.riotProfile?.profileIconUrl || DEFAULT_AUTH_AVATAR;
 }
 
 function getSortedMatches() {
@@ -747,24 +588,15 @@ function getSortedMatches() {
 function renderMetrics(matches) {
   const games = matches.length;
   const wins = matches.filter((match) => match.placement === 1).length;
-  const wonChampions = getWonChampionStats(matches);
-  const remaining = Math.max(0, CHAMPIONS.length - wonChampions.length);
 
   const cards = [
     {
       label: "Mecze",
       value: games,
-      note: state.user ? "z konta ArenaTracker" : "lokalnie lub demo",
     },
     {
       label: "Wygrane",
       value: wins,
-      note: wins === 1 ? "1 pierwsze miejsce" : `${wins} pierwszych miejsc`,
-    },
-    {
-      label: "Kolekcja winów",
-      value: wonChampions.length,
-      note: `${remaining} bez wygranej`,
     },
   ];
 
@@ -775,7 +607,6 @@ function renderMetricCard(card) {
   const root = el("article", "metric-card");
   root.append(el("div", "metric-label", card.label));
   root.append(el("div", "metric-value", card.value));
-  root.append(el("div", "metric-note", card.note));
   return root;
 }
 
@@ -791,20 +622,54 @@ function renderWonChampionStrip(matches) {
   );
 }
 
-function renderChampionCollection(matches) {
-  const won = getWonChampionStats(matches);
-  renderChampionPicker(won);
-  const collection = state.filters.champion
-    ? won.filter((stat) => stat.champion === state.filters.champion)
-    : won;
+function renderPartnerStats(matches) {
+  const stats = getPartnerStats(matches);
+  if (!stats.length) {
+    const empty = emptyState();
+    empty.querySelector("strong").textContent = "Brak danych o partnerach.";
+    empty.querySelector("span").textContent = "Synchronizacja uzupełni graczy z Twojej drużyny.";
+    dom.partnerStats.replaceChildren(empty);
+    return;
+  }
 
-  dom.collectionStatus.textContent = `${won.length} / ${CHAMPIONS.length} z wygraną`;
+  dom.partnerStats.replaceChildren(
+    ...stats.slice(0, 12).map((stat) => {
+      const root = el("article", "partner-card");
+      root.append(
+        el("strong", "", stat.name),
+        el("span", "", `${stat.games} gier · ${percentage(stat.wins / stat.games)} WR`),
+      );
+      return root;
+    }),
+  );
+}
+
+function renderChampionCollection(matches) {
+  const stats = getAllChampionCollectionStats(matches);
+  const wonCount = stats.filter((stat) => stat.wins > 0).length;
+  const search = normalize(state.filters.championSearch);
+  const mode = state.filters.collectionMode;
+  let collection = stats.filter((stat) => {
+    const statusMatches =
+      mode === "all" || (mode === "won" && stat.wins > 0) || (mode === "missing" && stat.wins === 0);
+    const searchMatches = !search || normalize(stat.champion).includes(search);
+    return statusMatches && searchMatches;
+  });
+
+  collection = collection.sort((a, b) => {
+    if (state.filters.collectionSort === "az") return a.champion.localeCompare(b.champion);
+    return b.wins - a.wins || a.champion.localeCompare(b.champion);
+  });
+
+  dom.collectionStatus.textContent = `Ukończono ${wonCount} z ${CHAMPIONS.length}`;
+  dom.collectionModeButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.collectionMode === mode);
+  });
+
   if (!collection.length) {
     const empty = emptyState();
-    empty.querySelector("strong").textContent = won.length
-      ? "Ten champion nie ma jeszcze wygranej."
-      : "Nie masz jeszcze zapisanych wygranych.";
-    empty.querySelector("span").textContent = "Wczytaj demo albo zsynchronizuj konto.";
+    empty.querySelector("strong").textContent = "Brak championów dla tych filtrów.";
+    empty.querySelector("span").textContent = "Zmień filtr albo zsynchronizuj konto.";
     dom.championCollection.replaceChildren(empty);
     return;
   }
@@ -812,7 +677,9 @@ function renderChampionCollection(matches) {
 }
 
 function renderChampionPill(stat) {
-  const root = el("article", "champion-pill");
+  const root = el("button", "champion-pill");
+  root.type = "button";
+  root.dataset.championDetail = stat.champion;
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(el("span", "", `${stat.wins} win${stat.bestPartner ? ` · ${stat.bestPartner}` : ""}`));
@@ -821,11 +688,19 @@ function renderChampionPill(stat) {
 }
 
 function renderChampionCollectionCard(stat) {
-  const root = el("article", "champion-collection-card is-complete");
+  const root = el("button", `champion-collection-card ${stat.wins ? "is-complete" : "is-missing"}`);
+  root.type = "button";
+  root.dataset.championDetail = stat.champion;
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(
-    el("span", "", `${stat.wins} win${stat.bestPartner ? ` · duet: ${stat.bestPartner}` : ""}`),
+    el(
+      "span",
+      "",
+      stat.wins
+        ? `${stat.wins} win${stat.bestPartner ? ` · duo: ${stat.bestPartner}` : ""}`
+        : "Brakuje wygranej",
+    ),
   );
   root.append(renderChampionIcon(stat.champion), body);
   return root;
@@ -859,10 +734,10 @@ function renderMatchList(container, matches, options = {}) {
 function renderMatchCard(match, options) {
   const root = el("article", "match-card");
   const topLine = el("div", "match-topline");
-  const title = el("strong", "", `${match.champion}${match.partner ? ` + ${match.partner}` : ""}`);
+  const title = el("strong", "", formatTeamTitle(match));
   const placement = el(
     "span",
-    `placement-badge ${match.placement <= 2 ? "top" : match.placement >= 6 ? "low" : ""}`,
+    `placement-badge ${match.placement === 1 ? "top" : match.placement >= 5 ? "low" : ""}`,
     `#${match.placement}`,
   );
   topLine.append(title, placement);
@@ -881,13 +756,6 @@ function renderMatchCard(match, options) {
   root.append(topLine, meta);
   if (tags.childElementCount) root.append(tags);
   if (!options.compact && match.note) root.append(el("span", "", match.note));
-
-  const actions = el("div", "match-actions");
-  const deleteButton = el("button", "danger-button", "Usuń");
-  deleteButton.type = "button";
-  deleteButton.dataset.delete = match.id;
-  actions.append(deleteButton);
-  root.append(actions);
 
   return root;
 }
@@ -913,7 +781,7 @@ async function loadServerMatches() {
 
 async function submitAuthForm(form, path, message) {
   if (!state.backendAvailable) {
-    announce("Uruchom node server.js, żeby użyć logowania.");
+    showAccountMessage("Uruchom node server.js, żeby użyć logowania.", "error");
     return;
   }
 
@@ -934,10 +802,11 @@ async function submitAuthForm(form, path, message) {
       await loadServerMatches();
     }
 
-    announce(message);
+    showAccountMessage(message, "success");
     render();
+    await syncRiotMatches({ automatic: true });
   } catch (error) {
-    announce(error.message);
+    showAccountMessage(error.message, "error");
   }
 }
 
@@ -952,9 +821,8 @@ async function requestPasswordReset() {
     const data = await apiRequest("/api/auth/request-password-reset", { method: "POST", body });
     dom.resetPasswordForm.reset();
     renderResetRequestResult(data);
-    announce("Link resetujący został wygenerowany.");
   } catch (error) {
-    announce(error.message);
+    showAccountMessage(error.message, "error");
   }
 }
 
@@ -994,6 +862,8 @@ function renderResetRequestResult(data) {
   if (!data.resetUrl) {
     dom.accountStatus.replaceChildren(title, note);
     dom.accountStatus.classList.remove("is-hidden");
+    dom.accountStatus.classList.remove("is-error", "is-success");
+    dom.accountStatus.classList.add("is-success");
     return;
   }
 
@@ -1003,6 +873,8 @@ function renderResetRequestResult(data) {
   link.className = "inline-link";
   dom.accountStatus.replaceChildren(title, note, link);
   dom.accountStatus.classList.remove("is-hidden");
+  dom.accountStatus.classList.remove("is-error", "is-success");
+  dom.accountStatus.classList.add("is-success");
 }
 
 function renderResetTokenView() {
@@ -1024,6 +896,13 @@ function renderResetTokenView() {
   dom.confirmResetForm.classList.toggle("is-hidden", !state.resetToken);
 }
 
+function showAccountMessage(message, type = "info") {
+  dom.accountStatus.replaceChildren(el("strong", "", message));
+  dom.accountStatus.classList.remove("is-hidden", "is-error", "is-success");
+  dom.accountStatus.classList.toggle("is-error", type === "error");
+  dom.accountStatus.classList.toggle("is-success", type === "success");
+}
+
 async function logout() {
   try {
     await apiRequest("/api/auth/logout", { method: "POST" });
@@ -1039,7 +918,7 @@ async function logout() {
 
 async function saveRiotProfile() {
   if (!state.user) {
-    announce("Najpierw zaloguj się do ArenaTracker.");
+    showAccountMessage("Najpierw zaloguj się do ArenaTracker.", "error");
     return;
   }
 
@@ -1048,23 +927,32 @@ async function saveRiotProfile() {
     const data = await apiRequest("/api/riot/profile", { method: "POST", body });
     state.user = data.user;
     fillRiotProfileForm();
-    announce("Riot ID zapisane.");
+    showAccountMessage("Konto League zapisane.", "success");
     render();
+    await syncRiotMatches({ automatic: true });
   } catch (error) {
-    announce(error.message);
+    showAccountMessage(error.message, "error");
   }
 }
 
-async function syncRiotMatches() {
+async function syncRiotMatches(options = {}) {
   if (!state.user) {
-    announce("Najpierw zaloguj się do ArenaTracker.");
+    if (!options.automatic) showAccountMessage("Najpierw zaloguj się do ArenaTracker.", "error");
     return;
   }
 
-  dom.riotSyncButton.disabled = true;
+  if (!state.user.riotProfile) {
+    return;
+  }
+
+  if (state.isAutoSyncing) {
+    return;
+  }
+
+  state.isAutoSyncing = true;
   dom.riotSyncStatus.replaceChildren(
-    el("strong", "", "Synchronizacja trwa."),
-    el("span", "", "Pobieram najnowsze mecze Arena z Riot Match-V5."),
+    el("strong", "", "Synchronizuję..."),
+    el("span", "", "Aktualizuję mecze Areny."),
   );
 
   try {
@@ -1075,13 +963,13 @@ async function syncRiotMatches() {
     state.user = data.user;
     state.matches = data.matches.map(normalizeMatch).filter(Boolean);
     fillRiotProfileForm();
-    announce(`Zaimportowano ${data.importedCount} nowych meczów.`);
+    if (!options.automatic) showAccountMessage(`Zsynchronizowano ${data.scannedCount} meczów.`, "success");
     render();
   } catch (error) {
-    announce(error.message);
+    if (!options.automatic) showAccountMessage(error.message, "error");
     render();
   } finally {
-    dom.riotSyncButton.disabled = false;
+    state.isAutoSyncing = false;
   }
 }
 
@@ -1174,14 +1062,19 @@ function importMatches(event) {
 
 function normalizeMatch(match) {
   if (!match || !match.date || !match.champion || !match.placement) return null;
+  const teammates = Array.isArray(match.teammates)
+    ? match.teammates.map(normalizeTeammate).filter(Boolean)
+    : [];
+  const partner = cleanText(match.partner);
 
   return {
     id: match.id || makeId(),
     date: cleanText(match.date),
     patch: cleanText(match.patch || DATA_DRAGON_VERSION),
     champion: cleanText(match.champion),
-    partner: cleanText(match.partner),
-    placement: clamp(Number(match.placement), 1, 8),
+    partner,
+    teammates,
+    placement: clamp(Number(match.placement), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
       ? match.augments.map(resolveAugmentName).map(cleanText).filter(Boolean)
@@ -1212,7 +1105,9 @@ function getChampionStats(matches) {
     stat.games += 1;
     stat.placements.push(match.placement);
     if (match.placement === 1) stat.wins += 1;
-    if (match.placement === 1) increment(stat.partners, match.partner || "Solo/unknown");
+    getPartnerLabels(match).forEach((partner) => {
+      if (match.placement === 1) increment(stat.partners, partner);
+    });
   });
 
   return [...grouped.values()].map((stat) => ({
@@ -1220,6 +1115,21 @@ function getChampionStats(matches) {
     avg: average(stat.placements),
     bestPartner: mapLeader(stat.partners),
   }));
+}
+
+function getAllChampionCollectionStats(matches) {
+  const statsByChampion = new Map(getChampionStats(matches).map((stat) => [stat.champion, stat]));
+  return CHAMPIONS.map((champion) => {
+    const stat = statsByChampion.get(champion);
+    return {
+      champion,
+      games: stat?.games || 0,
+      wins: stat?.wins || 0,
+      placements: stat?.placements || [],
+      avg: stat?.avg || 0,
+      bestPartner: stat?.bestPartner || "",
+    };
+  });
 }
 
 function getWonChampionStats(matches) {
@@ -1237,6 +1147,48 @@ function findBestChampion(matches) {
 function increment(map, key) {
   if (!key) return;
   map.set(key, (map.get(key) || 0) + 1);
+}
+
+function getPartnerStats(matches) {
+  const partners = new Map();
+  matches.forEach((match) => {
+    getPartnerLabels(match, { preferPlayers: true }).forEach((name) => {
+      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0 });
+      const stat = partners.get(name);
+      stat.games += 1;
+      if (match.placement === 1) stat.wins += 1;
+    });
+  });
+  return [...partners.values()].sort((a, b) => b.games - a.games || b.wins - a.wins || a.name.localeCompare(b.name));
+}
+
+function getPartnerLabels(match, options = {}) {
+  const teammates = Array.isArray(match.teammates) ? match.teammates : [];
+  const labels = teammates
+    .map((teammate) => {
+      if (options.preferPlayers && teammate.riotId) return teammate.riotId;
+      return teammate.champion || teammate.riotId;
+    })
+    .filter(Boolean);
+  if (labels.length) return labels;
+  return match.partner ? [match.partner] : [];
+}
+
+function formatTeamTitle(match) {
+  const teammateChampions = getPartnerLabels(match).filter(Boolean);
+  return [match.champion, ...teammateChampions].join(" + ");
+}
+
+function normalizeTeammate(value) {
+  if (!value || typeof value !== "object") return null;
+  const champion = cleanText(value.champion);
+  const riotId = cleanText(value.riotId);
+  if (!champion && !riotId) return null;
+  return {
+    champion,
+    riotId,
+    puuid: cleanText(value.puuid),
+  };
 }
 
 function mapLeader(map) {
@@ -1272,6 +1224,10 @@ function cleanText(value) {
 
 function average(values) {
   return values.length ? sum(values) / values.length : 0;
+}
+
+function percentage(value) {
+  return `${Math.round(Number(value || 0) * 100)}%`;
 }
 
 function sum(values) {

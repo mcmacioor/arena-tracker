@@ -18,15 +18,10 @@
           <span class="brand-mark" aria-hidden="true">AT</span>
           <span>
             <strong>ArenaTracker</strong>
-            <small>Arena wins collection</small>
           </span>
         </a>
 
         <nav class="nav-list" aria-label="Główne widoki">
-          <a class="nav-link is-active" href="#dashboard" data-route="dashboard">
-            <span class="nav-icon" aria-hidden="true">▦</span>
-            Dashboard
-          </a>
           <a class="nav-link" href="#matches" data-route="matches">
             <span class="nav-icon" aria-hidden="true">≡</span>
             Mecze
@@ -36,11 +31,6 @@
             Wygrane
           </a>
         </nav>
-
-        <div class="sidebar-foot">
-          <span>Data Dragon</span>
-          <strong id="dataPatch">16.13.1</strong>
-        </div>
       </aside>
 
       <main class="main">
@@ -57,7 +47,7 @@
               <img
                 class="account-avatar"
                 id="accountAvatar"
-                src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+                src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png"
                 alt=""
               />
               <span id="accountMenuLabel">Konto</span>
@@ -70,9 +60,6 @@
           <div class="hero-copy">
             <p class="eyebrow">League of Legends Arena</p>
             <h1 id="appTitle">ArenaTracker</h1>
-          </div>
-          <div class="hero-actions">
-            <button class="ghost-action" type="button" id="seedSampleButton">Demo</button>
           </div>
         </section>
 
@@ -111,18 +98,16 @@
           </div>
 
           <div class="view" id="matchesView" data-view="matches">
+            <section class="panel partner-panel" aria-labelledby="partnerStatsTitle">
+              <div class="panel-head">
+                <h2 id="partnerStatsTitle">Partnerzy z Areny</h2>
+              </div>
+              <div class="partner-stats" id="partnerStats"></div>
+            </section>
+
             <section class="panel" aria-labelledby="historyTitle">
               <div class="panel-head">
-                <h2 id="historyTitle">Mecze z synchronizacji</h2>
-                <div class="inline-actions">
-                  <button class="icon-button" type="button" id="exportButton" title="Eksportuj dane">
-                    ⇩
-                  </button>
-                  <label class="icon-button file-trigger" title="Importuj dane">
-                    ⇧
-                    <input id="importInput" type="file" accept="application/json" />
-                  </label>
-                </div>
+                <h2 id="historyTitle">Mecze</h2>
               </div>
               <div class="match-list" id="matchList"></div>
             </section>
@@ -132,25 +117,24 @@
             <section class="panel" aria-labelledby="championStatsTitle">
               <div class="panel-head">
                 <h2 id="championStatsTitle">Lista championów, którymi wygrałeś</h2>
-                <span class="status-pill" id="collectionStatus">0 ukończonych</span>
+                <span class="status-pill collection-status" id="collectionStatus">Ukończono 0 z 0</span>
               </div>
               <div class="collection-toolbar" aria-label="Filtr wygranych championów">
-                <label class="champion-filter">
-                  <span>Bohater</span>
-                  <div class="champion-picker" id="championPicker">
-                    <button
-                      class="champion-picker-button"
-                      id="championPickerButton"
-                      type="button"
-                      aria-haspopup="listbox"
-                      aria-expanded="false"
-                    >
-                      <span class="champion-icon is-empty" id="championFilterIcon" aria-hidden="true"></span>
-                      <span id="championFilterLabel">Wszyscy wygrani</span>
-                      <span class="picker-chevron" aria-hidden="true">⌄</span>
-                    </button>
-                    <div class="champion-picker-menu" id="championPickerMenu" role="listbox"></div>
-                  </div>
+                <label>
+                  <span>Szukaj championa</span>
+                  <input id="championSearchInput" type="search" autocomplete="off" placeholder="np. Vi" />
+                </label>
+                <div class="segmented-control" aria-label="Status championów">
+                  <button class="is-active" type="button" data-collection-mode="won">Wygrani</button>
+                  <button type="button" data-collection-mode="missing">Brakujący</button>
+                  <button type="button" data-collection-mode="all">Wszyscy</button>
+                </div>
+                <label>
+                  <span>Sortowanie</span>
+                  <select id="championSortSelect">
+                    <option value="wins">Liczba winów</option>
+                    <option value="az">A-Z</option>
+                  </select>
                 </label>
               </div>
               <div class="champion-collection" id="championCollection"></div>
@@ -191,7 +175,7 @@
           <img
             class="account-dialog-avatar"
             id="accountDialogAvatar"
-            src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+            src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png"
             alt=""
           />
           <span>ArenaTracker</span>
@@ -265,7 +249,7 @@
             <img
               class="profile-avatar"
               id="profileAvatar"
-              src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+              src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png"
               alt=""
             />
             <div>
@@ -273,14 +257,10 @@
               <span id="profileEmail"></span>
             </div>
           </div>
-          <div class="panel-head compact-head">
-            <h3>Riot ID</h3>
-            <span class="status-pill" id="riotKeyStatus">API</span>
-          </div>
           <form class="account-form" id="riotProfileForm">
             <div class="form-grid compact-grid">
               <label>
-                <span>Nazwa Riot</span>
+                <span>Nazwa w grze</span>
                 <input id="riotGameName" name="gameName" type="text" autocomplete="off" />
               </label>
               <label>
@@ -311,8 +291,7 @@
               </label>
             </div>
             <div class="form-actions">
-              <button class="primary-action" type="submit">Zapisz Riot ID</button>
-              <button class="ghost-action" type="button" id="riotSyncButton">Synchronizuj Arenę</button>
+              <button class="primary-action" type="submit">Zapisz konto League</button>
             </div>
           </form>
           <div class="status-box" id="riotSyncStatus"></div>
@@ -321,11 +300,32 @@
       </section>
     </div>
 
+    <div class="champion-detail-overlay" id="championDetailOverlay" aria-hidden="true">
+      <button
+        class="account-backdrop"
+        id="championDetailBackdrop"
+        type="button"
+        aria-label="Zamknij szczegóły championa"
+      ></button>
+      <section class="champion-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="championDetailTitle">
+        <button class="dialog-close" id="championDetailClose" type="button" aria-label="Zamknij">×</button>
+        <div class="champion-detail-head">
+          <span id="championDetailIcon"></span>
+          <h2 id="championDetailTitle">Champion</h2>
+        </div>
+        <div class="detail-stats" id="championDetailStats"></div>
+        <div>
+          <h3>Historia</h3>
+          <div class="detail-history" id="championDetailHistory"></div>
+        </div>
+      </section>
+    </div>
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <template id="emptyStateTemplate">
       <div class="empty-state">
         <strong>Brak danych dla tych filtrów.</strong>
-        <span>Wczytaj demo albo zsynchronizuj konto.</span>
+        <span>Zaloguj się i zsynchronizuj konto League.</span>
       </div>
     </template>
     <script src="assets/game-data.js"></script>
