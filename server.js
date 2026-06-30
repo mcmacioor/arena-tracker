@@ -17,7 +17,7 @@ const MAX_BODY_BYTES = 1_000_000;
 const ARENA_QUEUE_IDS = [1750];
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
-const RIOT_SYNC_MAX_LIMIT = 100;
+const RIOT_SYNC_MAX_LIMIT = 300;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -505,6 +505,7 @@ async function syncRiotMatches(req, res, user) {
 
   const body = await readJsonBody(req);
   const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
+  const scope = body.scope === "season" ? "season" : "recent";
   const profile = user.riotProfile;
 
   if (!profile?.gameName || !profile?.tagLine) {
@@ -514,7 +515,9 @@ async function syncRiotMatches(req, res, user) {
 
   const account = profile.puuid ? profile : await fetchRiotAccount(profile);
   const summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
-  const matchIds = await fetchArenaMatchIds(account, profile.routing, limit);
+  const matchIds = await fetchArenaMatchIds(account, profile.routing, limit, {
+    startTime: scope === "season" ? seasonStartTimestamp() : null,
+  });
   const existingDb = await readDb();
   const existingRiotMatches = new Map(
     existingDb.matches
@@ -574,6 +577,7 @@ async function syncRiotMatches(req, res, user) {
     importedCount,
     scannedCount: matchDetails.length,
     reusedCount: reusedMatches.length,
+    scope,
     matches: db.matches.filter((match) => match.userId === user.id),
     user: publicUser(db.users.find((item) => item.id === user.id)),
   });
@@ -623,15 +627,21 @@ async function fetchSummonerByPuuid(region, puuid) {
   return riotFetch(region, `/lol/summoner/v4/summoners/by-puuid/${encodeURIComponent(puuid)}`);
 }
 
-async function fetchArenaMatchIds(account, routing, limit) {
+async function fetchArenaMatchIds(account, routing, limit, options = {}) {
   const ids = [];
   for (const queueId of ARENA_QUEUE_IDS) {
     let start = 0;
     while (ids.length < limit) {
       const count = Math.max(1, Math.min(100, limit - ids.length));
+      const params = new URLSearchParams({
+        queue: String(queueId),
+        start: String(start),
+        count: String(count),
+      });
+      if (options.startTime) params.set("startTime", String(options.startTime));
       const pathName = `/lol/match/v5/matches/by-puuid/${encodeURIComponent(
         account.puuid,
-      )}/ids?queue=${queueId}&start=${start}&count=${count}`;
+      )}/ids?${params.toString()}`;
       const queueIds = await riotFetch(routing, pathName);
       if (!Array.isArray(queueIds) || !queueIds.length) break;
       ids.push(...queueIds);
@@ -642,7 +652,7 @@ async function fetchArenaMatchIds(account, routing, limit) {
   return [...new Set(ids)].slice(0, limit);
 }
 
-async function riotFetch(routing, pathName) {
+async function riotFetch(routing, pathName, attempt = 0) {
   const response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
     headers: {
       "X-Riot-Token": process.env.RIOT_API_KEY,
@@ -651,6 +661,11 @@ async function riotFetch(routing, pathName) {
   });
 
   if (!response.ok) {
+    if (response.status === 429 && attempt < 2) {
+      const retryAfter = Number(response.headers.get("retry-after") || 1);
+      await delay(Math.max(1000, retryAfter * 1000));
+      return riotFetch(routing, pathName, attempt + 1);
+    }
     let message = `Riot API HTTP ${response.status}`;
     try {
       const data = await response.json();
@@ -788,7 +803,7 @@ async function serveStatic(req, res, url) {
     res.writeHead(200, { "Content-Type": type });
     res.end(data);
   } catch {
-    if (!path.extname(relativePath) && (req.headers.accept || "").includes("text/html")) {
+    if (!path.extname(relativePath)) {
       const data = await readFile(path.join(ROOT, "index.html"));
       res.writeHead(200, { "Content-Type": contentTypes[".html"] });
       res.end(data);
@@ -971,6 +986,7 @@ function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
   const aliasId = aliases?.[normalizeLookupKey(text)] || "";
   const id = names?.[rawId] ? rawId : aliasId || rawId;
   const name = names?.[id] || text;
+  if (rawId && text === rawId && !names?.[rawId]) return null;
   if (!name) return null;
 
   return {
@@ -989,6 +1005,15 @@ function canonicalChampionName(value) {
 function normalizeMatchNote(value) {
   const note = cleanText(value);
   return /^Zaimportowano z Riot Match-V5/i.test(note) ? "" : note;
+}
+
+function seasonStartTimestamp() {
+  const now = new Date();
+  return Math.floor(Date.UTC(now.getUTCFullYear(), 0, 1, 0, 0, 0) / 1000);
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function getPartnerLabels(match, options = {}) {

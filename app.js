@@ -2,12 +2,51 @@ const APP_VERSION = "0.5.0";
 const GAME_DATA = globalThis.ARENA_GAME_DATA || {};
 const DATA_DRAGON_VERSION = GAME_DATA.version || "16.13.1";
 const STORAGE_KEY = "arenatracker.matches.v1";
+const LANGUAGE_STORAGE_KEY = "arenatracker.language.v1";
 const CHAMPION_ICONS = GAME_DATA.championIcons || {};
 const CHAMPION_KEYS = GAME_DATA.championKeys || {};
 const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_LIMIT = 80;
+const RIOT_SEASON_SYNC_LIMIT = 300;
+
+const translations = {
+  pl: {
+    "actions.sync": "Synchronizuj",
+    "actions.exportPng": "Eksport PNG",
+    "actions.coffee": "Postaw kawę",
+    "settings.language": "Język",
+    "nav.history": "Historia",
+    "nav.wins": "Wygrane",
+    "tabs.summary": "Podsumowanie",
+    "tabs.history": "Historia",
+    "tabs.wins": "Wygrane",
+    "tabs.group": "Moja grupa",
+    "progress.label": "Postęp",
+    "progress.title": "Wygrani championi",
+    "history.title": "Historia",
+    "friends.title": "Moja grupa",
+    "matchDetails.title": "Szczegóły meczu",
+  },
+  en: {
+    "actions.sync": "Sync",
+    "actions.exportPng": "Export PNG",
+    "actions.coffee": "Buy coffee",
+    "settings.language": "Language",
+    "nav.history": "History",
+    "nav.wins": "Wins",
+    "tabs.summary": "Summary",
+    "tabs.history": "History",
+    "tabs.wins": "Wins",
+    "tabs.group": "My group",
+    "progress.label": "Progress",
+    "progress.title": "Champion wins",
+    "history.title": "History",
+    "friends.title": "My group",
+    "matchDetails.title": "Match details",
+  },
+};
 
 const CHAMPIONS = GAME_DATA.champions || [
   "Aatrox",
@@ -191,6 +230,7 @@ const state = {
   user: null,
   publicProfile: null,
   publicRoute: null,
+  language: localStorage.getItem(LANGUAGE_STORAGE_KEY) || "pl",
   backendAvailable: false,
   riotStatus: null,
   resetToken: "",
@@ -223,6 +263,13 @@ function cacheDom() {
     accountMenuButton: document.getElementById("accountMenuButton"),
     accountAvatar: document.getElementById("accountAvatar"),
     accountMenuLabel: document.getElementById("accountMenuLabel"),
+    profileHeroAvatar: document.getElementById("profileHeroAvatar"),
+    profileHeroName: document.getElementById("profileHeroName"),
+    profileHeroMeta: document.getElementById("profileHeroMeta"),
+    profileSyncButton: document.getElementById("profileSyncButton"),
+    profileSyncNote: document.getElementById("profileSyncNote"),
+    exportProgressButton: document.getElementById("exportProgressButton"),
+    languageSelect: document.getElementById("languageSelect"),
     accountOverlay: document.getElementById("accountOverlay"),
     accountOverlayBackdrop: document.getElementById("accountOverlayBackdrop"),
     accountOverlayClose: document.getElementById("accountOverlayClose"),
@@ -235,6 +282,7 @@ function cacheDom() {
     metricsGrid: document.getElementById("metricsGrid"),
     wonChampionStrip: document.getElementById("wonChampionStrip"),
     partnerStats: document.getElementById("partnerStats"),
+    friendRanking: document.getElementById("friendRanking"),
     recentMatches: document.getElementById("recentMatches"),
     matchList: document.getElementById("matchList"),
     collectionStatus: document.getElementById("collectionStatus"),
@@ -250,10 +298,10 @@ function cacheDom() {
     matchDetailBackdrop: document.getElementById("matchDetailBackdrop"),
     matchDetailClose: document.getElementById("matchDetailClose"),
     matchDetailTitle: document.getElementById("matchDetailTitle"),
-    matchDetailPlacement: document.getElementById("matchDetailPlacement"),
     matchDetailStats: document.getElementById("matchDetailStats"),
     matchDetailTeam: document.getElementById("matchDetailTeam"),
-    matchDetailTags: document.getElementById("matchDetailTags"),
+    matchDetailAugments: document.getElementById("matchDetailAugments"),
+    matchDetailItems: document.getElementById("matchDetailItems"),
     publicProfileAvatar: document.getElementById("publicProfileAvatar"),
     publicProfileTitle: document.getElementById("publicProfileTitle"),
     publicProgressCounter: document.getElementById("publicProgressCounter"),
@@ -319,6 +367,8 @@ async function initializeBackend() {
 
 function bindEvents() {
   window.addEventListener("hashchange", updateRoute);
+  dom.languageSelect.value = state.language;
+  applyLanguage();
 
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
@@ -333,6 +383,19 @@ function bindEvents() {
 
   dom.accountOverlayBackdrop.addEventListener("click", closeAccountOverlay);
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
+
+  dom.profileSyncButton.addEventListener("click", async () => {
+    await syncRiotMatches({ automatic: false, deep: true });
+  });
+
+  dom.exportProgressButton.addEventListener("click", exportProgressPng);
+
+  dom.languageSelect.addEventListener("change", () => {
+    state.language = dom.languageSelect.value === "en" ? "en" : "pl";
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, state.language);
+    applyLanguage();
+    render();
+  });
 
   dom.championSearchInput.addEventListener("input", () => {
     state.filters.championSearch = dom.championSearchInput.value;
@@ -495,22 +558,15 @@ function openMatchDetail(matchId) {
   const match = state.matches.find((item) => item.id === matchId);
   if (!match) return;
 
-  dom.matchDetailTitle.textContent = formatTeamTitle(match);
-  dom.matchDetailPlacement.textContent = `#${match.placement}`;
-  dom.matchDetailPlacement.className = `placement-badge ${match.placement === 1 ? "top" : match.placement >= 5 ? "low" : ""}`;
+  dom.matchDetailTitle.textContent = t("matchDetails.title");
   dom.matchDetailStats.replaceChildren(
     renderDetailStat("Data", formatDate(match.date)),
     renderDetailStat("Patch", match.patch),
     renderDetailStat("Miejsce", `#${match.placement}`),
   );
   dom.matchDetailTeam.replaceChildren(...renderMatchTeam(match));
-  dom.matchDetailTags.replaceChildren(
-    ...[...match.augments, ...match.items].map((tag) => renderTagPill(tag)),
-  );
-  if (!dom.matchDetailTags.childElementCount) {
-    dom.matchDetailTags.replaceChildren(el("span", "tag", "Brak augmentów i itemów"));
-  }
-
+  renderAssetTags(dom.matchDetailAugments, match.augments, "Brak augmentów");
+  renderAssetTags(dom.matchDetailItems, match.items, "Brak itemów");
   dom.matchDetailOverlay.classList.add("is-open");
   dom.matchDetailOverlay.setAttribute("aria-hidden", "false");
 }
@@ -617,16 +673,47 @@ function syncFiltersFromDom() {
 
 function render() {
   const matches = getSortedMatches();
+  renderProfileHero(matches);
   renderVictoryProgress(matches);
   renderMetrics(matches);
   renderWonChampionStrip(matches);
   renderPartnerStats(matches);
+  renderFriendRanking(matches);
   renderMatchList(dom.recentMatches, matches.slice(0, 5), { compact: true });
   renderMatchList(dom.matchList, matches);
   renderChampionCollection(matches);
   renderPublicProfile();
   renderAccount();
   renderResetTokenView();
+}
+
+function renderProfileHero(matches) {
+  const profile = state.user?.riotProfile;
+  const won = getWonChampionStats(matches).length;
+  const total = CHAMPIONS.length;
+  dom.profileHeroAvatar.src = getAccountAvatarSrc() || DEFAULT_AUTH_AVATAR;
+  dom.profileHeroName.textContent = profile ? `${profile.gameName}#${profile.tagLine}` : "ArenaTracker";
+
+  const meta = [];
+  if (profile?.region) meta.push(regionLabel(profile.region));
+  meta.push(`${won} / ${total} ${state.language === "en" ? "champions won" : "z wygraną"}`);
+  if (profile?.lastSyncedAt) {
+    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${formatDate(profile.lastSyncedAt)}`);
+  }
+  dom.profileHeroMeta.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
+
+  const canSync = Boolean(state.user?.riotProfile && state.backendAvailable && !state.isAutoSyncing);
+  dom.profileSyncButton.disabled = !canSync;
+  dom.exportProgressButton.disabled = !matches.length;
+  dom.profileSyncNote.textContent = state.isAutoSyncing
+    ? "Synchronizuję..."
+    : profile
+      ? state.language === "en"
+        ? "Manual sync scans the season and reuses cached matches."
+        : "Ręczna synchronizacja skanuje sezon i pomija mecze zapisane w cache."
+      : state.language === "en"
+        ? "Log in and save League profile to sync."
+        : "Zaloguj się i zapisz konto League, żeby synchronizować.";
 }
 
 function renderVictoryProgress(matches) {
@@ -784,7 +871,7 @@ function renderPublicChampionCard(stat, caption, complete = true) {
 
 function updateAccountAvatars() {
   const src = getAccountAvatarSrc();
-  [dom.accountAvatar, dom.accountDialogAvatar, dom.profileAvatar].forEach((image) => {
+  [dom.accountAvatar, dom.accountDialogAvatar, dom.profileAvatar, dom.profileHeroAvatar].forEach((image) => {
     image.src = src;
     image.classList.toggle("is-hidden", !src);
   });
@@ -792,6 +879,34 @@ function updateAccountAvatars() {
 
 function getAccountAvatarSrc() {
   return state.user?.riotProfile?.profileIconUrl || DEFAULT_AUTH_AVATAR;
+}
+
+function applyLanguage() {
+  document.documentElement.lang = state.language;
+  dom.languageSelect.value = state.language;
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    node.textContent = t(node.dataset.i18n);
+  });
+}
+
+function t(key) {
+  return translations[state.language]?.[key] || translations.pl[key] || key;
+}
+
+function regionLabel(region) {
+  const labels = {
+    br1: "BR",
+    eun1: "EUNE",
+    euw1: "EUW",
+    jp1: "JP",
+    kr: "KR",
+    la1: "LAN",
+    la2: "LAS",
+    na1: "NA",
+    oc1: "OCE",
+    tr1: "TR",
+  };
+  return labels[region] || String(region || "").toUpperCase();
 }
 
 function getSortedMatches() {
@@ -805,7 +920,7 @@ function renderMetrics(matches) {
 
   const cards = [
     {
-      label: "Mecze",
+      label: "Gry",
       value: games,
     },
     {
@@ -856,6 +971,35 @@ function renderPartnerStats(matches) {
       return root;
     }),
   );
+}
+
+function renderFriendRanking(matches) {
+  if (!dom.friendRanking) return;
+
+  if (!state.user) {
+    dom.friendRanking.replaceChildren(emptyState("Zaloguj się, żeby utworzyć grupę.", "Ranking znajomych jest prywatny dla konta."));
+    return;
+  }
+
+  const profile = state.user.riotProfile;
+  const row = {
+    name: profile ? profile.gameName : state.user.displayName,
+    progress: getWonChampionStats(matches).length,
+    total: CHAMPIONS.length,
+    avatar: getAccountAvatarSrc(),
+  };
+  dom.friendRanking.replaceChildren(renderFriendRow(row, 1));
+}
+
+function renderFriendRow(friend, index) {
+  const root = el("article", "friend-row");
+  root.append(
+    el("strong", "friend-rank", `${index}.`),
+    friend.avatar ? imageIcon(friend.avatar, "champion-icon") : el("span", "champion-icon is-empty", friend.name.slice(0, 2)),
+    el("span", "friend-name", friend.name),
+    el("strong", "friend-progress", `${friend.progress} / ${friend.total}`),
+  );
+  return root;
 }
 
 function renderChampionCollection(matches) {
@@ -951,13 +1095,15 @@ function renderMatchCard(match, options) {
   root.type = "button";
   root.dataset.matchDetail = match.id;
   const topLine = el("div", "match-topline");
+  const titleCluster = el("div", "match-title-cluster");
   const title = el("strong", "", formatTeamTitle(match));
+  titleCluster.append(renderTeamIconStack(match), title);
   const placement = el(
     "span",
     `placement-badge ${match.placement === 1 ? "top" : match.placement >= 5 ? "low" : ""}`,
     `#${match.placement}`,
   );
-  topLine.append(title, placement);
+  topLine.append(titleCluster, placement);
 
   const meta = el("div", "match-meta");
   meta.append(
@@ -965,16 +1111,39 @@ function renderMatchCard(match, options) {
     el("span", "tag", `Patch ${match.patch}`),
   );
 
-  const tags = el("div", "match-tags");
-  [...match.augments.slice(0, 3), ...match.items.slice(0, options.compact ? 1 : 3)].forEach((tag) => {
-    tags.append(renderTagPill(tag));
-  });
+  const augmentTags = renderAssetGroup("Augmenty", match.augments, options.compact ? 3 : 6);
+  const itemTags = renderAssetGroup("Itemy", match.items, options.compact ? 2 : 7);
 
   root.append(topLine, meta);
-  if (tags.childElementCount) root.append(tags);
+  if (augmentTags) root.append(augmentTags);
+  if (itemTags) root.append(itemTags);
   if (!options.compact && match.note) root.append(el("span", "match-note", match.note));
 
   return root;
+}
+
+function renderTeamIconStack(match) {
+  const stack = el("div", "match-champion-icons");
+  [match.champion, ...getPartnerLabels(match)].slice(0, 3).forEach((champion) => {
+    stack.append(renderChampionIcon(champion));
+  });
+  return stack;
+}
+
+function renderAssetGroup(label, tags, limit) {
+  const visibleTags = tags.slice(0, limit);
+  if (!visibleTags.length) return null;
+  const root = el("div", "match-asset-group");
+  root.append(el("span", "asset-group-label", label));
+  const list = el("div", "match-tags");
+  visibleTags.forEach((tag) => list.append(renderTagPill(tag)));
+  root.append(list);
+  return root;
+}
+
+function renderAssetTags(container, tags, emptyLabel) {
+  container.replaceChildren(...(tags || []).map((tag) => renderTagPill(tag)));
+  if (!container.childElementCount) container.replaceChildren(el("span", "tag", emptyLabel));
 }
 
 function renderTagPill(tag) {
@@ -1185,12 +1354,15 @@ async function syncRiotMatches(options = {}) {
   try {
     const data = await apiRequest("/api/riot/sync", {
       method: "POST",
-      body: { limit: RIOT_SYNC_LIMIT },
+      body: {
+        limit: options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT,
+        scope: options.deep ? "season" : "recent",
+      },
     });
     state.user = data.user;
     state.matches = data.matches.map(normalizeMatch).filter(Boolean);
     fillRiotProfileForm();
-    if (!options.automatic) showAccountMessage(`Zsynchronizowano ${data.scannedCount} meczów.`, "success");
+    if (!options.automatic) showAccountMessage(`Zsynchronizowano ${(data.scannedCount || 0) + (data.reusedCount || 0)} meczów.`, "success");
     render();
   } catch (error) {
     if (!options.automatic) showAccountMessage(error.message, "error");
@@ -1252,6 +1424,68 @@ function exportMatches() {
   link.click();
   URL.revokeObjectURL(url);
   announce("Eksport JSON przygotowany.");
+}
+
+async function exportProgressPng() {
+  const matches = getSortedMatches();
+  const wonStats = getWonChampionStats(matches);
+  const profile = state.user?.riotProfile;
+  const title = profile ? `${profile.gameName}#${profile.tagLine}` : "ArenaTracker";
+  const canvas = document.createElement("canvas");
+  canvas.width = 1200;
+  canvas.height = 630;
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#050505";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#f4f4ef";
+  ctx.font = "800 54px system-ui, sans-serif";
+  ctx.fillText(title, 64, 92);
+  ctx.fillStyle = "#9aa19c";
+  ctx.font = "700 26px system-ui, sans-serif";
+  ctx.fillText(`${wonStats.length} / ${CHAMPIONS.length} wygranych championów`, 64, 140);
+
+  const barX = 64;
+  const barY = 190;
+  const barW = 1072;
+  const barH = 34;
+  const percent = CHAMPIONS.length ? wonStats.length / CHAMPIONS.length : 0;
+  ctx.fillStyle = "#101212";
+  roundRect(ctx, barX, barY, barW, barH, 17);
+  ctx.fill();
+  const gradient = ctx.createLinearGradient(barX, 0, barX + barW, 0);
+  gradient.addColorStop(0, "#f4f4ef");
+  gradient.addColorStop(0.5, "#c9aa62");
+  gradient.addColorStop(1, "#87d48d");
+  ctx.fillStyle = gradient;
+  roundRect(ctx, barX, barY, Math.max(18, barW * percent), barH, 17);
+  ctx.fill();
+
+  ctx.font = "800 24px system-ui, sans-serif";
+  wonStats.slice(0, 28).forEach((stat, index) => {
+    const x = 64 + (index % 4) * 270;
+    const y = 290 + Math.floor(index / 4) * 44;
+    ctx.fillStyle = "#f4f4ef";
+    ctx.fillText(stat.champion, x, y);
+    ctx.fillStyle = "#9aa19c";
+    ctx.fillText(`${stat.wins} win`, x + 150, y);
+  });
+
+  const link = document.createElement("a");
+  link.download = `arenatracker-progress-${today()}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+  announce("PNG progresu przygotowany.");
+}
+
+function roundRect(ctx, x, y, width, height, radius) {
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.arcTo(x + width, y, x + width, y + height, radius);
+  ctx.arcTo(x + width, y + height, x, y + height, radius);
+  ctx.arcTo(x, y + height, x, y, radius);
+  ctx.arcTo(x, y, x + width, y, radius);
+  ctx.closePath();
 }
 
 function importMatches(event) {
@@ -1446,6 +1680,7 @@ function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
   const aliasId = aliases?.[normalizeLookupKey(text)] || "";
   const id = names?.[rawId] ? rawId : aliasId || rawId;
   const name = names?.[id] || text;
+  if (rawId && text === rawId && !names?.[rawId]) return null;
   if (!name) return null;
 
   return {

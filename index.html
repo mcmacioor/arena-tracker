@@ -8,8 +8,8 @@
       name="description"
       content="ArenaTracker to minimalistyczny tracker zwycięstw League of Legends Arena."
     />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -24,13 +24,20 @@
         <nav class="nav-list" aria-label="Główne widoki">
           <a class="nav-link" href="#matches" data-route="matches">
             <span class="nav-icon" aria-hidden="true">≡</span>
-            Mecze
+            <span data-i18n="nav.history">Historia</span>
           </a>
           <a class="nav-link" href="#champions" data-route="champions">
             <span class="nav-icon" aria-hidden="true">◇</span>
-            Wygrane
+            <span data-i18n="nav.wins">Wygrane</span>
           </a>
         </nav>
+        <div class="sidebar-footer">
+          <a class="coffee-link" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">☕</span>
+            <span data-i18n="actions.coffee">Postaw kawę</span>
+          </a>
+          <div class="ad-slot" aria-label="Reklama">Reklama</div>
+        </div>
       </aside>
 
       <main class="main">
@@ -56,20 +63,54 @@
           </div>
         </header>
 
-        <section class="hero-panel" aria-labelledby="appTitle">
-          <div class="hero-copy">
-            <p class="eyebrow">League of Legends Arena</p>
-            <h1 id="appTitle">ArenaTracker</h1>
+        <section class="profile-hero" aria-labelledby="profileHeroName">
+          <div class="profile-hero-main">
+            <img
+              class="profile-hero-avatar"
+              id="profileHeroAvatar"
+              src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png"
+              alt=""
+            />
+            <div class="profile-hero-copy">
+              <p class="eyebrow">League of Legends Arena</p>
+              <h1 id="profileHeroName">ArenaTracker</h1>
+              <div class="profile-hero-meta" id="profileHeroMeta"></div>
+            </div>
           </div>
+          <div class="profile-hero-actions">
+            <button class="primary-action" id="profileSyncButton" type="button" data-i18n="actions.sync">
+              Synchronizuj
+            </button>
+            <button class="ghost-action" id="exportProgressButton" type="button" data-i18n="actions.exportPng">
+              Eksport PNG
+            </button>
+            <label class="language-switch">
+              <span data-i18n="settings.language">Język</span>
+              <select id="languageSelect" aria-label="Język">
+                <option value="pl">PL</option>
+                <option value="en">EN</option>
+              </select>
+            </label>
+          </div>
+          <div class="profile-sync-note" id="profileSyncNote"></div>
         </section>
+
+        <nav class="profile-tabs" aria-label="Zakładki profilu">
+          <a class="nav-link" href="#dashboard" data-route="dashboard" data-i18n="tabs.summary">Podsumowanie</a>
+          <a class="nav-link" href="#matches" data-route="matches" data-i18n="tabs.history">Historia</a>
+          <a class="nav-link" href="#champions" data-route="champions" data-i18n="tabs.wins">Wygrane</a>
+          <a class="nav-link" href="#friends" data-route="friends" data-i18n="tabs.group">Moja grupa</a>
+        </nav>
+
+        <section class="ad-slot profile-ad" aria-label="Reklama">Reklama</section>
 
         <section class="view-stack">
           <div class="view is-visible" id="dashboardView" data-view="dashboard">
             <section class="progress-panel" aria-labelledby="progressTitle">
               <div class="progress-head">
                 <div>
-                  <p class="eyebrow">Progress</p>
-                  <h2 id="progressTitle">Champion wins</h2>
+                  <p class="eyebrow" data-i18n="progress.label">Postęp</p>
+                  <h2 id="progressTitle" data-i18n="progress.title">Wygrani championi</h2>
                 </div>
                 <strong id="progressCounter">0 / 0</strong>
               </div>
@@ -107,7 +148,7 @@
 
             <section class="panel" aria-labelledby="historyTitle">
               <div class="panel-head">
-                <h2 id="historyTitle">Mecze</h2>
+                  <h2 id="historyTitle" data-i18n="history.title">Historia</h2>
               </div>
               <div class="match-list" id="matchList"></div>
             </section>
@@ -141,6 +182,15 @@
             </section>
           </div>
 
+          <div class="view" id="friendsView" data-view="friends">
+            <section class="panel" aria-labelledby="friendRankingTitle">
+              <div class="panel-head">
+                <h2 id="friendRankingTitle" data-i18n="friends.title">Moja grupa</h2>
+              </div>
+              <div class="friend-ranking" id="friendRanking"></div>
+            </section>
+          </div>
+
           <div class="view public-profile-view" id="publicProfileView" data-view="public-profile">
             <section class="panel public-hero" aria-labelledby="publicProfileTitle">
               <div class="public-profile-head">
@@ -153,8 +203,8 @@
               <div class="progress-panel compact-progress" aria-labelledby="publicProgressTitle">
                 <div class="progress-head">
                   <div>
-                    <p class="eyebrow">Progress</p>
-                    <h3 id="publicProgressTitle">Champion wins</h3>
+                    <p class="eyebrow" data-i18n="progress.label">Postęp</p>
+                    <h3 id="publicProgressTitle" data-i18n="progress.title">Wygrani championi</h3>
                   </div>
                   <strong id="publicProgressCounter">0 / 0</strong>
                 </div>
@@ -179,7 +229,7 @@
               </section>
               <section class="panel" aria-labelledby="publicDuoTitle">
                 <div class="panel-head">
-                  <h2 id="publicDuoTitle">Top duo</h2>
+                  <h2 id="publicDuoTitle">Najlepsze duo</h2>
                 </div>
                 <div class="partner-stats" id="publicTopDuo"></div>
               </section>
@@ -380,8 +430,7 @@
       <section class="match-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="matchDetailTitle">
         <button class="dialog-close" id="matchDetailClose" type="button" aria-label="Zamknij">×</button>
         <div class="match-detail-head">
-          <h2 id="matchDetailTitle">Mecz</h2>
-          <span class="placement-badge" id="matchDetailPlacement">#1</span>
+          <h2 id="matchDetailTitle" data-i18n="matchDetails.title">Szczegóły meczu</h2>
         </div>
         <div class="detail-stats" id="matchDetailStats"></div>
         <div class="match-detail-section">
@@ -389,8 +438,12 @@
           <div class="team-detail-list" id="matchDetailTeam"></div>
         </div>
         <div class="match-detail-section">
-          <h3>Augmenty i itemy</h3>
-          <div class="match-tags detail-tags" id="matchDetailTags"></div>
+          <h3>Augmenty</h3>
+          <div class="match-tags detail-tags" id="matchDetailAugments"></div>
+        </div>
+        <div class="match-detail-section">
+          <h3>Itemy</h3>
+          <div class="match-tags detail-tags" id="matchDetailItems"></div>
         </div>
       </section>
     </div>
@@ -402,7 +455,7 @@
         <span>Zaloguj się i zsynchronizuj konto League.</span>
       </div>
     </template>
-    <script src="assets/game-data.js"></script>
-    <script src="app.js" defer></script>
+    <script src="/assets/game-data.js"></script>
+    <script src="/app.js" defer></script>
   </body>
 </html>

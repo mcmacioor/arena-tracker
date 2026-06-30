@@ -122,9 +122,14 @@ try {
   assert(metrics[1].includes("2"), "Wins metric did not update");
   const dashboardNavMissing = await evalPage(
     cdp,
-    `document.querySelector('[data-route="dashboard"]') == null`,
+    `document.querySelector('.sidebar [data-route="dashboard"]') == null`,
   );
   assert(dashboardNavMissing, "Sidebar should not contain duplicate Dashboard link");
+  const profileTabsVisible = await evalPage(
+    cdp,
+    `document.querySelector('.profile-tabs [data-route="dashboard"]') != null`,
+  );
+  assert(profileTabsVisible, "Profile tabs should include the summary route");
 
   await evalPage(cdp, `location.hash = "champions"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
@@ -168,6 +173,12 @@ try {
   const matchText = await evalPage(cdp, `document.querySelector("#matchList").innerText`);
   assert(matchText.includes("Protein Shake"), "Numeric augment id should resolve to a name");
   assert(!matchText.includes("1324"), "Numeric augment id should not be rendered raw");
+  assert(matchText.toLowerCase().includes("augmenty") && matchText.toLowerCase().includes("itemy"), "Match cards should split augments and items");
+  const matchChampionIconCount = await evalPage(
+    cdp,
+    `document.querySelectorAll("#matchList .match-champion-icons .champion-icon").length`,
+  );
+  assert(matchChampionIconCount > 0, "Match history should show champion icons");
   await evalPage(cdp, `document.querySelector("[data-match-detail]").click()`);
   const matchDetailOpen = await evalPage(
     cdp,
@@ -176,7 +187,19 @@ try {
   assert(matchDetailOpen, "Match detail modal should open after clicking a match");
   const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailOverlay").innerText`);
   assert(matchDetailText.includes("Protein Shake"), "Match detail should include resolved augment names");
+  const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailTitle").textContent`);
+  assert(matchDetailTitle.includes("Szczeg"), "Match detail title should stay generic");
+  const modalPlacementBadgeMissing = await evalPage(
+    cdp,
+    `document.querySelector("#matchDetailOverlay .match-detail-head .placement-badge") == null`,
+  );
+  assert(modalPlacementBadgeMissing, "Match detail header should not duplicate placement badge");
   await evalPage(cdp, `document.querySelector("#matchDetailClose").click()`);
+
+  await evalPage(cdp, `location.hash = "friends"`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
+  const friendsText = await evalPage(cdp, `document.querySelector("#friendRanking").innerText`);
+  assert(friendsText.includes("Zaloguj"), "Friend ranking should require login");
 
   await evalPage(cdp, `document.querySelector("#accountMenuButton").click()`);
   const accountOverlayOpen = await evalPage(
