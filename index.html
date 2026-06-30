@@ -13,26 +13,14 @@
   </head>
   <body>
     <div class="app-shell">
-      <aside class="sidebar" aria-label="Nawigacja ArenaTracker">
-        <a class="brand" href="#dashboard" aria-label="ArenaTracker dashboard">
-          <span class="brand-mark" aria-hidden="true">AT</span>
-          <span>
-            <strong>ArenaTracker</strong>
-          </span>
-        </a>
-
-        <div class="sidebar-footer">
-          <a class="coffee-link" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
-            <span aria-hidden="true">☕</span>
-            <span data-i18n="actions.coffee">Postaw kawę</span>
-          </a>
-          <div class="ad-slot" aria-label="Reklama">Reklama</div>
-        </div>
-      </aside>
-
       <main class="main">
         <header class="topbar" aria-label="Konto użytkownika">
-          <div class="topbar-spacer"></div>
+          <button class="brand top-brand" id="brandHomeButton" type="button" aria-label="ArenaTracker">
+            <span class="brand-mark" aria-hidden="true">AT</span>
+            <span>
+              <strong>ArenaTracker</strong>
+            </span>
+          </button>
           <form class="player-search-form top-player-search" data-player-search-form data-search-action="open">
             <select name="region" aria-label="Serwer">
               <option value="euw1">EUW</option>
@@ -48,6 +36,10 @@
             </div>
             <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
           </form>
+          <a class="coffee-link top-coffee" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">☕</span>
+            <span data-i18n="actions.coffee">Postaw kawę</span>
+          </a>
           <label class="language-switch top-language-switch">
             <span data-i18n="settings.language">Język</span>
             <select id="languageSelect" aria-label="Język">
@@ -271,6 +263,7 @@
                 <div>
                   <p class="eyebrow">Publiczny profil</p>
                   <h2 id="publicProfileTitle">ArenaTracker</h2>
+                  <div class="profile-hero-meta public-profile-meta" id="publicProfileMeta"></div>
                 </div>
               </div>
               <div class="progress-panel compact-progress" aria-labelledby="publicProgressTitle">

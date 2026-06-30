@@ -120,6 +120,16 @@ try {
     `document.querySelector('.sidebar .nav-link') == null`,
   );
   assert(dashboardNavMissing, "Sidebar should not contain duplicate tab navigation");
+  const sidebarRemoved = await evalPage(
+    cdp,
+    `document.querySelector(".sidebar") == null`,
+  );
+  assert(sidebarRemoved, "Legacy sidebar should be removed");
+  const topbarBrandVisible = await evalPage(
+    cdp,
+    `getComputedStyle(document.querySelector("#brandHomeButton")).display !== "none"`,
+  );
+  assert(topbarBrandVisible, "Top bar brand should be visible");
 
   await evalPage(cdp, `location.hash = "champions"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
@@ -201,6 +211,11 @@ try {
     `document.querySelectorAll("#matchDetailPagePlayers .player-detail-card").length`,
   );
   assert(playerCards >= 3, "Match detail should include the team fallback players");
+  const teamGroups = await evalPage(
+    cdp,
+    `document.querySelectorAll("#matchDetailPagePlayers .match-team-group").length`,
+  );
+  assert(teamGroups >= 1, "Match detail should group players by team");
 
   await evalPage(cdp, `location.hash = "friends"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);

@@ -268,6 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function cacheDom() {
   Object.assign(dom, {
     accountMenu: document.getElementById("accountMenu"),
+    brandHomeButton: document.getElementById("brandHomeButton"),
     accountMenuButton: document.getElementById("accountMenuButton"),
     accountAvatar: document.getElementById("accountAvatar"),
     accountMenuLabel: document.getElementById("accountMenuLabel"),
@@ -320,6 +321,7 @@ function cacheDom() {
     matchDetailPageItems: document.getElementById("matchDetailPageItems"),
     publicProfileAvatar: document.getElementById("publicProfileAvatar"),
     publicProfileTitle: document.getElementById("publicProfileTitle"),
+    publicProfileMeta: document.getElementById("publicProfileMeta"),
     publicProgressCounter: document.getElementById("publicProgressCounter"),
     publicVictoryProgress: document.getElementById("publicVictoryProgress"),
     publicWonChampions: document.getElementById("publicWonChampions"),
@@ -389,6 +391,8 @@ function bindEvents() {
   dom.languageSelect.value = state.language;
   applyLanguage();
 
+  dom.brandHomeButton?.addEventListener("click", handleBrandHomeClick);
+
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       closeAccountOverlay();
@@ -404,12 +408,13 @@ function bindEvents() {
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
 
   dom.profileSyncButton.addEventListener("click", async () => {
-    await syncRiotMatches({ automatic: false });
+    await syncRiotMatches({ automatic: false, deep: true });
   });
 
   dom.exportProgressButton.addEventListener("click", exportProgressPng);
 
   dom.playerSearchForms.forEach((form) => {
+    updateSearchPlaceholder(form);
     form.addEventListener("submit", handlePlayerSearchSubmit);
     form.addEventListener("input", handlePlayerSearchInput);
     form.addEventListener("click", handlePlayerSearchClick);
@@ -527,6 +532,17 @@ function bindEvents() {
     event.preventDefault();
     await saveRiotProfile();
   });
+}
+
+function handleBrandHomeClick() {
+  if (state.user) {
+    window.location.hash = "dashboard";
+    return;
+  }
+
+  const input = document.querySelector(".top-player-search input[name='riotId']")
+    || document.querySelector(".landing-player-search input[name='riotId']");
+  input?.focus();
 }
 
 function setActiveRoute(route) {
@@ -651,8 +667,8 @@ function renderMatchPlayers(match) {
     const root = el("article", "match-team-group");
     const header = el("div", "match-team-head");
     header.append(
-      el("strong", "", `Drużyna ${index + 1}`),
-      el("span", "", `#${group.placement}`),
+      el("strong", "", `Drużyna #${group.placement}`),
+      el("span", "", `${group.players.length} graczy`),
     );
     const list = el("div", "match-team-players");
     group.players.forEach((player) => list.append(renderPlayerCard(player)));
@@ -752,6 +768,7 @@ function handlePlayerSearchSubmit(event) {
 function handlePlayerSearchInput(event) {
   const form = event.currentTarget;
   if (!["INPUT", "SELECT"].includes(event.target.tagName)) return;
+  updateSearchPlaceholder(form);
   window.clearTimeout(state.searchTimers.get(form));
   state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 220));
 }
@@ -769,7 +786,7 @@ async function updateSearchResults(form) {
   const formData = new FormData(form);
   const query = cleanText(formData.get("riotId"));
   const region = normalizeRegion(formData.get("region"));
-  if (query.length < 2) {
+  if (query.length < 1) {
     hideSearchResults(form);
     return;
   }
@@ -791,15 +808,12 @@ async function updateSearchResults(form) {
 
 function renderSearchResults(form, results, query) {
   const resultsBox = form.querySelector("[data-search-results]");
-  resultsBox.classList.add("is-open");
   if (!results.length) {
-    const hint = parseRiotId(query)
-      ? "Nie znaleziono profilu."
-      : "Wpisz pełny Riot ID, np. No Chrystus#2137.";
-    resultsBox.replaceChildren(el("div", "search-results-status", hint));
+    hideSearchResults(form);
     return;
   }
 
+  resultsBox.classList.add("is-open");
   const title = el("div", "search-results-title", "Summoner Profiles");
   const rows = results.map((result, index) => {
     const row = el("button", "search-result-row");
@@ -813,6 +827,13 @@ function renderSearchResults(form, results, query) {
     return row;
   });
   resultsBox.replaceChildren(title, ...rows);
+}
+
+function updateSearchPlaceholder(form) {
+  const input = form.querySelector('input[name="riotId"]');
+  const region = normalizeRegion(form.querySelector('select[name="region"]')?.value);
+  if (!input) return;
+  input.placeholder = `Nazwa gry + #${regionLabel(region)}`;
 }
 
 function selectSearchResult(form, result) {
@@ -1088,6 +1109,7 @@ function renderPublicProfile() {
 
   if (!publicState || !state.publicRoute) {
     dom.publicProfileTitle.textContent = "ArenaTracker";
+    dom.publicProfileMeta?.replaceChildren();
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren();
     dom.publicMissingChampions.replaceChildren();
@@ -1097,6 +1119,7 @@ function renderPublicProfile() {
 
   if (publicState.loading) {
     dom.publicProfileTitle.textContent = "Synchronizuję...";
+    dom.publicProfileMeta?.replaceChildren();
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren(emptyState("Ładuję profil.", "Chwila."));
     dom.publicMissingChampions.replaceChildren();
@@ -1106,6 +1129,7 @@ function renderPublicProfile() {
 
   if (publicState.error) {
     dom.publicProfileTitle.textContent = "Nie znaleziono profilu";
+    dom.publicProfileMeta?.replaceChildren();
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren(emptyState(publicState.error, "Sprawdź region i nazwę w linku."));
     dom.publicMissingChampions.replaceChildren();
@@ -1116,6 +1140,14 @@ function renderPublicProfile() {
   const data = publicState.data;
   dom.publicProfileAvatar.src = data.profile.profileIconUrl || DEFAULT_AUTH_AVATAR;
   dom.publicProfileTitle.textContent = `${data.profile.gameName}#${data.profile.tagLine}`;
+  const meta = [
+    regionLabel(data.profile.region),
+    `${data.progress.won} / ${data.progress.total} ${state.language === "en" ? "champions won" : "z wygraną"}`,
+  ];
+  if (data.profile.lastSyncedAt) {
+    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${relativeTime(data.profile.lastSyncedAt)}`);
+  }
+  dom.publicProfileMeta?.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
   renderPublicProgress(data.progress);
   dom.publicWonChampions.replaceChildren(
     ...(data.wonChampions.length
@@ -2067,7 +2099,7 @@ function normalizePlayer(value) {
     riotId,
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
-    teamId: cleanText(value.teamId || value.playerSubteamId),
+    teamId: cleanText(value.teamId ?? value.playerSubteamId),
   };
 }
 
@@ -2175,7 +2207,7 @@ function safeDecode(value) {
 }
 
 function cleanText(value) {
-  return String(value || "").trim().replace(/\s+/g, " ");
+  return String(value ?? "").trim().replace(/\s+/g, " ");
 }
 
 function average(values) {

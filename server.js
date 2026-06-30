@@ -18,7 +18,8 @@ const ARENA_QUEUE_IDS = [1750];
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 300;
-const PUBLIC_PROFILE_MATCH_LIMIT = 40;
+const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
+const PUBLIC_PROFILE_CACHE_TTL_MS = 60 * 60 * 1000;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -404,11 +405,26 @@ async function getPublicProfile(req, res, url) {
   });
 
   if (!user) {
-    const riotProfile = await buildRiotPublicProfile(region, slug).catch(() => null);
-    if (riotProfile) {
-      sendJson(res, 200, riotProfile);
+    const cached = findCachedPublicProfile(db, region, slug);
+    const shouldRefresh = !cached || isPublicProfileCacheStale(cached);
+
+    if (!shouldRefresh && cached) {
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
       return;
     }
+
+    const fetched = await fetchRiotPublicProfile(region, slug).catch(() => null);
+    if (fetched) {
+      await savePublicProfileCache(fetched);
+      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
+      return;
+    }
+
+    if (cached) {
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+      return;
+    }
+
     sendJson(res, 404, { error: "Nie znaleziono publicznego profilu." });
     return;
   }
@@ -424,7 +440,7 @@ async function getPublicProfile(req, res, url) {
 async function searchRiotProfiles(req, res, url) {
   const query = cleanText(url.searchParams.get("q"));
   const region = normalizePublicRegion(url.searchParams.get("region")) || "euw1";
-  if (query.length < 2) {
+  if (query.length < 1) {
     sendJson(res, 200, { results: [] });
     return;
   }
@@ -440,6 +456,18 @@ async function searchRiotProfiles(req, res, url) {
     const haystack = normalizeSlug(`${profile.gameName} ${profile.tagLine} ${slug}`);
     if (!haystack.includes(normalizedQuery)) return;
     results.push(searchResultFromProfile(profile, "ArenaTracker"));
+  });
+  db.publicProfiles.forEach((publicProfile) => {
+    const profile = publicProfile.riotProfile;
+    if (!profile?.gameName || !profile?.tagLine) return;
+    if (normalizePublicRegion(profile.region) !== region) return;
+    const slug = publicProfileSlug(profile);
+    const haystack = normalizeSlug(`${profile.gameName} ${profile.tagLine} ${slug}`);
+    if (!haystack.includes(normalizedQuery)) return;
+    const result = searchResultFromProfile(profile, "Riot cache");
+    if (!results.some((item) => normalizeSlug(item.slug) === normalizeSlug(result.slug))) {
+      results.push(result);
+    }
   });
 
   const exact = parseRiotIdQuery(query);
@@ -468,7 +496,7 @@ async function searchRiotProfiles(req, res, url) {
   sendJson(res, 200, { results: results.slice(0, 8) });
 }
 
-async function buildRiotPublicProfile(region, slug) {
+async function fetchRiotPublicProfile(region, slug) {
   if (!process.env.RIOT_API_KEY) return null;
   const parsed = parsePublicProfileSlug(slug);
   if (!parsed) return null;
@@ -490,12 +518,46 @@ async function buildRiotPublicProfile(region, slug) {
     region,
     puuid: account.puuid,
     profileIconId: summoner?.profileIconId || null,
+    lastSyncedAt: new Date().toISOString(),
   };
   const matches = details
     .map((detail) => mapRiotMatch(detail, account.puuid, "public"))
     .filter(Boolean)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
-  return buildPublicProfile({ riotProfile: profile }, matches);
+  return {
+    id: publicProfileCacheId(profile.region, publicProfileSlug(profile)),
+    riotProfile: profile,
+    matches,
+    updatedAt: profile.lastSyncedAt,
+  };
+}
+
+function findCachedPublicProfile(db, region, slug) {
+  const id = publicProfileCacheId(region, slug);
+  return db.publicProfiles.find((profile) => profile.id === id);
+}
+
+function isPublicProfileCacheStale(profile) {
+  const updatedAt = Date.parse(profile.updatedAt || profile.riotProfile?.lastSyncedAt || "");
+  return !updatedAt || Date.now() - updatedAt > PUBLIC_PROFILE_CACHE_TTL_MS;
+}
+
+async function savePublicProfileCache(profile) {
+  await mutateDb((db) => {
+    const id = publicProfileCacheId(profile.riotProfile.region, publicProfileSlug(profile.riotProfile));
+    const stored = {
+      ...profile,
+      id,
+      updatedAt: profile.updatedAt || new Date().toISOString(),
+    };
+    const index = db.publicProfiles.findIndex((item) => item.id === id);
+    if (index >= 0) db.publicProfiles[index] = stored;
+    else db.publicProfiles.unshift(stored);
+  });
+}
+
+function publicProfileCacheId(region, slug) {
+  return `${normalizePublicRegion(region)}:${normalizeSlug(slug)}`;
 }
 
 function searchResultFromProfile(profile, source) {
@@ -531,6 +593,7 @@ function buildPublicProfile(user, matches) {
       region: profile.region,
       slug: publicProfileSlug(profile),
       profileIconUrl: profileIconUrl(profile.profileIconId),
+      lastSyncedAt: profile.lastSyncedAt || user.updatedAt || null,
     },
     progress: {
       won: wonChampions.length,
@@ -975,9 +1038,9 @@ async function readJsonBody(req) {
 async function readDb() {
   await mkdir(DATA_DIR, { recursive: true });
   try {
-    return JSON.parse(await readFile(DB_PATH, "utf8"));
+    return normalizeDb(JSON.parse(await readFile(DB_PATH, "utf8")));
   } catch {
-    return { users: [], matches: [] };
+    return normalizeDb({});
   }
 }
 
@@ -991,6 +1054,16 @@ async function mutateDb(mutator) {
   }
   await writeFile(DB_PATH, `${JSON.stringify(db, null, 2)}\n`, "utf8");
   return db;
+}
+
+function normalizeDb(db) {
+  const source = db && typeof db === "object" ? db : {};
+  return {
+    ...source,
+    users: Array.isArray(source.users) ? source.users : [],
+    matches: Array.isArray(source.matches) ? source.matches : [],
+    publicProfiles: Array.isArray(source.publicProfiles) ? source.publicProfiles : [],
+  };
 }
 
 async function writeResetOutboxMessage(message) {
@@ -1055,7 +1128,7 @@ function normalizePlayer(value) {
     riotId,
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
-    teamId: cleanText(value.teamId || value.playerSubteamId),
+    teamId: cleanText(value.teamId ?? value.playerSubteamId),
   };
 }
 
@@ -1107,7 +1180,7 @@ function sendText(res, status, text) {
 }
 
 function cleanText(value) {
-  return String(value || "").trim().replace(/\s+/g, " ");
+  return String(value ?? "").trim().replace(/\s+/g, " ");
 }
 
 function resolveItemName(value) {
