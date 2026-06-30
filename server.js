@@ -480,9 +480,10 @@ function getPartnerStatsForMatches(matches) {
   matches.forEach((match) => {
     const labels = getPartnerLabels(match, { preferPlayers: true });
     labels.forEach((name) => {
-      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0 });
+      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0, placements: [] });
       const stat = partners.get(name);
       stat.games += 1;
+      stat.placements.push(match.placement);
       if (match.placement === 1) stat.wins += 1;
     });
   });
@@ -491,8 +492,9 @@ function getPartnerStatsForMatches(matches) {
     .map((stat) => ({
       ...stat,
       winrate: stat.games ? stat.wins / stat.games : 0,
+      averagePlacement: average(stat.placements),
     }))
-    .sort((a, b) => b.wins - a.wins || b.games - a.games || a.name.localeCompare(b.name));
+    .sort((a, b) => b.games - a.games || a.averagePlacement - b.averagePlacement || a.name.localeCompare(b.name));
 }
 
 async function syncRiotMatches(req, res, user) {
@@ -529,8 +531,11 @@ async function syncRiotMatches(req, res, user) {
 
   matchIds.forEach((matchId) => {
     const existingMatch = existingRiotMatches.get(matchId);
-    if (existingMatch) reusedMatches.push(existingMatch);
-    else idsToFetch.push(matchId);
+    if (existingMatch && Array.isArray(existingMatch.players) && existingMatch.players.length) {
+      reusedMatches.push(existingMatch);
+    } else {
+      idsToFetch.push(matchId);
+    }
   });
 
   const matchDetails = [];
@@ -558,9 +563,21 @@ async function syncRiotMatches(req, res, user) {
       lastSyncedAt: new Date().toISOString(),
     };
 
-    db.matches = db.matches.filter(
-      (match) => !(match.userId === user.id && match.source?.type === "riot"),
-    );
+    const importedByKey = new Map(imported.map((match) => [matchDedupeKey(match), match]));
+    db.matches = db.matches.map((match) => {
+      const key = matchDedupeKey(match);
+      if (match.userId === user.id && importedByKey.has(key)) {
+        const replacement = importedByKey.get(key);
+        importedByKey.delete(key);
+        return {
+          ...match,
+          ...replacement,
+          id: match.id || replacement.id,
+          createdAt: match.createdAt || replacement.createdAt,
+        };
+      }
+      return match;
+    });
     const existingKeys = new Set(db.matches.map(matchDedupeKey));
     imported.forEach((match) => {
       const key = matchDedupeKey(match);
@@ -685,17 +702,26 @@ function mapRiotMatch(detail, puuid, userId) {
   if (!ARENA_QUEUE_IDS.includes(Number(detail.info?.queueId))) return null;
   const participant = detail.info.participants.find((item) => item.puuid === puuid);
   if (!participant) return null;
+  const placementFor = (item) => clamp(Number(item.placement || item.subteamPlacement || (item.win ? 1 : ARENA_MAX_PLACEMENT)), 1, ARENA_MAX_PLACEMENT);
   const teammates = detail.info.participants
     .filter((item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId)
     .map((item) => ({
       champion: canonicalChampionName(item.championName) || "Unknown",
       riotId: formatRiotId(item),
       puuid: item.puuid,
+      placement: placementFor(item),
     }));
+  const players = detail.info.participants.map((item) => ({
+    champion: canonicalChampionName(item.championName) || "Unknown",
+    riotId: formatRiotId(item),
+    puuid: item.puuid,
+    placement: placementFor(item),
+    teamId: cleanText(item.playerSubteamId),
+  }));
 
   const patch = cleanText(detail.info.gameVersion).split(".").slice(0, 2).join(".") || "unknown";
   const date = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString().slice(0, 10);
-  const placement = Number(participant.placement || participant.subteamPlacement || (participant.win ? 1 : ARENA_MAX_PLACEMENT));
+  const placement = placementFor(participant);
   const items = [0, 1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`item${slot}`])
     .filter(Boolean)
@@ -715,6 +741,7 @@ function mapRiotMatch(detail, puuid, userId) {
     champion: canonicalChampionName(participant.championName) || "Unknown",
     partner: teammates.map((teammate) => teammate.champion).join(" + "),
     teammates,
+    players,
     placement: clamp(placement, 1, ARENA_MAX_PLACEMENT),
     ratingDelta: 0,
     augments,
@@ -756,6 +783,9 @@ function normalizeMatch(match, userId, sourceType) {
   const teammates = Array.isArray(match.teammates)
     ? match.teammates.map(normalizeTeammate).filter(Boolean)
     : [];
+  const players = Array.isArray(match.players)
+    ? match.players.map(normalizePlayer).filter(Boolean)
+    : [];
   return {
     id: cleanText(match.id) || makeId("match"),
     userId,
@@ -764,6 +794,7 @@ function normalizeMatch(match, userId, sourceType) {
     champion: canonicalChampionName(match.champion) || "Unknown",
     partner: cleanText(match.partner),
     teammates,
+    players,
     placement: clamp(Number(match.placement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
@@ -908,6 +939,20 @@ function normalizeTeammate(value) {
     champion,
     riotId,
     puuid: cleanText(value.puuid),
+  };
+}
+
+function normalizePlayer(value) {
+  if (!value || typeof value !== "object") return null;
+  const champion = canonicalChampionName(value.champion);
+  const riotId = cleanText(value.riotId);
+  if (!champion && !riotId) return null;
+  return {
+    champion,
+    riotId,
+    puuid: cleanText(value.puuid),
+    placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
+    teamId: cleanText(value.teamId || value.playerSubteamId),
   };
 }
 

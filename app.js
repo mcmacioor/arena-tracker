@@ -3,6 +3,7 @@ const GAME_DATA = globalThis.ARENA_GAME_DATA || {};
 const DATA_DRAGON_VERSION = GAME_DATA.version || "16.13.1";
 const STORAGE_KEY = "arenatracker.matches.v1";
 const LANGUAGE_STORAGE_KEY = "arenatracker.language.v1";
+const FRIENDS_STORAGE_KEY = "arenatracker.friends.v1";
 const CHAMPION_ICONS = GAME_DATA.championIcons || {};
 const CHAMPION_KEYS = GAME_DATA.championKeys || {};
 const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
@@ -18,16 +19,17 @@ const translations = {
     "actions.coffee": "Postaw kawę",
     "settings.language": "Język",
     "nav.history": "Historia",
-    "nav.wins": "Wygrane",
+    "nav.wins": "Championi",
     "tabs.summary": "Podsumowanie",
     "tabs.history": "Historia",
-    "tabs.wins": "Wygrane",
+    "tabs.wins": "Championi",
     "tabs.group": "Moja grupa",
     "progress.label": "Postęp",
     "progress.title": "Wygrani championi",
     "history.title": "Historia",
     "friends.title": "Moja grupa",
     "matchDetails.title": "Szczegóły meczu",
+    "actions.showMore": "Pokaż więcej",
   },
   en: {
     "actions.sync": "Sync",
@@ -35,16 +37,17 @@ const translations = {
     "actions.coffee": "Buy coffee",
     "settings.language": "Language",
     "nav.history": "History",
-    "nav.wins": "Wins",
+    "nav.wins": "Champions",
     "tabs.summary": "Summary",
     "tabs.history": "History",
-    "tabs.wins": "Wins",
+    "tabs.wins": "Champions",
     "tabs.group": "My group",
     "progress.label": "Progress",
     "progress.title": "Champion wins",
     "history.title": "History",
     "friends.title": "My group",
     "matchDetails.title": "Match details",
+    "actions.showMore": "Show more",
   },
 };
 
@@ -226,6 +229,7 @@ const CHAMPIONS = GAME_DATA.champions || [
 
 const state = {
   activeRoute: "dashboard",
+  activeMatchId: "",
   matches: [],
   user: null,
   publicProfile: null,
@@ -235,6 +239,9 @@ const state = {
   riotStatus: null,
   resetToken: "",
   isAutoSyncing: false,
+  visibleMatchCount: 8,
+  friends: loadFriends(),
+  friendProfiles: new Map(),
   filters: {
     championSearch: "",
     collectionMode: "won",
@@ -263,6 +270,8 @@ function cacheDom() {
     accountMenuButton: document.getElementById("accountMenuButton"),
     accountAvatar: document.getElementById("accountAvatar"),
     accountMenuLabel: document.getElementById("accountMenuLabel"),
+    landingSearch: document.getElementById("landingSearch"),
+    playerSearchForms: document.querySelectorAll("[data-player-search-form]"),
     profileHeroAvatar: document.getElementById("profileHeroAvatar"),
     profileHeroName: document.getElementById("profileHeroName"),
     profileHeroMeta: document.getElementById("profileHeroMeta"),
@@ -285,6 +294,7 @@ function cacheDom() {
     friendRanking: document.getElementById("friendRanking"),
     recentMatches: document.getElementById("recentMatches"),
     matchList: document.getElementById("matchList"),
+    showMoreMatchesButton: document.getElementById("showMoreMatchesButton"),
     collectionStatus: document.getElementById("collectionStatus"),
     championCollection: document.getElementById("championCollection"),
     championDetailOverlay: document.getElementById("championDetailOverlay"),
@@ -302,6 +312,11 @@ function cacheDom() {
     matchDetailTeam: document.getElementById("matchDetailTeam"),
     matchDetailAugments: document.getElementById("matchDetailAugments"),
     matchDetailItems: document.getElementById("matchDetailItems"),
+    matchDetailPageTitle: document.getElementById("matchDetailPageTitle"),
+    matchDetailPageStats: document.getElementById("matchDetailPageStats"),
+    matchDetailPagePlayers: document.getElementById("matchDetailPagePlayers"),
+    matchDetailPageAugments: document.getElementById("matchDetailPageAugments"),
+    matchDetailPageItems: document.getElementById("matchDetailPageItems"),
     publicProfileAvatar: document.getElementById("publicProfileAvatar"),
     publicProfileTitle: document.getElementById("publicProfileTitle"),
     publicProgressCounter: document.getElementById("publicProgressCounter"),
@@ -309,6 +324,9 @@ function cacheDom() {
     publicWonChampions: document.getElementById("publicWonChampions"),
     publicMissingChampions: document.getElementById("publicMissingChampions"),
     publicTopDuo: document.getElementById("publicTopDuo"),
+    friendForm: document.getElementById("friendForm"),
+    friendRiotId: document.getElementById("friendRiotId"),
+    friendRegion: document.getElementById("friendRegion"),
     accountTitle: document.getElementById("accountTitle"),
     accountStatus: document.getElementById("accountStatus"),
     authForms: document.getElementById("authForms"),
@@ -390,6 +408,10 @@ function bindEvents() {
 
   dom.exportProgressButton.addEventListener("click", exportProgressPng);
 
+  dom.playerSearchForms.forEach((form) => {
+    form.addEventListener("submit", handlePlayerSearchSubmit);
+  });
+
   dom.languageSelect.addEventListener("change", () => {
     state.language = dom.languageSelect.value === "en" ? "en" : "pl";
     localStorage.setItem(LANGUAGE_STORAGE_KEY, state.language);
@@ -405,6 +427,11 @@ function bindEvents() {
   dom.championSortSelect.addEventListener("change", () => {
     state.filters.collectionSort = dom.championSortSelect.value;
     renderChampionCollection(getSortedMatches());
+  });
+
+  dom.showMoreMatchesButton.addEventListener("click", () => {
+    state.visibleMatchCount += 8;
+    renderHistoryMatches(getSortedMatches());
   });
 
   dom.collectionModeButtons.forEach((button) => {
@@ -432,6 +459,12 @@ function bindEvents() {
 
   dom.championDetailBackdrop.addEventListener("click", closeChampionDetail);
   dom.championDetailClose.addEventListener("click", closeChampionDetail);
+  dom.championDetailHistory.addEventListener("click", (event) => {
+    const row = event.target.closest("[data-match-detail]");
+    if (!row) return;
+    closeChampionDetail();
+    openMatchDetail(row.dataset.matchDetail);
+  });
 
   [dom.matchList, dom.recentMatches].forEach((container) => {
     container.addEventListener("click", (event) => {
@@ -443,6 +476,18 @@ function bindEvents() {
 
   dom.matchDetailBackdrop.addEventListener("click", closeMatchDetail);
   dom.matchDetailClose.addEventListener("click", closeMatchDetail);
+  dom.matchDetailPagePlayers.addEventListener("click", (event) => {
+    const player = event.target.closest("[data-player-profile]");
+    if (!player) return;
+    openPlayerProfile(player.dataset.playerProfile, player.dataset.playerRegion);
+  });
+
+  dom.friendForm.addEventListener("submit", handleFriendSubmit);
+  dom.friendRanking.addEventListener("click", (event) => {
+    const friend = event.target.closest("[data-friend-profile]");
+    if (!friend) return;
+    openPlayerProfile(friend.dataset.friendProfile, friend.dataset.friendRegion);
+  });
 
   dom.authSwitches.forEach((switchButton) => {
     switchButton.addEventListener("click", () => setAuthTab(switchButton.dataset.authSwitch));
@@ -479,6 +524,7 @@ function bindEvents() {
 function setActiveRoute(route) {
   state.activeRoute = route;
   document.body.classList.toggle("is-public-route", route === "public-profile");
+  document.body.classList.toggle("is-guest-home", !state.user && route === "dashboard" && !state.publicRoute);
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.toggle("is-active", link.dataset.route === route);
   });
@@ -536,7 +582,9 @@ function openChampionDetail(champion) {
   dom.championDetailHistory.replaceChildren(
     ...(matches.length
       ? matches.map((match) => {
-          const row = el("article", "detail-history-row");
+          const row = el("button", "detail-history-row");
+          row.type = "button";
+          row.dataset.matchDetail = match.id;
           row.append(
             el("strong", "", `#${match.placement}`),
             el("span", "", formatTeamTitle(match)),
@@ -555,25 +603,57 @@ function closeChampionDetail() {
 }
 
 function openMatchDetail(matchId) {
-  const match = state.matches.find((item) => item.id === matchId);
-  if (!match) return;
-
-  dom.matchDetailTitle.textContent = t("matchDetails.title");
-  dom.matchDetailStats.replaceChildren(
-    renderDetailStat("Data", formatDate(match.date)),
-    renderDetailStat("Patch", match.patch),
-    renderDetailStat("Miejsce", `#${match.placement}`),
-  );
-  dom.matchDetailTeam.replaceChildren(...renderMatchTeam(match));
-  renderAssetTags(dom.matchDetailAugments, match.augments, "Brak augmentów");
-  renderAssetTags(dom.matchDetailItems, match.items, "Brak itemów");
-  dom.matchDetailOverlay.classList.add("is-open");
-  dom.matchDetailOverlay.setAttribute("aria-hidden", "false");
+  if (!matchId) return;
+  window.location.hash = `match/${encodeURIComponent(matchId)}`;
 }
 
 function closeMatchDetail() {
   dom.matchDetailOverlay.classList.remove("is-open");
   dom.matchDetailOverlay.setAttribute("aria-hidden", "true");
+}
+
+function renderMatchDetailPage() {
+  if (!dom.matchDetailPageTitle) return;
+  const match = state.matches.find((item) => item.id === state.activeMatchId);
+  if (!match) {
+    dom.matchDetailPageTitle.textContent = "Mecz";
+    dom.matchDetailPageStats.replaceChildren(renderDetailStat("Status", "Brak danych"));
+    dom.matchDetailPagePlayers.replaceChildren(emptyState("Nie znaleziono meczu.", "Wróć do historii i wybierz pozycję jeszcze raz."));
+    dom.matchDetailPageAugments.replaceChildren();
+    dom.matchDetailPageItems.replaceChildren();
+    return;
+  }
+
+  dom.matchDetailPageTitle.textContent = `${formatDate(match.date)} · #${match.placement}`;
+  dom.matchDetailPageStats.replaceChildren(
+    renderDetailStat("Data", formatDate(match.date)),
+    renderDetailStat("Patch", match.patch),
+    renderDetailStat("Miejsce", `#${match.placement}`),
+  );
+  dom.matchDetailPagePlayers.replaceChildren(...renderMatchPlayers(match));
+  renderAssetTags(dom.matchDetailPageAugments, match.augments, "Brak augmentów");
+  renderAssetTags(dom.matchDetailPageItems, match.items, "Brak itemów");
+}
+
+function renderMatchPlayers(match) {
+  const players = getMatchPlayers(match);
+  if (!players.length) return [emptyState("Brak pełnej listy graczy.", "Kolejna synchronizacja uzupełni nowszy format meczu.")];
+  return players
+    .sort((a, b) => Number(a.placement || ARENA_MAX_PLACEMENT) - Number(b.placement || ARENA_MAX_PLACEMENT))
+    .map((player) => {
+      const root = el("button", "player-detail-card");
+      root.type = "button";
+      root.dataset.playerProfile = player.riotId || "";
+      root.dataset.playerRegion = state.user?.riotProfile?.region || "euw1";
+      root.disabled = !player.riotId;
+      root.append(
+        renderChampionIcon(player.champion),
+        el("strong", "", player.champion || "Unknown"),
+        el("span", "", player.riotId || "Nieznany gracz"),
+        el("em", "", `#${player.placement || "-"}`),
+      );
+      return root;
+    });
 }
 
 function renderMatchTeam(match) {
@@ -608,6 +688,65 @@ function closeAccountOverlay() {
   }
 }
 
+function handlePlayerSearchSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  openPlayerProfile(formData.get("riotId"), formData.get("region"));
+}
+
+function handleFriendSubmit(event) {
+  event.preventDefault();
+  const formData = new FormData(dom.friendForm);
+  const parsed = parseRiotId(formData.get("riotId"));
+  if (!parsed) {
+    announce("Podaj Riot ID znajomego w formacie Nazwa#Tag.");
+    return;
+  }
+
+  const region = normalizeRegion(formData.get("region"));
+  const key = friendKey(region, parsed);
+  if (!state.friends.some((friend) => friend.key === key)) {
+    state.friends.push({
+      key,
+      region,
+      riotId: `${parsed.gameName}#${parsed.tagLine}`,
+      slug: `${parsed.gameName}-${parsed.tagLine}`,
+    });
+    persistFriends();
+  }
+
+  dom.friendRiotId.value = "";
+  renderFriendRanking(getSortedMatches());
+}
+
+function openPlayerProfile(riotId, region) {
+  const parsed = parseRiotId(riotId);
+  if (!parsed) {
+    announce("Podaj Riot ID w formacie Nazwa#Tag.");
+    return;
+  }
+
+  const path = `/${publicRegionSlug(region)}/${encodeURIComponent(`${parsed.gameName}-${parsed.tagLine}`)}`;
+  window.history.pushState(null, "", path);
+  updateRoute();
+}
+
+function parseRiotId(value) {
+  const text = cleanText(value);
+  if (!text) return null;
+  const [gameName, tagLine] = text.includes("#") ? text.split("#") : text.split("-");
+  if (!cleanText(gameName) || !cleanText(tagLine)) return null;
+  return {
+    gameName: cleanText(gameName),
+    tagLine: cleanText(tagLine).replace(/^#/, ""),
+  };
+}
+
+function friendKey(region, parsed) {
+  return `${normalizeRegion(region)}:${normalizeLookupKey(parsed.gameName)}:${normalizeLookupKey(parsed.tagLine)}`;
+}
+
 function updateRoute() {
   const publicRoute = parsePublicRoute();
   if (publicRoute) {
@@ -623,6 +762,14 @@ function updateRoute() {
   const [route, token] = rawRoute.split("/");
   state.publicRoute = null;
   state.resetToken = route === "reset-password" ? decodeURIComponent(token || "") : "";
+  if (route === "match") {
+    state.activeMatchId = decodeURIComponent(token || "");
+    setActiveRoute("match-detail");
+    closeAccountOverlay();
+    renderMatchDetailPage();
+    renderResetTokenView();
+    return;
+  }
   if (route === "account") {
     setActiveRoute(state.activeRoute || "dashboard");
     openAccountOverlay(token || "login");
@@ -630,6 +777,7 @@ function updateRoute() {
     return;
   }
   closeAccountOverlay();
+  state.activeMatchId = "";
   const knownRoute = document.querySelector(`[data-view="${route}"]`) ? route : "dashboard";
   setActiveRoute(knownRoute);
   renderResetTokenView();
@@ -672,6 +820,7 @@ function syncFiltersFromDom() {
 }
 
 function render() {
+  document.body.classList.toggle("is-guest-home", !state.user && state.activeRoute === "dashboard" && !state.publicRoute);
   const matches = getSortedMatches();
   renderProfileHero(matches);
   renderVictoryProgress(matches);
@@ -680,8 +829,9 @@ function render() {
   renderPartnerStats(matches);
   renderFriendRanking(matches);
   renderMatchList(dom.recentMatches, matches.slice(0, 5), { compact: true });
-  renderMatchList(dom.matchList, matches);
+  renderHistoryMatches(matches);
   renderChampionCollection(matches);
+  renderMatchDetailPage();
   renderPublicProfile();
   renderAccount();
   renderResetTokenView();
@@ -698,7 +848,7 @@ function renderProfileHero(matches) {
   if (profile?.region) meta.push(regionLabel(profile.region));
   meta.push(`${won} / ${total} ${state.language === "en" ? "champions won" : "z wygraną"}`);
   if (profile?.lastSyncedAt) {
-    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${formatDate(profile.lastSyncedAt)}`);
+    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${relativeTime(profile.lastSyncedAt)}`);
   }
   dom.profileHeroMeta.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
 
@@ -708,9 +858,7 @@ function renderProfileHero(matches) {
   dom.profileSyncNote.textContent = state.isAutoSyncing
     ? "Synchronizuję..."
     : profile
-      ? state.language === "en"
-        ? "Manual sync scans the season and reuses cached matches."
-        : "Ręczna synchronizacja skanuje sezon i pomija mecze zapisane w cache."
+      ? ""
       : state.language === "en"
         ? "Log in and save League profile to sync."
         : "Zaloguj się i zapisz konto League, żeby synchronizować.";
@@ -768,7 +916,7 @@ function renderAccount() {
       "span",
       "",
       profile.lastSyncedAt
-        ? `Ostatni sync: ${formatDate(profile.lastSyncedAt)}.`
+        ? `Ostatni sync: ${relativeTime(profile.lastSyncedAt)}.`
         : profile.verifiedAt
           ? `Zweryfikowano: ${formatDate(profile.verifiedAt)}.`
           : "Profil zapisany lokalnie.",
@@ -843,7 +991,7 @@ function renderPublicProfile() {
           const root = el("article", "partner-card");
           root.append(
             el("strong", "", stat.name),
-            el("span", "", `${stat.games} gier · ${percentage(stat.winrate)} WR`),
+            el("span", "", `${stat.games} gier · średnio #${formatAveragePlacement(stat.averagePlacement)}`),
           );
           return root;
         })
@@ -909,6 +1057,26 @@ function regionLabel(region) {
   return labels[region] || String(region || "").toUpperCase();
 }
 
+function normalizeRegion(region) {
+  const value = cleanText(region).toLowerCase();
+  const aliases = {
+    br: "br1",
+    eune: "eun1",
+    euw: "euw1",
+    jp: "jp1",
+    lan: "la1",
+    las: "la2",
+    na: "na1",
+    oce: "oc1",
+    tr: "tr1",
+  };
+  return aliases[value] || value || "euw1";
+}
+
+function publicRegionSlug(region) {
+  return regionLabel(normalizeRegion(region)).toLowerCase();
+}
+
 function getSortedMatches() {
   return [...state.matches]
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -947,7 +1115,7 @@ function renderWonChampionStrip(matches) {
   }
 
   dom.wonChampionStrip.replaceChildren(
-    ...won.slice(0, 18).map((stat) => renderChampionPill(stat)),
+    ...won.map((stat) => renderChampionPill(stat)),
   );
 }
 
@@ -966,7 +1134,7 @@ function renderPartnerStats(matches) {
       const root = el("article", "partner-card");
       root.append(
         el("strong", "", stat.name),
-        el("span", "", `${stat.games} gier · ${percentage(stat.wins / stat.games)} WR`),
+        el("span", "", `${stat.games} gier · średnio #${formatAveragePlacement(stat.avg)}`),
       );
       return root;
     }),
@@ -984,22 +1152,58 @@ function renderFriendRanking(matches) {
   const profile = state.user.riotProfile;
   const row = {
     name: profile ? profile.gameName : state.user.displayName,
+    riotId: profile ? `${profile.gameName}#${profile.tagLine}` : "",
+    region: profile?.region || "euw1",
     progress: getWonChampionStats(matches).length,
     total: CHAMPIONS.length,
     avatar: getAccountAvatarSrc(),
   };
-  dom.friendRanking.replaceChildren(renderFriendRow(row, 1));
+  const friendRows = state.friends.map((friend) => friendRowFromProfile(friend));
+  dom.friendRanking.replaceChildren(renderFriendRow(row, 1), ...friendRows.map((friend, index) => renderFriendRow(friend, index + 2)));
+  refreshFriendProfiles();
 }
 
 function renderFriendRow(friend, index) {
-  const root = el("article", "friend-row");
+  const root = el(friend.riotId ? "button" : "article", "friend-row");
+  if (friend.riotId) {
+    root.type = "button";
+    root.dataset.friendProfile = friend.riotId;
+    root.dataset.friendRegion = friend.region || "euw1";
+  }
   root.append(
     el("strong", "friend-rank", `${index}.`),
     friend.avatar ? imageIcon(friend.avatar, "champion-icon") : el("span", "champion-icon is-empty", friend.name.slice(0, 2)),
     el("span", "friend-name", friend.name),
-    el("strong", "friend-progress", `${friend.progress} / ${friend.total}`),
+    el("strong", "friend-progress", friend.progressLabel || `${friend.progress} / ${friend.total}`),
   );
   return root;
+}
+
+function friendRowFromProfile(friend) {
+  const cached = state.friendProfiles.get(friend.key);
+  const data = cached?.data;
+  return {
+    name: data ? `${data.profile.gameName}#${data.profile.tagLine}` : friend.riotId,
+    riotId: data ? `${data.profile.gameName}#${data.profile.tagLine}` : friend.riotId,
+    region: friend.region,
+    progress: data?.progress?.won || 0,
+    total: data?.progress?.total || CHAMPIONS.length,
+    avatar: data?.profile?.profileIconUrl || "",
+    progressLabel: cached?.loading ? "..." : cached?.error ? "brak profilu" : "",
+  };
+}
+
+function refreshFriendProfiles() {
+  state.friends.forEach((friend) => {
+    const cached = state.friendProfiles.get(friend.key);
+    if (cached?.loading || cached?.data || cached?.error) return;
+    state.friendProfiles.set(friend.key, { loading: true });
+    const params = new URLSearchParams({ region: publicRegionSlug(friend.region), slug: friend.slug });
+    apiRequest(`/api/public-profile?${params.toString()}`)
+      .then((data) => state.friendProfiles.set(friend.key, { data }))
+      .catch((error) => state.friendProfiles.set(friend.key, { error: error.message }))
+      .finally(() => renderFriendRanking(getSortedMatches()));
+  });
 }
 
 function renderChampionCollection(matches) {
@@ -1016,6 +1220,14 @@ function renderChampionCollection(matches) {
 
   collection = collection.sort((a, b) => {
     if (state.filters.collectionSort === "az") return a.champion.localeCompare(b.champion);
+    if (state.filters.collectionSort === "games") return b.games - a.games || a.champion.localeCompare(b.champion);
+    if (state.filters.collectionSort === "best") return sortPlacement(a.bestPlacement, b.bestPlacement) || a.champion.localeCompare(b.champion);
+    if (state.filters.collectionSort === "avg") return sortPlacement(a.avg, b.avg) || a.champion.localeCompare(b.champion);
+    if (state.filters.collectionSort === "missing") {
+      const aMissing = a.wins ? 1 : 0;
+      const bMissing = b.wins ? 1 : 0;
+      return aMissing - bMissing || sortPlacement(a.bestPlacement, b.bestPlacement) || a.champion.localeCompare(b.champion);
+    }
     return b.wins - a.wins || a.champion.localeCompare(b.champion);
   });
 
@@ -1040,7 +1252,7 @@ function renderChampionPill(stat) {
   root.dataset.championDetail = stat.champion;
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
-  body.append(el("span", "", `${stat.wins} win${stat.bestPartner ? ` · ${stat.bestPartner}` : ""}`));
+  body.append(el("span", "", `${stat.wins} win`));
   root.append(renderChampionIcon(stat.champion), body);
   return root;
 }
@@ -1056,8 +1268,10 @@ function renderChampionCollectionCard(stat) {
       "span",
       "",
       stat.wins
-        ? `${stat.wins} win${stat.bestPartner ? ` · duo: ${stat.bestPartner}` : ""}`
-        : "Brakuje wygranej",
+        ? `${stat.wins} win`
+        : stat.games
+          ? `Najlepsze miejsce #${stat.bestPlacement}`
+          : "Brak gier",
     ),
   );
   root.append(renderChampionIcon(stat.champion), body);
@@ -1090,6 +1304,14 @@ function renderMatchList(container, matches, options = {}) {
   container.replaceChildren(...matches.map((match) => renderMatchCard(match, options)));
 }
 
+function renderHistoryMatches(matches) {
+  const visible = matches.slice(0, state.visibleMatchCount);
+  renderMatchList(dom.matchList, visible, { dense: true });
+  const hasMore = matches.length > visible.length;
+  dom.showMoreMatchesButton.classList.toggle("is-hidden", !hasMore);
+  dom.showMoreMatchesButton.textContent = t("actions.showMore");
+}
+
 function renderMatchCard(match, options) {
   const root = el("button", "match-card");
   root.type = "button";
@@ -1111,8 +1333,10 @@ function renderMatchCard(match, options) {
     el("span", "tag", `Patch ${match.patch}`),
   );
 
-  const augmentTags = renderAssetGroup("Augmenty", match.augments, options.compact ? 3 : 6);
-  const itemTags = renderAssetGroup("Itemy", match.items, options.compact ? 2 : 7);
+  const augmentLimit = options.compact ? 3 : options.dense ? 4 : 6;
+  const itemLimit = options.compact ? 2 : options.dense ? 5 : 7;
+  const augmentTags = renderAssetGroup("Augmenty", match.augments, augmentLimit);
+  const itemTags = renderAssetGroup("Itemy", match.items, itemLimit);
 
   root.append(topLine, meta);
   if (augmentTags) root.append(augmentTags);
@@ -1168,6 +1392,32 @@ function loadMatches() {
 
 function persistMatches() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.matches));
+}
+
+function loadFriends() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(FRIENDS_STORAGE_KEY) || "[]");
+    if (!Array.isArray(stored)) return [];
+    return stored
+      .map((friend) => {
+        const parsed = parseRiotId(friend.riotId || friend.slug);
+        if (!parsed) return null;
+        const region = normalizeRegion(friend.region);
+        return {
+          key: friendKey(region, parsed),
+          region,
+          riotId: `${parsed.gameName}#${parsed.tagLine}`,
+          slug: `${parsed.gameName}-${parsed.tagLine}`,
+        };
+      })
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function persistFriends() {
+  localStorage.setItem(FRIENDS_STORAGE_KEY, JSON.stringify(state.friends));
 }
 
 async function loadServerMatches() {
@@ -1369,6 +1619,7 @@ async function syncRiotMatches(options = {}) {
     render();
   } finally {
     state.isAutoSyncing = false;
+    render();
   }
 }
 
@@ -1526,6 +1777,9 @@ function normalizeMatch(match) {
   const teammates = Array.isArray(match.teammates)
     ? match.teammates.map(normalizeTeammate).filter(Boolean)
     : [];
+  const players = Array.isArray(match.players)
+    ? match.players.map(normalizePlayer).filter(Boolean)
+    : [];
   const partner = cleanText(match.partner);
 
   return {
@@ -1535,6 +1789,7 @@ function normalizeMatch(match) {
     champion: canonicalChampionName(match.champion),
     partner,
     teammates,
+    players,
     placement: clamp(Number(match.placement), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
@@ -1574,6 +1829,7 @@ function getChampionStats(matches) {
   return [...grouped.values()].map((stat) => ({
     ...stat,
     avg: average(stat.placements),
+    bestPlacement: Math.min(...stat.placements),
     bestPartner: mapLeader(stat.partners),
   }));
 }
@@ -1588,6 +1844,7 @@ function getAllChampionCollectionStats(matches) {
       wins: stat?.wins || 0,
       placements: stat?.placements || [],
       avg: stat?.avg || 0,
+      bestPlacement: stat?.bestPlacement || 0,
       bestPartner: stat?.bestPartner || "",
     };
   });
@@ -1614,13 +1871,16 @@ function getPartnerStats(matches) {
   const partners = new Map();
   matches.forEach((match) => {
     getPartnerLabels(match, { preferPlayers: true }).forEach((name) => {
-      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0 });
+      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0, placements: [] });
       const stat = partners.get(name);
       stat.games += 1;
+      stat.placements.push(match.placement);
       if (match.placement === 1) stat.wins += 1;
     });
   });
-  return [...partners.values()].sort((a, b) => b.games - a.games || b.wins - a.wins || a.name.localeCompare(b.name));
+  return [...partners.values()]
+    .map((stat) => ({ ...stat, avg: average(stat.placements) }))
+    .sort((a, b) => b.games - a.games || a.avg - b.avg || a.name.localeCompare(b.name));
 }
 
 function getPartnerLabels(match, options = {}) {
@@ -1650,6 +1910,36 @@ function normalizeTeammate(value) {
     riotId,
     puuid: cleanText(value.puuid),
   };
+}
+
+function normalizePlayer(value) {
+  if (!value || typeof value !== "object") return null;
+  const champion = canonicalChampionName(value.champion);
+  const riotId = cleanText(value.riotId);
+  if (!champion && !riotId) return null;
+  return {
+    champion,
+    riotId,
+    puuid: cleanText(value.puuid),
+    placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
+    teamId: cleanText(value.teamId || value.playerSubteamId),
+  };
+}
+
+function getMatchPlayers(match) {
+  if (Array.isArray(match.players) && match.players.length) return match.players;
+  const ownProfile = state.user?.riotProfile;
+  return [
+    {
+      champion: match.champion,
+      riotId: ownProfile ? `${ownProfile.gameName}#${ownProfile.tagLine}` : "",
+      placement: match.placement,
+    },
+    ...(Array.isArray(match.teammates) ? match.teammates.map((teammate) => ({
+      ...teammate,
+      placement: match.placement,
+    })) : []),
+  ];
 }
 
 function mapLeader(map) {
@@ -1747,6 +2037,12 @@ function average(values) {
   return values.length ? sum(values) / values.length : 0;
 }
 
+function sortPlacement(a, b) {
+  const left = Number(a || 99);
+  const right = Number(b || 99);
+  return left - right;
+}
+
 function percentage(value) {
   return `${Math.round(Number(value || 0) * 100)}%`;
 }
@@ -1772,6 +2068,25 @@ function formatDate(value) {
     month: "short",
     year: "numeric",
   }).format(new Date(value));
+}
+
+function relativeTime(value) {
+  const then = new Date(value).getTime();
+  if (!Number.isFinite(then)) return formatDate(value);
+  const diffSeconds = Math.round((then - Date.now()) / 1000);
+  const units = [
+    ["year", 31536000],
+    ["month", 2592000],
+    ["week", 604800],
+    ["day", 86400],
+    ["hour", 3600],
+    ["minute", 60],
+  ];
+  const [unit, seconds] = units.find(([, seconds]) => Math.abs(diffSeconds) >= seconds) || ["second", 1];
+  return new Intl.RelativeTimeFormat(state.language === "en" ? "en" : "pl", { numeric: "auto" }).format(
+    Math.round(diffSeconds / seconds),
+    unit,
+  );
 }
 
 function makeId() {

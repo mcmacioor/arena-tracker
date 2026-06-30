@@ -110,29 +110,24 @@ try {
   );
   assert(seededCount === 4, `Expected 4 smoke matches, got ${seededCount}`);
 
-  const progressText = await evalPage(cdp, `document.querySelector("#progressCounter").textContent`);
-  assert(progressText.startsWith("2 / "), `Unexpected progress: ${progressText}`);
-
-  const metrics = await evalPage(
+  const guestHome = await evalPage(
     cdp,
-    `[...document.querySelectorAll(".metric-card")].map((card) => card.innerText)`,
+    `document.body.classList.contains("is-guest-home") && getComputedStyle(document.querySelector("#landingSearch")).display !== "none"`,
   );
-  assert(metrics.length === 2, `Expected 2 metric cards, got ${metrics.length}`);
-  assert(metrics[0].includes("4"), "Matches metric did not update");
-  assert(metrics[1].includes("2"), "Wins metric did not update");
+  assert(guestHome, "Logged-out dashboard should show the player search landing");
   const dashboardNavMissing = await evalPage(
     cdp,
-    `document.querySelector('.sidebar [data-route="dashboard"]') == null`,
+    `document.querySelector('.sidebar .nav-link') == null`,
   );
-  assert(dashboardNavMissing, "Sidebar should not contain duplicate Dashboard link");
+  assert(dashboardNavMissing, "Sidebar should not contain duplicate tab navigation");
+
+  await evalPage(cdp, `location.hash = "champions"`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const profileTabsVisible = await evalPage(
     cdp,
     `document.querySelector('.profile-tabs [data-route="dashboard"]') != null`,
   );
   assert(profileTabsVisible, "Profile tabs should include the summary route");
-
-  await evalPage(cdp, `location.hash = "champions"`);
-  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const collectionText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
   assert(collectionText.includes("Vi"), "Won champion Vi missing from collection");
   assert(collectionText.includes("Lee Sin"), "Canonical Lee Sin missing from collection");
@@ -179,22 +174,33 @@ try {
     `document.querySelectorAll("#matchList .match-champion-icons .champion-icon").length`,
   );
   assert(matchChampionIconCount > 0, "Match history should show champion icons");
+  const showMoreHidden = await evalPage(
+    cdp,
+    `document.querySelector("#showMoreMatchesButton").classList.contains("is-hidden")`,
+  );
+  assert(showMoreHidden, "Show more should stay hidden when all matches fit on the first page");
   await evalPage(cdp, `document.querySelector("[data-match-detail]").click()`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const matchDetailOpen = await evalPage(
     cdp,
-    `document.querySelector("#matchDetailOverlay").classList.contains("is-open")`,
+    `document.querySelector('[data-view="match-detail"]').classList.contains("is-visible")`,
   );
-  assert(matchDetailOpen, "Match detail modal should open after clicking a match");
-  const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailOverlay").innerText`);
-  assert(matchDetailText.includes("Protein Shake"), "Match detail should include resolved augment names");
-  const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailTitle").textContent`);
-  assert(matchDetailTitle.includes("Szczeg"), "Match detail title should stay generic");
-  const modalPlacementBadgeMissing = await evalPage(
+  assert(matchDetailOpen, "Match detail page should open after clicking a match");
+  const legacyModalClosed = await evalPage(
     cdp,
-    `document.querySelector("#matchDetailOverlay .match-detail-head .placement-badge") == null`,
+    `!document.querySelector("#matchDetailOverlay").classList.contains("is-open")`,
   );
-  assert(modalPlacementBadgeMissing, "Match detail header should not duplicate placement badge");
-  await evalPage(cdp, `document.querySelector("#matchDetailClose").click()`);
+  assert(legacyModalClosed, "Legacy match modal should stay closed");
+  const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailView").innerText`);
+  assert(matchDetailText.includes("Protein Shake"), "Match detail should include resolved augment names");
+  assert(matchDetailText.includes("Gracze"), "Match detail should show players");
+  const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailPageTitle").textContent`);
+  assert(!matchDetailTitle.includes("+"), "Match detail title should not duplicate the team title");
+  const playerCards = await evalPage(
+    cdp,
+    `document.querySelectorAll("#matchDetailPagePlayers .player-detail-card").length`,
+  );
+  assert(playerCards >= 3, "Match detail should include the team fallback players");
 
   await evalPage(cdp, `location.hash = "friends"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);

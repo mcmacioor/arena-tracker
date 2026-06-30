@@ -21,16 +21,6 @@
           </span>
         </a>
 
-        <nav class="nav-list" aria-label="Główne widoki">
-          <a class="nav-link" href="#matches" data-route="matches">
-            <span class="nav-icon" aria-hidden="true">≡</span>
-            <span data-i18n="nav.history">Historia</span>
-          </a>
-          <a class="nav-link" href="#champions" data-route="champions">
-            <span class="nav-icon" aria-hidden="true">◇</span>
-            <span data-i18n="nav.wins">Wygrane</span>
-          </a>
-        </nav>
         <div class="sidebar-footer">
           <a class="coffee-link" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
             <span aria-hidden="true">☕</span>
@@ -43,6 +33,13 @@
       <main class="main">
         <header class="topbar" aria-label="Konto użytkownika">
           <div class="topbar-spacer"></div>
+          <label class="language-switch top-language-switch">
+            <span data-i18n="settings.language">Język</span>
+            <select id="languageSelect" aria-label="Język">
+              <option value="pl">PL</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
           <div class="account-menu" id="accountMenu">
             <button
               class="account-menu-button"
@@ -62,6 +59,26 @@
             </button>
           </div>
         </header>
+
+        <section class="landing-search" id="landingSearch" aria-labelledby="landingSearchTitle">
+          <div class="landing-logo" aria-hidden="true">
+            <span>LoL</span>
+            <strong>ArenaTracker</strong>
+          </div>
+          <h1 id="landingSearchTitle">Znajdź profil Arena</h1>
+          <form class="player-search-form" data-player-search-form>
+            <select name="region" aria-label="Serwer">
+              <option value="euw1">EUW</option>
+              <option value="eun1">EUNE</option>
+              <option value="na1">NA</option>
+              <option value="kr">KR</option>
+              <option value="br1">BR</option>
+              <option value="tr1">TR</option>
+            </select>
+            <input name="riotId" type="search" autocomplete="off" placeholder="Riot ID, np. No Chrystus#2137" />
+            <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
+          </form>
+        </section>
 
         <section class="profile-hero" aria-labelledby="profileHeroName">
           <div class="profile-hero-main">
@@ -84,13 +101,6 @@
             <button class="ghost-action" id="exportProgressButton" type="button" data-i18n="actions.exportPng">
               Eksport PNG
             </button>
-            <label class="language-switch">
-              <span data-i18n="settings.language">Język</span>
-              <select id="languageSelect" aria-label="Język">
-                <option value="pl">PL</option>
-                <option value="en">EN</option>
-              </select>
-            </label>
           </div>
           <div class="profile-sync-note" id="profileSyncNote"></div>
         </section>
@@ -98,7 +108,7 @@
         <nav class="profile-tabs" aria-label="Zakładki profilu">
           <a class="nav-link" href="#dashboard" data-route="dashboard" data-i18n="tabs.summary">Podsumowanie</a>
           <a class="nav-link" href="#matches" data-route="matches" data-i18n="tabs.history">Historia</a>
-          <a class="nav-link" href="#champions" data-route="champions" data-i18n="tabs.wins">Wygrane</a>
+          <a class="nav-link" href="#champions" data-route="champions" data-i18n="tabs.wins">Championi</a>
           <a class="nav-link" href="#friends" data-route="friends" data-i18n="tabs.group">Moja grupa</a>
         </nav>
 
@@ -151,6 +161,7 @@
                   <h2 id="historyTitle" data-i18n="history.title">Historia</h2>
               </div>
               <div class="match-list" id="matchList"></div>
+              <button class="ghost-action show-more-action" id="showMoreMatchesButton" type="button">Pokaż więcej</button>
             </section>
           </div>
 
@@ -175,6 +186,10 @@
                   <select id="championSortSelect">
                     <option value="wins">Liczba winów</option>
                     <option value="az">A-Z</option>
+                    <option value="games">Liczba gier</option>
+                    <option value="best">Najlepsze miejsce</option>
+                    <option value="avg">Średnie miejsce</option>
+                    <option value="missing">Najbliżej wygranej</option>
                   </select>
                 </label>
               </div>
@@ -187,7 +202,44 @@
               <div class="panel-head">
                 <h2 id="friendRankingTitle" data-i18n="friends.title">Moja grupa</h2>
               </div>
+              <form class="friend-form" id="friendForm">
+                <select id="friendRegion" name="region" aria-label="Serwer znajomego">
+                  <option value="euw1">EUW</option>
+                  <option value="eun1">EUNE</option>
+                  <option value="na1">NA</option>
+                  <option value="kr">KR</option>
+                  <option value="br1">BR</option>
+                  <option value="tr1">TR</option>
+                </select>
+                <input id="friendRiotId" name="riotId" type="search" autocomplete="off" placeholder="Riot ID znajomego" />
+                <button class="ghost-action" type="submit">Dodaj</button>
+              </form>
               <div class="friend-ranking" id="friendRanking"></div>
+            </section>
+          </div>
+
+          <div class="view" id="matchDetailView" data-view="match-detail">
+            <section class="panel match-detail-page" aria-labelledby="matchDetailPageTitle">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="matchDetails.title">Szczegóły meczu</p>
+                  <h2 id="matchDetailPageTitle">Mecz</h2>
+                </div>
+                <a class="ghost-action" href="#matches">Wróć do historii</a>
+              </div>
+              <div class="detail-stats" id="matchDetailPageStats"></div>
+              <div class="match-detail-section">
+                <h3>Gracze</h3>
+                <div class="player-detail-list" id="matchDetailPagePlayers"></div>
+              </div>
+              <div class="match-detail-section">
+                <h3>Augmenty</h3>
+                <div class="match-tags detail-tags" id="matchDetailPageAugments"></div>
+              </div>
+              <div class="match-detail-section">
+                <h3>Itemy</h3>
+                <div class="match-tags detail-tags" id="matchDetailPageItems"></div>
+              </div>
             </section>
           </div>
 
