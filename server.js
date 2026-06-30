@@ -16,6 +16,8 @@ const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 1_000_000;
 const ARENA_QUEUE_IDS = [1750];
 const ARENA_MAX_PLACEMENT = 6;
+const RIOT_SYNC_DEFAULT_LIMIT = 80;
+const RIOT_SYNC_MAX_LIMIT = 100;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -34,6 +36,17 @@ const REGIONS = new Set([
   "tr1",
   "tw2",
   "vn2",
+]);
+const PUBLIC_REGION_ALIASES = new Map([
+  ["br", "br1"],
+  ["eune", "eun1"],
+  ["euw", "euw1"],
+  ["jp", "jp1"],
+  ["lan", "la1"],
+  ["las", "la2"],
+  ["na", "na1"],
+  ["oce", "oc1"],
+  ["tr", "tr1"],
 ]);
 
 const sessions = new Map();
@@ -115,6 +128,11 @@ async function routeApi(req, res, url) {
     const auth = await requireAuth(req, res);
     if (!auth) return;
     sendJson(res, 200, { user: publicUser(auth.user) });
+    return;
+  }
+
+  if (method === "GET" && url.pathname === "/api/public-profile") {
+    await getPublicProfile(req, res, url);
     return;
   }
 
@@ -363,6 +381,120 @@ async function saveRiotProfile(req, res, user) {
   sendJson(res, 200, { user: publicUser(db.users.find((item) => item.id === user.id)) });
 }
 
+async function getPublicProfile(req, res, url) {
+  const region = normalizePublicRegion(url.searchParams.get("region"));
+  const slug = cleanText(url.searchParams.get("slug"));
+
+  if (!region || !slug) {
+    sendJson(res, 400, { error: "Brakuje regionu albo nazwy profilu." });
+    return;
+  }
+
+  const db = await readDb();
+  const user = db.users.find((item) => {
+    const profile = item.riotProfile;
+    if (!profile?.gameName || !profile?.tagLine) return false;
+    return normalizePublicRegion(profile.region) === region && normalizeSlug(publicProfileSlug(profile)) === normalizeSlug(slug);
+  });
+
+  if (!user) {
+    sendJson(res, 404, { error: "Nie znaleziono publicznego profilu." });
+    return;
+  }
+
+  const matches = db.matches
+    .filter((match) => match.userId === user.id)
+    .map((match) => normalizeMatch(match, user.id, match.source?.type || "riot"))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  sendJson(res, 200, buildPublicProfile(user, matches));
+}
+
+function buildPublicProfile(user, matches) {
+  const championStats = getChampionStatsForMatches(matches);
+  const wonChampions = championStats
+    .filter((stat) => stat.wins > 0)
+    .sort((a, b) => b.wins - a.wins || a.champion.localeCompare(b.champion));
+  const wonSet = new Set(wonChampions.map((stat) => stat.champion));
+  const missingChampions = (GAME_DATA.champions || [])
+    .filter((champion) => !wonSet.has(champion))
+    .map((champion) => ({
+      champion,
+      icon: GAME_DATA.championIcons?.[champion] || "",
+    }));
+  const profile = user.riotProfile;
+
+  return {
+    profile: {
+      gameName: profile.gameName,
+      tagLine: profile.tagLine,
+      region: profile.region,
+      slug: publicProfileSlug(profile),
+      profileIconUrl: profileIconUrl(profile.profileIconId),
+    },
+    progress: {
+      won: wonChampions.length,
+      total: GAME_DATA.champions?.length || 0,
+    },
+    wonChampions: wonChampions.map((stat) => ({
+      champion: stat.champion,
+      wins: stat.wins,
+      games: stat.games,
+      averagePlacement: stat.avg,
+      icon: GAME_DATA.championIcons?.[stat.champion] || "",
+    })),
+    missingChampions,
+    topDuo: getPartnerStatsForMatches(matches).slice(0, 8),
+  };
+}
+
+function getChampionStatsForMatches(matches) {
+  const grouped = new Map();
+
+  matches.forEach((match) => {
+    const champion = canonicalChampionName(match.champion);
+    if (!champion) return;
+    if (!grouped.has(champion)) {
+      grouped.set(champion, {
+        champion,
+        games: 0,
+        wins: 0,
+        placements: [],
+      });
+    }
+    const stat = grouped.get(champion);
+    stat.games += 1;
+    stat.placements.push(match.placement);
+    if (match.placement === 1) stat.wins += 1;
+  });
+
+  return [...grouped.values()].map((stat) => ({
+    ...stat,
+    avg: average(stat.placements),
+  }));
+}
+
+function getPartnerStatsForMatches(matches) {
+  const partners = new Map();
+
+  matches.forEach((match) => {
+    const labels = getPartnerLabels(match, { preferPlayers: true });
+    labels.forEach((name) => {
+      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0 });
+      const stat = partners.get(name);
+      stat.games += 1;
+      if (match.placement === 1) stat.wins += 1;
+    });
+  });
+
+  return [...partners.values()]
+    .map((stat) => ({
+      ...stat,
+      winrate: stat.games ? stat.wins / stat.games : 0,
+    }))
+    .sort((a, b) => b.wins - a.wins || b.games - a.games || a.name.localeCompare(b.name));
+}
+
 async function syncRiotMatches(req, res, user) {
   if (!process.env.RIOT_API_KEY) {
     sendJson(res, 400, {
@@ -372,7 +504,7 @@ async function syncRiotMatches(req, res, user) {
   }
 
   const body = await readJsonBody(req);
-  const limit = clamp(Number(body.limit || 20), 1, 80);
+  const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
   const profile = user.riotProfile;
 
   if (!profile?.gameName || !profile?.tagLine) {
@@ -383,16 +515,34 @@ async function syncRiotMatches(req, res, user) {
   const account = profile.puuid ? profile : await fetchRiotAccount(profile);
   const summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
   const matchIds = await fetchArenaMatchIds(account, profile.routing, limit);
+  const existingDb = await readDb();
+  const existingRiotMatches = new Map(
+    existingDb.matches
+      .filter((match) => match.userId === user.id && match.source?.type === "riot" && match.source?.matchId)
+      .map((match) => [match.source.matchId, normalizeMatch(match, user.id, "riot")]),
+  );
+  const reusedMatches = [];
+  const idsToFetch = [];
+
+  matchIds.forEach((matchId) => {
+    const existingMatch = existingRiotMatches.get(matchId);
+    if (existingMatch) reusedMatches.push(existingMatch);
+    else idsToFetch.push(matchId);
+  });
+
   const matchDetails = [];
 
-  for (const matchId of matchIds) {
+  for (const matchId of idsToFetch) {
     const detail = await riotFetch(profile.routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
     matchDetails.push(detail);
   }
 
-  const imported = matchDetails
+  const imported = [
+    ...matchDetails
     .map((detail) => mapRiotMatch(detail, account.puuid, user.id))
-    .filter(Boolean);
+    .filter(Boolean),
+    ...reusedMatches,
+  ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   let importedCount = 0;
   await mutateDb((db) => {
@@ -423,6 +573,7 @@ async function syncRiotMatches(req, res, user) {
   sendJson(res, 200, {
     importedCount,
     scannedCount: matchDetails.length,
+    reusedCount: reusedMatches.length,
     matches: db.matches.filter((match) => match.userId === user.id),
     user: publicUser(db.users.find((item) => item.id === user.id)),
   });
@@ -475,12 +626,18 @@ async function fetchSummonerByPuuid(region, puuid) {
 async function fetchArenaMatchIds(account, routing, limit) {
   const ids = [];
   for (const queueId of ARENA_QUEUE_IDS) {
-    const count = Math.max(1, Math.min(100, limit));
-    const pathName = `/lol/match/v5/matches/by-puuid/${encodeURIComponent(
-      account.puuid,
-    )}/ids?queue=${queueId}&start=0&count=${count}`;
-    const queueIds = await riotFetch(routing, pathName);
-    ids.push(...queueIds);
+    let start = 0;
+    while (ids.length < limit) {
+      const count = Math.max(1, Math.min(100, limit - ids.length));
+      const pathName = `/lol/match/v5/matches/by-puuid/${encodeURIComponent(
+        account.puuid,
+      )}/ids?queue=${queueId}&start=${start}&count=${count}`;
+      const queueIds = await riotFetch(routing, pathName);
+      if (!Array.isArray(queueIds) || !queueIds.length) break;
+      ids.push(...queueIds);
+      if (queueIds.length < count) break;
+      start += count;
+    }
   }
   return [...new Set(ids)].slice(0, limit);
 }
@@ -516,7 +673,7 @@ function mapRiotMatch(detail, puuid, userId) {
   const teammates = detail.info.participants
     .filter((item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId)
     .map((item) => ({
-      champion: item.championName || "Unknown",
+      champion: canonicalChampionName(item.championName) || "Unknown",
       riotId: formatRiotId(item),
       puuid: item.puuid,
     }));
@@ -527,25 +684,27 @@ function mapRiotMatch(detail, puuid, userId) {
   const items = [0, 1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`item${slot}`])
     .filter(Boolean)
-    .map(resolveItemName);
+    .map(resolveItemTag)
+    .filter(Boolean);
   const augments = [1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`playerAugment${slot}`])
     .filter(Boolean)
-    .map(resolveAugmentName);
+    .map(resolveAugmentTag)
+    .filter(Boolean);
 
   return {
     id: makeId("match"),
     userId,
     date,
     patch,
-    champion: participant.championName || "Unknown",
+    champion: canonicalChampionName(participant.championName) || "Unknown",
     partner: teammates.map((teammate) => teammate.champion).join(" + "),
     teammates,
     placement: clamp(placement, 1, ARENA_MAX_PLACEMENT),
     ratingDelta: 0,
     augments,
     items,
-    note: `Zaimportowano z Riot Match-V5 (${detail.metadata.matchId}).`,
+    note: "",
     source: {
       type: "riot",
       matchId: detail.metadata.matchId,
@@ -587,16 +746,16 @@ function normalizeMatch(match, userId, sourceType) {
     userId,
     date: cleanText(match.date) || new Date().toISOString().slice(0, 10),
     patch: cleanText(match.patch) || "unknown",
-    champion: cleanText(match.champion) || "Unknown",
+    champion: canonicalChampionName(match.champion) || "Unknown",
     partner: cleanText(match.partner),
     teammates,
     placement: clamp(Number(match.placement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
-      ? match.augments.map(resolveAugmentName).map(cleanText).filter(Boolean)
+      ? match.augments.map(resolveAugmentTag).filter(Boolean)
       : [],
-    items: Array.isArray(match.items) ? match.items.map(resolveItemName).map(cleanText).filter(Boolean) : [],
-    note: cleanText(match.note),
+    items: Array.isArray(match.items) ? match.items.map(resolveItemTag).filter(Boolean) : [],
+    note: normalizeMatchNote(match.note),
     source,
     createdAt: match.createdAt || new Date().toISOString(),
   };
@@ -629,6 +788,12 @@ async function serveStatic(req, res, url) {
     res.writeHead(200, { "Content-Type": type });
     res.end(data);
   } catch {
+    if (!path.extname(relativePath) && (req.headers.accept || "").includes("text/html")) {
+      const data = await readFile(path.join(ROOT, "index.html"));
+      res.writeHead(200, { "Content-Type": contentTypes[".html"] });
+      res.end(data);
+      return;
+    }
     sendText(res, 404, "Not found");
   }
 }
@@ -703,6 +868,7 @@ function publicUser(user) {
           tagLine: user.riotProfile.tagLine,
           routing: user.riotProfile.routing,
           region: user.riotProfile.region,
+          publicPath: `/${publicRegionSlug(user.riotProfile.region)}/${encodeURIComponent(publicProfileSlug(user.riotProfile))}`,
           profileIconId: user.riotProfile.profileIconId || null,
           profileIconUrl: profileIconUrl(user.riotProfile.profileIconId),
           verifiedAt: user.riotProfile.verifiedAt,
@@ -720,7 +886,7 @@ function formatRiotId(participant) {
 
 function normalizeTeammate(value) {
   if (!value || typeof value !== "object") return null;
-  const champion = cleanText(value.champion);
+  const champion = canonicalChampionName(value.champion);
   const riotId = cleanText(value.riotId);
   if (!champion && !riotId) return null;
   return {
@@ -782,17 +948,95 @@ function cleanText(value) {
 }
 
 function resolveItemName(value) {
-  const text = cleanText(value);
-  const id = extractNumericId(text);
-  if (!id) return text;
-  return GAME_DATA.items?.[id] || text;
+  return resolveItemTag(value)?.name || "";
+}
+
+function resolveItemTag(value) {
+  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases);
 }
 
 function resolveAugmentName(value) {
+  return resolveAugmentTag(value)?.name || "";
+}
+
+function resolveAugmentTag(value) {
+  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases);
+}
+
+function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
+  const source = value && typeof value === "object" ? value : {};
+  const rawText = source.name ?? source.label ?? value;
+  const text = cleanText(rawText);
+  const rawId = cleanText(source.id || source.itemId || source.augmentId || extractNumericId(text));
+  const aliasId = aliases?.[normalizeLookupKey(text)] || "";
+  const id = names?.[rawId] ? rawId : aliasId || rawId;
+  const name = names?.[id] || text;
+  if (!name) return null;
+
+  return {
+    id,
+    name,
+    icon: cleanText(source.icon || icons?.[id]),
+  };
+}
+
+function canonicalChampionName(value) {
   const text = cleanText(value);
-  const id = extractNumericId(text);
-  if (!id) return text;
-  return GAME_DATA.augments?.[id] || text;
+  if (!text) return "";
+  return GAME_DATA.championKeys?.[text] || GAME_DATA.championAliases?.[normalizeLookupKey(text)] || text;
+}
+
+function normalizeMatchNote(value) {
+  const note = cleanText(value);
+  return /^Zaimportowano z Riot Match-V5/i.test(note) ? "" : note;
+}
+
+function getPartnerLabels(match, options = {}) {
+  const teammates = Array.isArray(match.teammates) ? match.teammates : [];
+  const labels = teammates
+    .map((teammate) => {
+      if (options.preferPlayers && teammate.riotId) return teammate.riotId;
+      return teammate.champion || teammate.riotId;
+    })
+    .filter(Boolean);
+  if (labels.length) return labels;
+  return match.partner ? [match.partner] : [];
+}
+
+function publicProfileSlug(profile) {
+  if (!profile?.gameName || !profile?.tagLine) return "";
+  return `${profile.gameName}-${profile.tagLine}`;
+}
+
+function publicRegionSlug(region) {
+  const normalized = normalizePublicRegion(region);
+  const match = [...PUBLIC_REGION_ALIASES.entries()].find(([, value]) => value === normalized);
+  return match?.[0] || normalized;
+}
+
+function normalizePublicRegion(region) {
+  const text = cleanText(region).toLowerCase();
+  return PUBLIC_REGION_ALIASES.get(text) || text;
+}
+
+function normalizeSlug(value) {
+  return cleanText(safeDecode(String(value || ""))).toLowerCase();
+}
+
+function normalizeLookupKey(value) {
+  return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function safeDecode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+function average(values) {
+  return values.length ? values.reduce((total, value) => total + Number(value || 0), 0) / values.length : 0;
 }
 
 function extractNumericId(value) {

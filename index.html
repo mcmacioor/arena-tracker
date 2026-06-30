@@ -141,6 +141,51 @@
             </section>
           </div>
 
+          <div class="view public-profile-view" id="publicProfileView" data-view="public-profile">
+            <section class="panel public-hero" aria-labelledby="publicProfileTitle">
+              <div class="public-profile-head">
+                <img class="profile-avatar" id="publicProfileAvatar" alt="" />
+                <div>
+                  <p class="eyebrow">Publiczny profil</p>
+                  <h2 id="publicProfileTitle">ArenaTracker</h2>
+                </div>
+              </div>
+              <div class="progress-panel compact-progress" aria-labelledby="publicProgressTitle">
+                <div class="progress-head">
+                  <div>
+                    <p class="eyebrow">Progress</p>
+                    <h3 id="publicProgressTitle">Champion wins</h3>
+                  </div>
+                  <strong id="publicProgressCounter">0 / 0</strong>
+                </div>
+                <div class="victory-progress" id="publicVictoryProgress" aria-hidden="true">
+                  <span></span>
+                </div>
+              </div>
+            </section>
+
+            <div class="public-grid">
+              <section class="panel" aria-labelledby="publicWonTitle">
+                <div class="panel-head">
+                  <h2 id="publicWonTitle">Wygrani championi</h2>
+                </div>
+                <div class="champion-collection compact-collection" id="publicWonChampions"></div>
+              </section>
+              <section class="panel" aria-labelledby="publicMissingTitle">
+                <div class="panel-head">
+                  <h2 id="publicMissingTitle">Brakujący</h2>
+                </div>
+                <div class="champion-collection compact-collection" id="publicMissingChampions"></div>
+              </section>
+              <section class="panel" aria-labelledby="publicDuoTitle">
+                <div class="panel-head">
+                  <h2 id="publicDuoTitle">Top duo</h2>
+                </div>
+                <div class="partner-stats" id="publicTopDuo"></div>
+              </section>
+            </div>
+          </div>
+
           <div class="view" id="resetPasswordView" data-view="reset-password">
             <section class="panel auth-panel narrow-panel" aria-labelledby="resetPasswordTitle">
               <div class="panel-head">
@@ -295,6 +340,10 @@
             </div>
           </form>
           <div class="status-box" id="riotSyncStatus"></div>
+          <div class="status-box public-link-box is-hidden" id="publicProfileLinkBox">
+            <strong>Publiczny profil</strong>
+            <a class="inline-link" id="publicProfileLink" href="#dashboard"></a>
+          </div>
           <button class="ghost-action" type="button" id="logoutButton">Wyloguj</button>
         </div>
       </section>
@@ -317,6 +366,31 @@
         <div>
           <h3>Historia</h3>
           <div class="detail-history" id="championDetailHistory"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="match-detail-overlay" id="matchDetailOverlay" aria-hidden="true">
+      <button
+        class="account-backdrop"
+        id="matchDetailBackdrop"
+        type="button"
+        aria-label="Zamknij szczegóły meczu"
+      ></button>
+      <section class="match-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="matchDetailTitle">
+        <button class="dialog-close" id="matchDetailClose" type="button" aria-label="Zamknij">×</button>
+        <div class="match-detail-head">
+          <h2 id="matchDetailTitle">Mecz</h2>
+          <span class="placement-badge" id="matchDetailPlacement">#1</span>
+        </div>
+        <div class="detail-stats" id="matchDetailStats"></div>
+        <div class="match-detail-section">
+          <h3>Drużyna</h3>
+          <div class="team-detail-list" id="matchDetailTeam"></div>
+        </div>
+        <div class="match-detail-section">
+          <h3>Augmenty i itemy</h3>
+          <div class="match-tags detail-tags" id="matchDetailTags"></div>
         </div>
       </section>
     </div>

@@ -13,10 +13,30 @@ const championData = await fetchJson(
 );
 const itemData = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`);
 const arenaData = await fetchJson("https://raw.communitydragon.org/latest/cdragon/arena/en_us.json");
+const cherryAugmentData = await fetchJson(
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/cherry-augments.json",
+);
+const communityItemData = await fetchJson(
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/items.json",
+);
 
 const champions = Object.values(championData.data)
   .map((champion) => champion.name)
   .sort((a, b) => a.localeCompare(b));
+
+const championKeys = Object.fromEntries(
+  Object.values(championData.data).flatMap((champion) => [
+    [champion.id, champion.name],
+    [String(champion.key), champion.name],
+  ]),
+);
+
+const championAliases = Object.fromEntries(
+  Object.values(championData.data).flatMap((champion) => [
+    [normalizeKey(champion.name), champion.name],
+    [normalizeKey(champion.id), champion.name],
+  ]),
+);
 
 const championIcons = Object.fromEntries(
   Object.values(championData.data).map((champion) => [
@@ -25,13 +45,45 @@ const championIcons = Object.fromEntries(
   ]),
 );
 
-const items = Object.fromEntries(
-  Object.entries(itemData.data).map(([id, item]) => [id, stripTags(item.name)]),
-);
+const items = {};
+const itemIcons = {};
+const itemAliases = {};
 
-const augments = Object.fromEntries(
-  (arenaData.augments || []).map((augment) => [String(augment.id), stripTags(augment.name)]),
-);
+Object.entries(itemData.data).forEach(([id, item]) => {
+  addLookupItem(items, itemIcons, itemAliases, id, stripTags(item.name), `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`);
+});
+
+communityItemData.forEach((item) => {
+  addLookupItem(items, itemIcons, itemAliases, item.id, stripTags(item.name), communityDragonAssetUrl(item.iconPath), {
+    overwrite: false,
+  });
+});
+
+const augments = {};
+const augmentIcons = {};
+const augmentAliases = {};
+
+(arenaData.augments || []).forEach((augment) => {
+  addLookupItem(
+    augments,
+    augmentIcons,
+    augmentAliases,
+    augment.id,
+    stripTags(augment.name),
+    communityDragonAssetUrl(augment.iconSmall || augment.iconLarge),
+  );
+});
+
+cherryAugmentData.forEach((augment) => {
+  addLookupItem(
+    augments,
+    augmentIcons,
+    augmentAliases,
+    augment.id,
+    stripTags(augment.nameTRA || augment.simpleNameTRA || augment.augmentNameId),
+    communityDragonAssetUrl(augment.augmentSmallIconPath),
+  );
+});
 
 const payload = {
   version,
@@ -41,11 +93,21 @@ const payload = {
     champion: `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`,
     item: `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`,
     arenaAugments: "https://raw.communitydragon.org/latest/cdragon/arena/en_us.json",
+    cherryAugments:
+      "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/cherry-augments.json",
+    communityItems:
+      "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/items.json",
   },
   champions,
+  championKeys,
+  championAliases,
   championIcons,
   items,
+  itemIcons,
+  itemAliases,
   augments,
+  augmentIcons,
+  augmentAliases,
 };
 
 await writeFile(
@@ -70,4 +132,29 @@ function stripTags(value) {
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function addLookupItem(names, icons, aliases, id, name, icon, options = {}) {
+  const key = String(id || "").trim();
+  const label = stripTags(name);
+  if (!key || !label) return;
+
+  if (options.overwrite !== false || !names[key]) names[key] = label;
+  if (icon && (options.overwrite !== false || !icons[key])) icons[key] = icon;
+  aliases[normalizeKey(label)] = key;
+}
+
+function communityDragonAssetUrl(value) {
+  const assetPath = String(value || "").trim();
+  if (!assetPath) return "";
+  const normalized = assetPath
+    .replace(/^\/lol-game-data\/assets\//i, "")
+    .replace(/^\/?assets\//i, "")
+    .replace(/^\/+/, "")
+    .toLowerCase();
+  return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/${normalized}`;
+}
+
+function normalizeKey(value) {
+  return stripTags(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
 }

@@ -159,6 +159,10 @@ a {
   margin-bottom: 12px;
 }
 
+.is-public-route .topbar {
+  display: none;
+}
+
 .account-menu {
   position: relative;
 }
@@ -664,7 +668,8 @@ textarea:focus {
 }
 
 .account-overlay,
-.champion-detail-overlay {
+.champion-detail-overlay,
+.match-detail-overlay {
   position: fixed;
   inset: 0;
   z-index: 120;
@@ -675,7 +680,8 @@ textarea:focus {
 }
 
 .account-overlay.is-open,
-.champion-detail-overlay.is-open {
+.champion-detail-overlay.is-open,
+.match-detail-overlay.is-open {
   display: flex;
 }
 
@@ -704,10 +710,11 @@ textarea:focus {
   animation: modal-in 180ms ease both;
 }
 
-.champion-detail-dialog {
+.champion-detail-dialog,
+.match-detail-dialog {
   position: relative;
   z-index: 1;
-  width: min(560px, calc(100vw - 32px));
+  width: min(640px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
   overflow: auto;
   padding: 24px;
@@ -718,14 +725,17 @@ textarea:focus {
   animation: modal-in 180ms ease both;
 }
 
-.champion-detail-head {
+.champion-detail-head,
+.match-detail-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
   margin-bottom: 18px;
 }
 
-.champion-detail-head h2 {
+.champion-detail-head h2,
+.match-detail-head h2 {
   font-size: 1.6rem;
 }
 
@@ -851,6 +861,54 @@ textarea:focus {
   color: var(--muted);
 }
 
+.public-profile-view {
+  display: none;
+}
+
+.public-profile-view.is-visible {
+  display: block;
+}
+
+.public-hero {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.public-profile-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.public-profile-head .profile-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.compact-progress {
+  padding: 14px;
+}
+
+.public-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.public-grid .panel:last-child {
+  grid-column: 1 / -1;
+}
+
+.compact-collection {
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-auto-rows: 78px;
+}
+
+.public-card {
+  height: 78px;
+}
+
 .champion-collection {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-auto-rows: 84px;
@@ -929,6 +987,19 @@ textarea:focus {
 .match-card {
   display: grid;
   gap: 10px;
+  width: 100%;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.match-card:hover {
+  border-color: #444949;
+  transform: translateY(-1px);
 }
 
 .detail-history-row {
@@ -969,6 +1040,69 @@ textarea:focus {
   background: #101212;
   font-size: 0.78rem;
   font-weight: 850;
+}
+
+.asset-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 260px;
+}
+
+.asset-tag > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tag-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.match-note {
+  color: var(--muted);
+}
+
+.match-detail-section {
+  margin-top: 18px;
+}
+
+.match-detail-section h3 {
+  margin: 0 0 10px;
+}
+
+.team-detail-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.team-detail-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #343838;
+  border-radius: 8px;
+  background: #0c0d0d;
+}
+
+.team-detail-card span {
+  grid-column: 2;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-tags {
+  align-items: flex-start;
 }
 
 .placement-badge.top {
@@ -1227,6 +1361,7 @@ textarea:focus {
 
   .split-layout,
   .account-grid,
+  .public-grid,
   .metrics-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1255,14 +1390,20 @@ textarea:focus {
   }
 
   .account-overlay,
-  .champion-detail-overlay {
+  .champion-detail-overlay,
+  .match-detail-overlay {
     padding: 14px;
   }
 
   .account-dialog,
-  .champion-detail-dialog {
+  .champion-detail-dialog,
+  .match-detail-dialog {
     width: min(360px, calc(100vw - 28px));
     padding: 24px 28px;
+  }
+
+  .public-grid {
+    grid-template-columns: 1fr;
   }
 
   .auth-switch-row {

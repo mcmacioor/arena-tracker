@@ -3,8 +3,11 @@ const GAME_DATA = globalThis.ARENA_GAME_DATA || {};
 const DATA_DRAGON_VERSION = GAME_DATA.version || "16.13.1";
 const STORAGE_KEY = "arenatracker.matches.v1";
 const CHAMPION_ICONS = GAME_DATA.championIcons || {};
+const CHAMPION_KEYS = GAME_DATA.championKeys || {};
+const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
+const RIOT_SYNC_LIMIT = 80;
 
 const CHAMPIONS = GAME_DATA.champions || [
   "Aatrox",
@@ -186,6 +189,8 @@ const state = {
   activeRoute: "dashboard",
   matches: [],
   user: null,
+  publicProfile: null,
+  publicRoute: null,
   backendAvailable: false,
   riotStatus: null,
   resetToken: "",
@@ -241,6 +246,21 @@ function cacheDom() {
     championDetailTitle: document.getElementById("championDetailTitle"),
     championDetailStats: document.getElementById("championDetailStats"),
     championDetailHistory: document.getElementById("championDetailHistory"),
+    matchDetailOverlay: document.getElementById("matchDetailOverlay"),
+    matchDetailBackdrop: document.getElementById("matchDetailBackdrop"),
+    matchDetailClose: document.getElementById("matchDetailClose"),
+    matchDetailTitle: document.getElementById("matchDetailTitle"),
+    matchDetailPlacement: document.getElementById("matchDetailPlacement"),
+    matchDetailStats: document.getElementById("matchDetailStats"),
+    matchDetailTeam: document.getElementById("matchDetailTeam"),
+    matchDetailTags: document.getElementById("matchDetailTags"),
+    publicProfileAvatar: document.getElementById("publicProfileAvatar"),
+    publicProfileTitle: document.getElementById("publicProfileTitle"),
+    publicProgressCounter: document.getElementById("publicProgressCounter"),
+    publicVictoryProgress: document.getElementById("publicVictoryProgress"),
+    publicWonChampions: document.getElementById("publicWonChampions"),
+    publicMissingChampions: document.getElementById("publicMissingChampions"),
+    publicTopDuo: document.getElementById("publicTopDuo"),
     accountTitle: document.getElementById("accountTitle"),
     accountStatus: document.getElementById("accountStatus"),
     authForms: document.getElementById("authForms"),
@@ -263,6 +283,8 @@ function cacheDom() {
     riotRouting: document.getElementById("riotRouting"),
     riotRegion: document.getElementById("riotRegion"),
     riotSyncStatus: document.getElementById("riotSyncStatus"),
+    publicProfileLinkBox: document.getElementById("publicProfileLinkBox"),
+    publicProfileLink: document.getElementById("publicProfileLink"),
     toast: document.getElementById("toast"),
     emptyStateTemplate: document.getElementById("emptyStateTemplate"),
   });
@@ -333,6 +355,7 @@ function bindEvents() {
     if (event.key === "Escape") {
       closeAccountOverlay();
       closeChampionDetail();
+      closeMatchDetail();
     }
   });
 
@@ -346,6 +369,17 @@ function bindEvents() {
 
   dom.championDetailBackdrop.addEventListener("click", closeChampionDetail);
   dom.championDetailClose.addEventListener("click", closeChampionDetail);
+
+  [dom.matchList, dom.recentMatches].forEach((container) => {
+    container.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-match-detail]");
+      if (!card) return;
+      openMatchDetail(card.dataset.matchDetail);
+    });
+  });
+
+  dom.matchDetailBackdrop.addEventListener("click", closeMatchDetail);
+  dom.matchDetailClose.addEventListener("click", closeMatchDetail);
 
   dom.authSwitches.forEach((switchButton) => {
     switchButton.addEventListener("click", () => setAuthTab(switchButton.dataset.authSwitch));
@@ -381,6 +415,7 @@ function bindEvents() {
 
 function setActiveRoute(route) {
   state.activeRoute = route;
+  document.body.classList.toggle("is-public-route", route === "public-profile");
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.toggle("is-active", link.dataset.route === route);
   });
@@ -425,20 +460,15 @@ function openChampionDetail(champion) {
     champion,
     games: 0,
     wins: 0,
-    bestPartner: "",
+    avg: 0,
   };
-  const wonMatches = matches.filter((match) => match.placement === 1);
-  const patchCounts = new Map();
-  wonMatches.forEach((match) => increment(patchCounts, match.patch));
-  const bestPatch = mapLeader(patchCounts) || "-";
 
   dom.championDetailIcon.replaceChildren(renderChampionIcon(champion));
   dom.championDetailTitle.textContent = champion;
   dom.championDetailStats.replaceChildren(
     renderDetailStat("Wygrane", stat.wins),
     renderDetailStat("Gry", stat.games),
-    renderDetailStat("Najczęstszy duo", stat.bestPartner || "-"),
-    renderDetailStat("Najlepszy patch", bestPatch),
+    renderDetailStat("Średnie miejsce", formatAveragePlacement(stat.avg)),
   );
   dom.championDetailHistory.replaceChildren(
     ...(matches.length
@@ -461,6 +491,52 @@ function closeChampionDetail() {
   dom.championDetailOverlay.setAttribute("aria-hidden", "true");
 }
 
+function openMatchDetail(matchId) {
+  const match = state.matches.find((item) => item.id === matchId);
+  if (!match) return;
+
+  dom.matchDetailTitle.textContent = formatTeamTitle(match);
+  dom.matchDetailPlacement.textContent = `#${match.placement}`;
+  dom.matchDetailPlacement.className = `placement-badge ${match.placement === 1 ? "top" : match.placement >= 5 ? "low" : ""}`;
+  dom.matchDetailStats.replaceChildren(
+    renderDetailStat("Data", formatDate(match.date)),
+    renderDetailStat("Patch", match.patch),
+    renderDetailStat("Miejsce", `#${match.placement}`),
+  );
+  dom.matchDetailTeam.replaceChildren(...renderMatchTeam(match));
+  dom.matchDetailTags.replaceChildren(
+    ...[...match.augments, ...match.items].map((tag) => renderTagPill(tag)),
+  );
+  if (!dom.matchDetailTags.childElementCount) {
+    dom.matchDetailTags.replaceChildren(el("span", "tag", "Brak augmentów i itemów"));
+  }
+
+  dom.matchDetailOverlay.classList.add("is-open");
+  dom.matchDetailOverlay.setAttribute("aria-hidden", "false");
+}
+
+function closeMatchDetail() {
+  dom.matchDetailOverlay.classList.remove("is-open");
+  dom.matchDetailOverlay.setAttribute("aria-hidden", "true");
+}
+
+function renderMatchTeam(match) {
+  const members = [
+    { champion: match.champion, riotId: state.user?.riotProfile ? `${state.user.riotProfile.gameName}#${state.user.riotProfile.tagLine}` : "" },
+    ...(Array.isArray(match.teammates) ? match.teammates : []),
+  ];
+
+  return members.map((member) => {
+    const root = el("article", "team-detail-card");
+    root.append(
+      renderChampionIcon(member.champion),
+      el("strong", "", member.champion || member.riotId || "-"),
+    );
+    if (member.riotId) root.append(el("span", "", member.riotId));
+    return root;
+  });
+}
+
 function renderDetailStat(label, value) {
   const root = el("article", "detail-stat");
   root.append(el("span", "", label), el("strong", "", value));
@@ -477,8 +553,19 @@ function closeAccountOverlay() {
 }
 
 function updateRoute() {
+  const publicRoute = parsePublicRoute();
+  if (publicRoute) {
+    closeAccountOverlay();
+    state.publicRoute = publicRoute;
+    setActiveRoute("public-profile");
+    loadPublicProfile(publicRoute);
+    renderResetTokenView();
+    return;
+  }
+
   const rawRoute = window.location.hash.replace("#", "") || "dashboard";
   const [route, token] = rawRoute.split("/");
+  state.publicRoute = null;
   state.resetToken = route === "reset-password" ? decodeURIComponent(token || "") : "";
   if (route === "account") {
     setActiveRoute(state.activeRoute || "dashboard");
@@ -490,6 +577,38 @@ function updateRoute() {
   const knownRoute = document.querySelector(`[data-view="${route}"]`) ? route : "dashboard";
   setActiveRoute(knownRoute);
   renderResetTokenView();
+}
+
+function parsePublicRoute() {
+  if (window.location.hash) return null;
+  const segments = window.location.pathname.split("/").filter(Boolean);
+  if (segments.length < 2 || segments[0].includes(".")) return null;
+  return {
+    region: segments[0],
+    slug: safeDecode(segments.slice(1).join("/")),
+  };
+}
+
+async function loadPublicProfile(route) {
+  const routeKey = `${route.region}/${route.slug}`;
+  if (state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) return;
+
+  state.publicProfile = { routeKey, loading: true, error: "" };
+  renderPublicProfile();
+
+  try {
+    const params = new URLSearchParams({ region: route.region, slug: route.slug });
+    state.publicProfile = {
+      routeKey,
+      loading: false,
+      error: "",
+      data: await apiRequest(`/api/public-profile?${params.toString()}`),
+    };
+  } catch (error) {
+    state.publicProfile = { routeKey, loading: false, error: error.message };
+  }
+
+  renderPublicProfile();
 }
 
 function syncFiltersFromDom() {
@@ -505,6 +624,7 @@ function render() {
   renderMatchList(dom.recentMatches, matches.slice(0, 5), { compact: true });
   renderMatchList(dom.matchList, matches);
   renderChampionCollection(matches);
+  renderPublicProfile();
   renderAccount();
   renderResetTokenView();
 }
@@ -524,6 +644,7 @@ function renderVictoryProgress(matches) {
 function renderAccount() {
   dom.accountMenuLabel.textContent = state.user ? state.user.displayName : "Konto";
   updateAccountAvatars();
+  renderAccountPublicLink();
 
   dom.authForms.classList.toggle("is-hidden", Boolean(state.user));
   dom.profilePanel.classList.toggle("is-hidden", !state.user);
@@ -566,6 +687,99 @@ function renderAccount() {
           : "Profil zapisany lokalnie.",
     ),
   );
+}
+
+function renderAccountPublicLink() {
+  const path = state.user?.riotProfile?.publicPath;
+  dom.publicProfileLinkBox.classList.toggle("is-hidden", !path);
+  if (!path) {
+    dom.publicProfileLink.removeAttribute("href");
+    dom.publicProfileLink.textContent = "";
+    return;
+  }
+
+  const url = `${window.location.origin}${path}`;
+  dom.publicProfileLink.href = path;
+  dom.publicProfileLink.textContent = url.replace(/^https?:\/\//, "");
+}
+
+function renderPublicProfile() {
+  if (!dom.publicProfileTitle) return;
+  const publicState = state.publicProfile;
+
+  if (!publicState || !state.publicRoute) {
+    dom.publicProfileTitle.textContent = "ArenaTracker";
+    renderPublicProgress({ won: 0, total: CHAMPIONS.length });
+    dom.publicWonChampions.replaceChildren();
+    dom.publicMissingChampions.replaceChildren();
+    dom.publicTopDuo.replaceChildren();
+    return;
+  }
+
+  if (publicState.loading) {
+    dom.publicProfileTitle.textContent = "Synchronizuję...";
+    renderPublicProgress({ won: 0, total: CHAMPIONS.length });
+    dom.publicWonChampions.replaceChildren(emptyState("Ładuję profil.", "Chwila."));
+    dom.publicMissingChampions.replaceChildren();
+    dom.publicTopDuo.replaceChildren();
+    return;
+  }
+
+  if (publicState.error) {
+    dom.publicProfileTitle.textContent = "Nie znaleziono profilu";
+    renderPublicProgress({ won: 0, total: CHAMPIONS.length });
+    dom.publicWonChampions.replaceChildren(emptyState(publicState.error, "Sprawdź region i nazwę w linku."));
+    dom.publicMissingChampions.replaceChildren();
+    dom.publicTopDuo.replaceChildren();
+    return;
+  }
+
+  const data = publicState.data;
+  dom.publicProfileAvatar.src = data.profile.profileIconUrl || DEFAULT_AUTH_AVATAR;
+  dom.publicProfileTitle.textContent = `${data.profile.gameName}#${data.profile.tagLine}`;
+  renderPublicProgress(data.progress);
+  dom.publicWonChampions.replaceChildren(
+    ...(data.wonChampions.length
+      ? data.wonChampions.map((stat) => renderPublicChampionCard(stat, `${stat.wins} win · śr. #${formatAveragePlacement(stat.averagePlacement)}`))
+      : [emptyState("Brak wygranych championów.", "Publiczny profil uzupełni się po synchronizacji.")]),
+  );
+  dom.publicMissingChampions.replaceChildren(
+    ...(data.missingChampions.length
+      ? data.missingChampions
+          .slice(0, 24)
+          .map((stat) => renderPublicChampionCard(stat, "Brakuje wygranej", false))
+      : [emptyState("Kolekcja zamknięta.", "Każdy champion ma wygraną.")]),
+  );
+  dom.publicTopDuo.replaceChildren(
+    ...(data.topDuo.length
+      ? data.topDuo.map((stat) => {
+          const root = el("article", "partner-card");
+          root.append(
+            el("strong", "", stat.name),
+            el("span", "", `${stat.games} gier · ${percentage(stat.winrate)} WR`),
+          );
+          return root;
+        })
+      : [emptyState("Brak danych duo.", "Synchronizacja uzupełni partnerów.")]),
+  );
+}
+
+function renderPublicProgress(progress) {
+  const won = Number(progress?.won || 0);
+  const total = Number(progress?.total || CHAMPIONS.length);
+  const percent = total ? (won / total) * 100 : 0;
+  dom.publicProgressCounter.textContent = `${won} / ${total}`;
+  dom.publicVictoryProgress.style.setProperty("--progress", `${percent}%`);
+  dom.publicVictoryProgress.querySelector("span").style.width = `${percent}%`;
+}
+
+function renderPublicChampionCard(stat, caption, complete = true) {
+  const root = el("article", `champion-collection-card ${complete ? "is-complete" : "is-missing"} public-card`);
+  const icon = stat.icon ? imageIcon(stat.icon, "champion-icon") : renderChampionIcon(stat.champion);
+  const body = el("div", "champion-card-copy");
+  body.append(el("strong", "", stat.champion), el("span", "", caption));
+  root.append(icon, body);
+  return root;
 }
 
 function updateAccountAvatars() {
@@ -707,9 +921,10 @@ function renderChampionCollectionCard(stat) {
 }
 
 function renderChampionIcon(champion) {
-  const src = champion ? CHAMPION_ICONS[champion] : "";
+  const championName = canonicalChampionName(champion);
+  const src = championName ? CHAMPION_ICONS[championName] : "";
   if (!src) {
-    const fallback = el("span", "champion-icon is-empty", champion ? champion.slice(0, 2) : "");
+    const fallback = el("span", "champion-icon is-empty", championName ? championName.slice(0, 2) : "");
     fallback.setAttribute("aria-hidden", "true");
     return fallback;
   }
@@ -732,7 +947,9 @@ function renderMatchList(container, matches, options = {}) {
 }
 
 function renderMatchCard(match, options) {
-  const root = el("article", "match-card");
+  const root = el("button", "match-card");
+  root.type = "button";
+  root.dataset.matchDetail = match.id;
   const topLine = el("div", "match-topline");
   const title = el("strong", "", formatTeamTitle(match));
   const placement = el(
@@ -750,13 +967,23 @@ function renderMatchCard(match, options) {
 
   const tags = el("div", "match-tags");
   [...match.augments.slice(0, 3), ...match.items.slice(0, options.compact ? 1 : 3)].forEach((tag) => {
-    tags.append(el("span", "tag", tag));
+    tags.append(renderTagPill(tag));
   });
 
   root.append(topLine, meta);
   if (tags.childElementCount) root.append(tags);
-  if (!options.compact && match.note) root.append(el("span", "", match.note));
+  if (!options.compact && match.note) root.append(el("span", "match-note", match.note));
 
+  return root;
+}
+
+function renderTagPill(tag) {
+  const normalized = normalizeAssetTag(tag);
+  const root = el("span", "tag asset-tag");
+  if (normalized.icon) {
+    root.append(imageIcon(normalized.icon, "tag-icon"));
+  }
+  root.append(el("span", "", normalized.name));
   return root;
 }
 
@@ -958,7 +1185,7 @@ async function syncRiotMatches(options = {}) {
   try {
     const data = await apiRequest("/api/riot/sync", {
       method: "POST",
-      body: { limit: 30 },
+      body: { limit: RIOT_SYNC_LIMIT },
     });
     state.user = data.user;
     state.matches = data.matches.map(normalizeMatch).filter(Boolean);
@@ -1071,16 +1298,16 @@ function normalizeMatch(match) {
     id: match.id || makeId(),
     date: cleanText(match.date),
     patch: cleanText(match.patch || DATA_DRAGON_VERSION),
-    champion: cleanText(match.champion),
+    champion: canonicalChampionName(match.champion),
     partner,
     teammates,
     placement: clamp(Number(match.placement), 1, ARENA_MAX_PLACEMENT),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
-      ? match.augments.map(resolveAugmentName).map(cleanText).filter(Boolean)
+      ? match.augments.map(resolveAugmentTag).filter(Boolean)
       : [],
-    items: Array.isArray(match.items) ? match.items.map(resolveItemName).map(cleanText).filter(Boolean) : [],
-    note: cleanText(match.note),
+    items: Array.isArray(match.items) ? match.items.map(resolveItemTag).filter(Boolean) : [],
+    note: normalizeMatchNote(match.note),
     source: match.source && typeof match.source === "object" ? match.source : { type: "manual" },
     createdAt: match.createdAt || new Date().toISOString(),
   };
@@ -1181,7 +1408,7 @@ function formatTeamTitle(match) {
 
 function normalizeTeammate(value) {
   if (!value || typeof value !== "object") return null;
-  const champion = cleanText(value.champion);
+  const champion = canonicalChampionName(value.champion);
   const riotId = cleanText(value.riotId);
   if (!champion && !riotId) return null;
   return {
@@ -1196,17 +1423,64 @@ function mapLeader(map) {
 }
 
 function resolveItemName(value) {
-  const text = cleanText(value);
-  const id = extractNumericId(text);
-  if (!id) return text;
-  return GAME_DATA.items?.[id] || text;
+  return resolveItemTag(value)?.name || "";
+}
+
+function resolveItemTag(value) {
+  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases);
 }
 
 function resolveAugmentName(value) {
+  return resolveAugmentTag(value)?.name || "";
+}
+
+function resolveAugmentTag(value) {
+  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases);
+}
+
+function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
+  const source = value && typeof value === "object" ? value : {};
+  const rawText = source.name ?? source.label ?? value;
+  const text = cleanText(rawText);
+  const rawId = cleanText(source.id || source.itemId || source.augmentId || extractNumericId(text));
+  const aliasId = aliases?.[normalizeLookupKey(text)] || "";
+  const id = names?.[rawId] ? rawId : aliasId || rawId;
+  const name = names?.[id] || text;
+  if (!name) return null;
+
+  return {
+    id,
+    name,
+    icon: cleanText(source.icon || icons?.[id]),
+  };
+}
+
+function normalizeAssetTag(value) {
+  if (value && typeof value === "object") {
+    return {
+      name: cleanText(value.name || value.label || value.id),
+      icon: cleanText(value.icon),
+    };
+  }
+  return {
+    name: cleanText(value),
+    icon: "",
+  };
+}
+
+function canonicalChampionName(value) {
   const text = cleanText(value);
-  const id = extractNumericId(text);
-  if (!id) return text;
-  return GAME_DATA.augments?.[id] || text;
+  if (!text) return "";
+  return CHAMPION_KEYS[text] || CHAMPION_ALIASES[normalizeLookupKey(text)] || text;
+}
+
+function normalizeMatchNote(value) {
+  const note = cleanText(value);
+  return /^Zaimportowano z Riot Match-V5/i.test(note) ? "" : note;
+}
+
+function formatAveragePlacement(value) {
+  return Number(value || 0) ? Number(value).toFixed(1) : "-";
 }
 
 function extractNumericId(value) {
@@ -1216,6 +1490,18 @@ function extractNumericId(value) {
 
 function normalize(value) {
   return cleanText(value).toLocaleLowerCase("pl-PL");
+}
+
+function normalizeLookupKey(value) {
+  return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function safeDecode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return cleanText(value);
+  }
 }
 
 function cleanText(value) {
@@ -1268,8 +1554,20 @@ function announce(message) {
   }, 2400);
 }
 
-function emptyState() {
-  return dom.emptyStateTemplate.content.firstElementChild.cloneNode(true);
+function emptyState(title, caption) {
+  const node = dom.emptyStateTemplate.content.firstElementChild.cloneNode(true);
+  if (title) node.querySelector("strong").textContent = title;
+  if (caption) node.querySelector("span").textContent = caption;
+  return node;
+}
+
+function imageIcon(src, className) {
+  const image = document.createElement("img");
+  image.className = className;
+  image.src = src;
+  image.alt = "";
+  image.loading = "lazy";
+  return image;
 }
 
 function el(tagName, className, text) {

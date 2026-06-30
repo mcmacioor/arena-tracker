@@ -22,14 +22,14 @@ const smokeMatches = [
       { champion: "Lulu", riotId: "ShieldBot#EUNE" },
     ],
     placement: 1,
-    augments: ["Mystic Punch"],
+    augments: [1324],
     items: ["Black Cleaver"],
   },
   {
     id: "smoke-2",
     date: "2026-06-29",
     patch: "16.13",
-    champion: "Kayn",
+    champion: "LeeSin",
     teammates: [
       { champion: "Yuumi", riotId: "ShieldBot#EUNE" },
       { champion: "Malphite", riotId: "RockSolid#EUNE" },
@@ -130,7 +130,8 @@ try {
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const collectionText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
   assert(collectionText.includes("Vi"), "Won champion Vi missing from collection");
-  assert(collectionText.includes("Kayn"), "Won champion Kayn missing from collection");
+  assert(collectionText.includes("Lee Sin"), "Canonical Lee Sin missing from collection");
+  assert(!collectionText.includes("LeeSin"), "Raw Riot champion key should not be rendered");
   assert(!collectionText.includes("Brakuje wygranej"), "Default collection should only list won champions");
   const collectionIconCount = await evalPage(
     cdp,
@@ -142,7 +143,7 @@ try {
   await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
   const filteredCollectionText = await evalPage(cdp, `document.querySelector("#championCollection").innerText`);
   assert(filteredCollectionText.includes("Vi"), "Filtered collection should contain Vi");
-  assert(!filteredCollectionText.includes("Kayn"), "Filtered collection should hide Kayn");
+  assert(!filteredCollectionText.includes("Lee Sin"), "Filtered collection should hide Lee Sin");
   await evalPage(cdp, `document.querySelector('[data-collection-mode="missing"]').click()`);
   await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Aatrox"`);
   await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
@@ -159,8 +160,23 @@ try {
   );
   assert(detailOpen, "Champion detail modal should open after clicking a champion");
   const detailText = await evalPage(cdp, `document.querySelector("#championDetailOverlay").innerText`);
-  assert(detailText.includes("Najczęstszy duo"), "Champion detail stats missing");
+  assert(detailText.includes("Średnie miejsce"), "Champion detail should include average placement");
   await evalPage(cdp, `document.querySelector("#championDetailClose").click()`);
+
+  await evalPage(cdp, `location.hash = "matches"`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
+  const matchText = await evalPage(cdp, `document.querySelector("#matchList").innerText`);
+  assert(matchText.includes("Protein Shake"), "Numeric augment id should resolve to a name");
+  assert(!matchText.includes("1324"), "Numeric augment id should not be rendered raw");
+  await evalPage(cdp, `document.querySelector("[data-match-detail]").click()`);
+  const matchDetailOpen = await evalPage(
+    cdp,
+    `document.querySelector("#matchDetailOverlay").classList.contains("is-open")`,
+  );
+  assert(matchDetailOpen, "Match detail modal should open after clicking a match");
+  const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailOverlay").innerText`);
+  assert(matchDetailText.includes("Protein Shake"), "Match detail should include resolved augment names");
+  await evalPage(cdp, `document.querySelector("#matchDetailClose").click()`);
 
   await evalPage(cdp, `document.querySelector("#accountMenuButton").click()`);
   const accountOverlayOpen = await evalPage(
@@ -192,7 +208,7 @@ try {
   assert(resetVisible, "Reset password tab did not become visible");
 
   if (errors.length) throw new Error(`Browser errors: ${errors.join("; ")}`);
-  console.log("Smoke test passed: auto data seed, filters, champion details and account modal.");
+  console.log("Smoke test passed: data aliases, filters, details and account modal.");
 } finally {
   browserProcess.kill();
 }
