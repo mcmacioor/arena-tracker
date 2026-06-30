@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ArenaTracker</title>
+    <meta
+      name="description"
+      content="ArenaTracker to lokalny tracker sesji League of Legends Arena: mecze, duety, augmenty, itemy i statystyki."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Nawigacja ArenaTracker">
+        <a class="brand" href="#dashboard" aria-label="ArenaTracker dashboard">
+          <span class="brand-mark" aria-hidden="true">AT</span>
+          <span>
+            <strong>ArenaTracker</strong>
+            <small>League Arena logbook</small>
+          </span>
+        </a>
+
+        <nav class="nav-list" aria-label="Główne widoki">
+          <a class="nav-link is-active" href="#dashboard" data-route="dashboard">
+            <span class="nav-icon" aria-hidden="true">⌁</span>
+            Dashboard
+          </a>
+          <a class="nav-link" href="#matches" data-route="matches">
+            <span class="nav-icon" aria-hidden="true">＋</span>
+            Mecze
+          </a>
+          <a class="nav-link" href="#champions" data-route="champions">
+            <span class="nav-icon" aria-hidden="true">◇</span>
+            Bohaterowie
+          </a>
+          <a class="nav-link" href="#planner" data-route="planner">
+            <span class="nav-icon" aria-hidden="true">◎</span>
+            Planner
+          </a>
+        </nav>
+
+        <div class="sidebar-foot">
+          <span>Patch danych</span>
+          <strong id="dataPatch">16.13.1</strong>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="hero-panel" aria-labelledby="appTitle">
+          <div class="hero-copy">
+            <p class="eyebrow">Local-first companion</p>
+            <h1 id="appTitle">ArenaTracker</h1>
+            <p>
+              Śledź sesje Areny, wyłapuj najlepsze duety i wracaj do buildów,
+              które faktycznie dowiozły top 2.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="primary-action" href="#matches">Dodaj mecz</a>
+            <button class="ghost-action" type="button" id="seedSampleButton">
+              Wczytaj demo
+            </button>
+          </div>
+        </section>
+
+        <section class="toolbar" aria-label="Filtry sesji">
+          <label>
+            <span>Patch</span>
+            <input id="patchFilter" type="search" placeholder="np. 16.13" />
+          </label>
+          <label>
+            <span>Bohater</span>
+            <input id="championFilter" type="search" placeholder="np. Vi" />
+          </label>
+          <label>
+            <span>Zakres</span>
+            <select id="rangeFilter">
+              <option value="all">Wszystkie gry</option>
+              <option value="7">Ostatnie 7 dni</option>
+              <option value="30">Ostatnie 30 dni</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="view-stack">
+          <div class="view is-visible" id="dashboardView" data-view="dashboard">
+            <div class="metrics-grid" id="metricsGrid" aria-live="polite"></div>
+            <div class="split-layout">
+              <section class="panel" aria-labelledby="insightsTitle">
+                <div class="panel-head">
+                  <h2 id="insightsTitle">Sygnały z sesji</h2>
+                </div>
+                <div class="insight-list" id="insightList"></div>
+              </section>
+              <section class="panel" aria-labelledby="recentTitle">
+                <div class="panel-head">
+                  <h2 id="recentTitle">Ostatnie mecze</h2>
+                </div>
+                <div class="match-list compact" id="recentMatches"></div>
+              </section>
+            </div>
+          </div>
+
+          <div class="view" id="matchesView" data-view="matches">
+            <div class="two-column">
+              <section class="panel" aria-labelledby="matchFormTitle">
+                <div class="panel-head">
+                  <h2 id="matchFormTitle">Nowy mecz</h2>
+                </div>
+                <form class="match-form" id="matchForm">
+                  <div class="form-grid">
+                    <label>
+                      <span>Data</span>
+                      <input id="matchDate" name="date" type="date" required />
+                    </label>
+                    <label>
+                      <span>Patch</span>
+                      <input id="matchPatch" name="patch" type="text" required />
+                    </label>
+                    <label>
+                      <span>Twój bohater</span>
+                      <input
+                        id="matchChampion"
+                        name="champion"
+                        type="text"
+                        list="championOptions"
+                        autocomplete="off"
+                        required
+                      />
+                    </label>
+                    <label>
+                      <span>Partner</span>
+                      <input
+                        id="matchPartner"
+                        name="partner"
+                        type="text"
+                        list="championOptions"
+                        autocomplete="off"
+                      />
+                    </label>
+                    <label>
+                      <span>Miejsce</span>
+                      <select id="matchPlacement" name="placement" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Rating +/-</span>
+                      <input id="matchRating" name="ratingDelta" type="number" value="0" />
+                    </label>
+                  </div>
+                  <label>
+                    <span>Augmenty</span>
+                    <input
+                      id="matchAugments"
+                      name="augments"
+                      type="text"
+                      placeholder="np. Quest: Steel Your Heart, Blade Waltz"
+                    />
+                  </label>
+                  <label>
+                    <span>Kluczowe itemy</span>
+                    <input
+                      id="matchItems"
+                      name="items"
+                      type="text"
+                      placeholder="np. Hellfire Hatchet, Gargoyle Stoneplate"
+                    />
+                  </label>
+                  <label>
+                    <span>Notatka</span>
+                    <textarea
+                      id="matchNote"
+                      name="note"
+                      rows="4"
+                      placeholder="Co zadziałało, co banować, timing powerspike..."
+                    ></textarea>
+                  </label>
+                  <div class="form-actions">
+                    <button class="primary-action" type="submit">Zapisz mecz</button>
+                    <button class="ghost-action" type="reset">Wyczyść</button>
+                  </div>
+                </form>
+              </section>
+
+              <section class="panel" aria-labelledby="historyTitle">
+                <div class="panel-head">
+                  <h2 id="historyTitle">Historia</h2>
+                  <div class="inline-actions">
+                    <button class="icon-button" type="button" id="exportButton" title="Eksportuj dane">
+                      ⇩
+                    </button>
+                    <label class="icon-button file-trigger" title="Importuj dane">
+                      ⇧
+                      <input id="importInput" type="file" accept="application/json" />
+                    </label>
+                  </div>
+                </div>
+                <div class="match-list" id="matchList"></div>
+              </section>
+            </div>
+          </div>
+
+          <div class="view" id="championsView" data-view="champions">
+            <section class="panel" aria-labelledby="championStatsTitle">
+              <div class="panel-head">
+                <h2 id="championStatsTitle">Tabela bohaterów</h2>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Bohater</th>
+                      <th>Gry</th>
+                      <th>Śr. miejsce</th>
+                      <th>Top 2</th>
+                      <th>Najlepszy duet</th>
+                      <th>Najczęstszy augment</th>
+                    </tr>
+                  </thead>
+                  <tbody id="championTable"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <div class="view" id="plannerView" data-view="planner">
+            <div class="planner-grid">
+              <section class="panel" aria-labelledby="plannerTitle">
+                <div class="panel-head">
+                  <h2 id="plannerTitle">Planner draftu</h2>
+                </div>
+                <form class="planner-form" id="plannerForm">
+                  <label>
+                    <span>Bohater</span>
+                    <input id="plannerChampion" type="text" list="championOptions" />
+                  </label>
+                  <label>
+                    <span>Partner</span>
+                    <input id="plannerPartner" type="text" list="championOptions" />
+                  </label>
+                  <button class="primary-action" type="submit">Sprawdź duet</button>
+                </form>
+                <div class="planner-result" id="plannerResult"></div>
+              </section>
+
+              <section class="panel" aria-labelledby="watchlistTitle">
+                <div class="panel-head">
+                  <h2 id="watchlistTitle">Do przetestowania</h2>
+                </div>
+                <div class="watchlist" id="watchlist"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <datalist id="championOptions"></datalist>
+    <template id="emptyStateTemplate">
+      <div class="empty-state">
+        <strong>Brak danych dla tych filtrów.</strong>
+        <span>Dodaj mecz albo wczytaj demo, żeby zobaczyć statystyki.</span>
+      </div>
+    </template>
+    <script src="app.js" defer></script>
+  </body>
+</html>
