@@ -6,6 +6,15 @@ ArenaTracker to lokalna aplikacja statyczna do śledzenia sesji League of Legend
 
 Otwórz `index.html` w przeglądarce. Aplikacja nie wymaga instalowania zależności.
 
+## Funkcje
+
+- Dashboard z liczbą gier, średnim miejscem, top 2 rate, win rate i zmianą ratingu.
+- Formularz zapisu meczu: data, patch, bohater, partner, miejsce, rating, augmenty, itemy i notatka.
+- Historia meczów z filtrami po patchu, bohaterze i zakresie czasu.
+- Tabela bohaterów z agregacją średniego miejsca, top 2, duetów i augmentów.
+- Planner draftu na bazie zapisanych prób danego bohatera albo duetu.
+- Import i eksport danych JSON.
+
 ## Założenia
 
 - Dane użytkownika są przechowywane lokalnie w `localStorage`.

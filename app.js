@@ -315,6 +315,7 @@ function cacheDom() {
     plannerPartner: document.getElementById("plannerPartner"),
     plannerResult: document.getElementById("plannerResult"),
     watchlist: document.getElementById("watchlist"),
+    toast: document.getElementById("toast"),
     championOptions: document.getElementById("championOptions"),
     emptyStateTemplate: document.getElementById("emptyStateTemplate"),
   });
@@ -363,6 +364,7 @@ function bindEvents() {
       createdAt: new Date().toISOString(),
     }));
     persistMatches();
+    announce("Wczytano przykładową sesję demo.");
     render();
   });
 
@@ -374,6 +376,7 @@ function bindEvents() {
     dom.matchForm.reset();
     setDefaultFormValues();
     window.location.hash = "matches";
+    announce(`Zapisano mecz: ${match.champion} #${match.placement}.`);
     render();
   });
 
@@ -396,6 +399,7 @@ function bindEvents() {
 
       state.matches = state.matches.filter((item) => item.id !== match.id);
       persistMatches();
+      announce("Mecz usunięty.");
       render();
     });
   });
@@ -772,6 +776,7 @@ function exportMatches() {
   link.download = `arenatracker-${today()}.json`;
   link.click();
   URL.revokeObjectURL(url);
+  announce("Eksport JSON przygotowany.");
 }
 
 function importMatches(event) {
@@ -788,6 +793,7 @@ function importMatches(event) {
       const normalized = imported.map(normalizeMatch).filter(Boolean);
       state.matches = normalized;
       persistMatches();
+      announce(`Zaimportowano ${normalized.length} meczów.`);
       render();
     } catch (error) {
       window.alert(`Nie udało się zaimportować pliku: ${error.message}`);
@@ -947,7 +953,9 @@ function clamp(value, min, max) {
 }
 
 function today() {
-  return new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const offset = now.getTimezoneOffset() * 60 * 1000;
+  return new Date(now.getTime() - offset).toISOString().slice(0, 10);
 }
 
 function formatDate(value) {
@@ -960,6 +968,17 @@ function formatDate(value) {
 
 function makeId() {
   return globalThis.crypto?.randomUUID?.() || `match-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+let toastTimer;
+
+function announce(message) {
+  window.clearTimeout(toastTimer);
+  dom.toast.textContent = message;
+  dom.toast.classList.add("is-visible");
+  toastTimer = window.setTimeout(() => {
+    dom.toast.classList.remove("is-visible");
+  }, 2400);
 }
 
 function emptyState() {
