@@ -33,11 +33,26 @@
       <main class="main">
         <header class="topbar" aria-label="Konto użytkownika">
           <div class="topbar-spacer"></div>
+          <form class="player-search-form top-player-search" data-player-search-form data-search-action="open">
+            <select name="region" aria-label="Serwer">
+              <option value="euw1">EUW</option>
+              <option value="eun1">EUNE</option>
+              <option value="na1">NA</option>
+              <option value="kr">KR</option>
+              <option value="br1">BR</option>
+              <option value="tr1">TR</option>
+            </select>
+            <div class="search-field">
+              <input name="riotId" type="search" autocomplete="off" placeholder="Szukaj gracza" />
+              <div class="search-results" data-search-results></div>
+            </div>
+            <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
+          </form>
           <label class="language-switch top-language-switch">
             <span data-i18n="settings.language">Język</span>
             <select id="languageSelect" aria-label="Język">
-              <option value="pl">PL</option>
-              <option value="en">EN</option>
+              <option value="pl">🇵🇱 PL</option>
+              <option value="en">🇬🇧 EN</option>
             </select>
           </label>
           <div class="account-menu" id="accountMenu">
@@ -66,7 +81,7 @@
             <strong>ArenaTracker</strong>
           </div>
           <h1 id="landingSearchTitle">Znajdź profil Arena</h1>
-          <form class="player-search-form" data-player-search-form>
+          <form class="player-search-form landing-player-search" data-player-search-form data-search-action="open">
             <select name="region" aria-label="Serwer">
               <option value="euw1">EUW</option>
               <option value="eun1">EUNE</option>
@@ -75,7 +90,10 @@
               <option value="br1">BR</option>
               <option value="tr1">TR</option>
             </select>
-            <input name="riotId" type="search" autocomplete="off" placeholder="Riot ID, np. No Chrystus#2137" />
+            <div class="search-field">
+              <input name="riotId" type="search" autocomplete="off" placeholder="Riot ID, np. No Chrystus#2137" />
+              <div class="search-results" data-search-results></div>
+            </div>
             <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
           </form>
         </section>
@@ -202,7 +220,7 @@
               <div class="panel-head">
                 <h2 id="friendRankingTitle" data-i18n="friends.title">Moja grupa</h2>
               </div>
-              <form class="friend-form" id="friendForm">
+              <form class="friend-form player-search-form" id="friendForm" data-player-search-form data-search-action="friend">
                 <select id="friendRegion" name="region" aria-label="Serwer znajomego">
                   <option value="euw1">EUW</option>
                   <option value="eun1">EUNE</option>
@@ -211,7 +229,10 @@
                   <option value="br1">BR</option>
                   <option value="tr1">TR</option>
                 </select>
-                <input id="friendRiotId" name="riotId" type="search" autocomplete="off" placeholder="Riot ID znajomego" />
+                <div class="search-field">
+                  <input id="friendRiotId" name="riotId" type="search" autocomplete="off" placeholder="Riot ID znajomego" />
+                  <div class="search-results" data-search-results></div>
+                </div>
                 <button class="ghost-action" type="submit">Dodaj</button>
               </form>
               <div class="friend-ranking" id="friendRanking"></div>

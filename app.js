@@ -242,6 +242,7 @@ const state = {
   visibleMatchCount: 8,
   friends: loadFriends(),
   friendProfiles: new Map(),
+  searchTimers: new WeakMap(),
   filters: {
     championSearch: "",
     collectionMode: "won",
@@ -403,13 +404,15 @@ function bindEvents() {
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
 
   dom.profileSyncButton.addEventListener("click", async () => {
-    await syncRiotMatches({ automatic: false, deep: true });
+    await syncRiotMatches({ automatic: false });
   });
 
   dom.exportProgressButton.addEventListener("click", exportProgressPng);
 
   dom.playerSearchForms.forEach((form) => {
     form.addEventListener("submit", handlePlayerSearchSubmit);
+    form.addEventListener("input", handlePlayerSearchInput);
+    form.addEventListener("click", handlePlayerSearchClick);
   });
 
   dom.languageSelect.addEventListener("change", () => {
@@ -446,7 +449,13 @@ function bindEvents() {
       closeAccountOverlay();
       closeChampionDetail();
       closeMatchDetail();
+      closeAllSearchResults();
     }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("[data-player-search-form]")) return;
+    closeAllSearchResults();
   });
 
   [dom.championCollection, dom.wonChampionStrip].forEach((container) => {
@@ -482,7 +491,6 @@ function bindEvents() {
     openPlayerProfile(player.dataset.playerProfile, player.dataset.playerRegion);
   });
 
-  dom.friendForm.addEventListener("submit", handleFriendSubmit);
   dom.friendRanking.addEventListener("click", (event) => {
     const friend = event.target.closest("[data-friend-profile]");
     if (!friend) return;
@@ -624,9 +632,9 @@ function renderMatchDetailPage() {
     return;
   }
 
-  dom.matchDetailPageTitle.textContent = `${formatDate(match.date)} · #${match.placement}`;
+  dom.matchDetailPageTitle.textContent = formatDateTime(match.playedAt || match.date);
   dom.matchDetailPageStats.replaceChildren(
-    renderDetailStat("Data", formatDate(match.date)),
+    renderDetailStat("Data", formatDateTime(match.playedAt || match.date)),
     renderDetailStat("Patch", match.patch),
     renderDetailStat("Miejsce", `#${match.placement}`),
   );
@@ -638,22 +646,49 @@ function renderMatchDetailPage() {
 function renderMatchPlayers(match) {
   const players = getMatchPlayers(match);
   if (!players.length) return [emptyState("Brak pełnej listy graczy.", "Kolejna synchronizacja uzupełni nowszy format meczu.")];
-  return players
-    .sort((a, b) => Number(a.placement || ARENA_MAX_PLACEMENT) - Number(b.placement || ARENA_MAX_PLACEMENT))
-    .map((player) => {
-      const root = el("button", "player-detail-card");
-      root.type = "button";
-      root.dataset.playerProfile = player.riotId || "";
-      root.dataset.playerRegion = state.user?.riotProfile?.region || "euw1";
-      root.disabled = !player.riotId;
-      root.append(
-        renderChampionIcon(player.champion),
-        el("strong", "", player.champion || "Unknown"),
-        el("span", "", player.riotId || "Nieznany gracz"),
-        el("em", "", `#${player.placement || "-"}`),
-      );
-      return root;
-    });
+  const groups = groupPlayersByTeam(players);
+  return groups.map((group, index) => {
+    const root = el("article", "match-team-group");
+    const header = el("div", "match-team-head");
+    header.append(
+      el("strong", "", `Drużyna ${index + 1}`),
+      el("span", "", `#${group.placement}`),
+    );
+    const list = el("div", "match-team-players");
+    group.players.forEach((player) => list.append(renderPlayerCard(player)));
+    root.append(header, list);
+    return root;
+  });
+}
+
+function groupPlayersByTeam(players) {
+  const grouped = new Map();
+  players.forEach((player) => {
+    const key = player.teamId || `placement-${player.placement || ARENA_MAX_PLACEMENT}`;
+    if (!grouped.has(key)) grouped.set(key, []);
+    grouped.get(key).push(player);
+  });
+  return [...grouped.values()]
+    .map((teamPlayers) => ({
+      placement: Math.min(...teamPlayers.map((player) => Number(player.placement || ARENA_MAX_PLACEMENT))),
+      players: teamPlayers.sort((a, b) => (a.champion || "").localeCompare(b.champion || "")),
+    }))
+    .sort((a, b) => a.placement - b.placement);
+}
+
+function renderPlayerCard(player) {
+  const root = el("button", "player-detail-card");
+  root.type = "button";
+  root.dataset.playerProfile = player.riotId || "";
+  root.dataset.playerRegion = state.publicRoute?.region || state.user?.riotProfile?.region || "euw1";
+  root.disabled = !player.riotId;
+  root.append(
+    renderChampionIcon(player.champion),
+    el("strong", "", player.champion || "Unknown"),
+    el("span", "", player.riotId || "Nieznany gracz"),
+    el("em", "", `#${player.placement || "-"}`),
+  );
+  return root;
 }
 
 function renderMatchTeam(match) {
@@ -692,19 +727,123 @@ function handlePlayerSearchSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const formData = new FormData(form);
-  openPlayerProfile(formData.get("riotId"), formData.get("region"));
-}
-
-function handleFriendSubmit(event) {
-  event.preventDefault();
-  const formData = new FormData(dom.friendForm);
-  const parsed = parseRiotId(formData.get("riotId"));
-  if (!parsed) {
-    announce("Podaj Riot ID znajomego w formacie Nazwa#Tag.");
+  const selected = form._searchResults?.[0];
+  if (selected) {
+    selectSearchResult(form, selected);
     return;
   }
 
+  const parsed = parseRiotId(formData.get("riotId"));
+  if (!parsed) {
+    announce("Podaj Riot ID w formacie Nazwa#Tag.");
+    return;
+  }
+
+  if (form.dataset.searchAction === "friend") {
+    addFriendProfile(parsed, formData.get("region"));
+    form.reset();
+    hideSearchResults(form);
+    return;
+  }
+
+  openPlayerProfile(`${parsed.gameName}#${parsed.tagLine}`, formData.get("region"));
+}
+
+function handlePlayerSearchInput(event) {
+  const form = event.currentTarget;
+  if (!["INPUT", "SELECT"].includes(event.target.tagName)) return;
+  window.clearTimeout(state.searchTimers.get(form));
+  state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 220));
+}
+
+function handlePlayerSearchClick(event) {
+  const button = event.target.closest("[data-search-result]");
+  if (!button) return;
+  event.preventDefault();
+  const form = event.currentTarget;
+  const result = form._searchResults?.[Number(button.dataset.searchResult)];
+  if (result) selectSearchResult(form, result);
+}
+
+async function updateSearchResults(form) {
+  const formData = new FormData(form);
+  const query = cleanText(formData.get("riotId"));
   const region = normalizeRegion(formData.get("region"));
+  if (query.length < 2) {
+    hideSearchResults(form);
+    return;
+  }
+
+  const resultsBox = form.querySelector("[data-search-results]");
+  resultsBox.classList.add("is-open");
+  resultsBox.replaceChildren(el("div", "search-results-status", "Szukam..."));
+
+  try {
+    const params = new URLSearchParams({ q: query, region });
+    const data = await apiRequest(`/api/riot/search?${params.toString()}`);
+    form._searchResults = data.results || [];
+    renderSearchResults(form, form._searchResults, query);
+  } catch (error) {
+    form._searchResults = [];
+    resultsBox.replaceChildren(el("div", "search-results-status", error.message));
+  }
+}
+
+function renderSearchResults(form, results, query) {
+  const resultsBox = form.querySelector("[data-search-results]");
+  resultsBox.classList.add("is-open");
+  if (!results.length) {
+    const hint = parseRiotId(query)
+      ? "Nie znaleziono profilu."
+      : "Wpisz pełny Riot ID, np. No Chrystus#2137.";
+    resultsBox.replaceChildren(el("div", "search-results-status", hint));
+    return;
+  }
+
+  const title = el("div", "search-results-title", "Summoner Profiles");
+  const rows = results.map((result, index) => {
+    const row = el("button", "search-result-row");
+    row.type = "button";
+    row.dataset.searchResult = String(index);
+    row.append(
+      result.profileIconUrl ? imageIcon(result.profileIconUrl, "champion-icon") : el("span", "champion-icon is-empty", result.gameName.slice(0, 2)),
+      el("strong", "", `${result.gameName} #${result.tagLine}`),
+      el("span", "", `${regionLabel(result.region)} · ${result.caption || "profil gracza"}`),
+    );
+    return row;
+  });
+  resultsBox.replaceChildren(title, ...rows);
+}
+
+function selectSearchResult(form, result) {
+  const input = form.querySelector('input[name="riotId"]');
+  const regionSelect = form.querySelector('select[name="region"]');
+  input.value = `${result.gameName}#${result.tagLine}`;
+  regionSelect.value = normalizeRegion(result.region);
+  hideSearchResults(form);
+
+  if (form.dataset.searchAction === "friend") {
+    addFriendProfile({ gameName: result.gameName, tagLine: result.tagLine }, result.region);
+    input.value = "";
+    return;
+  }
+
+  openPlayerProfile(`${result.gameName}#${result.tagLine}`, result.region);
+}
+
+function hideSearchResults(form) {
+  const resultsBox = form.querySelector("[data-search-results]");
+  form._searchResults = [];
+  resultsBox?.classList.remove("is-open");
+  resultsBox?.replaceChildren();
+}
+
+function closeAllSearchResults() {
+  dom.playerSearchForms.forEach(hideSearchResults);
+}
+
+function addFriendProfile(parsed, regionValue) {
+  const region = normalizeRegion(regionValue);
   const key = friendKey(region, parsed);
   if (!state.friends.some((friend) => friend.key === key)) {
     state.friends.push({
@@ -716,7 +855,6 @@ function handleFriendSubmit(event) {
     persistFriends();
   }
 
-  dom.friendRiotId.value = "";
   renderFriendRanking(getSortedMatches());
 }
 
@@ -735,7 +873,10 @@ function openPlayerProfile(riotId, region) {
 function parseRiotId(value) {
   const text = cleanText(value);
   if (!text) return null;
-  const [gameName, tagLine] = text.includes("#") ? text.split("#") : text.split("-");
+  const separatorIndex = text.includes("#") ? text.indexOf("#") : text.lastIndexOf("-");
+  if (separatorIndex <= 0 || separatorIndex >= text.length - 1) return null;
+  const gameName = text.slice(0, separatorIndex);
+  const tagLine = text.slice(separatorIndex + 1);
   if (!cleanText(gameName) || !cleanText(tagLine)) return null;
   return {
     gameName: cleanText(gameName),
@@ -854,6 +995,9 @@ function renderProfileHero(matches) {
 
   const canSync = Boolean(state.user?.riotProfile && state.backendAvailable && !state.isAutoSyncing);
   dom.profileSyncButton.disabled = !canSync;
+  dom.profileSyncButton.textContent = state.isAutoSyncing
+    ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
+    : t("actions.sync");
   dom.exportProgressButton.disabled = !matches.length;
   dom.profileSyncNote.textContent = state.isAutoSyncing
     ? "Synchronizuję..."
@@ -1785,6 +1929,7 @@ function normalizeMatch(match) {
   return {
     id: match.id || makeId(),
     date: cleanText(match.date),
+    playedAt: cleanText(match.playedAt),
     patch: cleanText(match.patch || DATA_DRAGON_VERSION),
     champion: canonicalChampionName(match.champion),
     partner,
@@ -2067,6 +2212,16 @@ function formatDate(value) {
     day: "2-digit",
     month: "short",
     year: "numeric",
+  }).format(new Date(value));
+}
+
+function formatDateTime(value) {
+  return new Intl.DateTimeFormat("pl-PL", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   }).format(new Date(value));
 }
 

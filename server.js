@@ -18,6 +18,7 @@ const ARENA_QUEUE_IDS = [1750];
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 300;
+const PUBLIC_PROFILE_MATCH_LIMIT = 40;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -213,6 +214,11 @@ async function routeApi(req, res, url) {
     return;
   }
 
+  if (method === "GET" && url.pathname === "/api/riot/search") {
+    await searchRiotProfiles(req, res, url);
+    return;
+  }
+
   if (method === "POST" && url.pathname === "/api/riot/profile") {
     const auth = await requireAuth(req, res);
     if (!auth) return;
@@ -398,6 +404,11 @@ async function getPublicProfile(req, res, url) {
   });
 
   if (!user) {
+    const riotProfile = await buildRiotPublicProfile(region, slug).catch(() => null);
+    if (riotProfile) {
+      sendJson(res, 200, riotProfile);
+      return;
+    }
     sendJson(res, 404, { error: "Nie znaleziono publicznego profilu." });
     return;
   }
@@ -408,6 +419,95 @@ async function getPublicProfile(req, res, url) {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   sendJson(res, 200, buildPublicProfile(user, matches));
+}
+
+async function searchRiotProfiles(req, res, url) {
+  const query = cleanText(url.searchParams.get("q"));
+  const region = normalizePublicRegion(url.searchParams.get("region")) || "euw1";
+  if (query.length < 2) {
+    sendJson(res, 200, { results: [] });
+    return;
+  }
+
+  const db = await readDb();
+  const normalizedQuery = normalizeSlug(query.replace("#", "-"));
+  const results = [];
+  db.users.forEach((user) => {
+    const profile = user.riotProfile;
+    if (!profile?.gameName || !profile?.tagLine) return;
+    if (normalizePublicRegion(profile.region) !== region) return;
+    const slug = publicProfileSlug(profile);
+    const haystack = normalizeSlug(`${profile.gameName} ${profile.tagLine} ${slug}`);
+    if (!haystack.includes(normalizedQuery)) return;
+    results.push(searchResultFromProfile(profile, "ArenaTracker"));
+  });
+
+  const exact = parseRiotIdQuery(query);
+  if (exact && process.env.RIOT_API_KEY) {
+    try {
+      const routing = routingForRegion(region);
+      const account = await fetchRiotAccount({ ...exact, routing });
+      const summoner = await fetchSummonerByPuuid(region, account.puuid);
+      const result = searchResultFromProfile(
+        {
+          gameName: account.gameName || exact.gameName,
+          tagLine: account.tagLine || exact.tagLine,
+          region,
+          profileIconId: summoner?.profileIconId || null,
+        },
+        "Riot",
+      );
+      if (!results.some((item) => normalizeSlug(item.slug) === normalizeSlug(result.slug))) {
+        results.unshift(result);
+      }
+    } catch {
+      // Exact Riot lookup is optional; local indexed profiles still work.
+    }
+  }
+
+  sendJson(res, 200, { results: results.slice(0, 8) });
+}
+
+async function buildRiotPublicProfile(region, slug) {
+  if (!process.env.RIOT_API_KEY) return null;
+  const parsed = parsePublicProfileSlug(slug);
+  if (!parsed) return null;
+  const routing = routingForRegion(region);
+  const account = await fetchRiotAccount({ ...parsed, routing });
+  const summoner = await fetchSummonerByPuuid(region, account.puuid);
+  const matchIds = await fetchArenaMatchIds(account, routing, PUBLIC_PROFILE_MATCH_LIMIT, {
+    startTime: seasonStartTimestamp(),
+  });
+  const details = [];
+  for (const matchId of matchIds) {
+    const detail = await riotFetch(routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
+    details.push(detail);
+  }
+  const profile = {
+    gameName: account.gameName || parsed.gameName,
+    tagLine: account.tagLine || parsed.tagLine,
+    routing,
+    region,
+    puuid: account.puuid,
+    profileIconId: summoner?.profileIconId || null,
+  };
+  const matches = details
+    .map((detail) => mapRiotMatch(detail, account.puuid, "public"))
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  return buildPublicProfile({ riotProfile: profile }, matches);
+}
+
+function searchResultFromProfile(profile, source) {
+  return {
+    gameName: profile.gameName,
+    tagLine: profile.tagLine,
+    region: profile.region,
+    slug: publicProfileSlug(profile),
+    publicPath: `/${publicRegionSlug(profile.region)}/${encodeURIComponent(publicProfileSlug(profile))}`,
+    profileIconUrl: profileIconUrl(profile.profileIconId),
+    caption: source,
+  };
 }
 
 function buildPublicProfile(user, matches) {
@@ -720,7 +820,8 @@ function mapRiotMatch(detail, puuid, userId) {
   }));
 
   const patch = cleanText(detail.info.gameVersion).split(".").slice(0, 2).join(".") || "unknown";
-  const date = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString().slice(0, 10);
+  const playedAt = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString();
+  const date = playedAt.slice(0, 10);
   const placement = placementFor(participant);
   const items = [0, 1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`item${slot}`])
@@ -737,6 +838,7 @@ function mapRiotMatch(detail, puuid, userId) {
     id: makeId("match"),
     userId,
     date,
+    playedAt,
     patch,
     champion: canonicalChampionName(participant.championName) || "Unknown",
     partner: teammates.map((teammate) => teammate.champion).join(" + "),
@@ -790,6 +892,7 @@ function normalizeMatch(match, userId, sourceType) {
     id: cleanText(match.id) || makeId("match"),
     userId,
     date: cleanText(match.date) || new Date().toISOString().slice(0, 10),
+    playedAt: cleanText(match.playedAt),
     patch: cleanText(match.patch) || "unknown",
     champion: canonicalChampionName(match.champion) || "Unknown",
     partner: cleanText(match.partner),
@@ -1078,10 +1181,38 @@ function publicProfileSlug(profile) {
   return `${profile.gameName}-${profile.tagLine}`;
 }
 
+function parsePublicProfileSlug(slug) {
+  const text = cleanText(safeDecode(slug));
+  const separatorIndex = text.lastIndexOf("-");
+  if (separatorIndex <= 0 || separatorIndex >= text.length - 1) return null;
+  return {
+    gameName: cleanText(text.slice(0, separatorIndex)),
+    tagLine: cleanText(text.slice(separatorIndex + 1)).replace(/^#/, ""),
+  };
+}
+
+function parseRiotIdQuery(query) {
+  const text = cleanText(query);
+  const separatorIndex = text.includes("#") ? text.indexOf("#") : text.lastIndexOf("-");
+  if (separatorIndex <= 0 || separatorIndex >= text.length - 1) return null;
+  return {
+    gameName: cleanText(text.slice(0, separatorIndex)),
+    tagLine: cleanText(text.slice(separatorIndex + 1)).replace(/^#/, ""),
+  };
+}
+
 function publicRegionSlug(region) {
   const normalized = normalizePublicRegion(region);
   const match = [...PUBLIC_REGION_ALIASES.entries()].find(([, value]) => value === normalized);
   return match?.[0] || normalized;
+}
+
+function routingForRegion(region) {
+  const normalized = normalizePublicRegion(region);
+  if (["br1", "la1", "la2", "na1"].includes(normalized)) return "americas";
+  if (["jp1", "kr"].includes(normalized)) return "asia";
+  if (["oc1", "sg2", "tw2", "vn2"].includes(normalized)) return "sea";
+  return "europe";
 }
 
 function normalizePublicRegion(region) {
