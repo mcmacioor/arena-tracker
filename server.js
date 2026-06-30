@@ -1,5 +1,6 @@
 const http = require("node:http");
 const { randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
+const { existsSync, readFileSync } = require("node:fs");
 const { mkdir, readFile, writeFile, stat } = require("node:fs/promises");
 const path = require("node:path");
 
@@ -33,6 +34,8 @@ const REGIONS = new Set([
 ]);
 
 const sessions = new Map();
+
+loadEnvFile();
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -634,4 +637,20 @@ function makeId(prefix) {
 function clamp(value, min, max) {
   if (!Number.isFinite(value)) return min;
   return Math.min(max, Math.max(min, value));
+}
+
+function loadEnvFile() {
+  const envPath = path.join(ROOT, ".env");
+  if (!existsSync(envPath)) return;
+
+  const lines = readFileSync(envPath, "utf8").split(/\r?\n/);
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) return;
+    const index = trimmed.indexOf("=");
+    if (index === -1) return;
+    const key = trimmed.slice(0, index).trim();
+    const value = trimmed.slice(index + 1).trim().replace(/^["']|["']$/g, "");
+    if (key && process.env[key] === undefined) process.env[key] = value;
+  });
 }

@@ -39,6 +39,10 @@
             <span class="nav-icon" aria-hidden="true">◎</span>
             Planner
           </a>
+          <a class="nav-link" href="#account" data-route="account">
+            <span class="nav-icon" aria-hidden="true">@</span>
+            Konto
+          </a>
         </nav>
 
         <div class="sidebar-foot">
@@ -258,6 +262,108 @@
                   <h2 id="watchlistTitle">Do przetestowania</h2>
                 </div>
                 <div class="watchlist" id="watchlist"></div>
+              </section>
+            </div>
+          </div>
+
+          <div class="view" id="accountView" data-view="account">
+            <div class="account-grid">
+              <section class="panel" aria-labelledby="accountTitle">
+                <div class="panel-head">
+                  <h2 id="accountTitle">Konto</h2>
+                </div>
+                <div class="account-status" id="accountStatus"></div>
+                <div class="auth-grid" id="authForms">
+                  <form class="account-form" id="loginForm">
+                    <h3>Logowanie</h3>
+                    <label>
+                      <span>Email</span>
+                      <input id="loginEmail" name="email" type="email" autocomplete="email" required />
+                    </label>
+                    <label>
+                      <span>Hasło</span>
+                      <input
+                        id="loginPassword"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        required
+                      />
+                    </label>
+                    <button class="primary-action" type="submit">Zaloguj</button>
+                  </form>
+
+                  <form class="account-form" id="registerForm">
+                    <h3>Nowe konto</h3>
+                    <label>
+                      <span>Nazwa</span>
+                      <input id="registerDisplayName" name="displayName" type="text" autocomplete="nickname" />
+                    </label>
+                    <label>
+                      <span>Email</span>
+                      <input id="registerEmail" name="email" type="email" autocomplete="email" required />
+                    </label>
+                    <label>
+                      <span>Hasło</span>
+                      <input
+                        id="registerPassword"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                      />
+                    </label>
+                    <button class="primary-action" type="submit">Utwórz konto</button>
+                  </form>
+                </div>
+                <button class="ghost-action is-hidden" type="button" id="logoutButton">Wyloguj</button>
+              </section>
+
+              <section class="panel" aria-labelledby="riotTitle">
+                <div class="panel-head">
+                  <h2 id="riotTitle">Riot Sync</h2>
+                  <span class="status-pill" id="riotKeyStatus">API</span>
+                </div>
+                <form class="account-form" id="riotProfileForm">
+                  <div class="form-grid">
+                    <label>
+                      <span>Nazwa Riot</span>
+                      <input id="riotGameName" name="gameName" type="text" autocomplete="off" />
+                    </label>
+                    <label>
+                      <span>Tag</span>
+                      <input id="riotTagLine" name="tagLine" type="text" placeholder="EUNE" autocomplete="off" />
+                    </label>
+                    <label>
+                      <span>Routing</span>
+                      <select id="riotRouting" name="routing">
+                        <option value="europe">Europe</option>
+                        <option value="americas">Americas</option>
+                        <option value="asia">Asia</option>
+                        <option value="sea">SEA</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Region</span>
+                      <select id="riotRegion" name="region">
+                        <option value="eun1">EUNE</option>
+                        <option value="euw1">EUW</option>
+                        <option value="na1">NA</option>
+                        <option value="kr">KR</option>
+                        <option value="br1">BR</option>
+                        <option value="la1">LAN</option>
+                        <option value="la2">LAS</option>
+                        <option value="tr1">TR</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="form-actions">
+                    <button class="primary-action" type="submit">Zapisz Riot ID</button>
+                    <button class="ghost-action" type="button" id="riotSyncButton">Synchronizuj Arenę</button>
+                  </div>
+                </form>
+                <div class="planner-result" id="riotSyncStatus"></div>
               </section>
             </div>
           </div>

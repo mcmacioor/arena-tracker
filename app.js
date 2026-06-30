@@ -271,6 +271,9 @@ const SAMPLE_MATCHES = [
 
 const state = {
   matches: [],
+  user: null,
+  backendAvailable: false,
+  riotStatus: null,
   filters: {
     patch: "",
     champion: "",
@@ -291,6 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   syncFiltersFromDom();
   updateRoute();
   render();
+  initializeBackend();
 });
 
 function cacheDom() {
@@ -309,6 +313,19 @@ function cacheDom() {
     matchList: document.getElementById("matchList"),
     exportButton: document.getElementById("exportButton"),
     importInput: document.getElementById("importInput"),
+    accountStatus: document.getElementById("accountStatus"),
+    authForms: document.getElementById("authForms"),
+    loginForm: document.getElementById("loginForm"),
+    registerForm: document.getElementById("registerForm"),
+    logoutButton: document.getElementById("logoutButton"),
+    riotKeyStatus: document.getElementById("riotKeyStatus"),
+    riotProfileForm: document.getElementById("riotProfileForm"),
+    riotGameName: document.getElementById("riotGameName"),
+    riotTagLine: document.getElementById("riotTagLine"),
+    riotRouting: document.getElementById("riotRouting"),
+    riotRegion: document.getElementById("riotRegion"),
+    riotSyncButton: document.getElementById("riotSyncButton"),
+    riotSyncStatus: document.getElementById("riotSyncStatus"),
     championTable: document.getElementById("championTable"),
     plannerForm: document.getElementById("plannerForm"),
     plannerChampion: document.getElementById("plannerChampion"),
@@ -338,6 +355,27 @@ function setDefaultFormValues() {
   dom.matchPatch.value = DATA_DRAGON_VERSION.split(".").slice(0, 2).join(".");
 }
 
+async function initializeBackend() {
+  try {
+    state.riotStatus = await apiRequest("/api/health");
+    state.backendAvailable = true;
+
+    try {
+      const session = await apiRequest("/api/auth/me");
+      state.user = session.user;
+      await loadServerMatches();
+    } catch (error) {
+      if (error.status !== 401) throw error;
+    }
+  } catch {
+    state.backendAvailable = false;
+    state.user = null;
+  }
+
+  fillRiotProfileForm();
+  render();
+}
+
 function bindEvents() {
   window.addEventListener("hashchange", updateRoute);
 
@@ -352,32 +390,59 @@ function bindEvents() {
     });
   });
 
-  dom.seedSampleButton.addEventListener("click", () => {
+  dom.seedSampleButton.addEventListener("click", async () => {
     const canSeed =
       state.matches.length === 0 ||
       window.confirm("Zastąpić obecne dane przykładową sesją demo?");
     if (!canSeed) return;
 
-    state.matches = SAMPLE_MATCHES.map((match, index) => ({
+    const sampleMatches = SAMPLE_MATCHES.map((match, index) => ({
       ...match,
       id: `demo-${index + 1}`,
       createdAt: new Date().toISOString(),
     }));
-    persistMatches();
-    announce("Wczytano przykładową sesję demo.");
-    render();
+
+    try {
+      if (state.user) {
+        const data = await apiRequest("/api/matches/import", {
+          method: "POST",
+          body: { mode: "replace", matches: sampleMatches },
+        });
+        state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+      } else {
+        state.matches = sampleMatches;
+        persistMatches();
+      }
+      announce("Wczytano przykładową sesję demo.");
+      render();
+    } catch (error) {
+      announce(error.message);
+    }
   });
 
-  dom.matchForm.addEventListener("submit", (event) => {
+  dom.matchForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const match = readMatchForm();
-    state.matches.unshift(match);
-    persistMatches();
-    dom.matchForm.reset();
-    setDefaultFormValues();
-    window.location.hash = "matches";
-    announce(`Zapisano mecz: ${match.champion} #${match.placement}.`);
-    render();
+
+    try {
+      if (state.user) {
+        const data = await apiRequest("/api/matches", {
+          method: "POST",
+          body: match,
+        });
+        state.matches.unshift(normalizeMatch(data.match));
+      } else {
+        state.matches.unshift(match);
+        persistMatches();
+      }
+      dom.matchForm.reset();
+      setDefaultFormValues();
+      window.location.hash = "matches";
+      announce(`Zapisano mecz: ${match.champion} #${match.placement}.`);
+      render();
+    } catch (error) {
+      announce(error.message);
+    }
   });
 
   dom.matchForm.addEventListener("reset", () => {
@@ -385,7 +450,7 @@ function bindEvents() {
   });
 
   [dom.matchList, dom.recentMatches].forEach((list) => {
-    list.addEventListener("click", (event) => {
+    list.addEventListener("click", async (event) => {
       const button = event.target.closest("[data-delete]");
       if (!button) return;
 
@@ -397,10 +462,19 @@ function bindEvents() {
       );
       if (!ok) return;
 
-      state.matches = state.matches.filter((item) => item.id !== match.id);
-      persistMatches();
-      announce("Mecz usunięty.");
-      render();
+      try {
+        if (state.user) {
+          await apiRequest(`/api/matches/${encodeURIComponent(match.id)}`, {
+            method: "DELETE",
+          });
+        }
+        state.matches = state.matches.filter((item) => item.id !== match.id);
+        if (!state.user) persistMatches();
+        announce("Mecz usunięty.");
+        render();
+      } catch (error) {
+        announce(error.message);
+      }
     });
   });
 
@@ -411,6 +485,35 @@ function bindEvents() {
     event.preventDefault();
     renderPlannerResult();
   });
+
+  dom.loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    await submitAuthForm(dom.loginForm, "/api/auth/login", "Zalogowano.");
+  });
+
+  dom.registerForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    await submitAuthForm(dom.registerForm, "/api/auth/register", "Utworzono konto.");
+  });
+
+  dom.logoutButton.addEventListener("click", async () => {
+    try {
+      await apiRequest("/api/auth/logout", { method: "POST" });
+    } finally {
+      state.user = null;
+      state.matches = loadMatches();
+      fillRiotProfileForm();
+      announce("Wylogowano.");
+      render();
+    }
+  });
+
+  dom.riotProfileForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    await saveRiotProfile();
+  });
+
+  dom.riotSyncButton.addEventListener("click", syncRiotMatches);
 }
 
 function setActiveRoute(route) {
@@ -443,6 +546,59 @@ function render() {
   renderChampionTable(matches);
   renderWatchlist(matches);
   renderPlannerResult();
+  renderAccount();
+}
+
+function renderAccount() {
+  const backendText = state.backendAvailable ? "Backend aktywny" : "Tryb offline";
+  const userText = state.user
+    ? `${state.user.displayName} (${state.user.email})`
+    : "Brak aktywnej sesji";
+
+  dom.accountStatus.replaceChildren(
+    el("strong", "", userText),
+    el("span", "", state.user ? backendText : `${backendText}. Dane zapisują się lokalnie.`),
+  );
+
+  dom.authForms.classList.toggle("is-hidden", Boolean(state.user));
+  dom.logoutButton.classList.toggle("is-hidden", !state.user);
+  dom.riotProfileForm.classList.toggle("is-hidden", !state.user);
+  dom.riotSyncButton.disabled = !state.user;
+
+  const hasKey = Boolean(state.riotStatus?.riotApiKey);
+  dom.riotKeyStatus.textContent = hasKey ? "RIOT_API_KEY OK" : "Brak RIOT_API_KEY";
+  dom.riotKeyStatus.classList.toggle("is-ready", hasKey);
+  dom.riotKeyStatus.classList.toggle("is-missing", !hasKey);
+
+  if (!state.user) {
+    dom.riotSyncStatus.replaceChildren(
+      el("strong", "", "Zaloguj się, żeby zapisać Riot ID."),
+      el("span", "", state.backendAvailable ? "Synchronizacja użyje oficjalnego Riot API." : "Uruchom node server.js."),
+    );
+    return;
+  }
+
+  const profile = state.user.riotProfile;
+  if (!profile) {
+    dom.riotSyncStatus.replaceChildren(
+      el("strong", "", "Riot ID nie jest jeszcze zapisane."),
+      el("span", "", hasKey ? "Możesz zweryfikować konto i importować mecze Areny." : "Ustaw RIOT_API_KEY przed importem."),
+    );
+    return;
+  }
+
+  dom.riotSyncStatus.replaceChildren(
+    el("strong", "", `${profile.gameName}#${profile.tagLine}`),
+    el(
+      "span",
+      "",
+      profile.lastSyncedAt
+        ? `Ostatni sync: ${formatDate(profile.lastSyncedAt)}.`
+        : profile.verifiedAt
+          ? `Zweryfikowano: ${formatDate(profile.verifiedAt)}.`
+          : "Profil zapisany lokalnie.",
+    ),
+  );
 }
 
 function getFilteredMatches() {
@@ -519,7 +675,6 @@ function renderInsights(matches) {
   const bestChampion = findBestChampion(matches);
   const bestDuo = findBestDuo(matches);
   const riskChampion = findRiskChampion(matches);
-  const bestAugment = findBestTag(matches, "augments");
   const ratingDelta = sum(matches.map((match) => match.ratingDelta));
 
   if (bestChampion) {
@@ -535,13 +690,6 @@ function renderInsights(matches) {
     insights.push({
       title: `Duet ${bestDuo.names.join(" + ")} ma najlepszy sygnał`,
       text: `${bestDuo.games} gry, średnie miejsce ${bestDuo.avg.toFixed(2)}. Warto powtórzyć przy podobnych banach.`,
-    });
-  }
-
-  if (bestAugment) {
-    insights.push({
-      title: `${bestAugment.name} najczęściej kończy w top 2`,
-      text: `${bestAugment.topTwo} top 2 na ${bestAugment.games} gier z tym augmentem w filtrze.`,
     });
   }
 
@@ -706,7 +854,7 @@ function renderPlannerResult() {
 
   const avgPlacement = average(selected.map((match) => match.placement));
   const topTwo = percentage(selected.filter((match) => match.placement <= 2).length / selected.length);
-  const bestAugment = findBestTag(selected, "augments");
+  const frequentAugment = findBestTag(selected, "augments");
   const ratingDelta = sum(selected.map((match) => match.ratingDelta));
   const verdict =
     avgPlacement <= 2.5
@@ -724,7 +872,7 @@ function renderPlannerResult() {
         ratingDelta,
       )}.`,
     ),
-    el("span", "", bestAugment ? `Najlepszy augment w próbkach: ${bestAugment.name}.` : ""),
+    el("span", "", frequentAugment ? `Najczęściej zapisany augment: ${frequentAugment.name}.` : ""),
   );
 }
 
@@ -759,6 +907,123 @@ function persistMatches() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.matches));
 }
 
+async function loadServerMatches() {
+  const data = await apiRequest("/api/matches");
+  state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+}
+
+async function submitAuthForm(form, path, message) {
+  if (!state.backendAvailable) {
+    announce("Uruchom node server.js, żeby użyć logowania.");
+    return;
+  }
+
+  const body = Object.fromEntries(new FormData(form).entries());
+  try {
+    const data = await apiRequest(path, { method: "POST", body });
+    state.user = data.user;
+    form.reset();
+    fillRiotProfileForm();
+
+    if (state.matches.length) {
+      const imported = await apiRequest("/api/matches/import", {
+        method: "POST",
+        body: { mode: "merge", matches: state.matches },
+      });
+      state.matches = imported.matches.map(normalizeMatch).filter(Boolean);
+    } else {
+      await loadServerMatches();
+    }
+
+    announce(message);
+    render();
+  } catch (error) {
+    announce(error.message);
+  }
+}
+
+async function saveRiotProfile() {
+  if (!state.user) {
+    announce("Najpierw zaloguj się do ArenaTracker.");
+    return;
+  }
+
+  const body = Object.fromEntries(new FormData(dom.riotProfileForm).entries());
+  try {
+    const data = await apiRequest("/api/riot/profile", { method: "POST", body });
+    state.user = data.user;
+    fillRiotProfileForm();
+    announce("Riot ID zapisane.");
+    render();
+  } catch (error) {
+    announce(error.message);
+  }
+}
+
+async function syncRiotMatches() {
+  if (!state.user) {
+    announce("Najpierw zaloguj się do ArenaTracker.");
+    return;
+  }
+
+  dom.riotSyncButton.disabled = true;
+  dom.riotSyncStatus.replaceChildren(
+    el("strong", "", "Synchronizacja trwa."),
+    el("span", "", "Pobieram najnowsze mecze Arena z Riot Match-V5."),
+  );
+
+  try {
+    const data = await apiRequest("/api/riot/sync", {
+      method: "POST",
+      body: { limit: 30 },
+    });
+    state.user = data.user;
+    state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+    fillRiotProfileForm();
+    announce(`Zaimportowano ${data.importedCount} nowych meczów.`);
+    render();
+  } catch (error) {
+    announce(error.message);
+    render();
+  } finally {
+    dom.riotSyncButton.disabled = false;
+  }
+}
+
+function fillRiotProfileForm() {
+  const profile = state.user?.riotProfile;
+  dom.riotGameName.value = profile?.gameName || "";
+  dom.riotTagLine.value = profile?.tagLine || "";
+  dom.riotRouting.value = profile?.routing || "europe";
+  dom.riotRegion.value = profile?.region || "eun1";
+}
+
+async function apiRequest(path, options = {}) {
+  const headers = { Accept: "application/json" };
+  const request = {
+    method: options.method || "GET",
+    credentials: "same-origin",
+    headers,
+  };
+
+  if (options.body !== undefined) {
+    headers["Content-Type"] = "application/json";
+    request.body = JSON.stringify(options.body);
+  }
+
+  const response = await fetch(path, request);
+  const contentType = response.headers.get("content-type") || "";
+  const data = contentType.includes("application/json") ? await response.json() : {};
+
+  if (!response.ok) {
+    const error = new Error(data.error || `HTTP ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
+
+  return data;
+}
+
 function exportMatches() {
   const payload = {
     app: "ArenaTracker",
@@ -784,15 +1049,23 @@ function importMatches(event) {
   if (!file) return;
 
   const reader = new FileReader();
-  reader.addEventListener("load", () => {
+  reader.addEventListener("load", async () => {
     try {
       const parsed = JSON.parse(reader.result);
       const imported = Array.isArray(parsed) ? parsed : parsed.matches;
       if (!Array.isArray(imported)) throw new Error("Invalid ArenaTracker export");
 
       const normalized = imported.map(normalizeMatch).filter(Boolean);
-      state.matches = normalized;
-      persistMatches();
+      if (state.user) {
+        const data = await apiRequest("/api/matches/import", {
+          method: "POST",
+          body: { mode: "replace", matches: normalized },
+        });
+        state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+      } else {
+        state.matches = normalized;
+        persistMatches();
+      }
       announce(`Zaimportowano ${normalized.length} meczów.`);
       render();
     } catch (error) {
@@ -818,6 +1091,7 @@ function normalizeMatch(match) {
     augments: Array.isArray(match.augments) ? match.augments.map(cleanText).filter(Boolean) : [],
     items: Array.isArray(match.items) ? match.items.map(cleanText).filter(Boolean) : [],
     note: cleanText(match.note),
+    source: match.source && typeof match.source === "object" ? match.source : { type: "manual" },
     createdAt: match.createdAt || new Date().toISOString(),
   };
 }
@@ -902,7 +1176,7 @@ function findBestTag(matches, key) {
   });
 
   return [...grouped.values()].sort(
-    (a, b) => b.topTwo - a.topTwo || b.games - a.games || a.name.localeCompare(b.name),
+    (a, b) => b.games - a.games || a.name.localeCompare(b.name),
   )[0];
 }
 
