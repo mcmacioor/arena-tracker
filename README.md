@@ -6,6 +6,14 @@ ArenaTracker to lokalna aplikacja statyczna do śledzenia sesji League of Legend
 
 Otwórz `index.html` w przeglądarce. Aplikacja nie wymaga instalowania zależności.
 
+Opcjonalnie możesz uruchomić lokalny serwer:
+
+```powershell
+python -m http.server 4173 --bind 127.0.0.1
+```
+
+Potem wejdź na `http://127.0.0.1:4173/`.
+
 ## Funkcje
 
 - Dashboard z liczbą gier, średnim miejscem, top 2 rate, win rate i zmianą ratingu.
