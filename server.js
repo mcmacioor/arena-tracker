@@ -1,0 +1,637 @@
+const http = require("node:http");
+const { randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
+const { mkdir, readFile, writeFile, stat } = require("node:fs/promises");
+const path = require("node:path");
+
+const ROOT = __dirname;
+const DATA_DIR = path.join(ROOT, "data");
+const DB_PATH = path.join(DATA_DIR, "arenatracker-db.json");
+const PORT = Number(process.env.PORT || 4173);
+const HOST = process.env.HOST || "127.0.0.1";
+const SESSION_COOKIE = "arena_session";
+const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+const MAX_BODY_BYTES = 1_000_000;
+const ARENA_QUEUE_IDS = [1700, 1710];
+const DEFAULT_ROUTING = "europe";
+const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
+const REGIONS = new Set([
+  "br1",
+  "eun1",
+  "euw1",
+  "jp1",
+  "kr",
+  "la1",
+  "la2",
+  "me1",
+  "na1",
+  "oc1",
+  "ru",
+  "sg2",
+  "tr1",
+  "tw2",
+  "vn2",
+]);
+
+const sessions = new Map();
+
+const contentTypes = {
+  ".css": "text/css; charset=utf-8",
+  ".html": "text/html; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".png": "image/png",
+  ".svg": "image/svg+xml; charset=utf-8",
+};
+
+const server = http.createServer(async (req, res) => {
+  try {
+    const url = new URL(req.url, `http://${req.headers.host || `${HOST}:${PORT}`}`);
+
+    if (url.pathname.startsWith("/api/")) {
+      await routeApi(req, res, url);
+      return;
+    }
+
+    await serveStatic(req, res, url);
+  } catch (error) {
+    console.error(error);
+    sendJson(res, error.status || 500, {
+      error: error.status ? error.message : "Internal server error",
+    });
+  }
+});
+
+server.listen(PORT, HOST, () => {
+  console.log(`ArenaTracker listening on http://${HOST}:${PORT}/`);
+});
+
+async function routeApi(req, res, url) {
+  const method = req.method.toUpperCase();
+
+  if (method === "GET" && url.pathname === "/api/health") {
+    sendJson(res, 200, {
+      ok: true,
+      riotApiKey: Boolean(process.env.RIOT_API_KEY),
+      arenaQueueIds: ARENA_QUEUE_IDS,
+    });
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/auth/register") {
+    await register(req, res);
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/auth/login") {
+    await login(req, res);
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/auth/logout") {
+    logout(req, res);
+    return;
+  }
+
+  if (method === "GET" && url.pathname === "/api/auth/me") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    sendJson(res, 200, { user: publicUser(auth.user) });
+    return;
+  }
+
+  if (method === "GET" && url.pathname === "/api/matches") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    const db = await readDb();
+    const matches = db.matches
+      .filter((match) => match.userId === auth.user.id)
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+    sendJson(res, 200, { matches });
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/matches") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    const body = await readJsonBody(req);
+    const match = normalizeMatch(body, auth.user.id, "manual");
+    await mutateDb((db) => {
+      db.matches.unshift(match);
+    });
+    sendJson(res, 201, { match });
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/matches/import") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    const body = await readJsonBody(req);
+    const imported = Array.isArray(body.matches) ? body.matches : [];
+    const mode = body.mode === "replace" ? "replace" : "merge";
+    const matches = imported.map((match) => normalizeMatch(match, auth.user.id, match.source?.type || "manual"));
+
+    await mutateDb((db) => {
+      if (mode === "replace") {
+        db.matches = db.matches.filter((match) => match.userId !== auth.user.id);
+      }
+      const existingKeys = new Set(db.matches.map(matchDedupeKey));
+      matches.forEach((match) => {
+        const key = matchDedupeKey(match);
+        if (!existingKeys.has(key)) {
+          db.matches.unshift(match);
+          existingKeys.add(key);
+        }
+      });
+    });
+
+    const db = await readDb();
+    sendJson(res, 200, {
+      matches: db.matches.filter((match) => match.userId === auth.user.id),
+    });
+    return;
+  }
+
+  const matchDelete = url.pathname.match(/^\/api\/matches\/([^/]+)$/);
+  if (method === "DELETE" && matchDelete) {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    const id = decodeURIComponent(matchDelete[1]);
+    let removed = false;
+    await mutateDb((db) => {
+      const before = db.matches.length;
+      db.matches = db.matches.filter((match) => !(match.userId === auth.user.id && match.id === id));
+      removed = db.matches.length !== before;
+    });
+    sendJson(res, removed ? 200 : 404, { ok: removed });
+    return;
+  }
+
+  if (method === "GET" && url.pathname === "/api/riot/status") {
+    sendJson(res, 200, {
+      riotApiKey: Boolean(process.env.RIOT_API_KEY),
+      arenaQueueIds: ARENA_QUEUE_IDS,
+      routings: [...ROUTINGS],
+      regions: [...REGIONS],
+    });
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/riot/profile") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    await saveRiotProfile(req, res, auth.user);
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/riot/sync") {
+    const auth = await requireAuth(req, res);
+    if (!auth) return;
+    await syncRiotMatches(req, res, auth.user);
+    return;
+  }
+
+  sendJson(res, 404, { error: "Not found" });
+}
+
+async function register(req, res) {
+  const body = await readJsonBody(req);
+  const email = cleanText(body.email).toLowerCase();
+  const displayName = cleanText(body.displayName) || email.split("@")[0];
+  const password = String(body.password || "");
+
+  if (!email.includes("@") || password.length < 6) {
+    sendJson(res, 400, { error: "Podaj email i hasło o długości co najmniej 6 znaków." });
+    return;
+  }
+
+  let createdUser;
+  await mutateDb((db) => {
+    if (db.users.some((user) => user.email === email)) {
+      const error = new Error("Konto z tym emailem już istnieje.");
+      error.status = 409;
+      throw error;
+    }
+
+    createdUser = {
+      id: makeId("user"),
+      email,
+      displayName,
+      passwordHash: hashPassword(password),
+      riotProfile: null,
+      createdAt: new Date().toISOString(),
+    };
+    db.users.push(createdUser);
+  });
+
+  setSession(res, createdUser.id);
+  sendJson(res, 201, { user: publicUser(createdUser) });
+}
+
+async function login(req, res) {
+  const body = await readJsonBody(req);
+  const email = cleanText(body.email).toLowerCase();
+  const password = String(body.password || "");
+  const db = await readDb();
+  const user = db.users.find((item) => item.email === email);
+
+  if (!user || !verifyPassword(password, user.passwordHash)) {
+    sendJson(res, 401, { error: "Nieprawidłowy email albo hasło." });
+    return;
+  }
+
+  setSession(res, user.id);
+  sendJson(res, 200, { user: publicUser(user) });
+}
+
+function logout(req, res) {
+  const token = parseCookies(req.headers.cookie || "")[SESSION_COOKIE];
+  if (token) sessions.delete(token);
+  res.setHeader("Set-Cookie", `${SESSION_COOKIE}=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`);
+  sendJson(res, 200, { ok: true });
+}
+
+async function saveRiotProfile(req, res, user) {
+  const body = await readJsonBody(req);
+  const profile = normalizeRiotProfile(body);
+  let account = null;
+
+  if (process.env.RIOT_API_KEY) {
+    account = await fetchRiotAccount(profile);
+    profile.puuid = account.puuid;
+  }
+
+  await mutateDb((db) => {
+    const stored = db.users.find((item) => item.id === user.id);
+    stored.riotProfile = {
+      ...profile,
+      verifiedAt: account ? new Date().toISOString() : null,
+    };
+  });
+
+  const db = await readDb();
+  sendJson(res, 200, { user: publicUser(db.users.find((item) => item.id === user.id)) });
+}
+
+async function syncRiotMatches(req, res, user) {
+  if (!process.env.RIOT_API_KEY) {
+    sendJson(res, 400, {
+      error: "Brakuje RIOT_API_KEY. Ustaw zmienną środowiskową i uruchom serwer ponownie.",
+    });
+    return;
+  }
+
+  const body = await readJsonBody(req);
+  const limit = clamp(Number(body.limit || 20), 1, 80);
+  const profile = user.riotProfile;
+
+  if (!profile?.gameName || !profile?.tagLine) {
+    sendJson(res, 400, { error: "Najpierw zapisz Riot ID w profilu." });
+    return;
+  }
+
+  const account = profile.puuid ? profile : await fetchRiotAccount(profile);
+  const matchIds = await fetchArenaMatchIds(account, profile.routing, limit);
+  const matchDetails = [];
+
+  for (const matchId of matchIds) {
+    const detail = await riotFetch(profile.routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
+    matchDetails.push(detail);
+  }
+
+  const imported = matchDetails
+    .map((detail) => mapRiotMatch(detail, account.puuid, user.id))
+    .filter(Boolean);
+
+  let importedCount = 0;
+  await mutateDb((db) => {
+    const storedUser = db.users.find((item) => item.id === user.id);
+    storedUser.riotProfile = {
+      ...profile,
+      puuid: account.puuid,
+      verifiedAt: new Date().toISOString(),
+      lastSyncedAt: new Date().toISOString(),
+    };
+
+    const existingKeys = new Set(db.matches.map(matchDedupeKey));
+    imported.forEach((match) => {
+      const key = matchDedupeKey(match);
+      if (!existingKeys.has(key)) {
+        db.matches.unshift(match);
+        existingKeys.add(key);
+        importedCount += 1;
+      }
+    });
+  });
+
+  const db = await readDb();
+  sendJson(res, 200, {
+    importedCount,
+    scannedCount: matchDetails.length,
+    matches: db.matches.filter((match) => match.userId === user.id),
+    user: publicUser(db.users.find((item) => item.id === user.id)),
+  });
+}
+
+async function requireAuth(req, res) {
+  const token = parseCookies(req.headers.cookie || "")[SESSION_COOKIE];
+  const session = token ? sessions.get(token) : null;
+
+  if (!session || session.expiresAt < Date.now()) {
+    if (token) sessions.delete(token);
+    sendJson(res, 401, { error: "Wymagane logowanie." });
+    return null;
+  }
+
+  const db = await readDb();
+  const user = db.users.find((item) => item.id === session.userId);
+  if (!user) {
+    sessions.delete(token);
+    sendJson(res, 401, { error: "Sesja wygasła." });
+    return null;
+  }
+
+  session.expiresAt = Date.now() + SESSION_TTL_MS;
+  return { user };
+}
+
+function setSession(res, userId) {
+  const token = randomBytes(32).toString("base64url");
+  sessions.set(token, {
+    userId,
+    expiresAt: Date.now() + SESSION_TTL_MS,
+  });
+  res.setHeader(
+    "Set-Cookie",
+    `${SESSION_COOKIE}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${SESSION_TTL_MS / 1000}`,
+  );
+}
+
+async function fetchRiotAccount(profile) {
+  const gameName = encodeURIComponent(profile.gameName);
+  const tagLine = encodeURIComponent(profile.tagLine);
+  return riotFetch(profile.routing, `/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}`);
+}
+
+async function fetchArenaMatchIds(account, routing, limit) {
+  const ids = [];
+  for (const queueId of ARENA_QUEUE_IDS) {
+    const count = Math.max(1, Math.min(100, limit));
+    const pathName = `/lol/match/v5/matches/by-puuid/${encodeURIComponent(
+      account.puuid,
+    )}/ids?queue=${queueId}&start=0&count=${count}`;
+    const queueIds = await riotFetch(routing, pathName);
+    ids.push(...queueIds);
+  }
+  return [...new Set(ids)].slice(0, limit);
+}
+
+async function riotFetch(routing, pathName) {
+  const response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
+    headers: {
+      "X-Riot-Token": process.env.RIOT_API_KEY,
+      "User-Agent": "ArenaTracker/0.3 local dev",
+    },
+  });
+
+  if (!response.ok) {
+    let message = `Riot API HTTP ${response.status}`;
+    try {
+      const data = await response.json();
+      message = data.status?.message || message;
+    } catch {
+      // Keep the HTTP status message.
+    }
+    const error = new Error(message);
+    error.status = response.status;
+    throw error;
+  }
+
+  return response.json();
+}
+
+function mapRiotMatch(detail, puuid, userId) {
+  if (!ARENA_QUEUE_IDS.includes(Number(detail.info?.queueId))) return null;
+  const participant = detail.info.participants.find((item) => item.puuid === puuid);
+  if (!participant) return null;
+  const partner = detail.info.participants.find(
+    (item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId,
+  );
+
+  const patch = cleanText(detail.info.gameVersion).split(".").slice(0, 2).join(".") || "unknown";
+  const date = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString().slice(0, 10);
+  const placement = Number(participant.placement || participant.subteamPlacement || (participant.win ? 1 : 8));
+  const items = [0, 1, 2, 3, 4, 5, 6]
+    .map((slot) => participant[`item${slot}`])
+    .filter(Boolean)
+    .map((itemId) => `Item ${itemId}`);
+  const augments = [1, 2, 3, 4, 5, 6]
+    .map((slot) => participant[`playerAugment${slot}`])
+    .filter(Boolean)
+    .map((augmentId) => `Augment ${augmentId}`);
+
+  return {
+    id: makeId("match"),
+    userId,
+    date,
+    patch,
+    champion: participant.championName || "Unknown",
+    partner: partner?.championName || "",
+    placement: clamp(placement, 1, 8),
+    ratingDelta: 0,
+    augments,
+    items,
+    note: `Zaimportowano z Riot Match-V5 (${detail.metadata.matchId}).`,
+    source: {
+      type: "riot",
+      matchId: detail.metadata.matchId,
+      queueId: Number(detail.info.queueId),
+      puuid,
+    },
+    createdAt: new Date().toISOString(),
+  };
+}
+
+function normalizeRiotProfile(body) {
+  const gameName = cleanText(body.gameName);
+  const tagLine = cleanText(body.tagLine).replace(/^#/, "");
+  const routing = cleanText(body.routing || DEFAULT_ROUTING).toLowerCase();
+  const region = cleanText(body.region || "eun1").toLowerCase();
+
+  if (!gameName || !tagLine) {
+    const error = new Error("Podaj Riot ID w formacie nazwa + tag.");
+    error.status = 400;
+    throw error;
+  }
+
+  if (!ROUTINGS.has(routing) || !REGIONS.has(region)) {
+    const error = new Error("Nieobsługiwany region Riot.");
+    error.status = 400;
+    throw error;
+  }
+
+  return { gameName, tagLine, routing, region };
+}
+
+function normalizeMatch(match, userId, sourceType) {
+  const source = match.source && typeof match.source === "object" ? match.source : { type: sourceType };
+  return {
+    id: cleanText(match.id) || makeId("match"),
+    userId,
+    date: cleanText(match.date) || new Date().toISOString().slice(0, 10),
+    patch: cleanText(match.patch) || "unknown",
+    champion: cleanText(match.champion) || "Unknown",
+    partner: cleanText(match.partner),
+    placement: clamp(Number(match.placement || 8), 1, 8),
+    ratingDelta: Number(match.ratingDelta || 0),
+    augments: Array.isArray(match.augments) ? match.augments.map(cleanText).filter(Boolean) : [],
+    items: Array.isArray(match.items) ? match.items.map(cleanText).filter(Boolean) : [],
+    note: cleanText(match.note),
+    source,
+    createdAt: match.createdAt || new Date().toISOString(),
+  };
+}
+
+function matchDedupeKey(match) {
+  if (match.source?.matchId) return `${match.userId}:riot:${match.source.matchId}`;
+  return `${match.userId}:manual:${match.id}`;
+}
+
+async function serveStatic(req, res, url) {
+  if (req.method.toUpperCase() !== "GET") {
+    sendText(res, 405, "Method not allowed");
+    return;
+  }
+
+  const relativePath = url.pathname === "/" ? "index.html" : decodeURIComponent(url.pathname.slice(1));
+  const filePath = path.resolve(ROOT, relativePath);
+
+  if (!filePath.startsWith(ROOT)) {
+    sendText(res, 403, "Forbidden");
+    return;
+  }
+
+  try {
+    const info = await stat(filePath);
+    if (!info.isFile()) throw new Error("Not a file");
+    const data = await readFile(filePath);
+    const type = contentTypes[path.extname(filePath)] || "application/octet-stream";
+    res.writeHead(200, { "Content-Type": type });
+    res.end(data);
+  } catch {
+    sendText(res, 404, "Not found");
+  }
+}
+
+async function readJsonBody(req) {
+  const chunks = [];
+  let size = 0;
+
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > MAX_BODY_BYTES) {
+      const error = new Error("Request body is too large.");
+      error.status = 413;
+      throw error;
+    }
+    chunks.push(chunk);
+  }
+
+  if (!chunks.length) return {};
+
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+  } catch {
+    const error = new Error("Invalid JSON body.");
+    error.status = 400;
+    throw error;
+  }
+}
+
+async function readDb() {
+  await mkdir(DATA_DIR, { recursive: true });
+  try {
+    return JSON.parse(await readFile(DB_PATH, "utf8"));
+  } catch {
+    return { users: [], matches: [] };
+  }
+}
+
+async function mutateDb(mutator) {
+  const db = await readDb();
+  try {
+    await mutator(db);
+  } catch (error) {
+    if (error.status) throw error;
+    throw error;
+  }
+  await writeFile(DB_PATH, `${JSON.stringify(db, null, 2)}\n`, "utf8");
+  return db;
+}
+
+function publicUser(user) {
+  return {
+    id: user.id,
+    email: user.email,
+    displayName: user.displayName,
+    riotProfile: user.riotProfile
+      ? {
+          gameName: user.riotProfile.gameName,
+          tagLine: user.riotProfile.tagLine,
+          routing: user.riotProfile.routing,
+          region: user.riotProfile.region,
+          verifiedAt: user.riotProfile.verifiedAt,
+          lastSyncedAt: user.riotProfile.lastSyncedAt,
+        }
+      : null,
+  };
+}
+
+function hashPassword(password) {
+  const salt = randomBytes(16).toString("hex");
+  const hash = scryptSync(password, salt, 64).toString("hex");
+  return `${salt}:${hash}`;
+}
+
+function verifyPassword(password, passwordHash) {
+  const [salt, storedHash] = String(passwordHash || "").split(":");
+  if (!salt || !storedHash) return false;
+  const actual = Buffer.from(scryptSync(password, salt, 64).toString("hex"), "hex");
+  const expected = Buffer.from(storedHash, "hex");
+  return actual.length === expected.length && timingSafeEqual(actual, expected);
+}
+
+function parseCookies(header) {
+  return Object.fromEntries(
+    header
+      .split(";")
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => {
+        const index = part.indexOf("=");
+        return [part.slice(0, index), decodeURIComponent(part.slice(index + 1))];
+      }),
+  );
+}
+
+function sendJson(res, status, data) {
+  res.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
+  res.end(JSON.stringify(data));
+}
+
+function sendText(res, status, text) {
+  res.writeHead(status, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end(text);
+}
+
+function cleanText(value) {
+  return String(value || "").trim().replace(/\s+/g, " ");
+}
+
+function makeId(prefix) {
+  return `${prefix}-${randomBytes(12).toString("hex")}`;
+}
+
+function clamp(value, min, max) {
+  if (!Number.isFinite(value)) return min;
+  return Math.min(max, Math.max(min, value));
+}
