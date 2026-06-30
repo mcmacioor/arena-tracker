@@ -6,7 +6,7 @@
     <title>ArenaTracker</title>
     <meta
       name="description"
-      content="ArenaTracker to lokalny tracker sesji League of Legends Arena: mecze, duety, augmenty, itemy i statystyki."
+      content="ArenaTracker to minimalistyczny tracker zwycięstw League of Legends Arena."
     />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
@@ -18,86 +18,89 @@
           <span class="brand-mark" aria-hidden="true">AT</span>
           <span>
             <strong>ArenaTracker</strong>
-            <small>League Arena logbook</small>
+            <small>Arena wins collection</small>
           </span>
         </a>
 
         <nav class="nav-list" aria-label="Główne widoki">
           <a class="nav-link is-active" href="#dashboard" data-route="dashboard">
-            <span class="nav-icon" aria-hidden="true">⌁</span>
+            <span class="nav-icon" aria-hidden="true">▦</span>
             Dashboard
           </a>
           <a class="nav-link" href="#matches" data-route="matches">
-            <span class="nav-icon" aria-hidden="true">＋</span>
+            <span class="nav-icon" aria-hidden="true">≡</span>
             Mecze
           </a>
           <a class="nav-link" href="#champions" data-route="champions">
             <span class="nav-icon" aria-hidden="true">◇</span>
-            Bohaterowie
-          </a>
-          <a class="nav-link" href="#planner" data-route="planner">
-            <span class="nav-icon" aria-hidden="true">◎</span>
-            Planner
-          </a>
-          <a class="nav-link" href="#account" data-route="account">
-            <span class="nav-icon" aria-hidden="true">@</span>
-            Konto
+            Wygrane
           </a>
         </nav>
 
         <div class="sidebar-foot">
-          <span>Patch danych</span>
+          <span>Data Dragon</span>
           <strong id="dataPatch">16.13.1</strong>
         </div>
       </aside>
 
       <main class="main">
-        <section class="hero-panel" aria-labelledby="appTitle">
-          <div class="hero-copy">
-            <p class="eyebrow">Local-first companion</p>
-            <h1 id="appTitle">ArenaTracker</h1>
-            <p>
-              Śledź sesje Areny, wyłapuj najlepsze duety i wracaj do buildów,
-              które faktycznie dowiozły top 2.
-            </p>
-          </div>
-          <div class="hero-actions">
-            <a class="primary-action" href="#matches">Dodaj mecz</a>
-            <button class="ghost-action" type="button" id="seedSampleButton">
-              Wczytaj demo
+        <header class="topbar" aria-label="Konto użytkownika">
+          <div class="topbar-spacer"></div>
+          <div class="account-menu" id="accountMenu">
+            <button
+              class="account-menu-button"
+              id="accountMenuButton"
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+            >
+              <img
+                class="account-avatar"
+                id="accountAvatar"
+                src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+                alt=""
+              />
+              <span id="accountMenuLabel">Konto</span>
+              <span class="account-chevron" aria-hidden="true"></span>
             </button>
           </div>
-        </section>
+        </header>
 
-        <section class="toolbar" aria-label="Filtry sesji">
-          <label>
-            <span>Patch</span>
-            <input id="patchFilter" type="search" placeholder="np. 16.13" />
-          </label>
-          <label>
-            <span>Bohater</span>
-            <input id="championFilter" type="search" placeholder="np. Vi" />
-          </label>
-          <label>
-            <span>Zakres</span>
-            <select id="rangeFilter">
-              <option value="all">Wszystkie gry</option>
-              <option value="7">Ostatnie 7 dni</option>
-              <option value="30">Ostatnie 30 dni</option>
-            </select>
-          </label>
+        <section class="hero-panel" aria-labelledby="appTitle">
+          <div class="hero-copy">
+            <p class="eyebrow">League of Legends Arena</p>
+            <h1 id="appTitle">ArenaTracker</h1>
+          </div>
+          <div class="hero-actions">
+            <button class="ghost-action" type="button" id="seedSampleButton">Demo</button>
+          </div>
         </section>
 
         <section class="view-stack">
           <div class="view is-visible" id="dashboardView" data-view="dashboard">
-            <div class="metrics-grid" id="metricsGrid" aria-live="polite"></div>
-            <div class="split-layout">
-              <section class="panel" aria-labelledby="insightsTitle">
-                <div class="panel-head">
-                  <h2 id="insightsTitle">Sygnały z sesji</h2>
+            <section class="progress-panel" aria-labelledby="progressTitle">
+              <div class="progress-head">
+                <div>
+                  <p class="eyebrow">Progress</p>
+                  <h2 id="progressTitle">Champion wins</h2>
                 </div>
-                <div class="insight-list" id="insightList"></div>
+                <strong id="progressCounter">0 / 0</strong>
+              </div>
+              <div class="victory-progress" id="victoryProgress" aria-hidden="true">
+                <span></span>
+              </div>
+            </section>
+
+            <div class="metrics-grid" id="metricsGrid" aria-live="polite"></div>
+
+            <div class="split-layout">
+              <section class="panel" aria-labelledby="wonTitle">
+                <div class="panel-head">
+                  <h2 id="wonTitle">Championi z wygraną</h2>
+                </div>
+                <div class="champion-strip" id="wonChampionStrip"></div>
               </section>
+
               <section class="panel" aria-labelledby="recentTitle">
                 <div class="panel-head">
                   <h2 id="recentTitle">Ostatnie mecze</h2>
@@ -108,277 +111,224 @@
           </div>
 
           <div class="view" id="matchesView" data-view="matches">
-            <div class="two-column">
-              <section class="panel" aria-labelledby="matchFormTitle">
-                <div class="panel-head">
-                  <h2 id="matchFormTitle">Nowy mecz</h2>
+            <section class="panel" aria-labelledby="historyTitle">
+              <div class="panel-head">
+                <h2 id="historyTitle">Mecze z synchronizacji</h2>
+                <div class="inline-actions">
+                  <button class="icon-button" type="button" id="exportButton" title="Eksportuj dane">
+                    ⇩
+                  </button>
+                  <label class="icon-button file-trigger" title="Importuj dane">
+                    ⇧
+                    <input id="importInput" type="file" accept="application/json" />
+                  </label>
                 </div>
-                <form class="match-form" id="matchForm">
-                  <div class="form-grid">
-                    <label>
-                      <span>Data</span>
-                      <input id="matchDate" name="date" type="date" required />
-                    </label>
-                    <label>
-                      <span>Patch</span>
-                      <input id="matchPatch" name="patch" type="text" required />
-                    </label>
-                    <label>
-                      <span>Twój bohater</span>
-                      <input
-                        id="matchChampion"
-                        name="champion"
-                        type="text"
-                        list="championOptions"
-                        autocomplete="off"
-                        required
-                      />
-                    </label>
-                    <label>
-                      <span>Partner</span>
-                      <input
-                        id="matchPartner"
-                        name="partner"
-                        type="text"
-                        list="championOptions"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <label>
-                      <span>Miejsce</span>
-                      <select id="matchPlacement" name="placement" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                      </select>
-                    </label>
-                    <label>
-                      <span>Rating +/-</span>
-                      <input id="matchRating" name="ratingDelta" type="number" value="0" />
-                    </label>
-                  </div>
-                  <label>
-                    <span>Augmenty</span>
-                    <input
-                      id="matchAugments"
-                      name="augments"
-                      type="text"
-                      placeholder="np. Quest: Steel Your Heart, Blade Waltz"
-                    />
-                  </label>
-                  <label>
-                    <span>Kluczowe itemy</span>
-                    <input
-                      id="matchItems"
-                      name="items"
-                      type="text"
-                      placeholder="np. Hellfire Hatchet, Gargoyle Stoneplate"
-                    />
-                  </label>
-                  <label>
-                    <span>Notatka</span>
-                    <textarea
-                      id="matchNote"
-                      name="note"
-                      rows="4"
-                      placeholder="Co zadziałało, co banować, timing powerspike..."
-                    ></textarea>
-                  </label>
-                  <div class="form-actions">
-                    <button class="primary-action" type="submit">Zapisz mecz</button>
-                    <button class="ghost-action" type="reset">Wyczyść</button>
-                  </div>
-                </form>
-              </section>
-
-              <section class="panel" aria-labelledby="historyTitle">
-                <div class="panel-head">
-                  <h2 id="historyTitle">Historia</h2>
-                  <div class="inline-actions">
-                    <button class="icon-button" type="button" id="exportButton" title="Eksportuj dane">
-                      ⇩
-                    </button>
-                    <label class="icon-button file-trigger" title="Importuj dane">
-                      ⇧
-                      <input id="importInput" type="file" accept="application/json" />
-                    </label>
-                  </div>
-                </div>
-                <div class="match-list" id="matchList"></div>
-              </section>
-            </div>
+              </div>
+              <div class="match-list" id="matchList"></div>
+            </section>
           </div>
 
           <div class="view" id="championsView" data-view="champions">
             <section class="panel" aria-labelledby="championStatsTitle">
               <div class="panel-head">
-                <h2 id="championStatsTitle">Tabela bohaterów</h2>
+                <h2 id="championStatsTitle">Lista championów, którymi wygrałeś</h2>
+                <span class="status-pill" id="collectionStatus">0 ukończonych</span>
               </div>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Bohater</th>
-                      <th>Gry</th>
-                      <th>Śr. miejsce</th>
-                      <th>Top 2</th>
-                      <th>Najlepszy duet</th>
-                      <th>Najczęstszy augment</th>
-                    </tr>
-                  </thead>
-                  <tbody id="championTable"></tbody>
-                </table>
+              <div class="collection-toolbar" aria-label="Filtr wygranych championów">
+                <label class="champion-filter">
+                  <span>Bohater</span>
+                  <div class="champion-picker" id="championPicker">
+                    <button
+                      class="champion-picker-button"
+                      id="championPickerButton"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                    >
+                      <span class="champion-icon is-empty" id="championFilterIcon" aria-hidden="true"></span>
+                      <span id="championFilterLabel">Wszyscy wygrani</span>
+                      <span class="picker-chevron" aria-hidden="true">⌄</span>
+                    </button>
+                    <div class="champion-picker-menu" id="championPickerMenu" role="listbox"></div>
+                  </div>
+                </label>
               </div>
+              <div class="champion-collection" id="championCollection"></div>
             </section>
           </div>
 
-          <div class="view" id="plannerView" data-view="planner">
-            <div class="planner-grid">
-              <section class="panel" aria-labelledby="plannerTitle">
-                <div class="panel-head">
-                  <h2 id="plannerTitle">Planner draftu</h2>
-                </div>
-                <form class="planner-form" id="plannerForm">
-                  <label>
-                    <span>Bohater</span>
-                    <input id="plannerChampion" type="text" list="championOptions" />
-                  </label>
-                  <label>
-                    <span>Partner</span>
-                    <input id="plannerPartner" type="text" list="championOptions" />
-                  </label>
-                  <button class="primary-action" type="submit">Sprawdź duet</button>
-                </form>
-                <div class="planner-result" id="plannerResult"></div>
-              </section>
-
-              <section class="panel" aria-labelledby="watchlistTitle">
-                <div class="panel-head">
-                  <h2 id="watchlistTitle">Do przetestowania</h2>
-                </div>
-                <div class="watchlist" id="watchlist"></div>
-              </section>
-            </div>
-          </div>
-
-          <div class="view" id="accountView" data-view="account">
-            <div class="account-grid">
-              <section class="panel" aria-labelledby="accountTitle">
-                <div class="panel-head">
-                  <h2 id="accountTitle">Konto</h2>
-                </div>
-                <div class="account-status" id="accountStatus"></div>
-                <div class="auth-grid" id="authForms">
-                  <form class="account-form" id="loginForm">
-                    <h3>Logowanie</h3>
-                    <label>
-                      <span>Email</span>
-                      <input id="loginEmail" name="email" type="email" autocomplete="email" required />
-                    </label>
-                    <label>
-                      <span>Hasło</span>
-                      <input
-                        id="loginPassword"
-                        name="password"
-                        type="password"
-                        autocomplete="current-password"
-                        required
-                      />
-                    </label>
-                    <button class="primary-action" type="submit">Zaloguj</button>
-                  </form>
-
-                  <form class="account-form" id="registerForm">
-                    <h3>Nowe konto</h3>
-                    <label>
-                      <span>Nazwa</span>
-                      <input id="registerDisplayName" name="displayName" type="text" autocomplete="nickname" />
-                    </label>
-                    <label>
-                      <span>Email</span>
-                      <input id="registerEmail" name="email" type="email" autocomplete="email" required />
-                    </label>
-                    <label>
-                      <span>Hasło</span>
-                      <input
-                        id="registerPassword"
-                        name="password"
-                        type="password"
-                        autocomplete="new-password"
-                        minlength="6"
-                        required
-                      />
-                    </label>
-                    <button class="primary-action" type="submit">Utwórz konto</button>
-                  </form>
-                </div>
-                <button class="ghost-action is-hidden" type="button" id="logoutButton">Wyloguj</button>
-              </section>
-
-              <section class="panel" aria-labelledby="riotTitle">
-                <div class="panel-head">
-                  <h2 id="riotTitle">Riot Sync</h2>
-                  <span class="status-pill" id="riotKeyStatus">API</span>
-                </div>
-                <form class="account-form" id="riotProfileForm">
-                  <div class="form-grid">
-                    <label>
-                      <span>Nazwa Riot</span>
-                      <input id="riotGameName" name="gameName" type="text" autocomplete="off" />
-                    </label>
-                    <label>
-                      <span>Tag</span>
-                      <input id="riotTagLine" name="tagLine" type="text" placeholder="EUNE" autocomplete="off" />
-                    </label>
-                    <label>
-                      <span>Routing</span>
-                      <select id="riotRouting" name="routing">
-                        <option value="europe">Europe</option>
-                        <option value="americas">Americas</option>
-                        <option value="asia">Asia</option>
-                        <option value="sea">SEA</option>
-                      </select>
-                    </label>
-                    <label>
-                      <span>Region</span>
-                      <select id="riotRegion" name="region">
-                        <option value="eun1">EUNE</option>
-                        <option value="euw1">EUW</option>
-                        <option value="na1">NA</option>
-                        <option value="kr">KR</option>
-                        <option value="br1">BR</option>
-                        <option value="la1">LAN</option>
-                        <option value="la2">LAS</option>
-                        <option value="tr1">TR</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="form-actions">
-                    <button class="primary-action" type="submit">Zapisz Riot ID</button>
-                    <button class="ghost-action" type="button" id="riotSyncButton">Synchronizuj Arenę</button>
-                  </div>
-                </form>
-                <div class="planner-result" id="riotSyncStatus"></div>
-              </section>
-            </div>
+          <div class="view" id="resetPasswordView" data-view="reset-password">
+            <section class="panel auth-panel narrow-panel" aria-labelledby="resetPasswordTitle">
+              <div class="panel-head">
+                <h2 id="resetPasswordTitle">Nowe hasło</h2>
+              </div>
+              <div class="account-status" id="resetTokenStatus"></div>
+              <form class="account-form" id="confirmResetForm">
+                <label>
+                  <span>Nowe hasło</span>
+                  <input
+                    id="confirmResetPassword"
+                    name="password"
+                    type="password"
+                    autocomplete="new-password"
+                    minlength="6"
+                    required
+                  />
+                </label>
+                <button class="primary-action" type="submit">Ustaw nowe hasło</button>
+              </form>
+            </section>
           </div>
         </section>
       </main>
     </div>
 
-    <datalist id="championOptions"></datalist>
+    <div class="account-overlay" id="accountOverlay" aria-hidden="true">
+      <button class="account-backdrop" id="accountOverlayBackdrop" type="button" aria-label="Zamknij konto"></button>
+      <section class="account-dialog" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+        <button class="dialog-close" id="accountOverlayClose" type="button" aria-label="Zamknij">×</button>
+        <div class="account-dialog-brand">
+          <img
+            class="account-dialog-avatar"
+            id="accountDialogAvatar"
+            src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+            alt=""
+          />
+          <span>ArenaTracker</span>
+        </div>
+        <h2 id="accountTitle">Zaloguj</h2>
+        <div class="account-status is-hidden" id="accountStatus"></div>
+
+        <div id="authForms">
+          <form class="account-form auth-form is-visible" id="loginForm" data-auth-panel="login">
+            <label>
+              <span>Email</span>
+              <input id="loginEmail" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Hasło</span>
+              <input
+                id="loginPassword"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <button class="primary-action" type="submit">Zaloguj</button>
+            <div class="auth-switch-row">
+              <button type="button" data-auth-switch="reset">Nie pamiętasz hasła?</button>
+              <button type="button" data-auth-switch="register">Rejestracja</button>
+            </div>
+          </form>
+
+          <form class="account-form auth-form" id="registerForm" data-auth-panel="register">
+            <label>
+              <span>Nazwa</span>
+              <input id="registerDisplayName" name="displayName" type="text" autocomplete="nickname" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input id="registerEmail" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Hasło</span>
+              <input
+                id="registerPassword"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                minlength="6"
+                required
+              />
+            </label>
+            <button class="primary-action" type="submit">Utwórz konto</button>
+            <div class="auth-switch-row">
+              <button type="button" data-auth-switch="login">Mam już konto</button>
+            </div>
+          </form>
+
+          <form class="account-form auth-form" id="resetPasswordForm" data-auth-panel="reset">
+            <label>
+              <span>Email</span>
+              <input id="resetEmail" name="email" type="email" autocomplete="email" required />
+            </label>
+            <button class="primary-action" type="submit">Wyślij link resetujący</button>
+            <div class="auth-switch-row">
+              <button type="button" data-auth-switch="login">Wróć do logowania</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="profile-panel is-hidden" id="profilePanel">
+          <div class="profile-summary">
+            <img
+              class="profile-avatar"
+              id="profileAvatar"
+              src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png"
+              alt=""
+            />
+            <div>
+              <strong id="profileName">Konto</strong>
+              <span id="profileEmail"></span>
+            </div>
+          </div>
+          <div class="panel-head compact-head">
+            <h3>Riot ID</h3>
+            <span class="status-pill" id="riotKeyStatus">API</span>
+          </div>
+          <form class="account-form" id="riotProfileForm">
+            <div class="form-grid compact-grid">
+              <label>
+                <span>Nazwa Riot</span>
+                <input id="riotGameName" name="gameName" type="text" autocomplete="off" />
+              </label>
+              <label>
+                <span>Tag</span>
+                <input id="riotTagLine" name="tagLine" type="text" placeholder="EUNE" autocomplete="off" />
+              </label>
+              <label>
+                <span>Routing</span>
+                <select id="riotRouting" name="routing">
+                  <option value="europe">Europe</option>
+                  <option value="americas">Americas</option>
+                  <option value="asia">Asia</option>
+                  <option value="sea">SEA</option>
+                </select>
+              </label>
+              <label>
+                <span>Region</span>
+                <select id="riotRegion" name="region">
+                  <option value="eun1">EUNE</option>
+                  <option value="euw1">EUW</option>
+                  <option value="na1">NA</option>
+                  <option value="kr">KR</option>
+                  <option value="br1">BR</option>
+                  <option value="la1">LAN</option>
+                  <option value="la2">LAS</option>
+                  <option value="tr1">TR</option>
+                </select>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="primary-action" type="submit">Zapisz Riot ID</button>
+              <button class="ghost-action" type="button" id="riotSyncButton">Synchronizuj Arenę</button>
+            </div>
+          </form>
+          <div class="status-box" id="riotSyncStatus"></div>
+          <button class="ghost-action" type="button" id="logoutButton">Wyloguj</button>
+        </div>
+      </section>
+    </div>
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <template id="emptyStateTemplate">
       <div class="empty-state">
         <strong>Brak danych dla tych filtrów.</strong>
-        <span>Dodaj mecz albo wczytaj demo, żeby zobaczyć statystyki.</span>
+        <span>Wczytaj demo albo zsynchronizuj konto.</span>
       </div>
     </template>
+    <script src="assets/game-data.js"></script>
     <script src="app.js" defer></script>
   </body>
 </html>

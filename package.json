@@ -1,12 +1,13 @@
 {
   "name": "arenatracker",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "description": "Local ArenaTracker app with optional Riot API sync.",
   "scripts": {
     "start": "node server.js",
     "check": "node --check app.js && node --check server.js",
-    "smoke": "node work\\smoke-test.mjs"
+    "update:data": "node scripts/update-game-data.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
   },
   "engines": {
     "node": ">=20"

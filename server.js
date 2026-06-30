@@ -1,5 +1,5 @@
 const http = require("node:http");
-const { randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
+const { createHash, randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
 const { existsSync, readFileSync } = require("node:fs");
 const { mkdir, readFile, writeFile, stat } = require("node:fs/promises");
 const path = require("node:path");
@@ -7,10 +7,12 @@ const path = require("node:path");
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, "data");
 const DB_PATH = path.join(DATA_DIR, "arenatracker-db.json");
+const RESET_OUTBOX_PATH = path.join(DATA_DIR, "password-reset-outbox.json");
 const PORT = Number(process.env.PORT || 4173);
 const HOST = process.env.HOST || "127.0.0.1";
 const SESSION_COOKIE = "arena_session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 1_000_000;
 const ARENA_QUEUE_IDS = [1700, 1710];
 const DEFAULT_ROUTING = "europe";
@@ -36,6 +38,7 @@ const REGIONS = new Set([
 const sessions = new Map();
 
 loadEnvFile();
+const GAME_DATA = loadGameData();
 
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -75,6 +78,8 @@ async function routeApi(req, res, url) {
     sendJson(res, 200, {
       ok: true,
       riotApiKey: Boolean(process.env.RIOT_API_KEY),
+      dataDragonVersion: GAME_DATA.version || null,
+      championCount: GAME_DATA.champions?.length || 0,
       arenaQueueIds: ARENA_QUEUE_IDS,
     });
     return;
@@ -92,6 +97,16 @@ async function routeApi(req, res, url) {
 
   if (method === "POST" && url.pathname === "/api/auth/logout") {
     logout(req, res);
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/auth/request-password-reset") {
+    await requestPasswordReset(req, res);
+    return;
+  }
+
+  if (method === "POST" && url.pathname === "/api/auth/reset-password") {
+    await resetPassword(req, res);
     return;
   }
 
@@ -253,6 +268,75 @@ function logout(req, res) {
   sendJson(res, 200, { ok: true });
 }
 
+async function requestPasswordReset(req, res) {
+  const body = await readJsonBody(req);
+  const email = cleanText(body.email).toLowerCase();
+
+  if (!email.includes("@")) {
+    sendJson(res, 400, { error: "Podaj email użyty przy rejestracji." });
+    return;
+  }
+
+  let resetUrl = "";
+  await mutateDb((db) => {
+    const user = db.users.find((item) => item.email === email);
+    if (!user) return;
+
+    const token = randomBytes(32).toString("base64url");
+    user.passwordReset = {
+      tokenHash: hashToken(token),
+      expiresAt: new Date(Date.now() + RESET_TOKEN_TTL_MS).toISOString(),
+      requestedAt: new Date().toISOString(),
+    };
+    resetUrl = `http://${HOST}:${PORT}/#reset-password/${encodeURIComponent(token)}`;
+  });
+
+  if (resetUrl) {
+    await writeResetOutboxMessage({
+      to: email,
+      subject: "ArenaTracker password reset",
+      resetUrl,
+      createdAt: new Date().toISOString(),
+    });
+  }
+
+  sendJson(res, 200, {
+    ok: true,
+    resetUrl: process.env.NODE_ENV === "production" ? undefined : resetUrl,
+  });
+}
+
+async function resetPassword(req, res) {
+  const body = await readJsonBody(req);
+  const token = cleanText(body.token);
+  const password = String(body.password || "");
+
+  if (!token || password.length < 6) {
+    sendJson(res, 400, { error: "Link resetujący jest nieprawidłowy albo hasło jest za krótkie." });
+    return;
+  }
+
+  const tokenHash = hashToken(token);
+  let updated = false;
+  await mutateDb((db) => {
+    const user = db.users.find((item) => {
+      const reset = item.passwordReset;
+      return reset?.tokenHash === tokenHash && new Date(reset.expiresAt).getTime() > Date.now();
+    });
+    if (!user) return;
+    user.passwordHash = hashPassword(password);
+    user.passwordReset = null;
+    user.passwordResetAt = new Date().toISOString();
+    updated = true;
+  });
+
+  if (!updated) {
+    sendJson(res, 400, { error: "Link resetujący wygasł albo jest nieprawidłowy." });
+    return;
+  }
+  sendJson(res, 200, { ok: true });
+}
+
 async function saveRiotProfile(req, res, user) {
   const body = await readJsonBody(req);
   const profile = normalizeRiotProfile(body);
@@ -392,7 +476,7 @@ async function riotFetch(routing, pathName) {
   const response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
     headers: {
       "X-Riot-Token": process.env.RIOT_API_KEY,
-      "User-Agent": "ArenaTracker/0.3 local dev",
+      "User-Agent": "ArenaTracker/0.4 local dev",
     },
   });
 
@@ -426,11 +510,11 @@ function mapRiotMatch(detail, puuid, userId) {
   const items = [0, 1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`item${slot}`])
     .filter(Boolean)
-    .map((itemId) => `Item ${itemId}`);
+    .map(resolveItemName);
   const augments = [1, 2, 3, 4, 5, 6]
     .map((slot) => participant[`playerAugment${slot}`])
     .filter(Boolean)
-    .map((augmentId) => `Augment ${augmentId}`);
+    .map(resolveAugmentName);
 
   return {
     id: makeId("match"),
@@ -486,8 +570,10 @@ function normalizeMatch(match, userId, sourceType) {
     partner: cleanText(match.partner),
     placement: clamp(Number(match.placement || 8), 1, 8),
     ratingDelta: Number(match.ratingDelta || 0),
-    augments: Array.isArray(match.augments) ? match.augments.map(cleanText).filter(Boolean) : [],
-    items: Array.isArray(match.items) ? match.items.map(cleanText).filter(Boolean) : [],
+    augments: Array.isArray(match.augments)
+      ? match.augments.map(resolveAugmentName).map(cleanText).filter(Boolean)
+      : [],
+    items: Array.isArray(match.items) ? match.items.map(resolveItemName).map(cleanText).filter(Boolean) : [],
     note: cleanText(match.note),
     source,
     createdAt: match.createdAt || new Date().toISOString(),
@@ -571,6 +657,19 @@ async function mutateDb(mutator) {
   return db;
 }
 
+async function writeResetOutboxMessage(message) {
+  await mkdir(DATA_DIR, { recursive: true });
+  let outbox = [];
+  try {
+    outbox = JSON.parse(await readFile(RESET_OUTBOX_PATH, "utf8"));
+    if (!Array.isArray(outbox)) outbox = [];
+  } catch {
+    outbox = [];
+  }
+  outbox.unshift(message);
+  await writeFile(RESET_OUTBOX_PATH, `${JSON.stringify(outbox, null, 2)}\n`, "utf8");
+}
+
 function publicUser(user) {
   return {
     id: user.id,
@@ -603,6 +702,10 @@ function verifyPassword(password, passwordHash) {
   return actual.length === expected.length && timingSafeEqual(actual, expected);
 }
 
+function hashToken(token) {
+  return createHash("sha256").update(token).digest("hex");
+}
+
 function parseCookies(header) {
   return Object.fromEntries(
     header
@@ -630,6 +733,25 @@ function cleanText(value) {
   return String(value || "").trim().replace(/\s+/g, " ");
 }
 
+function resolveItemName(value) {
+  const text = cleanText(value);
+  const id = extractNumericId(text);
+  if (!id) return text;
+  return GAME_DATA.items?.[id] || text;
+}
+
+function resolveAugmentName(value) {
+  const text = cleanText(value);
+  const id = extractNumericId(text);
+  if (!id) return text;
+  return GAME_DATA.augments?.[id] || text;
+}
+
+function extractNumericId(value) {
+  const match = cleanText(value).match(/\b\d{2,6}\b/);
+  return match?.[0] || "";
+}
+
 function makeId(prefix) {
   return `${prefix}-${randomBytes(12).toString("hex")}`;
 }
@@ -653,4 +775,14 @@ function loadEnvFile() {
     const value = trimmed.slice(index + 1).trim().replace(/^["']|["']$/g, "");
     if (key && process.env[key] === undefined) process.env[key] = value;
   });
+}
+
+function loadGameData() {
+  const dataPath = path.join(ROOT, "assets", "game-data.json");
+  if (!existsSync(dataPath)) return { champions: [], items: {}, augments: {} };
+  try {
+    return JSON.parse(readFileSync(dataPath, "utf8"));
+  } catch {
+    return { champions: [], items: {}, augments: {} };
+  }
 }

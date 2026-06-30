@@ -35,7 +35,7 @@ W `.env` wpisz:
 RIOT_API_KEY=RGAPI-your-development-key
 ```
 
-Następnie uruchom serwer ponownie. W aplikacji przejdź do `Konto`, utwórz konto, zapisz Riot ID i kliknij `Synchronizuj Arenę`.
+Następnie uruchom serwer ponownie. W aplikacji kliknij `Konto` w prawym górnym rogu, utwórz konto, zapisz Riot ID w panelu profilu i kliknij `Synchronizuj Arenę`.
 
 Import korzysta z:
 
@@ -45,18 +45,19 @@ Import korzysta z:
 
 ## Funkcje
 
-- Dashboard z liczbą gier, średnim miejscem, top 2 rate, win rate i zmianą ratingu.
-- Formularz zapisu meczu: data, patch, bohater, partner, miejsce, rating, augmenty, itemy i notatka.
-- Historia meczów z filtrami po patchu, bohaterze i zakresie czasu.
-- Tabela bohaterów z agregacją średniego miejsca, top 2, duetów i częstości augmentów.
-- Planner draftu na bazie zapisanych prób danego bohatera albo duetu.
-- Konto lokalne, import i eksport danych JSON.
+- Minimalistyczny dashboard z progressem wygranych championów.
+- Kolekcja pokazująca wyłącznie championów, którymi masz już pierwsze miejsce.
+- Wyszukiwarka w zakładce `Wygrane`, oparta o listę wygranych championów i ich ikony.
+- Historia meczów pobrana z synchronizacji Riot API lub importu JSON.
+- Konto lokalne, logowanie, rejestracja i reset hasła przez link wysyłany na e-mail.
+- Import i eksport danych JSON.
 - Import meczów Arena z Riot Match-V5, jeśli `RIOT_API_KEY` jest ustawiony.
 
 ## Założenia
 
 - Backend używa tylko wbudowanych modułów Node i zapisuje dane w `data/arenatracker-db.json`.
 - Hasła są haszowane przez `scrypt`; sesje są lokalnymi ciasteczkami HTTP-only i wygasają po 7 dniach.
+- W trybie lokalnym linki resetowania hasła trafiają do `data/password-reset-outbox.json`; w środowisku produkcyjnym to miejsce należy podpiąć pod SMTP lub usługę e-mail.
 - Dane w `data/` i `.env` nie są commitowane.
 - Lista startowa bohaterów korzysta z Riot Data Dragon `16.13.1`, sprawdzonego 2026-06-30.
 - ArenaTracker nie pokazuje win rate'ów augmentów ani itemów dla Areny.
