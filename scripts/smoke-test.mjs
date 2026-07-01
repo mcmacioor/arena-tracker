@@ -158,12 +158,19 @@ try {
   assert(collectionText.includes("Vi"), "Won champion Vi missing from collection");
   assert(collectionText.includes("Lee Sin"), "Canonical Lee Sin missing from collection");
   assert(!collectionText.includes("LeeSin"), "Raw Riot champion key should not be rendered");
-  assert(!collectionText.includes("Brakuje wygranej"), "Default collection should only list won champions");
   const collectionIconCount = await evalPage(
     cdp,
     `document.querySelectorAll("#championCollection .champion-icon").length`,
   );
-  assert(collectionIconCount === 2, `Expected 2 won champion icons, got ${collectionIconCount}`);
+  const championCount = await evalPage(cdp, `window.ARENA_GAME_DATA.champions.length`);
+  assert(collectionIconCount === championCount, `Expected all champion icons by default, got ${collectionIconCount}`);
+  await evalPage(cdp, `document.querySelector('[data-collection-mode="won"]').click()`);
+  const wonIconCount = await evalPage(
+    cdp,
+    `document.querySelectorAll("#championCollection .champion-icon").length`,
+  );
+  assert(wonIconCount === 2, `Expected 2 won champion icons, got ${wonIconCount}`);
+  await evalPage(cdp, `document.querySelector('[data-collection-mode="all"]').click()`);
 
   await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Vi"`);
   await evalPage(cdp, `document.querySelector("#championSearchInput").dispatchEvent(new Event("input"))`);
@@ -192,7 +199,10 @@ try {
   await evalPage(cdp, `location.hash = "matches"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const matchText = await evalPage(cdp, `document.querySelector("#matchList").innerText`);
-  assert(matchText.includes("Protein Shake"), "Numeric augment id should resolve to a name");
+  assert(
+    matchText.includes("Shake Proteinowy") || matchText.includes("Protein Shake"),
+    "Numeric augment id should resolve to a localized name",
+  );
   assert(!matchText.includes("1324"), "Numeric augment id should not be rendered raw");
   assert(matchText.toLowerCase().includes("augmenty") && matchText.toLowerCase().includes("itemy"), "Match cards should split augments and items");
   const matchChampionIconCount = await evalPage(
@@ -218,7 +228,10 @@ try {
   );
   assert(legacyModalClosed, "Legacy match modal should stay closed");
   const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailView").innerText`);
-  assert(matchDetailText.includes("Protein Shake"), "Match detail should include resolved augment names");
+  assert(
+    matchDetailText.includes("Shake Proteinowy") || matchDetailText.includes("Protein Shake"),
+    "Match detail should include resolved augment names",
+  );
   assert(matchDetailText.includes("Gracze"), "Match detail should show players");
   const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailPageTitle").textContent`);
   assert(!matchDetailTitle.includes("+"), "Match detail title should not duplicate the team title");

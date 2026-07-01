@@ -12,12 +12,20 @@ const championData = await fetchJson(
   `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`,
 );
 const itemData = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`);
+const itemDataPl = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/pl_PL/item.json`);
 const arenaData = await fetchJson("https://raw.communitydragon.org/latest/cdragon/arena/en_us.json");
+const arenaDataPl = await fetchJson("https://raw.communitydragon.org/latest/cdragon/arena/pl_pl.json");
 const cherryAugmentData = await fetchJson(
   "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/cherry-augments.json",
 );
+const cherryAugmentDataPl = await fetchJson(
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/pl_pl/v1/cherry-augments.json",
+);
 const communityItemData = await fetchJson(
   "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/items.json",
+);
+const communityItemDataPl = await fetchJson(
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/pl_pl/v1/items.json",
 );
 
 const champions = Object.values(championData.data)
@@ -48,13 +56,33 @@ const championIcons = Object.fromEntries(
 const items = {};
 const itemIcons = {};
 const itemAliases = {};
+const itemDetails = {};
+const itemDataPlById = mapById(Object.entries(itemDataPl.data).map(([id, item]) => ({ ...item, id })));
+const communityItemPlById = mapById(communityItemDataPl);
 
 Object.entries(itemData.data).forEach(([id, item]) => {
-  addLookupItem(items, itemIcons, itemAliases, id, stripTags(item.name), `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`);
+  const pl = itemDataPlById.get(String(id));
+  addAsset(items, itemIcons, itemAliases, itemDetails, {
+    id,
+    names: { en: stripTags(item.name), pl: stripTags(pl?.name) },
+    descriptions: { en: stripTags(item.description), pl: stripTags(pl?.description) },
+    icon: `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${item.image.full}`,
+    price: Number(item.gold?.total || 0),
+    tier: itemTier(id, item),
+    categories: item.tags || [],
+  });
 });
 
 communityItemData.forEach((item) => {
-  addLookupItem(items, itemIcons, itemAliases, item.id, stripTags(item.name), communityDragonAssetUrl(item.iconPath), {
+  const pl = communityItemPlById.get(String(item.id));
+  addAsset(items, itemIcons, itemAliases, itemDetails, {
+    id: item.id,
+    names: { en: stripTags(item.name), pl: stripTags(pl?.name) },
+    descriptions: { en: stripTags(item.description), pl: stripTags(pl?.description) },
+    icon: communityDragonAssetUrl(item.iconPath),
+    price: Number(item.priceTotal || item.price || 0),
+    tier: itemTier(item.id, item),
+    categories: item.categories || [],
     overwrite: false,
   });
 });
@@ -62,27 +90,35 @@ communityItemData.forEach((item) => {
 const augments = {};
 const augmentIcons = {};
 const augmentAliases = {};
+const augmentDetails = {};
+const arenaAugmentPlById = mapById(arenaDataPl.augments || []);
+const cherryAugmentPlById = mapById(cherryAugmentDataPl);
 
 (arenaData.augments || []).forEach((augment) => {
-  addLookupItem(
-    augments,
-    augmentIcons,
-    augmentAliases,
-    augment.id,
-    stripTags(augment.name),
-    communityDragonAssetUrl(augment.iconSmall || augment.iconLarge),
-  );
+  const pl = arenaAugmentPlById.get(String(augment.id));
+  addAsset(augments, augmentIcons, augmentAliases, augmentDetails, {
+    id: augment.id,
+    names: { en: stripTags(augment.name), pl: stripTags(pl?.name) },
+    descriptions: { en: stripTags(augment.tooltip || augment.desc), pl: stripTags(pl?.tooltip || pl?.desc) },
+    icon: communityDragonAssetUrl(augment.iconSmall || augment.iconLarge),
+    tier: augmentTier(augment.rarity),
+    rarity: augment.rarity,
+  });
 });
 
 cherryAugmentData.forEach((augment) => {
-  addLookupItem(
-    augments,
-    augmentIcons,
-    augmentAliases,
-    augment.id,
-    stripTags(augment.nameTRA || augment.simpleNameTRA || augment.augmentNameId),
-    communityDragonAssetUrl(augment.augmentSmallIconPath),
-  );
+  const pl = cherryAugmentPlById.get(String(augment.id));
+  addAsset(augments, augmentIcons, augmentAliases, augmentDetails, {
+    id: augment.id,
+    names: {
+      en: stripTags(augment.nameTRA || augment.simpleNameTRA || augment.augmentNameId),
+      pl: stripTags(pl?.nameTRA || pl?.simpleNameTRA),
+    },
+    icon: communityDragonAssetUrl(augment.augmentSmallIconPath),
+    tier: augmentTier(augment.rarity),
+    rarity: augment.rarity,
+    overwrite: false,
+  });
 });
 
 const payload = {
@@ -92,11 +128,17 @@ const payload = {
     dataDragonVersions: "https://ddragon.leagueoflegends.com/api/versions.json",
     champion: `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`,
     item: `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`,
+    itemPl: `https://ddragon.leagueoflegends.com/cdn/${version}/data/pl_PL/item.json`,
     arenaAugments: "https://raw.communitydragon.org/latest/cdragon/arena/en_us.json",
+    arenaAugmentsPl: "https://raw.communitydragon.org/latest/cdragon/arena/pl_pl.json",
     cherryAugments:
       "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/cherry-augments.json",
+    cherryAugmentsPl:
+      "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/pl_pl/v1/cherry-augments.json",
     communityItems:
       "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/items.json",
+    communityItemsPl:
+      "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/pl_pl/v1/items.json",
   },
   champions,
   championKeys,
@@ -105,9 +147,11 @@ const payload = {
   items,
   itemIcons,
   itemAliases,
+  itemDetails,
   augments,
   augmentIcons,
   augmentAliases,
+  augmentDetails,
 };
 
 await writeFile(
@@ -129,9 +173,47 @@ async function fetchJson(url) {
 
 function stripTags(value) {
   return String(value || "")
-    .replace(/<[^>]+>/g, "")
-    .replace(/\s+/g, " ")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(stats|passive|active|mainText|rules|flavorText)>/gi, "\n")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\s*\n\s*/g, "\n")
+    .replace(/\n{2,}/g, "\n")
     .trim();
+}
+
+function addAsset(names, icons, aliases, details, asset) {
+  const options = asset || {};
+  const key = String(asset.id || "").trim();
+  const label = stripTags(asset.names?.en || asset.name);
+  if (!key || !label) return;
+
+  const existing = details[key] || {};
+  const next = {
+    ...existing,
+    id: key,
+    names: {
+      ...(existing.names || {}),
+      en: label,
+      ...(asset.names?.pl ? { pl: stripTags(asset.names.pl) } : {}),
+    },
+    descriptions: {
+      ...(existing.descriptions || {}),
+      ...(asset.descriptions?.en ? { en: stripTags(asset.descriptions.en) } : {}),
+      ...(asset.descriptions?.pl ? { pl: stripTags(asset.descriptions.pl) } : {}),
+    },
+    icon: asset.icon || existing.icon || "",
+    tier: asset.tier || existing.tier || "",
+    rarity: asset.rarity ?? existing.rarity,
+    price: Number(asset.price || existing.price || 0),
+    categories: asset.categories || existing.categories || [],
+  };
+
+  if (options.overwrite !== false || !names[key]) names[key] = next.names.en;
+  if (next.icon && (options.overwrite !== false || !icons[key])) icons[key] = next.icon;
+  details[key] = options.overwrite === false ? { ...next, ...existing, names: { ...next.names, ...(existing.names || {}) } } : next;
+  aliases[normalizeKey(next.names.en)] = key;
+  if (next.names.pl) aliases[normalizeKey(next.names.pl)] = key;
 }
 
 function addLookupItem(names, icons, aliases, id, name, icon, options = {}) {
@@ -153,6 +235,28 @@ function communityDragonAssetUrl(value) {
     .replace(/^\/+/, "")
     .toLowerCase();
   return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/${normalized}`;
+}
+
+function mapById(values) {
+  return new Map((values || []).map((item) => [String(item.id), item]));
+}
+
+function augmentTier(value) {
+  const text = String(value || "").toLowerCase();
+  if (text.includes("silver") || value === 0) return "silver";
+  if (text.includes("gold") || value === 1) return "gold";
+  if (text.includes("prismatic") || value === 2) return "prismatic";
+  if (value === 4) return "special";
+  return "";
+}
+
+function itemTier(id, item = {}) {
+  const key = String(id || "");
+  const categories = item.categories || item.tags || [];
+  if (categories.includes("Trinket")) return "trinket";
+  if (key.startsWith("44") && Number(item.priceTotal || item.gold?.total || item.price || 0) >= 2500) return "prismatic";
+  if (categories.includes("Boots")) return "boots";
+  return "";
 }
 
 function normalizeKey(value) {

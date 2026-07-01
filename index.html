@@ -145,14 +145,14 @@
             <div class="split-layout">
               <section class="panel" aria-labelledby="wonTitle">
                 <div class="panel-head">
-                  <h2 id="wonTitle">Championi z wygraną</h2>
+                  <h2 id="wonTitle" data-i18n="dashboard.wonChampions">Championi z wygraną</h2>
                 </div>
                 <div class="champion-strip" id="wonChampionStrip"></div>
               </section>
 
               <section class="panel" aria-labelledby="recentTitle">
                 <div class="panel-head">
-                  <h2 id="recentTitle">Ostatnie mecze</h2>
+                  <h2 id="recentTitle" data-i18n="dashboard.recentMatches">Ostatnie mecze</h2>
                 </div>
                 <div class="match-list compact" id="recentMatches"></div>
               </section>
@@ -162,7 +162,7 @@
           <div class="view" id="matchesView" data-view="matches">
             <section class="panel partner-panel" aria-labelledby="partnerStatsTitle">
               <div class="panel-head">
-                <h2 id="partnerStatsTitle">Partnerzy z Areny</h2>
+                <h2 id="partnerStatsTitle" data-i18n="history.partners">Partnerzy z Areny</h2>
               </div>
               <div class="partner-stats" id="partnerStats"></div>
             </section>
@@ -179,28 +179,28 @@
           <div class="view" id="championsView" data-view="champions">
             <section class="panel" aria-labelledby="championStatsTitle">
               <div class="panel-head">
-                <h2 id="championStatsTitle">Lista championów, którymi wygrałeś</h2>
+                <h2 id="championStatsTitle" data-i18n="champions.title">Championi</h2>
                 <span class="status-pill collection-status" id="collectionStatus">Ukończono 0 z 0</span>
               </div>
               <div class="collection-toolbar" aria-label="Filtr wygranych championów">
                 <label>
-                  <span>Szukaj championa</span>
+                  <span data-i18n="champions.search">Szukaj championa</span>
                   <input id="championSearchInput" type="search" autocomplete="off" placeholder="np. Vi" />
                 </label>
                 <div class="segmented-control" aria-label="Status championów">
-                  <button class="is-active" type="button" data-collection-mode="won">Wygrani</button>
-                  <button type="button" data-collection-mode="missing">Brakujący</button>
-                  <button type="button" data-collection-mode="all">Wszyscy</button>
+                  <button type="button" data-collection-mode="won" data-i18n="champions.won">Wygrani</button>
+                  <button type="button" data-collection-mode="missing" data-i18n="champions.missing">Brakujący</button>
+                  <button class="is-active" type="button" data-collection-mode="all" data-i18n="champions.all">Wszyscy</button>
                 </div>
                 <label>
-                  <span>Sortowanie</span>
+                  <span data-i18n="champions.sort">Sortowanie</span>
                   <select id="championSortSelect">
-                    <option value="wins">Liczba winów</option>
-                    <option value="az">A-Z</option>
-                    <option value="games">Liczba gier</option>
-                    <option value="best">Najlepsze miejsce</option>
-                    <option value="avg">Średnie miejsce</option>
-                    <option value="missing">Najbliżej wygranej</option>
+                    <option value="wins" data-i18n="sort.wins">Liczba winów</option>
+                    <option value="az" data-i18n="sort.az">A-Z</option>
+                    <option value="games" data-i18n="sort.games">Liczba gier</option>
+                    <option value="best" data-i18n="sort.best">Najlepsze miejsce</option>
+                    <option value="avg" data-i18n="sort.avg">Średnie miejsce</option>
+                    <option value="missing" data-i18n="sort.missing">Najbliżej wygranej</option>
                   </select>
                 </label>
               </div>
@@ -239,19 +239,19 @@
                   <p class="eyebrow" data-i18n="matchDetails.title">Szczegóły meczu</p>
                   <h2 id="matchDetailPageTitle">Mecz</h2>
                 </div>
-                <a class="ghost-action" href="#matches">Wróć do historii</a>
+                <a class="ghost-action" href="#matches" data-i18n="actions.backToHistory">Wróć do historii</a>
               </div>
               <div class="detail-stats" id="matchDetailPageStats"></div>
               <div class="match-detail-section">
-                <h3>Gracze</h3>
+                <h3 data-i18n="common.players">Gracze</h3>
                 <div class="player-detail-list" id="matchDetailPagePlayers"></div>
               </div>
               <div class="match-detail-section">
-                <h3>Augmenty</h3>
+                <h3 data-i18n="common.augments">Augmenty</h3>
                 <div class="match-tags detail-tags" id="matchDetailPageAugments"></div>
               </div>
               <div class="match-detail-section">
-                <h3>Itemy</h3>
+                <h3 data-i18n="common.items">Itemy</h3>
                 <div class="match-tags detail-tags" id="matchDetailPageItems"></div>
               </div>
             </section>
@@ -288,7 +288,7 @@
             <div class="public-grid">
               <section class="panel" aria-labelledby="publicWonTitle">
                 <div class="panel-head">
-                  <h2 id="publicWonTitle">Wygrani championi</h2>
+                  <h2 id="publicWonTitle" data-i18n="progress.title">Wygrani championi</h2>
                   <label class="public-champion-search">
                     <span>Szukaj</span>
                     <input id="publicChampionSearch" type="search" autocomplete="off" placeholder="np. Zac" />
@@ -298,13 +298,13 @@
               </section>
               <section class="panel" aria-labelledby="publicHistoryTitle">
                 <div class="panel-head">
-                  <h2 id="publicHistoryTitle">Historia meczów</h2>
+                  <h2 id="publicHistoryTitle" data-i18n="history.title">Historia meczów</h2>
                 </div>
                 <div class="match-list public-match-list" id="publicMatchHistory"></div>
               </section>
               <section class="panel" aria-labelledby="publicDuoTitle">
                 <div class="panel-head">
-                  <h2 id="publicDuoTitle">Najlepsze duo</h2>
+                  <h2 id="publicDuoTitle" data-i18n="dashboard.topDuo">Najlepsze duo</h2>
                 </div>
                 <div class="partner-stats" id="publicTopDuo"></div>
               </section>

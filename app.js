@@ -7,6 +7,8 @@ const FRIENDS_STORAGE_KEY = "arenatracker.friends.v1";
 const CHAMPION_ICONS = GAME_DATA.championIcons || {};
 const CHAMPION_KEYS = GAME_DATA.championKeys || {};
 const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
+const ITEM_DETAILS = GAME_DATA.itemDetails || {};
+const AUGMENT_DETAILS = GAME_DATA.augmentDetails || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_LIMIT = 80;
@@ -33,6 +35,56 @@ const translations = {
     "friends.title": "Moja grupa",
     "matchDetails.title": "Szczegóły meczu",
     "actions.showMore": "Pokaż więcej",
+    "actions.backToHistory": "Wróć do historii",
+    "common.games": "Gry",
+    "common.wins": "Wygrane",
+    "common.win": "win",
+    "common.patch": "Patch",
+    "common.date": "Data",
+    "common.place": "Miejsce",
+    "common.players": "Gracze",
+    "common.augments": "Augmenty",
+    "common.items": "Itemy",
+    "common.noData": "Brak danych dla tych filtrów.",
+    "common.status": "Status",
+    "common.unknownPlayer": "Nieznany gracz",
+    "common.championsWon": "z wygraną",
+    "common.lastSync": "Ostatni sync",
+    "common.playerProfile": "profil gracza",
+    "search.resultsTitle": "Profile graczy",
+    "search.searching": "Szukam...",
+    "common.average": "średnio",
+    "common.gamesLower": "gier",
+    "common.playersLower": "graczy",
+    "common.noAugments": "Brak augmentów",
+    "common.noItems": "Brak itemów",
+    "dashboard.wonChampions": "Championi z wygraną",
+    "dashboard.recentMatches": "Ostatnie mecze",
+    "dashboard.topDuo": "Najlepsze duo",
+    "dashboard.noPartners": "Brak danych o partnerach.",
+    "dashboard.noPartnersCaption": "Synchronizacja uzupełni graczy z Twojej drużyny.",
+    "history.partners": "Partnerzy z Areny",
+    "champions.title": "Championi",
+    "champions.search": "Szukaj championa",
+    "champions.won": "Wygrani",
+    "champions.missing": "Brakujący",
+    "champions.all": "Wszyscy",
+    "champions.sort": "Sortowanie",
+    "champions.completed": "Ukończono",
+    "champions.bestPlace": "Najlepsze miejsce",
+    "champions.noGames": "Brak gier",
+    "champions.noFiltered": "Brak championów dla tych filtrów.",
+    "champions.noFilteredCaption": "Zmień filtr albo zsynchronizuj konto.",
+    "champions.noSavedGames": "Brak zapisanych gier tym championem.",
+    "champions.avgPlace": "Średnie miejsce",
+    "sort.wins": "Liczba winów",
+    "sort.az": "A-Z",
+    "sort.games": "Liczba gier",
+    "sort.best": "Najlepsze miejsce",
+    "sort.avg": "Średnie miejsce",
+    "sort.missing": "Najbliżej wygranej",
+    "public.notFound": "Nie znaleziono profilu",
+    "public.profile": "Publiczny profil",
   },
   en: {
     "actions.sync": "Sync",
@@ -51,6 +103,56 @@ const translations = {
     "friends.title": "My group",
     "matchDetails.title": "Match details",
     "actions.showMore": "Show more",
+    "actions.backToHistory": "Back to history",
+    "common.games": "Games",
+    "common.wins": "Wins",
+    "common.win": "win",
+    "common.patch": "Patch",
+    "common.date": "Date",
+    "common.place": "Place",
+    "common.players": "Players",
+    "common.augments": "Augments",
+    "common.items": "Items",
+    "common.noData": "No data for these filters.",
+    "common.status": "Status",
+    "common.unknownPlayer": "Unknown player",
+    "common.championsWon": "champions won",
+    "common.lastSync": "Last sync",
+    "common.playerProfile": "player profile",
+    "search.resultsTitle": "Summoner Profiles",
+    "search.searching": "Searching...",
+    "common.average": "average",
+    "common.gamesLower": "games",
+    "common.playersLower": "players",
+    "common.noAugments": "No augments",
+    "common.noItems": "No items",
+    "dashboard.wonChampions": "Champions with a win",
+    "dashboard.recentMatches": "Recent matches",
+    "dashboard.topDuo": "Top duo",
+    "dashboard.noPartners": "No partner data.",
+    "dashboard.noPartnersCaption": "Sync will fill your Arena teammates.",
+    "history.partners": "Arena partners",
+    "champions.title": "Champions",
+    "champions.search": "Search champion",
+    "champions.won": "Won",
+    "champions.missing": "Missing",
+    "champions.all": "All",
+    "champions.sort": "Sort",
+    "champions.completed": "Completed",
+    "champions.bestPlace": "Best place",
+    "champions.noGames": "No games",
+    "champions.noFiltered": "No champions for these filters.",
+    "champions.noFilteredCaption": "Change filter or sync the account.",
+    "champions.noSavedGames": "No saved games with this champion.",
+    "champions.avgPlace": "Average place",
+    "sort.wins": "Win count",
+    "sort.az": "A-Z",
+    "sort.games": "Game count",
+    "sort.best": "Best place",
+    "sort.avg": "Average place",
+    "sort.missing": "Closest to win",
+    "public.notFound": "Profile not found",
+    "public.profile": "Public profile",
   },
 };
 
@@ -250,7 +352,7 @@ const state = {
   searchTimers: new WeakMap(),
   filters: {
     championSearch: "",
-    collectionMode: "won",
+    collectionMode: "all",
     collectionSort: "wins",
   },
 };
@@ -418,6 +520,10 @@ function bindEvents() {
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
 
   dom.profileSyncButton.addEventListener("click", async () => {
+    if (state.publicRoute) {
+      await loadPublicProfile(state.publicRoute, { force: true });
+      return;
+    }
     await syncRiotMatches({ automatic: false, deep: true });
   });
 
@@ -512,6 +618,7 @@ function bindEvents() {
   dom.matchDetailBackdrop.addEventListener("click", closeMatchDetail);
   dom.matchDetailClose.addEventListener("click", closeMatchDetail);
   dom.matchDetailPagePlayers.addEventListener("click", (event) => {
+    if (event.target.closest(".asset-tag")) return;
     const player = event.target.closest("[data-player-profile]");
     if (!player) return;
     openPlayerProfile(player.dataset.playerProfile, player.dataset.playerRegion);
@@ -568,7 +675,7 @@ function handleBrandHomeClick() {
 
 function setActiveRoute(route) {
   state.activeRoute = route;
-  document.body.classList.toggle("is-public-route", route === "public-profile");
+  document.body.classList.toggle("is-public-route", Boolean(state.publicRoute));
   document.body.classList.toggle("is-guest-home", !state.user && route === "dashboard" && !state.publicRoute);
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.toggle("is-active", link.dataset.route === route);
@@ -620,9 +727,9 @@ function openChampionDetail(champion) {
   dom.championDetailIcon.replaceChildren(renderChampionIcon(champion));
   dom.championDetailTitle.textContent = champion;
   dom.championDetailStats.replaceChildren(
-    renderDetailStat("Wygrane", stat.wins),
-    renderDetailStat("Gry", stat.games),
-    renderDetailStat("Średnie miejsce", formatAveragePlacement(stat.avg)),
+    renderDetailStat(t("common.wins"), stat.wins),
+    renderDetailStat(t("common.games"), stat.games),
+    renderDetailStat(t("champions.avgPlace"), formatAveragePlacement(stat.avg)),
   );
   dom.championDetailHistory.replaceChildren(
     ...(matches.length
@@ -636,7 +743,7 @@ function openChampionDetail(champion) {
           );
           return row;
         })
-      : [el("article", "detail-history-row", "Brak zapisanych gier tym championem.")]),
+      : [el("article", "detail-history-row", t("champions.noSavedGames"))]),
   );
   dom.championDetailOverlay.classList.add("is-open");
   dom.championDetailOverlay.setAttribute("aria-hidden", "false");
@@ -659,11 +766,14 @@ function closeMatchDetail() {
 
 function renderMatchDetailPage() {
   if (!dom.matchDetailPageTitle) return;
-  const match = state.matches.find((item) => item.id === state.activeMatchId);
+  const match = getSortedMatches().find((item) => item.id === state.activeMatchId);
   if (!match) {
     dom.matchDetailPageTitle.textContent = "Mecz";
-    dom.matchDetailPageStats.replaceChildren(renderDetailStat("Status", "Brak danych"));
-    dom.matchDetailPagePlayers.replaceChildren(emptyState("Nie znaleziono meczu.", "Wróć do historii i wybierz pozycję jeszcze raz."));
+    dom.matchDetailPageStats.replaceChildren(renderDetailStat(t("common.status"), t("common.noData")));
+    dom.matchDetailPagePlayers.replaceChildren(emptyState(
+      state.language === "en" ? "Match not found." : "Nie znaleziono meczu.",
+      state.language === "en" ? "Go back to history and choose it again." : "Wróć do historii i wybierz pozycję jeszcze raz.",
+    ));
     dom.matchDetailPageAugments.replaceChildren();
     dom.matchDetailPageItems.replaceChildren();
     return;
@@ -671,25 +781,28 @@ function renderMatchDetailPage() {
 
   dom.matchDetailPageTitle.textContent = formatDateTime(match.playedAt || match.date);
   dom.matchDetailPageStats.replaceChildren(
-    renderDetailStat("Data", formatDateTime(match.playedAt || match.date)),
-    renderDetailStat("Patch", match.patch),
-    renderDetailStat("Miejsce", `#${match.placement}`),
+    renderDetailStat(t("common.date"), formatDateTime(match.playedAt || match.date)),
+    renderDetailStat(t("common.patch"), match.patch),
+    renderDetailStat(t("common.place"), `#${match.placement}`),
   );
   dom.matchDetailPagePlayers.replaceChildren(...renderMatchPlayers(match));
-  renderAssetTags(dom.matchDetailPageAugments, match.augments, "Brak augmentów");
-  renderAssetTags(dom.matchDetailPageItems, match.items, "Brak itemów");
+  renderAssetTags(dom.matchDetailPageAugments, match.augments, t("common.noAugments"));
+  renderAssetTags(dom.matchDetailPageItems, match.items, t("common.noItems"));
 }
 
 function renderMatchPlayers(match) {
   const players = getMatchPlayers(match);
-  if (!players.length) return [emptyState("Brak pełnej listy graczy.", "Kolejna synchronizacja uzupełni nowszy format meczu.")];
+  if (!players.length) return [emptyState(
+    state.language === "en" ? "No full player list." : "Brak pełnej listy graczy.",
+    state.language === "en" ? "Next sync will fill the newer match format." : "Kolejna synchronizacja uzupełni nowszy format meczu.",
+  )];
   const groups = groupPlayersByTeam(players);
   return groups.map((group, index) => {
     const root = el("article", "match-team-group");
     const header = el("div", "match-team-head");
     header.append(
-      el("strong", "", `Drużyna #${group.placement}`),
-      el("span", "", `${group.players.length} graczy`),
+      el("strong", "", `${state.language === "en" ? "Team" : "Drużyna"} #${group.placement}`),
+      el("span", "", `${group.players.length} ${t("common.playersLower")}`),
     );
     const list = el("div", "match-team-players");
     group.players.forEach((player) => list.append(renderPlayerCard(player)));
@@ -719,12 +832,22 @@ function renderPlayerCard(player) {
   root.dataset.playerProfile = player.riotId || "";
   root.dataset.playerRegion = state.publicRoute?.region || state.user?.riotProfile?.region || "euw1";
   root.disabled = !player.riotId;
+  const playerCopy = el("span", "player-card-copy");
+  playerCopy.append(
+    el("strong", "", player.riotId || t("common.unknownPlayer")),
+    el("span", "", player.champion || "Unknown"),
+  );
+  const assets = el("div", "player-card-assets");
+  const augmentGroup = renderAssetGroup(t("common.augments"), player.augments || [], 6);
+  const itemGroup = renderAssetGroup(t("common.items"), player.items || [], 7);
+  if (augmentGroup) assets.append(augmentGroup);
+  if (itemGroup) assets.append(itemGroup);
   root.append(
     renderChampionIcon(player.champion),
-    el("strong", "", player.champion || "Unknown"),
-    el("span", "", player.riotId || "Nieznany gracz"),
+    playerCopy,
     el("em", "", `#${player.placement || "-"}`),
   );
+  if (assets.childElementCount) root.append(assets);
   return root;
 }
 
@@ -807,7 +930,9 @@ function handlePlayerSearchClick(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const result = form._searchResults?.[Number(button.dataset.searchResult)];
-  if (result) selectSearchResult(form, result);
+  if (!result) return;
+  selectSearchResult(form, result);
+  if (form.dataset.searchAction !== "friend") activateSearchResult(form, result);
 }
 
 async function updateSearchResults(form) {
@@ -822,7 +947,7 @@ async function updateSearchResults(form) {
 
   const resultsBox = form.querySelector("[data-search-results]");
   resultsBox.classList.add("is-open");
-  resultsBox.replaceChildren(el("div", "search-results-status", "Szukam..."));
+  resultsBox.replaceChildren(el("div", "search-results-status", t("search.searching")));
   const requestId = (form._searchRequestId || 0) + 1;
   form._searchRequestId = requestId;
 
@@ -847,7 +972,7 @@ function renderSearchResults(form, results, query) {
   }
 
   resultsBox.classList.add("is-open");
-  const title = el("div", "search-results-title", "Summoner Profiles");
+  const title = el("div", "search-results-title", t("search.resultsTitle"));
   const rows = results.map((result, index) => {
     const row = el("button", "search-result-row");
     row.type = "button";
@@ -855,7 +980,7 @@ function renderSearchResults(form, results, query) {
     row.append(
       result.profileIconUrl ? imageIcon(result.profileIconUrl, "champion-icon") : el("span", "champion-icon is-empty", result.gameName.slice(0, 2)),
       el("strong", "", `${result.gameName} #${result.tagLine}`),
-      el("span", "", `${regionLabel(result.region)} · ${result.caption || "profil gracza"}`),
+      el("span", "", `${regionLabel(result.region)} · ${result.caption || t("common.playerProfile")}`),
     );
     return row;
   });
@@ -952,7 +1077,15 @@ function updateRoute() {
   if (publicRoute) {
     closeAccountOverlay();
     state.publicRoute = publicRoute;
-    setActiveRoute("public-profile");
+    const rawRoute = window.location.hash.replace("#", "") || "dashboard";
+    const [route, token] = rawRoute.split("/");
+    const requestedRoute = route === "match" ? "match-detail" : route;
+    const knownRoute = document.querySelector(`[data-view="${requestedRoute}"]`)
+      && !["friends", "public-profile"].includes(requestedRoute)
+      ? requestedRoute
+      : "dashboard";
+    state.activeMatchId = route === "match" ? decodeURIComponent(token || "") : "";
+    setActiveRoute(knownRoute);
     loadPublicProfile(publicRoute);
     renderResetTokenView();
     return;
@@ -984,7 +1117,6 @@ function updateRoute() {
 }
 
 function parsePublicRoute() {
-  if (window.location.hash) return null;
   const segments = window.location.pathname.split("/").filter(Boolean);
   if (segments.length < 2 || segments[0].includes(".")) return null;
   return {
@@ -1010,7 +1142,7 @@ async function loadPublicProfile(route, options = {}) {
     error: "",
     data: previousData,
   };
-  renderPublicProfile();
+  render();
 
   try {
     const fetchPublicBatch = async (forceRefresh) => {
@@ -1021,6 +1153,7 @@ async function loadPublicProfile(route, options = {}) {
         batch: String(RIOT_SYNC_BATCH),
       });
       if (forceRefresh) params.set("refresh", "1");
+      if (state.publicProfile?.syncJobId) params.set("syncJobId", state.publicProfile.syncJobId);
       return apiRequest(`/api/public-profile?${params.toString()}`, {
         timeoutMs: forceRefresh ? RIOT_RECENT_SYNC_TIMEOUT_MS : 60000,
       });
@@ -1032,9 +1165,10 @@ async function loadPublicProfile(route, options = {}) {
       loading: false,
       refreshing: Boolean(options.force && data.sync?.hasMore),
       error: "",
+      syncJobId: data.sync?.jobId || "",
       data,
     };
-    renderPublicProfile();
+    render();
 
     if (options.force) {
       const maxPasses = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SYNC_BATCH) + 2;
@@ -1046,9 +1180,10 @@ async function loadPublicProfile(route, options = {}) {
           loading: false,
           refreshing: Boolean(data.sync?.hasMore),
           error: "",
+          syncJobId: data.sync?.jobId || "",
           data,
         };
-        renderPublicProfile();
+        render();
       }
     }
 
@@ -1057,13 +1192,21 @@ async function loadPublicProfile(route, options = {}) {
       loading: false,
       refreshing: false,
       error: data.sync?.hasMore ? "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę." : "",
+      syncJobId: data.sync?.jobId || "",
       data,
     };
   } catch (error) {
-    state.publicProfile = { routeKey, loading: false, refreshing: false, error: error.message, data: previousData };
+    state.publicProfile = {
+      routeKey,
+      loading: false,
+      refreshing: false,
+      error: error.message,
+      syncJobId: "",
+      data: previousData,
+    };
   }
 
-  renderPublicProfile();
+  render();
 }
 
 function syncFiltersFromDom() {
@@ -1089,29 +1232,41 @@ function render() {
 }
 
 function renderProfileHero(matches) {
-  const profile = state.user?.riotProfile;
+  const publicData = state.publicRoute ? state.publicProfile?.data : null;
+  const publicState = state.publicRoute ? state.publicProfile : null;
+  const profile = publicData?.profile || state.user?.riotProfile;
   const won = getWonChampionStats(matches).length;
   const total = CHAMPIONS.length;
-  dom.profileHeroAvatar.src = getAccountAvatarSrc() || DEFAULT_AUTH_AVATAR;
-  dom.profileHeroName.textContent = profile ? `${profile.gameName}#${profile.tagLine}` : "ArenaTracker";
+  dom.profileHeroAvatar.src = profile?.profileIconUrl || getAccountAvatarSrc() || DEFAULT_AUTH_AVATAR;
+  dom.profileHeroName.textContent = publicState?.error && !publicData
+    ? t("public.notFound")
+    : profile
+      ? `${profile.gameName}#${profile.tagLine}`
+      : "ArenaTracker";
 
   const meta = [];
+  if (state.publicRoute) meta.push(t("public.profile"));
   if (profile?.region) meta.push(regionLabel(profile.region));
-  meta.push(`${won} / ${total} ${state.language === "en" ? "champions won" : "z wygraną"}`);
+  meta.push(`${won} / ${total} ${t("common.championsWon")}`);
   if (profile?.lastSyncedAt) {
-    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${relativeTime(profile.lastSyncedAt)}`);
+    meta.push(`${t("common.lastSync")}: ${relativeTime(profile.lastSyncedAt)}`);
   }
   dom.profileHeroMeta.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
 
-  const canSync = Boolean(state.user?.riotProfile && state.backendAvailable && !state.isAutoSyncing);
+  const canSync = state.publicRoute
+    ? Boolean(state.backendAvailable && !publicState?.loading && !publicState?.refreshing)
+    : Boolean(state.user?.riotProfile && state.backendAvailable && !state.isAutoSyncing);
   dom.profileSyncButton.disabled = !canSync;
-  dom.profileSyncButton.textContent = state.isAutoSyncing
+  const isSyncing = state.isAutoSyncing || Boolean(publicState?.loading || publicState?.refreshing);
+  dom.profileSyncButton.textContent = isSyncing
     ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
     : t("actions.sync");
   dom.exportProgressButton.disabled = !matches.length;
-  dom.profileSyncNote.textContent = state.isAutoSyncing
+  dom.profileSyncNote.textContent = publicState?.error
+    ? publicState.error
+    : isSyncing
     ? "Synchronizuję..."
-    : profile
+    : profile || state.publicRoute
       ? ""
       : state.language === "en"
         ? "Log in and save League profile to sync."
@@ -1127,7 +1282,7 @@ function renderVictoryProgress(matches) {
   dom.progressCounter.textContent = `${completed} / ${total}`;
   dom.victoryProgress.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.querySelector("span").style.width = `${percent}%`;
-  dom.victoryProgress.setAttribute("aria-label", `${completed} z ${total} championów z wygraną`);
+  dom.victoryProgress.setAttribute("aria-label", `${completed} / ${total} ${t("common.championsWon")}`);
 }
 
 function renderAccount() {
@@ -1387,7 +1542,10 @@ function publicRegionSlug(region) {
 }
 
 function getSortedMatches() {
-  return [...state.matches]
+  const publicMatches = state.publicRoute && state.publicProfile?.data?.matches
+    ? state.publicProfile.data.matches.map(normalizeMatch).filter(Boolean)
+    : null;
+  return [...(publicMatches || state.matches)]
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
@@ -1397,11 +1555,11 @@ function renderMetrics(matches) {
 
   const cards = [
     {
-      label: "Gry",
+      label: t("common.games"),
       value: games,
     },
     {
-      label: "Wygrane",
+      label: t("common.wins"),
       value: wins,
     },
   ];
@@ -1432,8 +1590,8 @@ function renderPartnerStats(matches) {
   const stats = getPartnerStats(matches);
   if (!stats.length) {
     const empty = emptyState();
-    empty.querySelector("strong").textContent = "Brak danych o partnerach.";
-    empty.querySelector("span").textContent = "Synchronizacja uzupełni graczy z Twojej drużyny.";
+    empty.querySelector("strong").textContent = t("dashboard.noPartners");
+    empty.querySelector("span").textContent = t("dashboard.noPartnersCaption");
     dom.partnerStats.replaceChildren(empty);
     return;
   }
@@ -1443,7 +1601,7 @@ function renderPartnerStats(matches) {
       const root = el("article", "partner-card");
       root.append(
         el("strong", "", stat.name),
-        el("span", "", `${stat.games} gier · średnio #${formatAveragePlacement(stat.avg)}`),
+        el("span", "", `${stat.games} ${t("common.gamesLower")} · ${t("common.average")} #${formatAveragePlacement(stat.avg)}`),
       );
       return root;
     }),
@@ -1540,15 +1698,15 @@ function renderChampionCollection(matches) {
     return b.wins - a.wins || a.champion.localeCompare(b.champion);
   });
 
-  dom.collectionStatus.textContent = `Ukończono ${wonCount} z ${CHAMPIONS.length}`;
+  dom.collectionStatus.textContent = `${t("champions.completed")} ${wonCount} / ${CHAMPIONS.length}`;
   dom.collectionModeButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.collectionMode === mode);
   });
 
   if (!collection.length) {
     const empty = emptyState();
-    empty.querySelector("strong").textContent = "Brak championów dla tych filtrów.";
-    empty.querySelector("span").textContent = "Zmień filtr albo zsynchronizuj konto.";
+    empty.querySelector("strong").textContent = t("champions.noFiltered");
+    empty.querySelector("span").textContent = t("champions.noFilteredCaption");
     dom.championCollection.replaceChildren(empty);
     return;
   }
@@ -1561,7 +1719,7 @@ function renderChampionPill(stat) {
   root.dataset.championDetail = stat.champion;
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
-  body.append(el("span", "", `${stat.wins} win`));
+  body.append(el("span", "", `${stat.wins} ${t("common.win")}`));
   root.append(renderChampionIcon(stat.champion), body);
   return root;
 }
@@ -1577,10 +1735,10 @@ function renderChampionCollectionCard(stat) {
       "span",
       "",
       stat.wins
-        ? `${stat.wins} win`
+        ? `${stat.wins} ${t("common.win")}`
         : stat.games
-          ? `Najlepsze miejsce #${stat.bestPlacement}`
-          : "Brak gier",
+          ? `${t("champions.bestPlace")} #${stat.bestPlacement}`
+          : t("champions.noGames"),
     ),
   );
   root.append(renderChampionIcon(stat.champion), body);
@@ -1639,7 +1797,7 @@ function renderMatchCard(match, options) {
   const meta = el("div", "match-meta");
   meta.append(
     el("span", "tag", formatDate(match.date)),
-    el("span", "tag", `Patch ${match.patch}`),
+    el("span", "tag", `${t("common.patch")} ${match.patch}`),
   );
 
   const augmentLimit = 6;
@@ -1667,7 +1825,8 @@ function renderAssetGroup(label, tags, limit) {
   const visibleTags = tags.slice(0, limit);
   if (!visibleTags.length) return null;
   const root = el("div", "match-asset-group");
-  root.append(el("span", "asset-group-label", label));
+  const labelKey = label.toLowerCase().startsWith("augment") ? "common.augments" : "common.items";
+  root.append(el("span", "asset-group-label", t(labelKey)));
   const list = el("div", "match-tags");
   visibleTags.forEach((tag) => list.append(renderTagPill(tag)));
   root.append(list);
@@ -1681,12 +1840,51 @@ function renderAssetTags(container, tags, emptyLabel) {
 
 function renderTagPill(tag) {
   const normalized = normalizeAssetTag(tag);
-  const root = el("span", "tag asset-tag");
+  const root = el("span", `tag asset-tag ${normalized.tier ? `is-${normalized.tier}` : ""}`);
+  root.tabIndex = 0;
   if (normalized.icon) {
     root.append(imageIcon(normalized.icon, "tag-icon"));
   }
-  root.append(el("span", "", normalized.name));
+  root.append(el("span", "", assetName(normalized)));
+  const tooltip = renderAssetTooltip(normalized);
+  if (tooltip) root.append(tooltip);
   return root;
+}
+
+function renderAssetTooltip(asset) {
+  const description = assetDescription(asset);
+  if (!description && !asset.price && !asset.tier) return null;
+  const root = el("span", "asset-tooltip");
+  const head = el("span", "asset-tooltip-head");
+  if (asset.icon) head.append(imageIcon(asset.icon, "asset-tooltip-icon"));
+  const title = el("span", "asset-tooltip-title");
+  title.append(el("strong", "", assetName(asset)));
+  if (asset.price) title.append(el("em", "", `${asset.price} ${state.language === "en" ? "gold" : "złota"}`));
+  head.append(title);
+  root.append(head);
+  if (description) root.append(el("span", "asset-tooltip-desc", description));
+  if (asset.tier) root.append(el("span", `asset-tooltip-tier is-${asset.tier}`, tierLabel(asset.tier)));
+  return root;
+}
+
+function assetName(asset) {
+  return cleanText(asset.names?.[state.language] || asset.names?.en || asset.name || asset.id);
+}
+
+function assetDescription(asset) {
+  return cleanText(asset.descriptions?.[state.language] || asset.descriptions?.en || asset.description);
+}
+
+function tierLabel(tier) {
+  const labels = {
+    silver: state.language === "en" ? "Silver" : "Srebrny",
+    gold: state.language === "en" ? "Gold" : "Złoty",
+    prismatic: state.language === "en" ? "Prismatic" : "Pryzmatyczny",
+    special: state.language === "en" ? "Special" : "Specjalny",
+    boots: state.language === "en" ? "Boots" : "Buty",
+    trinket: state.language === "en" ? "Trinket" : "Trinket",
+  };
+  return labels[tier] || tier;
 }
 
 function loadMatches() {
@@ -1932,7 +2130,7 @@ async function syncRiotMatches(options = {}) {
   state.syncError = "";
   dom.riotSyncStatus.replaceChildren(
     el("strong", "", "Synchronizuję..."),
-    el("span", "", "Aktualizuję mecze Areny."),
+    el("span", "", "Pracuję nad historią Areny."),
   );
 
   const syncLimit = options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT;
@@ -1940,6 +2138,7 @@ async function syncRiotMatches(options = {}) {
   const syncBatch = options.deep ? RIOT_SYNC_BATCH : RIOT_SYNC_LIMIT;
   let processedCount = 0;
   let latestData = null;
+  let syncJobId = "";
 
   try {
     const maxPasses = options.deep ? Math.ceil(syncLimit / syncBatch) + 2 : 1;
@@ -1951,9 +2150,11 @@ async function syncRiotMatches(options = {}) {
           limit: syncLimit,
           batch: syncBatch,
           scope: options.deep ? "season" : "recent",
+          syncJobId,
         },
       });
       latestData = data;
+      syncJobId = data.syncJobId || "";
       processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
       state.user = data.user;
       state.matches = data.matches.map(normalizeMatch).filter(Boolean);
@@ -2234,7 +2435,7 @@ function getAllChampionCollectionStats(matches) {
 function getWonChampionStats(matches) {
   return getChampionStats(matches)
     .filter((stat) => stat.wins > 0)
-    .sort((a, b) => b.wins - a.wins || a.champion.localeCompare(b.champion));
+    .sort((a, b) => a.champion.localeCompare(b.champion));
 }
 
 function findBestChampion(matches) {
@@ -2304,6 +2505,8 @@ function normalizePlayer(value) {
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     teamId: cleanText(value.teamId ?? value.playerSubteamId),
+    augments: Array.isArray(value.augments) ? value.augments.map(resolveAugmentTag).filter(Boolean) : [],
+    items: Array.isArray(value.items) ? value.items.map(resolveItemTag).filter(Boolean) : [],
   };
 }
 
@@ -2332,7 +2535,7 @@ function resolveItemName(value) {
 }
 
 function resolveItemTag(value) {
-  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases);
+  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases, ITEM_DETAILS);
 }
 
 function resolveAugmentName(value) {
@@ -2340,37 +2543,72 @@ function resolveAugmentName(value) {
 }
 
 function resolveAugmentTag(value) {
-  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases);
+  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases, AUGMENT_DETAILS);
 }
 
-function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
+function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}, details = {}) {
   const source = value && typeof value === "object" ? value : {};
   const rawText = source.name ?? source.label ?? value;
   const text = cleanText(rawText);
   const rawId = cleanText(source.id || source.itemId || source.augmentId || extractNumericId(text));
   const aliasId = aliases?.[normalizeLookupKey(text)] || "";
   const id = names?.[rawId] ? rawId : aliasId || rawId;
-  const name = names?.[id] || text;
+  const detail = details?.[id] || {};
+  const name = detail.names?.en || names?.[id] || text;
   if (rawId && text === rawId && !names?.[rawId]) return null;
   if (!name) return null;
 
   return {
     id,
     name,
-    icon: cleanText(source.icon || icons?.[id]),
+    names: {
+      ...(detail.names || {}),
+      ...(source.names || {}),
+      en: cleanText(source.names?.en || source.name || detail.names?.en || name),
+      ...(source.names?.pl || detail.names?.pl ? { pl: cleanText(source.names?.pl || detail.names?.pl) } : {}),
+    },
+    descriptions: {
+      ...(detail.descriptions || {}),
+      ...(source.descriptions || {}),
+    },
+    icon: cleanText(source.icon || detail.icon || icons?.[id]),
+    tier: cleanText(source.tier || detail.tier),
+    price: Number(source.price || detail.price || 0),
   };
 }
 
 function normalizeAssetTag(value) {
   if (value && typeof value === "object") {
-    return {
+    const id = cleanText(value.id || value.itemId || value.augmentId);
+    const detail = ITEM_DETAILS[id] || AUGMENT_DETAILS[id] || {};
+    return resolveGameAssetTag(
+      {
+        ...value,
+        id,
+        name: value.name || detail.names?.en,
+        icon: value.icon || detail.icon,
+      },
+      { [id]: detail.names?.en || value.name || id },
+      { [id]: detail.icon || value.icon || "" },
+      {},
+      { [id]: detail },
+    ) || {
+      id,
       name: cleanText(value.name || value.label || value.id),
+      names: value.names || {},
+      descriptions: value.descriptions || {},
       icon: cleanText(value.icon),
+      tier: cleanText(value.tier),
+      price: Number(value.price || 0),
     };
   }
   return {
     name: cleanText(value),
+    names: {},
+    descriptions: {},
     icon: "",
+    tier: "",
+    price: 0,
   };
 }
 
@@ -2444,7 +2682,7 @@ function today() {
 }
 
 function formatDate(value) {
-  return new Intl.DateTimeFormat("pl-PL", {
+  return new Intl.DateTimeFormat(state.language === "en" ? "en" : "pl-PL", {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -2452,7 +2690,7 @@ function formatDate(value) {
 }
 
 function formatDateTime(value) {
-  return new Intl.DateTimeFormat("pl-PL", {
+  return new Intl.DateTimeFormat(state.language === "en" ? "en" : "pl-PL", {
     day: "2-digit",
     month: "short",
     year: "numeric",

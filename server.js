@@ -56,6 +56,32 @@ const PUBLIC_REGION_ALIASES = new Map([
 ]);
 
 const sessions = new Map();
+const syncJobs = new Map();
+const publicSyncJobs = new Map();
+const SYNC_JOB_TTL_MS = 10 * 60 * 1000;
+
+function getSyncJob(store, jobId, options) {
+  const job = jobId ? store.get(jobId) : null;
+  if (!job) return null;
+  if (job.expiresAt < Date.now()) {
+    store.delete(job.id);
+    return null;
+  }
+  if (job.ownerId !== options.ownerId || job.scope !== options.scope || job.limit !== options.limit) return null;
+  return job;
+}
+
+function createSyncJob(store, payload) {
+  const job = {
+    id: makeId("sync"),
+    ...payload,
+    remainingIds: [...(payload.remainingIds || [])],
+    createdAt: new Date().toISOString(),
+    expiresAt: Date.now() + SYNC_JOB_TTL_MS,
+  };
+  store.set(job.id, job);
+  return job;
+}
 
 loadEnvFile();
 const GAME_DATA = loadGameData();
@@ -375,7 +401,7 @@ async function saveRiotProfile(req, res, user) {
 
   if (process.env.RIOT_API_KEY) {
     account = await fetchRiotAccount(profile);
-    summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
+    summoner = await fetchSummonerByPuuid(profile.region, account.puuid).catch(() => null);
     profile.puuid = account.puuid;
   }
 
@@ -398,6 +424,7 @@ async function getPublicProfile(req, res, url) {
   const forceRefresh = url.searchParams.get("refresh") === "1";
   const limit = clamp(Number(url.searchParams.get("limit") || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
   const batch = clamp(Number(url.searchParams.get("batch") || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
+  const syncJobId = cleanText(url.searchParams.get("syncJobId"));
 
   if (!region || !slug) {
     sendJson(res, 400, { error: "Brakuje regionu albo nazwy profilu." });
@@ -413,7 +440,7 @@ async function getPublicProfile(req, res, url) {
 
   if (user && forceRefresh) {
     const cached = findCachedPublicProfile(db, region, slug);
-    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch }).catch(() => null);
+    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId }).catch(() => null);
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -430,7 +457,7 @@ async function getPublicProfile(req, res, url) {
       return;
     }
 
-    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch }).catch(() => null);
+    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId }).catch(() => null);
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -517,7 +544,7 @@ async function searchRiotProfiles(req, res, url) {
     try {
       const routing = routingForRegion(region);
       const account = await fetchRiotAccount({ ...exact, routing });
-      const summoner = await fetchSummonerByPuuid(region, account.puuid);
+      const summoner = await fetchSummonerByPuuid(region, account.puuid).catch(() => null);
       const result = searchResultFromProfile(
         {
           gameName: account.gameName || exact.gameName,
@@ -544,11 +571,23 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const batch = clamp(Number(options.batch || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
   const existing = options.existing || null;
   const routing = routingForRegion(region);
-  const account = await fetchRiotAccount({ ...parsed, routing });
-  const summoner = await fetchSummonerByPuuid(region, account.puuid);
-  const matchIds = await fetchArenaMatchIds(account, routing, limit, {
-    startTime: seasonStartTimestamp(),
-  });
+  const cacheId = publicProfileCacheId(region, slug);
+  let job = getSyncJob(publicSyncJobs, options.syncJobId, { ownerId: cacheId, scope: "public", limit });
+  let account;
+  let summoner;
+  let matchIds;
+
+  if (job) {
+    account = job.account;
+    summoner = job.summoner;
+    matchIds = job.matchIds;
+  } else {
+    account = await fetchRiotAccount({ ...parsed, routing });
+    summoner = await fetchSummonerByPuuid(region, account.puuid).catch(() => null);
+    matchIds = await fetchArenaMatchIds(account, routing, limit, {
+      startTime: seasonStartTimestamp(),
+    });
+  }
   const existingMatches = Array.isArray(existing?.matches)
     ? existing.matches.map((match) => normalizeMatch(match, "public", "riot"))
     : [];
@@ -557,17 +596,26 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
       .filter((match) => match.source?.matchId && Array.isArray(match.players) && match.players.length)
       .map((match) => [match.source.matchId, match]),
   );
-  const reusedMatches = [];
-  const idsToFetch = [];
+  if (!job) {
+    const idsToFetch = [];
+    matchIds.forEach((matchId) => {
+      if (!existingByMatchId.has(matchId)) idsToFetch.push(matchId);
+    });
+    job = createSyncJob(publicSyncJobs, {
+      ownerId: cacheId,
+      scope: "public",
+      limit,
+      account,
+      summoner,
+      matchIds,
+      remainingIds: idsToFetch,
+    });
+  }
 
-  matchIds.forEach((matchId) => {
-    const existingMatch = existingByMatchId.get(matchId);
-    if (existingMatch) reusedMatches.push(existingMatch);
-    else idsToFetch.push(matchId);
-  });
-
-  const idsToFetchNow = idsToFetch.slice(0, batch);
-  const pendingCount = Math.max(0, idsToFetch.length - idsToFetchNow.length);
+  const idsToFetchNow = job.remainingIds.slice(0, batch);
+  job.remainingIds = job.remainingIds.slice(idsToFetchNow.length);
+  job.expiresAt = Date.now() + SYNC_JOB_TTL_MS;
+  const pendingCount = job.remainingIds.length;
   const details = await fetchMatchDetails(routing, idsToFetchNow);
   const profile = {
     gameName: account.gameName || parsed.gameName,
@@ -582,15 +630,19 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const importedMatches = details
     .map((detail) => mapRiotMatch(detail, account.puuid, "public"))
     .filter(Boolean);
-  const matches = mergeMatchesByKey([...importedMatches, ...reusedMatches])
+  const matchIdSet = new Set(matchIds);
+  const seasonExistingMatches = existingMatches.filter((match) => matchIdSet.has(match.source?.matchId));
+  const matches = mergeMatchesByKey([...importedMatches, ...seasonExistingMatches])
     .sort((a, b) => new Date(b.date) - new Date(a.date));
+  if (!pendingCount) publicSyncJobs.delete(job.id);
   return {
     id: publicProfileCacheId(profile.region, publicProfileSlug(profile)),
     riotProfile: profile,
     matches,
     sync: {
+      jobId: pendingCount ? job.id : "",
       scannedCount: details.length,
-      reusedCount: reusedMatches.length,
+      reusedCount: seasonExistingMatches.length,
       pendingCount,
       totalRiotMatchCount: matchIds.length,
       hasMore: pendingCount > 0,
@@ -671,14 +723,7 @@ function buildPublicProfile(user, matches) {
   const championStats = getChampionStatsForMatches(matches);
   const wonChampions = championStats
     .filter((stat) => stat.wins > 0)
-    .sort((a, b) => b.wins - a.wins || a.champion.localeCompare(b.champion));
-  const wonSet = new Set(wonChampions.map((stat) => stat.champion));
-  const missingChampions = (GAME_DATA.champions || [])
-    .filter((champion) => !wonSet.has(champion))
-    .map((champion) => ({
-      champion,
-      icon: GAME_DATA.championIcons?.[champion] || "",
-    }));
+    .sort((a, b) => a.champion.localeCompare(b.champion));
   const profile = user.riotProfile;
 
   return {
@@ -702,8 +747,7 @@ function buildPublicProfile(user, matches) {
       averagePlacement: stat.avg,
       icon: GAME_DATA.championIcons?.[stat.champion] || "",
     })),
-    missingChampions,
-    matches: matches.slice(0, 16).map(publicMatchSummary),
+    matches: matches.slice(0, 80).map(publicMatchSummary),
     topDuo: getPartnerStatsForMatches(matches).slice(0, 8),
   };
 }
@@ -721,6 +765,16 @@ function publicMatchSummary(match) {
           champion: teammate.champion,
           riotId: teammate.riotId,
           placement: teammate.placement,
+        }))
+      : [],
+    players: Array.isArray(match.players)
+      ? match.players.map((player) => ({
+          champion: player.champion,
+          riotId: player.riotId,
+          placement: player.placement,
+          teamId: player.teamId,
+          augments: player.augments || [],
+          items: player.items || [],
         }))
       : [],
     placement: match.placement,
@@ -790,6 +844,7 @@ async function syncRiotMatches(req, res, user) {
   const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
   const scope = body.scope === "season" ? "season" : "recent";
   const batch = clamp(Number(body.batch || limit), 1, limit);
+  const syncJobId = cleanText(body.syncJobId);
   const profile = user.riotProfile;
 
   if (!profile?.gameName || !profile?.tagLine) {
@@ -797,39 +852,55 @@ async function syncRiotMatches(req, res, user) {
     return;
   }
 
-  const account = profile.puuid ? profile : await fetchRiotAccount(profile);
-  const summoner = await fetchSummonerByPuuid(profile.region, account.puuid);
-  const matchIds = await fetchArenaMatchIds(account, profile.routing, limit, {
-    startTime: scope === "season" ? seasonStartTimestamp() : null,
-  });
   const existingDb = await readDb();
-  const existingRiotMatches = new Map(
-    existingDb.matches
-      .filter((match) => match.userId === user.id && match.source?.type === "riot" && match.source?.matchId)
-      .map((match) => [match.source.matchId, normalizeMatch(match, user.id, "riot")]),
-  );
-  const reusedMatches = [];
-  const idsToFetch = [];
+  let job = getSyncJob(syncJobs, syncJobId, { ownerId: user.id, scope, limit });
+  let account;
+  let summoner;
+  let matchIds;
 
-  matchIds.forEach((matchId) => {
-    const existingMatch = existingRiotMatches.get(matchId);
-    if (existingMatch && Array.isArray(existingMatch.players) && existingMatch.players.length) {
-      reusedMatches.push(existingMatch);
-    } else {
-      idsToFetch.push(matchId);
-    }
-  });
+  if (job) {
+    account = job.account;
+    summoner = job.summoner;
+    matchIds = job.matchIds;
+  } else {
+    account = profile.puuid ? profile : await fetchRiotAccount(profile);
+    summoner = await fetchSummonerByPuuid(profile.region, account.puuid).catch(() => null);
+    matchIds = await fetchArenaMatchIds(account, profile.routing, limit, {
+      startTime: scope === "season" ? seasonStartTimestamp() : null,
+    });
+    const existingRiotMatches = new Map(
+      existingDb.matches
+        .filter((match) => match.userId === user.id && match.source?.type === "riot" && match.source?.matchId)
+        .map((match) => [match.source.matchId, normalizeMatch(match, user.id, "riot")]),
+    );
+    const idsToFetch = [];
+    matchIds.forEach((matchId) => {
+      const existingMatch = existingRiotMatches.get(matchId);
+      if (!(existingMatch && Array.isArray(existingMatch.players) && existingMatch.players.length)) {
+        idsToFetch.push(matchId);
+      }
+    });
+    job = createSyncJob(syncJobs, {
+      ownerId: user.id,
+      scope,
+      limit,
+      account,
+      summoner,
+      matchIds,
+      remainingIds: idsToFetch,
+    });
+  }
 
-  const idsToFetchNow = idsToFetch.slice(0, batch);
-  const pendingCount = Math.max(0, idsToFetch.length - idsToFetchNow.length);
+  const idsToFetchNow = job.remainingIds.slice(0, batch);
+  job.remainingIds = job.remainingIds.slice(idsToFetchNow.length);
+  job.expiresAt = Date.now() + SYNC_JOB_TTL_MS;
+  const pendingCount = job.remainingIds.length;
   const matchDetails = await fetchMatchDetails(profile.routing, idsToFetchNow);
 
-  const imported = [
-    ...matchDetails
+  const imported = matchDetails
     .map((detail) => mapRiotMatch(detail, account.puuid, user.id))
-    .filter(Boolean),
-    ...reusedMatches,
-  ].sort((a, b) => new Date(b.date) - new Date(a.date));
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   let importedCount = 0;
   await mutateDb((db) => {
@@ -870,10 +941,12 @@ async function syncRiotMatches(req, res, user) {
   });
 
   const db = await readDb();
+  if (!pendingCount) syncJobs.delete(job.id);
   sendJson(res, 200, {
+    syncJobId: pendingCount ? job.id : "",
     importedCount,
     scannedCount: matchDetails.length,
-    reusedCount: reusedMatches.length,
+    reusedCount: Math.max(0, matchIds.length - job.remainingIds.length - matchDetails.length),
     pendingCount,
     totalRiotMatchCount: matchIds.length,
     hasMore: pendingCount > 0,
@@ -1026,6 +1099,16 @@ function mapRiotMatch(detail, puuid, userId) {
   const participant = detail.info.participants.find((item) => item.puuid === puuid);
   if (!participant) return null;
   const placementFor = (item) => clamp(Number(item.placement || item.subteamPlacement || (item.win ? 1 : ARENA_MAX_PLACEMENT)), 1, ARENA_MAX_PLACEMENT);
+  const itemsFor = (item) => [0, 1, 2, 3, 4, 5, 6]
+    .map((slot) => item[`item${slot}`])
+    .filter(Boolean)
+    .map(resolveItemTag)
+    .filter(Boolean);
+  const augmentsFor = (item) => [1, 2, 3, 4, 5, 6]
+    .map((slot) => item[`playerAugment${slot}`])
+    .filter(Boolean)
+    .map(resolveAugmentTag)
+    .filter(Boolean);
   const teammates = detail.info.participants
     .filter((item) => item.puuid !== puuid && item.playerSubteamId === participant.playerSubteamId)
     .map((item) => ({
@@ -1040,22 +1123,16 @@ function mapRiotMatch(detail, puuid, userId) {
     puuid: item.puuid,
     placement: placementFor(item),
     teamId: cleanText(item.playerSubteamId),
+    augments: augmentsFor(item),
+    items: itemsFor(item),
   }));
 
   const patch = cleanText(detail.info.gameVersion).split(".").slice(0, 2).join(".") || "unknown";
   const playedAt = new Date(detail.info.gameStartTimestamp || Date.now()).toISOString();
   const date = playedAt.slice(0, 10);
   const placement = placementFor(participant);
-  const items = [0, 1, 2, 3, 4, 5, 6]
-    .map((slot) => participant[`item${slot}`])
-    .filter(Boolean)
-    .map(resolveItemTag)
-    .filter(Boolean);
-  const augments = [1, 2, 3, 4, 5, 6]
-    .map((slot) => participant[`playerAugment${slot}`])
-    .filter(Boolean)
-    .map(resolveAugmentTag)
-    .filter(Boolean);
+  const items = itemsFor(participant);
+  const augments = augmentsFor(participant);
 
   return {
     id: makeId("match"),
@@ -1343,6 +1420,8 @@ function normalizePlayer(value) {
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     teamId: cleanText(value.teamId ?? value.playerSubteamId),
+    augments: Array.isArray(value.augments) ? value.augments.map(resolveAugmentTag).filter(Boolean) : [],
+    items: Array.isArray(value.items) ? value.items.map(resolveItemTag).filter(Boolean) : [],
   };
 }
 
@@ -1402,7 +1481,7 @@ function resolveItemName(value) {
 }
 
 function resolveItemTag(value) {
-  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases);
+  return resolveGameAssetTag(value, GAME_DATA.items, GAME_DATA.itemIcons, GAME_DATA.itemAliases, GAME_DATA.itemDetails);
 }
 
 function resolveAugmentName(value) {
@@ -1410,24 +1489,27 @@ function resolveAugmentName(value) {
 }
 
 function resolveAugmentTag(value) {
-  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases);
+  return resolveGameAssetTag(value, GAME_DATA.augments, GAME_DATA.augmentIcons, GAME_DATA.augmentAliases, GAME_DATA.augmentDetails);
 }
 
-function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}) {
+function resolveGameAssetTag(value, names = {}, icons = {}, aliases = {}, details = {}) {
   const source = value && typeof value === "object" ? value : {};
   const rawText = source.name ?? source.label ?? value;
   const text = cleanText(rawText);
   const rawId = cleanText(source.id || source.itemId || source.augmentId || extractNumericId(text));
   const aliasId = aliases?.[normalizeLookupKey(text)] || "";
   const id = names?.[rawId] ? rawId : aliasId || rawId;
-  const name = names?.[id] || text;
+  const detail = details?.[id] || {};
+  const name = detail.names?.en || names?.[id] || text;
   if (rawId && text === rawId && !names?.[rawId]) return null;
   if (!name) return null;
 
   return {
     id,
     name,
-    icon: cleanText(source.icon || icons?.[id]),
+    icon: cleanText(source.icon || detail.icon || icons?.[id]),
+    tier: cleanText(source.tier || detail.tier),
+    price: Number(source.price || detail.price || 0),
   };
 }
 
