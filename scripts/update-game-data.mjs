@@ -99,7 +99,10 @@ const cherryAugmentPlById = mapById(cherryAugmentDataPl);
   addAsset(augments, augmentIcons, augmentAliases, augmentDetails, {
     id: augment.id,
     names: { en: stripTags(augment.name), pl: stripTags(pl?.name) },
-    descriptions: { en: stripTags(augment.tooltip || augment.desc), pl: stripTags(pl?.tooltip || pl?.desc) },
+    descriptions: {
+      en: formatDescription(augment.tooltip || augment.desc, augment.dataValues),
+      pl: formatDescription(pl?.tooltip || pl?.desc, pl?.dataValues || augment.dataValues),
+    },
     icon: communityDragonAssetUrl(augment.iconSmall || augment.iconLarge),
     tier: augmentTier(augment.rarity),
     rarity: augment.rarity,
@@ -176,10 +179,59 @@ function stripTags(value) {
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/(stats|passive|active|mainText|rules|flavorText)>/gi, "\n")
     .replace(/<[^>]+>/g, " ")
+    .replace(/{{[^{}]+}}/g, " ")
+    .replace(/%i:[^%\s]+%/g, " ")
+    .replace(/@[A-Za-z0-9_.:]+(?:\*-?[0-9.]+)?@/g, " ")
     .replace(/[ \t]+/g, " ")
     .replace(/\s*\n\s*/g, "\n")
     .replace(/\n{2,}/g, "\n")
+    .replace(/\s+([.,;:!?])/g, "$1")
+    .split("\n")
+    .map((line) =>
+      line
+        .replace(/^\+\s+(?!\d)/, "")
+        .replace(/\(\s*\)/g, "")
+        .replace(/\bzadaje pkt\. obra\u017ce\u0144/gi, "zadaje obra\u017cenia")
+        .replace(/:\s*(pkt\.?|points?)$/i, "")
+        .replace(/\s+([.,;:!?])/g, "$1")
+        .trim(),
+    )
+    .filter((line) => line && !/^[.,;:!?-]+$/.test(line))
+    .filter((line) => !/^(damage dealt|total damage|healing this round|total healing|obra\u017cenia zadane|ca\u0142kowite zadane obra\u017cenia|leczenie w tej rundzie|ca\u0142kowite leczenie)/i.test(line))
+    .join("\n")
     .trim();
+}
+
+function formatDescription(value, dataValues = {}) {
+  return stripTags(interpolateVariables(value, dataValues));
+}
+
+function interpolateVariables(value, dataValues = {}) {
+  return String(value || "").replace(/@([A-Za-z0-9_.:]+)(?:\*(-?[0-9.]+))?@/g, (_match, key, multiplier) => {
+    const keyOptions = [key, key.split(":").pop(), key.split(".").pop()].filter(Boolean);
+    const value = keyOptions.map((option) => dataValues?.[option]).find((item) => item !== undefined);
+    const values = Array.isArray(value) ? value : [value];
+    const numeric = values
+      .map((item) => Number(item))
+      .filter((item) => Number.isFinite(item));
+    if (!numeric.length) return "";
+
+    const scale = Number(multiplier || 1);
+    const scaled = numeric.map((item) => item * scale);
+    const min = Math.min(...scaled);
+    const max = Math.max(...scaled);
+    return nearlyEqual(min, max) ? formatNumber(min) : `${formatNumber(min)} - ${formatNumber(max)}`;
+  });
+}
+
+function nearlyEqual(left, right) {
+  return Math.abs(left - right) < 0.005;
+}
+
+function formatNumber(value) {
+  const rounded = Math.round(value);
+  if (Math.abs(value - rounded) < 0.005) return String(rounded);
+  return value.toFixed(1).replace(/\.0$/, "");
 }
 
 function addAsset(names, icons, aliases, details, asset) {

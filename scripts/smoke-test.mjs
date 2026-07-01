@@ -246,6 +246,92 @@ try {
   );
   assert(teamGroups >= 1, "Match detail should group players by team");
 
+  const assetDescriptions = await evalPage(
+    cdp,
+    `(() => {
+      const goliath = normalizeAssetTag({ id: "41", name: "Goliath" });
+      const boots = normalizeAssetTag({ id: "223158", name: "Ionian Boots of Lucidity" });
+      return {
+        goliath: assetDescription(goliath),
+        boots: assetDescription(boots),
+      };
+    })()`,
+  );
+  assert(!assetDescriptions.goliath.includes("@"), "Augment descriptions should not expose raw placeholders");
+  assert(!assetDescriptions.goliath.includes("%i:"), "Augment descriptions should not expose icon placeholders");
+  assert(!assetDescriptions.goliath.includes("{{"), "Augment descriptions should not expose template placeholders");
+  assert(assetDescriptions.goliath.includes("15 - 75"), "Goliath description should resolve variable ranges");
+  assert(assetDescriptions.boots.includes("\n45"), "Item descriptions should keep line breaks between stats");
+  const rawDescriptionLeaks = await evalPage(
+    cdp,
+    `(() => {
+      const details = [
+        ...Object.values(window.ARENA_GAME_DATA.itemDetails || {}),
+        ...Object.values(window.ARENA_GAME_DATA.augmentDetails || {}),
+      ];
+      return details
+        .filter((detail) => Object.values(detail.descriptions || {}).some((text) => /@[A-Za-z]|%i:|{{/.test(text)))
+        .slice(0, 5)
+        .map((detail) => detail.id);
+    })()`,
+  );
+  assert(rawDescriptionLeaks.length === 0, `Game data descriptions should not expose template placeholders: ${rawDescriptionLeaks.join(", ")}`);
+
+  await evalPage(
+    cdp,
+    `(() => {
+      history.pushState(null, "", "/euw/Smoke-Tester#dashboard");
+      state.publicRoute = { region: "euw", slug: "Smoke-Tester" };
+      state.publicProfile = {
+        routeKey: "euw/Smoke-Tester",
+        loading: false,
+        refreshing: false,
+        error: "",
+        data: {
+          profile: {
+            gameName: "Smoke",
+            tagLine: "Tester",
+            region: "euw1",
+            profileIconUrl: window.ARENA_GAME_DATA.championIcons.Malphite,
+            lastSyncedAt: new Date().toISOString(),
+          },
+          progress: { won: 2, total: window.ARENA_GAME_DATA.champions.length },
+          wonChampions: [],
+          matches: state.matches,
+          topDuo: [],
+        },
+      };
+      state.activeMatchId = "";
+      setActiveRoute("dashboard");
+      render();
+    })()`,
+  );
+  const publicChromeVisible = await evalPage(
+    cdp,
+    `getComputedStyle(document.querySelector(".profile-hero")).display !== "none"
+      && getComputedStyle(document.querySelector(".profile-tabs")).display !== "none"
+      && getComputedStyle(document.querySelector("[data-route='friends']")).display === "none"`,
+  );
+  assert(publicChromeVisible, "Public profiles should show the shared profile hero and tabs without the private group tab");
+  await evalPage(cdp, `openMatchDetail("smoke-1")`);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
+  const publicMatchDetailFound = await evalPage(
+    cdp,
+    `document.querySelector('[data-view="match-detail"]').classList.contains("is-visible")
+      && !document.querySelector("#matchDetailView").innerText.includes("Nie znaleziono meczu.")
+      && document.querySelector("#matchDetailPageTitle").textContent !== "Mecz"`,
+  );
+  assert(publicMatchDetailFound, "Public profile match detail should render the selected match");
+
+  await evalPage(
+    cdp,
+    `(() => {
+      history.pushState(null, "", "/#friends");
+      state.publicRoute = null;
+      state.publicProfile = null;
+      updateRoute();
+    })()`,
+  );
   await evalPage(cdp, `location.hash = "friends"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const friendsText = await evalPage(cdp, `document.querySelector("#friendRanking").innerText`);

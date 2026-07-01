@@ -1,6 +1,6 @@
 window.ARENA_GAME_DATA = {
   "version": "16.13.1",
-  "generatedAt": "2026-07-01T15:52:36.144Z",
+  "generatedAt": "2026-07-01T16:29:39.011Z",
   "sources": {
     "dataDragonVersions": "https://ddragon.leagueoflegends.com/api/versions.json",
     "champion": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/en_US/champion.json",
@@ -3445,8 +3445,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Żaronóż"
       },
       "descriptions": {
-        "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Challenging Path:\nSmiting 5 times consumes this item and upgrades your Smite to Challenging Smite , increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health . Challenging Smite marks champions for 4 seconds. Damaging a marked champion deals an additional true damage to them over 2.5 seconds. You take 10% reduced damage from marked champions. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.\nOnly attacks and abilities apply Challenging Smite's burn",
-        "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Wyzywająca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Wyzywającego Porażenia , zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu . Wyzywające Porażenie oznacza bohaterów na 4 sek. Zadawanie obrażeń oznaczonym bohaterom zadaje im dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 2.5 sek. Oznaczeni bohaterowie zadają ci o 10% mniej obrażeń. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia.\nTylko ataki i umiejętności nakładają efekt spalenia Wyzywającego Porażenia."
+        "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Challenging Path:\nSmiting 5 times consumes this item and upgrades your Smite to Challenging Smite, increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health. Challenging Smite marks champions for 4 seconds. Damaging a marked champion deals an additional true damage to them over 2.5 seconds. You take 10% reduced damage from marked champions. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.\nOnly attacks and abilities apply Challenging Smite's burn",
+        "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Wyzywająca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Wyzywającego Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu. Wyzywające Porażenie oznacza bohaterów na 4 sek. Zadawanie obrażeń oznaczonym bohaterom zadaje im dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 2.5 sek. Oznaczeni bohaterowie zadają ci o 10% mniej obrażeń. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia.\nTylko ataki i umiejętności nakładają efekt spalenia Wyzywającego Porażenia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1035.png",
       "tier": "",
@@ -3516,8 +3516,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Gradoostrze"
       },
       "descriptions": {
-        "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Chilling Path:\nSmiting 5 times consumes this item and upgrades your Smite to Chilling Smite , increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health . Chilling Smite deals true damage to champions and steals 20% of their Move Speed for 2 seconds. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
-        "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Mrożąca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Mrożącego Porażenia , zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu . Mrożące Porażenie zadaje 0 pkt. obrażeń nieuchronnych bohaterom i wykrada 20% ich prędkości ruchu na 2 sek. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia."
+        "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Chilling Path:\nSmiting 5 times consumes this item and upgrades your Smite to Chilling Smite, increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health. Chilling Smite deals true damage to champions and steals 20% of their Move Speed for 2 seconds. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
+        "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Mrożąca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Mrożącego Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu. Mrożące Porażenie zadaje 0 pkt. obrażeń nieuchronnych bohaterom i wykrada 20% ich prędkości ruchu na 2 sek. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1039.png",
       "tier": "",
@@ -3535,7 +3535,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Obsydianowe Ostrze"
       },
       "descriptions": {
-        "en": "8%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Auto Path:\nSmiting 5 times consumes this item and upgrades your Attack-Smite, increasing its damage to monsters to 900 . Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
+        "en": "8%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Auto Path:\nSmiting 5 times consumes this item and upgrades your Attack-Smite, increasing its damage to monsters to 900. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
         "pl": "8%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Autościeżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Ataku-Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. Łowca:\nZabijanie dużych potworów z dżungli daje dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1040.png",
@@ -3571,8 +3571,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wygięty Łuk"
       },
       "descriptions": {
-        "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit .",
-        "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu ."
+        "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit.",
+        "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1043.png",
       "tier": "",
@@ -3718,8 +3718,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Tajemnicza Pieczęć"
       },
       "descriptions": {
-        "en": "15 Ability Power\n50 Health\nGlory\nTakedowns grant Glory\n, up to 10. 5 Glory\nis lost on death.\nGain 4 Ability Power per Glory\n.",
-        "pl": "15 pkt. mocy umiejętności\n50 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę\n, maks. 10. Liczba ładunków Chwały\ntraconych po śmierci: 5.\nZyskujesz 4 pkt. mocy umiejętności za każdy ładunek Chwały\n."
+        "en": "15 Ability Power\n50 Health\nGlory\nTakedowns grant Glory, up to 10. 5 Glory\nis lost on death.\nGain 4 Ability Power per Glory.",
+        "pl": "15 pkt. mocy umiejętności\n50 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę, maks. 10. Liczba ładunków Chwały\ntraconych po śmierci: 5.\nZyskujesz 4 pkt. mocy umiejętności za każdy ładunek Chwały."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1082.png",
       "tier": "",
@@ -3737,8 +3737,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kosa"
       },
       "descriptions": {
-        "en": "7 Attack Damage\nReap\nRestore 3 Health On-Hit .\nKilling minions grants 1 gold , up to 100 . Reaching the limit grants another 350 gold .",
-        "pl": "7 pkt. obrażeń od ataku\nSkoszenie\nOdzyskujesz 3 pkt. zdrowia przy trafieniu .\nZabijanie stworów zapewnia 1 szt. złota , maks. 100 szt. złota . Osiągnięcie limitu zapewnia 350 szt. dodatkowego złota."
+        "en": "7 Attack Damage\nReap\nRestore 3 Health On-Hit.\nKilling minions grants 1 gold, up to 100. Reaching the limit grants another 350 gold.",
+        "pl": "7 pkt. obrażeń od ataku\nSkoszenie\nOdzyskujesz 3 pkt. zdrowia przy trafieniu.\nZabijanie stworów zapewnia 1 szt. złota, maks. 100 szt. złota. Osiągnięcie limitu zapewnia 350 szt. dodatkowego złota."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1083.png",
       "tier": "",
@@ -3846,8 +3846,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szczeniak Żaroszpona"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
+        "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1101.png",
       "tier": "",
@@ -3863,8 +3863,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pisklę Podmuszka"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
+        "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1102.png",
       "tier": "",
@@ -3880,8 +3880,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sadzonka Mchściciela"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
+        "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1103.png",
       "tier": "",
@@ -3915,8 +3915,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sadzonka Mchściciela"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
+        "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1105.png",
       "tier": "",
@@ -3932,8 +3932,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pisklę Podmuszka"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
+        "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1106.png",
       "tier": "",
@@ -3949,8 +3949,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szczeniak Żaroszpona"
       },
       "descriptions": {
-        "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite . When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
-        "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona , który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie . Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
+        "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
+        "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1107.png",
       "tier": "",
@@ -4061,7 +4061,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "Control wards always go into your role quest slot. Upgrade your Support Item to complete your quest. Earn points by damaging enemy champions or turrets, or killing minions while near an ally. Earn points much faster in bot Lane!\nRewards\n• Upgraded support item\n• Discounted control wards",
-        "pl": "Totemy Kontroli zawsze trafiają do twojego gniazda misji roli. Ulepsz swój przedmiot dla wspierających , aby ukończyć zadanie. Zdobywaj punkty, zadając obrażenia wrogim bohaterom lub wieżom albo zabijając stwory w pobliżu sojusznika. Zdobywaj punkty znacznie szybciej w dolnej alei!\nNagrody\n• Ulepszony przedmiot dla wspierającego\n• Zniżka na Totemy Kontroli"
+        "pl": "Totemy Kontroli zawsze trafiają do twojego gniazda misji roli. Ulepsz swój przedmiot dla wspierających, aby ukończyć zadanie. Zdobywaj punkty, zadając obrażenia wrogim bohaterom lub wieżom albo zabijając stwory w pobliżu sojusznika. Zdobywaj punkty znacznie szybciej w dolnej alei!\nNagrody\n• Ulepszony przedmiot dla wspierającego\n• Zniżka na Totemy Kontroli"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1203.png",
       "tier": "",
@@ -4078,7 +4078,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "Upgrade your Jungle Pet to complete your quest. Earn points by killing jungle monsters.\nRewards\n• Upgraded jungle pet and Smite\n• Increased gold and XP from large monsters\n• Bonus movement speed in the jungle",
-        "pl": "Rozwiń swojego towarzysza dżungli , aby ukończyć zadanie. Zdobywaj punkty, zabijając potwory z dżungli.\nNagrody\n• Ulepszony towarzysz dżungli i Porażenie\n• Zwiększona ilość złota i PD zdobywanych z dużych potworów\n• Dodatkowa prędkość ruchu w dżungli"
+        "pl": "Rozwiń swojego towarzysza dżungli, aby ukończyć zadanie. Zdobywaj punkty, zabijając potwory z dżungli.\nNagrody\n• Ulepszony towarzysz dżungli i Porażenie\n• Zwiększona ilość złota i PD zdobywanych z dużych potworów\n• Dodatkowa prędkość ruchu w dżungli"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1204.png",
       "tier": "",
@@ -4681,8 +4681,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ciastko Nieustającej Woli Totalbiscuita"
       },
       "descriptions": {
-        "en": "Active - Consume:\nEat the biscuit to restore Health over 5 seconds, increased based on missing health. Consuming or selling a biscuit permanently grants 30 maximum Health .",
-        "pl": "Użycie — Zużyj:\nZjadasz ciastko, aby odzyskać zdrowie w ciągu 5 sek. Efekt leczenia jest zwiększony w zależności od twojego brakującego zdrowia. Zjedzenie lub sprzedanie ciastka na stałe zapewni ci 30 pkt. maksymalnego zdrowia ."
+        "en": "Active - Consume:\nEat the biscuit to restore Health over 5 seconds, increased based on missing health. Consuming or selling a biscuit permanently grants 30 maximum Health.",
+        "pl": "Użycie — Zużyj:\nZjadasz ciastko, aby odzyskać zdrowie w ciągu 5 sek. Efekt leczenia jest zwiększony w zależności od twojego brakującego zdrowia. Zjedzenie lub sprzedanie ciastka na stałe zapewni ci 30 pkt. maksymalnego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2010.png",
       "tier": "",
@@ -4696,8 +4696,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odłamek Kircheis"
       },
       "descriptions": {
-        "en": "15 Attack Damage\nJolt\nEnergized Attacks deal an additional 50 magic damage .",
-        "pl": "15 pkt. obrażeń od ataku\nIskra\nNaładowane ataki zadają dodatkowo 50 pkt. obrażeń magicznych ."
+        "en": "15 Attack Damage\nJolt\nEnergized Attacks deal an additional 50 magic damage.",
+        "pl": "15 pkt. obrażeń od ataku\nIskra\nNaładowane ataki zadają dodatkowo 50 pkt. obrażeń magicznych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2015.png",
       "tier": "",
@@ -4829,7 +4829,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "15% Heal and Shield Power\n20 Ability Power\n20 Ability Haste\nRecovery\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 3 Health instead.",
-        "pl": "15% siły leczenia i tarcz\n20 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 3 pkt. zdrowia ."
+        "pl": "15% siły leczenia i tarcz\n20 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 3 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2049.png",
       "tier": "",
@@ -4966,8 +4966,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Eliksir Żelaza"
       },
       "descriptions": {
-        "en": "Consume\nGrants 300 Health , 25% Tenacity and increased size for 3 minutes. While active, you leave a path behind that boosts allied champions' Move Speed by 15% .",
-        "pl": "Użyj\nZapewnia 300 pkt. zdrowia , 25% nieustępliwości oraz zwiększony rozmiar na 3 min. Gdy ten efekt jest aktywny, pozostawiasz za sobą ścieżkę, która zapewnia sojusznikom 15% dodatkowej prędkości ruchu ."
+        "en": "Consume\nGrants 300 Health, 25% Tenacity and increased size for 3 minutes. While active, you leave a path behind that boosts allied champions' Move Speed by 15%.",
+        "pl": "Użyj\nZapewnia 300 pkt. zdrowia, 25% nieustępliwości oraz zwiększony rozmiar na 3 min. Gdy ten efekt jest aktywny, pozostawiasz za sobą ścieżkę, która zapewnia sojusznikom 15% dodatkowej prędkości ruchu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2138.png",
       "tier": "",
@@ -5202,8 +5202,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sok Potęgi Bandle"
       },
       "descriptions": {
-        "en": "Drink to permanently gain 20+ 3% bonus Ability Power or 12+ 3% bonus Attack Damage . And a hat!\nMade with 100% real cherries. Warning: May cause imbiber to deal tons of damage.",
-        "pl": "Wypij, aby na stałe zyskać 20pkt. + 3% dodatkowej mocy umiejętności lub 12pkt. + 3% dodatkowych obrażeń od ataku . No i kapelusz!\nWytłoczony ze 100-procentowo prawdziwych czereśni. Uwaga: Może sprawić, że pijący będzie zadawać mnóstwo obrażeń."
+        "en": "Drink to permanently gain 20+ 3% bonus Ability Power or 12+ 3% bonus Attack Damage. And a hat!\nMade with 100% real cherries. Warning: May cause imbiber to deal tons of damage.",
+        "pl": "Wypij, aby na stałe zyskać 20pkt. + 3% dodatkowej mocy umiejętności lub 12pkt. + 3% dodatkowych obrażeń od ataku. No i kapelusz!\nWytłoczony ze 100-procentowo prawdziwych czereśni. Uwaga: Może sprawić, że pijący będzie zadawać mnóstwo obrażeń."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2161.png",
       "tier": "",
@@ -5220,7 +5220,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Sok Żywotności Bandle"
       },
       "descriptions": {
-        "en": "Drink to permanently gain 200+ 3% Health . And a hat!\nOur specially formulated veggie blend is proven to harden your skin to resist even the strongest attacks!",
+        "en": "Drink to permanently gain 200+ 3% Health. And a hat!\nOur specially formulated veggie blend is proven to harden your skin to resist even the strongest attacks!",
         "pl": "Wypij, aby na stałe zyskać 200 pkt. + 3% zdrowia No i kapelusz!\nUdowodniono, że specjalnie opracowane przez nas połączenie warzyw utwardzi twoją skórę, by mogła odeprzeć nawet najsilniejszy atak!"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2162.png",
@@ -5238,8 +5238,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sok Szybkości Bandle"
       },
       "descriptions": {
-        "en": "Drink to permanently gain 10+ 5% Ability Haste . And a hat!\nFor people who gotta go FAST. Made with lightning. REAL lightning!",
-        "pl": "Wypij, aby na stałe zyskać 10 jedn. + 5% przyspieszenia umiejętności . No i kapelusz!\nDla tych, którzy muszą ZASUWAĆ. Wykonano z błyskawic. PRAWDZIWYCH błyskawic!"
+        "en": "Drink to permanently gain 10+ 5% Ability Haste. And a hat!\nFor people who gotta go FAST. Made with lightning. REAL lightning!",
+        "pl": "Wypij, aby na stałe zyskać 10 jedn. + 5% przyspieszenia umiejętności. No i kapelusz!\nDla tych, którzy muszą ZASUWAĆ. Wykonano z błyskawic. PRAWDZIWYCH błyskawic!"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2163.png",
       "tier": "",
@@ -5291,7 +5291,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40 Ability Power\n25 Armor\nShattered Time\nArmguard is broken, but can still be upgraded.\nAfter breaking one Armguard, the shopkeeper will only sell you Shattered Armguard.",
-        "pl": "40 pkt. mocy umiejętności\n25 pkt. pancerza\nUjarzmiony Czas\nNaramiennik jest zepsuty, ale wciąż może zostać ulepszony.\nPo zepsuciu jednego Naramiennika handlarz sprzeda ci jedynie Strzaskane Naramienniki ."
+        "pl": "40 pkt. mocy umiejętności\n25 pkt. pancerza\nUjarzmiony Czas\nNaramiennik jest zepsuty, ale wciąż może zostać ulepszony.\nPo zepsuciu jednego Naramiennika handlarz sprzeda ci jedynie Strzaskane Naramienniki."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2421.png",
       "tier": "",
@@ -5305,8 +5305,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lekko Magiczne Obuwie"
       },
       "descriptions": {
-        "en": "25 Move Speed\nGrants an additional 10 Move Speed . Boots that build from Slightly Magical Footwear retain this bonus Move Speed.",
-        "pl": "25 jedn. prędkości ruchu\nZapewnia dodatkowo 10 jedn. prędkości ruchu . Buty, które powstaną z Lekko Magicznego Obuwia, zachowają dodatkową prędkość ruchu."
+        "en": "25 Move Speed\nGrants an additional 10 Move Speed. Boots that build from Slightly Magical Footwear retain this bonus Move Speed.",
+        "pl": "25 jedn. prędkości ruchu\nZapewnia dodatkowo 10 jedn. prędkości ruchu. Buty, które powstaną z Lekko Magicznego Obuwia, zachowają dodatkową prędkość ruchu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2422.png",
       "tier": "boots",
@@ -5322,8 +5322,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwawa Kolczuga Władcy"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n550 Health\nTyranny\nGain 2.5% of your bonus Health as Attack Damage .\nRetribution\nGain up to 12% increased Attack Damage based on your percent missing Health.",
-        "pl": "30 pkt. obrażeń od ataku\n550 pkt. zdrowia\nTyrania\nZyskujesz 2.5% swojego dodatkowego zdrowia jako obrażenia od ataku .\nOdkupienie\nZyskujesz do 12% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
+        "en": "30 Attack Damage\n550 Health\nTyranny\nGain 2.5% of your bonus Health as Attack Damage.\nRetribution\nGain up to 12% increased Attack Damage based on your percent missing Health.",
+        "pl": "30 pkt. obrażeń od ataku\n550 pkt. zdrowia\nTyrania\nZyskujesz 2.5% swojego dodatkowego zdrowia jako obrażenia od ataku.\nOdkupienie\nZyskujesz do 12% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2501.png",
       "tier": "",
@@ -5360,8 +5360,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pochodnia Mrocznego Ognia"
       },
       "descriptions": {
-        "en": "80 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDamaging Abilities deals bonus magic damage for 3 seconds.\nBlackfire\nFor each enemy champion, epic and large monster affected by your Baleful Blaze\n, gain 4% Ability Power .",
-        "pl": "80 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nUmiejętności zadające obrażenia zadają dodatkowe obrażenia magiczne przez 3 sek.\nMroczny Ogień\nZa każdego wrogiego bohatera oraz epickiego lub dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz 4% mocy umiejętności ."
+        "en": "80 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDamaging Abilities deals bonus magic damage for 3 seconds.\nBlackfire\nFor each enemy champion, epic and large monster affected by your Baleful Blaze, gain 4% Ability Power.",
+        "pl": "80 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nUmiejętności zadające obrażenia zadają dodatkowe obrażenia magiczne przez 3 sek.\nMroczny Ogień\nZa każdego wrogiego bohatera oraz epickiego lub dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz 4% mocy umiejętności."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2503.png",
       "tier": "",
@@ -5380,8 +5380,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kaeniczna Powłoka"
       },
       "descriptions": {
-        "en": "400 Health\n80 Magic Resist\n100% Base Health Regen\nMagebane\nAfter not taking magic damage for 15 seconds, gain a magic shield .",
-        "pl": "400 pkt. zdrowia\n80 pkt. odporności na magię\n100% podstawowej regeneracji zdrowia\nZmora Maga\nJeśli przez 15 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę ."
+        "en": "400 Health\n80 Magic Resist\n100% Base Health Regen\nMagebane\nAfter not taking magic damage for 15 seconds, gain a magic shield.",
+        "pl": "400 pkt. zdrowia\n80 pkt. odporności na magię\n100% podstawowej regeneracji zdrowia\nZmora Maga\nJeśli przez 15 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2504.png",
       "tier": "",
@@ -5417,7 +5417,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "300 Health\n60 Ability Power\n20 Ability Haste\n20% Attack Speed\nSpellblade\n(0s)\nAfter using an Ability, your next Attack deals bonus magic damage and heals you for On-Hit and then applies On-Hit effects an additional time.",
-        "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu ."
+        "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2510.png",
       "tier": "",
@@ -5437,8 +5437,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bełty Łowcy Diabłów"
       },
       "descriptions": {
-        "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\nAfter casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and Critically Strike for 80% of your normal Critical Strike damage for 8 seconds. If an attack would already Critically Strike, instead it deals 15% bonus true damage .",
-        "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) na 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 80% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje 15% dodatkowych obrażeń nieuchronnych ."
+        "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\nAfter casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and Critically Strike for 80% of your normal Critical Strike damage for 8 seconds. If an attack would already Critically Strike, instead it deals 15% bonus true damage.",
+        "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) na 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 80% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje 15% dodatkowych obrażeń nieuchronnych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2512.png",
       "tier": "",
@@ -5478,8 +5478,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Łamacz Bastionów"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nShaped Charge\n(0s)\nDealing Ability damage to a Champion or Epic Monster deals an additional true damage .\nSabotage\nTaking down a champion within 3 seconds of damaging them grants Sabotage for 90 seconds. While you have Sabotage, your next Attack against an Epic Monster or Turret deals an additional true damage over 3 seconds.",
-        "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nUkształtowany Ładunek\n(0 sek.)\nZadawanie obrażeń od umiejętności bohaterom lub potężnym potworom zadaje dodatkowo 0 pkt. obrażeń nieuchronnych .\nSabotaż\nUdział w eliminacji wroga w ciągu 3 sek. od zadania mu obrażeń zapewnia Sabotaż na 90 sek. Gdy masz Sabotaż, twój następny atak przeciwko potężnemu potworowi lub wieży zadaje dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 3 sek."
+        "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nShaped Charge\n(0s)\nDealing Ability damage to a Champion or Epic Monster deals an additional true damage.\nSabotage\nTaking down a champion within 3 seconds of damaging them grants Sabotage for 90 seconds. While you have Sabotage, your next Attack against an Epic Monster or Turret deals an additional true damage over 3 seconds.",
+        "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nUkształtowany Ładunek\n(0 sek.)\nZadawanie obrażeń od umiejętności bohaterom lub potężnym potworom zadaje dodatkowo 0 pkt. obrażeń nieuchronnych.\nSabotaż\nUdział w eliminacji wroga w ciągu 3 sek. od zadania mu obrażeń zapewnia Sabotaż na 90 sek. Gdy masz Sabotaż, twój następny atak przeciwko potężnemu potworowi lub wieży zadaje dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 3 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2520.png",
       "tier": "",
@@ -5534,8 +5534,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dudy Bandle"
       },
       "descriptions": {
-        "en": "200 Health\n15 Ability Haste\n20 Armor\n20 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 20 Move Speed . While you have Fanfare, nearby allies, including yourself, gain Attack Speed .",
-        "pl": "200 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\n20 pkt. pancerza\n20 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 20 jedn. prędkości ruchu . Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku ."
+        "en": "200 Health\n15 Ability Haste\n20 Armor\n20 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 20 Move Speed. While you have Fanfare, nearby allies, including yourself, gain Attack Speed.",
+        "pl": "200 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\n20 pkt. pancerza\n20 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 20 jedn. prędkości ruchu. Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2524.png",
       "tier": "",
@@ -5576,8 +5576,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szepczący Diadem"
       },
       "descriptions": {
-        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana .",
-        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many ."
+        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana.",
+        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2526.png",
       "tier": "",
@@ -5615,8 +5615,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zasłona Równości"
       },
       "descriptions": {
-        "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized , cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist .",
-        "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony , zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i odporności na magię ."
+        "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized, cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist.",
+        "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony, zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i odporności na magię."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3001.png",
       "tier": "",
@@ -5635,8 +5635,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przecieracz Szlaków"
       },
       "descriptions": {
-        "en": "250 Health\n40 Armor\n4% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed .\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
-        "pl": "250 pkt. zdrowia\n40 pkt. pancerza\n4% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu .\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
+        "en": "250 Health\n40 Armor\n4% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
+        "pl": "250 pkt. zdrowia\n40 pkt. pancerza\n4% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3002.png",
       "tier": "",
@@ -5654,8 +5654,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kostur Archanioła"
       },
       "descriptions": {
-        "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana .",
-        "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many ."
+        "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana.",
+        "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3003.png",
       "tier": "",
@@ -5673,8 +5673,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Manamune"
       },
       "descriptions": {
-        "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage .\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 3 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana .",
-        "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many ."
+        "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 3 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana.",
+        "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3004.png",
       "tier": "",
@@ -5694,8 +5694,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ghostcrawlers"
       },
       "descriptions": {
-        "en": "45 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 125 move speed . Casting a spell or attacking will end this effect.",
-        "pl": "45 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 125 jedn. prędkości ruchu . Atak lub rzucenie zaklęcia zakończy ten efekt."
+        "en": "45 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 125 move speed. Casting a spell or attacking will end this effect.",
+        "pl": "45 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 125 jedn. prędkości ruchu. Atak lub rzucenie zaklęcia zakończy ten efekt."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3005.png",
       "tier": "boots",
@@ -5765,8 +5765,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Symbiotyczne Podeszwy"
       },
       "descriptions": {
-        "en": "40 Move Speed\nSynchrony\nGain 10 Move Speed when out of combat.\nSymbiosis\nAfter traveling 150000 units of distance, transform into Synchronized Souls .",
-        "pl": "40 jedn. prędkości ruchu\nHarmonia\nZyskujesz 10 jedn. prędkości ruchu poza walką.\nSymbioza\nPo przebyciu 150000 jedn. odległości zamienia się w Zsynchronizowane Dusze ."
+        "en": "40 Move Speed\nSynchrony\nGain 10 Move Speed when out of combat.\nSymbiosis\nAfter traveling 150000 units of distance, transform into Synchronized Souls.",
+        "pl": "40 jedn. prędkości ruchu\nHarmonia\nZyskujesz 10 jedn. prędkości ruchu poza walką.\nSymbioza\nPo przebyciu 150000 jedn. odległości zamienia się w Zsynchronizowane Dusze."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3010.png",
       "tier": "boots",
@@ -5801,8 +5801,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kielich Błogosławieństwa"
       },
       "descriptions": {
-        "en": "200 Health\n50% Base Mana Regen\nHarmony:\nGain 25% Base Health Regen per 25% Base Mana Regen .\n'These blessed waters still carry their power to the worthy.'",
-        "pl": "200 pkt. zdrowia\n50% podstawowej regeneracji many\nHarmonia:\nZyskujesz 25% podstawowej regeneracji zdrowia za każde 25% podstawowej regeneracji many .\n„Te uświęcone wody wciąż niosą swoją moc dla godnych”."
+        "en": "200 Health\n50% Base Mana Regen\nHarmony:\nGain 25% Base Health Regen per 25% Base Mana Regen.\n'These blessed waters still carry their power to the worthy.'",
+        "pl": "200 pkt. zdrowia\n50% podstawowej regeneracji many\nHarmonia:\nZyskujesz 25% podstawowej regeneracji zdrowia za każde 25% podstawowej regeneracji many.\n„Te uświęcone wody wciąż niosą swoją moc dla godnych”."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3012.png",
       "tier": "",
@@ -5893,8 +5893,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Anioł Stróż"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n45 Armor\nRebirth\nUpon taking lethal damage, restores 50% base Health and 100% max Mana after 4 seconds of Stasis .",
-        "pl": "55 pkt. obrażeń od ataku\n45 pkt. pancerza\nOdrodzenie\nPo otrzymaniu śmiertelnych obrażeń przywraca 50% podstawowego zdrowia i 100% maksymalnej many po 4 sek. inercji ."
+        "en": "55 Attack Damage\n45 Armor\nRebirth\nUpon taking lethal damage, restores 50% base Health and 100% max Mana after 4 seconds of Stasis.",
+        "pl": "55 pkt. obrażeń od ataku\n45 pkt. pancerza\nOdrodzenie\nPo otrzymaniu śmiertelnych obrażeń przywraca 50% podstawowego zdrowia i 100% maksymalnej many po 4 sek. inercji."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3026.png",
       "tier": "",
@@ -6004,8 +6004,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Osąd Atmy"
       },
       "descriptions": {
-        "en": "700 Health\n20% Critical Strike Chance\n10 Ability Haste\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health .",
-        "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\n10 jedn. przyspieszenia umiejętności\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem ."
+        "en": "700 Health\n20% Critical Strike Chance\n10 Ability Haste\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
+        "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\n10 jedn. przyspieszenia umiejętności\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3039.png",
       "tier": "",
@@ -6022,8 +6022,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uścisk Serafina"
       },
       "descriptions": {
-        "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power .\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
-        "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności .\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
+        "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power.\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
+        "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3040.png",
       "tier": "",
@@ -6041,8 +6041,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wykradacz Dusz Mejai"
       },
       "descriptions": {
-        "en": "20 Ability Power\n100 Health\nGlory\nTakedowns grant Glory\n, up to 25. 10 Glory\nis lost on death.\nGain 5 Ability Power per Glory\nand 10% Move Speed at 10 or higher Glory\n.",
-        "pl": "20 pkt. mocy umiejętności\n100 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę\n, maks. 25. Liczba ładunków Chwały\ntraconych po śmierci: 10.\nZyskujesz 5 pkt. mocy umiejętności za każdy ładunek Chwały\noraz 10% prędkości ruchu , gdy posiadasz 10 lub więcej ładunków Chwały\n."
+        "en": "20 Ability Power\n100 Health\nGlory\nTakedowns grant Glory, up to 25. 10 Glory\nis lost on death.\nGain 5 Ability Power per Glory\nand 10% Move Speed at 10 or higher Glory.",
+        "pl": "20 pkt. mocy umiejętności\n100 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę, maks. 25. Liczba ładunków Chwały\ntraconych po śmierci: 10.\nZyskujesz 5 pkt. mocy umiejętności za każdy ładunek Chwały\noraz 10% prędkości ruchu, gdy posiadasz 10 lub więcej ładunków Chwały."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3041.png",
       "tier": "",
@@ -6060,8 +6060,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Muramana"
       },
       "descriptions": {
-        "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage .\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit .\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage .",
-        "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku .\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu .\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne ."
+        "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage.\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit.\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage.",
+        "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku.\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu.\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3042.png",
       "tier": "",
@@ -6100,8 +6100,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Widmowy Tancerz"
       },
       "descriptions": {
-        "en": "65% Attack Speed\n25% Critical Strike Chance\n10% Move Speed\nSpectral Waltz\nBecome Ghosted .",
-        "pl": "65% prędkości ataku\n25% szansy na trafienie krytyczne\n10% prędkości ruchu\nWidmowy Walc\nZyskujesz przenikanie ."
+        "en": "65% Attack Speed\n25% Critical Strike Chance\n10% Move Speed\nSpectral Waltz\nBecome Ghosted.",
+        "pl": "65% prędkości ataku\n25% szansy na trafienie krytyczne\n10% prędkości ruchu\nWidmowy Walc\nZyskujesz przenikanie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3046.png",
       "tier": "",
@@ -6175,8 +6175,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Gruboskórność Steraka"
       },
       "descriptions": {
-        "en": "400 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage .\nLifeline\nTaking damage that would reduce your Health below 30% grants a decaying Shield for 4.5 seconds.",
-        "pl": "400 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskujesz dodatkowe obrażenia od ataku .\nLinia Życia\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, na 4.5 sek. zyskujesz zanikającą tarczę ."
+        "en": "400 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage.\nLifeline\nTaking damage that would reduce your Health below 30% grants a decaying Shield for 4.5 seconds.",
+        "pl": "400 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskujesz dodatkowe obrażenia od ataku.\nLinia Życia\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, na 4.5 sek. zyskujesz zanikającą tarczę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3053.png",
       "tier": "",
@@ -6194,8 +6194,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Blask"
       },
       "descriptions": {
-        "en": "10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit .",
-        "pl": "10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu ."
+        "en": "10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit.",
+        "pl": "10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3057.png",
       "tier": "",
@@ -6290,8 +6290,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Łza Bogini"
       },
       "descriptions": {
-        "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 3 max Mana (doubled vs. champions), up to 360 .\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
-        "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt .\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
+        "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 3 max Mana (doubled vs. champions), up to 360.\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
+        "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt.\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3070.png",
       "tier": "",
@@ -6331,8 +6331,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwiopijec"
       },
       "descriptions": {
-        "en": "80 Attack Damage\n15% Life Steal\nIchorshield\nConvert excess healing from your Lifesteal to a Shield .",
-        "pl": "80 pkt. obrażeń od ataku\n15% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę ."
+        "en": "80 Attack Damage\n15% Life Steal\nIchorshield\nConvert excess healing from your Lifesteal to a Shield.",
+        "pl": "80 pkt. obrażeń od ataku\n15% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3072.png",
       "tier": "",
@@ -6445,8 +6445,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Moc Trójcy"
       },
       "descriptions": {
-        "en": "36 Attack Damage\n30% Attack Speed\n333 Health\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit .\nQuicken\nAttacking grants 20 Move Speed for 2 seconds.",
-        "pl": "36 pkt. obrażeń od ataku\n30% prędkości ataku\n333 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu .\nŻwawość\nAtaki zapewniają 20 jedn. prędkości ruchu na 2 sek."
+        "en": "36 Attack Damage\n30% Attack Speed\n333 Health\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit.\nQuicken\nAttacking grants 20 Move Speed for 2 seconds.",
+        "pl": "36 pkt. obrażeń od ataku\n30% prędkości ataku\n333 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu.\nŻwawość\nAtaki zapewniają 20 jedn. prędkości ruchu na 2 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3078.png",
       "tier": "",
@@ -6503,8 +6503,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Stalowe Serce"
       },
       "descriptions": {
-        "en": "900 Health\n100% Base Health Regen\nColossal Consumption\n(0s) per target\nIf an enemy champion is nearby for a few seconds, your next Attack against them deals 70 plus 6% of your max Health as bonus physical damage and grants 10% of the damage as max Health.\nGoliath\nFor each 1000 max Health , gain 3% increased size, up to 30%.",
-        "pl": "900 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\nKolosalna Konsumpcja\n(0 sek.) na cel\nJeśli wrogi bohater jest w pobliżu przez kilka sekund, twój kolejny atak przeciwko niemu zadaje dodatkowe obrażenia fizyczne równe 70 pkt. + 6% maksymalnego zdrowia i zapewnia maksymalne zdrowie równe 10% tej wartości .\nGoliat\nZa każde 1000 pkt. maksymalnego zdrowia zyskujesz 3% rozmiaru, maks. 30%."
+        "en": "900 Health\n100% Base Health Regen\nColossal Consumption\n(0s) per target\nIf an enemy champion is nearby for a few seconds, your next Attack against them deals 70 plus 6% of your max Health as bonus physical damage and grants 10% of the damage as max Health.\nGoliath\nFor each 1000 max Health, gain 3% increased size, up to 30%.",
+        "pl": "900 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\nKolosalna Konsumpcja\n(0 sek.) na cel\nJeśli wrogi bohater jest w pobliżu przez kilka sekund, twój kolejny atak przeciwko niemu zadaje dodatkowe obrażenia fizyczne równe 70 pkt. + 6% maksymalnego zdrowia i zapewnia maksymalne zdrowie równe 10% tej wartości.\nGoliat\nZa każde 1000 pkt. maksymalnego zdrowia zyskujesz 3% rozmiaru, maks. 30%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3084.png",
       "tier": "",
@@ -6522,7 +6522,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nWind's Fury\nAttacks fire bolts at 2 additional enemies near the target.\nEach bolt deals physical damage and applies On-Hit effects.",
-        "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nAtaki wystrzeliwują pociski w dodatkowych wrogów (2) w pobliżu celu.\nKażdy pocisk zadaje obrażenia fizyczne i nakłada efekty przy trafieniu ."
+        "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nAtaki wystrzeliwują pociski w dodatkowych wrogów (2) w pobliżu celu.\nKażdy pocisk zadaje obrażenia fizyczne i nakłada efekty przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3085.png",
       "tier": "",
@@ -6561,7 +6561,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "45 Attack Damage\n45 Ability Power\n30% Attack Speed\n4% Move Speed\nElectrospark\nYour Energized Attacks fire chain lightning, applying On-Hit effects and dealing magic damage to nearby targets.\nElectroshock\nBasic Attacks grant extra Energized stacks.",
-        "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne pobliskim celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania ."
+        "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne pobliskim celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3087.png",
       "tier": "",
@@ -6581,8 +6581,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zabójczy Kapelusz Rabadona"
       },
       "descriptions": {
-        "en": "130 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30% .",
-        "pl": "130 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30% ."
+        "en": "130 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30%.",
+        "pl": "130 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3089.png",
       "tier": "",
@@ -6598,8 +6598,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Koniec Rozumu"
       },
       "descriptions": {
-        "en": "50% Attack Speed\n45 Magic Resist\n20% Tenacity\nFray\nAttacks deal bonus magic damage On-Hit .",
-        "pl": "50% prędkości ataku\n45 pkt. odporności na magię\n20% nieustępliwości\nBitwa\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu ."
+        "en": "50% Attack Speed\n45 Magic Resist\n20% Tenacity\nFray\nAttacks deal bonus magic damage On-Hit.",
+        "pl": "50% prędkości ataku\n45 pkt. odporności na magię\n20% nieustępliwości\nBitwa\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3091.png",
       "tier": "",
@@ -6637,8 +6637,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wycofany przedmiot"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack .\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
-        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak .\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
+        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
+        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3095.png",
       "tier": "",
@@ -6657,8 +6657,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Klinga Burzy"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack .\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
-        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak .\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
+        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
+        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3097.png",
       "tier": "",
@@ -6677,8 +6677,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zmora Licza"
       },
       "descriptions": {
-        "en": "100 Ability Power\n6% Move Speed\n10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus magic damage On-Hit .",
-        "pl": "100 pkt. mocy umiejętności\n6% prędkości ruchu\n10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia magiczne przy trafieniu ."
+        "en": "100 Ability Power\n6% Move Speed\n10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus magic damage On-Hit.",
+        "pl": "100 pkt. mocy umiejętności\n6% prędkości ruchu\n10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia magiczne przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3100.png",
       "tier": "",
@@ -6736,7 +6736,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "30 Ability Power\n15 Ability Haste\n100% Base Mana Regen\n10% Heal and Shield Power\nIntervention\nRestore 150 - 350 Health to allied units and deal 10% max Health true damage to enemy champions after 2.5 seconds.",
-        "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia ."
+        "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3107.png",
       "tier": "",
@@ -6774,7 +6774,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przysięga Rycerska"
       },
       "descriptions": {
-        "en": "200 Health\n40 Armor\n10 Ability Haste\n100% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy .",
+        "en": "200 Health\n40 Armor\n10 Ability Haste\n100% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy.",
         "pl": "200 pkt. zdrowia\n40 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji zdrowia\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 14% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom. Ślubowanie\n(0 sek.)\nWyznacz Godnego sojusznika."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3109.png",
@@ -6797,8 +6797,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mroźne Serce"
       },
       "descriptions": {
-        "en": "75 Armor\n400 Mana\n20 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20% .",
-        "pl": "75 pkt. pancerza\n400 pkt. many\n20 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20% ."
+        "en": "75 Armor\n400 Mana\n20 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20%.",
+        "pl": "75 pkt. pancerza\n400 pkt. many\n20 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3110.png",
       "tier": "",
@@ -6838,7 +6838,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "50 Ability Power\n150 Health\nRecovery:\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 15 Health instead.",
-        "pl": "50 pkt. mocy umiejętności\n150 pkt. zdrowia\nRegeneracja:\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia ."
+        "pl": "50 pkt. mocy umiejętności\n150 pkt. zdrowia\nRegeneracja:\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3112.png",
       "tier": "",
@@ -6892,8 +6892,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ząb Nashora"
       },
       "descriptions": {
-        "en": "80 Ability Power\n50% Attack Speed\n15 Ability Haste\nIcathian Bite\nAttacks deal bonus magic damage On-Hit .",
-        "pl": "80 pkt. mocy umiejętności\n50% prędkości ataku\n15 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu ."
+        "en": "80 Ability Power\n50% Attack Speed\n15 Ability Haste\nIcathian Bite\nAttacks deal bonus magic damage On-Hit.",
+        "pl": "80 pkt. mocy umiejętności\n50% prędkości ataku\n15 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3115.png",
       "tier": "",
@@ -6931,7 +6931,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Buty Mobilności"
       },
       "descriptions": {
-        "en": "25 Move Speed\nWhen out of combat for at least 5 seconds, increase this item's effect to 45 .",
+        "en": "25 Move Speed\nWhen out of combat for at least 5 seconds, increase this item's effect to 45.",
         "pl": "25 jedn. prędkości ruchu\nGdy przebywasz poza walką przez co najmniej 5 sek., efekt tego przedmiotu zwiększa się do  45 jedn."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3117.png",
@@ -6948,8 +6948,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Złowrogość"
       },
       "descriptions": {
-        "en": "90 Ability Power\n600 Mana\n15 Ability Haste\nScorn\nGain 20 Ultimate Ability Haste.\nHatefog\nDamaging a champion with your Ultimate burns the ground beneath them for 3s, dealing magic damage per second and reducing their Magic Resist .",
-        "pl": "90 pkt. mocy umiejętności\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPogarda\nOtrzymujesz 20 jedn. przyspieszenia superumiejętności.\nMgła Nienawiści\nZadanie bohaterowi obrażeń za pomocą superumiejętności podpala ziemię pod nim na 3 sek., zadając obrażenia magiczne na sekundę i zmniejszając jego odporność na magię ."
+        "en": "90 Ability Power\n600 Mana\n15 Ability Haste\nScorn\nGain 20 Ultimate Ability Haste.\nHatefog\nDamaging a champion with your Ultimate burns the ground beneath them for 3s, dealing magic damage per second and reducing their Magic Resist.",
+        "pl": "90 pkt. mocy umiejętności\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPogarda\nOtrzymujesz 20 jedn. przyspieszenia superumiejętności.\nMgła Nienawiści\nZadanie bohaterowi obrażeń za pomocą superumiejętności podpala ziemię pod nim na 3 sek., zadając obrażenia magiczne na sekundę i zmniejszając jego odporność na magię."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3118.png",
       "tier": "",
@@ -6967,8 +6967,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nadejście Zimy"
       },
       "descriptions": {
-        "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health .\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 3 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana .",
-        "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many ."
+        "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 3 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana.",
+        "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3119.png",
       "tier": "",
@@ -6986,8 +6986,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wielka Zima"
       },
       "descriptions": {
-        "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health .\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
-        "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia .\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
+        "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health.\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
+        "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3121.png",
       "tier": "",
@@ -7022,8 +7022,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostrze Gniewu Guinsoo"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n30 Ability Power\n25% Attack Speed\nWrath\nAttacks deal 30 bonus magic damage On-Hit .\nSeething Strike\nAttacks grant 8% Attack Speed for 3 seconds. (stacks 4 times).\nWhile fully stacked, every third Attack applies On-Hit effects twice.",
-        "pl": "30 pkt. obrażeń od ataku\n30 pkt. mocy umiejętności\n25% prędkości ataku\nGniew\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu .\nWrzące Uderzenie\nAtaki zapewniają 8% prędkości ataku na 3 sek. (kumuluje się 4 razy).\nPrzy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
+        "en": "30 Attack Damage\n30 Ability Power\n25% Attack Speed\nWrath\nAttacks deal 30 bonus magic damage On-Hit.\nSeething Strike\nAttacks grant 8% Attack Speed for 3 seconds. (stacks 4 times).\nWhile fully stacked, every third Attack applies On-Hit effects twice.",
+        "pl": "30 pkt. obrażeń od ataku\n30 pkt. mocy umiejętności\n25% prędkości ataku\nGniew\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nWrzące Uderzenie\nAtaki zapewniają 8% prędkości ataku na 3 sek. (kumuluje się 4 razy).\nPrzy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3124.png",
       "tier": "",
@@ -7042,8 +7042,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Objęcie Ognia"
       },
       "descriptions": {
-        "en": "120 Ability Power\n10 Ability Haste\nActive -\nThe Silence:\nDeal magic damage equal to 15% of the Target's Max Health , and then amplify damage they take by 15% for 4 seconds (90(0s)).",
-        "pl": "120 pkt. mocy umiejętności\n10 jedn. przyspieszenia umiejętności\nUżycie —\nCisza:\nZadajesz obrażenia magiczne równe 15% maks. zdrowia celu , następnie wzmacniasz otrzymywane przez wroga obrażenia o 15% na 4 sek. (90(0 sek.))."
+        "en": "120 Ability Power\n10 Ability Haste\nActive -\nThe Silence:\nDeal magic damage equal to 15% of the Target's Max Health, and then amplify damage they take by 15% for 4 seconds (90(0s)).",
+        "pl": "120 pkt. mocy umiejętności\n10 jedn. przyspieszenia umiejętności\nUżycie —\nCisza:\nZadajesz obrażenia magiczne równe 15% maks. zdrowia celu, następnie wzmacniasz otrzymywane przez wroga obrażenia o 15% na 4 sek. (90(0 sek.))."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3128.png",
       "tier": "",
@@ -7061,7 +7061,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "30 Attack Damage\n25% Attack Speed\n18 Lethality\nActive -\nDivine Blessing:\nGrants 100% Attack Speed and 100% Critical Strike Chance for 3 seconds or 3 basic attacks (90(0s)).",
-        "pl": "30 pkt. obrażeń od ataku\n25% prędkości ataku\n18 pkt. destrukcji\nUżycie —\nNiebiańskie Błogosławieństwo:\nZwiększa twoją prędkość ataku o 100% , a szansę na trafienie krytyczne o 100% na 3 sek. albo na następującą liczbę ataków podstawowych: 3 (90(0 sek.))."
+        "pl": "30 pkt. obrażeń od ataku\n25% prędkości ataku\n18 pkt. destrukcji\nUżycie —\nNiebiańskie Błogosławieństwo:\nZwiększa twoją prędkość ataku o 100%, a szansę na trafienie krytyczne o 100% na 3 sek. albo na następującą liczbę ataków podstawowych: 3 (90(0 sek.))."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3131.png",
       "tier": "",
@@ -7134,8 +7134,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kryptokwiat"
       },
       "descriptions": {
-        "en": "75 Ability Power\n30% Magic Penetration\n20 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals .",
-        "pl": "75 pkt. mocy umiejętności\n30% przebicia odporności na magię\n20 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc ."
+        "en": "75 Ability Power\n30% Magic Penetration\n20 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals.",
+        "pl": "75 pkt. mocy umiejętności\n30% przebicia odporności na magię\n20 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3137.png",
       "tier": "",
@@ -7233,8 +7233,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Proca Zwiadowcy"
       },
       "descriptions": {
-        "en": "20% Attack Speed\nBullseye\nDamaging a champion deals bonus magic damage .\nAttacks reduce this cooldown by 1 second.",
-        "pl": "20% prędkości ataku\nW Dziesiątkę\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne .\nAtaki skracają czas odnowienia tej umiejętności o 1 sek."
+        "en": "20% Attack Speed\nBullseye\nDamaging a champion deals bonus magic damage.\nAttacks reduce this cooldown by 1 second.",
+        "pl": "20% prędkości ataku\nW Dziesiątkę\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne.\nAtaki skracają czas odnowienia tej umiejętności o 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3144.png",
       "tier": "",
@@ -7250,8 +7250,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Alternator Hextech"
       },
       "descriptions": {
-        "en": "45 Ability Power\nRevved\nDamaging a champion deals bonus magic damage .",
-        "pl": "45 pkt. mocy umiejętności\nWysokie Obroty\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne ."
+        "en": "45 Ability Power\nRevved\nDamaging a champion deals bonus magic damage.",
+        "pl": "45 pkt. mocy umiejętności\nWysokie Obroty\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3145.png",
       "tier": "",
@@ -7306,8 +7306,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Hextechowy Pas Rakietowy"
       },
       "descriptions": {
-        "en": "70 Ability Power\n300 Health\n20 Ability Haste\nSupersonic\nDash in target direction, unleashing missiles that deal magic damage .",
-        "pl": "70 pkt. mocy umiejętności\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nPonaddźwiękowość\nDoskakujesz w wybranym kierunku, wystrzeliwując pociski, które zadają obrażenia magiczne ."
+        "en": "70 Ability Power\n300 Health\n20 Ability Haste\nSupersonic\nDash in target direction, unleashing missiles that deal magic damage.",
+        "pl": "70 pkt. mocy umiejętności\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nPonaddźwiękowość\nDoskakujesz w wybranym kierunku, wystrzeliwując pociski, które zadają obrażenia magiczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3152.png",
       "tier": "",
@@ -7328,7 +7328,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostrze Zniszczonego Króla"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n25% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks deal a percentage of enemy's current Health as bonus physical damage On-Hit .\nClawing Shadows\nAttacking a champion 3 times Slows them by 30% for 1 second.",
+        "en": "40 Attack Damage\n25% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks deal a percentage of enemy's current Health as bonus physical damage On-Hit.\nClawing Shadows\nAttacking a champion 3 times Slows them by 30% for 1 second.",
         "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n10% kradzieży życia\nOstrze Mgły\nAtaki zadają dodatkowe obrażenia fizyczne przy trafieniu równe procentowi aktualnego zdrowia celu.\nChwytające Cienie\nZaatakowanie bohatera 3 razy spowalnia go o 30% na 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3153.png",
@@ -7630,8 +7630,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Glewia Umbry"
       },
       "descriptions": {
-        "en": "60 Attack Damage\n18 Lethality\n15 Ability Haste\nNightstalker\nAfter being unseen by enemies briefly, your next attack against a champion deals an additional true damage .\nBlackout\nWhen you are near enemy Stealth Wards and traps, reveal them briefly. While revealing wards, your attacks deal bonus damage to them.",
-        "pl": "60 pkt. obrażeń od ataku\n18 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nNocny Drapieżca\nGdy wrogowie nie widzieli cię od jakiegoś czasu, twój następny atak przeciwko bohaterom zada dodatkowo obrażenia nieuchronne .\nZaciemnienie\nGdy znajdziesz się w pobliżu wrogich Totemów Ukrycia i pułapek, chwilowo je ujawnisz. Gdy ujawniasz totemy, twoje ataki zadają im dodatkowe obrażenia."
+        "en": "60 Attack Damage\n18 Lethality\n15 Ability Haste\nNightstalker\nAfter being unseen by enemies briefly, your next attack against a champion deals an additional true damage.\nBlackout\nWhen you are near enemy Stealth Wards and traps, reveal them briefly. While revealing wards, your attacks deal bonus damage to them.",
+        "pl": "60 pkt. obrażeń od ataku\n18 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nNocny Drapieżca\nGdy wrogowie nie widzieli cię od jakiegoś czasu, twój następny atak przeciwko bohaterom zada dodatkowo obrażenia nieuchronne.\nZaciemnienie\nGdy znajdziesz się w pobliżu wrogich Totemów Ukrycia i pułapek, chwilowo je ujawnisz. Gdy ujawniasz totemy, twoje ataki zadają im dodatkowe obrażenia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3179.png",
       "tier": "",
@@ -7651,8 +7651,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kadłubołamacz"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage , increased against Structures.\nBoarding Party\nNearby allied siege and super minions gain Armor and Magic Resist .",
-        "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje dodatkowe obrażenia fizyczne , zwiększone przeciwko budowlom.\nZałoga Abordażowa\nPobliskie sojusznicze stwory oblężnicze i superstwory zyskują pancerz i odporność na magię ."
+        "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage, increased against Structures.\nBoarding Party\nNearby allied siege and super minions gain Armor and Magic Resist.",
+        "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje dodatkowe obrażenia fizyczne, zwiększone przeciwko budowlom.\nZałoga Abordażowa\nPobliskie sojusznicze stwory oblężnicze i superstwory zyskują pancerz i odporność na magię."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3181.png",
       "tier": "",
@@ -7753,8 +7753,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Błogosławieństwo Mikaela"
       },
       "descriptions": {
-        "en": "250 Health\n100% Base Mana Regen\n12% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health .",
-        "pl": "250 pkt. zdrowia\n100% podstawowej regeneracji many\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia ."
+        "en": "250 Health\n100% Base Mana Regen\n12% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health.",
+        "pl": "250 pkt. zdrowia\n100% podstawowej regeneracji many\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3222.png",
       "tier": "",
@@ -7775,8 +7775,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostatni Przystanek"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n35% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit .\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 10% Armor Penetration and Magic Penetration for 5s.",
-        "pl": "30 pkt. obrażeń od ataku\n35% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu .\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku : Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 10% przebicia pancerza oraz przebicie odporności na magię na 5 sek."
+        "en": "30 Attack Damage\n35% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit.\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 10% Armor Penetration and Magic Penetration for 5s.",
+        "pl": "30 pkt. obrażeń od ataku\n35% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku: Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 10% przebicia pancerza oraz przebicie odporności na magię na 5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3302.png",
       "tier": "",
@@ -7918,8 +7918,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Niewielki Imprezowy Podarek"
       },
       "descriptions": {
-        "en": "Obtained from a Cat Shaco Box . Click to Consume: Gain gold .",
-        "pl": "Otrzymany z Kociego Pudełka Shaco . Kliknij, aby użyć: Zdobywasz złoto ."
+        "en": "Obtained from a Cat Shaco Box. Click to Consume: Gain gold.",
+        "pl": "Otrzymany z Kociego Pudełka Shaco. Kliknij, aby użyć: Zdobywasz złoto."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3398.png",
       "tier": "",
@@ -7936,8 +7936,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Imprezowy Podarek"
       },
       "descriptions": {
-        "en": "'Party Favor' Obtained from a Party Drake . Click to Consume: Gain a pile of gold, and 1 skill point!\nSkill Points will not take you over your maximum number of skill points, nor will they make you better at playing League of Legends. Additional terms and conditions may apply.",
-        "pl": "„Imprezowy Podarek” Otrzymany od Imprezowego Smoka . Kliknij, aby użyć: Zdobywasz kupkę złota i 1 punkt umiejętności!\nNie możesz przekroczyć maksymalnej liczby punktów umiejętności. Te punkty nie sprawią, że zaczniesz lepiej grać w League of Legends. Mogą obowiązywać dodatkowe warunki."
+        "en": "'Party Favor' Obtained from a Party Drake. Click to Consume: Gain a pile of gold, and 1 skill point!\nSkill Points will not take you over your maximum number of skill points, nor will they make you better at playing League of Legends. Additional terms and conditions may apply.",
+        "pl": "„Imprezowy Podarek” Otrzymany od Imprezowego Smoka. Kliknij, aby użyć: Zdobywasz kupkę złota i 1 punkt umiejętności!\nNie możesz przekroczyć maksymalnej liczby punktów umiejętności. Te punkty nie sprawią, że zaczniesz lepiej grać w League of Legends. Mogą obowiązywać dodatkowe warunki."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3399.png",
       "tier": "",
@@ -7991,8 +7991,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognisty Trybularz"
       },
       "descriptions": {
-        "en": "45 Ability Power\n10% Heal and Shield Power\n125% Base Mana Regen\n4% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit .",
-        "pl": "45 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n125% podstawowej regeneracji many\n4% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu ."
+        "en": "45 Ability Power\n10% Heal and Shield Power\n125% Base Mana Regen\n4% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit.",
+        "pl": "45 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n125% podstawowej regeneracji many\n4% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3504.png",
       "tier": "",
@@ -8011,8 +8011,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Złodziej Esencji"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit .",
-        "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu ."
+        "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit.",
+        "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3508.png",
       "tier": "",
@@ -8069,7 +8069,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "Active - Consume:\nBind with an ally for the remainder of the game, becoming Oathsworn Allies. Oathsworn empowers you both while near one another.\nRequired to use Kalista's Ultimate Ability.",
-        "pl": "Użycie — Zużyj:\nNawiąż więź z sojusznikiem do końca gry, by zostać Zaprzysiężonymi Sojusznikami. Przysięga wzmocni was, gdy znajdziecie się blisko siebie.\nPotrzebne do użycia superumiejętności Kalisty ."
+        "pl": "Użycie — Zużyj:\nNawiąż więź z sojusznikiem do końca gry, by zostać Zaprzysiężonymi Sojusznikami. Przysięga wzmocni was, gdy znajdziecie się blisko siebie.\nPotrzebne do użycia superumiejętności Kalisty."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3600.png",
       "tier": "",
@@ -8085,8 +8085,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pancerz Umrzyka"
       },
       "descriptions": {
-        "en": "350 Health\n55 Armor\n4% Move Speed\nShipwrecker\nWhile moving, build up to 20 bonus Move Speed . Your next Attack discharges built up Move Speed to deal bonus physical damage .\nUnsinkable\nReduce the effectiveness of Slows by 15%.",
-        "pl": "350 pkt. zdrowia\n55 pkt. pancerza\n4% prędkości ruchu\nNiszczyciel Statków\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu . Twój następny atak rozładuje skumulowaną prędkość ruchu, by zadać dodatkowe obrażenia fizyczne .\nNiezatapialny\nZmniejsza skuteczność spowolnień o 15%."
+        "en": "350 Health\n55 Armor\n4% Move Speed\nShipwrecker\nWhile moving, build up to 20 bonus Move Speed. Your next Attack discharges built up Move Speed to deal bonus physical damage.\nUnsinkable\nReduce the effectiveness of Slows by 15%.",
+        "pl": "350 pkt. zdrowia\n55 pkt. pancerza\n4% prędkości ruchu\nNiszczyciel Statków\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu. Twój następny atak rozładuje skumulowaną prędkość ruchu, by zadać dodatkowe obrażenia fizyczne.\nNiezatapialny\nZmniejsza skuteczność spowolnień o 15%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3742.png",
       "tier": "",
@@ -8106,7 +8106,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40 Attack Damage\n600 Health\nCleave\nAttacks deal physical damage on-hit and to enemies behind the target.\nTitanic Crescent\nEmpower your next Cleave\nto deal bonus physical damage On-Hit and deal bonus physical damage to enemies behind the target.",
-        "pl": "40 pkt. obrażeń od ataku\n600 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne przy trafieniu wrogom znajdującym się za celem.\nKolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie\n, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
+        "pl": "40 pkt. obrażeń od ataku\n600 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne przy trafieniu wrogom znajdującym się za celem.\nKolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3748.png",
       "tier": "",
@@ -8164,8 +8164,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Katalizator Eonów"
       },
       "descriptions": {
-        "en": "300 Health\n375 Mana\nEternity\nRestores 10% of the damage taken from champions as Mana .\nCasting an Ability heals for 25% of Mana spent.",
-        "pl": "300 pkt. zdrowia\n375 pkt. many\nWieczność\nPrzywraca manę równą 10% obrażeń otrzymanych od bohaterów.\nRzucenie umiejętności leczy o 25% wydanej many ."
+        "en": "300 Health\n375 Mana\nEternity\nRestores 10% of the damage taken from champions as Mana.\nCasting an Ability heals for 25% of Mana spent.",
+        "pl": "300 pkt. zdrowia\n375 pkt. many\nWieczność\nPrzywraca manę równą 10% obrażeń otrzymanych od bohaterów.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3803.png",
       "tier": "",
@@ -8203,8 +8203,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostrze Złodziejki Czarów"
       },
       "descriptions": {
-        "en": "10 Ability Power\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Frostfang , gaining Active -\nWarding\n.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
-        "pl": "10 pkt. mocy umiejętności\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Lodowy Kieł i zyskać Użycie —\nUmieszczanie Totemów\n.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
+        "en": "10 Ability Power\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Frostfang, gaining Active -\nWarding.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
+        "pl": "10 pkt. mocy umiejętności\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Lodowy Kieł i zyskać Użycie —\nUmieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3850.png",
       "tier": "",
@@ -8225,8 +8225,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lodowy Kieł"
       },
       "descriptions": {
-        "en": "15 Ability Power\n70 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into World Rune T2 .\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
-        "pl": "15 pkt. mocy umiejętności\n70 pkt. zdrowia\n50% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Runę Świata Poziomu 2 .\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
+        "en": "15 Ability Power\n70 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into World Rune T2.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
+        "pl": "15 pkt. mocy umiejętności\n70 pkt. zdrowia\n50% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Runę Świata Poziomu 2.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3851.png",
       "tier": "",
@@ -8265,8 +8265,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Stalowe Naramienniki"
       },
       "descriptions": {
-        "en": "4 Attack Damage\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\n{{ Item_Support_Spoils_Of_War_01 }} Quest:\nEarn 500 gold from this item to transform it into Runesteel Spaulders , gaining {{ Item_Active_Named_NoBullet }} Warding\n.\n{{ Item_Support_Minion_Warning }}",
-        "pl": "4 pkt. obrażeń od ataku\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\n{{ Item_Support_Spoils_Of_War_01 }} Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Ochraniacze z Runicznej Stali i zyskać {{ Item_Active_Named_NoBullet }} Umieszczanie Totemów\n.\n{{ Item_Support_Minion_Warning }}"
+        "en": "4 Attack Damage\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\nQuest:\nEarn 500 gold from this item to transform it into Runesteel Spaulders, gaining Warding.",
+        "pl": "4 pkt. obrażeń od ataku\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\nZadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Ochraniacze z Runicznej Stali i zyskać Umieszczanie Totemów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3854.png",
       "tier": "",
@@ -8287,8 +8287,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochraniacze z Runicznej Stali"
       },
       "descriptions": {
-        "en": "6 Attack Damage\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Pauldrons of Whiterock .\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
-        "pl": "6 pkt. obrażeń od ataku\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Naramienniki spod Białej Skały .\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
+        "en": "6 Attack Damage\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Pauldrons of Whiterock.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
+        "pl": "6 pkt. obrażeń od ataku\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Naramienniki spod Białej Skały.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3855.png",
       "tier": "",
@@ -8327,8 +8327,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Reliktowa Tarcza"
       },
       "descriptions": {
-        "en": "7 Ability Power\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\n{{ Item_Support_Spoils_Of_War_01 }} Quest:\nEarn 500 gold from this item to transform it into Targon's Buckler , gaining {{ Item_Active_Named_NoBullet }} Warding\n.\n{{ Item_Support_Minion_Warning }}",
-        "pl": "7 pkt. mocy umiejętności\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\n{{ Item_Support_Spoils_Of_War_01 }} Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Puklerz Targonu i zyskać {{ Item_Active_Named_NoBullet }} Umieszczanie Totemów\n.\n{{ Item_Support_Minion_Warning }}"
+        "en": "7 Ability Power\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\nQuest:\nEarn 500 gold from this item to transform it into Targon's Buckler, gaining Warding.",
+        "pl": "7 pkt. mocy umiejętności\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\nZadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Puklerz Targonu i zyskać Umieszczanie Totemów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3858.png",
       "tier": "",
@@ -8349,8 +8349,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Puklerz Targonu"
       },
       "descriptions": {
-        "en": "10 Ability Power\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Bulwark of the Mountain .\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
-        "pl": "10 pkt. mocy umiejętności\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bastion Góry .\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
+        "en": "10 Ability Power\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Bulwark of the Mountain.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
+        "pl": "10 pkt. mocy umiejętności\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bastion Góry.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3859.png",
       "tier": "",
@@ -8389,8 +8389,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Widmowy Sierp"
       },
       "descriptions": {
-        "en": "6 Attack Damage\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Harrowing Crescent , gaining Active -\nWarding\n.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
-        "pl": "6 pkt. obrażeń od ataku\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Półksiężycowe Ostrze Harrowing i zyskać Użycie —\nUmieszczanie Totemów\n.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
+        "en": "6 Attack Damage\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Harrowing Crescent, gaining Active -\nWarding.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
+        "pl": "6 pkt. obrażeń od ataku\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Półksiężycowe Ostrze Harrowing i zyskać Użycie —\nUmieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3862.png",
       "tier": "",
@@ -8411,7 +8411,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Półksiężycowe Ostrze Harrowing"
       },
       "descriptions": {
-        "en": "10 Attack Damage\n60 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into Black Mist Scythe .\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
+        "en": "10 Attack Damage\n60 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into Black Mist Scythe.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "10 pkt. obrażeń od ataku\n60 pkt. zdrowia\n50% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Kosę Czarnej Mgły i zyskać Umieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3863.png",
@@ -8469,8 +8469,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Runiczny Kompas"
       },
       "descriptions": {
-        "en": "100 Health\n50% Base Health Regen\n50% Base Mana Regen\n5 Gold Per 10 Seconds\nSupport Quest\nEarn 0 gold from this item to transform it into Bounty of Worlds .\nShared Riches\n(0s, max 0 charges)\nWhile near an ally champion, damage enemy champions or kill minions to gain gold. Active\n(3 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
-        "pl": "100 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n50% podstawowej regeneracji many\n5 szt. złota co 10 sek.\nZadanie wspierających:\nZdobądź 0 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bogactwo Światów .\nWspólne Bogactwo\n(0 sek., maksymalna liczba ładunków: 0)\nGdy jesteś w pobliżu sojuszniczego bohatera, zyskujesz złoto za zadawanie bohaterom obrażeń lub zabijanie stworów. Użycie\n(ładunki: 3)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
+        "en": "100 Health\n50% Base Health Regen\n50% Base Mana Regen\n5 Gold Per 10 Seconds\nSupport Quest\nEarn 0 gold from this item to transform it into Bounty of Worlds.\nShared Riches\n(0s, max 0 charges)\nWhile near an ally champion, damage enemy champions or kill minions to gain gold. Active\n(3 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
+        "pl": "100 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n50% podstawowej regeneracji many\n5 szt. złota co 10 sek.\nZadanie wspierających:\nZdobądź 0 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bogactwo Światów.\nWspólne Bogactwo\n(0 sek., maksymalna liczba ładunków: 0)\nGdy jesteś w pobliżu sojuszniczego bohatera, zyskujesz złoto za zadawanie bohaterom obrażeń lub zabijanie stworów. Użycie\n(ładunki: 3)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3866.png",
       "tier": "",
@@ -8490,8 +8490,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bogactwo Światów"
       },
       "descriptions": {
-        "en": "5 Gold Per 10 Seconds\n75% Base Health Regen\n75% Base Mana Regen\n200 Health\nUpgrade\nThis item can be upgraded into Bloodsong , Celestial Opposition , Dream Maker , Zaz'Zak's Realmspike , or Solstice Sleigh for free. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
-        "pl": "5 szt. złota co 10 sek.\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n200 pkt. zdrowia\nUlepszenie\nTen przedmiot można ulepszyć do Krwawej Pieśni , Astralnego Sprzeciwu , Spełniacza Marzeń , Kolca Królestwa Zaz'Zaka lub Sań Przesilenia za darmo. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
+        "en": "5 Gold Per 10 Seconds\n75% Base Health Regen\n75% Base Mana Regen\n200 Health\nUpgrade\nThis item can be upgraded into Bloodsong, Celestial Opposition, Dream Maker, Zaz'Zak's Realmspike, or Solstice Sleigh for free. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
+        "pl": "5 szt. złota co 10 sek.\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n200 pkt. zdrowia\nUlepszenie\nTen przedmiot można ulepszyć do Krwawej Pieśni, Astralnego Sprzeciwu, Spełniacza Marzeń, Kolca Królestwa Zaz'Zaka lub Sań Przesilenia za darmo. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3867.png",
       "tier": "",
@@ -8534,7 +8534,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nDream Maker\nHealing or Shielding another ally blows Dream Bubbles to them for 3 seconds. Their next Attack deals bonus magic damage On-Hit and the next damage they take is reduced. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
-        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nSpełniacz Marzeń\nLeczenie lub osłonięcie tarczą innego sojusznika rzuca w niego Bańkami Marzeń utrzymującymi się przez 3 sek. Jego kolejny atak zadaje dodatkowe obrażenia magiczne przy trafieniu , a kolejne przyjęte przez niego obrażenia zostają zmniejszone. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
+        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nSpełniacz Marzeń\nLeczenie lub osłonięcie tarczą innego sojusznika rzuca w niego Bańkami Marzeń utrzymującymi się przez 3 sek. Jego kolejny atak zadaje dodatkowe obrażenia magiczne przy trafieniu, a kolejne przyjęte przez niego obrażenia zostają zmniejszone. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3870.png",
       "tier": "",
@@ -8555,8 +8555,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kolec Królestwa Zaz'Zaka"
       },
       "descriptions": {
-        "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nVoid Explosion\nDealing Ability damage to a champion causes an explosion that deals magic damage .\nActive\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
-        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nEksplozja Pustki\nZadanie bohaterowi obrażeń umiejętnością wywołuje eksplozję, która zadaje obrażenia magiczne .\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
+        "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nVoid Explosion\nDealing Ability damage to a champion causes an explosion that deals magic damage.\nActive\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
+        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nEksplozja Pustki\nZadanie bohaterowi obrażeń umiejętnością wywołuje eksplozję, która zadaje obrażenia magiczne.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3871.png",
       "tier": "",
@@ -8599,8 +8599,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwawa Pieśń"
       },
       "descriptions": {
-        "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit . If the target is a champion, they take increased damage for 4 seconds. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
-        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu . Jeśli cel jest bohaterem, otrzymuje zwiększone obrażenia przez 4 sek.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
+        "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit. If the target is a champion, they take increased damage for 4 seconds. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
+        "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu. Jeśli cel jest bohaterem, otrzymuje zwiększone obrażenia przez 4 sek.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3877.png",
       "tier": "",
@@ -8633,8 +8633,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Córa Śmierci\n500 Srebrnych Węży"
       },
       "descriptions": {
-        "en": "Cannon Barrage additionally fires a mega-cannonball at the center of the Barrage, dealing bonus true damage and Slowing .",
-        "pl": "Kanonada dodatkowo wystrzeliwuje w centrum ostrzału megakulę armatnią, która zadaje dodatkowe obrażenia nieuchronne i spowalnia ."
+        "en": "Cannon Barrage additionally fires a mega-cannonball at the center of the Barrage, dealing bonus true damage and Slowing.",
+        "pl": "Kanonada dodatkowo wystrzeliwuje w centrum ostrzału megakulę armatnią, która zadaje dodatkowe obrażenia nieuchronne i spowalnia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3902.png",
       "tier": "",
@@ -8648,8 +8648,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Podnieś Morale\n500 Srebrnych Węży"
       },
       "descriptions": {
-        "en": "Allies in the Cannon Barrage gain bonus Move Speed .",
-        "pl": "Sojusznicy w obszarze Kanonady zyskują premię do prędkości ruchu ."
+        "en": "Allies in the Cannon Barrage gain bonus Move Speed.",
+        "pl": "Sojusznicy w obszarze Kanonady zyskują premię do prędkości ruchu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3903.png",
       "tier": "",
@@ -8719,7 +8719,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "60 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 20 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 7% Vulnerable for 4 seconds.",
-        "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi .\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
+        "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4005.png",
       "tier": "",
@@ -8758,8 +8758,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Miecz Kwitnącego Świtu"
       },
       "descriptions": {
-        "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit , heal the lowest health ally champion near you for , prioritizing lower health allies.",
-        "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz .\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
+        "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
+        "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4011.png",
       "tier": "",
@@ -8819,8 +8819,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lodowy Młot"
       },
       "descriptions": {
-        "en": "60% Attack Speed\n600 Health\nEncroaching Frost:\nOn-Hit , apply a stacking {{ Item_Melee_Ranged_Split }} move speed slow for 1.5 seconds. This effect stacks up to 35%.\n{{ Item_Melee_Ranged_Rules }}",
-        "pl": "60% prędkości ataku\n600 pkt. zdrowia\nSiarczysty Mróz:\nprzy trafieniu nakłada kumulujące się {{ Item_Melee_Ranged_Split }} spowolnienie prędkości ruchu na 1.5 sek. Efekt ten kumuluje się do 35%.\n{{ Item_Melee_Ranged_Rules }}"
+        "en": "60% Attack Speed\n600 Health\nEncroaching Frost:\nOn-Hit, apply a stacking move speed slow for 1.5 seconds. This effect stacks up to 35%.",
+        "pl": "60% prędkości ataku\n600 pkt. zdrowia\nSiarczysty Mróz:\nprzy trafieniu nakłada kumulujące się spowolnienie prędkości ruchu na 1.5 sek. Efekt ten kumuluje się do 35%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4014.png",
       "tier": "",
@@ -8861,8 +8861,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bezsłowna Obietnica"
       },
       "descriptions": {
-        "en": "50 Ability Power\n15% Heal and Shield Power\n25 Ability Haste\nPromise\nGain 10% of your Promised ally's Ability Power , and grant your Promised ally 10% of your Ability Haste.\nACTIVE\n(0s)\nPromise\nMake a Promise to an ally.",
-        "pl": "50 pkt. mocy umiejętności\n15% siły leczenia i tarcz\n25 jedn. przyspieszenia umiejętności\nObietnica\nZyskujesz 10% mocy umiejętności od sojusznika, któremu złożono Obietnicę , i zapewniasz mu 10% swojego przyspieszenia umiejętności.\nUŻYCIE\n(0 sek.)\nObietnica\nZłóż sojusznikowi Obietnicę ."
+        "en": "50 Ability Power\n15% Heal and Shield Power\n25 Ability Haste\nPromise\nGain 10% of your Promised ally's Ability Power, and grant your Promised ally 10% of your Ability Haste.\nACTIVE\n(0s)\nPromise\nMake a Promise to an ally.",
+        "pl": "50 pkt. mocy umiejętności\n15% siły leczenia i tarcz\n25 jedn. przyspieszenia umiejętności\nObietnica\nZyskujesz 10% mocy umiejętności od sojusznika, któremu złożono Obietnicę, i zapewniasz mu 10% swojego przyspieszenia umiejętności.\nUŻYCIE\n(0 sek.)\nObietnica\nZłóż sojusznikowi Obietnicę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4016.png",
       "tier": "",
@@ -8881,7 +8881,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40 Attack Damage\n12 Lethality\nChar\n(0s) per target\nYour next Ability hit Burns enemies for to current Health physical damage over 4 seconds, based on how much more max Health they have than you.\nBonus damage maximum is reached at 3000 health difference",
-        "pl": "40 pkt. obrażeń od ataku\n12 pkt. destrukcji\nZwęglenie\n(0 sek.) na cel\nTwoja następna umiejętność nakłada na wrogów podpalenie , zadając im obrażenia fizyczne równe 0-0 bieżącego zdrowia w ciągu 4 sek., zależnie od tego, ile więcej maksymalnego zdrowia cel ma od ciebie.\nMaksymalne dodatkowe obrażenia zostaną osiągnięte przy różnicy wynoszącej 3000 pkt. zdrowia."
+        "pl": "40 pkt. obrażeń od ataku\n12 pkt. destrukcji\nZwęglenie\n(0 sek.) na cel\nTwoja następna umiejętność nakłada na wrogów podpalenie, zadając im obrażenia fizyczne równe 0-0 bieżącego zdrowia w ciągu 4 sek., zależnie od tego, ile więcej maksymalnego zdrowia cel ma od ciebie.\nMaksymalne dodatkowe obrażenia zostaną osiągnięte przy różnicy wynoszącej 3000 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4017.png",
       "tier": "",
@@ -9041,8 +9041,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szczelinotwórca"
       },
       "descriptions": {
-        "en": "70 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp .\nVoid Infusion\nGain 2% of your bonus Health as Ability Power .",
-        "pl": "70 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskaj wszechwampiryzm .\nInfuzja Pustki\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności ."
+        "en": "70 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp.\nVoid Infusion\nGain 2% of your bonus Health as Ability Power.",
+        "pl": "70 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskaj wszechwampiryzm.\nInfuzja Pustki\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4633.png",
       "tier": "",
@@ -9101,8 +9101,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Demoniczny Uścisk"
       },
       "descriptions": {
-        "en": "75 Ability Power\n350 Health\nAzakana's Gaze:\nDealing Ability damage burns enemies for {{ Item_Melee_Ranged_Split }} max Health magic damage every second for 4 seconds. Dark Pact:\nGain 2% of your bonus Health as Ability Power .\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
-        "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana:\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe {{ Item_Melee_Ranged_Split }} ich maksymalnego zdrowia co sekundę przez 4 sek. Mroczny Pakt:\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności .\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
+        "en": "75 Ability Power\n350 Health\nAzakana's Gaze:\nDealing Ability damage burns enemies for max Health magic damage every second for 4 seconds. Dark Pact:\nGain 2% of your bonus Health as Ability Power.\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
+        "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana:\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe ich maksymalnego zdrowia co sekundę przez 4 sek. Mroczny Pakt:\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności.\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4637.png",
       "tier": "",
@@ -9209,8 +9209,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Korona Roztrzaskanej Królowej"
       },
       "descriptions": {
-        "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard:\nYou are Safeguarded , reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. (40(0s)).\nMythic Passive: Grants all other Legendary items 1% Move Speed and 8 Ability Power.\nItem cooldown is restarted when damage is taken from champions.",
-        "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona:\nMasz Osłonę , która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. (40(0 sek.)).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 1% prędkości ruchu i 8 pkt. mocy umiejętności.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
+        "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard:\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. (40(0s)).\nMythic Passive: Grants all other Legendary items 1% Move Speed and 8 Ability Power.\nItem cooldown is restarted when damage is taken from champions.",
+        "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona:\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. (40(0 sek.)).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 1% prędkości ruchu i 8 pkt. mocy umiejętności.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4644.png",
       "tier": "",
@@ -9248,8 +9248,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przepływ Burzy"
       },
       "descriptions": {
-        "en": "90 Ability Power\n15 Magic Penetration\n6% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them.\nSquall\nAfter 2 seconds, deal magic damage . If the target dies before Squall\ntriggers, it damages nearby enemies.",
-        "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n6% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada na niego Nawałnicę\n.\nNawałnica\nPo 2 sek. zadaje pkt. obrażeń magicznych . Jeśli cel zginie przed aktywacją Nawałnicy\n, zada ona obrażenia pobliskim wrogom."
+        "en": "90 Ability Power\n15 Magic Penetration\n6% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them.\nSquall\nAfter 2 seconds, deal magic damage. If the target dies before Squall\ntriggers, it damages nearby enemies.",
+        "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n6% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada na niego Nawałnicę.\nNawałnica\nPo 2 sek. zadaje obrażenia magicznych. Jeśli cel zginie przed aktywacją Nawałnicy, zada ona obrażenia pobliskim wrogom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4646.png",
       "tier": "",
@@ -9379,8 +9379,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rozdarte Niebo"
       },
       "descriptions": {
-        "en": "45 Attack Damage\n400 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health .",
-        "pl": "45 pkt. obrażeń od ataku\n400 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie ."
+        "en": "45 Attack Damage\n400 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health.",
+        "pl": "45 pkt. obrażeń od ataku\n400 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6610.png",
       "tier": "",
@@ -9440,8 +9440,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Echa Helii"
       },
       "descriptions": {
-        "en": "35 Ability Power\n200 Health\n20 Ability Haste\n125% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health .",
-        "pl": "35 pkt. mocy umiejętności\n200 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy\n, by przywrócić zdrowie ."
+        "en": "35 Ability Power\n200 Health\n20 Ability Haste\n125% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health.",
+        "pl": "35 pkt. mocy umiejętności\n200 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy, by przywrócić zdrowie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6620.png",
       "tier": "",
@@ -9503,7 +9503,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40 Attack Damage\n25% Attack Speed\n450 Health\nCleave\nAttacks deal physical damage to nearby enemies.\nBreaking Shockwave\nDeal physical damage and Slow nearby enemies by 35%.\nGain 35% decaying Move Speed per champion hit for 3 seconds.",
-        "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n450 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 35%.\nZa każdego trafionego bohatera otrzymasz 35% prędkości ruchu , która zanika przez 3 sek."
+        "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n450 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 35%.\nZa każdego trafionego bohatera otrzymasz 35% prędkości ruchu, która zanika przez 3 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6631.png",
       "tier": "",
@@ -9522,8 +9522,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boski Łamacz"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + {{ Item_Melee_Ranged_Split_B }} target max Health physical damage {{ Item_Cooldown }}. If the target is a champion, also heal for 55% of the premitigation damage .\n{{ Item_Mythic_Passive }} 3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters. {{ Item_Melee_Ranged_Rules }}",
-        "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + {{ Item_Melee_Ranged_Split_B }} maksymalnego zdrowia celu {{ Item_Cooldown }}. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń .\n{{ Item_Mythic_Passive }} 3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom. {{ Item_Melee_Ranged_Rules }}"
+        "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + target max Health physical damage. If the target is a champion, also heal for 55% of the premitigation damage.\n3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters.",
+        "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + maksymalnego zdrowia celu. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń.\n3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6632.png",
       "tier": "",
@@ -9584,7 +9584,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "70 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nMythic Passive: Grants all other Legendary items 10 Ability Power.\nActive -\nGlaciate:\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
-        "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 10 pkt. mocy umiejętności.\nUżycie —\nOblodzenie:\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni ."
+        "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 10 pkt. mocy umiejętności.\nUżycie —\nOblodzenie:\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6656.png",
       "tier": "",
@@ -9606,8 +9606,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Różdżka Wieków"
       },
       "descriptions": {
-        "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health , 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana .\nCasting an ability heals for 25% of Mana spent.",
-        "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia , 30 pkt. many i 3 pkt. mocy umiejętności , do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń .\nRzucenie umiejętności leczy o 25% wydanej many."
+        "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health, 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana.\nCasting an ability heals for 25% of Mana spent.",
+        "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia, 30 pkt. many i 3 pkt. mocy umiejętności, do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6657.png",
       "tier": "",
@@ -9645,8 +9645,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lodowa Rękawica"
       },
       "descriptions": {
-        "en": "300 Health\n50 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows .",
-        "pl": "300 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia ."
+        "en": "300 Health\n50 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows.",
+        "pl": "300 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6662.png",
       "tier": "",
@@ -9770,8 +9770,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pogromca Krakenów"
       },
       "descriptions": {
-        "en": "45 Attack Damage\n40% Attack Speed\n4% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit , increased based on their missing Health.",
-        "pl": "45 pkt. obrażeń od ataku\n40% prędkości ataku\n4% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu , zwiększonych w zależności od brakującego zdrowia."
+        "en": "45 Attack Damage\n40% Attack Speed\n4% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit, increased based on their missing Health.",
+        "pl": "45 pkt. obrażeń od ataku\n40% prędkości ataku\n4% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu, zwiększonych w zależności od brakującego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6672.png",
       "tier": "",
@@ -9827,8 +9827,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kolekcjoner"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold .",
-        "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota ."
+        "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold.",
+        "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6676.png",
       "tier": "",
@@ -9846,8 +9846,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Gniewonóż"
       },
       "descriptions": {
-        "en": "25% Attack Speed\nWrath:\nAttacks apply 20 magic damage On-Hit . Seething Strike:\nBasic attacks grant 5% Attack Speed , stacking up to 3 times for a maximum of Attack Speed .",
-        "pl": "25% prędkości ataku\nGniew:\nAtaki zadają 20 pkt. obrażeń magicznych przy trafieniu . Wrzące Uderzenie:\nAtaki podstawowe zapewniają 5% prędkości ataku . Efekt kumuluje się do 3 razy i zapewnia maksymalnie 0 jedn. prędkości ataku ."
+        "en": "25% Attack Speed\nWrath:\nAttacks apply 20 magic damage On-Hit. Seething Strike:\nBasic attacks grant 5% Attack Speed, stacking up to 3 times for a maximum of Attack Speed.",
+        "pl": "25% prędkości ataku\nGniew:\nAtaki zadają 20 pkt. obrażeń magicznych przy trafieniu. Wrzące Uderzenie:\nAtaki podstawowe zapewniają 5% prędkości ataku. Efekt kumuluje się do 3 razy i zapewnia maksymalnie 0 jedn. prędkości ataku."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6677.png",
       "tier": "",
@@ -9964,8 +9964,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wężowy Kieł"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n15 Lethality\nShield Reaver\nDamaging an enemy champion reduces Shields they gain by % for 3 seconds.\nIf they were not already affected by Shield Reaver\n, reduce Shields on them by %.",
-        "pl": "55 pkt. obrażeń od ataku\n15 pkt. destrukcji\nŁupieżca Tarcz\nZadawanie obrażeń wrogim bohaterom obniża wartość nakładanych na nich tarcz o 0% na 3 sek.\nJeśli cel nie był dotknięty efektem Łupieżcy Tarcz\n, obniżasz wytrzymałość nałożonych na niego tarcz o 0%."
+        "en": "55 Attack Damage\n15 Lethality\nShield Reaver\nDamaging an enemy champion reduces Shields they gain by % for 3 seconds.\nIf they were not already affected by Shield Reaver, reduce Shields on them by %.",
+        "pl": "55 pkt. obrażeń od ataku\n15 pkt. destrukcji\nŁupieżca Tarcz\nZadawanie obrażeń wrogim bohaterom obniża wartość nakładanych na nich tarcz o 0% na 3 sek.\nJeśli cel nie był dotknięty efektem Łupieżcy Tarcz, obniżasz wytrzymałość nałożonych na niego tarcz o 0%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6695.png",
       "tier": "",
@@ -10044,7 +10044,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "55 Attack Damage\n10 Lethality\n10 Ability Haste\nGalvanize\nDamaging an Enemy Champions with an ability triggers Energized if it is ready.\nFirmament\nYour Energized Attack deals % target's Current Health as bonus physical damage and grants you bonus Lethality for 4 seconds.",
-        "pl": "55 pkt. obrażeń od ataku\n10 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie , jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe % bieżącego zdrowia celu i zapewniają ci dodatkową destrukcję na 4 sek."
+        "pl": "55 pkt. obrażeń od ataku\n10 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie, jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe % bieżącego zdrowia celu i zapewniają ci dodatkową destrukcję na 4 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6699.png",
       "tier": "",
@@ -10086,8 +10086,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Okazja"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n18 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality . This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
-        "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję . Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
+        "en": "55 Attack Damage\n18 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality. This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
+        "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję. Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6701.png",
       "tier": "",
@@ -10139,8 +10139,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Łańcuchy Zguby"
       },
       "descriptions": {
-        "en": "650 Health\n20 Ability Haste\nVendetta\nYou gain Vendetta stacks over time Each stack of Vendetta grants you 1% reduced damage from your Nemesis.\nVengeance\nAt maximum stacks, your Nemesis has reduced Tenacity while near you.\nACTIVE\n(0s)\nVow\nChoose a Nemesis .",
-        "pl": "650 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nWendeta\nZ upływem czasu zyskujesz ładunki Wendety. Z każdym ładunkiem Wendety zyskujesz 1% zmniejszenia obrażeń otrzymywanych od swojego arcywroga.\nZemsta\nJeśli posiadasz maksymalną liczbę ładunków, twój arcywróg ma mniej nieustępliwości, gdy znajduje się w pobliżu ciebie.\nUŻYCIE\n(0 sek.)\nPrzysięga\nWybierz arcywroga ."
+        "en": "650 Health\n20 Ability Haste\nVendetta\nYou gain Vendetta stacks over time Each stack of Vendetta grants you 1% reduced damage from your Nemesis.\nVengeance\nAt maximum stacks, your Nemesis has reduced Tenacity while near you.\nACTIVE\n(0s)\nVow\nChoose a Nemesis.",
+        "pl": "650 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nWendeta\nZ upływem czasu zyskujesz ładunki Wendety. Z każdym ładunkiem Wendety zyskujesz 1% zmniejszenia obrażeń otrzymywanych od swojego arcywroga.\nZemsta\nJeśli posiadasz maksymalną liczbę ładunków, twój arcywróg ma mniej nieustępliwości, gdy znajduje się w pobliżu ciebie.\nUŻYCIE\n(0 sek.)\nPrzysięga\nWybierz arcywroga."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8001.png",
       "tier": "",
@@ -10179,8 +10179,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Maska Otchłani"
       },
       "descriptions": {
-        "en": "350 Health\n45 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage .",
-        "pl": "350 pkt. zdrowia\n45 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych ."
+        "en": "350 Health\n45 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
+        "pl": "350 pkt. zdrowia\n45 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8020.png",
       "tier": "",
@@ -10602,7 +10602,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Wyewoluowany Żarostrzał"
       },
       "descriptions": {
-        "en": "Fires projectiles that create lingering fire areas. Areas of fire grow in size and deal increased damage over time.\nDamage, Ability Haste, Area Size, , Projectiles, Duration",
+        "en": "Fires projectiles that create lingering fire areas. Areas of fire grow in size and deal increased damage over time.\nDamage, Ability Haste, Area Size,, Projectiles, Duration",
         "pl": "Strzela pociskami, które tworzą utrzymujące się podpalone obszary. Podpalone obszary powiększają się i zadają więcej obrażeń w czasie.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, pociski, czas działania"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9277.png",
@@ -10914,8 +10914,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przewodni Czar"
       },
       "descriptions": {
-        "en": "Aurora shoots a hex through the air, guiding it as it flies. Enemies hit take damage and are Hexed . Every 3rd cast, she purges Hexed targets, dealing bonus damage.\nEvolve: Exp Gain\nDamage, Ability Haste, Crit Chance, Projectiles, Exp",
-        "pl": "Aurora rzuca urok, którym kieruje podczas lotu. Trafieni wrogowie otrzymują obrażenia i zostaje na nich nałożony urok . Przy co 3. rzuceniu Aurora zdejmuje urok , zadając dodatkowe obrażenia wrogom, którzy byli pod jego wpływem.\nRozwój: zdobywane PD\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, PD"
+        "en": "Aurora shoots a hex through the air, guiding it as it flies. Enemies hit take damage and are Hexed. Every 3rd cast, she purges Hexed targets, dealing bonus damage.\nEvolve: Exp Gain\nDamage, Ability Haste, Crit Chance, Projectiles, Exp",
+        "pl": "Aurora rzuca urok, którym kieruje podczas lotu. Trafieni wrogowie otrzymują obrażenia i zostaje na nich nałożony urok. Przy co 3. rzuceniu Aurora zdejmuje urok, zadając dodatkowe obrażenia wrogom, którzy byli pod jego wpływem.\nRozwój: zdobywane PD\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, PD"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9307.png",
       "tier": "",
@@ -11050,7 +11050,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "Aurora now shoots more hexes and her purge now deals damage in an area around Hexed target.\nDamage, Ability Haste, Crit Chance, Projectiles, Duration, Exp",
-        "pl": "Aurora teraz rzuca więcej uroków, a jej oczyszczenie zadaje obrażenia na obszarze wokół celu pod wpływem uroku .\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, czas działania, PD"
+        "pl": "Aurora teraz rzuca więcej uroków, a jej oczyszczenie zadaje obrażenia na obszarze wokół celu pod wpływem uroku.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, czas działania, PD"
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9407.png",
       "tier": "",
@@ -11099,8 +11099,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Miecz Kwitnącego Świtu"
       },
       "descriptions": {
-        "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit , heal the lowest health ally champion near you for , prioritizing lower health allies.",
-        "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz .\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
+        "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
+        "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/124011.png",
       "tier": "",
@@ -11439,8 +11439,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wygięty Łuk"
       },
       "descriptions": {
-        "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit .",
-        "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu ."
+        "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit.",
+        "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221043.png",
       "tier": "",
@@ -11605,8 +11605,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pochodnia Mrocznego Ognia"
       },
       "descriptions": {
-        "en": "60 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDealing damage with Abilities causes enemies to burn. This damage increases to Monsters.\nBlackfire\nFor each enemy Champion, Epic Monster, and Large Monster affected by your Baleful Blaze\n, gain Ability Power .",
-        "pl": "60 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nZadawanie obrażeń umiejętnościami podpala wrogów. Obrażenia wzrastają w przypadku potworów.\nMroczny Ogień\nZa każdego wrogiego bohatera, potężnego potwora i dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz moc umiejętności ."
+        "en": "60 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDealing damage with Abilities causes enemies to burn. This damage increases to Monsters.\nBlackfire\nFor each enemy Champion, Epic Monster, and Large Monster affected by your Baleful Blaze, gain Ability Power.",
+        "pl": "60 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nZadawanie obrażeń umiejętnościami podpala wrogów. Obrażenia wzrastają w przypadku potworów.\nMroczny Ogień\nZa każdego wrogiego bohatera, potężnego potwora i dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz moc umiejętności."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222503.png",
       "tier": "",
@@ -11625,8 +11625,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kaeniczna Powłoka"
       },
       "descriptions": {
-        "en": "350 Health\n80 Magic Resist\nMagebane\nAfter not taking magic damage for 10 seconds, gain a magic shield .",
-        "pl": "350 pkt. zdrowia\n80 pkt. odporności na magię\nZmora Maga\nJeśli przez 10 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę ."
+        "en": "350 Health\n80 Magic Resist\nMagebane\nAfter not taking magic damage for 10 seconds, gain a magic shield.",
+        "pl": "350 pkt. zdrowia\n80 pkt. odporności na magię\nZmora Maga\nJeśli przez 10 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222504.png",
       "tier": "",
@@ -11645,7 +11645,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "300 Health\n60 Ability Power\n20 Ability Haste\n20% Attack Speed\nSpellblade\n(0s)\nAfter using an Ability, your next Attack deals bonus magic damage and heals you for On-Hit and then applies On-Hit effects an additional time.",
-        "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu ."
+        "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222510.png",
       "tier": "",
@@ -11665,8 +11665,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bełty Łowcy Diabłów"
       },
       "descriptions": {
-        "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\n(0s)\nAfter casting your Ultimate, your next 3 basic attacks within 8 seconds gain 50% Attack Speed and Critically Strike for 75% of your normal Critical Strike damage. If an attack would already Critically Strike, it deals normal Critical Strike damage and also deals 10% bonus true damage .",
-        "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\n(0 sek.)\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) w ciągu 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 75% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje normalne obrażenia krytyczne oraz 10% dodatkowych obrażeń nieuchronnych ."
+        "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\n(0s)\nAfter casting your Ultimate, your next 3 basic attacks within 8 seconds gain 50% Attack Speed and Critically Strike for 75% of your normal Critical Strike damage. If an attack would already Critically Strike, it deals normal Critical Strike damage and also deals 10% bonus true damage.",
+        "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\n(0 sek.)\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) w ciągu 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 75% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje normalne obrażenia krytyczne oraz 10% dodatkowych obrażeń nieuchronnych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222512.png",
       "tier": "",
@@ -11743,8 +11743,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dudy Bandle"
       },
       "descriptions": {
-        "en": "200 Health\n10 Ability Haste\n25 Armor\n25 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 35 Move Speed . While you have Fanfare, nearby allies, including yourself, gain Attack Speed .",
-        "pl": "200 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\n25 pkt. pancerza\n25 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 35 jedn. prędkości ruchu . Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku ."
+        "en": "200 Health\n10 Ability Haste\n25 Armor\n25 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 35 Move Speed. While you have Fanfare, nearby allies, including yourself, gain Attack Speed.",
+        "pl": "200 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\n25 pkt. pancerza\n25 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 35 jedn. prędkości ruchu. Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222524.png",
       "tier": "",
@@ -11781,8 +11781,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szepczący Diadem"
       },
       "descriptions": {
-        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHoly\nGain Heal and Shield Power.\nMana Charge\nAfter 2 combat rounds , this item transforms into Diadem of Songs .",
-        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nŚwiętość\nZyskujesz 0 pkt. siły leczenia i tarcz.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Diadem Pieśni ."
+        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHoly\nGain Heal and Shield Power.\nMana Charge\nAfter 2 combat rounds, this item transforms into Diadem of Songs.",
+        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nŚwiętość\nZyskujesz 0 pkt. siły leczenia i tarcz.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Diadem Pieśni."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222526.png",
       "tier": "",
@@ -11800,7 +11800,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Diadem Pieśni"
       },
       "descriptions": {
-        "en": "200 Health\n8% Heal and Shield Power\n1000 Mana\n100% Base Mana Regen\nHarmony\nGain % Heal and Shield Power.\nConsonance\nWhile you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest health nearby ally champion for .",
+        "en": "200 Health\n8% Heal and Shield Power\n1000 Mana\n100% Base Mana Regen\nHarmony\nGain % Heal and Shield Power.\nConsonance\nWhile you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest health nearby ally champion for.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n1000 pkt. many\n100% podstawowej regeneracji many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nKonsonans\nGdy ty lub sojusznik, który został przez ciebie uleczony lub osłonięty tarczą w ostatnich 3 sek., znajdujecie się w walce z bohaterami, pobliski sojusznik o najniższym poziomie zdrowia zostaje uleczony o 0 pkt. co sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222530.png",
@@ -11820,8 +11820,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zasłona Równości"
       },
       "descriptions": {
-        "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized , cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist",
-        "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony , zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i  pkt. odporności na magię."
+        "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized, cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist",
+        "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony, zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i  pkt. odporności na magię."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223001.png",
       "tier": "",
@@ -11840,8 +11840,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przecieracz Szlaków"
       },
       "descriptions": {
-        "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed .\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
-        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu .\nPrzy maksymalnej prędkości :Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej . Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
+        "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
+        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości:Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223002.png",
       "tier": "",
@@ -11859,8 +11859,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kostur Archanioła"
       },
       "descriptions": {
-        "en": "55 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 2% bonus Mana.\nMana Charge\nAfter 2 combat rounds , this item transforms into Seraph's Embrace .",
-        "pl": "55 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 2% twojej dodatkowej many .\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Uścisk Serafina ."
+        "en": "55 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 2% bonus Mana.\nMana Charge\nAfter 2 combat rounds, this item transforms into Seraph's Embrace.",
+        "pl": "55 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 2% twojej dodatkowej many.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Uścisk Serafina."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223003.png",
       "tier": "",
@@ -11878,8 +11878,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Manamune"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n600 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage equal to .\nMana Charge\nAfter 2 combat rounds , this item transforms into Muramana .",
-        "pl": "40 pkt. obrażeń od ataku\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz dodatkowe obrażenia od ataku równe 0 pkt.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Muramanę ."
+        "en": "40 Attack Damage\n600 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage equal to.\nMana Charge\nAfter 2 combat rounds, this item transforms into Muramana.",
+        "pl": "40 pkt. obrażeń od ataku\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz dodatkowe obrażenia od ataku równe 0 pkt.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Muramanę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223004.png",
       "tier": "",
@@ -11899,8 +11899,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ghostcrawlers"
       },
       "descriptions": {
-        "en": "70 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 300 move speed . Casting a spell or attacking will end this effect.",
-        "pl": "70 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 300 jedn. prędkości ruchu . Atak lub rzucenie zaklęcia zakończy ten efekt."
+        "en": "70 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 300 move speed. Casting a spell or attacking will end this effect.",
+        "pl": "70 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 300 jedn. prędkości ruchu. Atak lub rzucenie zaklęcia zakończy ten efekt."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223005.png",
       "tier": "boots",
@@ -11970,8 +11970,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Chemtechowy Skaziciel"
       },
       "descriptions": {
-        "en": "35 Ability Power\n10% Heal and Shield Power\n75% Base Mana Regen\n15 Ability Haste\nPuffcap Toxin\nDealing damage applies 40% Grievous Wounds to champions for 3 seconds.\nIf an enemy heals for more than 80% of their maximum health while continously affected by Grievous Wounds , it is increased to 60% Grievous Wounds .\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
-        "pl": "35 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n75% podstawowej regeneracji many\n15 jedn. przyspieszenia umiejętności\nGnijąca Toksyna\nZadawanie wrogim bohaterom obrażeń nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 80% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran , ich wartość zostaje zwiększona do 60% Głębokich Ran .\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
+        "en": "35 Ability Power\n10% Heal and Shield Power\n75% Base Mana Regen\n15 Ability Haste\nPuffcap Toxin\nDealing damage applies 40% Grievous Wounds to champions for 3 seconds.\nIf an enemy heals for more than 80% of their maximum health while continously affected by Grievous Wounds, it is increased to 60% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
+        "pl": "35 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n75% podstawowej regeneracji many\n15 jedn. przyspieszenia umiejętności\nGnijąca Toksyna\nZadawanie wrogim bohaterom obrażeń nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 80% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 60% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223011.png",
       "tier": "",
@@ -12061,8 +12061,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Śmiertelne Przypomnienie"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n30% Armor Penetration\n25% Critical Strike Chance\nSepsis\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds , it is increased to 80% Grievous Wounds .\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
-        "pl": "30 pkt. obrażeń od ataku\n30% przebicia pancerza\n25% szansy na trafienie krytyczne\nSepsa\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran , ich wartość zostaje zwiększona do 80% Głębokich Ran .\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
+        "en": "30 Attack Damage\n30% Armor Penetration\n25% Critical Strike Chance\nSepsis\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
+        "pl": "30 pkt. obrażeń od ataku\n30% przebicia pancerza\n25% szansy na trafienie krytyczne\nSepsa\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223033.png",
       "tier": "",
@@ -12099,8 +12099,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Osąd Atmy"
       },
       "descriptions": {
-        "en": "700 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health .",
-        "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem ."
+        "en": "700 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
+        "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223039.png",
       "tier": "",
@@ -12158,8 +12158,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Widmowy Tancerz"
       },
       "descriptions": {
-        "en": "60% Attack Speed\n8% Move Speed\n25% Critical Strike Chance\nSpectral Waltz\nBecome Ghosted .",
-        "pl": "60% prędkości ataku\n8% prędkości ruchu\n25% szansy na trafienie krytyczne\nWidmowy Walc\nZyskujesz przenikanie ."
+        "en": "60% Attack Speed\n8% Move Speed\n25% Critical Strike Chance\nSpectral Waltz\nBecome Ghosted.",
+        "pl": "60% prędkości ataku\n8% prędkości ruchu\n25% szansy na trafienie krytyczne\nWidmowy Walc\nZyskujesz przenikanie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223046.png",
       "tier": "",
@@ -12215,8 +12215,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Gruboskórność Steraka"
       },
       "descriptions": {
-        "en": "300 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage .\nLifeline\n(0s)\nUpon taking damage that would reduce your Health below 30% , gain a Shield decaying over 4.5 seconds.",
-        "pl": "300 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskaj 0 pkt. dodatkowych obrażeń od ataku .\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30% , zyskujesz 0 pkt. tarczy . Tarcza stopniowo zanika w ciągu 4.5 sek."
+        "en": "300 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage.\nLifeline\n(0s)\nUpon taking damage that would reduce your Health below 30%, gain a Shield decaying over 4.5 seconds.",
+        "pl": "300 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskaj 0 pkt. dodatkowych obrażeń od ataku.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, zyskujesz 0 pkt. tarczy. Tarcza stopniowo zanika w ciągu 4.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223053.png",
       "tier": "",
@@ -12359,8 +12359,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwiopijec"
       },
       "descriptions": {
-        "en": "70 Attack Damage\n18% Life Steal\nIchorshield\nConvert excess healing from your Life Steal to a Shield .",
-        "pl": "70 pkt. obrażeń od ataku\n18% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę ."
+        "en": "70 Attack Damage\n18% Life Steal\nIchorshield\nConvert excess healing from your Life Steal to a Shield.",
+        "pl": "70 pkt. obrażeń od ataku\n18% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223072.png",
       "tier": "",
@@ -12478,8 +12478,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Huragan Runaana"
       },
       "descriptions": {
-        "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nWind's Fury\nWhen Attacking, bolts are fired at up to 2 enemies near the target. Bolts apply On-Hit effects and can Critically Strike .\nItem is for Ranged champions only.",
-        "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nGdy atakujesz, wystrzeliwujesz pociski w kierunku maks. 2 wrogów w pobliżu celu. Pociski nakładają efekty przy trafieniu i mogą trafić krytycznie .\nPrzedmiot tylko dla bohaterów walczących z dystansu."
+        "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nWind's Fury\nWhen Attacking, bolts are fired at up to 2 enemies near the target. Bolts apply On-Hit effects and can Critically Strike.\nItem is for Ranged champions only.",
+        "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nGdy atakujesz, wystrzeliwujesz pociski w kierunku maks. 2 wrogów w pobliżu celu. Pociski nakładają efekty przy trafieniu i mogą trafić krytycznie.\nPrzedmiot tylko dla bohaterów walczących z dystansu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223085.png",
       "tier": "",
@@ -12499,7 +12499,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "45 Attack Damage\n45 Ability Power\n30% Attack Speed\n4% Move Speed\nElectrospark\nYour Energized Attacks fire chain lightning, applying On-Hit effects and dealing magic damage to up to targets.\nElectroshock\nBasic Attacks grant extra Energized stacks.",
-        "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne 0 celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania ."
+        "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne 0 celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223087.png",
       "tier": "",
@@ -12518,8 +12518,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zabójczy Kapelusz Rabadona"
       },
       "descriptions": {
-        "en": "65 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30% .",
-        "pl": "65 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30% ."
+        "en": "65 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30%.",
+        "pl": "65 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223089.png",
       "tier": "",
@@ -12555,8 +12555,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognista Armata"
       },
       "descriptions": {
-        "en": "30% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nEnergized\nMoving and Attacking generates an Energized Attack .\nSharpshooter\nYour Energized Attack applies 200 bonus magic damage . In addition, Energized attacks gain up to 35% bonus Attack Range.",
-        "pl": "30% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak .\nStrzelec Wyborowy\nTwoje naładowane ataki zadają 200 pkt. dodatkowych obrażeń magicznych . Ponadto zasięg twoich naładowanych ataków jest zwiększony o maksymalnie 35%."
+        "en": "30% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nEnergized\nMoving and Attacking generates an Energized Attack.\nSharpshooter\nYour Energized Attack applies 200 bonus magic damage. In addition, Energized attacks gain up to 35% bonus Attack Range.",
+        "pl": "30% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nStrzelec Wyborowy\nTwoje naładowane ataki zadają 200 pkt. dodatkowych obrażeń magicznych. Ponadto zasięg twoich naładowanych ataków jest zwiększony o maksymalnie 35%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223094.png",
       "tier": "",
@@ -12574,8 +12574,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Klinga Burzy"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack .\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Move Speed for 2s.\nEnergized stacks twice as fast in Arena.",
-        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak .\nGrom\nTwoje naładowane ataki zadają 0 dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 2 sek.\nNaładowane ataki kumulują się dwa razy szybciej na Arenie."
+        "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Move Speed for 2s.\nEnergized stacks twice as fast in Arena.",
+        "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 2 sek.\nNaładowane ataki kumulują się dwa razy szybciej na Arenie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223095.png",
       "tier": "",
@@ -12592,8 +12592,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zmora Licza"
       },
       "descriptions": {
-        "en": "80 Ability Power\n10% Move Speed\n20 Ability Haste\nSpellblade\n(0s)\nAfter using an Ability, your next Attack is enhanced with an additional magic damage On-Hit .",
-        "pl": "80 pkt. mocy umiejętności\n10% prędkości ruchu\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\n(0 sek.)\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowo 0 pkt. obrażeń magicznych przy trafieniu ."
+        "en": "80 Ability Power\n10% Move Speed\n20 Ability Haste\nSpellblade\n(0s)\nAfter using an Ability, your next Attack is enhanced with an additional magic damage On-Hit.",
+        "pl": "80 pkt. mocy umiejętności\n10% prędkości ruchu\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\n(0 sek.)\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowo 0 pkt. obrażeń magicznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223100.png",
       "tier": "",
@@ -12613,7 +12613,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "80 Ability Power\n40 Magic Resist\nAnnul\nGrants a Spell Shield that blocks the next enemy Ability.\nItem cooldown is restarted if you take damage from champions before it is completed.",
-        "pl": "80 pkt. mocy umiejętności\n40 pkt. odporności na magię\nUchylenie\nZapewnia tarczę magii , która blokuje kolejną umiejętność wroga.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
+        "pl": "80 pkt. mocy umiejętności\n40 pkt. odporności na magię\nUchylenie\nZapewnia tarczę magii, która blokuje kolejną umiejętność wroga.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223102.png",
       "tier": "",
@@ -12670,8 +12670,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przysięga Rycerska"
       },
       "descriptions": {
-        "en": "400 Health\n50 Armor\n15 Ability Haste\nSacrifice\nWhile near your Worthy ally, take 12% of the damage they receive and heal for 12% of the damage they deal to Champions.\nACTIVE\n(0s)\nPledge\nDesignate an ally who is Worthy .",
-        "pl": "400 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 12% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom.\nUŻYCIE\n(0 sek.)\nŚlubowanie\nWskaż sojusznika, który jest Godny ."
+        "en": "400 Health\n50 Armor\n15 Ability Haste\nSacrifice\nWhile near your Worthy ally, take 12% of the damage they receive and heal for 12% of the damage they deal to Champions.\nACTIVE\n(0s)\nPledge\nDesignate an ally who is Worthy.",
+        "pl": "400 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 12% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom.\nUŻYCIE\n(0 sek.)\nŚlubowanie\nWskaż sojusznika, który jest Godny."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223109.png",
       "tier": "",
@@ -12733,7 +12733,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "55 Ability Power\n25 Ability Haste\nRecovery\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 15 Health instead.",
-        "pl": "55 pkt. mocy umiejętności\n25 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia ."
+        "pl": "55 pkt. mocy umiejętności\n25 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223112.png",
       "tier": "",
@@ -12752,8 +12752,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ząb Nashora"
       },
       "descriptions": {
-        "en": "70 Ability Power\n45% Attack Speed\n10 Ability Haste\nIcathian Bite\nAttacks apply magic damage On-Hit .",
-        "pl": "70 pkt. mocy umiejętności\n45% prędkości ataku\n10 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają obrażenia magiczne przy trafieniu ."
+        "en": "70 Ability Power\n45% Attack Speed\n10 Ability Haste\nIcathian Bite\nAttacks apply magic damage On-Hit.",
+        "pl": "70 pkt. mocy umiejętności\n45% prędkości ataku\n10 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają obrażenia magiczne przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223115.png",
       "tier": "",
@@ -12810,8 +12810,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nadejście Zimy"
       },
       "descriptions": {
-        "en": "400 Health\n600 Mana\n15 Ability Haste\nAwe:\nGain bonus Health equal to Total Mana . Mana Charge:\nAfter 2 combat rounds , this item transforms into Fimbulwinter .",
-        "pl": "400 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw:\nZyskujesz dodatkowe zdrowie równe całkowitej manie . Doładowanie Many:\nPo 2 rundach walk ten przedmiot zmienia się w Wielką Zimę ."
+        "en": "400 Health\n600 Mana\n15 Ability Haste\nAwe:\nGain bonus Health equal to Total Mana. Mana Charge:\nAfter 2 combat rounds, this item transforms into Fimbulwinter.",
+        "pl": "400 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw:\nZyskujesz dodatkowe zdrowie równe całkowitej manie. Doładowanie Many:\nPo 2 rundach walk ten przedmiot zmienia się w Wielką Zimę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223119.png",
       "tier": "",
@@ -12848,8 +12848,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostrze Gniewu Guinsoo"
       },
       "descriptions": {
-        "en": "20 Attack Damage\n25 Ability Power\n25% Attack Speed\nAttacks apply 30 magic damage On-Hit .\nSeething Strike\nBasic attacks grant 8% Attack Speed , stacking up to 4 times for a maximum of Attack Speed . While fully stacked, every third Attack applies your On-Hit effects twice.",
-        "pl": "20 pkt. obrażeń od ataku\n25 pkt. mocy umiejętności\n25% prędkości ataku\nAtaki zadają 30 pkt. obrażeń magicznych przy trafieniu .\nWrzące Uderzenie\nAtaki podstawowe zapewniają 8% prędkości ataku . Efekt kumuluje się do 4 razy i zapewnia maks. 0 prędkości ataku . Przy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
+        "en": "20 Attack Damage\n25 Ability Power\n25% Attack Speed\nAttacks apply 30 magic damage On-Hit.\nSeething Strike\nBasic attacks grant 8% Attack Speed, stacking up to 4 times for a maximum of Attack Speed. While fully stacked, every third Attack applies your On-Hit effects twice.",
+        "pl": "20 pkt. obrażeń od ataku\n25 pkt. mocy umiejętności\n25% prędkości ataku\nAtaki zadają 30 pkt. obrażeń magicznych przy trafieniu.\nWrzące Uderzenie\nAtaki podstawowe zapewniają 8% prędkości ataku. Efekt kumuluje się do 4 razy i zapewnia maks. 0 prędkości ataku. Przy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223124.png",
       "tier": "",
@@ -12886,8 +12886,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kryptokwiat"
       },
       "descriptions": {
-        "en": "60 Ability Power\n30% Magic Penetration\n15 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals .",
-        "pl": "60 pkt. mocy umiejętności\n30% przebicia odporności na magię\n15 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc ."
+        "en": "60 Ability Power\n30% Magic Penetration\n15 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals.",
+        "pl": "60 pkt. mocy umiejętności\n30% przebicia odporności na magię\n15 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223137.png",
       "tier": "",
@@ -13010,8 +13010,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostrze Zniszczonego Króla"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n20% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks apply an additional enemy current Health physical damage On-Hit .\nClawing Shadows\n(0s)\nAttacking a champion 3 times Slows them.",
-        "pl": "30 pkt. obrażeń od ataku\n20% prędkości ataku\n10% kradzieży życia\nOstrze Mgły\nAtaki zadają dodatkowo obrażenia fizyczne równe aktualnego zdrowia celu przy trafieniu .\nChwytające Cienie\n(0 sek.)\nZaatakowanie bohatera 3 razy spowalnia go."
+        "en": "30 Attack Damage\n20% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks apply an additional enemy current Health physical damage On-Hit.\nClawing Shadows\n(0s)\nAttacking a champion 3 times Slows them.",
+        "pl": "30 pkt. obrażeń od ataku\n20% prędkości ataku\n10% kradzieży życia\nOstrze Mgły\nAtaki zadają dodatkowo obrażenia fizyczne równe aktualnego zdrowia celu przy trafieniu.\nChwytające Cienie\n(0 sek.)\nZaatakowanie bohatera 3 razy spowalnia go."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223153.png",
       "tier": "",
@@ -13032,7 +13032,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "50 Attack Damage\n15 Ability Haste\n40 Magic Resist\nLifeline\nUpon taking magic damage that would reduce Health below 30%, gain a magic damage Shield. When Lifeline\ntriggers, gain Omnivamp until the end of combat.",
-        "pl": "50 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n40 pkt. odporności na magię\nLinia Życia\nPrzy otrzymaniu obrażeń magicznych, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, zyskujesz tarczę pochłaniającą obrażenia magiczne. Gdy aktywuje się Linia Życia\n, zyskujesz wszechwampiryzm do końca walki."
+        "pl": "50 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n40 pkt. odporności na magię\nLinia Życia\nPrzy otrzymaniu obrażeń magicznych, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, zyskujesz tarczę pochłaniającą obrażenia magiczne. Gdy aktywuje się Linia Życia, zyskujesz wszechwampiryzm do końca walki."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223156.png",
       "tier": "",
@@ -13052,8 +13052,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Klepsydra Zhonyi"
       },
       "descriptions": {
-        "en": "80 Ability Power\n50 Armor\nActive -\nStasis:\nYou become Invulnerable and Untargetable for 2.5 seconds, but are prevented from taking any other actions during this time (120s) .",
-        "pl": "80 pkt. mocy umiejętności\n50 pkt. pancerza\nUżycie —\nInercja:\nZyskujesz niewrażliwość i nie można obrać cię za cel przez 2.5 sek. Podczas trwania tego efektu nie możesz wykonywać żadnych innych czynności (120 sek.) ."
+        "en": "80 Ability Power\n50 Armor\nActive -\nStasis:\nYou become Invulnerable and Untargetable for 2.5 seconds, but are prevented from taking any other actions during this time (120s).",
+        "pl": "80 pkt. mocy umiejętności\n50 pkt. pancerza\nUżycie —\nInercja:\nZyskujesz niewrażliwość i nie można obrać cię za cel przez 2.5 sek. Podczas trwania tego efektu nie możesz wykonywać żadnych innych czynności (120 sek.)."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223157.png",
       "tier": "",
@@ -13108,8 +13108,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Morellonomicon"
       },
       "descriptions": {
-        "en": "90 Ability Power\n250 Health\n15 Ability Haste\nAffliction\nDealing magic damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds , it is increased to 80% Grievous Wounds .\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
-        "pl": "90 pkt. mocy umiejętności\n250 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nChoroba\nZadawanie wrogim bohaterom obrażeń magicznych nakłada na nich 40Głębokie Rany o wartości % na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran , ich wartość zostaje zwiększona do 80% Głębokich Ran .\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
+        "en": "90 Ability Power\n250 Health\n15 Ability Haste\nAffliction\nDealing magic damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
+        "pl": "90 pkt. mocy umiejętności\n250 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nChoroba\nZadawanie wrogim bohaterom obrażeń magicznych nakłada na nich 40Głębokie Rany o wartości % na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223165.png",
       "tier": "",
@@ -13169,8 +13169,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kadłubołamacz"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage , increased to against structures.\nSolo Party\nWhile no allied champions are within 1500 range, you gain Armor and Magic Resist .",
-        "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje 0 pkt. dodatkowych obrażeń fizycznych , zwiększonych do 0 pkt. przeciwko budowlom.\nSolówka\nJeśli w odległości 1500 jedn. od ciebie nie ma żadnych sojuszniczych bohaterów, zyskujesz 0 pkt. pancerza i odporności na magię ."
+        "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage, increased to against structures.\nSolo Party\nWhile no allied champions are within 1500 range, you gain Armor and Magic Resist.",
+        "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje 0 pkt. dodatkowych obrażeń fizycznych, zwiększonych do 0 pkt. przeciwko budowlom.\nSolówka\nJeśli w odległości 1500 jedn. od ciebie nie ma żadnych sojuszniczych bohaterów, zyskujesz 0 pkt. pancerza i odporności na magię."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223181.png",
       "tier": "",
@@ -13208,8 +13208,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sztylet Strażnika"
       },
       "descriptions": {
-        "en": "25 Attack Damage\n11 Lethality\n10 Ability Haste\nAgricultural Reaper\nIncreases effects of Power Flower by 20% . Gain 100 Move Speed for 3s after attacking a plant.",
-        "pl": "25 pkt. obrażeń od ataku\n11 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nRolny Żniwiarz\nWzmacnia efekty Kwiatu Mocy o 20% . Zyskujesz 100 jedn. prędkości ruchu przez 3 sek. po zaatakowaniu rośliny."
+        "en": "25 Attack Damage\n11 Lethality\n10 Ability Haste\nAgricultural Reaper\nIncreases effects of Power Flower by 20%. Gain 100 Move Speed for 3s after attacking a plant.",
+        "pl": "25 pkt. obrażeń od ataku\n11 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nRolny Żniwiarz\nWzmacnia efekty Kwiatu Mocy o 20%. Zyskujesz 100 jedn. prędkości ruchu przez 3 sek. po zaatakowaniu rośliny."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223185.png",
       "tier": "",
@@ -13227,8 +13227,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Naszyjnik Żelaznych Solari"
       },
       "descriptions": {
-        "en": "400 Health\n25 Armor\n35 Magic Resist\n25 Ability Haste\nDevotion\nGrant nearby allies a Shield , decaying over time.",
-        "pl": "400 pkt. zdrowia\n25 pkt. pancerza\n35 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nOddanie\nZapewniasz pobliskim sojusznikom tarczę , która zanika z czasem."
+        "en": "400 Health\n25 Armor\n35 Magic Resist\n25 Ability Haste\nDevotion\nGrant nearby allies a Shield, decaying over time.",
+        "pl": "400 pkt. zdrowia\n25 pkt. pancerza\n35 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nOddanie\nZapewniasz pobliskim sojusznikom tarczę, która zanika z czasem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223190.png",
       "tier": "",
@@ -13293,8 +13293,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ostatni Przystanek"
       },
       "descriptions": {
-        "en": "30 Attack Damage\n40% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit .\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 8% Armor Penetration and Magic Penetration for 5s.",
-        "pl": "30 pkt. obrażeń od ataku\n40% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu .\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku : Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 8% przebicia pancerza oraz przebicia odporności na magię na 5 sek."
+        "en": "30 Attack Damage\n40% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit.\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 8% Armor Penetration and Magic Penetration for 5s.",
+        "pl": "30 pkt. obrażeń od ataku\n40% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku: Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 8% przebicia pancerza oraz przebicia odporności na magię na 5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223302.png",
       "tier": "",
@@ -13314,8 +13314,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognisty Trybularz"
       },
       "descriptions": {
-        "en": "40 Ability Power\n12% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding another ally enhances you both for 6 seconds, granting your Attacks 40% Attack Speed and 25 magic damage On-Hit .",
-        "pl": "40 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie innego sojusznika tarczą wzmacnia was na 6 sek. i zapewnia waszym atakom 40% prędkości ataku i 25 pkt. obrażeń magicznych przy trafieniu ."
+        "en": "40 Ability Power\n12% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding another ally enhances you both for 6 seconds, granting your Attacks 40% Attack Speed and 25 magic damage On-Hit.",
+        "pl": "40 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie innego sojusznika tarczą wzmacnia was na 6 sek. i zapewnia waszym atakom 40% prędkości ataku i 25 pkt. obrażeń magicznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223504.png",
       "tier": "",
@@ -13334,8 +13334,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Złodziej Esencji"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit .",
-        "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu ."
+        "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit.",
+        "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223508.png",
       "tier": "",
@@ -13376,8 +13376,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kolosalna Hydra"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n400 Health\nColossus:\nGain bonus Attack Damage based off of bonus Health . Cleave:\nAttacks apply additional damage On-Hit , creating a shockwave that deals damage to enemies behind the target. Titanic Crescent\nEmpower your next Cleave\nto deal bonus physical damage On-Hit and deal bonus physical damage to enemies behind the target.",
-        "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nKolos:\nZyskujesz dodatkowe obrażenia od ataku zależne od dodatkowego zdrowia . Rozpłatanie:\nAtaki zadają dodatkowe obrażenia przy trafieniu , tworząc falę uderzeniową, która zadaje obrażenia wrogom znajdującym się za celem. Kolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie\n, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
+        "en": "40 Attack Damage\n400 Health\nColossus:\nGain bonus Attack Damage based off of bonus Health. Cleave:\nAttacks apply additional damage On-Hit, creating a shockwave that deals damage to enemies behind the target. Titanic Crescent\nEmpower your next Cleave\nto deal bonus physical damage On-Hit and deal bonus physical damage to enemies behind the target.",
+        "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nKolos:\nZyskujesz dodatkowe obrażenia od ataku zależne od dodatkowego zdrowia. Rozpłatanie:\nAtaki zadają dodatkowe obrażenia przy trafieniu, tworząc falę uderzeniową, która zadaje obrażenia wrogom znajdującym się za celem. Kolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223748.png",
       "tier": "",
@@ -13434,7 +13434,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "60 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 15 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 6% Vulnerable for 4 seconds.",
-        "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 15 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi .\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 6% wrażliwości na 4 sek."
+        "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 15 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 6% wrażliwości na 4 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224005.png",
       "tier": "",
@@ -13453,8 +13453,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Siła Natury"
       },
       "descriptions": {
-        "en": "400 Health\n50 Magic Resist\n4% Move Speed\nAbsorb\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 10) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks.\nDissipate\nWhile at 10 stacks of Steadfast , gain 50 Magic Resist and 14% increased Move Speed .\nOne spell can add a new stack of Steadfast every 1 second.",
-        "pl": "400 pkt. zdrowia\n50 pkt. odporności na magię\n4% prędkości ruchu\nPochłonięcie\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 10) na 7 sek. Efekty unieruchamiające wrogów zapewniają dodatkowe 2 ład.\nRozproszenie\nMając następującą liczbę ładunków Niewzruszenia : 10, zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu .\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
+        "en": "400 Health\n50 Magic Resist\n4% Move Speed\nAbsorb\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 10) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks.\nDissipate\nWhile at 10 stacks of Steadfast, gain 50 Magic Resist and 14% increased Move Speed.\nOne spell can add a new stack of Steadfast every 1 second.",
+        "pl": "400 pkt. zdrowia\n50 pkt. odporności na magię\n4% prędkości ruchu\nPochłonięcie\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 10) na 7 sek. Efekty unieruchamiające wrogów zapewniają dodatkowe 2 ład.\nRozproszenie\nMając następującą liczbę ładunków Niewzruszenia: 10, zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu.\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224401.png",
       "tier": "",
@@ -13539,8 +13539,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szczelinotwórca"
       },
       "descriptions": {
-        "en": "60 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp .\nVoid Infusion\nGain 2% of your bonus Health as Ability Power .",
-        "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskujesz wszechwampiryzm .\nInfuzja Pustki\nZyskujesz 2% swojego dodatkowego zdrowia jako moc umiejętności ."
+        "en": "60 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp.\nVoid Infusion\nGain 2% of your bonus Health as Ability Power.",
+        "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskujesz wszechwampiryzm.\nInfuzja Pustki\nZyskujesz 2% swojego dodatkowego zdrowia jako moc umiejętności."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224633.png",
       "tier": "",
@@ -13559,8 +13559,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nocny Żniwiarz"
       },
       "descriptions": {
-        "en": "90 Ability Power\n300 Health\n25 Ability Haste\nSoulrend\nDamaging a champion with Attacks or Abilities deals an additional magic damage and grants you 25% Move Speed for 1.5 seconds (30(0s) per champion) .\nDamaging a new champion will extend the duration of the Move Speed bonus.",
-        "pl": "90 pkt. mocy umiejętności\n300 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nRozerwanie Duszy\nZadanie bohaterowi obrażeń atakami lub umiejętnościami zadaje dodatkowo 0 pkt. obrażeń magicznych i zapewnia ci 25% prędkości ruchu na 1.5 sek. (30(0 sek.) na bohatera) .\nZadanie obrażeń nowemu bohaterowi wydłuży czas działania premii do prędkości ruchu."
+        "en": "90 Ability Power\n300 Health\n25 Ability Haste\nSoulrend\nDamaging a champion with Attacks or Abilities deals an additional magic damage and grants you 25% Move Speed for 1.5 seconds (30(0s) per champion).\nDamaging a new champion will extend the duration of the Move Speed bonus.",
+        "pl": "90 pkt. mocy umiejętności\n300 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nRozerwanie Duszy\nZadanie bohaterowi obrażeń atakami lub umiejętnościami zadaje dodatkowo 0 pkt. obrażeń magicznych i zapewnia ci 25% prędkości ruchu na 1.5 sek. (30(0 sek.) na bohatera).\nZadanie obrażeń nowemu bohaterowi wydłuży czas działania premii do prędkości ruchu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224636.png",
       "tier": "",
@@ -13580,8 +13580,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Demoniczny Uścisk"
       },
       "descriptions": {
-        "en": "75 Ability Power\n350 Health\nAzakana's Gaze\nDealing Ability damage burns enemies for {{ Item_Melee_Ranged_Split }} max Health magic damage every second for 4 seconds.\nDark Pact\nGain 2% of your bonus Health as Ability Power .\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
-        "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe {{ Item_Melee_Ranged_Split }} ich maksymalnego zdrowia co sekundę przez 4 sek.\nMroczny Pakt\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności .\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
+        "en": "75 Ability Power\n350 Health\nAzakana's Gaze\nDealing Ability damage burns enemies for max Health magic damage every second for 4 seconds.\nDark Pact\nGain 2% of your bonus Health as Ability Power.\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
+        "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe ich maksymalnego zdrowia co sekundę przez 4 sek.\nMroczny Pakt\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności.\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224637.png",
       "tier": "",
@@ -13598,8 +13598,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Korona Roztrzaskanej Królowej"
       },
       "descriptions": {
-        "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard\nYou are Safeguarded , reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. ((0s).\nItem cooldown is restarted when damage is taken from champions.",
-        "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę , która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. ((0 sek.)).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
+        "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. ((0s).\nItem cooldown is restarted when damage is taken from champions.",
+        "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. ((0 sek.)).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224644.png",
       "tier": "",
@@ -13636,8 +13636,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przepływ Burzy"
       },
       "descriptions": {
-        "en": "90 Ability Power\n15 Magic Penetration\n4% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them and grants 25% Move Speed for 1.5 seconds.\nSquall\nAfter 2 seconds, deal magic damage . If the target dies before Squall\ntriggers, it damages nearby enemies and you gain 25% Move Speed for 1.5 seconds.",
-        "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n4% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada Nawałnicę\ni zapewnia 25% prędkości ruchu na 1.5 sek.\nNawałnica\nPo 2 sek. zadaje pkt. obrażeń magicznych . Jeśli cel zginie przed aktywacją Nawałnicy\n, zada ona obrażenia pobliskim wrogom, a ty zyskasz 25% prędkości ruchu na 1.5 sek."
+        "en": "90 Ability Power\n15 Magic Penetration\n4% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them and grants 25% Move Speed for 1.5 seconds.\nSquall\nAfter 2 seconds, deal magic damage. If the target dies before Squall\ntriggers, it damages nearby enemies and you gain 25% Move Speed for 1.5 seconds.",
+        "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n4% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada Nawałnicę\ni zapewnia 25% prędkości ruchu na 1.5 sek.\nNawałnica\nPo 2 sek. zadaje obrażenia magicznych. Jeśli cel zginie przed aktywacją Nawałnicy, zada ona obrażenia pobliskim wrogom, a ty zyskasz 25% prędkości ruchu na 1.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224646.png",
       "tier": "",
@@ -13696,8 +13696,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Chempunkowy Łańcuchowy Miecz"
       },
       "descriptions": {
-        "en": "45 Attack Damage\n450 Health\n15 Ability Haste\nHackshorn\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds , it is increased to 80% Grievous Wounds .\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
-        "pl": "45 pkt. obrażeń od ataku\n450 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nZłamany Róg\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran , ich wartość zostaje zwiększona do 80% Głębokich Ran .\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
+        "en": "45 Attack Damage\n450 Health\n15 Ability Haste\nHackshorn\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
+        "pl": "45 pkt. obrażeń od ataku\n450 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nZłamany Róg\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226609.png",
       "tier": "",
@@ -13716,8 +13716,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rozdarte Niebo"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n350 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health .",
-        "pl": "40 pkt. obrażeń od ataku\n350 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie ."
+        "en": "40 Attack Damage\n350 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health.",
+        "pl": "40 pkt. obrażeń od ataku\n350 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226610.png",
       "tier": "",
@@ -13777,8 +13777,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Echa Helii"
       },
       "descriptions": {
-        "en": "40 Ability Power\n300 Health\n30 Ability Haste\n150% Base Mana Regen\nSoul Siphon:\nDamaging a champion grants a Soul Shard\n. Healing or Shielding an ally consumes all Soul Shards\nto restore Health and deals magic damage per Shard to the nearest enemy champion.",
-        "pl": "40 pkt. mocy umiejętności\n300 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz:\nZadanie obrażeń bohaterowi zapewnia Odłamek Duszy\n. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie Odłamki Dusz\n, przywracając zdrowie i zadając najbliższemu wrogiemu bohaterowi obrażenia magiczne za każdy odłamek."
+        "en": "40 Ability Power\n300 Health\n30 Ability Haste\n150% Base Mana Regen\nSoul Siphon:\nDamaging a champion grants a Soul Shard. Healing or Shielding an ally consumes all Soul Shards\nto restore Health and deals magic damage per Shard to the nearest enemy champion.",
+        "pl": "40 pkt. mocy umiejętności\n300 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz:\nZadanie obrażeń bohaterowi zapewnia Odłamek Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie Odłamki Dusz, przywracając zdrowie i zadając najbliższemu wrogiemu bohaterowi obrażenia magiczne za każdy odłamek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226620.png",
       "tier": "",
@@ -13798,8 +13798,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rdzeń Świtu"
       },
       "descriptions": {
-        "en": "45 Ability Power\n12% Heal and Shield Power\n200% Base Mana Regen\nFirst Light\nGain 3% Heal and Shield Power and 10 Ability Power per 100% Base Mana Regen .",
-        "pl": "45 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n200% podstawowej regeneracji many\nPierwsze Światło\nZyskujesz 3% siły leczenia i tarcz oraz 10 pkt. mocy umiejętności za każde 100% podstawowej regeneracji many ."
+        "en": "45 Ability Power\n12% Heal and Shield Power\n200% Base Mana Regen\nFirst Light\nGain 3% Heal and Shield Power and 10 Ability Power per 100% Base Mana Regen.",
+        "pl": "45 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n200% podstawowej regeneracji many\nPierwsze Światło\nZyskujesz 3% siły leczenia i tarcz oraz 10 pkt. mocy umiejętności za każde 100% podstawowej regeneracji many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226621.png",
       "tier": "",
@@ -13838,7 +13838,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "40 Attack Damage\n15% Attack Speed\n375 Health\nCleave\nAttacks deal physical damage to nearby enemies.\nBreaking Shockwave\nDeal physical damage and Slow nearby enemies by 40%.\nGain 40% decaying Move Speed per champion hit for 3 seconds.",
-        "pl": "40 pkt. obrażeń od ataku\n15% prędkości ataku\n375 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 40%.\nZa każdego trafionego bohatera otrzymasz 40% prędkości ruchu , która zanika przez 3 sek."
+        "pl": "40 pkt. obrażeń od ataku\n15% prędkości ataku\n375 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 40%.\nZa każdego trafionego bohatera otrzymasz 40% prędkości ruchu, która zanika przez 3 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226631.png",
       "tier": "",
@@ -13858,8 +13858,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boski Łamacz"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + {{ Item_Melee_Ranged_Split_B }} target max Health physical damage {{ Item_Cooldown }}. If the target is a champion, also heal for 55% of the premitigation damage .\n{{ Item_Mythic_Passive }} 3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters. {{ Item_Melee_Ranged_Rules }}",
-        "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + {{ Item_Melee_Ranged_Split_B }} maks. zdrowia celu {{ Item_Cooldown }}. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń .\n{{ Item_Mythic_Passive }} 3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom. {{ Item_Melee_Ranged_Rules }}"
+        "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + target max Health physical damage. If the target is a champion, also heal for 55% of the premitigation damage.\n3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters.",
+        "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + maks. zdrowia celu. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń.\n3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226632.png",
       "tier": "",
@@ -13920,7 +13920,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "70 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nACTIVE\n(0s)\nGlaciate\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
-        "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni ."
+        "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226656.png",
       "tier": "",
@@ -13942,8 +13942,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Różdżka Wieków"
       },
       "descriptions": {
-        "en": "60 Ability Power\n350 Health\n300 Mana\nTimeless\nAfter 2 combat rounds , this item gains an additional 50 Ability Power , 300 Health , and 400 Mana , and you gain a level.\nEternity\nTaking damage from champions restores 7% of premitigation damage as Mana . Casting an ability heals for 25% of Mana spent, up to 20 Health per cast, per second.",
-        "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n300 pkt. many\nWiekuistość\nPo 2 rundach walki ten przedmiot zyskuje dodatkowo 50 pkt. mocy umiejętności , 300 pkt. zdrowia i 400 pkt. many , natomiast ty zdobywasz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 7% czystych otrzymanych obrażeń. Rzucenie umiejętności leczy o 25% zużytej many , maks. o 20 pkt. zdrowia na jedno użycie umiejętności, na sekundę."
+        "en": "60 Ability Power\n350 Health\n300 Mana\nTimeless\nAfter 2 combat rounds, this item gains an additional 50 Ability Power, 300 Health, and 400 Mana, and you gain a level.\nEternity\nTaking damage from champions restores 7% of premitigation damage as Mana. Casting an ability heals for 25% of Mana spent, up to 20 Health per cast, per second.",
+        "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n300 pkt. many\nWiekuistość\nPo 2 rundach walki ten przedmiot zyskuje dodatkowo 50 pkt. mocy umiejętności, 300 pkt. zdrowia i 400 pkt. many, natomiast ty zdobywasz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 7% czystych otrzymanych obrażeń. Rzucenie umiejętności leczy o 25% zużytej many, maks. o 20 pkt. zdrowia na jedno użycie umiejętności, na sekundę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226657.png",
       "tier": "",
@@ -13981,8 +13981,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lodowa Rękawica"
       },
       "descriptions": {
-        "en": "300 Health\n45 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows .",
-        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia ."
+        "en": "300 Health\n45 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows.",
+        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226662.png",
       "tier": "",
@@ -14087,8 +14087,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pogromca Krakenów"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n35% Attack Speed\n7% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit , increased based on their missing Health.",
-        "pl": "50 pkt. obrażeń od ataku\n35% prędkości ataku\n7% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu , zwiększonych w zależności od brakującego zdrowia."
+        "en": "50 Attack Damage\n35% Attack Speed\n7% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit, increased based on their missing Health.",
+        "pl": "50 pkt. obrażeń od ataku\n35% prędkości ataku\n7% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu, zwiększonych w zależności od brakującego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226672.png",
       "tier": "",
@@ -14144,8 +14144,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kolekcjoner"
       },
       "descriptions": {
-        "en": "45 Attack Damage\n12 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health .\nTaxes\nChampion kills grant 125 bonus gold .",
-        "pl": "45 pkt. obrażeń od ataku\n12 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia .\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 125 szt. złota ."
+        "en": "45 Attack Damage\n12 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 125 bonus gold.",
+        "pl": "45 pkt. obrażeń od ataku\n12 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 125 szt. złota."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226676.png",
       "tier": "",
@@ -14204,8 +14204,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szpon Ciemnego Typa"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage . For the next 3 seconds, you deal increased damage to the target.",
-        "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia . Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
+        "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage. For the next 3 seconds, you deal increased damage to the target.",
+        "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia. Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226693.png",
       "tier": "",
@@ -14262,8 +14262,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Aksjomatyczny Łuk"
       },
       "descriptions": {
-        "en": "45 Attack Damage\n18 Lethality\n20 Ability Haste\nApophthegm\nYour Ultimate Abilities deal 20% increased damage .",
-        "pl": "45 pkt. obrażeń od ataku\n18 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nApoftegm\nTwoje superumiejętności zadają o 20% więcej obrażeń ."
+        "en": "45 Attack Damage\n18 Lethality\n20 Ability Haste\nApophthegm\nYour Ultimate Abilities deal 20% increased damage.",
+        "pl": "45 pkt. obrażeń od ataku\n18 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nApoftegm\nTwoje superumiejętności zadają o 20% więcej obrażeń."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226696.png",
       "tier": "",
@@ -14281,7 +14281,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Pycha"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n18 Lethality\n10 Ability Haste\nEminence\nWhen a champion that you have damaged with the last 3 seconds dies, gain 15 Attack Damage for the rest of the round , or until slain. Eminence's Attack Damage is permanently increased by 2 each time this triggers.",
+        "en": "50 Attack Damage\n18 Lethality\n10 Ability Haste\nEminence\nWhen a champion that you have damaged with the last 3 seconds dies, gain 15 Attack Damage for the rest of the round, or until slain. Eminence's Attack Damage is permanently increased by 2 each time this triggers.",
         "pl": "50 pkt. obrażeń od ataku\n18 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nEminencja\nGdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., zyskujesz 15 pkt. obrażeń od ataku do końca rundy lub do momentu śmierci. Obrażenia od ataku przyznawane przez Eminencję na stałe wzrastają o 2 pkt. po każdej aktywacji tego efektu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226697.png",
@@ -14324,7 +14324,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "60 Attack Damage\n20 Lethality\n20 Ability Haste\nGalvanize\nDamaging an Enemy Champions with an ability triggers Energized if it is ready.\nFirmament\nYour Energized Attack deals % target's Current Health as bonus physical damage and grants you Lethality for 4 seconds.",
-        "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie , jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe 0% bieżącego zdrowia celu i zapewniają ci 0 pkt. destrukcji na 4 sek."
+        "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie, jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe 0% bieżącego zdrowia celu i zapewniają ci 0 pkt. destrukcji na 4 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226699.png",
       "tier": "",
@@ -14344,8 +14344,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Okazja"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n15 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality . This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
-        "pl": "50 pkt. obrażeń od ataku\n15 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję . Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
+        "en": "50 Attack Damage\n15 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality. This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
+        "pl": "50 pkt. obrażeń od ataku\n15 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję. Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226701.png",
       "tier": "",
@@ -14384,8 +14384,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wiedźmi Kapelusz Woogleta"
       },
       "descriptions": {
-        "en": "300 Ability Power\n50 Armor\n20 Ability Haste\nMagical Opus:\nIncreases your total Ability Power by 50% (0) .\nTime Stop\nEnter Stasis for 2.5 seconds.",
-        "pl": "300 pkt. mocy umiejętności\n50 pkt. pancerza\n20 jedn. przyspieszenia umiejętności\nMagiczne Dzieło:\nZwiększa twoją całkowitą moc umiejętności o 50% (0 pkt.) .\nZatrzymanie Czasu\nWchodzisz w stan inercji na 2.5 sek."
+        "en": "300 Ability Power\n50 Armor\n20 Ability Haste\nMagical Opus:\nIncreases your total Ability Power by 50% (0).\nTime Stop\nEnter Stasis for 2.5 seconds.",
+        "pl": "300 pkt. mocy umiejętności\n50 pkt. pancerza\n20 jedn. przyspieszenia umiejętności\nMagiczne Dzieło:\nZwiększa twoją całkowitą moc umiejętności o 50% (0 pkt.).\nZatrzymanie Czasu\nWchodzisz w stan inercji na 2.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228002.png",
       "tier": "",
@@ -14422,8 +14422,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Specjalistyczny Hełm"
       },
       "descriptions": {
-        "en": "800 Health\n50 Armor\n100 Magic Resist\nVoidborn Resilience:\nFor each second in champion combat gain a stack granting 2 Armor and Magic Resist , up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage (healing you for the same amount), and increasing your bonus resists by 20% until end of combat. The drain repeats every 4s as long as you stay in combat. Absorb:\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 8) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks. Dissipate:\nWhile at 8 stacks of Steadfast , gain 50 Magic Resist and 14% increased Move Speed.\nOne spell can add a new stack of Steadfast every 1 second.",
-        "pl": "800 pkt. zdrowia\n50 pkt. pancerza\n100 pkt. odporności na magię\nWytrzymałość Dzieci Pustki:\nZa każdą sekundę w walce z bohaterami zyskujesz ładunek zapewniający 2 pkt. pancerza i odporności na magię . Maksymalna liczba ładunków: 8. Po osiągnięciu maksymalnej liczby ładunków przedmiot zostaje wzmocniony, natychmiast czerpiąc zdrowie od pobliskich wrogów, zadając im obrażenia magiczne i lecząc cię o taką samą wartość, oraz zwiększa twój dodatkowy pancerz i odporność na magię o 20% do końca walki. Czerpanie powtarza się co 4 sek. dopóki pozostajesz w walce. Pochłonięcie:\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 8) na 7 sek. Wrogie efekty unieruchamiające zapewniają następującą liczbę dodatkowych ładunków: 2. Rozproszenie:\nMając następującą liczbę ładunków: 8 Niewzruszenia , zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu.\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
+        "en": "800 Health\n50 Armor\n100 Magic Resist\nVoidborn Resilience:\nFor each second in champion combat gain a stack granting 2 Armor and Magic Resist, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage (healing you for the same amount), and increasing your bonus resists by 20% until end of combat. The drain repeats every 4s as long as you stay in combat. Absorb:\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 8) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks. Dissipate:\nWhile at 8 stacks of Steadfast, gain 50 Magic Resist and 14% increased Move Speed.\nOne spell can add a new stack of Steadfast every 1 second.",
+        "pl": "800 pkt. zdrowia\n50 pkt. pancerza\n100 pkt. odporności na magię\nWytrzymałość Dzieci Pustki:\nZa każdą sekundę w walce z bohaterami zyskujesz ładunek zapewniający 2 pkt. pancerza i odporności na magię. Maksymalna liczba ładunków: 8. Po osiągnięciu maksymalnej liczby ładunków przedmiot zostaje wzmocniony, natychmiast czerpiąc zdrowie od pobliskich wrogów, zadając im obrażenia magiczne i lecząc cię o taką samą wartość, oraz zwiększa twój dodatkowy pancerz i odporność na magię o 20% do końca walki. Czerpanie powtarza się co 4 sek. dopóki pozostajesz w walce. Pochłonięcie:\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 8) na 7 sek. Wrogie efekty unieruchamiające zapewniają następującą liczbę dodatkowych ładunków: 2. Rozproszenie:\nMając następującą liczbę ładunków: 8 Niewzruszenia, zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu.\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228004.png",
       "tier": "",
@@ -14524,8 +14524,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Maska Otchłani"
       },
       "descriptions": {
-        "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage .",
-        "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nZatracenie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych ."
+        "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
+        "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nZatracenie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228020.png",
       "tier": "",
@@ -14568,8 +14568,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szepczący Diadem"
       },
       "descriptions": {
-        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana .",
-        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many ."
+        "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana.",
+        "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322526.png",
       "tier": "",
@@ -14607,8 +14607,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przecieracz Szlaków"
       },
       "descriptions": {
-        "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed .\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
-        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu .\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
+        "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
+        "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323002.png",
       "tier": "",
@@ -14626,8 +14626,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kostur Archanioła"
       },
       "descriptions": {
-        "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 9.5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana .",
-        "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 9.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many ."
+        "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 9.5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana.",
+        "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 9.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323003.png",
       "tier": "",
@@ -14645,8 +14645,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Manamune"
       },
       "descriptions": {
-        "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage .\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 6.5 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana .",
-        "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many ."
+        "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 6.5 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana.",
+        "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323004.png",
       "tier": "",
@@ -14666,8 +14666,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uścisk Serafina"
       },
       "descriptions": {
-        "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power .\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
-        "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności .\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
+        "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power.\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
+        "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323040.png",
       "tier": "",
@@ -14685,8 +14685,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Muramana"
       },
       "descriptions": {
-        "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage .\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit .\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage .",
-        "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku .\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu .\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne ."
+        "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage.\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit.\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage.",
+        "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku.\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu.\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323042.png",
       "tier": "",
@@ -14726,8 +14726,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Łza Bogini"
       },
       "descriptions": {
-        "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 6.5 max Mana (doubled vs. champions), up to 360 .\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
-        "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt .\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
+        "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 6.5 max Mana (doubled vs. champions), up to 360.\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
+        "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt.\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323070.png",
       "tier": "",
@@ -14763,7 +14763,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "30 Ability Power\n15 Ability Haste\n100% Base Mana Regen\n10% Heal and Shield Power\nIntervention\nRestore 150 - 350 Health to allied units and deal 10% max Health true damage to enemy champions after 2.5 seconds.",
-        "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia ."
+        "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323107.png",
       "tier": "",
@@ -14782,7 +14782,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przysięga Rycerska"
       },
       "descriptions": {
-        "en": "300 Health\n50 Armor\n10 Ability Haste\n150% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy .",
+        "en": "300 Health\n50 Armor\n10 Ability Haste\n150% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy.",
         "pl": "300 pkt. zdrowia\n50 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji zdrowia\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 14% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom. Ślubowanie\n(0 sek.)\nWyznacz Godnego sojusznika."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323109.png",
@@ -14805,8 +14805,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mroźne Serce"
       },
       "descriptions": {
-        "en": "75 Armor\n500 Mana\n25 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20% .",
-        "pl": "75 pkt. pancerza\n500 pkt. many\n25 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20% ."
+        "en": "75 Armor\n500 Mana\n25 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20%.",
+        "pl": "75 pkt. pancerza\n500 pkt. many\n25 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323110.png",
       "tier": "",
@@ -14826,8 +14826,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nadejście Zimy"
       },
       "descriptions": {
-        "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health .\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 6.5 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana .",
-        "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia .\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many ."
+        "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 6.5 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana.",
+        "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323119.png",
       "tier": "",
@@ -14845,8 +14845,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wielka Zima"
       },
       "descriptions": {
-        "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health .\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
-        "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia .\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
+        "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health.\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
+        "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323121.png",
       "tier": "",
@@ -14887,8 +14887,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Błogosławieństwo Mikaela"
       },
       "descriptions": {
-        "en": "400 Health\n100% Base Mana Regen\n15% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health .",
-        "pl": "400 pkt. zdrowia\n100% podstawowej regeneracji many\n15% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia ."
+        "en": "400 Health\n100% Base Mana Regen\n15% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health.",
+        "pl": "400 pkt. zdrowia\n100% podstawowej regeneracji many\n15% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323222.png",
       "tier": "",
@@ -14909,8 +14909,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognisty Trybularz"
       },
       "descriptions": {
-        "en": "55 Ability Power\n10% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit .",
-        "pl": "55 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu ."
+        "en": "55 Ability Power\n10% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit.",
+        "pl": "55 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323504.png",
       "tier": "",
@@ -14930,7 +14930,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "65 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 20 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 7% Vulnerable for 4 seconds.",
-        "pl": "65 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi .\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
+        "pl": "65 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/324005.png",
       "tier": "",
@@ -14990,8 +14990,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Echa Helii"
       },
       "descriptions": {
-        "en": "35 Ability Power\n250 Health\n20 Ability Haste\n150% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health .",
-        "pl": "35 pkt. mocy umiejętności\n250 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy\n, by przywrócić zdrowie ."
+        "en": "35 Ability Power\n250 Health\n20 Ability Haste\n150% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health.",
+        "pl": "35 pkt. mocy umiejętności\n250 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy, by przywrócić zdrowie."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326620.png",
       "tier": "",
@@ -15029,8 +15029,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Różdżka Wieków"
       },
       "descriptions": {
-        "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health , 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana .\nCasting an ability heals for 25% of Mana spent.",
-        "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia , 30 pkt. many i 3 pkt. mocy umiejętności , do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń .\nRzucenie umiejętności leczy o 25% wydanej many."
+        "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health, 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana.\nCasting an ability heals for 25% of Mana spent.",
+        "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia, 30 pkt. many i 3 pkt. mocy umiejętności, do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326657.png",
       "tier": "",
@@ -15050,8 +15050,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Maska Otchłani"
       },
       "descriptions": {
-        "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage .",
-        "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych ."
+        "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
+        "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/328020.png",
       "tier": "",
@@ -15090,8 +15090,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zagrzmienie"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n45% Attack Speed\n15% Move Speed\nPolarity\nOn Attack, if the target is different from the target you most recently triggered an Energized Attack on, ready Energize.\nDynamo\nEnergized Attacks deal an additional magic damage based on the Target's Current Health .",
-        "pl": "55 pkt. obrażeń od ataku\n45% prędkości ataku\n15% prędkości ruchu\nBiegunowość\nPrzy ataku, jeśli cel jest inny niż cel, który otrzymał twój poprzedni Naładowany atak , przygotuj Naładowanie.\nDynamo\nNaładowane ataki zadają dodatkowe obrażenia magiczne zależne od bieżącego zdrowia celu ."
+        "en": "55 Attack Damage\n45% Attack Speed\n15% Move Speed\nPolarity\nOn Attack, if the target is different from the target you most recently triggered an Energized Attack on, ready Energize.\nDynamo\nEnergized Attacks deal an additional magic damage based on the Target's Current Health.",
+        "pl": "55 pkt. obrażeń od ataku\n45% prędkości ataku\n15% prędkości ruchu\nBiegunowość\nPrzy ataku, jeśli cel jest inny niż cel, który otrzymał twój poprzedni Naładowany atak, przygotuj Naładowanie.\nDynamo\nNaładowane ataki zadają dodatkowe obrażenia magiczne zależne od bieżącego zdrowia celu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443055.png",
       "tier": "prismatic",
@@ -15109,8 +15109,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Korona Demonicznego Króla"
       },
       "descriptions": {
-        "en": "Supremacy\nIncreases your Health , Armor , Magic Resist , Attack Damage , Ability Power , Attack Speed , increased by 0% per round win and -3% each round lost after acquiring this item.",
-        "pl": "Supremacja\nZwiększa twoje zdrowie , pancerz , odporność na magię , obrażenia od ataku , moc umiejętności i prędkość ataku o %. Wartość wzrasta o 0% za każdą wygraną rundę oraz o -3% za każdą przegraną rundę, licząc od momentu zakupienia tego przedmiotu."
+        "en": "Supremacy\nIncreases your Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, increased by 0% per round win and -3% each round lost after acquiring this item.",
+        "pl": "Supremacja\nZwiększa twoje zdrowie, pancerz, odporność na magię, obrażenia od ataku, moc umiejętności i prędkość ataku o %. Wartość wzrasta o 0% za każdą wygraną rundę oraz o -3% za każdą przegraną rundę, licząc od momentu zakupienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443056.png",
       "tier": "prismatic",
@@ -15151,7 +15151,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "300 Health\n100 Magic Resist\nLimitless as the Stars\nIncrease your Magic Resist by 20%. Reduce all damage you take from non-Basic Attack sources by a percentage, scaling with your Magic Resist up to a cap of 50%.",
-        "pl": "300 pkt. zdrowia\n100 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 20%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię , do maks. 50%."
+        "pl": "300 pkt. zdrowia\n100 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 20%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię, do maks. 50%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443059.png",
       "tier": "prismatic",
@@ -15168,8 +15168,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boski Miecz"
       },
       "descriptions": {
-        "en": "110 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage , scaling up to 50% of your Critical Strike Chance.",
-        "pl": "110 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego , które skalują się do 50% twojej szansy na trafienie krytyczne."
+        "en": "110 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage, scaling up to 50% of your Critical Strike Chance.",
+        "pl": "110 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego, które skalują się do 50% twojej szansy na trafienie krytyczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443060.png",
       "tier": "prismatic",
@@ -15188,7 +15188,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "900 Health\n30 Ability Haste\n25% Critical Strike Chance\nAtrophy\nWhen you Immobilizing a target roll your Critical Chance to increase their duration by 0.25 +33% seconds.",
-        "pl": "900 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nAtrofia\nGdy unieruchamiasz cel, wykonujesz rzut na szansę na trafienie krytyczne , aby wydłużyć czas działania efektu o 0.25 + 33% sek."
+        "pl": "900 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nAtrofia\nGdy unieruchamiasz cel, wykonujesz rzut na szansę na trafienie krytyczne, aby wydłużyć czas działania efektu o 0.25 + 33% sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443061.png",
       "tier": "prismatic",
@@ -15226,8 +15226,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Cud Eleisy"
       },
       "descriptions": {
-        "en": "50 Armor\n50 Magic Resist\n25 Ability Haste\nEnduring Vitality\nGain +2.5% Heal and Shield Power per 100 Missing Health , up to 60%.",
-        "pl": "50 pkt. pancerza\n50 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nZahartowana Żywotność\nZyskujesz +2.5% siły leczenia i tarcz za każde 100 pkt. brakującego zdrowia , maksymalnie 60%."
+        "en": "50 Armor\n50 Magic Resist\n25 Ability Haste\nEnduring Vitality\nGain +2.5% Heal and Shield Power per 100 Missing Health, up to 60%.",
+        "pl": "50 pkt. pancerza\n50 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nZahartowana Żywotność\nZyskujesz +2.5% siły leczenia i tarcz za każde 100 pkt. brakującego zdrowia, maksymalnie 60%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443063.png",
       "tier": "prismatic",
@@ -15245,8 +15245,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Talizman Wstąpienia"
       },
       "descriptions": {
-        "en": "? Attack Damage\n? Attack Speed\n? Critical Strike Chance\n? Critical Strike Damage\n? Ability Power\n? Ability Haste\n? Health\n?% Base Health Regen\n? Mana\n?% Base Mana Regen\n? Armor\n? Magic Resist\n? || ?% Lethality and Armor Penetration\n? || ?% Magic Penetration\n?% Lifesteal\n?% Omnivamp\n? || ?% Move Speed\n?% Heal and Shield Power\nACTIVE\nImbricate\nRe-roll the stats on Talisman of Ascension. Each time you do so, the stats get stronger. Twice Per Round (Thrice with Apex Inventor).",
-        "pl": "? Obrażenia od ataku\n? Prędkość ataku\n? Szansa na trafienie krytyczne\n? Obrażenia trafienia krytycznego\n? Moc umiejętności\n? Przyspieszenie umiejętności\n? Zdrowie\n?% Podstawowa regeneracja zdrowia\n? Mana\n?% Podstawowa regeneracja many\n? Pancerz\n? Odporność na magię\n? || ?% Destrukcja i przebicie pancerza\n? || ?% Przebicie odporności na magię\n?% Kradzież życia\n?% Wszechwampiryzm\n? || ?% Prędkość ruchu\n?% Siła leczenia i tarcz\nUŻYCIE\nNa Zakładkę\nWymień statystyki Talizmanu Wstąpienia. Z każdą wymianą statystyki stają się silniejsze. Dwa razy na rundę (trzy razy w przypadku posiadania Genialnego Wynalazcy)."
+        "en": "? Attack Damage? Attack Speed? Critical Strike Chance? Critical Strike Damage? Ability Power? Ability Haste? Health?% Base Health Regen? Mana?% Base Mana Regen? Armor? Magic Resist? ||?% Lethality and Armor Penetration? ||?% Magic Penetration?% Lifesteal?% Omnivamp? ||?% Move Speed?% Heal and Shield Power\nACTIVE\nImbricate\nRe-roll the stats on Talisman of Ascension. Each time you do so, the stats get stronger. Twice Per Round (Thrice with Apex Inventor).",
+        "pl": "? Obrażenia od ataku? Prędkość ataku? Szansa na trafienie krytyczne? Obrażenia trafienia krytycznego? Moc umiejętności? Przyspieszenie umiejętności? Zdrowie?% Podstawowa regeneracja zdrowia? Mana?% Podstawowa regeneracja many? Pancerz? Odporność na magię? ||?% Destrukcja i przebicie pancerza? ||?% Przebicie odporności na magię?% Kradzież życia?% Wszechwampiryzm? ||?% Prędkość ruchu?% Siła leczenia i tarcz\nUŻYCIE\nNa Zakładkę\nWymień statystyki Talizmanu Wstąpienia. Z każdą wymianą statystyki stają się silniejsze. Dwa razy na rundę (trzy razy w przypadku posiadania Genialnego Wynalazcy)."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443064.png",
       "tier": "prismatic",
@@ -15299,8 +15299,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Turbochemiczny Pojemnik"
       },
       "descriptions": {
-        "en": "600 Health\n80 Adaptive Force\nIgnore the next time you are Immobilized , instead dropping a chemical cannister nearby (s Cooldown). Picking up the cannister reduces the Cooldown by 15 seconds and restores 4% max Health . Enemies stepping on the cannister destroy it.",
-        "pl": "600 pkt. zdrowia\n80 pkt. siły adaptacyjnej\nZignoruj następne unieruchomienie , upuszczając w pobliżu pojemnik z chemikaliami (czas odnowienia: 0 sek.). Podniesienie kanistra skraca czas odnowienia o 15 sek. i przywraca 4% maks. zdrowia . Wrogowie, którzy nadepną na kanister, niszczą go."
+        "en": "600 Health\n80 Adaptive Force\nIgnore the next time you are Immobilized, instead dropping a chemical cannister nearby (s Cooldown). Picking up the cannister reduces the Cooldown by 15 seconds and restores 4% max Health. Enemies stepping on the cannister destroy it.",
+        "pl": "600 pkt. zdrowia\n80 pkt. siły adaptacyjnej\nZignoruj następne unieruchomienie, upuszczając w pobliżu pojemnik z chemikaliami (czas odnowienia: 0 sek.). Podniesienie kanistra skraca czas odnowienia o 15 sek. i przywraca 4% maks. zdrowia. Wrogowie, którzy nadepną na kanister, niszczą go."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443079.png",
       "tier": "prismatic",
@@ -15318,8 +15318,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bliźniacza Maska"
       },
       "descriptions": {
-        "en": "Unanimity\nGain a percent of your teammate's Health , Armor , Magic Resist , Attack Damage , Ability Power , Attack Speed , and Ability Haste, increased significantly if they also have Twin Mask and are alive.",
-        "pl": "Jednomyślność\nZyskujesz określony procent zdrowia , pancerza , odporności na magię , obrażeń od ataku , mocy umiejętności , prędkości ataku i przyspieszenia umiejętności swojego współgracza. Efekt znacząco wzrasta, jeśli współgracz również posiada Bliźniaczą Maskę i żyje."
+        "en": "Unanimity\nGain a percent of your teammate's Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, and Ability Haste, increased significantly if they also have Twin Mask and are alive.",
+        "pl": "Jednomyślność\nZyskujesz określony procent zdrowia, pancerza, odporności na magię, obrażeń od ataku, mocy umiejętności, prędkości ataku i przyspieszenia umiejętności swojego współgracza. Efekt znacząco wzrasta, jeśli współgracz również posiada Bliźniaczą Maskę i żyje."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443080.png",
       "tier": "prismatic",
@@ -15341,8 +15341,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Hexpiorunujący Towarzysz"
       },
       "descriptions": {
-        "en": "70 Attack Damage\n50% Attack Speed\n6% Move Speed\nCovering Fire\nEvery 10 seconds, Autocast fires a bolt towards a nearby target, dealing physical damage and applying On-Hit effects.\nEnergized\nMoving and Attacking generates an Energized Attack .\nUnload\nYour Energized Attacks trigger your Autocast effects.",
-        "pl": "70 pkt. obrażeń od ataku\n50% prędkości ataku\n6% prędkości ruchu\nOgień Osłonowy\nCo 10 sek. automatycznie wystrzeliwuje pocisk w kierunku pobliskiego celu, zadając 0 pkt. obrażeń fizycznych i nakładając efekty przy trafieniu .\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak .\nRozładowanie\nTwoje naładowane ataki aktywują efekty automatycznego użycia ."
+        "en": "70 Attack Damage\n50% Attack Speed\n6% Move Speed\nCovering Fire\nEvery 10 seconds, Autocast fires a bolt towards a nearby target, dealing physical damage and applying On-Hit effects.\nEnergized\nMoving and Attacking generates an Energized Attack.\nUnload\nYour Energized Attacks trigger your Autocast effects.",
+        "pl": "70 pkt. obrażeń od ataku\n50% prędkości ataku\n6% prędkości ruchu\nOgień Osłonowy\nCo 10 sek. automatycznie wystrzeliwuje pocisk w kierunku pobliskiego celu, zadając 0 pkt. obrażeń fizycznych i nakładając efekty przy trafieniu.\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nRozładowanie\nTwoje naładowane ataki aktywują efekty automatycznego użycia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443081.png",
       "tier": "prismatic",
@@ -15360,8 +15360,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Plemienna Zbroja"
       },
       "descriptions": {
-        "en": "1100 Health\n4% Move Speed\nWarmog's Heart\nRequires 1350 bonus Health .\nRestore Health per second. If you have not taken damage within 4 seconds, restore an additional Health per second.",
-        "pl": "1100 pkt. zdrowia\n4% prędkości ruchu\nSerce Plemienia\nWymaga 1350 pkt. dodatkowego zdrowia .\nPrzywraca 0 pkt. zdrowia co sekundę. Jeśli przez 4 sek. nie zadano ci obrażeń, odzyskujesz dodatkowo 0 pkt. zdrowia co sekundę."
+        "en": "1100 Health\n4% Move Speed\nWarmog's Heart\nRequires 1350 bonus Health.\nRestore Health per second. If you have not taken damage within 4 seconds, restore an additional Health per second.",
+        "pl": "1100 pkt. zdrowia\n4% prędkości ruchu\nSerce Plemienia\nWymaga 1350 pkt. dodatkowego zdrowia.\nPrzywraca 0 pkt. zdrowia co sekundę. Jeśli przez 4 sek. nie zadano ci obrażeń, odzyskujesz dodatkowo 0 pkt. zdrowia co sekundę."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443083.png",
       "tier": "prismatic",
@@ -15379,7 +15379,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zapłata Żniwiarza"
       },
       "descriptions": {
-        "en": "40 Adaptive Force\n50% Attack Speed\n5% Move Speed\nSow\nIncrease your Attack Speed from all sources by 15%.\nReap\nOn-Hit , deal max Health true damage , and reduce their Max Health by the damage dealt for the rest of the round. Consecutive hits against the same enemy increase this amount by 0.1%.",
+        "en": "40 Adaptive Force\n50% Attack Speed\n5% Move Speed\nSow\nIncrease your Attack Speed from all sources by 15%.\nReap\nOn-Hit, deal max Health true damage, and reduce their Max Health by the damage dealt for the rest of the round. Consecutive hits against the same enemy increase this amount by 0.1%.",
         "pl": "40 pkt. siły adaptacyjnej\n50% prędkości ataku\n5% prędkości ruchu\nWysiew\nZwiększa twoją prędkość ataku ze wszystkich źródeł o 15%.\nSkoszenie\nprzy trafieniu zadaje obrażenia nieuchronne zależne od maksymalnego zdrowia i do końca rundy zmniejsza maksymalne zdrowie celu o wartość zadanych obrażeń. Następujące po sobie trafienia w tego samego wroga zwiększają tę wartość o 0.1%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443090.png",
@@ -15442,8 +15442,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Demoniczny Uścisk"
       },
       "descriptions": {
-        "en": "80 Ability Power\n700 Health\nSinister Pact\nGain +1.5% Ability Power and 1.5% Move Speed per 100 Missing Health , up to 45%.",
-        "pl": "80 pkt. mocy umiejętności\n700 pkt. zdrowia\nZłowrogi Pakt\nZyskujesz +1.5% mocy umiejętności i 1.5% prędkości ruchu za każde 100 pkt. brakującego zdrowia , maks. 45%."
+        "en": "80 Ability Power\n700 Health\nSinister Pact\nGain +1.5% Ability Power and 1.5% Move Speed per 100 Missing Health, up to 45%.",
+        "pl": "80 pkt. mocy umiejętności\n700 pkt. zdrowia\nZłowrogi Pakt\nZyskujesz +1.5% mocy umiejętności i 1.5% prędkości ruchu za każde 100 pkt. brakującego zdrowia, maks. 45%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444637.png",
       "tier": "prismatic",
@@ -15460,8 +15460,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Korona Roztrzaskanej Królowej"
       },
       "descriptions": {
-        "en": "85 Ability Power\n350 Health\n600 Mana\n25 Ability Haste\nSafeguard\nYou are Safeguarded , reducing incoming champion damage by 90%. Safeguard persists for 1.25 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
-        "pl": "85 pkt. mocy umiejętności\n350 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę , która zmniejsza obrażenia otrzymywane od bohaterów o 90%. Osłona utrzymuje się przez 1.25 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
+        "en": "85 Ability Power\n350 Health\n600 Mana\n25 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 90%. Safeguard persists for 1.25 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
+        "pl": "85 pkt. mocy umiejętności\n350 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 90%. Osłona utrzymuje się przez 1.25 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444644.png",
       "tier": "prismatic",
@@ -15480,8 +15480,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boski Łamacz"
       },
       "descriptions": {
-        "en": "55 Attack Damage\n350 Health\n20 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack is enhanced with additional damage. If the target is a champion, also heal .",
-        "pl": "55 pkt. obrażeń od ataku\n350 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia. Jeśli cel jest bohaterem, uleczysz się ."
+        "en": "55 Attack Damage\n350 Health\n20 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack is enhanced with additional damage. If the target is a champion, also heal.",
+        "pl": "55 pkt. obrażeń od ataku\n350 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia. Jeśli cel jest bohaterem, uleczysz się."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446632.png",
       "tier": "prismatic",
@@ -15504,7 +15504,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "100 Ability Power\n250 Health\n600 Mana\n25 Ability Haste\nACTIVE\n(0s)\nGlaciate\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
-        "pl": "100 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni ."
+        "pl": "100 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446656.png",
       "tier": "prismatic",
@@ -15526,8 +15526,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Świetlista Cnota"
       },
       "descriptions": {
-        "en": "400 Health\n35 Armor\n35 Magic Resist\n12% Heal and Shield Power\nJudgement\nGain 30 Ultimate Haste.\nGuiding Light\nUpon casting your Ultimate you Transcend , increasing your Max Health by for 9 seconds. While Transcended , you and allies within 5000 range of you heal for () over the duration (0s).",
-        "pl": "400 pkt. zdrowia\n35 pkt. pancerza\n35 pkt. odporności na magię\n12% siły leczenia i tarcz\nOsąd\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nPrzewodnie Światło\nPo użyciu superumiejętności zyskujesz Transcendencję , zwiększając swoje maksymalne zdrowie o 0 pkt. na 9 sek. Podczas trwania Transcendencji ty i twoi sojusznicy znajdujący się w zasięgu 5000 jedn. leczycie się o 0 pkt. () (0 sek.)."
+        "en": "400 Health\n35 Armor\n35 Magic Resist\n12% Heal and Shield Power\nJudgement\nGain 30 Ultimate Haste.\nGuiding Light\nUpon casting your Ultimate you Transcend, increasing your Max Health by for 9 seconds. While Transcended, you and allies within 5000 range of you heal for over the duration (0s).",
+        "pl": "400 pkt. zdrowia\n35 pkt. pancerza\n35 pkt. odporności na magię\n12% siły leczenia i tarcz\nOsąd\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nPrzewodnie Światło\nPo użyciu superumiejętności zyskujesz Transcendencję, zwiększając swoje maksymalne zdrowie o 0 pkt. na 9 sek. Podczas trwania Transcendencji ty i twoi sojusznicy znajdujący się w zasięgu 5000 jedn. leczycie się o 0 pkt. (0 sek.)."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446667.png",
       "tier": "prismatic",
@@ -15569,7 +15569,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Mroczne Ostrze Draktharru"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n20 Lethality\n20 Ability Haste\nNightstalker\nYour Abilities deal up to an additional percent damage based on the target's missing health . When a champion that you have damaged within the last 3 seconds dies, you become Untargetable from non-structures for 1.5 seconds (0s).",
+        "en": "50 Attack Damage\n20 Lethality\n20 Ability Haste\nNightstalker\nYour Abilities deal up to an additional percent damage based on the target's missing health. When a champion that you have damaged within the last 3 seconds dies, you become Untargetable from non-structures for 1.5 seconds (0s).",
         "pl": "50 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nNocny Drapieżca\nTwoje umiejętności zadają dodatkową wartość procentową obrażeń zależną od brakującego zdrowia celu. Gdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jednostki niebędące budowlami nie mogą obrać cię za cel przez 1,5 sek. (0 sek.)."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446691.png",
@@ -15591,8 +15591,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szpon Ciemnego Typa"
       },
       "descriptions": {
-        "en": "60 Attack Damage\n20 Lethality\n20 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage . For the next 3 seconds, you deal increased damage to the target.",
-        "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia . Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
+        "en": "60 Attack Damage\n20 Lethality\n20 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage. For the next 3 seconds, you deal increased damage to the target.",
+        "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia. Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446693.png",
       "tier": "",
@@ -15633,7 +15633,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "70% Attack Speed\n40 Ability Haste\n8% Move Speed\nMoney In The Bank\nYour Attacks and Abilities have a 12% chance to bank between 30 and 245 Gold when they hit an enemy. On Round Win, cash out. On Round Lose, lose 25% of your bank.",
-        "pl": "70% prędkości ataku\n40 jedn. przyspieszenia umiejętności\n8% prędkości ruchu\nKasa na Koncie\nTwoje ataki i umiejętności przy każdym trafieniu wroga mają 12% szansy na zachowanie od 30 do 245 szt. złota . Po wygranej rundzie złoto jest wypłacane. Po przegranej rundzie tracisz 25% zgromadzonej sumy."
+        "pl": "70% prędkości ataku\n40 jedn. przyspieszenia umiejętności\n8% prędkości ruchu\nKasa na Koncie\nTwoje ataki i umiejętności przy każdym trafieniu wroga mają 12% szansy na zachowanie od 30 do 245 szt. złota. Po wygranej rundzie złoto jest wypłacane. Po przegranej rundzie tracisz 25% zgromadzonej sumy."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447101.png",
       "tier": "prismatic",
@@ -15670,8 +15670,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Hełm Hemomanty"
       },
       "descriptions": {
-        "en": "70 Attack Damage\n30 Ability Haste\n15% Omnivamp\nScarlet Allegiance\nThreshold 30% Lifesteal/Omnivamp : Gain 500 Max Health . Drain 10% of all damage nearby enemies take.",
-        "pl": "70 pkt. obrażeń od ataku\n30 jedn. przyspieszenia umiejętności\n15% wszechwampiryzmu\nSzkarłatny Hołd\nPróg 30% kradzieży życia / wszechwampiryzmu : Zyskujesz 500 pkt. maksymalnego zdrowia . Czerpiesz 10% wszystkich obrażeń otrzymywanych przez pobliskich wrogów."
+        "en": "70 Attack Damage\n30 Ability Haste\n15% Omnivamp\nScarlet Allegiance\nThreshold 30% Lifesteal/Omnivamp: Gain 500 Max Health. Drain 10% of all damage nearby enemies take.",
+        "pl": "70 pkt. obrażeń od ataku\n30 jedn. przyspieszenia umiejętności\n15% wszechwampiryzmu\nSzkarłatny Hołd\nPróg 30% kradzieży życia / wszechwampiryzmu: Zyskujesz 500 pkt. maksymalnego zdrowia. Czerpiesz 10% wszystkich obrażeń otrzymywanych przez pobliskich wrogów."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447103.png",
       "tier": "prismatic",
@@ -15689,8 +15689,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wzmacniający Medalion"
       },
       "descriptions": {
-        "en": "70 Ability Power\n20 Ability Haste\n200 Health\nFill the Soul\nAny Ability cast within 800 range grants you a charge.\nAt 30 charges, gain Shield , Ability Power , and Move Speed for the rest of the round.",
-        "pl": "70 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n200 pkt. zdrowia\nNapełnienie Duszy\nKażda umiejętność użyta w obrębie 800 jedn. zapewnia ładunek.\nPrzy 30 ładunkach zyskujesz tarczę o wytrzymałości 0 pkt. , 0 pkt. mocy umiejętności i 0 jedn. prędkości ruchu do końca rundy."
+        "en": "70 Ability Power\n20 Ability Haste\n200 Health\nFill the Soul\nAny Ability cast within 800 range grants you a charge.\nAt 30 charges, gain Shield, Ability Power, and Move Speed for the rest of the round.",
+        "pl": "70 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n200 pkt. zdrowia\nNapełnienie Duszy\nKażda umiejętność użyta w obrębie 800 jedn. zapewnia ładunek.\nPrzy 30 ładunkach zyskujesz tarczę o wytrzymałości 0 pkt., 0 pkt. mocy umiejętności i 0 jedn. prędkości ruchu do końca rundy."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447104.png",
       "tier": "prismatic",
@@ -15727,8 +15727,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Smocze Serce"
       },
       "descriptions": {
-        "en": "Inner Flame\nIncreases your Health , Armor , Magic Resist , Attack Damage , Ability Power , Attack Speed , and Ability Haste by 4% per Dragon Soul you possess.\nEvery 2 rounds, gain a Dragon Soul.\nIf you already have every elemental soul and would gain another, an ancient power awakens within...\nWhen purchased, if it is past round 5, immediately gain 1 soul, plus 1 for every 2 rounds beyond round 5.",
-        "pl": "Wewnętrzny Płomień\nZwiększa twoje zdrowie , pancerz , odporność na magię , obrażenia od ataku , moc umiejętności , prędkość ataku i przyspieszenie umiejętności o 4% za każdą posiadaną Duszę Smoka.\nCo 2 rundy zyskujesz Duszę Smoka.\nJeśli posiadasz już duszę każdego żywiołu, w twoim wnętrzu budzi się pradawna moc…\nW przypadku zakupienia po rundzie 5. natychmiast zyskujesz 1 Duszę plus 1 Duszę za każde 2 rundy liczone po rundzie 5."
+        "en": "Inner Flame\nIncreases your Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, and Ability Haste by 4% per Dragon Soul you possess.\nEvery 2 rounds, gain a Dragon Soul.\nIf you already have every elemental soul and would gain another, an ancient power awakens within...\nWhen purchased, if it is past round 5, immediately gain 1 soul, plus 1 for every 2 rounds beyond round 5.",
+        "pl": "Wewnętrzny Płomień\nZwiększa twoje zdrowie, pancerz, odporność na magię, obrażenia od ataku, moc umiejętności, prędkość ataku i przyspieszenie umiejętności o 4% za każdą posiadaną Duszę Smoka.\nCo 2 rundy zyskujesz Duszę Smoka.\nJeśli posiadasz już duszę każdego żywiołu, w twoim wnętrzu budzi się pradawna moc…\nW przypadku zakupienia po rundzie 5. natychmiast zyskujesz 1 Duszę plus 1 Duszę za każde 2 rundy liczone po rundzie 5."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447106.png",
       "tier": "prismatic",
@@ -15770,8 +15770,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Strugacz Run"
       },
       "descriptions": {
-        "en": "80 Ability Power\n20 Ability Haste\n4% Move Speed\nHelix\nMoving, attacking, and dealing damage with an ability grants 30 Energized stacks and triggers Energized Actions if it is ready.\nSpiral Out\nOn Energized Action , gain a Rune stack for the rest of the round. Then fire a missile at the target for each Rune stack, dealing magic damage .",
-        "pl": "80 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\nHelisa\nPoruszanie się, atakowanie i zadawanie obrażeń za pomocą umiejętności zapewnia następującą liczbę ładunków naładowania: 30 i aktywuje naładowane działania , jeśli są one gotowe.\nSpirala\nPrzy naładowanym działaniu zyskujesz ładunek Runy do końca rundy. Następnie wystrzeliwujesz w cel pocisk za każdy ładunek Runy , zadając 0 pkt. obrażeń magicznych ."
+        "en": "80 Ability Power\n20 Ability Haste\n4% Move Speed\nHelix\nMoving, attacking, and dealing damage with an ability grants 30 Energized stacks and triggers Energized Actions if it is ready.\nSpiral Out\nOn Energized Action, gain a Rune stack for the rest of the round. Then fire a missile at the target for each Rune stack, dealing magic damage.",
+        "pl": "80 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\nHelisa\nPoruszanie się, atakowanie i zadawanie obrażeń za pomocą umiejętności zapewnia następującą liczbę ładunków naładowania: 30 i aktywuje naładowane działania, jeśli są one gotowe.\nSpirala\nPrzy naładowanym działaniu zyskujesz ładunek Runy do końca rundy. Następnie wystrzeliwujesz w cel pocisk za każdy ładunek Runy, zadając 0 pkt. obrażeń magicznych."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447108.png",
       "tier": "prismatic",
@@ -15808,7 +15808,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "85 Ability Power\n400 Health\n30% Tenacity\nRelentless\nWhen you use an Ability, reset your auto attack timer and gain 90% Attack Speed for your next 2 Attacks.\nWhen you Attack, reduce your non-Dash and Blink Abilities Ability Cooldowns by 0.5 seconds.",
-        "pl": "85 pkt. mocy umiejętności\n400 pkt. zdrowia\n30% nieustępliwości\nBezwzględność\n: Użycie umiejętności resetuje czas ataku podstawowego i przyznaje ci 90% prędkości ataku na kolejne ataki (2).\nGdy atakujesz, skróć czasy odnowienia swoich umiejętności, które nie są doskokami ani mignięciami, o 0.5 sek."
+        "pl": "85 pkt. mocy umiejętności\n400 pkt. zdrowia\n30% nieustępliwości\nBezwzględność: Użycie umiejętności resetuje czas ataku podstawowego i przyznaje ci 90% prędkości ataku na kolejne ataki (2).\nGdy atakujesz, skróć czasy odnowienia swoich umiejętności, które nie są doskokami ani mignięciami, o 0.5 sek."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447110.png",
       "tier": "prismatic",
@@ -15826,8 +15826,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwawa Kolczuga Władcy"
       },
       "descriptions": {
-        "en": "40 Attack Damage\n400 Health\nTyranny\nGain AD equal to 3% Bonus HP .\nRetribution\nGain up to 17.5% increased AD based on your percent missing Health.",
-        "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nTyrania\nZyskujesz 0 pkt. obrażeń od ataku , co równa się 3% dodatkowego zdrowia .\nOdkupienie\nZyskujesz do 17.5% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
+        "en": "40 Attack Damage\n400 Health\nTyranny\nGain AD equal to 3% Bonus HP.\nRetribution\nGain up to 17.5% increased AD based on your percent missing Health.",
+        "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nTyrania\nZyskujesz 0 pkt. obrażeń od ataku, co równa się 3% dodatkowego zdrowia.\nOdkupienie\nZyskujesz do 17.5% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447111.png",
       "tier": "prismatic",
@@ -15883,8 +15883,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pogłos"
       },
       "descriptions": {
-        "en": "35 Armor\n35 Magic Resist\n40% Attack Speed\nReverberate\nAt combat start gain 50 max Health per 10% bonus Attack Speed .\nResonate\nAttacks deal magic damage On-Hit .\nRumble\nImmobilizing or Grounding an enemy champion applies On-Hit effects 3 times.",
-        "pl": "35 pkt. pancerza\n35 pkt. odporności na magię\n40% prędkości ataku\nPogłos\nNa początku walki zyskujesz 50 pkt. maksymalnego zdrowia za każde 10% dodatkowej prędkości ataku .\nRezonans\nAtaki zadają 0 pkt. obrażeń magicznych przy trafieniu .\nGrzmot\nUnieruchomienie lub uziemienie wrogiego bohatera nakłada przy trafieniu 3 razy."
+        "en": "35 Armor\n35 Magic Resist\n40% Attack Speed\nReverberate\nAt combat start gain 50 max Health per 10% bonus Attack Speed.\nResonate\nAttacks deal magic damage On-Hit.\nRumble\nImmobilizing or Grounding an enemy champion applies On-Hit effects 3 times.",
+        "pl": "35 pkt. pancerza\n35 pkt. odporności na magię\n40% prędkości ataku\nPogłos\nNa początku walki zyskujesz 50 pkt. maksymalnego zdrowia za każde 10% dodatkowej prędkości ataku.\nRezonans\nAtaki zadają 0 pkt. obrażeń magicznych przy trafieniu.\nGrzmot\nUnieruchomienie lub uziemienie wrogiego bohatera nakłada przy trafieniu 3 razy."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447114.png",
       "tier": "prismatic",
@@ -15904,7 +15904,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Królobójstwo"
       },
       "descriptions": {
-        "en": "60 Attack Damage\n15 Lethality\n8% Move Speed\nEnd the Line\nAt the start of each round, declare the lowest health enemy the Regent . Getting a takedown on the Regent grants you a permanent 15 Attack Damage and refreshes your Ultimate's Cooldown.",
+        "en": "60 Attack Damage\n15 Lethality\n8% Move Speed\nEnd the Line\nAt the start of each round, declare the lowest health enemy the Regent. Getting a takedown on the Regent grants you a permanent 15 Attack Damage and refreshes your Ultimate's Cooldown.",
         "pl": "60 pkt. obrażeń od ataku\n15 pkt. destrukcji\n8% prędkości ruchu\nOstatni z Rodu\nNa początku każdej rundy mianuj Regentem wroga o najniższym poziomie zdrowia. Udział w zabójstwie Regenta na stałe zapewnia ci 15 pkt. obrażeń od ataku i odświeża czas odnowienia twojej superumiejętności."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447115.png",
@@ -15943,8 +15943,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Płaszcz Piromanty"
       },
       "descriptions": {
-        "en": "85 Adaptive Force\n400 Health\n15 Ability Haste\nSpark\n(5s) Cooldown\nAttack or Ability hits against an enemy champion Burn them for magic damage over 3 seconds.\nCleansing Flame\n(0s) per champion\nApplying a Burn to an enemy champion creates a nearby Blaze for 5 seconds. While in a Blaze , you gain Move Speed and restore Health per second, while enemies take magic damage per second.\nThe size and strength of each Blaze scale the number unique Burn sources you have.",
-        "pl": "85 pkt. siły adaptacyjnej\n400 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nIskra\n(5 sek.) czasu odnowienia\nTrafienie wrogiego bohatera atakiem lub umiejętnością podpala go, zadając 0 pkt. obrażeń magicznych w ciągu 3 sek.\nOczyszczający Płomień\n(0 sek.) na bohatera\nNałożenie podpalenia na wrogiego bohatera stawia pobliski obszar w Płomieniach na 5 sek. Stojąc w obszarze objętym Płomieniami , zyskujesz 0 jedn. prędkości ruchu i przywracasz 0 pkt. zdrowia na sekundę, podczas gdy wrogowie otrzymują 0 pkt. obrażeń magicznych na sekundę.\nRozmiar i siła Płomieni zależą od liczby twoich unikalnych źródeł podpalenia ."
+        "en": "85 Adaptive Force\n400 Health\n15 Ability Haste\nSpark\n(5s) Cooldown\nAttack or Ability hits against an enemy champion Burn them for magic damage over 3 seconds.\nCleansing Flame\n(0s) per champion\nApplying a Burn to an enemy champion creates a nearby Blaze for 5 seconds. While in a Blaze, you gain Move Speed and restore Health per second, while enemies take magic damage per second.\nThe size and strength of each Blaze scale the number unique Burn sources you have.",
+        "pl": "85 pkt. siły adaptacyjnej\n400 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nIskra\n(5 sek.) czasu odnowienia\nTrafienie wrogiego bohatera atakiem lub umiejętnością podpala go, zadając 0 pkt. obrażeń magicznych w ciągu 3 sek.\nOczyszczający Płomień\n(0 sek.) na bohatera\nNałożenie podpalenia na wrogiego bohatera stawia pobliski obszar w Płomieniach na 5 sek. Stojąc w obszarze objętym Płomieniami, zyskujesz 0 jedn. prędkości ruchu i przywracasz 0 pkt. zdrowia na sekundę, podczas gdy wrogowie otrzymują 0 pkt. obrażeń magicznych na sekundę.\nRozmiar i siła Płomieni zależą od liczby twoich unikalnych źródeł podpalenia."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447118.png",
       "tier": "prismatic",
@@ -15999,8 +15999,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krawędź Zmierzchu"
       },
       "descriptions": {
-        "en": "70 Attack Damage\n100 Ability Power\nThe Path Between\nThreshold 100 bonus AD and 140 AP: Chakram orbit you, dealing continuous damage to enemies they strike.\nSpirit World : Gain Ability Power and Ability Haste.\nMaterial World : Gain Attack Damage and Attack Speed .",
-        "pl": "70 pkt. obrażeń od ataku\n100 pkt. mocy umiejętności\nŚcieżka Pomiędzy\nPróg 100 pkt. dodatkowych obrażeń od ataku i 140 pkt. mocy umiejętności: Wokół ciebie orbitują Czakramy, które zadają ciągłe obrażenia wrogom, których trafią.\nŚwiat Duchów : Zyskujesz moc umiejętności i przyspieszenie umiejętności.\nŚwiat Materialny : Zyskujesz obrażenia od ataku i prędkość ataku ."
+        "en": "70 Attack Damage\n100 Ability Power\nThe Path Between\nThreshold 100 bonus AD and 140 AP: Chakram orbit you, dealing continuous damage to enemies they strike.\nSpirit World: Gain Ability Power and Ability Haste.\nMaterial World: Gain Attack Damage and Attack Speed.",
+        "pl": "70 pkt. obrażeń od ataku\n100 pkt. mocy umiejętności\nŚcieżka Pomiędzy\nPróg 100 pkt. dodatkowych obrażeń od ataku i 140 pkt. mocy umiejętności: Wokół ciebie orbitują Czakramy, które zadają ciągłe obrażenia wrogom, których trafią.\nŚwiat Duchów: Zyskujesz moc umiejętności i przyspieszenie umiejętności.\nŚwiat Materialny: Zyskujesz obrażenia od ataku i prędkość ataku."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447121.png",
       "tier": "prismatic",
@@ -16022,8 +16022,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rękawica Czarnej Dziury"
       },
       "descriptions": {
-        "en": "900 Health\n25 Ability Haste\nAccretion\nOn-Hit , gain 1 stack of Accretion , and 5 stacks for immobilizing an enemy champion. These stacks last for the rest of the round, up to 50. Each stack increases your size by 2%.\nACTIVE\n(0s)\nDark Star\nSummon a Black Hole that scales with your size. Slowing nearby enemies by 30% while those in the center are pulled closer and take magic damage each second , granting you 1 stack of Accretion . The Black Hole lasts for seconds.\nIncreases in size every 10 stacks.",
-        "pl": "900 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nNarastanie\nZyskujesz 1 ładunek Narastania przy trafieniu oraz następującą liczbę ładunków: 5 za unieruchomienie wrogiego bohatera. Ładunki utrzymują się do końca rundy. Maksymalnie można zgromadzić ich 50. Każdy ładunek zwiększa twój rozmiar o 2%.\nUŻYCIE\n(0 sek.)\nMroczna Gwiazda\nPrzywołujesz czarną dziurę, która skaluje się z twoim rozmiarem. Czarna dziura spowalnia pobliskich wrogów o 30%, a wrogowie w jej centrum zostają wciągnięci bliżej i otrzymują 0 pkt. obrażeń magicznych co sekundę , przyznając ci 1 ładunek Narastania . Czarna dziura utrzymuje się przez 0 sek.\nRozmiar czarnej dziury zwiększa się z każdym co 10. ładunkiem."
+        "en": "900 Health\n25 Ability Haste\nAccretion\nOn-Hit, gain 1 stack of Accretion, and 5 stacks for immobilizing an enemy champion. These stacks last for the rest of the round, up to 50. Each stack increases your size by 2%.\nACTIVE\n(0s)\nDark Star\nSummon a Black Hole that scales with your size. Slowing nearby enemies by 30% while those in the center are pulled closer and take magic damage each second, granting you 1 stack of Accretion. The Black Hole lasts for seconds.\nIncreases in size every 10 stacks.",
+        "pl": "900 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nNarastanie\nZyskujesz 1 ładunek Narastania przy trafieniu oraz następującą liczbę ładunków: 5 za unieruchomienie wrogiego bohatera. Ładunki utrzymują się do końca rundy. Maksymalnie można zgromadzić ich 50. Każdy ładunek zwiększa twój rozmiar o 2%.\nUŻYCIE\n(0 sek.)\nMroczna Gwiazda\nPrzywołujesz czarną dziurę, która skaluje się z twoim rozmiarem. Czarna dziura spowalnia pobliskich wrogów o 30%, a wrogowie w jej centrum zostają wciągnięci bliżej i otrzymują 0 pkt. obrażeń magicznych co sekundę, przyznając ci 1 ładunek Narastania. Czarna dziura utrzymuje się przez 0 sek.\nRozmiar czarnej dziury zwiększa się z każdym co 10. ładunkiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447122.png",
       "tier": "prismatic",
@@ -16042,8 +16042,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Władca Marionetek"
       },
       "descriptions": {
-        "en": "30% Attack Speed\n15% Heal and Shield Power\n40 Ability Haste\n150% Base Mana Regen\nPull Their Strings\n(0s)\nAttacking a champion adds a stack for 15 seconds. At 4 stacks, Berserk them for 2 seconds. You grant Berserk enemies an additional Attack Speed and 40% Move Speed .\nHealing , Shielding , or buffing yourself or an ally with an Ability reduces the Cooldown by 5 seconds.\nIf only one enemy is alive, instead Fear them for the same duration.",
-        "pl": "30% prędkości ataku\n15% siły leczenia i tarcz\n40 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nManipulacja\n(0 sek.)\nAtakowanie bohatera dodaje ładunek trwający 15 sek. Po zgromadzeniu 4 ładunków nakładasz na niego stan Berserka na 2 sek. Wrogom z nałożonym Berserkiem zapewniasz dodatkowe 0 jedn. prędkości ataku i 40% prędkości ruchu .\nLeczenie , nakładanie tarcz lub wzmacnianie sojuszników za pomocą umiejętności skraca ten czas odnowienia o 5 sek.\nJeśli żyje tylko jeden wróg, przestraszysz go na ten sam czas."
+        "en": "30% Attack Speed\n15% Heal and Shield Power\n40 Ability Haste\n150% Base Mana Regen\nPull Their Strings\n(0s)\nAttacking a champion adds a stack for 15 seconds. At 4 stacks, Berserk them for 2 seconds. You grant Berserk enemies an additional Attack Speed and 40% Move Speed.\nHealing, Shielding, or buffing yourself or an ally with an Ability reduces the Cooldown by 5 seconds.\nIf only one enemy is alive, instead Fear them for the same duration.",
+        "pl": "30% prędkości ataku\n15% siły leczenia i tarcz\n40 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nManipulacja\n(0 sek.)\nAtakowanie bohatera dodaje ładunek trwający 15 sek. Po zgromadzeniu 4 ładunków nakładasz na niego stan Berserka na 2 sek. Wrogom z nałożonym Berserkiem zapewniasz dodatkowe 0 jedn. prędkości ataku i 40% prędkości ruchu.\nLeczenie, nakładanie tarcz lub wzmacnianie sojuszników za pomocą umiejętności skraca ten czas odnowienia o 5 sek.\nJeśli żyje tylko jeden wróg, przestraszysz go na ten sam czas."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447123.png",
       "tier": "prismatic",
@@ -16376,8 +16376,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Osąd Atmy"
       },
       "descriptions": {
-        "en": "500 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health .",
-        "pl": "500 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem ."
+        "en": "500 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
+        "pl": "500 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663039.png",
       "tier": "",
@@ -16437,7 +16437,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "250 Health\n60 Magic Resist\nLimitless as the Stars\nIncrease your Magic Resist by 10%. Reduce all damage you take from non-Basic Attack sources by a percentage, scaling with your Magic Resist up to a cap of 25%.",
-        "pl": "250 pkt. zdrowia\n60 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 10%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię , do maks. 25%."
+        "pl": "250 pkt. zdrowia\n60 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 10%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię, do maks. 25%."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663059.png",
       "tier": "",
@@ -16454,8 +16454,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boski Miecz"
       },
       "descriptions": {
-        "en": "90 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage , scaling up to 50% of your Critical Strike Chance.",
-        "pl": "90 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego , które skalują się do 50% twojej szansy na trafienie krytyczne."
+        "en": "90 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage, scaling up to 50% of your Critical Strike Chance.",
+        "pl": "90 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego, które skalują się do 50% twojej szansy na trafienie krytyczne."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663060.png",
       "tier": "",
@@ -16473,7 +16473,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Talizman Wstąpienia Veigara"
       },
       "descriptions": {
-        "en": "Gain 100% Extra Experience\nOffers no stats, and cannot be sold...\n...But will be worth it if you reach Level 30.",
+        "en": "Gain 100% Extra Experience\nOffers no stats, and cannot be sold......But will be worth it if you reach Level 30.",
         "pl": "Zdobywa 100% dodatkowego doświadczenia\nNie przyznaje żadnych statystyk i nie chcą go w sklepie…\n…ale będzie warty zachodu, jeśli zdobędziesz 30. poziom."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663064.png",
@@ -16551,8 +16551,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Miecz Kwitnącego Świtu"
       },
       "descriptions": {
-        "en": "35 Ability Power\n150 Health\n10% Heal and Shield Power\n10 Ability Haste\nEffervescence\nGain + 1% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit , heal the lowest health ally champion near you for , prioritizing lower health allies.",
-        "pl": "35 pkt. mocy umiejętności\n150 pkt. zdrowia\n10% siły leczenia i tarcz\n10 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz .\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
+        "en": "35 Ability Power\n150 Health\n10% Heal and Shield Power\n10 Ability Haste\nEffervescence\nGain + 1% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
+        "pl": "35 pkt. mocy umiejętności\n150 pkt. zdrowia\n10% siły leczenia i tarcz\n10 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664011.png",
       "tier": "",
@@ -16601,8 +16601,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Korona Roztrzaskanej Królowej"
       },
       "descriptions": {
-        "en": "65 Ability Power\n250 Health\n600 Mana\n15 Ability Haste\nSafeguard\nYou are Safeguarded , reducing incoming champion damage by 40%. Safeguard persists for 3 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
-        "pl": "65 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę , która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 3 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
+        "en": "65 Ability Power\n250 Health\n600 Mana\n15 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 3 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
+        "pl": "65 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 3 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664644.png",
       "tier": "",
@@ -16681,8 +16681,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kolekcjoner"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold .",
-        "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota ."
+        "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold.",
+        "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota."
       },
       "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667666.png",
       "tier": "",
@@ -17182,7 +17182,6 @@ window.ARENA_GAME_DATA = {
     "1418": "Crack Open That Egg",
     "1420": "Sonata",
     "1421": "Prom Queen",
-    "1424": "???",
     "1996": "Upgrade Sheen",
     "2001": "Heads Up Cupcake!",
     "2002": "Void Rift",
@@ -17808,7 +17807,6 @@ window.ARENA_GAME_DATA = {
     "1418": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/crackopenthategg_small.png",
     "1420": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/sonata_small.png",
     "1421": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/promqueen_small.png",
-    "1424": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/missingping_small.png",
     "1996": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/upgradesheen_small.png",
     "2001": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/watchoutgrapefruit_small.png",
     "2002": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/voidrift_small.png",
@@ -18463,7 +18461,6 @@ window.ARENA_GAME_DATA = {
     "dajmyimpopali": "1051",
     "devilonyourshoulder": "2007",
     "diabenaramieniu": "2007",
-    "": "1424",
     "multishot": "2055",
     "wielostrza": "2055",
     "bounceoftheporoking": "2003",
@@ -18995,8 +18992,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ekspresowe Czarowanie"
       },
       "descriptions": {
-        "en": "Using an Ability grants @HastePerCast@ Ability Haste , stacking infinitely, this resets each round.",
-        "pl": "Użycie umiejętności zapewnia ci @HastePerCast@ jedn. przyspieszenia umiejętności . Efekt kumuluje się w nieskończoność i resetuje się w każdej rundzie."
+        "en": "Using an Ability grants 8 - 18 Ability Haste, stacking infinitely, this resets each round.",
+        "pl": "Użycie umiejętności zapewnia ci 8 - 18 jedn. przyspieszenia umiejętności. Efekt kumuluje się w nieskończoność i resetuje się w każdej rundzie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/acceleratingsorcery_small.png",
       "tier": "prismatic",
@@ -19011,8 +19008,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Genialny Wynalazca"
       },
       "descriptions": {
-        "en": "Gain @ItemHaste@ Item Haste (equivalent to @TooltipCDR@% Item CDR).\nItem Haste reduces the cooldown %i:cooldown% of all Item Abilities.",
-        "pl": "Otrzymujesz @ItemHaste@ jedn. przyspieszenia przedmiotu (równe @TooltipCDR@% skrócenia czasu odnowienia przedmiotu).\nPrzyspieszenie przedmiotu skraca czas odnowienia %i:cooldown% wszystkich umiejętności przedmiotów."
+        "en": "Gain 100 - 300 Item Haste (equivalent to 50 - 75% Item CDR).\nItem Haste reduces the cooldown of all Item Abilities.",
+        "pl": "Otrzymujesz 100 - 300 jedn. przyspieszenia przedmiotu (równe 50 - 75% skrócenia czasu odnowienia przedmiotu).\nPrzyspieszenie przedmiotu skraca czas odnowienia wszystkich umiejętności przedmiotów."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/apexinventor_small.png",
       "tier": "gold",
@@ -19043,8 +19040,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szkoła Podstawowa"
       },
       "descriptions": {
-        "en": "Your Ultimate Ability is sealed. Gain @DamageAmp*100@% Ability Damage, Healing , Shielding , and @Haste@ Ability Haste .",
-        "pl": "Twoja superumiejętność jest zablokowana. Zyskujesz @DamageAmp*100@% obrażeń od umiejętności, leczenia , siły tarcz i @Haste@ jedn. przyspieszenia umiejętności ."
+        "en": "Your Ultimate Ability is sealed. Gain 25 - 50% Ability Damage, Healing, Shielding, and 45 - 90 Ability Haste.",
+        "pl": "Twoja superumiejętność jest zablokowana. Zyskujesz 25 - 50% obrażeń od umiejętności, leczenia, siły tarcz i 45 - 90 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/backtobasics_small.png",
       "tier": "prismatic",
@@ -19059,8 +19056,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sztandar Dowódcy"
       },
       "descriptions": {
-        "en": "Your ally gains a bonus @EmpowermentValue*100@% Health , Attack Damage , Ability Power , Attack Speed and Size for @BuffDuration@ seconds.",
-        "pl": "Twój sojusznik otrzymuje dodatkowe @EmpowermentValue*100@% zdrowia , obrażeń od ataku , mocy umiejętności , prędkości ataku i rozmiary na @BuffDuration@ sek."
+        "en": "Your ally gains a bonus 15 - 25% Health, Attack Damage, Ability Power, Attack Speed and Size for 10 - 15 seconds.",
+        "pl": "Twój sojusznik otrzymuje dodatkowe 15 - 25% zdrowia, obrażeń od ataku, mocy umiejętności, prędkości ataku i rozmiary na 10 - 15 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bannerofcommand_small.png",
       "tier": "gold",
@@ -19075,8 +19072,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Taniec Ostrzy"
       },
       "descriptions": {
-        "en": "Makes you untargetable while you dash at and deal @Damage@ damage to enemies @TotalHits@ times (deals 50% on-hit damage).\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Sprawia, że nie można obrać cię za cel, gdy @TotalHits@ razy doskakujesz do wrogów i zadajesz im @Damage@ pkt. obrażeń fizycznych (zadaje 50% obrażeń przy trafieniu).\nObrażenia zadane w tej rundzie: @f1@\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Makes you untargetable while you dash at and deal damage to enemies 6 - 12 times (deals 50% on-hit damage).",
+        "pl": "Sprawia, że nie można obrać cię za cel, gdy 6 - 12 razy doskakujesz do wrogów i zadajesz im pkt. obrażeń fizycznych (zadaje 50% obrażeń przy trafieniu)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bladewaltz_small.png",
       "tier": "prismatic",
@@ -19091,8 +19088,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Okrutna Siła"
       },
       "descriptions": {
-        "en": "Gain @ADAmp*100@% (@f1@) Attack Damage .",
-        "pl": "Zyskujesz @ADAmp*100@% (@f1@ pkt.) obrażeń od ataku ."
+        "en": "Gain 10 - 25% Attack Damage.",
+        "pl": "Zyskujesz 10 - 25% ( pkt.) obrażeń od ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bluntforce_small.png",
       "tier": "silver",
@@ -19120,8 +19117,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wzmocnienia do Pary"
       },
       "descriptions": {
-        "en": "You gain Crest of Cinders and Crest of Insight .\nCrest of Cinders : Basic attacks Burn and Slow enemy champions. While out of combat heal a percentage of your maximum health .\nCrest of Insight : Gain Ability Haste, and restore Mana and Energy each second.",
-        "pl": "Otrzymujesz Herb Żaru i Herb Zrozumienia .\nHerb Żaru : Ataki podstawowe podpalają i spowalniają wrogich bohaterów. Poza walką leczysz się o określony procent swojego maksymalnego zdrowia .\nHerb Zrozumienia : Zyskujesz przyspieszenie umiejętności i odzyskujesz manę oraz energię co sekundę."
+        "en": "You gain Crest of Cinders and Crest of Insight.\nCrest of Cinders: Basic attacks Burn and Slow enemy champions. While out of combat heal a percentage of your maximum health.\nCrest of Insight: Gain Ability Haste, and restore Mana and Energy each second.",
+        "pl": "Otrzymujesz Herb Żaru i Herb Zrozumienia.\nHerb Żaru: Ataki podstawowe podpalają i spowalniają wrogich bohaterów. Poza walką leczysz się o określony procent swojego maksymalnego zdrowia.\nHerb Zrozumienia: Zyskujesz przyspieszenie umiejętności i odzyskujesz manę oraz energię co sekundę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/buffbuddies_small.png",
       "tier": "silver",
@@ -19152,8 +19149,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nietykalność"
       },
       "descriptions": {
-        "en": "Casting your Ultimate makes you Invulnerable for @InvulnDuration@ seconds (@Cooldown@s Cooldown).",
-        "pl": "Po użyciu superumiejętności zyskujesz niewrażliwość na @InvulnDuration@ sek. (@Cooldown@ sek. odnowienia)."
+        "en": "Casting your Ultimate makes you Invulnerable for 2 seconds (8s Cooldown).",
+        "pl": "Po użyciu superumiejętności zyskujesz niewrażliwość na 2 sek. (8 sek. odnowienia)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/canttouchthis_small.png",
       "tier": "prismatic",
@@ -19168,8 +19165,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Roszada"
       },
       "descriptions": {
-        "en": "Gain the Castle Summoner Spell.\nSwap places with your ally, granting you both @PercentMovementSpeedMod*100@% Move Speed and a @TotalShield@ Shield for @MSBuffDuration@ seconds.",
-        "pl": "Zyskujesz czar przywoływacza Roszada .\nZamieniasz się miejscami z sojusznikiem, zyskując @PercentMovementSpeedMod*100@% prędkości ruchu i tarczę o wytrzymałości @TotalShield@ pkt. na @MSBuffDuration@ sek."
+        "en": "Gain the Castle Summoner Spell.\nSwap places with your ally, granting you both 40 - 80% Move Speed and a Shield for 3 seconds.",
+        "pl": "Zyskujesz czar przywoływacza Roszada.\nZamieniasz się miejscami z sojusznikiem, zyskując 40 - 80% prędkości ruchu i tarczę o wytrzymałości pkt. na 3 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/castle_small.png",
       "tier": "silver",
@@ -19184,8 +19181,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ciało Astralne"
       },
       "descriptions": {
-        "en": "Gain @Health@ Health , but you deal @DamageReduction*100@% less damage.",
-        "pl": "Zyskujesz @Health@ pkt. zdrowia , ale zadajesz o @DamageReduction*100@% mniej obrażeń."
+        "en": "Gain 1000 - 6000 Health, but you deal 0 - 10% less damage.",
+        "pl": "Zyskujesz 1000 - 6000 pkt. zdrowia, ale zadajesz o 0 - 10% mniej obrażeń."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/celestialbody_small.png",
       "tier": "gold",
@@ -19199,10 +19196,7 @@ window.ARENA_GAME_DATA = {
         "en": "Chauffeur",
         "pl": "Na Doczepkę"
       },
-      "descriptions": {
-        "en": "{{ Cherry_Chauffeur@TeamSize@_Tooltip }}",
-        "pl": "{{ Cherry_Chauffeur@TeamSize@_Tooltip }}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/chauffeur_small.png",
       "tier": "prismatic",
       "rarity": 2,
@@ -19216,8 +19210,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krąg Śmierci"
       },
       "descriptions": {
-        "en": "Healing and Health Regen you do deals @HealToDamageConversion*100@% of the value magic damage to the nearest enemy champion.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Zadajesz najbliższemu wrogiemu bohaterowi obrażenia magiczne równe @HealToDamageConversion*100@% zapewnianego przez ciebie leczenia oraz regeneracji zdrowia .\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Healing and Health Regen you do deals 50 - 100% of the value magic damage to the nearest enemy champion.",
+        "pl": "Zadajesz najbliższemu wrogiemu bohaterowi obrażenia magiczne równe 50 - 100% zapewnianego przez ciebie leczenia oraz regeneracji zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/circleofdeath_small.png",
       "tier": "prismatic",
@@ -19233,7 +19227,7 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {
         "en": "Gain the Electrocute and Phase Rush Keystone Runes.\nElectrocute - Hitting 3 separate Attacks or Abilities within 3 seconds deals a burst of damage.\nPhase Rush - Hitting 3 separate Attacks or Abilities within 4 seconds grants you Move Speed and Slow Resist for a few seconds.",
-        "pl": "Zyskujesz runy kluczowe: Elektryzacja i Pęd Fazowy .\nElektryzacja – Trafienie 3 oddzielnymi atakami lub umiejętnościami w ciągu 3 sek. zadaje obrażenia eksplozywne.\nPęd Fazowy – Trafienie 3 oddzielnymi atakami lub umiejętnościami w ciągu 4 sek. zapewnia ci prędkość ruchu i odporność na spowolnienia na kilka sekund."
+        "pl": "Zyskujesz runy kluczowe: Elektryzacja i Pęd Fazowy.\nElektryzacja – Trafienie 3 oddzielnymi atakami lub umiejętnościami w ciągu 3 sek. zadaje obrażenia eksplozywne.\nPęd Fazowy – Trafienie 3 oddzielnymi atakami lub umiejętnościami w ciągu 4 sek. zapewnia ci prędkość ruchu i odporność na spowolnienia na kilka sekund."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/combomaster_small.png",
       "tier": "gold",
@@ -19248,8 +19242,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zabójca do Wynajęcia"
       },
       "descriptions": {
-        "en": "Each round, mark an opposing champion.\nThat champion takes @DamageAmp*100@% extra damage and grants an +%i:goldCoins% @Gold@ gold when killed.",
-        "pl": "Co rundę oznaczasz wrogiego bohatera.\nTen bohater otrzymuje @DamageAmp*100@% dodatkowych obrażeń i przyznaje %i:goldCoins%@Gold@ szt. złota po zabiciu."
+        "en": "Each round, mark an opposing champion.\nThat champion takes 15% extra damage and grants an + 150 - 300 gold when killed.",
+        "pl": "Co rundę oznaczasz wrogiego bohatera.\nTen bohater otrzymuje 15% dodatkowych obrażeń i przyznaje 150 - 300 szt. złota po zabiciu."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/contractkiller_small.png",
       "tier": "silver",
@@ -19264,8 +19258,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odwaga Kolosa"
       },
       "descriptions": {
-        "en": "Gain @TotalShield@ Shield after Immobilizing or Grounding an enemy champion.\nShields Generated This Round: @f1@\nShields Generated Total: @f2@",
-        "pl": "Zyskujesz tarczę o wytrzymałości @TotalShield@ pkt. po unieruchomieniu lub uziemieniu wrogiego bohatera.\nWartość tarcz wygenerowanych w tej rundzie: @f1@ pkt.\nCałkowita wartość wygenerowanych tarcz: @f2@ pkt."
+        "en": "Gain Shield after Immobilizing or Grounding an enemy champion.\nShields Generated This Round:\nShields Generated Total:",
+        "pl": "Zyskujesz tarczę o wytrzymałości pkt. po unieruchomieniu lub uziemieniu wrogiego bohatera.\nWartość tarcz wygenerowanych w tej rundzie\nCałkowita wartość wygenerowanych tarcz"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/courageofthecolossus_small.png",
       "tier": "prismatic",
@@ -19280,8 +19274,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Skoczność"
       },
       "descriptions": {
-        "en": "Your dash, leap, blink, or teleport Abilities gain @Haste@ Ability Haste .",
-        "pl": "Twoje umiejętności doskoku, skoku, mignięcia i teleportacji zyskują @Haste@ jedn. przyspieszenia umiejętności ."
+        "en": "Your dash, leap, blink, or teleport Abilities gain 75 - 825 Ability Haste.",
+        "pl": "Twoje umiejętności doskoku, skoku, mignięcia i teleportacji zyskują 75 - 825 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dashing_small.png",
       "tier": "prismatic",
@@ -19295,10 +19289,7 @@ window.ARENA_GAME_DATA = {
         "en": "Dawnbringer's Resolve",
         "pl": "Determinacja Zwiastuna Brzasku"
       },
-      "descriptions": {
-        "en": "{{Cherry_DawnbringersResolve_Summary}}",
-        "pl": "{{Cherry_DawnbringersResolve_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dawnbringersresolve_small.png",
       "tier": "gold",
       "rarity": 1,
@@ -19312,8 +19303,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Manewry Defensywne"
       },
       "descriptions": {
-        "en": "Cast Barrier and Heal on your team. Grants @BarrierAmount@ Shield , restores @HealAmount@ Health , and gives @MoveSpeed*100@% Move Speed for 1 second.",
-        "pl": "Użyj Bariery i Uzdrowienia na swojej drużynie. Zapewnia @BarrierAmount@ pkt. tarczy , przywraca @HealAmount@ pkt. zdrowia i zapewnia @MoveSpeed*100@% prędkości ruchu na 1 sek."
+        "en": "Cast Barrier and Heal on your team. Grants Shield, restores Health, and gives 30 - 75% Move Speed for 1 second.",
+        "pl": "Użyj Bariery i Uzdrowienia na swojej drużynie. Zapewnia pkt. tarczy, przywraca pkt. zdrowia i zapewnia 30 - 75% prędkości ruchu na 1 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/defensivemaneuvers_small.png",
       "tier": "gold",
@@ -19328,8 +19319,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Chyżość"
       },
       "descriptions": {
-        "en": "Gain %i:scaleAS% @AttackSpeed*100@% Attack Speed .",
-        "pl": "Zyskujesz %i:scaleAS% @AttackSpeed*100@% prędkości ataku ."
+        "en": "Gain 60 - 150% Attack Speed.",
+        "pl": "Zyskujesz 60 - 150% prędkości ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/deft_small.png",
       "tier": "silver",
@@ -19344,8 +19335,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Taniec Demona"
       },
       "descriptions": {
-        "en": "Gain the Fleet Footwork and Grasp of the Undying Keystone Runes.\nFleet Footwork - Moving and Attacking generates charges of Energize . At 100, your next Attack deals bonus damage, heals you, and grants you a burst of Move Speed .\nGrasp of the Undying - Being in combat for 3 seconds with an enemy marks them. Attacks consume the mark to deal bonus damage, heal you, and grant permanent max Health .",
-        "pl": "Zyskujesz runy kluczowe: Zwinne Nogi i Uścisk Nieumarłego .\nZwinne Nogi — poruszanie się i atakowanie generuje ładunki Naładowania . Przy 100 twój kolejny atak zadaje dodatkowe obrażenia, leczy cię i zapewnia premię do prędkości ruchu .\nUścisk Nieumarłego — przebywanie w walce z wrogiem przez 3 sek. oznacza go. Ataki zużywają oznaczenie, aby zadać dodatkowe obrażenia, uleczyć cię i zapewnić na stałe maksymalne zdrowie ."
+        "en": "Gain the Fleet Footwork and Grasp of the Undying Keystone Runes.\nFleet Footwork - Moving and Attacking generates charges of Energize. At 100, your next Attack deals bonus damage, heals you, and grants you a burst of Move Speed.\nGrasp of the Undying - Being in combat for 3 seconds with an enemy marks them. Attacks consume the mark to deal bonus damage, heal you, and grant permanent max Health.",
+        "pl": "Zyskujesz runy kluczowe: Zwinne Nogi i Uścisk Nieumarłego.\nZwinne Nogi — poruszanie się i atakowanie generuje ładunki Naładowania. Przy 100 twój kolejny atak zadaje dodatkowe obrażenia, leczy cię i zapewnia premię do prędkości ruchu.\nUścisk Nieumarłego — przebywanie w walce z wrogiem przez 3 sek. oznacza go. Ataki zużywają oznaczenie, aby zadać dodatkowe obrażenia, uleczyć cię i zapewnić na stałe maksymalne zdrowie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/demonsdance_small.png",
       "tier": "gold",
@@ -19360,8 +19351,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Śmierci Mówimy Nie"
       },
       "descriptions": {
-        "en": "Bless the ground under you for 4s, preventing any unit inside from falling below 10% of their max Health . At the end, units inside are healed for @HealFlatTooltip@ Health .",
-        "pl": "Błogosławisz ziemię pod sobą na 4 sek. i sprawiasz, że zdrowie wszystkich jednostek znajdujących się na tym obszarze nie może spaść poniżej 10% ich maksymalnego zdrowia . Na koniec wszystkie te jednostki zostaną uleczone o @HealFlatTooltip@ pkt. zdrowia ."
+        "en": "Bless the ground under you for 4s, preventing any unit inside from falling below 10% of their max Health. At the end, units inside are healed for 250 Health.",
+        "pl": "Błogosławisz ziemię pod sobą na 4 sek. i sprawiasz, że zdrowie wszystkich jednostek znajdujących się na tym obszarze nie może spaść poniżej 10% ich maksymalnego zdrowia. Na koniec wszystkie te jednostki zostaną uleczone o 250 pkt. zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dieanotherday_small.png",
       "tier": "gold",
@@ -19376,8 +19367,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bombowe Zakończenie"
       },
       "descriptions": {
-        "en": "Your team's first death each round explodes, dealing @PercentMaxHPDamage*100@% of the targets max health as true damage to nearby enemies.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Bohater, który zginie jako pierwszy w twojej drużynie, wybucha, zadając pobliskim wrogom obrażenia nieuchronne równe @PercentMaxHPDamage*100@% ich maksymalnego zdrowia .\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your team's first death each round explodes, dealing 0 - 90% of the targets max health as true damage to nearby enemies.",
+        "pl": "Bohater, który zginie jako pierwszy w twojej drużynie, wybucha, zadając pobliskim wrogom obrażenia nieuchronne równe 0 - 90% ich maksymalnego zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/divebomber_small.png",
       "tier": "silver",
@@ -19392,8 +19383,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nie Mrugaj"
       },
       "descriptions": {
-        "en": "Gain @BonusDamagePerMSDifference*1000@% bonus damage per 10 Move Speed you have more than the target.\nBonus Damage This Round: @f1@\nBonus Damage Total: @f2@",
-        "pl": "Zyskujesz @BonusDamagePerMSDifference*1000@% obrażeń dodatkowych za każde 10 jedn. prędkości ruchu więcej od celu.\nObrażenia dodatkowe w tej rundzie: @f1@ pkt.\nCałkowite obrażenia dodatkowe: @f2@ pkt."
+        "en": "Gain 1 - 2% bonus damage per 10 Move Speed you have more than the target.\nBonus Damage This Round:\nBonus Damage Total:",
+        "pl": "Zyskujesz 1 - 2% obrażeń dodatkowych za każde 10 jedn. prędkości ruchu więcej od celu.\nObrażenia dodatkowe w tej rundzie\nCałkowite obrażenia dodatkowe"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dontblink_small.png",
       "tier": "silver",
@@ -19408,8 +19399,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Znaczenie Ziemi"
       },
       "descriptions": {
-        "en": "Your dash, leap, blink, or teleport Abilities leave behind a trail that detonates after 1 second, dealing @Damage@ physical damage .\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Twoje umiejętności doskoku, skoku, mignięcia i teleportacji pozostawiają ślad, który wybucha po 1 sek., zadając @Damage@ pkt. obrażeń fizycznych .\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your dash, leap, blink, or teleport Abilities leave behind a trail that detonates after 1 second, dealing physical damage.",
+        "pl": "Twoje umiejętności doskoku, skoku, mignięcia i teleportacji pozostawiają ślad, który wybucha po 1 sek., zadając pkt. obrażeń fizycznych."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/earthwake_small.png",
       "tier": "prismatic",
@@ -19424,8 +19415,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Erozja"
       },
       "descriptions": {
-        "en": "Damaging enemies shreds @Shred*100@% Armor and Magic Resist for @ShredDuration@s, up to @MaxShredTooltipOnly@% at @MaxStacks@ stacks.",
-        "pl": "Zadawanie obrażeń wrogom osłabia ich pancerz i odporność na magię o @Shred*100@% na @ShredDuration@ sek, maks. @MaxShredTooltipOnly@% przy @MaxStacks@ ładunkach."
+        "en": "Damaging enemies shreds 1 - 2% Armor and Magic Resist for 4s, up to % at 20 stacks.",
+        "pl": "Zadawanie obrażeń wrogom osłabia ich pancerz i odporność na magię o 1 - 2% na 4 sek, maks. % przy 20 ładunkach."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/erosion_small.png",
       "tier": "silver",
@@ -19440,8 +19431,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Eteryczna Broń"
       },
       "descriptions": {
-        "en": "Your Abilities apply {{ Item_Keyword_OnHit }} effects @HitCount@ time(s) . @Cooldown@ second cooldown per target.\nTimes Triggered This Round: @f1@\nTimes Triggered Total: @f2@",
-        "pl": "Twoje umiejętności nakładają efekty {{ Item_Keyword_OnHit }} @HitCount@ raz(y). @Cooldown@ sek. czasu odnowienia na cel.\nLiczba aktywacji w tej rundzie: @f1@\nCałkowita liczba aktywacji: @f2@"
+        "en": "Your Abilities apply effects 1 - 4 time(s). 1.5 second cooldown per target.\nTimes Triggered This Round:\nTimes Triggered Total:",
+        "pl": "Twoje umiejętności nakładają efekty 1 - 4 raz(y). 1.5 sek. czasu odnowienia na cel.\nLiczba aktywacji w tej rundzie:\nCałkowita liczba aktywacji:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/etherealweapon_small.png",
       "tier": "gold",
@@ -19456,8 +19447,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Eureka"
       },
       "descriptions": {
-        "en": "Gain @APToHasteConversionCalc@ Ability Haste .",
-        "pl": "Zyskujesz @APToHasteConversionCalc@ jedn. przyspieszenia umiejętności ."
+        "en": "Gain Ability Haste.",
+        "pl": "Zyskujesz jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/eureka_small.png",
       "tier": "prismatic",
@@ -19485,8 +19476,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kat"
       },
       "descriptions": {
-        "en": "Deal @BonusDamage*100@% more damage to enemies below @HealthThreshold*100@% health. Reset your basic abilities on takedown.\nBonus Damage This Round: @f1@\nBonus Damage Total: @f2@",
-        "pl": "Zadajesz @BonusDamage*100@% więcej obrażeń wrogom, którzy mają mniej niż @HealthThreshold*100@% zdrowia. Resetujesz czas odnowienia swoich umiejętności podstawowych przy udziale w zabójstwie.\nDodatkowe obrażenia w tej rundzie: @f1@ pkt.\nCałkowite dodatkowe obrażenia: @f2@ pkt."
+        "en": "Deal 10 - 20% more damage to enemies below 40 - 50% health. Reset your basic abilities on takedown.\nBonus Damage This Round:\nBonus Damage Total:",
+        "pl": "Zadajesz 10 - 20% więcej obrażeń wrogom, którzy mają mniej niż 40 - 50% zdrowia. Resetujesz czas odnowienia swoich umiejętności podstawowych przy udziale w zabójstwie.\nDodatkowe obrażenia w tej rundzie\nCałkowite dodatkowe obrażenia"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/executioner_small.png",
       "tier": "silver",
@@ -19501,8 +19492,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wysięgnikowa Ręka"
       },
       "descriptions": {
-        "en": "Autocast fire a Blitzcrank hook every 12 seconds at a nearby enemy champion.\nHooks Landed: @f1@",
-        "pl": "Automatycznie wystrzeliwujesz hak Blitzcranka w pobliskiego wrogiego bohatera co 12 sek.\nLiczba haków, które trafiły cel: @f1@"
+        "en": "Autocast fire a Blitzcrank hook every 12 seconds at a nearby enemy champion.\nHooks Landed:",
+        "pl": "Automatycznie wystrzeliwujesz hak Blitzcranka w pobliskiego wrogiego bohatera co 12 sek.\nLiczba haków, które trafiły cel:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/extendoarm_small.png",
       "tier": "gold",
@@ -19517,8 +19508,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Upadła Egida"
       },
       "descriptions": {
-        "en": "Start combat with a Black Shield that blocks @ShieldAmount@ magic damage for @ShieldDuration@s. The shield prevents Disabling and Immobilizing effects until it breaks.\nShields Generated Total: @f1@\nImmobilizing Spells Blocked Total: @f2@",
-        "pl": "Zaczynasz walkę z Mroczną Tarczą , która blokuje @ShieldAmount@ pkt. obrażeń magicznych przez @ShieldDuration@ sek. Ta tarcza chroni przed efektami osłabiającymi i unieruchamiającymi , póki jest aktywna.\nCałkowita wartość wygenerowanych tarcz: @f1@ pkt.\nCałkowita liczba zablokowanych zaklęć unieruchamiających: @f2@"
+        "en": "Start combat with a Black Shield that blocks magic damage for 8 - 15s. The shield prevents Disabling and Immobilizing effects until it breaks.\nShields Generated Total:\nImmobilizing Spells Blocked Total:",
+        "pl": "Zaczynasz walkę z Mroczną Tarczą, która blokuje pkt. obrażeń magicznych przez 8 - 15 sek. Ta tarcza chroni przed efektami osłabiającymi i unieruchamiającymi, póki jest aktywna.\nCałkowita wartość wygenerowanych tarcz\nCałkowita liczba zablokowanych zaklęć unieruchamiających:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/fallenaegis_small.png",
       "tier": "silver",
@@ -19549,8 +19540,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Znamię Ognia"
       },
       "descriptions": {
-        "en": "Your Attacks Burn enemies {{ Item_Keyword_OnHit }}, dealing @PercentMaxHPDamagePer5Seconds*20@% max Health Magic Damage damage per second over @BleedDuration@ seconds. The Burn stacks infinitely.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Twoje ataki podpalają {{ Item_Keyword_OnHit }} wrogów, zadając im obrażenia magiczne w wysokości @PercentMaxHPDamagePer5Seconds*20@% ich maks. zdrowia w czasie @BleedDuration@ sek. Podpalenie kumuluje się w nieskończoność.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your Attacks Burn enemies, dealing 0.6 - 1% max Health Magic Damage damage per second over 5 seconds. The Burn stacks infinitely.",
+        "pl": "Twoje ataki podpalają wrogów, zadając im obrażenia magiczne w wysokości 0.6 - 1% ich maks. zdrowia w czasie 5 sek. Podpalenie kumuluje się w nieskończoność."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/firebrand_small.png",
       "tier": "gold",
@@ -19565,8 +19556,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Apteczka"
       },
       "descriptions": {
-        "en": "Gain @HealShieldAmp*100@% Heal and Shield Power .",
-        "pl": "Zyskujesz @HealShieldAmp*100@% siły leczenia i tarcz ."
+        "en": "Gain 20 - 35% Heal and Shield Power.",
+        "pl": "Zyskujesz 20 - 35% siły leczenia i tarcz."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/firstaidkit_small.png",
       "tier": "silver",
@@ -19581,8 +19572,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Od Początku do Końca"
       },
       "descriptions": {
-        "en": "Gain the First Strike and Dark Harvest Keystone Runes.\nFirst Strike - Damaging a champion makes them take increased damage for 3 seconds. At the end, gain +%i:goldCoins% Gold based on your bonus damage dealt.\nDark Harvest - Damaging an enemy below 50% Health deals bonus damage and increases that bonus damage permanently.",
-        "pl": "Zyskujesz runy kluczowe: Pierwsze Uderzenie i Mroczne Żniwa .\nPierwsze Uderzenie — zadanie obrażeń bohaterowi sprawia, że otrzymuje on zwiększone obrażenia przez 3 sek. Na koniec zyskaj %i:goldCoins% szt. złota . Liczba ta zależy od ilości zadanych dodatkowych obrażeń.\nMroczne Żniwa — zadanie obrażeń wrogowi, który ma mniej niż 50% zdrowia , zadaje dodatkowe obrażenia i zwiększa te dodatkowe obrażenia na stałe."
+        "en": "Gain the First Strike and Dark Harvest Keystone Runes.\nFirst Strike - Damaging a champion makes them take increased damage for 3 seconds. At the end, gain + Gold based on your bonus damage dealt.\nDark Harvest - Damaging an enemy below 50% Health deals bonus damage and increases that bonus damage permanently.",
+        "pl": "Zyskujesz runy kluczowe: Pierwsze Uderzenie i Mroczne Żniwa.\nPierwsze Uderzenie — zadanie obrażeń bohaterowi sprawia, że otrzymuje on zwiększone obrażenia przez 3 sek. Na koniec zyskaj szt. złota. Liczba ta zależy od ilości zadanych dodatkowych obrażeń.\nMroczne Żniwa — zadanie obrażeń wrogowi, który ma mniej niż 50% zdrowia, zadaje dodatkowe obrażenia i zwiększa te dodatkowe obrażenia na stałe."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/frombeginningtoend_small.png",
       "tier": "gold",
@@ -19597,8 +19588,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mroźna Zjawa"
       },
       "descriptions": {
-        "en": "Autocast Root nearby enemies for @RootDuration@ seconds every @Cooldown@ seconds.\nEnemies Rooted This Round: @f1@\nEnemies Rooted Total: @f2@",
-        "pl": "Automatyczne użycie unieruchamia pobliskich wrogów na @RootDuration@ sek. co @Cooldown@ sek.\nLiczba wrogów unieruchomionych w tej rundzie: @f1@\nCałkowita liczba unieruchomionych wrogów: @f2@"
+        "en": "Autocast Root nearby enemies for 1.3 seconds every 6.5 seconds.\nEnemies Rooted This Round:\nEnemies Rooted Total:",
+        "pl": "Automatyczne użycie unieruchamia pobliskich wrogów na 1.3 sek. co 6.5 sek.\nLiczba wrogów unieruchomionych w tej rundzie:\nCałkowita liczba unieruchomionych wrogów:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/frostwraith_small.png",
       "tier": "silver",
@@ -19626,8 +19617,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Goliat"
       },
       "descriptions": {
-        "en": "Become large, gaining @HealthAmp*100@% Health and @AFAmp*100@% Adaptive Force .",
-        "pl": "Zwiększasz swój rozmiar i zyskujesz @HealthAmp*100@% zdrowia i @AFAmp*100@% siły adaptacyjnej ."
+        "en": "Become large, gaining 15 - 75% Health and 10 - 60% Adaptive Force.",
+        "pl": "Zwiększasz swój rozmiar i zyskujesz 15 - 75% zdrowia i 10 - 60% siły adaptacyjnej."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/goliath_small.png",
       "tier": "prismatic",
@@ -19642,8 +19633,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wstydliwa Przyjemność"
       },
       "descriptions": {
-        "en": "Immobilizing or Grounding enemy champions restores @TotalHeal@ Health .\nHealing Done This Round: @f1@\nHealing Done Total: @f2@",
-        "pl": "Unieruchamianie lub uziemianie wrogich bohaterów przywraca ci @TotalHeal@ pkt. zdrowia .\nObrażenia wyleczone w tej rundzie: @f1@ pkt.\nCałkowite wyleczone obrażenia: @f2@ pkt."
+        "en": "Immobilizing or Grounding enemy champions restores Health.\nHealing Done This Round:\nHealing Done Total:",
+        "pl": "Unieruchamianie lub uziemianie wrogich bohaterów przywraca ci pkt. zdrowia.\nObrażenia wyleczone w tej rundzie\nCałkowite wyleczone obrażenia"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/guiltypleasure_small.png",
       "tier": "silver",
@@ -19658,8 +19649,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Teraz Mnie Widzisz"
       },
       "descriptions": {
-        "en": "Passive:\nLeave a mark behind whenever you use a Movement Ability .\nActive:\nReturn to a previous mark you've left. You then gain @MSBuffAmount*100@% Move Speed for @MSBuffDuration@ seconds .",
-        "pl": "Umiejętność bierna:\nPozostawiasz za sobą znak za każdym razem, gdy używasz umiejętności ruchowej .\nUżycie:\nWracasz do pozostawionego wcześniej naznaczenia. Następnie zyskujesz @MSBuffAmount*100@% prędkości ruchu na @MSBuffDuration@ sek."
+        "en": "Passive:\nLeave a mark behind whenever you use a Movement Ability.\nActive:\nReturn to a previous mark you've left. You then gain 50 - 75% Move Speed for 2 seconds.",
+        "pl": "Umiejętność bierna:\nPozostawiasz za sobą znak za każdym razem, gdy używasz umiejętności ruchowej.\nUżycie:\nWracasz do pozostawionego wcześniej naznaczenia. Następnie zyskujesz 50 - 75% prędkości ruchu na 2 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/nowyouseeme_small.png",
       "tier": "silver",
@@ -19674,8 +19665,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zimny jak Lód"
       },
       "descriptions": {
-        "en": "Your Slowing effects reduce Move Speed by an extra @ExtraSlowAmount@.",
-        "pl": "Twoje efekty spowalniające zmniejszają prędkość ruchu o dodatkowe @ExtraSlowAmount@ jedn."
+        "en": "Your Slowing effects reduce Move Speed by an extra 0 - 450.",
+        "pl": "Twoje efekty spowalniające zmniejszają prędkość ruchu o dodatkowe 0 - 450 jedn."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/icecold_small.png",
       "tier": "silver",
@@ -19690,8 +19681,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Piekielny Przewodnik"
       },
       "descriptions": {
-        "en": "Your Abilities apply an infinitely stacking Burn , dealing @BleedDamageTooltip@ magic damage per second for @BleedDuration@ seconds.\nAll your Burn effects lower your basic Ability Cooldowns by @FlatCooldownRefundPerTick@ seconds when they damage enemies.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Twoje umiejętności nakładają kumulujące się w nieskończoność podpalenie , zadające @BleedDamageTooltip@ pkt. obrażeń magicznych na sekundę przez @BleedDuration@ sek.\nWszystkie twoje efekty podpalenia skracają czas odnowienia twoich umiejętności podstawowych o @FlatCooldownRefundPerTick@ sek., gdy zadają obrażenia wrogom.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your Abilities apply an infinitely stacking Burn, dealing magic damage per second for 5 seconds.\nAll your Burn effects lower your basic Ability Cooldowns by 0.1 - 0.2 seconds when they damage enemies.",
+        "pl": "Twoje umiejętności nakładają kumulujące się w nieskończoność podpalenie, zadające pkt. obrażeń magicznych na sekundę przez 5 sek.\nWszystkie twoje efekty podpalenia skracają czas odnowienia twoich umiejętności podstawowych o 0.1 - 0.2 sek., gdy zadają obrażenia wrogom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/infernalconduit_small.png",
       "tier": "prismatic",
@@ -19722,8 +19713,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krytyczna Decyzja"
       },
       "descriptions": {
-        "en": "Gain %i:scaleCrit% @CritChance*100@% Crit chance .",
-        "pl": "Zyskujesz %i:scaleCrit% @CritChance*100@% szansy na trafienie krytyczne ."
+        "en": "Gain 50 - 100% Crit chance.",
+        "pl": "Zyskujesz 50 - 100% szansy na trafienie krytyczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/itscritical_small.png",
       "tier": "gold",
@@ -19738,8 +19729,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Brylantowa Rękawica"
       },
       "descriptions": {
-        "en": "Your Abilities can Critically Strike for @CritDamage*100@% total damage. Gain %i:scaleCrit% @CritChance*100@% Crit Chance .\nGain %i:scaleCrit% @CritGranted@ Crit Chance .",
-        "pl": "Twoje umiejętności mogą trafiać krytycznie , zadając @CritDamage*100@% obrażeń całkowitych. Zyskujesz %i:scaleCrit% @CritChance*100@% szansy na trafienie krytyczne .\nZyskujesz %i:scaleCrit% @CritGranted@ szansy na trafienie krytyczne ."
+        "en": "Your Abilities can Critically Strike for 140 - 180% total damage. Gain 25% Crit Chance.\nGain Crit Chance.",
+        "pl": "Twoje umiejętności mogą trafiać krytycznie, zadając 140 - 180% obrażeń całkowitych. Zyskujesz 25% szansy na trafienie krytyczne.\nZyskujesz szansy na trafienie krytyczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/jeweledgauntlet_small.png",
       "tier": "prismatic",
@@ -19754,8 +19745,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Karton Soku"
       },
       "descriptions": {
-        "en": "Each round, everyone on your team gains @JuiceCount@ Juice.",
-        "pl": "W każdej rundzie wszyscy w twojej drużynie otrzymują @JuiceCount@ sok."
+        "en": "Each round, everyone on your team gains 1 - 3 Juice.",
+        "pl": "W każdej rundzie wszyscy w twojej drużynie otrzymują 1 - 3 sok."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/juicebox_small.png",
       "tier": "silver",
@@ -19770,8 +19761,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Runiczny Szarlatan"
       },
       "descriptions": {
-        "en": "Gain the Summon Aery and Arcane Comet Keystone Runes.\nSummon Aery - Aery jumps onto enemies you damage or allies you Heal , Shield , or Buff, damaging enemies or Shielding allies.\nArcane Comet - Dealing Ability damage launches a comet, damaing all enemies in an area.",
-        "pl": "Zyskujesz runy kluczowe: Przywołanie Aery i Ezoteryczna Kometa .\nPrzywołanie Aery – Aery wskakuje na wrogów, którym zadajesz obrażenia, lub sojuszników, których leczysz , osłaniasz tarczą lub wzmacniasz, i zadaje obrażenia wrogom lub osłania tarczą sojuszników.\nEzoteryczna Kometa – Zadawanie obrażeń umiejętnościami uwalnia kometę, która zadaje obrażenia wszystkim wrogom na obszarze."
+        "en": "Gain the Summon Aery and Arcane Comet Keystone Runes.\nSummon Aery - Aery jumps onto enemies you damage or allies you Heal, Shield, or Buff, damaging enemies or Shielding allies.\nArcane Comet - Dealing Ability damage launches a comet, damaing all enemies in an area.",
+        "pl": "Zyskujesz runy kluczowe: Przywołanie Aery i Ezoteryczna Kometa.\nPrzywołanie Aery – Aery wskakuje na wrogów, którym zadajesz obrażenia, lub sojuszników, których leczysz, osłaniasz tarczą lub wzmacniasz, i zadaje obrażenia wrogom lub osłania tarczą sojuszników.\nEzoteryczna Kometa – Zadawanie obrażeń umiejętnościami uwalnia kometę, która zadaje obrażenia wszystkim wrogom na obszarze."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/keystoneconjurer_small.png",
       "tier": "gold",
@@ -19786,8 +19777,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Płońcie!"
       },
       "descriptions": {
-        "en": "Every 4th Attack deals additional @TOOLTIPONLYDamage@ magic damage {{ Item_Keyword_OnHit }}.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Każdy co 4. atak zadaje dodatkowo @TOOLTIPONLYDamage@ pkt. obrażeń magicznych {{ Item_Keyword_OnHit }}.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Every 4th Attack deals additional magic damage.",
+        "pl": "Każdy co 4. atak zadaje dodatkowo pkt. obrażeń magicznych."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/lightemup_small.png",
       "tier": "silver",
@@ -19802,8 +19793,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Błyskawiczne Ciosy"
       },
       "descriptions": {
-        "en": "Gain @TotalASValue*100@% total Attack Speed .\nAt @Breakpoint1@ Attacks per second , gain @OnHitDamage@ magic damage {{ Item_Keyword_OnHit }}.\nTotal Attack Speed is calculated as a multiplier of your Bonus Attack Speed\nOn-hit Magic Damage Dealt: @f1@",
-        "pl": "Zyskujesz @TotalASValue*100@% całkowitej prędkości ataku .\nPrzy @Breakpoint1@ atakach na sekundę zyskujesz @OnHitDamage@ pkt. obrażeń magicznych {{ Item_Keyword_OnHit }}.\nCałkowita prędkość ataku jest obliczana jako mnożnik twojej dodatkowej prędkości ataku\nObrażenia magiczne zadawane przy trafieniu: @f1@ pkt."
+        "en": "Gain 20 - 30% total Attack Speed.\nAt 3.5 Attacks per second, gain 40 magic damage.\nTotal Attack Speed is calculated as a multiplier of your Bonus Attack Speed\nOn-hit Magic Damage Dealt:",
+        "pl": "Zyskujesz 20 - 30% całkowitej prędkości ataku.\nPrzy 3.5 atakach na sekundę zyskujesz 40 pkt. obrażeń magicznych.\nCałkowita prędkość ataku jest obliczana jako mnożnik twojej dodatkowej prędkości ataku\nObrażenia magiczne zadawane przy trafieniu"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/lightningstrikes_small.png",
       "tier": "gold",
@@ -19818,8 +19809,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szalony Naukowiec"
       },
       "descriptions": {
-        "en": "On Round start you grow large, gaining ( @ADAmp*100@% Adaptive Force and @HealthAmp*100@% Health ) or tiny (@Haste@ Ability Haste and @MovespeedAmp*100@% Move Speed ).",
-        "pl": "Na początku rundy rośniesz i zyskujesz ( @ADAmp*100@% siły adaptacyjnej i @HealthAmp*100@% zdrowia ) lub malejesz i zyskujesz (@Haste@ jedn. przyspieszenia umiejętności i @MovespeedAmp*100@% prędkości ruchu )."
+        "en": "On Round start you grow large, gaining ( 30% Adaptive Force and 20 - 40% Health ) or tiny (70 - 100 Ability Haste and 40% Move Speed ).",
+        "pl": "Na początku rundy rośniesz i zyskujesz ( 30% siły adaptacyjnej i 20 - 40% zdrowia ) lub malejesz i zyskujesz (70 - 100 jedn. przyspieszenia umiejętności i 40% prędkości ruchu )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/madscientist_small.png",
       "tier": "prismatic",
@@ -19834,8 +19825,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Podwójny Mistrz"
       },
       "descriptions": {
-        "en": "Your Attacks grant you @APGained@ Ability Power {{ Item_Keyword_OnHit }} and your Abilities grant you @ADGained@ Attack Damage , until the end of the round.",
-        "pl": "Twoje ataki zapewniają ci @APGained@ pkt. mocy umiejętności {{ Item_Keyword_OnHit }}, a twoje umiejętności zapewniają ci @ADGained@ pkt. obrażeń od ataku do końca rundy."
+        "en": "Your Attacks grant you Ability Power and your Abilities grant you Attack Damage, until the end of the round.",
+        "pl": "Twoje ataki zapewniają ci pkt. mocy umiejętności, a twoje umiejętności zapewniają ci pkt. obrażeń od ataku do końca rundy."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/masterofduality_small.png",
       "tier": "prismatic",
@@ -19863,8 +19854,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Umysłowa Przemiana"
       },
       "descriptions": {
-        "en": "Gain @ManaToHealthCalc@ Health .",
-        "pl": "Zyskujesz @ManaToHealthCalc@ pkt. zdrowia ."
+        "en": "Gain Health.",
+        "pl": "Zyskujesz pkt. zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/mindtomatter_small.png",
       "tier": "silver",
@@ -19879,8 +19870,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Górska Dusza"
       },
       "descriptions": {
-        "en": "You gain the Mountain Soul, gaining Shield after being out of combat for a short time.\nShields Generated Total: @f1@",
-        "pl": "Zyskujesz Górską Duszę, dzięki której otrzymujesz tarczę , gdy znajdziesz się poza walką przez krótki czas.\nCałkowita wytrzymałość wygenerowanych tarcz: @f1@ pkt."
+        "en": "You gain the Mountain Soul, gaining Shield after being out of combat for a short time.\nShields Generated Total:",
+        "pl": "Zyskujesz Górską Duszę, dzięki której otrzymujesz tarczę, gdy znajdziesz się poza walką przez krótki czas.\nCałkowita wytrzymałość wygenerowanych tarcz"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/mountainsoul_small.png",
       "tier": "silver",
@@ -19895,8 +19886,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mistyczny Cios"
       },
       "descriptions": {
-        "en": "{{ Item_Keyword_OnHit }} reduce the cooldown of your abilities by @CooldownRefund@ seconds %i:scaleCooldown%.",
-        "pl": "{{ Item_Keyword_OnHit }} skraca czas odnowienia twoich umiejętności o @CooldownRefund@ sek. %i:scaleCooldown%."
+        "en": "reduce the cooldown of your abilities by 1.3 seconds.",
+        "pl": "skraca czas odnowienia twoich umiejętności o 1.3 sek.."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/mysticpunch_small.png",
       "tier": "prismatic",
@@ -19940,8 +19931,8 @@ window.ARENA_GAME_DATA = {
         "pl": "OK, Bumerangu"
       },
       "descriptions": {
-        "en": "Autocast throw a boomerang at a nearby enemy every @Cooldown@s, dealing @Damage@ physical damage to enemies hit.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Automatycznie ciskasz bumerangiem w pobliskiego wroga co @Cooldown@ sek., zadając @Damage@ pkt. obrażeń fizycznych trafionym wrogom.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Autocast throw a boomerang at a nearby enemy every 7s, dealing physical damage to enemies hit.",
+        "pl": "Automatycznie ciskasz bumerangiem w pobliskiego wroga co 7 sek., zadając pkt. obrażeń fizycznych trafionym wrogom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/okboomerang_small.png",
       "tier": "gold",
@@ -19956,8 +19947,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wszechdusza"
       },
       "descriptions": {
-        "en": "Gain @SoulsToAdd@ random Dragon Souls .",
-        "pl": "Otrzymujesz losowe Dusze Smoków w liczbie: @SoulsToAdd@."
+        "en": "Gain 2 - 7 random Dragon Souls.",
+        "pl": "Otrzymujesz losowe Dusze Smoków w liczbie: 2 - 7."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/omnisoul_small.png",
       "tier": "prismatic",
@@ -19972,8 +19963,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Męstwo Banity"
       },
       "descriptions": {
-        "en": "After using a dash, leap, blink, or teleport Ability you gain @ResistsPerStack@ Armor and Magic Resist up to @MaxResistTooltipOnly@ at @MaxStacks@ stacks.",
-        "pl": "Po użyciu umiejętności doskoku, skoku, mignięcia lub teleportacji zyskujesz @ResistsPerStack@ pkt. pancerza i odporności ma magię , maks. @MaxResistTooltipOnly@ pkt. przy @MaxStacks@ ładunkach."
+        "en": "After using a dash, leap, blink, or teleport Ability you gain 10 - 15 Armor and Magic Resist up to at 5 stacks.",
+        "pl": "Po użyciu umiejętności doskoku, skoku, mignięcia lub teleportacji zyskujesz 10 - 15 pkt. pancerza i odporności ma magię, maks. pkt. przy 5 ładunkach."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/outlawsgrit_small.png",
       "tier": "gold",
@@ -19988,8 +19979,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wytrwałość"
       },
       "descriptions": {
-        "en": "Gain @BaseRegen*100@% base Health Regen , increased to @AmpedRegen*100@% base Health Regen below @AmpedHPThreshold*100@% Health .\nHealing Done This Round: @f1@\nHealing Done Total: @f2@",
-        "pl": "Zyskujesz @BaseRegen*100@% podstawowej regeneracji zdrowia . Efekt wzrasta do @AmpedRegen*100@% podstawowej regeneracji zdrowia , gdy masz poniżej @AmpedHPThreshold*100@% zdrowia .\nLeczenie w tej rundzie: @f1@ pkt.\nCałkowite leczenie: @f2@ pkt."
+        "en": "Gain 600 - 1200% base Health Regen, increased to 1200 - 2400% base Health Regen below 25 - 50% Health.\nHealing Done This Round:\nHealing Done Total:",
+        "pl": "Zyskujesz 600 - 1200% podstawowej regeneracji zdrowia. Efekt wzrasta do 1200 - 2400% podstawowej regeneracji zdrowia, gdy masz poniżej 25 - 50% zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/perseverance_small.png",
       "tier": "gold",
@@ -20004,8 +19995,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Niezwykła Nikczemność"
       },
       "descriptions": {
-        "en": "Permanently gain @APPerProc@ Ability Power when you hit an enemy with an Ability.\n@SpellIDCD@ second Cooldown per Ability.\nIf taken after round @RoundCounterForBonusAP@, gain @BonusAPForLatePick@ Ability Power .",
-        "pl": "Zyskujesz @APPerProc@ pkt. mocy umiejętności , gdy trafisz wroga umiejętnością.\n@SpellIDCD@ sek. odnowienia dla każdej umiejętności.\nJeśli zostanie wzięte po rundzie @RoundCounterForBonusAP@, zapewnia @BonusAPForLatePick@ pkt. mocy umiejętności ."
+        "en": "Permanently gain 1 - 2 Ability Power when you hit an enemy with an Ability.\n5 second Cooldown per Ability.\nIf taken after round 4, gain 40 Ability Power.",
+        "pl": "Zyskujesz 1 - 2 pkt. mocy umiejętności, gdy trafisz wroga umiejętnością.\n5 sek. odnowienia dla każdej umiejętności.\nJeśli zostanie wzięte po rundzie 4, zapewnia 40 pkt. mocy umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/phenomenalevil_small.png",
       "tier": "gold",
@@ -20020,8 +20011,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kwantowe Obliczenia"
       },
       "descriptions": {
-        "en": "Every @Cooldown@ seconds Autocast a massive slash around you, dealing @BaseDamageTotal@ physical damage .\nEnemies hit by the outer half are Slowed by @SlowPercentage@% decaying over @SlowDuration@ seconds, take an additional @OuterEdgeTooltip@ max Health physical damage , and you restore @OuterConeHealingRatio@% champion damage dealt Health .",
-        "pl": "Co @Cooldown@ sek. automatycznie tniesz wrogów dookoła siebie, zadając @BaseDamageTotal@ pkt. obrażeń fizycznych .\nNa wrogów znajdujących się na zewnętrznej połowie obszaru trafienia zostaje nałożone spowolnienie o @SlowPercentage@%, zanikające w ciągu @SlowDuration@ sek., i otrzymują oni dodatkowe obrażenia fizyczne równe @OuterEdgeTooltip@ ich maksymalnego zdrowia , natomiast ty odzyskujesz zdrowie równe @OuterConeHealingRatio@% obrażeń zadanych bohaterom ."
+        "en": "Every 12 seconds Autocast a massive slash around you, dealing physical damage.\nEnemies hit by the outer half are Slowed by 60 - 80% decaying over 2 seconds, take an additional max Health physical damage, and you restore 80% champion damage dealt Health.",
+        "pl": "Co 12 sek. automatycznie tniesz wrogów dookoła siebie, zadając pkt. obrażeń fizycznych.\nNa wrogów znajdujących się na zewnętrznej połowie obszaru trafienia zostaje nałożone spowolnienie o 60 - 80%, zanikające w ciągu 2 sek., i otrzymują oni dodatkowe obrażenia fizyczne równe ich maksymalnego zdrowia, natomiast ty odzyskujesz zdrowie równe 80% obrażeń zadanych bohaterom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quantumcomputing_small.png",
       "tier": "prismatic",
@@ -20036,8 +20027,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Karczemne Zabijakowanie"
       },
       "descriptions": {
-        "en": "Using an Ability restores @HealAmount@ Health .\nHealing Done This Round: @f1@\nHealing Done Total: @f2@",
-        "pl": "Użycie umiejętności przywraca @HealAmount@ pkt. zdrowia .\nObrażenia wyleczone w tej rundzie: @f1@ pkt.\nCałkowite wyleczone obrażenia: @f2@ pkt."
+        "en": "Using an Ability restores Health.\nHealing Done This Round:\nHealing Done Total:",
+        "pl": "Użycie umiejętności przywraca pkt. zdrowia.\nObrażenia wyleczone w tej rundzie\nCałkowite wyleczone obrażenia"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/rabblerousing_small.png",
       "tier": "gold",
@@ -20052,8 +20043,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rekurencja"
       },
       "descriptions": {
-        "en": "Gain @AbilityHaste@ Ability Haste.",
-        "pl": "Zyskujesz @AbilityHaste@ jedn. przyspieszenia umiejętności."
+        "en": "Gain 40 - 140 Ability Haste.",
+        "pl": "Zyskujesz 40 - 140 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/recursion_small.png",
       "tier": "gold",
@@ -20068,8 +20059,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odpychacz"
       },
       "descriptions": {
-        "en": "On dropping below @HealthThreshold1*100@% or @HealthThreshold2*100@% Health, nearby enemies are Knocked Back .",
-        "pl": "Gdy twoje zdrowie spadnie poniżej @HealthThreshold1*100@% lub @HealthThreshold2*100@%, pobliscy wrogowie zostają odrzuceni ."
+        "en": "On dropping below 60% or 30% Health, nearby enemies are Knocked Back.",
+        "pl": "Gdy twoje zdrowie spadnie poniżej 60% lub 30%, pobliscy wrogowie zostają odrzuceni."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/repulsor_small.png",
       "tier": "silver",
@@ -20084,8 +20075,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nieprzerwane Przywracanie"
       },
       "descriptions": {
-        "en": "You restore @HealCalcPer1000Units@ Health per 1000 distance traveled.\nHealing Done This Round: @f1@\nHealing Done Total: @f2@",
-        "pl": "Odzyskujesz @HealCalcPer1000Units@ pkt. zdrowia za każde przebyte 1000 jedn. odległości.\nObrażenia wyleczone w tej rundzie: @f1@ pkt.\nCałkowite wyleczone obrażenia: @f2@ pkt."
+        "en": "You restore Health per 1000 distance traveled.\nHealing Done This Round:\nHealing Done Total:",
+        "pl": "Odzyskujesz pkt. zdrowia za każde przebyte 1000 jedn. odległości.\nObrażenia wyleczone w tej rundzie\nCałkowite wyleczone obrażenia"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/restlessrestoration_small.png",
       "tier": "gold",
@@ -20113,8 +20104,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Żarliwa Jutrzenka"
       },
       "descriptions": {
-        "en": "Your Abilities mark enemies, causing them to take an additional @Damage@ + @MaxHPDamage*100@% max HP magic damage from your ally's next Attack or Ability.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Twoje umiejętności oznaczają wrogów, sprawiając, że otrzymują oni dodatkowe obrażenia magiczne równe @Damage@ pkt. + @MaxHPDamage*100@% maksymalnego zdrowia od następnego ataku lub umiejętności twojego sojusznika.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your Abilities mark enemies, causing them to take an additional + 2.5 - 4.5% max HP magic damage from your ally's next Attack or Ability.",
+        "pl": "Twoje umiejętności oznaczają wrogów, sprawiając, że otrzymują oni dodatkowe obrażenia magiczne równe pkt. + 2.5 - 4.5% maksymalnego zdrowia od następnego ataku lub umiejętności twojego sojusznika."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/searingdawn_small.png",
       "tier": "gold",
@@ -20129,8 +20120,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Cieniobieżca"
       },
       "descriptions": {
-        "en": "After using a dash, leap, blink, or teleport Ability or exiting Stealth , gain @spell.Augment_ShadowRunner:MSAmount@ Move Speed for @spell.Augment_ShadowRunner:BuffDuration@ seconds.",
-        "pl": "Po użyciu umiejętności doskoku, skoku, mignięcia lub teleportacji lub zaprzestaniu ukrywania się zyskujesz @spell.Augment_ShadowRunner:MSAmount@ jedn. prędkości ruchu na @spell.Augment_ShadowRunner:BuffDuration@ sek."
+        "en": "After using a dash, leap, blink, or teleport Ability or exiting Stealth, gain 200 - 400 Move Speed for 2 - 3 seconds.",
+        "pl": "Po użyciu umiejętności doskoku, skoku, mignięcia lub teleportacji lub zaprzestaniu ukrywania się zyskujesz 200 - 400 jedn. prędkości ruchu na 2 - 3 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/shadowrunner_small.png",
       "tier": "silver",
@@ -20145,8 +20136,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Promień Pomniejszający"
       },
       "descriptions": {
-        "en": "Your Attacks reduce the target's damage and size by @DamageReduction*100@% {{ Item_Keyword_OnHit }}.",
-        "pl": "Twoje ataki zmniejszają obrażenia i rozmiar celu o @DamageReduction*100@% {{ Item_Keyword_OnHit }}."
+        "en": "Your Attacks reduce the target's damage and size by 10 - 40%.",
+        "pl": "Twoje ataki zmniejszają obrażenia i rozmiar celu o 10 - 40%."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/shrinkray_small.png",
       "tier": "gold",
@@ -20161,8 +20152,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wolnowar"
       },
       "descriptions": {
-        "en": "Every second, apply an infinitely stacking Burn to nearby enemy champions, dealing @BleedDamageTooltip@ magic damage per second for @BleedDuration@ seconds.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Co sekundę nakładasz na pobliskich wrogich bohaterów kumulujące się w nieskończoność podpalenie , zadające @BleedDamageTooltip@ pkt. obrażeń magicznych na sekundę przez @BleedDuration@ sek.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Every second, apply an infinitely stacking Burn to nearby enemy champions, dealing magic damage per second for 5 seconds.",
+        "pl": "Co sekundę nakładasz na pobliskich wrogich bohaterów kumulujące się w nieskończoność podpalenie, zadające pkt. obrażeń magicznych na sekundę przez 5 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/slowcooker_small.png",
       "tier": "prismatic",
@@ -20177,8 +20168,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Grom Dźwiękowy"
       },
       "descriptions": {
-        "en": "Buffing, Healing , or Shielding your ally deals @Damage@ true damage and Slows enemies surrounding them by @SlowAmount*-100@% for @SlowDuration@ seconds.\n@ProcCooldown@ second cooldown per cast.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Wzmacnianie, leczenie i nakładanie tarcz na sojusznika zadaje @Damage@ pkt. obrażeń nieuchronnych otaczającym go wrogom i spowalnia ich o @SlowAmount*-100@% na @SlowDuration@ sek.\n@ProcCooldown@ sek. odnowienia na każde użycie.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Buffing, Healing, or Shielding your ally deals true damage and Slows enemies surrounding them by 30 - 60% for 1.5 seconds.\n2 second cooldown per cast.",
+        "pl": "Wzmacnianie, leczenie i nakładanie tarcz na sojusznika zadaje obrażenia nieuchronnych otaczającym go wrogom i spowalnia ich o 30 - 60% na 1.5 sek.\n2 sek. odnowienia na każde użycie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/sonicboom_small.png",
       "tier": "silver",
@@ -20192,10 +20183,7 @@ window.ARENA_GAME_DATA = {
         "en": "Soul Siphon",
         "pl": "Pochłanianie Dusz"
       },
-      "descriptions": {
-        "en": "{{Cherry_SoulSiphon_Summary}}",
-        "pl": "{{Cherry_SoulSiphon_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/soulsiphon_small.png",
       "tier": "gold",
       "rarity": 1,
@@ -20209,8 +20197,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Duchowe Powiązanie"
       },
       "descriptions": {
-        "en": "{{Cherry_SpiritLink_Summary}}\nDamage Redirected Total: @f1@\nHealing Done Total: @f2@",
-        "pl": "{{Cherry_SpiritLink_Summary}}\nŁącznie przekierowane obrażenia: @f1@ pkt.\nŁącznie zadane leczenie: @f2@ pkt."
+        "en": "Damage Redirected Total:\nHealing Done Total:",
+        "pl": "Łącznie przekierowane obrażenia\nŁącznie zadane leczenie"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/spiritlink_small.png",
       "tier": "prismatic",
@@ -20225,8 +20213,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wojenna Symfonia"
       },
       "descriptions": {
-        "en": "Gain the Lethal Tempo and Conqueror Keystone Runes.\nLethal Tempo - Attacking champions grants Attack Speed , stacking up to 6 times. At 6 stacks, your Attacks launch a bolt that deals additional damage.\nConqueror - Attacks and Ability hits against champions grant you AdaptiveForce , stacking up to 12 times. At 12 stacks, heal for a percentage of damage you deal to champions.",
-        "pl": "Zyskujesz runy kluczowe: Zabójcze Tempo i Zdobywca .\nZabójcze Tempo — atakowanie bohaterów zapewnia prędkość ataku kumulującą się do 6 razy. Przy 6 ładunkach twoje ataki wystrzeliwują pocisk, który zadaje dodatkowe obrażenia.\nZdobywca — Ataki i trafienia umiejętnościami przeciwko bohaterom zapewniają siłę adaptacyjną , kumulując się do 12 razy. Przy 12 ładunkach leczysz się o procent obrażeń zadanych bohaterom."
+        "en": "Gain the Lethal Tempo and Conqueror Keystone Runes.\nLethal Tempo - Attacking champions grants Attack Speed, stacking up to 6 times. At 6 stacks, your Attacks launch a bolt that deals additional damage.\nConqueror - Attacks and Ability hits against champions grant you AdaptiveForce, stacking up to 12 times. At 12 stacks, heal for a percentage of damage you deal to champions.",
+        "pl": "Zyskujesz runy kluczowe: Zabójcze Tempo i Zdobywca.\nZabójcze Tempo — atakowanie bohaterów zapewnia prędkość ataku kumulującą się do 6 razy. Przy 6 ładunkach twoje ataki wystrzeliwują pocisk, który zadaje dodatkowe obrażenia.\nZdobywca — Ataki i trafienia umiejętnościami przeciwko bohaterom zapewniają siłę adaptacyjną, kumulując się do 12 razy. Przy 12 ładunkach leczysz się o procent obrażeń zadanych bohaterom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/symphonyofwar_small.png",
       "tier": "prismatic",
@@ -20241,8 +20229,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Obrona albo Nic"
       },
       "descriptions": {
-        "en": "You can Critically Defend using your Crit Chance (max @MaxChance*100@% chance) , reducing damage taken by @CriticalDefendCalc@.\nGain %i:scaleCrit% @CritChance*100@% Crit Chance .",
-        "pl": "Możesz wykonać krytyczną obronę przy użyciu swojej szansy na trafienie krytyczne (maks. @MaxChance*100@% szansy) i zmniejszyć otrzymywane obrażenia o @CriticalDefendCalc@.\nZyskujesz %i:scaleCrit% @CritChance*100@% szansy na trafienie krytyczne ."
+        "en": "You can Critically Defend using your Crit Chance (max 50% chance), reducing damage taken by.\nGain 25% Crit Chance.",
+        "pl": "Możesz wykonać krytyczną obronę przy użyciu swojej szansy na trafienie krytyczne (maks. 50% szansy) i zmniejszyć otrzymywane obrażenia o.\nZyskujesz 25% szansy na trafienie krytyczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/tankitorleaveit_small.png",
       "tier": "silver",
@@ -20257,8 +20245,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Szalone Tańcowanie"
       },
       "descriptions": {
-        "en": "Your Attacks grant you @MSPerHit@ Move Speed {{ Item_Keyword_OnHit }}.\nGain @MSToASConversionCalc@ Attack Speed .",
-        "pl": "Twoje ataki zapewniają ci @MSPerHit@ jedn. prędkości ruchu {{ Item_Keyword_OnHit }}.\nZyskujesz @MSToASConversionCalc@ jedn. prędkości ataku ."
+        "en": "Your Attacks grant you 6 - 18 Move Speed.\nGain Attack Speed.",
+        "pl": "Twoje ataki zapewniają ci 6 - 18 jedn. prędkości ruchu.\nZyskujesz jedn. prędkości ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/tapdancer_small.png",
       "tier": "prismatic",
@@ -20273,8 +20261,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Tłuczek"
       },
       "descriptions": {
-        "en": "Gain @AD@ Attack Damage , @AbilityHaste@ Ability Haste, and @Lethality@ Lethality .",
-        "pl": "Zyskujesz @AD@ pkt. obrażeń od ataku , @AbilityHaste@ jedn. przyspieszenia umiejętności i @Lethality@ pkt. destrukcji ."
+        "en": "Gain 20 - 80 Attack Damage, 10 - 50 Ability Haste, and 10 - 50 Lethality.",
+        "pl": "Zyskujesz 20 - 80 pkt. obrażeń od ataku, 10 - 50 jedn. przyspieszenia umiejętności i 10 - 50 pkt. destrukcji."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/thebrutalizer_small.png",
       "tier": "silver",
@@ -20302,8 +20290,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przebitka"
       },
       "descriptions": {
-        "en": "Gain @PercentPen*100@% %i:scaleAPen% Armor Penetration and %i:scaleMPen% Magic Penetration .",
-        "pl": "Zyskujesz @PercentPen*100@% %i:scaleAPen%przebicia pancerza i %i:scaleMPen%przebicia odporności na magię ."
+        "en": "Gain 15 - 35% Armor Penetration and Magic Penetration.",
+        "pl": "Zyskujesz 15 - 35% przebicia pancerza i przebicia odporności na magię."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/threadtheneedle_small.png",
       "tier": "gold",
@@ -20318,8 +20306,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Okrutnik"
       },
       "descriptions": {
-        "en": "Immobilizing or Grounding enemy champions applies a Burn , dealing @PercentMaxHPDamagePer5Seconds*20@% max Health Magic Damage per second for @BleedDuration@ seconds. The Burn stacks infinitely.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Unieruchamianie lub uziemianie wrogich bohaterów nakłada na nich podpalenie , które zadaje obrażenia magiczne w wysokości @PercentMaxHPDamagePer5Seconds*20@% ich maksymalnego zdrowia na sekundę przez @BleedDuration@ sek. Podpalenie kumuluje się w nieskończoność.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Immobilizing or Grounding enemy champions applies a Burn, dealing 0.6 - 1.2% max Health Magic Damage per second for 5 seconds. The Burn stacks infinitely.",
+        "pl": "Unieruchamianie lub uziemianie wrogich bohaterów nakłada na nich podpalenie, które zadaje obrażenia magiczne w wysokości 0.6 - 1.2% ich maksymalnego zdrowia na sekundę przez 5 sek. Podpalenie kumuluje się w nieskończoność."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/tormentor_small.png",
       "tier": "silver",
@@ -20334,8 +20322,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Genialny Cel"
       },
       "descriptions": {
-        "en": "When you damage someone from over @SnipeDistance@ units away, fire a Trueshot Barrage , dealing @Damage@ magic damage . @Cooldown@s per target cooldown.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Kiedy zadajesz bohaterowi obrażenia z zasięgu przynajmniej @SnipeDistance@ jedn., wystrzeliwujesz w niego Celną Salwę , zadając @Damage@ pkt. obrażeń magicznych . @Cooldown@ sek. odnowienia na cel.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "When you damage someone from over 700 units away, fire a Trueshot Barrage, dealing magic damage. 2 - 10s per target cooldown.",
+        "pl": "Kiedy zadajesz bohaterowi obrażenia z zasięgu przynajmniej 700 jedn., wystrzeliwujesz w niego Celną Salwę, zadając pkt. obrażeń magicznych. 2 - 10 sek. odnowienia na cel."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/trueshotprodigy_small.png",
       "tier": "prismatic",
@@ -20350,8 +20338,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Tajfun"
       },
       "descriptions": {
-        "en": "Your Attacks fire a bolt at an additional target dealing @ADRatio*100@% damage and applying {{ Item_Keyword_OnHit }} effects.",
-        "pl": "Twoje ataki wystrzeliwują w dodatkowy cel pocisk, który zadaje @ADRatio*100@% obrażeń i nakłada efekty {{ Item_Keyword_OnHit }}."
+        "en": "Your Attacks fire a bolt at an additional target dealing 20 - 100% damage and applying effects.",
+        "pl": "Twoje ataki wystrzeliwują w dodatkowy cel pocisk, który zadaje 20 - 100% obrażeń i nakłada efekty."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/typhoon_small.png",
       "tier": "silver",
@@ -20382,8 +20370,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zniknięcie"
       },
       "descriptions": {
-        "en": "Become Invisible for @StealthDuration@ seconds or until you Attack or use an Ability.",
-        "pl": "Zyskujesz niewidzialność na @StealthDuration@ sek. lub dopóki nie zaatakujesz albo użyjesz umiejętności."
+        "en": "Become Invisible for 3 - 6 seconds or until you Attack or use an Ability.",
+        "pl": "Zyskujesz niewidzialność na 3 - 6 sek. lub dopóki nie zaatakujesz albo użyjesz umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/vanish_small.png",
       "tier": "gold",
@@ -20397,10 +20385,7 @@ window.ARENA_GAME_DATA = {
         "en": "Vengeance",
         "pl": "Zemsta"
       },
-      "descriptions": {
-        "en": "{{Cherry_Vengeance_Summary}}",
-        "pl": "{{Cherry_Vengeance_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/vengeance_small.png",
       "tier": "gold",
       "rarity": 1,
@@ -20427,8 +20412,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wrażliwość"
       },
       "descriptions": {
-        "en": "Your Item and damage over time effects can Critically Strike for @CritDamage*100@% extra damage .\nGain %i:scaleCrit% @CritChance*100@% Crit chance .",
-        "pl": "Twoje efekty przedmiotów i obrażenia w czasie mogą trafić krytycznie i zadać @CritDamage*100@% dodatkowych obrażeń .\nZyskujesz %i:scaleCrit% @CritChance*100@% szansy na trafienie krytyczne ."
+        "en": "Your Item and damage over time effects can Critically Strike for 140 - 170% extra damage.\nGain 25% Crit chance.",
+        "pl": "Twoje efekty przedmiotów i obrażenia w czasie mogą trafić krytycznie i zadać 140 - 170% dodatkowych obrażeń.\nZyskujesz 25% szansy na trafienie krytyczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/vulnerability_small.png",
       "tier": "gold",
@@ -20443,8 +20428,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rutynowa Rozgrzewka"
       },
       "descriptions": {
-        "en": "Gain the Warmup Routine Summoner Spell.\nChannel your inner dancer to increase your damage by 2% per second, up to @MaxStacks*100@% max.",
-        "pl": "Zyskujesz czar przywoływacza Rutynowa Rozgrzewka .\nUwalniasz swojego wewnętrznego tancerza, by zwiększyć swoje obrażenia o 2% na sekundę, do maksymalnie @MaxStacks*100@%."
+        "en": "Gain the Warmup Routine Summoner Spell.\nChannel your inner dancer to increase your damage by 2% per second, up to 2000 - 6000% max.",
+        "pl": "Zyskujesz czar przywoływacza Rutynowa Rozgrzewka.\nUwalniasz swojego wewnętrznego tancerza, by zwiększyć swoje obrażenia o 2% na sekundę, do maksymalnie 2000 - 6000%."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/warmuproutine_small.png",
       "tier": "silver",
@@ -20459,8 +20444,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Świadome Poświęcenie"
       },
       "descriptions": {
-        "en": "The first time an allied champion drops below @AllyHealthThreshold*100@% Health , trade @CurrentHealthToDrain*100@% of your current Health to grant them a shield equal to @ShieldToGrant*100@% of your current Health .",
-        "pl": "Gdy zdrowie sojuszniczego bohatera po raz pierwszy spadnie poniżej @AllyHealthThreshold*100@% , poświęcasz @CurrentHealthToDrain*100@% swojego obecnego zdrowia , by zapewnić mu tarczę równą @ShieldToGrant*100@% twojego obecnego zdrowia ."
+        "en": "The first time an allied champion drops below 30% Health, trade 25% of your current Health to grant them a shield equal to 15 - 75% of your current Health.",
+        "pl": "Gdy zdrowie sojuszniczego bohatera po raz pierwszy spadnie poniżej 30%, poświęcasz 25% swojego obecnego zdrowia, by zapewnić mu tarczę równą 15 - 75% twojego obecnego zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/willingsacrifice_small.png",
       "tier": "gold",
@@ -20488,8 +20473,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mądrość Wieków"
       },
       "descriptions": {
-        "en": "Gain 1 level now, and 1 bonus level every other round.\nYour level cap is removed.\nIf taken after round @RoundCounterForBonus@, gain @BonusForLatePick@ additional levels.\nLeveling this augment instantly grants you levels",
-        "pl": "Zyskujesz 1 poziom teraz i 1 dodatkowy poziom co drugą rundę.\nTwoje ograniczenie poziomu zostaje usunięte.\nJeśli zostanie wzięte po rundzie @RoundCounterForBonus@, zapewnia dodatkowe poziomy (@BonusForLatePick@).\nZwiększenie poziomu tego ulepszenia natychmiast zapewnia ci poziomy."
+        "en": "Gain 1 level now, and 1 bonus level every other round.\nYour level cap is removed.\nIf taken after round 4, gain 2 additional levels.\nLeveling this augment instantly grants you levels",
+        "pl": "Zyskujesz 1 poziom teraz i 1 dodatkowy poziom co drugą rundę.\nTwoje ograniczenie poziomu zostaje usunięte.\nJeśli zostanie wzięte po rundzie 4, zapewnia dodatkowe poziomy (2).\nZwiększenie poziomu tego ulepszenia natychmiast zapewnia ci poziomy."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wisdomofages_small.png",
       "tier": "prismatic",
@@ -20504,8 +20489,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Czarowanie na Zawołanie"
       },
       "descriptions": {
-        "en": "Gain %i:scaleAP% @AP@ Ability Power .",
-        "pl": "Zyskujesz %i:scaleAP% @AP@ pkt. mocy umiejętności ."
+        "en": "Gain 60 - 180 Ability Power.",
+        "pl": "Zyskujesz 60 - 180 pkt. mocy umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/witchfulthinking_small.png",
       "tier": "silver",
@@ -20520,8 +20505,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pośpiech"
       },
       "descriptions": {
-        "en": "Gain @AbilityHasteToMSConversionCalc@ Move Speed .",
-        "pl": "Zyskujesz @AbilityHasteToMSConversionCalc@ jedn. prędkości ruchu ."
+        "en": "Gain Move Speed.",
+        "pl": "Zyskujesz jedn. prędkości ruchu."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/withhaste_small.png",
       "tier": "gold",
@@ -20549,8 +20534,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nie Goń"
       },
       "descriptions": {
-        "en": "You become Ghosted and leave a trail of poisonous gas behind you, dealing @DamagePerSecond@ magic damage per second to enemies inside.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Zyskujesz przenikanie i zostawiasz za sobą szlak trucizny, który co sekundę zadaje @DamagePerSecond@ pkt. obrażeń magicznych stąpającym po nim wrogom.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "You become Ghosted and leave a trail of poisonous gas behind you, dealing magic damage per second to enemies inside.",
+        "pl": "Zyskujesz przenikanie i zostawiasz za sobą szlak trucizny, który co sekundę zadaje obrażenia magicznych stąpającym po nim wrogom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dontchase_small.png",
       "tier": "silver",
@@ -20565,8 +20550,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bułka z Masłem"
       },
       "descriptions": {
-        "en": "Your @spell1KeyBind@ gains @QAbilityHaste@ Ability Haste.",
-        "pl": "Twoja umiejętność @spell1KeyBind@ zyskuje @QAbilityHaste@ jedn. przyspieszenia umiejętności."
+        "en": "Your gains 100 - 300 Ability Haste.",
+        "pl": "Twoja umiejętność zyskuje 100 - 300 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/breadandbutter_small.png",
       "tier": "gold",
@@ -20581,8 +20566,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Stworomanta"
       },
       "descriptions": {
-        "en": "Your summons gain @MinionAmp*100@% increased size, health, and damage.",
-        "pl": "Twoje przywołańce zyskują @MinionAmp*100@% rozmiaru, zdrowia i obrażeń."
+        "en": "Your summons gain 35 - 55% increased size, health, and damage.",
+        "pl": "Twoje przywołańce zyskują 35 - 55% rozmiaru, zdrowia i obrażeń."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/minionmancer_small.png",
       "tier": "gold",
@@ -20597,8 +20582,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Obrona Terytorialna"
       },
       "descriptions": {
-        "en": "Gain @spell.Augment_Homeguard:MovementSpeed*100@% Move Speed , disabled for @spell.Augment_Homeguard:DisableCooldown@ seconds after taking damage.",
-        "pl": "Zyskujesz @spell.Augment_Homeguard:MovementSpeed*100@% prędkości ruchu . Po otrzymaniu obrażeń efekt zostaje zablokowany na @spell.Augment_Homeguard:DisableCooldown@ sek."
+        "en": "Gain 70 - 140% Move Speed, disabled for 3 seconds after taking damage.",
+        "pl": "Zyskujesz 70 - 140% prędkości ruchu. Po otrzymaniu obrażeń efekt zostaje zablokowany na 3 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/homeguard_small.png",
       "tier": "silver",
@@ -20613,8 +20598,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Po Dwakroć, Po Trzykroć"
       },
       "descriptions": {
-        "en": "Every @ProcCadence@ attacks, your {{ Item_Keyword_OnHit }} effects trigger a second time.",
-        "pl": "Co każdy @ProcCadence@. atak, twoje efekty {{ Item_Keyword_OnHit }} aktywują się drugi raz."
+        "en": "Every 2 - 3 attacks, your effects trigger a second time.",
+        "pl": "Co każdy 2 - 3. atak, twoje efekty aktywują się drugi raz."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/twicethrice_small.png",
       "tier": "gold",
@@ -20629,8 +20614,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Samozniszczenie"
       },
       "descriptions": {
-        "en": "Every @BombDelay@ seconds Autocast , attach a bomb to yourself, it explodes, dealing @MaxHealthDamage*100@% max Health true damage and Knocks Up nearby enemies for @KnockupDuration@ seconds.",
-        "pl": "Co @BombDelay@ sek. jest rzucane automatycznie , przyczepia do siebie bombę, która wybucha, zadając obrażenia nieuchronne równe @MaxHealthDamage*100@% maks. zdrowia i podrzuca pobliskich wrogów na @KnockupDuration@ sek."
+        "en": "Every 13 seconds Autocast, attach a bomb to yourself, it explodes, dealing 15 - 35% max Health true damage and Knocks Up nearby enemies for 0.8 seconds.",
+        "pl": "Co 13 sek. jest rzucane automatycznie, przyczepia do siebie bombę, która wybucha, zadając obrażenia nieuchronne równe 15 - 35% maks. zdrowia i podrzuca pobliskich wrogów na 0.8 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/selfdestruct_small.png",
       "tier": "silver",
@@ -20645,8 +20630,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przysięga"
       },
       "descriptions": {
-        "en": "Replace Flee with Fate's Call .\nFate's Call making your ally Untargetable for up to 4 seconds. your ally can launch themself out, Knocking Back enemies.",
-        "pl": "Zastąp Ucieczkę Zewem Przeznaczenia .\nZew Przeznaczenia sprawia, że twój sojusznik staje się niemożliwy do obrania za cel na maks. 4 sek. Sojusznik może się wystrzelić, odrzucając wrogów."
+        "en": "Replace Flee with Fate's Call.\nFate's Call making your ally Untargetable for up to 4 seconds. your ally can launch themself out, Knocking Back enemies.",
+        "pl": "Zastąp Ucieczkę Zewem Przeznaczenia.\nZew Przeznaczenia sprawia, że twój sojusznik staje się niemożliwy do obrania za cel na maks. 4 sek. Sojusznik może się wystrzelić, odrzucając wrogów."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/oathsworn_small.png",
       "tier": "gold",
@@ -20661,8 +20646,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sznur na Pranie"
       },
       "descriptions": {
-        "en": "There is a tether connecting your team, deals constant @BurnDamageTooltip@ magic damage per second to those it touches.\nDamage Dealt this Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Między twoją drużyną rozciąga się więź, która nieustannie zadaje @BurnDamageTooltip@ pkt. obrażeń magicznych na sekundę tym, którzy jej dotykają.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "There is a tether connecting your team, deals constant magic damage per second to those it touches.",
+        "pl": "Między twoją drużyną rozciąga się więź, która nieustannie zadaje obrażenia magicznych na sekundę tym, którzy jej dotykają."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/clothesline_small.png",
       "tier": "silver",
@@ -20677,8 +20662,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Niepowstrzymana Superumiejętność"
       },
       "descriptions": {
-        "en": "After using your Ultimate, you become immune to crowd control for @UnstoppableDuration@ seconds. (@Cooldown@ second Cooldown).",
-        "pl": "Po użyciu superumiejętności zyskujesz niewrażliwość na efekty kontroli tłumu przez @UnstoppableDuration@ sek. (Czas odnowienia: @Cooldown@ sek.)."
+        "en": "After using your Ultimate, you become immune to crowd control for 2 - 5 seconds. (8 second Cooldown).",
+        "pl": "Po użyciu superumiejętności zyskujesz niewrażliwość na efekty kontroli tłumu przez 2 - 5 sek. (Czas odnowienia: 8 sek.)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/ultimateunstoppable_small.png",
       "tier": "silver",
@@ -20693,8 +20678,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Doświadczony Snajper"
       },
       "descriptions": {
-        "en": "Hitting an enemy with a non-Ultimate Ability at over @SnipeDistance@ range reduces its Cooldown to @ReducedCooldown@ seconds, periodic abilities are instead reset to @PeriodicReductionAmount@ seconds.",
-        "pl": "Trafienie wroga umiejętnością podstawową z zasięgu ponad @SnipeDistance@ jedn. skraca jej czas odnowienia do @ReducedCooldown@ sek., a czas odnowienia umiejętności rozłożonych w czasie zostaje odświeżony do @PeriodicReductionAmount@ sek."
+        "en": "Hitting an enemy with a non-Ultimate Ability at over 700 range reduces its Cooldown to 0.5 seconds, periodic abilities are instead reset to 3 seconds.",
+        "pl": "Trafienie wroga umiejętnością podstawową z zasięgu ponad 700 jedn. skraca jej czas odnowienia do 0.5 sek., a czas odnowienia umiejętności rozłożonych w czasie zostaje odświeżony do 3 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/skilledsniper_small.png",
       "tier": "gold",
@@ -20709,8 +20694,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Najbardziej Snajperskie Uzbrojenie"
       },
       "descriptions": {
-        "en": "Gain @RangeIncrease@ Attack Range.",
-        "pl": "Zyskujesz @RangeIncrease@ jedn. zasięgu ataku."
+        "en": "Gain Attack Range.",
+        "pl": "Zyskujesz  jedn. zasięgu ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/scopiestweapons_small.png",
       "tier": "prismatic",
@@ -20725,8 +20710,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zabłysnąć z Przytupem"
       },
       "descriptions": {
-        "en": "Your Flash has @MaxAmmo@ Ammo and a @FlashCooldown@ second Cooldown.",
-        "pl": "Twój Błysk ma następującą liczbę ładunków amunicji: @MaxAmmo@ i @FlashCooldown@ sek. odnowienia."
+        "en": "Your Flash has 1 - 7 Ammo and a 2 second Cooldown.",
+        "pl": "Twój Błysk ma następującą liczbę ładunków amunicji: 1 - 7 i 2 sek. odnowienia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/flashy_small.png",
       "tier": "gold",
@@ -20740,10 +20725,7 @@ window.ARENA_GAME_DATA = {
         "en": "Critical Healing",
         "pl": "Leczenie Krytyczne"
       },
-      "descriptions": {
-        "en": "{{Cherry_CriticalHealing_Summary}}",
-        "pl": "{{Cherry_CriticalHealing_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/criticalhealing_small.png",
       "tier": "gold",
       "rarity": 1,
@@ -20757,8 +20739,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Służba po Śmierci"
       },
       "descriptions": {
-        "en": "The first time you would die each round, instead return to full Health , decaying over @DecayDuration@ seconds.\nTaking down an enemy champion while your Health is decaying stops the decay and sets your Health to @TriumphPercent@% max Health .",
-        "pl": "W każdej rundzie za pierwszym razem, gdy ma nastąpić twoja śmierć, odzyskujesz całe zdrowie , które zanika w ciągu @DecayDuration@ sek.\nUdział w zabójstwie wrogiego bohatera, gdy twoje zdrowie zanika , zatrzymuje proces zanikania , a twoje zdrowie znajdzie się na poziomie @TriumphPercent@% maksymalnego zdrowia ."
+        "en": "The first time you would die each round, instead return to full Health, decaying over 3 - 6 seconds.\nTaking down an enemy champion while your Health is decaying stops the decay and sets your Health to 20 - 30% max Health.",
+        "pl": "W każdej rundzie za pierwszym razem, gdy ma nastąpić twoja śmierć, odzyskujesz całe zdrowie, które zanika w ciągu 3 - 6 sek.\nUdział w zabójstwie wrogiego bohatera, gdy twoje zdrowie zanika, zatrzymuje proces zanikania, a twoje zdrowie znajdzie się na poziomie 20 - 30% maksymalnego zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/servebeyonddeath_small.png",
       "tier": "silver",
@@ -20773,8 +20755,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ruletka Przywoływacza"
       },
       "descriptions": {
-        "en": "Replace your Summoner Spells with random ones.\nWhen you use a Summoner Spell , replace it with another random one on a @Cooldown@ second Cooldown.",
-        "pl": "Zastępujesz swoje czary przywoływacza innymi losowymi.\nGdy użyjesz czaru przywoływacza , zastąp go innym losowym. Czas odnowienia: @Cooldown@ sek."
+        "en": "Replace your Summoner Spells with random ones.\nWhen you use a Summoner Spell, replace it with another random one on a 4 - 6 second Cooldown.",
+        "pl": "Zastępujesz swoje czary przywoływacza innymi losowymi.\nGdy użyjesz czaru przywoływacza, zastąp go innym losowym. Czas odnowienia: 4 - 6 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/summonersroulette_small.png",
       "tier": "prismatic",
@@ -20789,8 +20771,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rajdowy Boss"
       },
       "descriptions": {
-        "en": "You start each round imprisoned in the center of the arena, unable to act. While imprisoned, you have up to @DamageReductionMax*100@% damage reduction and gain size, Health , Attack Damage , and Ability Power over time (max @StatIncrease*100@%).\nAfter @ImprisonDuration@ seconds or reaching @BreakoutHealthThreshold*100@% Health , you break out, Knocking Back enemies and gaining @ShieldHealthRatio*100@% max Health Shield .",
-        "pl": "Zaczynasz każdą rundę na środku areny i nie możesz podejmować żadnych działań. W tym czasie otrzymujesz maks. @DamageReductionMax*100@% redukcji obrażeń, zwiększasz swój rozmiar, zdrowie , obrażenia od ataku oraz moc umiejętności wraz z upływem czasu (maks. @StatIncrease*100@%).\nPo upływie @ImprisonDuration@ sek. lub gdy osiągniesz @BreakoutHealthThreshold*100@% zdrowia , z hukiem wydostajesz się ze swojego więzienia, odrzucając wrogów i zyskując tarczę o wytrzymałości @ShieldHealthRatio*100@% maks. zdrowia ."
+        "en": "You start each round imprisoned in the center of the arena, unable to act. While imprisoned, you have up to 70% damage reduction and gain size, Health, Attack Damage, and Ability Power over time (max 35 - 60%).\nAfter 9 seconds or reaching 50% Health, you break out, Knocking Back enemies and gaining 25 - 55% max Health Shield.",
+        "pl": "Zaczynasz każdą rundę na środku areny i nie możesz podejmować żadnych działań. W tym czasie otrzymujesz maks. 70% redukcji obrażeń, zwiększasz swój rozmiar, zdrowie, obrażenia od ataku oraz moc umiejętności wraz z upływem czasu (maks. 35 - 60%).\nPo upływie 9 sek. lub gdy osiągniesz 50% zdrowia, z hukiem wydostajesz się ze swojego więzienia, odrzucając wrogów i zyskując tarczę o wytrzymałości 25 - 55% maks. zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/raidboss_small.png",
       "tier": "prismatic",
@@ -20805,8 +20787,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Czarostrzelec"
       },
       "descriptions": {
-        "en": "Your Attacks deal additional @APDamage@ physical damage .\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Twoje ataki zadają dodatkowo @APDamage@ pkt. obrażeń fizycznych .\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Your Attacks deal additional physical damage.",
+        "pl": "Twoje ataki zadają dodatkowo pkt. obrażeń fizycznych."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/marksmage_small.png",
       "tier": "gold",
@@ -20821,8 +20803,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Magiczny Pocisk"
       },
       "descriptions": {
-        "en": "Dealing damage with an Ability fires @NumberOfMissiles@ magic missiles at each enemy hit, each dealing up to @MaxHealthDamageTooltip@% max Health true damage based on distance traveled.",
-        "pl": "Zadawanie obrażeń umiejętnością wystrzeliwuje następującą liczbę magicznych pocisków: @NumberOfMissiles@ w każdego trafionego wroga. Każdy pocisk zadaje obrażenia nieuchronne o wartości do @MaxHealthDamageTooltip@% maksymalnego zdrowia , w zależności od przebytego dystansu."
+        "en": "Dealing damage with an Ability fires 3 - 6 magic missiles at each enemy hit, each dealing up to 1% max Health true damage based on distance traveled.",
+        "pl": "Zadawanie obrażeń umiejętnością wystrzeliwuje następującą liczbę magicznych pocisków: 3 - 6 w każdego trafionego wroga. Każdy pocisk zadaje obrażenia nieuchronne o wartości do 1% maksymalnego zdrowia, w zależności od przebytego dystansu."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/magicmissile_small.png",
       "tier": "gold",
@@ -20837,8 +20819,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dobądź Miecza"
       },
       "descriptions": {
-        "en": "You are now melee. Gain @BonusAD*100@% Attack Damage , @BonusHP*100@% Health , @BonusAS*100@% Attack Speed , @BonusLifesteal*100@% Lifesteal , and @BonusMS*100@% Move Speed (each further increased based on Attack Range lost).",
-        "pl": "Teraz walczysz w zwarciu. Zyskujesz @BonusAD*100@% obrażeń od ataku , @BonusHP*100@% zdrowia , @BonusAS*100@% prędkości ataku , @BonusLifesteal*100@% kradzieży życia i @BonusMS*100@% prędkości ruchu (każde kolejne zwiększenie statystyk jest zależne od utraconego zasięgu ataku)."
+        "en": "You are now melee. Gain 25 - 75% Attack Damage, 25 - 75% Health, 15 - 45% Attack Speed, 25% Lifesteal, and 15% Move Speed (each further increased based on Attack Range lost).",
+        "pl": "Teraz walczysz w zwarciu. Zyskujesz 25 - 75% obrażeń od ataku, 25 - 75% zdrowia, 15 - 45% prędkości ataku, 25% kradzieży życia i 15% prędkości ruchu (każde kolejne zwiększenie statystyk jest zależne od utraconego zasięgu ataku)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/drawyoursword_small.png",
       "tier": "prismatic",
@@ -20853,8 +20835,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przebudzenie Zaklęć"
       },
       "descriptions": {
-        "en": "Hitting enemies with Abilities creates a blast that deals @Damage@ magic damage from you to the location you hit them.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Trafienie wrogów umiejętnościami tworzy podmuch, który zadaje @Damage@ pkt. obrażeń magicznych na obszarze pomiędzy tobą a celem.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Hitting enemies with Abilities creates a blast that deals magic damage from you to the location you hit them.",
+        "pl": "Trafienie wrogów umiejętnościami tworzy podmuch, który zadaje obrażenia magicznych na obszarze pomiędzy tobą a celem."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/spellwake_small.png",
       "tier": "prismatic",
@@ -20869,8 +20851,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sponiewieranie"
       },
       "descriptions": {
-        "en": "{{ Cherry_SlapAround_Summary }}\nCurrent Adaptive Force: @f1@",
-        "pl": "{{ Cherry_SlapAround_Summary }}\nObecna siła adaptacyjna: @f1@ pkt."
+        "en": "Current Adaptive Force:",
+        "pl": "Obecna siła adaptacyjna"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/slaparound_small.png",
       "tier": "silver",
@@ -20885,8 +20867,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Chłeptanie Posoki"
       },
       "descriptions": {
-        "en": "Gain @Omnivamp*100@% Omnivamp .",
-        "pl": "Zyskujesz @Omnivamp*100@% wszechwampiryzmu ."
+        "en": "Gain 15 - 25% Omnivamp.",
+        "pl": "Zyskujesz 15 - 25% wszechwampiryzmu."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/goredrink_small.png",
       "tier": "silver",
@@ -20901,8 +20883,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wszystko dla Ciebie"
       },
       "descriptions": {
-        "en": "Your Heals and Shields are @HealShieldAmp*100@% stronger when used on an ally.",
-        "pl": "Twoje leczenie i tarcze są o @HealShieldAmp*100@% silniejsze, jeśli zostaną użyte na sojuszniku."
+        "en": "Your Heals and Shields are 25 - 40% stronger when used on an ally.",
+        "pl": "Twoje leczenie i tarcze są o 25 - 40% silniejsze, jeśli zostaną użyte na sojuszniku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/allforyou_small.png",
       "tier": "gold",
@@ -20917,8 +20899,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nie do Przeskoczenia"
       },
       "descriptions": {
-        "en": "Gain the Aftershock and Glacial Augment Keystone Runes.\nAftershock : After Immobilizing an enemy champion, grants you Armor and Magic Resist for @DelayBeforeBurst@ seconds, after which you explode, damaging nearby enemies based on your max Health .\nGlacial Augment - Immobilizing champions creates ice beneath them, Slowing enemies inside and reducing their damage.",
-        "pl": "Zyskujesz runy kluczowe: Reperkusje i Lodowcowe Ulepszenie .\nReperkusje : Po unieruchomieniu wrogiego bohatera zyskujesz pancerz i odporność na magię na @DelayBeforeBurst@ sek. Następnie wybuchasz, zadając pobliskim wrogom obrażenia zależne od twojego maksymalnego zdrowia .\nLodowcowe Ulepszenie – Unieruchomienie bohaterów tworzy pod nimi lód, spowalniając wrogów na jego obszarze i zmniejszając ich obrażenia."
+        "en": "Gain the Aftershock and Glacial Augment Keystone Runes.\nAftershock: After Immobilizing an enemy champion, grants you Armor and Magic Resist for 2.5 seconds, after which you explode, damaging nearby enemies based on your max Health.\nGlacial Augment - Immobilizing champions creates ice beneath them, Slowing enemies inside and reducing their damage.",
+        "pl": "Zyskujesz runy kluczowe: Reperkusje i Lodowcowe Ulepszenie.\nReperkusje: Po unieruchomieniu wrogiego bohatera zyskujesz pancerz i odporność na magię na 2.5 sek. Następnie wybuchasz, zadając pobliskim wrogom obrażenia zależne od twojego maksymalnego zdrowia.\nLodowcowe Ulepszenie – Unieruchomienie bohaterów tworzy pod nimi lód, spowalniając wrogów na jego obszarze i zmniejszając ich obrażenia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/impassable_small.png",
       "tier": "gold",
@@ -20933,8 +20915,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bułka z Dżemem"
       },
       "descriptions": {
-        "en": "Your @spell2KeyBind@ gains @WAbilityHaste@ Ability Haste.",
-        "pl": "Twoja umiejętność @spell2KeyBind@ zyskuje @WAbilityHaste@ jedn. przyspieszenia umiejętności."
+        "en": "Your gains 100 - 300 Ability Haste.",
+        "pl": "Twoja umiejętność zyskuje 100 - 300 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/breadandjam_small.png",
       "tier": "gold",
@@ -20949,8 +20931,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bułka z Serem"
       },
       "descriptions": {
-        "en": "Your @spell3KeyBind@ gains @EAbilityHaste@ Ability Haste.",
-        "pl": "Twoja umiejętność @spell3KeyBind@ zyskuje @EAbilityHaste@ jedn. przyspieszenia umiejętności."
+        "en": "Your gains 100 - 300 Ability Haste.",
+        "pl": "Twoja umiejętność zyskuje 100 - 300 jedn. przyspieszenia umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/breadandcheese_small.png",
       "tier": "gold",
@@ -20965,8 +20947,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Stalowe Serce"
       },
       "descriptions": {
-        "en": "Requirement: Possess Heartsteel with @StackThreshold@+ stacks.\nReward: Multiply your Heartsteel stacks by @StackMultiplication@. Increase your Health Regeneration by @StacktoRegenConversion*100@% of your Heartsteel stacks.",
-        "pl": "Wymaganie: Musisz mieć Stalowe Serce (co najmniej następującą liczbę ładunków: @StackThreshold@).\nNagroda: Mnożysz ładunki Stalowego Serca o @StackMultiplication@. Zwiększa regenerację zdrowia o @StacktoRegenConversion*100@% twoich ładunków Stalowego Serca."
+        "en": "Requirement: Possess Heartsteel with 400+ stacks.\nReward: Multiply your Heartsteel stacks by 3. Increase your Health Regeneration by 12.5% of your Heartsteel stacks.",
+        "pl": "Wymaganie: Musisz mieć Stalowe Serce (co najmniej następującą liczbę ładunków: 400).\nNagroda: Mnożysz ładunki Stalowego Serca o 3. Zwiększa regenerację zdrowia o 12.5% twoich ładunków Stalowego Serca."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_steelyourheart_small.png",
       "tier": "gold",
@@ -20981,8 +20963,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Czempion Urfa"
       },
       "descriptions": {
-        "en": "{{Cherry_Quest_UrfsChampion_Summary}}\nTakedowns: @f1@",
-        "pl": "{{Cherry_Quest_UrfsChampion_Summary}}\nUdziały w zabójstwach: @f1@"
+        "en": "Takedowns:",
+        "pl": "Udziały w zabójstwach:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_urfschampion_small.png",
       "tier": "gold",
@@ -20997,8 +20979,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Wiedźmi Kapelusz Woogleta"
       },
       "descriptions": {
-        "en": "Immediate: Gain Needlessly Large Rod .\nRequirement: Possess Rabadon's Deathcap and Zhonya's Hourglass .\nReward: Gain Wooglet's Witchcap .",
-        "pl": "Natychmiast: Otrzymujesz Absurdalnie Wielką Różdżkę .\nWymaganie: Bądź w posiadaniu Zabójczego Kapelusza Rabadona i Klepsydry Zhonyi .\nNagroda: Zdobywasz Wiedźmi Kapelusz Woogleta ."
+        "en": "Immediate: Gain Needlessly Large Rod.\nRequirement: Possess Rabadon's Deathcap and Zhonya's Hourglass.\nReward: Gain Wooglet's Witchcap.",
+        "pl": "Natychmiast: Otrzymujesz Absurdalnie Wielką Różdżkę.\nWymaganie: Bądź w posiadaniu Zabójczego Kapelusza Rabadona i Klepsydry Zhonyi.\nNagroda: Zdobywasz Wiedźmi Kapelusz Woogleta."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_woogletswitchcap_small.png",
       "tier": "prismatic",
@@ -21013,8 +20995,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uruchom ponownie"
       },
       "descriptions": {
-        "en": "Your non-Ultimate Abilities Automatically refresh every @CoolDown@ seconds.",
-        "pl": "Twoje umiejętności podstawowe automatycznie odświeżają się co @CoolDown@ sek."
+        "en": "Your non-Ultimate Abilities Automatically refresh every 8 - 12 seconds.",
+        "pl": "Twoje umiejętności podstawowe automatycznie odświeżają się co 8 - 12 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/restart_small.png",
       "tier": "gold",
@@ -21054,10 +21036,7 @@ window.ARENA_GAME_DATA = {
         "en": "Dematerialize",
         "pl": "Dematerializacja"
       },
-      "descriptions": {
-        "en": "{{Cherry_Dematerialize_Summary}}",
-        "pl": "{{Cherry_Dematerialize_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dematerialize_small.png",
       "tier": "silver",
       "rarity": 0,
@@ -21071,8 +21050,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lustrzany Obraz"
       },
       "descriptions": {
-        "en": "When you drop below @HealthThreshold*100@% Health , briefly become Invisible and create 4 clones of yourself.",
-        "pl": "Gdy twoje zdrowie spadnie poniżej @HealthThreshold*100@% , na chwilę zyskujesz niewidzialność i tworzysz 4 klony siebie."
+        "en": "When you drop below 30% Health, briefly become Invisible and create 4 clones of yourself.",
+        "pl": "Gdy twoje zdrowie spadnie poniżej 30%, na chwilę zyskujesz niewidzialność i tworzysz 4 klony siebie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/mirrorimage_small.png",
       "tier": "silver",
@@ -21087,8 +21066,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Laserowe Spojrzenie"
       },
       "descriptions": {
-        "en": "There is a laser in the direction you are facing that deals @LaserEyesTooltip@ magic damage per second.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "W kierunku, w którym patrzysz, strzela laser, który zadaje @LaserEyesTooltip@ pkt. obrażeń magicznych na sekundę.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "There is a laser in the direction you are facing that deals magic damage per second.",
+        "pl": "W kierunku, w którym patrzysz, strzela laser, który zadaje obrażenia magicznych na sekundę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/lasereyes_small.png",
       "tier": "prismatic",
@@ -21103,8 +21082,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Pasożytniczy Związek"
       },
       "descriptions": {
-        "en": "{{ Cherry_ParasiticRelationship_Summary }}\nHealing this round: @f1@\nHealing total: @f2@",
-        "pl": "{{ Cherry_ParasiticRelationship_Summary }}\nLeczenie w tej rundzie: @f1@ pkt.\nCałkowite leczenie: @f2@ pkt."
+        "en": "Healing total:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/parasiticrelationship_small.png",
       "tier": "gold",
@@ -21132,8 +21110,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Matrioszka"
       },
       "descriptions": {
-        "en": "You automatically begin Reviving yourself after @ReviveArmTime@ seconds and you can be Revived @BonusLives@ additional times. Each time you Revive , come back smaller and with @ReviveMod*100@% max Health .\nWhen you revive , knockback enemies around you.",
-        "pl": "Automatycznie zaczynasz się wskrzeszać po @ReviveArmTime@ sek. Oprócz tego można cię wskrzesić dodatkowo @BonusLives@ raz. Przy każdym wskrzeszeniu odradzasz się w mniejszej postaci i z @ReviveMod*100@% maksymalnego zdrowia .\nGdy się odrodzisz , odrzucasz otaczających cię wrogów."
+        "en": "You automatically begin Reviving yourself after 2 - 3 seconds and you can be Revived 1 - 4 additional times. Each time you Revive, come back smaller and with 70% max Health.\nWhen you revive, knockback enemies around you.",
+        "pl": "Automatycznie zaczynasz się wskrzeszać po 2 - 3 sek. Oprócz tego można cię wskrzesić dodatkowo 1 - 4 raz. Przy każdym wskrzeszeniu odradzasz się w mniejszej postaci i z 70% maksymalnego zdrowia.\nGdy się odrodzisz, odrzucasz otaczających cię wrogów."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/nesting_doll_small.png",
       "tier": "prismatic",
@@ -21148,8 +21126,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Megamózg"
       },
       "descriptions": {
-        "en": "At the start of each round, gain a @TotalShield@ Shield .",
-        "pl": "Na początku każdej rundy zyskujesz @TotalShield@ pkt. tarczy ."
+        "en": "At the start of each round, gain a Shield.",
+        "pl": "Na początku każdej rundy zyskujesz pkt. tarczy."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bigbrain_small.png",
       "tier": "gold",
@@ -21164,8 +21142,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mocne Ciosy"
       },
       "descriptions": {
-        "en": "Your Attacks deal additional @HealthPercentDamage@ physical damage .",
-        "pl": "Twoje ataki zadają dodatkowo @HealthPercentDamage@ pkt. obrażeń fizycznych ."
+        "en": "Your Attacks deal additional physical damage.",
+        "pl": "Twoje ataki zadają dodatkowo pkt. obrażeń fizycznych."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/heavyhitter_small.png",
       "tier": "silver",
@@ -21193,8 +21171,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Anioł Odkupienia"
       },
       "descriptions": {
-        "en": "Requirement: Heal or prevent @RequirementAmount@ damage to allies.\nReward: Gain @AttackSpeed*100@% Attack Speed , and your Attacks deal additional @FinalDamageTooltip@ magic damage equal to @HealPowerToDamageConversion*100@% Heal/Shield Power .\nDamage Healed or Blocked: @f1@\nDamage Dealt: @f2@",
-        "pl": "Wymaganie: Przywróć sojusznikom @RequirementAmount@ pkt. zdrowia lub zapobiegnij otrzymaniu przez nich takiej samej wartości obrażeń.\nNagroda: Zyskujesz @AttackSpeed*100@% prędkości ataku , a twoje ataki zadają dodatkowe @FinalDamageTooltip@ obrażenia magiczne równe @HealPowerToDamageConversion*100@% twojej siły leczenia i tarcz .\nWyleczone lub zablokowane obrażenia: @f1@ pkt.\nZadane obrażenia: @f2@ pkt."
+        "en": "Requirement: Heal or prevent 2500 damage to allies.\nReward: Gain 100% Attack Speed, and your Attacks deal additional magic damage equal to 350% Heal/Shield Power.\nDamage Healed or Blocked:",
+        "pl": "Wymaganie: Przywróć sojusznikom 2500 pkt. zdrowia lub zapobiegnij otrzymaniu przez nich takiej samej wartości obrażeń.\nNagroda: Zyskujesz 100% prędkości ataku, a twoje ataki zadają dodatkowe obrażenia magiczne równe 350% twojej siły leczenia i tarcz.\nWyleczone lub zablokowane obrażenia\nZadane obrażenia"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_angelofretribution_small.png",
       "tier": "gold",
@@ -21209,8 +21187,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Centrum Wszechświata"
       },
       "descriptions": {
-        "en": "Stars orbit you, dealing @StarDamage@ magic damage to enemies they pass through.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Dookoła ciebie krążą gwiazdy, które zadają @StarDamage@ pkt. obrażeń magicznych trafionym wrogom.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Stars orbit you, dealing magic damage to enemies they pass through.",
+        "pl": "Dookoła ciebie krążą gwiazdy, które zadają pkt. obrażeń magicznych trafionym wrogom."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/centeroftheuniverse_small.png",
       "tier": "prismatic",
@@ -21225,8 +21203,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Magiczny Czar"
       },
       "descriptions": {
-        "en": "Damaging with your Ultimate Polymorphs enemies for @PolyDuration@ seconds (@PolyCooldown@ second Cooldown).",
-        "pl": "Zadawanie obrażeń superumiejętnością polimorfuje wrogów na @PolyDuration@ sek. (czas odnowienia: @PolyCooldown@ sek.)."
+        "en": "Damaging with your Ultimate Polymorphs enemies for 2 seconds (15 second Cooldown).",
+        "pl": "Zadawanie obrażeń superumiejętnością polimorfuje wrogów na 2 sek. (czas odnowienia: 15 sek.)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/feymagic_small.png",
       "tier": "prismatic",
@@ -21241,8 +21219,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pogromca Olbrzymów"
       },
       "descriptions": {
-        "en": "Become tiny, gain @MovespeedMod*100@% Move Speed , and deal between @SmallBonusDamage*100@% and @XLargeBonusDamage*100@% bonus damage to champions based on how much larger they are than you.",
-        "pl": "Zmniejszasz się do maleńkich rozmiarów, zyskujesz @MovespeedMod*100@% prędkości ruchu i zadajesz @SmallBonusDamage*100@-@XLargeBonusDamage*100@% dodatkowych obrażeń bohaterom w zależności od tego, o ile są od ciebie więksi."
+        "en": "Become tiny, gain 25 - 35% Move Speed, and deal between 5 - 35% and 25 - 55% bonus damage to champions based on how much larger they are than you.",
+        "pl": "Zmniejszasz się do maleńkich rozmiarów, zyskujesz 25 - 35% prędkości ruchu i zadajesz 5 - 35-25 - 55% dodatkowych obrażeń bohaterom w zależności od tego, o ile są od ciebie więksi."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/giantslayer_small.png",
       "tier": "prismatic",
@@ -21257,8 +21235,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Święty Ogień"
       },
       "descriptions": {
-        "en": "Healing or Shielding applies an infinitely stacking Burn to a nearby enemy, dealing up to @BurnPercentMax*100@% max Health magic damage over @BurnDuration@ seconds (min: @BurnPercentMin*100@%).\nThe damage scales with the relative size of the Heal or Shielding to the max Health of the champion being aided.\nDamage Dealt This Round: @f1@\nDamage Dealt Total: @f2@",
-        "pl": "Leczenie lub osłonięcie tarczą nakłada kumulujące się w nieskończoność podpalenie na pobliskiego wroga, zadając obrażenia magiczne równe @BurnPercentMax*100@% maksymalnego zdrowia w ciągu @BurnDuration@ sek. (min. @BurnPercentMin*100@%).\nObrażenia skalują się z wartością leczenia lub tarczy w stosunku do maksymalnego zdrowia bohatera, na którego jest rzucana tarcza lub efekt leczenia.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
+        "en": "Healing or Shielding applies an infinitely stacking Burn to a nearby enemy, dealing up to 3 - 6% max Health magic damage over 5 seconds (min: 0.8 - 1.6%).\nThe damage scales with the relative size of the Heal or Shielding to the max Health of the champion being aided.",
+        "pl": "Leczenie lub osłonięcie tarczą nakłada kumulujące się w nieskończoność podpalenie na pobliskiego wroga, zadając obrażenia magiczne równe 3 - 6% maksymalnego zdrowia w ciągu 5 sek. (min. 0.8 - 1.6%).\nObrażenia skalują się z wartością leczenia lub tarczy w stosunku do maksymalnego zdrowia bohatera, na którego jest rzucana tarcza lub efekt leczenia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/holyfire_small.png",
       "tier": "gold",
@@ -21273,8 +21251,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Brat Krwi"
       },
       "descriptions": {
-        "en": "Gain Darius's Passive Hemorrhage .\nAttacks and damaging Abilities cause the target to Hemorrhage , dealing @BleedDamagePerStack@ physical damage over @BleedDuration@ seconds, stacking up to @MaxStacks@ times.\nDraven gains @NoxianMightBonusAD@ Attack Damage at @MaxStacks@ Hemorrhage stacks.",
-        "pl": "Zyskujesz umiejętność bierną Dariusa: Krwotok .\nAtaki i zadające obrażenia umiejętności wywołują u celu Krwotok , zadając @BleedDamagePerStack@ pkt. obrażeń fizycznych w ciągu @BleedDuration@ sek. Efekt kumuluje się do @MaxStacks@ razy.\nDraven zyskuje @NoxianMightBonusAD@ pkt. obrażeń od ataku po zgromadzeniu @MaxStacks@ ładunków Krwotoku ."
+        "en": "Gain Darius's Passive Hemorrhage.\nAttacks and damaging Abilities cause the target to Hemorrhage, dealing physical damage over 5 seconds, stacking up to 5 times.\nDraven gains Attack Damage at 5 Hemorrhage stacks.",
+        "pl": "Zyskujesz umiejętność bierną Dariusa: Krwotok.\nAtaki i zadające obrażenia umiejętności wywołują u celu Krwotok, zadając pkt. obrażeń fizycznych w ciągu 5 sek. Efekt kumuluje się do 5 razy.\nDraven zyskuje pkt. obrażeń od ataku po zgromadzeniu 5 ładunków Krwotoku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bloodbrother_small.png",
       "tier": "gold",
@@ -21289,8 +21267,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ładunkozaurus Rex"
       },
       "descriptions": {
-        "en": "When you gain permanent Stacks of an Ability, Augment, or Item gain @StackModifier*100@% more!",
-        "pl": "Gdy zyskujesz ładunki umiejętności, ulepszenia lub przedmiotu, dostajesz ich o @StackModifier*100@% więcej!"
+        "en": "When you gain permanent Stacks of an Ability, Augment, or Item gain 75% more!",
+        "pl": "Gdy zyskujesz ładunki umiejętności, ulepszenia lub przedmiotu, dostajesz ich o 75% więcej!"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/stackosaurusrex_small.png",
       "tier": "silver",
@@ -21305,8 +21283,8 @@ window.ARENA_GAME_DATA = {
         "pl": "AD-AP-tacja"
       },
       "descriptions": {
-        "en": "Convert Bonus Attack Damage to Ability Power , and gain @APAmpCalcTooltip@ Ability Power .\nCurrent Conversion: @f1@\nConverts at a rate of @ConversionRate@ Ability Power per point of Attack Damage .",
-        "pl": "Zamieniasz dodatkowe obrażenia od ataku na moc umiejętności i zyskujesz @APAmpCalcTooltip@ pkt. mocy umiejętności .\nAktualna konwersja: @f1@ pkt.\nZamieniasz @ConversionRate@ pkt. mocy umiejętności na jeden punkt obrażeń od ataku ."
+        "en": "Convert Bonus Attack Damage to Ability Power, and gain Ability Power.\nCurrent Conversion:\nConverts at a rate of 1.7 - 2.2 Ability Power per point of Attack Damage.",
+        "pl": "Zamieniasz dodatkowe obrażenia od ataku na moc umiejętności i zyskujesz pkt. mocy umiejętności.\nAktualna konwersja\nZamieniasz 1.7 - 2.2 pkt. mocy umiejętności na jeden punkt obrażeń od ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/adapt_small.png",
       "tier": "silver",
@@ -21321,8 +21299,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Eskapada"
       },
       "descriptions": {
-        "en": "Convert Ability Power to Bonus Attack Damage and gain @ADAmpCalcTooltip@ Attack Damage .\nCurrent Conversion: @f1@\nConverts at a rate of @ConversionRate@ Attack Damage per point of Ability Power .",
-        "pl": "Zamieniasz moc umiejętności na dodatkowe obrażenia od ataku i zyskujesz @ADAmpCalcTooltip@ pkt. obrażeń od ataku .\nAktualna konwersja: @f1@ pkt.\nZamieniasz @ConversionRate@ pkt. obrażeń od ataku na jeden punkt mocy umiejętności ."
+        "en": "Convert Ability Power to Bonus Attack Damage and gain Attack Damage.\nCurrent Conversion:\nConverts at a rate of 0.6 - 0.8 Attack Damage per point of Ability Power.",
+        "pl": "Zamieniasz moc umiejętności na dodatkowe obrażenia od ataku i zyskujesz pkt. obrażeń od ataku.\nAktualna konwersja\nZamieniasz 0.6 - 0.8 pkt. obrażeń od ataku na jeden punkt mocy umiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/escapade_small.png",
       "tier": "silver",
@@ -21337,8 +21315,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bardzo Się Nie Ruszaj"
       },
       "descriptions": {
-        "en": "Gain Guerrilla Warfare\nAfter not moving for @HoldStillDuration@ seconds, turn Invisibile until you move. When you exit this Invisibility , gain @BonusAS@ Attack Speed and @BonusMS*100@% decaying Movement Speed for @ASDuration@ seconds. Your next attack deals an additional @BonusHitDamage@ magic damage .",
-        "pl": "Zyskujesz Partyzantkę .\nGdy nie ruszasz się przez @HoldStillDuration@ sek., zyskujesz niewidzialność , dopóki się nie poruszysz. Gdy opuścisz niewidzialność , zyskujesz @BonusAS@ jedn. prędkości ataku i @BonusMS*100@% zanikającej prędkości ruchu na @ASDuration@ sek. Twój następny atak zadaje dodatkowo @BonusHitDamage@ pkt. obrażeń magicznych ."
+        "en": "Gain Guerrilla Warfare\nAfter not moving for 0.8 seconds, turn Invisibile until you move. When you exit this Invisibility, gain Attack Speed and 100% decaying Movement Speed for 5 seconds. Your next attack deals an additional magic damage.",
+        "pl": "Zyskujesz Partyzantkę.\nGdy nie ruszasz się przez 0.8 sek., zyskujesz niewidzialność, dopóki się nie poruszysz. Gdy opuścisz niewidzialność, zyskujesz jedn. prędkości ataku i 100% zanikającej prędkości ruchu na 5 sek. Twój następny atak zadaje dodatkowo  pkt. obrażeń magicznych."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/holdverystill_small.png",
       "tier": "silver",
@@ -21352,10 +21330,7 @@ window.ARENA_GAME_DATA = {
         "en": "Orbital Laser",
         "pl": "Orbitalny Laser"
       },
-      "descriptions": {
-        "en": "{{Cherry_OrbitalLaser_Summary}}\nDamage Dealt This Round:@f1@\nDamage Dealt Total:@f2@",
-        "pl": "{{Cherry_OrbitalLaser_Summary}}\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/orbitallaser_small.png",
       "tier": "prismatic",
       "rarity": 2,
@@ -21369,8 +21344,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Czas na Mord"
       },
       "descriptions": {
-        "en": "After casting your Ultimate , mark all enemy champions for death. The mark stores @DamageStorePercentage*100@% of damage dealt to them, then detonates for the stored damage after @MarkDuration@ seconds. (@Cooldown@ second Cooldown).",
-        "pl": "Po użyciu swojej superumiejętności naznaczasz wszystkich wrogich bohaterów symbolem śmierci. Naznaczenie zachowuje @DamageStorePercentage*100@% zadanych im obrażeń, a po @MarkDuration@ sek. wybucha, zadając obrażenia równe zachowanym obrażeniom. (@Cooldown@ sek. odnowienia)."
+        "en": "After casting your Ultimate, mark all enemy champions for death. The mark stores 35 - 50% of damage dealt to them, then detonates for the stored damage after 5 seconds. (8 second Cooldown).",
+        "pl": "Po użyciu swojej superumiejętności naznaczasz wszystkich wrogich bohaterów symbolem śmierci. Naznaczenie zachowuje 35 - 50% zadanych im obrażeń, a po 5 sek. wybucha, zadając obrażenia równe zachowanym obrażeniom. (8 sek. odnowienia)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/itskillingtime_small.png",
       "tier": "gold",
@@ -21398,8 +21373,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Młyniec"
       },
       "descriptions": {
-        "en": "{{ Cherry_SpinToWin_Summary }}\nDamage this round: @f1@\nDamage this game: @f2@",
-        "pl": "{{ Cherry_SpinToWin_Summary }}\nObrażenia zadane w tej rundzie: @f1@ pkt.\nObrażenia zadane w tej grze: @f2@ pkt."
+        "en": "Damage this round:\nDamage this game:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/spintowin_small.png",
       "tier": "silver",
@@ -21414,8 +21388,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Mroczne Błogosławieństwo"
       },
       "descriptions": {
-        "en": "When you Heal or Shield an allied champion, gain @CurseCounter@ Cursed Power .\nGain @f1@ Ability Haste (@AbilityHasteRatio*100@% of your Cursed Power ).\n@Cooldown@ second cooldown per cast.\n{{ Cherry_CurseShared }}",
-        "pl": "Gdy wyleczysz lub osłonisz tarczą sojuszniczego bohatera, zyskujesz @CurseCounter@ pkt. Przeklętej Mocy .\nZyskujesz @f1@ jedn. przyspieszenia umiejętności (@AbilityHasteRatio*100@% twojej Przeklętej Mocy ).\n@Cooldown@ sek. odnowienia na każde użycie.\n{{ Cherry_CurseShared }}"
+        "en": "When you Heal or Shield an allied champion, gain 5 Cursed Power.\nGain Ability Haste (30 - 55% of your Cursed Power ).\n1.5 second cooldown per cast.",
+        "pl": "Gdy wyleczysz lub osłonisz tarczą sojuszniczego bohatera, zyskujesz 5 pkt. Przeklętej Mocy.\nZyskujesz jedn. przyspieszenia umiejętności (30 - 55% twojej Przeklętej Mocy ).\n1.5 sek. odnowienia na każde użycie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/darkblessing_small.png",
       "tier": "gold",
@@ -21430,8 +21404,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Budzący Postrach"
       },
       "descriptions": {
-        "en": "Every @TickCadence@ second, gain @CurseStacksPerTick@ Cursed Power per nearby enemy champion.\nGain @f1@ Health (@MaxHealthRatio*100@% of your Cursed Power ).\n{{ Cherry_CurseShared }}",
-        "pl": "Co @TickCadence@ sek. zyskujesz następującą liczbę ładunków Przeklętej Mocy : @CurseStacksPerTick@ za każdego pobliskiego wrogiego bohatera.\nZyskujesz @f1@ pkt. zdrowia (@MaxHealthRatio*100@% twojej Przeklętej Mocy ).\n{{ Cherry_CurseShared }}"
+        "en": "Every 0.5 second, gain 1 Cursed Power per nearby enemy champion.\nGain Health (300 - 1000% of your Cursed Power ).",
+        "pl": "Co 0.5 sek. zyskujesz następującą liczbę ładunków Przeklętej Mocy: 1 za każdego pobliskiego wrogiego bohatera.\nZyskujesz pkt. zdrowia (300 - 1000% twojej Przeklętej Mocy )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/plaguebearer_small.png",
       "tier": "prismatic",
@@ -21446,8 +21420,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dotyk Śmierci"
       },
       "descriptions": {
-        "en": "Attacking enemy champions grant you @CurseCounter@ Cursed Power .\nYour Attacks deal an additional @f1@ magic damage (@OnHitDamageRatio*100@% of your Cursed Power ).\n{{ Cherry_CurseShared }}",
-        "pl": "Atakowanie wrogich bohaterów zapewnia ci następującą liczbę ładunków Przeklętej Mocy : @CurseCounter@.\nTwoje ataki zadają dodatkowo @f1@ pkt. obrażeń magicznych (@OnHitDamageRatio*100@% twojej Przeklętej Mocy ).\n{{ Cherry_CurseShared }}"
+        "en": "Attacking enemy champions grant you 2 Cursed Power.\nYour Attacks deal an additional magic damage (20 - 35% of your Cursed Power ).",
+        "pl": "Atakowanie wrogich bohaterów zapewnia ci następującą liczbę ładunków Przeklętej Mocy: 2.\nTwoje ataki zadają dodatkowo pkt. obrażeń magicznych (20 - 35% twojej Przeklętej Mocy )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/deathtouch_small.png",
       "tier": "gold",
@@ -21462,8 +21436,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Bezczeszczenie"
       },
       "descriptions": {
-        "en": "Immobilizing enemy champions grants you @CurseCounter@ Cursed Power .\nGain @f1@ Armor and @f1@ Magic Resistance (@ArmorMRRatio*100@% of your Cursed Power ).\n{{ Cherry_CurseShared }}",
-        "pl": "Unieruchomienie wrogiego bohatera zapewnia ci następującą liczbę ładunków Przeklętej Mocy : @CurseCounter@.\nZyskujesz @f1@ pkt. pancerza i @f1@ pkt. odporności na magię (@ArmorMRRatio*100@% twojej Przeklętej Mocy ).\n{{ Cherry_CurseShared }}"
+        "en": "Immobilizing enemy champions grants you 10 Cursed Power.\nGain Armor and Magic Resistance (20 - 30% of your Cursed Power ).",
+        "pl": "Unieruchomienie wrogiego bohatera zapewnia ci następującą liczbę ładunków Przeklętej Mocy: 10.\nZyskujesz pkt. pancerza i pkt. odporności na magię (20 - 30% twojej Przeklętej Mocy )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/desecrator_small.png",
       "tier": "silver",
@@ -21478,8 +21452,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wieszczenie Zagłady"
       },
       "descriptions": {
-        "en": "Hitting an enemy champion with an ability grant you @CurseCounter@ Cursed Power .\nGain @f1@ Adaptive Force (@AdaptiveForceRatio*100@% of your Cursed Power ).\n{{ Cherry_CurseShared }}",
-        "pl": "Trafienia wrogich bohaterów umiejętnościami zapewniają ci następującą liczbę ładunków Przeklętej Mocy : @CurseCounter@.\nZyskujesz @f1@ pkt. siły adaptacyjnej (@AdaptiveForceRatio*100@% twojej Przeklętej Mocy ).\n{{ Cherry_CurseShared }}"
+        "en": "Hitting an enemy champion with an ability grant you 2 Cursed Power.\nGain Adaptive Force (80 - 180% of your Cursed Power ).",
+        "pl": "Trafienia wrogich bohaterów umiejętnościami zapewniają ci następującą liczbę ładunków Przeklętej Mocy: 2.\nZyskujesz pkt. siły adaptacyjnej (80 - 180% twojej Przeklętej Mocy )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/doomsayer_small.png",
       "tier": "prismatic",
@@ -21494,8 +21468,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Podsycający Młot"
       },
       "descriptions": {
-        "en": "When you Attack enemy champions, fire @AdditionalBolts@ bolts that each deal @DamagePerBolt@ physical damage . Each cardinal direction has a @Cooldown@ second Cooldown.\nEach bolt can Critically Strike and applies {{ Item_Keyword_OnHit }} at @OnHitRatio*100@% effectiveness.",
-        "pl": "Gdy atakujesz wrogich bohaterów, wystrzeliwujesz następującą liczbę pocisków: @AdditionalBolts@, z których każdy zadaje @DamagePerBolt@ pkt. obrażeń fizycznych . Każdy z kierunków głównych ma @Cooldown@ sek. czasu odnowienia.\nKażdy pocisk może trafić krytycznie i nakłada efekty {{ Item_Keyword_OnHit }} skuteczne w @OnHitRatio*100@%."
+        "en": "When you Attack enemy champions, fire 5 bolts that each deal physical damage. Each cardinal direction has a 2 - 7 second Cooldown.\nEach bolt can Critically Strike and applies at 20% effectiveness.",
+        "pl": "Gdy atakujesz wrogich bohaterów, wystrzeliwujesz następującą liczbę pocisków: 5, z których każdy zadaje obrażenia fizycznych. Każdy z kierunków głównych ma 2 - 7 sek. czasu odnowienia.\nKażdy pocisk może trafić krytycznie i nakłada efekty skuteczne w 20%."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/fanthehammer_small.png",
       "tier": "prismatic",
@@ -21510,8 +21484,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przecieracz Szlaków"
       },
       "descriptions": {
-        "en": "When you Dash or Blink, Burn a nearby enemy for @BurnPercent*100@% max Health magic damage over @BurnDuration@ seconds.\nDamage dealt this round: @f1@\nDamage dealt this game: @f2@",
-        "pl": "Gdy użyjesz doskoku lub mignięcia, nakładasz na pobliskiego wroga podpalenie , które zadaje obrażenia magiczne równe @BurnPercent*100@% maksymalnego zdrowia w ciągu @BurnDuration@ sek.\nObrażenia zadane w tej rundzie: @f1@ pkt.\nObrażenia zadane w tej grze: @f2@ pkt."
+        "en": "When you Dash or Blink, Burn a nearby enemy for 2 - 11% max Health magic damage over 5 seconds.",
+        "pl": "Gdy użyjesz doskoku lub mignięcia, nakładasz na pobliskiego wroga podpalenie, które zadaje obrażenia magiczne równe 2 - 11% maksymalnego zdrowia w ciągu 5 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/trailblazer_small.png",
       "tier": "silver",
@@ -21525,10 +21499,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fruits of Your Labor",
         "pl": "Owoce Pracy"
       },
-      "descriptions": {
-        "en": "{{Cherry_FruitsOfYourLabor_Summary}}",
-        "pl": "{{Cherry_FruitsOfYourLabor_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/fruitarian_small.png",
       "tier": "silver",
       "rarity": 0,
@@ -21542,8 +21513,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Rewolucja Przywoływaczy"
       },
       "descriptions": {
-        "en": "Your Summoner Spells gain @BonusCharges@ additional charge(s).\nFlash resets every round.",
-        "pl": "Twoje czary przywoływacza zyskują dodatkowe ładunki (@BonusCharges@).\nBłysk resetuje się co rundę."
+        "en": "Your Summoner Spells gain 1 - 3 additional charge(s).\nFlash resets every round.",
+        "pl": "Twoje czary przywoływacza zyskują dodatkowe ładunki (1 - 3).\nBłysk resetuje się co rundę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/summonerrevolution_small.png",
       "tier": "gold",
@@ -21557,10 +21528,7 @@ window.ARENA_GAME_DATA = {
         "en": "Prismatic Egg",
         "pl": "Pryzmatyczne Jajo"
       },
-      "descriptions": {
-        "en": "{{Cherry_PrismaticEgg_Summary}}",
-        "pl": "{{Cherry_PrismaticEgg_Summary}}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_prismaticegg_small.png",
       "tier": "prismatic",
       "rarity": 2,
@@ -21574,8 +21542,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Obie Ręce Zajęte"
       },
       "descriptions": {
-        "en": "When you Attack, fire a bolt that deals @AttackReduction*100@% damage and applies your {{ Item_Keyword_OnHit }} effects at @OnHitMod*100@% effectiveness.\nGain @AttackSpeed*100@% total Attack Speed .",
-        "pl": "Podczas ataków wystrzeliwujesz pocisk, który zadaje @AttackReduction*100@% obrażeń i nakłada efekty {{ Item_Keyword_OnHit }} o skuteczności @OnHitMod*100@%.\nZyskujesz @AttackSpeed*100@% całkowitej prędkości ataku ."
+        "en": "When you Attack, fire a bolt that deals 40 - 60% damage and applies your effects at 40% effectiveness.\nGain 15 - 45% total Attack Speed.",
+        "pl": "Podczas ataków wystrzeliwujesz pocisk, który zadaje 40 - 60% obrażeń i nakłada efekty o skuteczności 40%.\nZyskujesz 15 - 45% całkowitej prędkości ataku."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dualwield_small.png",
       "tier": "prismatic",
@@ -21590,8 +21558,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Statystyki!"
       },
       "descriptions": {
-        "en": "Gain @AmountOfStatAnvils@ %i:StatAnvil% Stat Anvils!",
-        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: @AmountOfStatAnvils@ %i:StatAnvil%!"
+        "en": "Gain 2 - 7 Stat Anvils!",
+        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: 2 - 7!"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/stats_small.png",
       "tier": "silver",
@@ -21606,8 +21574,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Statystyki Statystyk!"
       },
       "descriptions": {
-        "en": "Gain @AmountOfStatAnvils@ %i:StatAnvil% Stat Anvils!",
-        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: @AmountOfStatAnvils@ %i:StatAnvil%!"
+        "en": "Gain 3 - 8 Stat Anvils!",
+        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: 3 - 8!"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/statsonstats_small.png",
       "tier": "gold",
@@ -21622,8 +21590,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Statystyczne Statystyki Statystyk!"
       },
       "descriptions": {
-        "en": "Gain @AmountOfStatAnvils@ %i:StatAnvil% Stat Anvils!",
-        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: @AmountOfStatAnvils@ %i:StatAnvil%!"
+        "en": "Gain 4 - 9 Stat Anvils!",
+        "pl": "Zdobywasz następującą liczbę Kowadeł Statystyk: 4 - 9!"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/statsonstatsonstats_small.png",
       "tier": "prismatic",
@@ -21638,8 +21606,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Gorąca Wyprzedaż"
       },
       "descriptions": {
-        "en": "Instantly sell all your non-quest items for @SellValueTooltip@% of their direct buy price. Great for all those discounted anvils.\nWhen removed or replaced gain +%i:goldCoins% @f1@ gold equal to @RemovalGoalGainPercentage*100@% of the gold gained from FireSale .",
-        "pl": "Natychmiastowo sprzedajesz wszystkie swoje przedmioty niebędące przedmiotami zadania za @SellValueTooltip@% ich bezpośredniej wartości przy zakupie. Świetnie się sprawdza przy wszystkich tych przecenionych kowadłach.\nPo usunięciu lub zastąpieniu zapewnia +%i:goldCoins% @f1@ szt. złota , co równa się @RemovalGoalGainPercentage*100@% złota zdobytego dzięki Gorącej Wyprzedaży ."
+        "en": "Instantly sell all your non-quest items for 100% of their direct buy price. Great for all those discounted anvils.\nWhen removed or replaced gain + gold equal to 30% of the gold gained from FireSale.",
+        "pl": "Natychmiastowo sprzedajesz wszystkie swoje przedmioty niebędące przedmiotami zadania za 100% ich bezpośredniej wartości przy zakupie. Świetnie się sprawdza przy wszystkich tych przecenionych kowadłach.\nPo usunięciu lub zastąpieniu zapewnia + szt. złota, co równa się 30% złota zdobytego dzięki Gorącej Wyprzedaży."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/firesale_small.png",
       "tier": "silver",
@@ -21667,8 +21635,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Świetlisty Wartownik"
       },
       "descriptions": {
-        "en": "Every @Cooldown@ seconds, Autocast a warding light towards your ally, granting @TotalShield@ Shield to yourself and allies it passes through before returning, repeating the effect..",
-        "pl": "Co @Cooldown@ sek. automatycznie wysyłasz w kierunku sojusznika ochronne światło, nakładając tarczę o wytrzymałości @TotalShield@ pkt. na siebie i sojuszników, przez których światło przeniknie. Światło następnie wraca, ponawiając efekt."
+        "en": "Every 10 seconds, Autocast a warding light towards your ally, granting Shield to yourself and allies it passes through before returning, repeating the effect..",
+        "pl": "Co 10 sek. automatycznie wysyłasz w kierunku sojusznika ochronne światło, nakładając tarczę o wytrzymałości pkt. na siebie i sojuszników, przez których światło przeniknie. Światło następnie wraca, ponawiając efekt."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/lightwarden_small.png",
       "tier": "gold",
@@ -21683,8 +21651,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Godzina Śluzu"
       },
       "descriptions": {
-        "en": "Every @Cooldown@ seconds Autocast a burst slime from your body, dealing @BaseDamage@ plus @PercentDamage@ max Health magic damage to nearby enemies. If you hit a champion, secrete a blob nearby. Walking over the blob restores @BlobHeal@ Health , while enemies destroy the blob.",
-        "pl": "Co @Cooldown@ sek. z twojego ciała automatycznie wybucha śluz, zadając pobliskim wrogom obrażenia magiczne równe @BaseDamage@ pkt. plus @PercentDamage@ maksymalnego zdrowia . Jeśli trafisz bohatera, wydzielasz w pobliżu kapkę. Przejście po kapce regeneruje @BlobHeal@ zdrowia . Przejście wroga niszczy kapkę."
+        "en": "Every 8 seconds Autocast a burst slime from your body, dealing plus max Health magic damage to nearby enemies. If you hit a champion, secrete a blob nearby. Walking over the blob restores Health, while enemies destroy the blob.",
+        "pl": "Co 8 sek. z twojego ciała automatycznie wybucha śluz, zadając pobliskim wrogom obrażenia magiczne równe pkt. plus maksymalnego zdrowia. Jeśli trafisz bohatera, wydzielasz w pobliżu kapkę. Przejście po kapce regeneruje zdrowia. Przejście wroga niszczy kapkę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/slimetime_small.png",
       "tier": "silver",
@@ -21699,8 +21667,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ruletka nad Ruletki"
       },
       "descriptions": {
-        "en": "Replace Flee with a random Ultimate . After casting the Ultimate , replace it with new random Ultimate .\nThese spells are still ultimates.",
-        "pl": "Zastępuje Ucieczkę losową superumiejętnością . Po użyciu tej superumiejętności zastępujesz ją nową losową superumiejętnością .\nTe zaklęcia to wciąż superumiejętności."
+        "en": "Replace Flee with a random Ultimate. After casting the Ultimate, replace it with new random Ultimate.\nThese spells are still ultimates.",
+        "pl": "Zastępuje Ucieczkę losową superumiejętnością. Po użyciu tej superumiejętności zastępujesz ją nową losową superumiejętnością.\nTe zaklęcia to wciąż superumiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/ultimaterevolution_small.png",
       "tier": "prismatic",
@@ -21715,8 +21683,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kowadło Hazardu"
       },
       "descriptions": {
-        "en": "Gain +%i:goldCoins%@GoldBonus@ gold and reduce the price of all anvils.\nPrismatic Anvils : -%i:goldCoins%@PrismaticCostReduction@ gold\nLegendary Anvils : -%i:goldCoins%@LegendaryCostReduction@ gold\nStat Anvils : -%i:goldCoins%@StatCostReduction@ gold\nItems acquired from anvils resell for -%i:goldCoins%500 gold less.",
-        "pl": "Zyskujesz %i:goldCoins%@GoldBonus@ szt. złota . Cena wszystkich kowadeł spada.\nPryzmatyczne Kowadła : -%i:goldCoins%@PrismaticCostReduction@ szt. złota\nLegendarne Kowadła : -%i:goldCoins%@LegendaryCostReduction@ szt. złota\nKowadła Statystyk : -%i:goldCoins%@StatCostReduction@ szt. złota\nPrzedmioty zdobyte z kowadeł trafiają do ponownej sprzedaży za %i:goldCoins%500 szt. złota mniej."
+        "en": "Gain + 1000 gold and reduce the price of all anvils.\nPrismatic Anvils: - 1500 - 2000 gold\nLegendary Anvils: - 750 gold\nStat Anvils: - 250 - 300 gold\nItems acquired from anvils resell for - 500 gold less.",
+        "pl": "Zyskujesz 1000 szt. złota. Cena wszystkich kowadeł spada.\nPryzmatyczne Kowadła: - 1500 - 2000 szt. złota\nLegendarne Kowadła: - 750 szt. złota\nKowadła Statystyk: - 250 - 300 szt. złota\nPrzedmioty zdobyte z kowadeł trafiają do ponownej sprzedaży za 500 szt. złota mniej."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/thiefsgloves_small.png",
       "tier": "prismatic",
@@ -21730,10 +21698,7 @@ window.ARENA_GAME_DATA = {
         "en": "Trickster Demon",
         "pl": "Podstępny Demon"
       },
-      "descriptions": {
-        "en": "{{ Cherry_TricksterDemon_Summary }}\nDamage Dealt this round: @f1@\nDamage Dealt total: @f2@",
-        "pl": "{{ Cherry_TricksterDemon_Summary }}\nObrażenia zadane w tej rundzie: @f1@ pkt.\nCałkowite zadane obrażenia: @f2@ pkt."
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/tricksterdemon_small.png",
       "tier": "gold",
       "rarity": 1,
@@ -21747,8 +21712,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Transmutacja: Złote"
       },
       "descriptions": {
-        "en": "Gain a random %i:Augment% Gold Augment .",
-        "pl": "Zdobywasz losowe %i:Augment% złote ulepszenie ."
+        "en": "Gain a random Gold Augment.",
+        "pl": "Zdobywasz losowe złote ulepszenie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/transmutegold_small.png",
       "tier": "silver",
@@ -21763,8 +21728,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Transmutacja: Pryzmatyczne"
       },
       "descriptions": {
-        "en": "Gain a random %i:Augment% Prismatic Augment .",
-        "pl": "Zdobywasz losowe %i:Augment% pryzmatyczne ulepszenie ."
+        "en": "Gain a random Prismatic Augment.",
+        "pl": "Zdobywasz losowe pryzmatyczne ulepszenie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/transmuteprismatic_small.png",
       "tier": "gold",
@@ -21811,8 +21776,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sztuczka z Kapeluszem"
       },
       "descriptions": {
-        "en": "Instantly gain @HatsToGrant@ hats, and reduce the price of Cappa Juice by @HatTrickPriceReduction@.\nTaking damage that would reduce your Health below @LowHealthThreshold*100@% gain @MoveSpeedBoostPercent*100@% Move Speed and a @ShieldHealth@ shield for @ShieldDuration@, but lose one hat. @Cooldown@ second Cooldown.\nYou no longer lose hats on round loss.",
-        "pl": "Natychmiast zyskujesz następującą liczbę kapeluszy: @HatsToGrant@. Cena Soku Cappa spada o @HatTrickPriceReduction@.\nPrzy otrzymaniu obrażeń, które zmniejszyłyby poziom twojego zdrowia poniżej @LowHealthThreshold*100@%, zyskujesz @MoveSpeedBoostPercent*100@% prędkości ruchu oraz tarczę o wytrzymałości @ShieldHealth@ pkt. na @ShieldDuration@ sek., ale tracisz jeden kapelusz. @Cooldown@ sek. odnowienia.\nNie tracisz już kapeluszy po przegraniu rundy."
+        "en": "Instantly gain 3 hats, and reduce the price of Cappa Juice by 350.\nTaking damage that would reduce your Health below 30% gain % Move Speed and a shield for 3, but lose one hat. 3 second Cooldown.\nYou no longer lose hats on round loss.",
+        "pl": "Natychmiast zyskujesz następującą liczbę kapeluszy: 3. Cena Soku Cappa spada o 350.\nPrzy otrzymaniu obrażeń, które zmniejszyłyby poziom twojego zdrowia poniżej 30%, zyskujesz % prędkości ruchu oraz tarczę o wytrzymałości pkt. na 3 sek., ale tracisz jeden kapelusz. 3 sek. odnowienia.\nNie tracisz już kapeluszy po przegraniu rundy."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/hattrick_small.png",
       "tier": "gold",
@@ -21840,8 +21805,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Transmutacja: Chaos"
       },
       "descriptions": {
-        "en": "Gain @AugmentsToGrantToolTipOnly@ random %i:Augment%Augments .",
-        "pl": "Otrzymujesz @AugmentsToGrantToolTipOnly@ losowe %i:Augment%ulepszenia ."
+        "en": "Gain 2 random Augments.",
+        "pl": "Otrzymujesz 2 losowe ulepszenia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/transmutechaos_small.png",
       "tier": "prismatic",
@@ -21856,8 +21821,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Powoli i Stabilnie"
       },
       "descriptions": {
-        "en": "Your Attack Speed can not go above @StaticRatio@. All bonus Attack Speed is converted to Attack Damage ( @ADPerAS@ AD per 1% AS ).\nCurrently Gaining: @f1@ Attack Damage",
-        "pl": "Twoja prędkość ataku nie może przekroczyć @StaticRatio@ jedn. Całość dodatkowej prędkości ataku zostaje zamieniona na obrażenia od ataku ( @ADPerAS@ pkt. obrażeń od ataku za każdy 1% prędkości ataku ).\nObecnie zyskujesz: @f1@ pkt. obrażeń od ataku"
+        "en": "Your Attack Speed can not go above 0.6. All bonus Attack Speed is converted to Attack Damage ( AD per 1% AS ).\nCurrently Gaining: Attack Damage",
+        "pl": "Twoja prędkość ataku nie może przekroczyć 0.6 jedn. Całość dodatkowej prędkości ataku zostaje zamieniona na obrażenia od ataku ( pkt. obrażeń od ataku za każdy 1% prędkości ataku ).\nObecnie zyskujesz: pkt. obrażeń od ataku"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/slowandsteady_small.png",
       "tier": "gold",
@@ -21872,8 +21837,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Z Odrętwienia w Ból"
       },
       "descriptions": {
-        "en": "@MeleeReduction*100@% of damage you take instead happens over @BleedDuration@ seconds (@RangedReduction*100@% for ranged champions).",
-        "pl": "@MeleeReduction*100@% otrzymywanych przez ciebie obrażeń zostaje rozłożonych na obrażenia w czasie, które otrzymujesz przez @BleedDuration@ sek. (@RangedReduction*100@% w przypadku bohaterów walczących z dystansu)."
+        "en": "25 - 60% of damage you take instead happens over 6 seconds (10 - 40% for ranged champions).",
+        "pl": "25 - 60% otrzymywanych przez ciebie obrażeń zostaje rozłożonych na obrażenia w czasie, które otrzymujesz przez 6 sek. (10 - 40% w przypadku bohaterów walczących z dystansu)."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/numbtopain_small.png",
       "tier": "silver",
@@ -21888,8 +21853,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Boska interwencja"
       },
       "descriptions": {
-        "en": "@InitalDelay@ seconds into combat, call upon a protective star that slowly descends upon you. When it lands, you and nearby allies become Invulnerable for @InvulnerabilityDuration@ seconds. Then Autocast this every @BaseCD@ seconds.",
-        "pl": "Po upływie @InitalDelay@ sek. w walce wzywasz gwiazdę, która powoli spada w twoim kierunku. Gdy wyląduje, ty oraz twoi pobliscy sojusznicy stajecie się niewrażliwi na @InvulnerabilityDuration@ sek. Następnie używasz tej umiejętności automatycznie co @BaseCD@ sek."
+        "en": "12 seconds into combat, call upon a protective star that slowly descends upon you. When it lands, you and nearby allies become Invulnerable for 2.5 seconds. Then Autocast this every -50 - 25 seconds.",
+        "pl": "Po upływie 12 sek. w walce wzywasz gwiazdę, która powoli spada w twoim kierunku. Gdy wyląduje, ty oraz twoi pobliscy sojusznicy stajecie się niewrażliwi na 2.5 sek. Następnie używasz tej umiejętności automatycznie co -50 - 25 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/slowactingpainkillers_small.png",
       "tier": "gold",
@@ -21904,8 +21869,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Poświęcenie: Za Srebro"
       },
       "descriptions": {
-        "en": "After @RoundCountCap@ rounds, gain a bonus Silver Augment .\nRounds Remaining: @f1@",
-        "pl": "Po @RoundCountCap@ rundach zdobywasz dodatkowe srebrne ulepszenie .\nPozostałe rundy: @f1@"
+        "en": "After 2 rounds, gain a bonus Silver Augment.\nRounds Remaining:",
+        "pl": "Po 2 rundach zdobywasz dodatkowe srebrne ulepszenie.\nPozostałe rundy:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/gohsacrificefor_small.png",
       "tier": "silver",
@@ -21920,8 +21885,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Poświęcenie: Za Złoto"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReduction*100@% of your current health .\nAfter @RoundCountCap@ rounds, gain a bonus Gold Augment and restore your health.\nRounds Remaining: @f1@",
-        "pl": "Poświęć @HealthReduction*100@% aktualnego zdrowia .\nPo @RoundCountCap@ rundach zdobywasz dodatkowe złote ulepszenie i odzyskujesz zdrowie.\nPozostałe rundy: @f1@"
+        "en": "Sacrifice 25% of your current health.\nAfter 4 rounds, gain a bonus Gold Augment and restore your health.\nRounds Remaining:",
+        "pl": "Poświęć 25% aktualnego zdrowia.\nPo 4 rundach zdobywasz dodatkowe złote ulepszenie i odzyskujesz zdrowie.\nPozostałe rundy:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/gohsacrificefor_small.png",
       "tier": "gold",
@@ -21936,8 +21901,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Poświęcenie: Za Pryzmat"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReduction*100@% of your current health .\nAfter @RoundCountCap@ rounds, gain a bonus Prismatic Augment and restore your health.\nRounds Remaining: @f1@",
-        "pl": "Poświęć @HealthReduction*100@% aktualnego zdrowia .\nPo @RoundCountCap@ rundach zdobywasz dodatkowe pryzmatyczne ulepszenie i odzyskujesz zdrowie.\nPozostałe rundy: @f1@"
+        "en": "Sacrifice 50% of your current health.\nAfter 7 rounds, gain a bonus Prismatic Augment and restore your health.\nRounds Remaining:",
+        "pl": "Poświęć 50% aktualnego zdrowia.\nPo 7 rundach zdobywasz dodatkowe pryzmatyczne ulepszenie i odzyskujesz zdrowie.\nPozostałe rundy:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/gohsacrificefor_small.png",
       "tier": "prismatic",
@@ -21952,8 +21917,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dzień Robienia Nóg"
       },
       "descriptions": {
-        "en": "Gain @MovementSpeed@ Movement Speed and @SlowResist*100@% Slow Resist .",
-        "pl": "Zyskujesz @MovementSpeed@ jedn. prędkości ruchu i @SlowResist*100@% odporności na spowolnienia ."
+        "en": "Gain 10 - 190 Movement Speed and 15 - 135% Slow Resist.",
+        "pl": "Zyskujesz 10 - 190 jedn. prędkości ruchu i 15 - 135% odporności na spowolnienia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/legday_small.png",
       "tier": "silver",
@@ -21994,8 +21959,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognisty Lis"
       },
       "descriptions": {
-        "en": "Autocast : Gain @MovementSpeed*100@% Movement Speed and conjure three flames that orbit you every @Cooldown@ seconds, targetting the closest visible enemy in range and dealing @SingleFireDamage@ magic damage . Subsequent hits do @RepeatDamageMod*100@% damage.",
-        "pl": "Automatyczne użycie : Zyskujesz @MovementSpeed*100@% prędkości ruchu i co @Cooldown@ sek. przyzywasz trzy płomienie, które cię okrążają. Płomienie obierają za cel najbliższego widocznego wroga będącego w zasięgu i zadają @SingleFireDamage@ pkt. obrażeń magicznych . Kolejne ciosy zadane temu samemu celowi zadają @RepeatDamageMod*100@% obrażeń."
+        "en": "Autocast: Gain 40% Movement Speed and conjure three flames that orbit you every 7 seconds, targetting the closest visible enemy in range and dealing magic damage. Subsequent hits do 30% damage.",
+        "pl": "Automatyczne użycie: Zyskujesz 40% prędkości ruchu i co 7 sek. przyzywasz trzy płomienie, które cię okrążają. Płomienie obierają za cel najbliższego widocznego wroga będącego w zasięgu i zadają pkt. obrażeń magicznych. Kolejne ciosy zadane temu samemu celowi zadają 30% obrażeń."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/firfox_small.png",
       "tier": "silver",
@@ -22010,8 +21975,8 @@ window.ARENA_GAME_DATA = {
         "pl": "I Mój Topór!"
       },
       "descriptions": {
-        "en": "Autocast : Throws an axe at the nearest opponent every @Cooldown@s, dealing @TotalDamage@ physical damage , Slowing the target for @SlowAmount*100@% for @SlowDuration@s, and shredding @ShredAmount*100@% Armor and Magic Resist for @DebuffDuration@ seconds.\nPicking up this axes reduces its Cooldown (%i:cooldown%) to @CDIfPickedUp@s.",
-        "pl": "Automatyczne użycie : Co @Cooldown@ sek. rzuca toporem w najbliższego przeciwnika, zadając @TotalDamage@ pkt. obrażeń fizycznych , spowalniając cel o @SlowAmount*100@% na @SlowDuration@ sek. oraz obniżając wartość jego pancerza i odporności na magię o @ShredAmount*100@% na @DebuffDuration@ sek.\nPodniesienie tego topora skraca czas odnowienia (%i:cooldown%) do @CDIfPickedUp@ sek."
+        "en": "Autocast: Throws an axe at the nearest opponent every 12s, dealing physical damage, Slowing the target for 25 - 60% for 1.5s, and shredding 20% Armor and Magic Resist for 4 seconds.\nPicking up this axes reduces its Cooldown to 1.5s.",
+        "pl": "Automatyczne użycie: Co 12 sek. rzuca toporem w najbliższego przeciwnika, zadając pkt. obrażeń fizycznych, spowalniając cel o 25 - 60% na 1.5 sek. oraz obniżając wartość jego pancerza i odporności na magię o 20% na 4 sek.\nPodniesienie tego topora skraca czas odnowienia do 1.5 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/andmyaxe_small.png",
       "tier": "gold",
@@ -22026,8 +21991,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wyższa Szkoła Błaznowania"
       },
       "descriptions": {
-        "en": "Backstab : You deal @BasicAttackDamage@ bonus physical damage when striking from behind.\nDeceive : You teleport and become Invisible for @StealthDuration@ seconds. Your next Attack while Invisible deals an additional @TotalDamage@ physical damage . If striking from behind, this Attack critically strikes for @QCritDamageMod@ damage.\nHallucinate: Death : On death, deal @FearDamage*100@% maximum Health magic damage and fear for @FearDuration@s around you.",
-        "pl": "Cios w Plecy : Zadajesz @BasicAttackDamage@ pkt. dodatkowych obrażeń fizycznych podczas atakowania od tyłu.\nPodstęp : Teleportujesz się i zyskujesz niewidzialność na @StealthDuration@ sek. Twój następny atak po zyskaniu niewidzialności zadaje dodatkowo @TotalDamage@ pkt. obrażeń fizycznych . Jeżeli atak zostanie wyprowadzony od tyłu, trafi krytycznie i zada @QCritDamageMod@ obrażeń.\nHalucynacje: Śmierć : Po śmierci zadaje obrażenia magiczne równe @FearDamage*100@% maksymalnego zdrowia i przestrasza na obszarze dookoła ciebie na @FearDuration@ sek."
+        "en": "Backstab: You deal bonus physical damage when striking from behind.\nDeceive: You teleport and become Invisible for 3 seconds. Your next Attack while Invisible deals an additional physical damage. If striking from behind, this Attack critically strikes for damage.\nHallucinate: Death: On death, deal 25% maximum Health magic damage and fear for 1s around you.",
+        "pl": "Cios w Plecy: Zadajesz pkt. dodatkowych obrażeń fizycznych podczas atakowania od tyłu.\nPodstęp: Teleportujesz się i zyskujesz niewidzialność na 3 sek. Twój następny atak po zyskaniu niewidzialności zadaje dodatkowo pkt. obrażeń fizycznych. Jeżeli atak zostanie wyprowadzony od tyłu, trafi krytycznie i zada obrażeń.\nHalucynacje: Śmierć: Po śmierci zadaje obrażenia magiczne równe 25% maksymalnego zdrowia i przestrasza na obszarze dookoła ciebie na 1 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/clowncollege_small.png",
       "tier": "prismatic",
@@ -22042,8 +22007,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Przesyt"
       },
       "descriptions": {
-        "en": "Your Mana costs double. Your Ability Heals , Shields , and damage are @ManaCalc@ more effective.",
-        "pl": "Twoje koszty many zostają podwojone. Leczenie , tarcze oraz obrażenia zadawane przez twoje umiejętności są o @ManaCalc@ skuteczniejsze."
+        "en": "Your Mana costs double. Your Ability Heals, Shields, and damage are more effective.",
+        "pl": "Twoje koszty many zostają podwojone. Leczenie, tarcze oraz obrażenia zadawane przez twoje umiejętności są o skuteczniejsze."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/overflow_small.png",
       "tier": "gold",
@@ -22058,8 +22023,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Za Moment Wracamy"
       },
       "descriptions": {
-        "en": "Time Stop : All nearby champions are put in Stasis for @StasisDuration@ seconds, or @SelfDuration@ seconds for you. During which you restore @HealAmountPercent*100@% missing Health .",
-        "pl": "Zatrzymanie Czasu : WSZYSCY pobliscy bohaterowie zostają wprowadzeni w stan inercji na @StasisDuration@ sek. Efekt działa na ciebie przez @SelfDuration@ sek. Podczas trwania efektu leczysz się o @HealAmountPercent*100@% brakującego zdrowia ."
+        "en": "Time Stop: All nearby champions are put in Stasis for 2.5 seconds, or 1.8 seconds for you. During which you restore 25 - 50% missing Health.",
+        "pl": "Zatrzymanie Czasu: WSZYSCY pobliscy bohaterowie zostają wprowadzeni w stan inercji na 2.5 sek. Efekt działa na ciebie przez 1.8 sek. Podczas trwania efektu leczysz się o 25 - 50% brakującego zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wellberightback_small.png",
       "tier": "gold",
@@ -22074,8 +22039,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Taran"
       },
       "descriptions": {
-        "en": "Gain @SizeIncrement*100@% increase in size and @f2@% Bonus Health ( @MaxHPIncrement*100@% (@f1@) per takedown).\nTakedowns: @f3@",
-        "pl": "Zwiększasz swój rozmiar o @SizeIncrement*100@% i zyskujesz @f2@% dodatkowego zdrowia ( @MaxHPIncrement*100@% (@f1@ pkt.) za każdy udział w zabójstwie).\nUdziały w zabójstwach: @f3@"
+        "en": "Gain 10 - 20% increase in size and % Bonus Health ( 2 - 12.5% per takedown).\nTakedowns:",
+        "pl": "Zwiększasz swój rozmiar o 10 - 20% i zyskujesz % dodatkowego zdrowia ( 2 - 12.5% ( pkt.) za każdy udział w zabójstwie).\nUdziały w zabójstwach:"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/tank_engine_small.png",
       "tier": "gold",
@@ -22090,8 +22055,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wyzwolony z Kajdan"
       },
       "descriptions": {
-        "en": "You can now Hijack your ally's ultimate.\nOn takedown, reduce Hijack's lockout and cooldown by @TakedownRefund*100@%.\nGain @UltimateHaste@ Ultimate Haste.",
-        "pl": "Możesz teraz przejąć superumiejętność swojego sojusznika.\nPo udziale w zabójstwie skróć blokadę i czas odnowienia przejęcia o @TakedownRefund*100@%.\nZyskujesz @UltimateHaste@ jedn. przyspieszenia superumiejętności."
+        "en": "You can now Hijack your ally's ultimate.\nOn takedown, reduce Hijack's lockout and cooldown by 20%.\nGain 60 Ultimate Haste.",
+        "pl": "Możesz teraz przejąć superumiejętność swojego sojusznika.\nPo udziale w zabójstwie skróć blokadę i czas odnowienia przejęcia o 20%.\nZyskujesz 60 jedn. przyspieszenia superumiejętności."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/unshackled_small.png",
       "tier": "gold",
@@ -22119,8 +22084,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Silny Jad"
       },
       "descriptions": {
-        "en": "Dealing damage to an enemy champion reduces any shields they gain by @ShieldShred@%, and applies @GrievousAmount*100@% Grievous Wounds for @DebuffDuration@ seconds.\nIf an enemy heals for more than @GrievousAmpThreshold*100@% of their maximum health while continously affected by Grievous Wounds , it is increased to @GrievousAmpAmount*100@% Grievous Wounds .\n{{ Item_Grievous_Wounds }}\nOnly reduces General and Physical Damage shields, but not purely Magical Damage blocking shields.",
-        "pl": "Zadawanie obrażeń wrogiemu bohaterowi obniża wytrzymałość otrzymywanych przez niego tarcz o @ShieldShred@% i nakłada @GrievousAmount*100@% Głębokich Ran na @DebuffDuration@ sek.\nJeśli wróg uleczy się o więcej niż @GrievousAmpThreshold*100@% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran , ich wartość zostaje zwiększona do @GrievousAmpAmount*100@% Głębokich Ran .\n{{ Item_Grievous_Wounds }}\nDziałanie obejmuje tylko tarcze ogólne i blokujące obrażenia fizyczne, ale nie obejmuje tarcz blokujących wyłącznie obrażenia magiczne."
+        "en": "Dealing damage to an enemy champion reduces any shields they gain by 50 - 75%, and applies 40% Grievous Wounds for 3 - 4 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nOnly reduces General and Physical Damage shields, but not purely Magical Damage blocking shields.",
+        "pl": "Zadawanie obrażeń wrogiemu bohaterowi obniża wytrzymałość otrzymywanych przez niego tarcz o 50 - 75% i nakłada 40% Głębokich Ran na 3 - 4 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nDziałanie obejmuje tylko tarcze ogólne i blokujące obrażenia fizyczne, ale nie obejmuje tarcz blokujących wyłącznie obrażenia magiczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/grevious_venmon_small.png",
       "tier": "silver",
@@ -22135,8 +22100,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pudełko Pandory"
       },
       "descriptions": {
-        "en": "Transmute all of your augments into random Prismatic%i:Augment% Augments .",
-        "pl": "Transmutuj wszystkie swoje ulepszenia w losowe ulepszenia %i:Augment% pryzmatyczne ."
+        "en": "Transmute all of your augments into random Prismatic Augments.",
+        "pl": "Transmutuj wszystkie swoje ulepszenia w losowe ulepszenia pryzmatyczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/pandoras_box_small.png",
       "tier": "prismatic",
@@ -22151,8 +22116,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Szalony Kapelusznik"
       },
       "descriptions": {
-        "en": "Requirement: Wear @QuestThreshold@ hats at the end of combat.\nReward: Gain @AFPerHat@ Adaptive Force , @ArmorMRPerHat@ Armor and Magic Resist , @TenacityPerHat*100@% Tenacity , and @MSPerHat@ Movement Speed per hat.\nCurrently Granting: @f1@ Adaptive Force , @f2@ Armor and Magic Resist , @f3*100@% Tenacity , and @f4@ Movement Speed .\nLose half of your hats when you lose a round.",
-        "pl": "Wymaganie: Miej na zakończenie walki następującą liczbę kapeluszy: @QuestThreshold@.\nNagroda: Zyskujesz @AFPerHat@ pkt. siły adaptacyjnej , @ArmorMRPerHat@ pkt. pancerza i odporności na magię , @TenacityPerHat*100@% nieustępliwości i @MSPerHat@ jedn. prędkości ruchu za każdy kapelusz.\nObecnie zapewnia: @f1@ pkt. siły adaptacyjnej , @f2@ pkt. pancerza i odporności na magię , @f3*100@% nieustępliwości i @f4@ jedn. prędkości ruchu .\nTracisz połowę kapeluszy, gdy przegrywasz rundę."
+        "en": "Requirement: Wear 10 hats at the end of combat.\nReward: Gain 12 Adaptive Force, 8 Armor and Magic Resist, 3% Tenacity, and 4 Movement Speed per hat.\nCurrently Granting: Adaptive Force, Armor and Magic Resist, % Tenacity, and Movement Speed.\nLose half of your hats when you lose a round.",
+        "pl": "Wymaganie: Miej na zakończenie walki następującą liczbę kapeluszy: 10.\nNagroda: Zyskujesz 12 pkt. siły adaptacyjnej, 8 pkt. pancerza i odporności na magię, 3% nieustępliwości i 4 jedn. prędkości ruchu za każdy kapelusz.\nObecnie zapewnia: pkt. siły adaptacyjnej, pkt. pancerza i odporności na magię, % nieustępliwości i jedn. prędkości ruchu.\nTracisz połowę kapeluszy, gdy przegrywasz rundę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/mad_hatter_small.png",
       "tier": "gold",
@@ -22167,8 +22132,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Trzy Święte Skarby"
       },
       "descriptions": {
-        "en": "Requirement: Possess Infinity Edge, Perplexity, and Hextech Gunblade.\nReward: Yunara's Attacks are replaced with lasers that deal @Calc_Physical_Damage@ physical damage + @Calc_Magic_Damage@ magic damage and apply %i:OnHit% On-Hit effects twice.",
-        "pl": "Wymaganie: Posiadaj Ostrze Nieskończoności, Konsternację i Miecz-Pistolet Hextech.\nNagroda: Ataki Yunary zostają zastąpione laserami, które zadają @Calc_Physical_Damage@ pkt. obrażeń fizycznych + @Calc_Magic_Damage@ pkt. obrażeń magicznych i nakładają efekty %i:OnHit% przy trafieniu dwukrotnie."
+        "en": "Requirement: Possess Infinity Edge, Perplexity, and Hextech Gunblade.\nReward: Yunara's Attacks are replaced with lasers that deal physical damage + magic damage and apply On-Hit effects twice.",
+        "pl": "Wymaganie: Posiadaj Ostrze Nieskończoności, Konsternację i Miecz-Pistolet Hextech.\nNagroda: Ataki Yunary zostają zastąpione laserami, które zadają pkt. obrażeń fizycznych + pkt. obrażeń magicznych i nakładają efekty przy trafieniu dwukrotnie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/threesacredtreasures_small.png",
       "tier": "gold",
@@ -22196,8 +22161,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochroniarz"
       },
       "descriptions": {
-        "en": "Using a dash, blink, or teleport grants yourself, and an allies you pass through, a shield for @ShieldDuration@ seconds.\nThe strength of this shield depends on your abilities base cooldown at level 1. Shields reach their maximum on abilities with at least a @MaxCDCheck@ second cooldown.",
-        "pl": "Użycie doskoku, mignięcia lub teleportacji zapewnia tobie oraz każdemu sojuszniczemu bohaterowi, przez którego przenikniesz, tarczę na @ShieldDuration@ sek.\nWytrzymałość tej tarczy zależy od podstawowego czasu odnowienia twoich umiejętności na poziomie 1. Tarcze osiągają swoją maksymalną wytrzymałości przy umiejętnościach, których czas odnowienia wynosi co najmniej @MaxCDCheck@ sek."
+        "en": "Using a dash, blink, or teleport grants yourself, and an allies you pass through, a shield for 5 seconds.\nThe strength of this shield depends on your abilities base cooldown at level 1. Shields reach their maximum on abilities with at least a 80 second cooldown.",
+        "pl": "Użycie doskoku, mignięcia lub teleportacji zapewnia tobie oraz każdemu sojuszniczemu bohaterowi, przez którego przenikniesz, tarczę na 5 sek.\nWytrzymałość tej tarczy zależy od podstawowego czasu odnowienia twoich umiejętności na poziomie 1. Tarcze osiągają swoją maksymalną wytrzymałości przy umiejętnościach, których czas odnowienia wynosi co najmniej 80 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bodyguard_small.png",
       "tier": "gold",
@@ -22212,8 +22177,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ulepszona Moc"
       },
       "descriptions": {
-        "en": "{{ Cherry_AugmentedPower_Summary }}\nDamage increase this round: @f1@\nTotal damage increased: @f2@",
-        "pl": "{{ Cherry_AugmentedPower_Summary }}\nZwiększenie obrażeń w tej rundzie: @f1@ pkt.\nZwiększenie całkowitych obrażeń: @f2@ pkt."
+        "en": "Damage increase this round:",
+        "pl": "Zwiększenie obrażeń w tej rundzie\nZwiększenie całkowitych obrażeń"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/augmented_power_small.png",
       "tier": "silver",
@@ -22228,8 +22193,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Cerberus"
       },
       "descriptions": {
-        "en": "Gain the Hail of Blades and Press the Attack Keystone Runes.\nHail of Blades - Your first 3 Attacks have massively increased Attack Speed .\nPress the Attack - Hitting 3 Attacks against the same enemy deals a burst of damage and increases your damage until you leave combat.",
-        "pl": "Zyskujesz runy kluczowe: Nawałnica Mieczy i Do Ataku .\nNawałnica Mieczy – Twoje pierwsze 3 ataki mają znacznie zwiększoną prędkość ataku .\nDo Ataku – Trafienie tego samego wroga 3 atakami zadaje obrażenia eksplozywne i zwiększa twoje obrażenia, dopóki nie opuścisz walki."
+        "en": "Gain the Hail of Blades and Press the Attack Keystone Runes.\nHail of Blades - Your first 3 Attacks have massively increased Attack Speed.\nPress the Attack - Hitting 3 Attacks against the same enemy deals a burst of damage and increases your damage until you leave combat.",
+        "pl": "Zyskujesz runy kluczowe: Nawałnica Mieczy i Do Ataku.\nNawałnica Mieczy – Twoje pierwsze 3 ataki mają znacznie zwiększoną prędkość ataku.\nDo Ataku – Trafienie tego samego wroga 3 atakami zadaje obrażenia eksplozywne i zwiększa twoje obrażenia, dopóki nie opuścisz walki."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/cerberus_small.png",
       "tier": "prismatic",
@@ -22244,8 +22209,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Niesłychana Odwaga"
       },
       "descriptions": {
-        "en": "Increase future %i:Augment%Augment offerings by @tierValueIncrease@ tier(s). If the Augment's tier was already Prismatic, gain +%i:goldCoins%@GoldAmount@ gold .",
-        "pl": "Podnosi kategorię przyszłych ofert %i:Augment% ulepszeń o następującą liczbę poziomów: @tierValueIncrease@. Jeśli ulepszenie było pryzmatyczne, zyskujesz +%i:goldCoins%@GoldAmount@ szt. złota ."
+        "en": "Increase future Augment offerings by 1 - 2 tier(s). If the Augment's tier was already Prismatic, gain + 750 - 1500 gold.",
+        "pl": "Podnosi kategorię przyszłych ofert ulepszeń o następującą liczbę poziomów: 1 - 2. Jeśli ulepszenie było pryzmatyczne, zyskujesz + 750 - 1500 szt. złota."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bravestofthebrave_small.png",
       "tier": "silver",
@@ -22273,8 +22238,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Nieumierająca Gwardia"
       },
       "descriptions": {
-        "en": "Upon activating Cultivation of War 's revive, Zaahen unleashes a sweep around him that deals @TotalDamage@ plus @PercentCurrentHealthDamage*100@% current Health physical damage and Knocks Back all enemies.\nAfterwards, Zaahen becomes Immune to damage from enemies outside the sweep range and gains @MovementSpeedBoost*100@% Movement Speed for @MissileDefenseBaseDuration@ seconds.",
-        "pl": "Po aktywowaniu wskrzeszenia z Rozwijania Sztuki Wojennej Zaahen wykonuje zamaszysty cios, który zadaje obrażenia fizyczne równe @TotalDamage@ pkt. plus @PercentCurrentHealthDamage*100@% aktualnego zdrowia celu i odrzuca wszystkich wrogów.\nNastępnie Zaahen staje się niewrażliwy na obrażenia otrzymywane od wrogów, którzy znajdują się poza zasięgiem tego ciosu, i zyskuje @MovementSpeedBoost*100@% prędkości ruchu na @MissileDefenseBaseDuration@ sek."
+        "en": "Upon activating Cultivation of War 's revive, Zaahen unleashes a sweep around him that deals plus 15% current Health physical damage and Knocks Back all enemies.\nAfterwards, Zaahen becomes Immune to damage from enemies outside the sweep range and gains 30% Movement Speed for 4 seconds.",
+        "pl": "Po aktywowaniu wskrzeszenia z Rozwijania Sztuki Wojennej Zaahen wykonuje zamaszysty cios, który zadaje obrażenia fizyczne równe pkt. plus 15% aktualnego zdrowia celu i odrzuca wszystkich wrogów.\nNastępnie Zaahen staje się niewrażliwy na obrażenia otrzymywane od wrogów, którzy znajdują się poza zasięgiem tego ciosu, i zyskuje 30% prędkości ruchu na 4 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dawnbringersresolve_small.png",
       "tier": "gold",
@@ -22315,8 +22280,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Profanacja"
       },
       "descriptions": {
-        "en": "Dashing or Blinking grants you @CurseCounter@ Cursed Power if there is an enemy nearby. Gain Move Speed scaling with your Cursed Power .\nGain @f1@ Move Speed (@MSRatio*100@% of your Cursed Power ).\n{{ Cherry_CurseShared }}",
-        "pl": "Doskok lub mignięcie zapewniają ci @CurseCounter@ pkt. Przeklętej Mocy , jeśli w pobliżu znajduje się wróg. Zyskujesz prędkość ruchu skalującą się z twoją Przeklętą Mocą .\nZyskujesz @f1@ jedn. prędkości ruchu (@MSRatio*100@% twojej Przeklętej Mocy ).\n{{ Cherry_CurseShared }}"
+        "en": "Dashing or Blinking grants you 5 Cursed Power if there is an enemy nearby. Gain Move Speed scaling with your Cursed Power.\nGain Move Speed (20% of your Cursed Power ).",
+        "pl": "Doskok lub mignięcie zapewniają ci 5 pkt. Przeklętej Mocy, jeśli w pobliżu znajduje się wróg. Zyskujesz prędkość ruchu skalującą się z twoją Przeklętą Mocą.\nZyskujesz jedn. prędkości ruchu (20% twojej Przeklętej Mocy )."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/desecrator_small.png",
       "tier": "silver",
@@ -22357,8 +22322,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Rytuał Boga Kuźni"
       },
       "descriptions": {
-        "en": "Requirement: Purchase @AnvilsReqToComplete@ Item Anvils.\nReward: All of your items become Masterwork , increasing their stats by @ItemPercentAmp*100@%.",
-        "pl": "Wymaganie: Kup następującą liczbę Kowadeł Przedmiotów: @AnvilsReqToComplete@.\nNagroda: Wszystkie twoje przedmioty stają się mistrzowskie , co zwiększa ich statystyki o @ItemPercentAmp*100@%."
+        "en": "Requirement: Purchase 2 Item Anvils.\nReward: All of your items become Masterwork, increasing their stats by 40%.",
+        "pl": "Wymaganie: Kup następującą liczbę Kowadeł Przedmiotów: 2.\nNagroda: Wszystkie twoje przedmioty stają się mistrzowskie, co zwiększa ich statystyki o 40%."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/quest_rite_of_the_forge_god_small.png",
       "tier": "prismatic",
@@ -22386,8 +22351,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Azyl"
       },
       "descriptions": {
-        "en": "Once per combat, when you would die, instead turn into a wisp, set yourself to @HealthLock*100@% Health , and travel to a random spot in the arena.",
-        "pl": "Raz na walkę, gdy masz zginąć, przemieniasz się w ognika, masz @HealthLock*100@% zdrowia i przemieszczasz się w losowe miejsce na arenie."
+        "en": "Once per combat, when you would die, instead turn into a wisp, set yourself to 15 - 35% Health, and travel to a random spot in the arena.",
+        "pl": "Raz na walkę, gdy masz zginąć, przemieniasz się w ognika, masz 15 - 35% zdrowia i przemieszczasz się w losowe miejsce na arenie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/panic_room_small.png",
       "tier": "silver",
@@ -22402,8 +22367,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Celuj w Głowę"
       },
       "descriptions": {
-        "en": "{{Cherry_AimForTheHead_Summary}}\nTotal Bonus Critical Strike Damage: @f1*100@%",
-        "pl": "{{Cherry_AimForTheHead_Summary}}\nCałkowite dodatkowe obrażenia trafienia krytycznego: @f1*100@%"
+        "en": "Total Bonus Critical Strike Damage: %",
+        "pl": "Całkowite dodatkowe obrażenia trafienia krytycznego: %"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/aim_for_the_head_small.png",
       "tier": "gold",
@@ -22418,8 +22383,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Umysł Roju"
       },
       "descriptions": {
-        "en": "Start each round with @StartingBees@ Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing @BeeDamage@ magic damage over @DebuffDuration@ seconds on arrival, before returning to you.",
-        "pl": "Rozpocznij każdą rundę z @StartingBees@ Pszczołą. Zyskujesz dodatkowe Pszczoły za zbieranie kwiatów. Zadawanie obrażeń wrogiemu bohaterowi wypuszcza Pszczołę, która zadaje @BeeDamage@ pkt. obrażeń magicznych w ciągu @DebuffDuration@ sek. po przybyciu, a potem wraca do ciebie."
+        "en": "Start each round with 0 - 6 Bee, gain additonal Bees by harvesting flowers. Damaging an enemy champion sends a Bee dealing magic damage over 2 seconds on arrival, before returning to you.",
+        "pl": "Rozpocznij każdą rundę z 0 - 6 Pszczołą. Zyskujesz dodatkowe Pszczoły za zbieranie kwiatów. Zadawanie obrażeń wrogiemu bohaterowi wypuszcza Pszczołę, która zadaje obrażenia magicznych w ciągu 2 sek. po przybyciu, a potem wraca do ciebie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/hive_mind_small.png",
       "tier": "prismatic",
@@ -22434,8 +22399,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zyskaj Pryzmatyczne Kowadło Statystyk."
       },
       "descriptions": {
-        "en": "Gain a Prismatic Stat Anvil, granting anything from this list.\n+%i:scaleCritMult% Critical Strike Damage\n+%i:scaleHealth% Health and Increased Size\n+%i:scaleAPen% Armor Penetration\n+%i:scaleMPen% Magic Penetration\n+%i:scaleMS% Move Speed and Reduced Size\n+%i:scaleTenacity% Tenacity\n+%i:scaleHealShield% Heal & Shield Power\n+%i:scaleSV% Omnivamp\n+%i:goldCoins% Gold",
-        "pl": "Zdobywasz Pryzmatyczne Kowadło Statystyk, które zapewnia cokolwiek z tej listy.\n+%i:scaleCritMult% obrażeń trafienia krytycznego\n+%i:scaleHealth% zdrowia i zwiększenia rozmiaru\n+%i:scaleAPen% przebicia pancerza\n+%i:scaleMPen% przebicia odporności na magię\n+%i:scaleMS% prędkości ruchu i zmniejszenia rozmiaru\n+%i:scaleTenacity% nieustępliwości\n+%i:scaleHealShield% siły leczenia i tarcz\n+%i:scaleSV% wszechwampiryzmu\n+%i:goldCoins% szt. złota"
+        "en": "Gain a Prismatic Stat Anvil, granting anything from this list.\nCritical Strike Damage\nHealth and Increased Size\nArmor Penetration\nMagic Penetration\nMove Speed and Reduced Size\nTenacity\nHeal & Shield Power\nOmnivamp\nGold",
+        "pl": "Zdobywasz Pryzmatyczne Kowadło Statystyk, które zapewnia cokolwiek z tej listy.\nobrażeń trafienia krytycznego\nzdrowia i zwiększenia rozmiaru\nprzebicia pancerza\nprzebicia odporności na magię\nprędkości ruchu i zmniejszenia rozmiaru\nnieustępliwości\nsiły leczenia i tarcz\nwszechwampiryzmu\nszt. złota"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/crafting_prisstatanvil_small.png",
       "tier": "special",
@@ -22449,10 +22414,7 @@ window.ARENA_GAME_DATA = {
         "en": "Gain an Augment slot",
         "pl": "Zyskaj miejsce na Ulepszenie"
       },
-      "descriptions": {
-        "en": "{{ Cherry_CraftingAugmentSlot_Summary }}",
-        "pl": "{{ Cherry_CraftingAugmentSlot_Summary }}"
-      },
+      "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/crafting_slot_small.png",
       "tier": "special",
       "rarity": 4,
@@ -22466,8 +22428,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Poziomy Ulepszeń"
       },
       "descriptions": {
-        "en": "Remove an %i:Augment% Augment .\nGain @AugmentLevelsToGrant@ random %i:AugmentLevel% Augment Levels .\nYou have @LevelableAugmentCount@ %i:AugmentLevel% levelable augment(s).",
-        "pl": "Usuń %i:Augment% ulepszenie .\nZyskujesz następującą liczbę %i:AugmentLevel% poziomów losowych ulepszeń : @AugmentLevelsToGrant@.\nMasz następującą liczbę %i:AugmentLevel% ulepszeń, których poziom możesz podnieść: @LevelableAugmentCount@."
+        "en": "Remove an Augment.\nGain 2 random Augment Levels.\nYou have levelable augment(s).",
+        "pl": "Usuń ulepszenie.\nZyskujesz następującą liczbę poziomów losowych ulepszeń: 2.\nMasz następującą liczbę ulepszeń, których poziom możesz podnieść:."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/crafting_sellaug_small.png",
       "tier": "special",
@@ -22482,8 +22444,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Słuszny Gniew"
       },
       "descriptions": {
-        "en": "{{Cherry_RighteousFury_Summary}}\n@Cooldown@s Cooldown per Ability cast, Augment, and Item.",
-        "pl": "{{Cherry_RighteousFury_Summary}}\n@Cooldown@ sek. odnowienia na każde użycie umiejętności, ulepszenia i przedmiotu."
+        "en": "3s Cooldown per Ability cast, Augment, and Item.",
+        "pl": "3 sek. odnowienia na każde użycie umiejętności, ulepszenia i przedmiotu."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/righteous_fury_small.png",
       "tier": "prismatic",
@@ -22498,8 +22460,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Energiczność"
       },
       "descriptions": {
-        "en": "Gain Energized @EnergizeAmpMovementCharge*100@% quicker. Triggering Energized fires a Magic Missile , dealing up to @MaxHealthDamagePerMissile*100@% max Health true damage based on distance traveled.\nMagic Missile Damage Dealt This Round: @f1@\nMagic Missile Damage Dealt Total: @f2@",
-        "pl": "Zyskuj Naładowanie @EnergizeAmpMovementCharge*100@% szybciej. Aktywowanie Naładowania wystrzeliwuje Magiczny Pocisk , który zadaje obrażenia nieuchronne równe do @MaxHealthDamagePerMissile*100@% maksymalnego zdrowia w zależności od przebytego dystansu.\nObrażenia zadane Magicznym Pociskiem w tej rundzie: @f1@ pkt.\nCałkowite obrażenia zadane Magicznym Pociskiem: @f2@ pkt."
+        "en": "Gain Energized 200 - 300% quicker. Triggering Energized fires a Magic Missile, dealing up to 0.3% max Health true damage based on distance traveled.\nMagic Missile Damage Dealt This Round:\nMagic Missile Damage Dealt Total:",
+        "pl": "Zyskuj Naładowanie 200 - 300% szybciej. Aktywowanie Naładowania wystrzeliwuje Magiczny Pocisk, który zadaje obrażenia nieuchronne równe do 0.3% maksymalnego zdrowia w zależności od przebytego dystansu.\nCałkowite obrażenia zadane Magicznym Pociskiem"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/energetic_small.png",
       "tier": "silver",
@@ -22514,8 +22476,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Magiczna Dziewczynka"
       },
       "descriptions": {
-        "en": "Each round, a star falls over @TimeUntilStarLands@ seconds. After picking it up you transform into a Magical Girl, knocking back nearby enemies, causing them to dance for @EnemyDanceDuration@ second, while granting you @AdaptiveForce@ Adaptive Force and a @TotalShield@ health Shield .\nAs a Magical Girl, every @FastSpawnRate@-@SlowSpawnRate@ seconds @StarsToSpawnPerWave@ stars fall from the sky striking around you and each of your enemies, dealing @TotalDamage@ magic damage to those hit.\nDancing enemies are invulnerable.\nStars rain down more frequently on enemies within @EnemycheckDistance@ range of you.",
-        "pl": "W każdej rundzie przez @TimeUntilStarLands@ sek. spada gwiazda. Po jej podniesieniu przemieniasz się w Magiczną Dziewczynkę, odrzucając pobliskich wrogów i zmuszając ich do tańca przez @EnemyDanceDuration@ sek. Zyskujesz przy tym @AdaptiveForce@ pkt. siły adaptacyjnej i tarczę o wytrzymałości @TotalShield@ pkt. .\nJako Magiczna Dziewczynka co @FastSpawnRate@-@SlowSpawnRate@ sek. zsyłasz deszcz @StarsToSpawnPerWave@ gwiazd spadający wokół siebie i na każdego z twoich wrogów, zadając @TotalDamage@ pkt. obrażeń magicznych trafionym jednostkom.\nTańczący wrogowie są niewrażliwi.\nGwiazdy spadają częściej na wrogów znajdujących się w zasięgu @EnemycheckDistance@ jedn. od ciebie."
+        "en": "Each round, a star falls over 20 seconds. After picking it up you transform into a Magical Girl, knocking back nearby enemies, causing them to dance for 2 second, while granting you 100 - 300 Adaptive Force and a 200 - 500 health Shield.\nAs a Magical Girl, every 5-10 seconds 2 - 6 stars fall from the sky striking around you and each of your enemies, dealing magic damage to those hit.\nDancing enemies are invulnerable.\nStars rain down more frequently on enemies within 700 range of you.",
+        "pl": "W każdej rundzie przez 20 sek. spada gwiazda. Po jej podniesieniu przemieniasz się w Magiczną Dziewczynkę, odrzucając pobliskich wrogów i zmuszając ich do tańca przez 2 sek. Zyskujesz przy tym 100 - 300 pkt. siły adaptacyjnej i tarczę o wytrzymałości 200 - 500 pkt..\nJako Magiczna Dziewczynka co 5-10 sek. zsyłasz deszcz 2 - 6 gwiazd spadający wokół siebie i na każdego z twoich wrogów, zadając pkt. obrażeń magicznych trafionym jednostkom.\nTańczący wrogowie są niewrażliwi.\nGwiazdy spadają częściej na wrogów znajdujących się w zasięgu 700 jedn. od ciebie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/magic_girl_small.png",
       "tier": "prismatic",
@@ -22530,8 +22492,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kanapka z Chlebem"
       },
       "descriptions": {
-        "en": "Gain @AbilityHaste@ Ability Haste.\nCasting an ability gants @MoveSpeedAmp*100@% Movement Speed for @MSDuration@ seconds .\nYou have become all that is feared, you have become the ultimate in food science. Men cry out for more toppings, and you whisper \"No\".",
-        "pl": "Zyskujesz @AbilityHaste@ jedn. przyspieszenia umiejętności.\nUżycie umiejętności zapewnia @MoveSpeedAmp*100@% prędkości ruchu na @MSDuration@ sek .\nJesteś uosobieniem najczystszego strachu. Jesteś istnieniem absolutnym w technologii żywności. Ludzkość zalewa się łzami, błagając cię o więcej dodatków, jednak ty nieugięcie szepczesz im w odpowiedzi: „Nie”."
+        "en": "Gain 200 - 400 Ability Haste.\nCasting an ability gants 40% Movement Speed for 2 seconds.\nYou have become all that is feared, you have become the ultimate in food science. Men cry out for more toppings, and you whisper \"No\".",
+        "pl": "Zyskujesz 200 - 400 jedn. przyspieszenia umiejętności.\nUżycie umiejętności zapewnia 40% prędkości ruchu na 2 sek.\nJesteś uosobieniem najczystszego strachu. Jesteś istnieniem absolutnym w technologii żywności. Ludzkość zalewa się łzami, błagając cię o więcej dodatków, jednak ty nieugięcie szepczesz im w odpowiedzi: „Nie”."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bread_sandwhich_small.png",
       "tier": "prismatic",
@@ -22546,8 +22508,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Chemtechowy Skaziciel"
       },
       "descriptions": {
-        "en": "Dealing damage to champions applies @GrievousAmount*100@% Wounds for @GrievousDuration@ seconds.",
-        "pl": "Zadawanie bohaterom obrażeń nakłada na nich Głębokie Rany o wartości @GrievousAmount*100@% na @GrievousDuration@ sek."
+        "en": "Dealing damage to champions applies 40% Wounds for 3 seconds.",
+        "pl": "Zadawanie bohaterom obrażeń nakłada na nich Głębokie Rany o wartości 40% na 3 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/chemtechpurifier_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22562,8 +22524,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Krwawe Szpony"
       },
       "descriptions": {
-        "en": "Dealing damage deals an additional @MaxHealthDamage*100@% max health physical damage .",
-        "pl": "Zadawanie obrażeń zadaje dodatkowo obrażenia fizyczne równe @MaxHealthDamage*100@% maks. zdrowia ."
+        "en": "Dealing damage deals an additional 1.5% max health physical damage.",
+        "pl": "Zadawanie obrażeń zadaje dodatkowo obrażenia fizyczne równe 1.5% maks. zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/bloodrazor_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22578,8 +22540,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Dematerializator"
       },
       "descriptions": {
-        "en": "Your damage executes champions that are below @ExecuteThreshold*100@% Health.",
-        "pl": "Twoje obrażenia wykańczają bohaterów, którzy mają poniżej @ExecuteThreshold*100@% zdrowia."
+        "en": "Your damage executes champions that are below 10% Health.",
+        "pl": "Twoje obrażenia wykańczają bohaterów, którzy mają poniżej 10% zdrowia."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/dematerializer_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22594,8 +22556,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zaklęty Flakonik"
       },
       "descriptions": {
-        "en": "Gain a Spell Shield every @Cooldown@ seconds that blocks the next enemy Ability.",
-        "pl": "Zyskujesz tarczę magii co @Cooldown@ sek. Tarcza ta blokuje kolejną umiejętność wroga."
+        "en": "Gain a Spell Shield every 10 seconds that blocks the next enemy Ability.",
+        "pl": "Zyskujesz tarczę magii co 10 sek. Tarcza ta blokuje kolejną umiejętność wroga."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/crystallineflask_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22610,8 +22572,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Lodowy Młot"
       },
       "descriptions": {
-        "en": "Dealing damage applies a @SlowAmount*100@% Slow for @SlowDuration@ seconds.",
-        "pl": "Zadawanie obrażeń nakłada @SlowAmount*100@% spowolnienia na @SlowDuration@ sek."
+        "en": "Dealing damage applies a 25% Slow for 2 seconds.",
+        "pl": "Zadawanie obrażeń nakłada 25% spowolnienia na 2 sek."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/frozenmallet_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22626,8 +22588,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pozostałość po Obserwatorach"
       },
       "descriptions": {
-        "en": "Reduce the Attack Speed of nearby champions by @ASPDSlow*-100@% .",
-        "pl": "Zmniejsza prędkość ataku pobliskich bohaterów o @ASPDSlow*-100@% ."
+        "en": "Reduce the Attack Speed of nearby champions by 25%.",
+        "pl": "Zmniejsza prędkość ataku pobliskich bohaterów o 25%."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/remnantofthewatchers_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22642,8 +22604,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Zyskujesz Kowadło Statystyk"
       },
       "descriptions": {
-        "en": "Gain a random %i:StatAnvil% Stat Anvil.",
-        "pl": "Zyskaj losowe %i:StatAnvil% Kowadło Statystyk."
+        "en": "Gain a random Stat Anvil.",
+        "pl": "Zyskaj losowe Kowadło Statystyk."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/gain_stat_anvil_small.png",
       "tier": "special",
@@ -22658,8 +22620,8 @@ window.ARENA_GAME_DATA = {
         "pl": "W Czepku Urodzony"
       },
       "descriptions": {
-        "en": "Deal @DamagePerSilver*100@% increased damage per %i:Augment% Silver Augment you have.\nYou deal @F1*100@% increased damage.",
-        "pl": "Zadajesz o @DamagePerSilver*100@% więcej obrażeń za każde posiadane %i:Augment% Srebrne Ulepszenie .\nZadajesz o @F1*100@% więcej obrażeń."
+        "en": "Deal 7.5 - 15% increased damage per Silver Augment you have.\nYou deal % increased damage.",
+        "pl": "Zadajesz o 7.5 - 15% więcej obrażeń za każde posiadane Srebrne Ulepszenie.\nZadajesz o % więcej obrażeń."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/silver_spoon_small.png",
       "tier": "silver",
@@ -22674,8 +22636,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Hybryda"
       },
       "descriptions": {
-        "en": "{{Cherry_Hybrid_Summary}}\nAbilities empower one Attack per cast.",
-        "pl": "{{Cherry_Hybrid_Summary}}\nUmiejętności wzmacniają jeden atak na użycie."
+        "en": "Abilities empower one Attack per cast.",
+        "pl": "Umiejętności wzmacniają jeden atak na użycie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/hybrid_small.png",
       "tier": "gold",
@@ -22690,8 +22652,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wilczy Szał"
       },
       "descriptions": {
-        "en": "Lose your innate revive.\nIncrease your Health by @HealthPercentageMod*100@% .\nIf you deal damage that would leave a champion below below @ExecuteThreshold*100@% maximum health , execute them.",
-        "pl": "Strać wrodzone odrodzenie.\nZwiększa twoje zdrowie o @HealthPercentageMod*100@% .\nZadanie obrażeń, które pozostawiłyby bohatera z mniejszym poziomem zdrowia niż @ExecuteThreshold*100@% maksymalnego zdrowia , wykańcza go."
+        "en": "Lose your innate revive.\nIncrease your Health by 15%.\nIf you deal damage that would leave a champion below below 10% maximum health, execute them.",
+        "pl": "Strać wrodzone odrodzenie.\nZwiększa twoje zdrowie o 15%.\nZadanie obrażeń, które pozostawiłyby bohatera z mniejszym poziomem zdrowia niż 10% maksymalnego zdrowia, wykańcza go."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wolf_small.arena_2026_s2.png",
       "tier": "special",
@@ -22706,8 +22668,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Jagnięcy Spokój"
       },
       "descriptions": {
-        "en": "Gain @RevivesToGain@ additional revive, and cuts the time needed to revive in half.",
-        "pl": "Zyskujesz @RevivesToGain@ dodatkowe wskrzeszenie i skracasz czas wskrzeszenia o połowę."
+        "en": "Gain 1 additional revive, and cuts the time needed to revive in half.",
+        "pl": "Zyskujesz 1 dodatkowe wskrzeszenie i skracasz czas wskrzeszenia o połowę."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/lamb_small.arena_2026_s2.png",
       "tier": "special",
@@ -22722,8 +22684,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sojusz z Demonami"
       },
       "descriptions": {
-        "en": "Vote for your team to ally with the Demons.\nAllying with Demons grants an %i:AugmentLevel% Augment Level when a Hunter team is eliminated .",
-        "pl": "Zagłosuj, by twoja drużyna sprzymierzyła się z Demonami.\nSojusz z Demonami zapewni poziom ulepszenia: %i:AugmentLevel% , gdy wyeliminowana zostanie drużyna łowców ."
+        "en": "Vote for your team to ally with the Demons.\nAllying with Demons grants an Augment Level when a Hunter team is eliminated.",
+        "pl": "Zagłosuj, by twoja drużyna sprzymierzyła się z Demonami.\nSojusz z Demonami zapewni poziom ulepszenia:, gdy wyeliminowana zostanie drużyna łowców."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/yonedemon_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22738,8 +22700,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Sojusz z Łowcami"
       },
       "descriptions": {
-        "en": "Vote for your team to ally with the Demon Hunters.\nAllying with Demon Hunters grants you +%i:goldCoins%@BonusGold@ bonus gold when you beat a Demon team .",
-        "pl": "Zagłosuj, by twoja drużyna sprzymierzyła się z Łowcami Demonów.\nSojusz z Łowcami Demonów zapewnia +%i:goldCoins% @BonusGold@ szt. dodatkowego złota za pokonanie drużyny demonów ."
+        "en": "Vote for your team to ally with the Demon Hunters.\nAllying with Demon Hunters grants you + 500 bonus gold when you beat a Demon team.",
+        "pl": "Zagłosuj, by twoja drużyna sprzymierzyła się z Łowcami Demonów.\nSojusz z Łowcami Demonów zapewnia + 500 szt. dodatkowego złota za pokonanie drużyny demonów."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/yonehunter_small.arena_2026_s2_a2.png",
       "tier": "special",
@@ -22754,8 +22716,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Wymień Ulepszenie"
       },
       "descriptions": {
-        "en": "Replace one of your %i:Augment% Augments with an Augment @TierIncreaseToolTipOnly@%i:AugmentLevel% tier higher .",
-        "pl": "Zamień jedno ze swoich %i:Augment% ulepszeń na ulepszenie @TierIncreaseToolTipOnly@%i:AugmentLevel% wyższej kategorii ."
+        "en": "Replace one of your Augments with an Augment 1 tier higher.",
+        "pl": "Zamień jedno ze swoich ulepszeń na ulepszenie 1 wyższej kategorii."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/replace_augment_small.png",
       "tier": "special",
@@ -22770,8 +22732,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odrzucenie Bogactwa"
       },
       "descriptions": {
-        "en": "Restore @HealthRestorePercent@% of of the health you've sacrificed to Tahm Kench.\nGain +%i:goldCoins% @GoldToGrant@ gold .",
-        "pl": "Przywraca @HealthRestorePercent@% zdrowia poświęconego Tahmowi Kenchowi.\nZyskujesz +%i:goldCoins% @GoldToGrant@ szt. złota ."
+        "en": "Restore 10% of of the health you've sacrificed to Tahm Kench.\nGain + 500 gold.",
+        "pl": "Przywraca 10% zdrowia poświęconego Tahmowi Kenchowi.\nZyskujesz + 500 szt. złota."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wealth_small.arena_2026_s2.png",
       "tier": "special",
@@ -22786,8 +22748,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odrzucenie Potęgi"
       },
       "descriptions": {
-        "en": "Restore @HealthRestorePercent@% of of the health you've sacrificed to Tahm Kench.\nGain @AnvilsGranted@ Silver Stat Anvil .",
-        "pl": "Przywraca @HealthRestorePercent@% zdrowia poświęconego Tahmowi Kenchowi.\nZdobywasz @AnvilsGranted@ Srebrne Kowadło Statystyk ."
+        "en": "Restore 10% of of the health you've sacrificed to Tahm Kench.\nGain 1 Silver Stat Anvil.",
+        "pl": "Przywraca 10% zdrowia poświęconego Tahmowi Kenchowi.\nZdobywasz 1 Srebrne Kowadło Statystyk."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/power_small.arena_2026_s2.png",
       "tier": "special",
@@ -22802,8 +22764,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Odrzucenie Ryzyka"
       },
       "descriptions": {
-        "en": "Restore @HealthRestorePercent@% of of the health you've sacrificed to Tahm Kench.\nInstantly gain a %i:Augment% Silver Augment .",
-        "pl": "Przywraca @HealthRestorePercent@% zdrowia poświęconego Tahmowi Kenchowi.\nNatychmiast zdobywasz %i:Augment% srebrne ulepszenie ."
+        "en": "Restore 10% of of the health you've sacrificed to Tahm Kench.\nInstantly gain a Silver Augment.",
+        "pl": "Przywraca 10% zdrowia poświęconego Tahmowi Kenchowi.\nNatychmiast zdobywasz srebrne ulepszenie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/risk_small.arena_2026_s2.png",
       "tier": "special",
@@ -22818,8 +22780,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Apetyt na Bogactwo"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain +%i:goldCoins% @GoldToGrant@ gold .",
-        "pl": "Poświęć @HealthReductionPercent@% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –@MaxHealthReduction@% maks. zdrowia .\nZyskujesz +%i:goldCoins% @GoldToGrant@ szt. złota ."
+        "en": "Sacrifice 10% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain + 1500 gold.",
+        "pl": "Poświęć 10% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –% maks. zdrowia.\nZyskujesz + 1500 szt. złota."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wealth_large.arena_2026_s2.png",
       "tier": "special",
@@ -22834,8 +22796,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Pragnienie Potęgi"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain @AnvilsGranted@ Gold Stat Anvil .",
-        "pl": "Poświęć @HealthReductionPercent@% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –@MaxHealthReduction@% maks. zdrowia .\nZyskaj @AnvilsGranted@ Złote Kowadło Statystyk ."
+        "en": "Sacrifice 10% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain 1 Gold Stat Anvil.",
+        "pl": "Poświęć 10% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –% maks. zdrowia.\nZyskaj 1 Złote Kowadło Statystyk."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/power_small.arena_2026_s2.png",
       "tier": "special",
@@ -22850,8 +22812,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Apetyt na Ryzyko"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain a %i:Augment% Gold Augment .",
-        "pl": "Poświęć @HealthReductionPercent@% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –@MaxHealthReduction@% maks. zdrowia .\nZdobywasz %i:Augment% złote Ulepszenie ."
+        "en": "Sacrifice 10% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain a Gold Augment.",
+        "pl": "Poświęć 10% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –% maks. zdrowia.\nZdobywasz złote Ulepszenie."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/risk_small.arena_2026_s2.png",
       "tier": "special",
@@ -22866,8 +22828,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uzależnienie od Bogactwa"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain +%i:goldCoins% @GoldToGrant@ gold .",
-        "pl": "Poświęć @HealthReductionPercent@% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –@MaxHealthReduction@% maks. zdrowia .\nZyskujesz +%i:goldCoins% @GoldToGrant@ szt. złota ."
+        "en": "Sacrifice 15% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain + 2500 gold.",
+        "pl": "Poświęć 15% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –% maks. zdrowia.\nZyskujesz + 2500 szt. złota."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/wealth_small.arena_2026_s2.png",
       "tier": "special",
@@ -22882,8 +22844,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uzależnienie od Mocy"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain @AnvilsGranted@ Prismatic Stat Anvils .",
-        "pl": "Poświęcasz @HealthReductionPercent@% swojego maksymalnego zdrowia Tahmowi Kenchowi.\nCałkowita ofiara rośnie do -@MaxHealthReduction@% maksymalnego zdrowia .\nZdobywasz następującą liczbę Pryzmatycznych Kowadeł Statystyk: @AnvilsGranted@ ."
+        "en": "Sacrifice 15% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain 1 Prismatic Stat Anvils.",
+        "pl": "Poświęcasz 15% swojego maksymalnego zdrowia Tahmowi Kenchowi.\nCałkowita ofiara rośnie do -% maksymalnego zdrowia.\nZdobywasz następującą liczbę Pryzmatycznych Kowadeł Statystyk: 1."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/power_small.arena_2026_s2.png",
       "tier": "special",
@@ -22898,8 +22860,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Uzależnienie od Ryzyka"
       },
       "descriptions": {
-        "en": "Sacrifice @HealthReductionPercent@% of your max health to Tahm Kench.\nYour total sacrifice will increase to -@MaxHealthReduction@% max health .\nGain a %i:Augment% Prismatic Augment .",
-        "pl": "Poświęć @HealthReductionPercent@% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –@MaxHealthReduction@% maks. zdrowia .\nZdobywasz pryzmatyczne ulepszenie: %i:Augment% ."
+        "en": "Sacrifice 15% of your max health to Tahm Kench.\nYour total sacrifice will increase to -% max health.\nGain a Prismatic Augment.",
+        "pl": "Poświęć 15% swojego maksymalnego zdrowia Tahm Kenchowi.\nTwoja całkowita ofiara wzrośnie do –% maks. zdrowia.\nZdobywasz pryzmatyczne ulepszenie:."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/risk_small.arena_2026_s2.png",
       "tier": "special",
@@ -23109,8 +23071,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Kula Szalbierza"
       },
       "descriptions": {
-        "en": "Dealing damage to an enemy champion reduces any shields they have or gain by @ShieldShred@% for @DebuffDuration@ seconds.\nAffects General and Physical Damage shields, but not purely Magical Damage blocking shields.",
-        "pl": "Zadawanie obrażeń wrogiemu bohaterowi obniża wartość nałożonych i nakładanych na niego tarcz o @ShieldShred@% na @DebuffDuration@ sek.\nDziałanie obejmuje tarcze ogólne i blokujące obrażenia fizyczne , ale nie obejmuje tarcz blokujących wyłącznie obrażenia magiczne ."
+        "en": "Dealing damage to an enemy champion reduces any shields they have or gain by 40% for 3 seconds.\nAffects General and Physical Damage shields, but not purely Magical Damage blocking shields.",
+        "pl": "Zadawanie obrażeń wrogiemu bohaterowi obniża wartość nałożonych i nakładanych na niego tarcz o 40% na 3 sek.\nDziałanie obejmuje tarcze ogólne i blokujące obrażenia fizyczne, ale nie obejmuje tarcz blokujących wyłącznie obrażenia magiczne."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/swindlers_orb_item_small.png",
       "tier": "special",
@@ -23151,8 +23113,8 @@ window.ARENA_GAME_DATA = {
         "pl": "404 Nie Znaleziono Ulepszenia"
       },
       "descriptions": {
-        "en": "How did you find this?!?!?\nGain @HatsToGrant@ hats.",
-        "pl": "Skąd ty to masz?!?!?\nZdobywasz następującą liczbę kapeluszy: @HatsToGrant@."
+        "en": "How did you find this?!?!?\nGain 3 hats.",
+        "pl": "Skąd ty to masz?!?!?\nZdobywasz następującą liczbę kapeluszy: 3."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/augment404_small.png",
       "tier": "silver",
@@ -23167,8 +23129,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ulepszenie 405"
       },
       "descriptions": {
-        "en": "Gain @DamageAmpPerHat*100@% damage per hat you're wearing.",
-        "pl": "Zyskujesz @DamageAmpPerHat*100@% obrażeń za każdy założony kapelusz."
+        "en": "Gain 5% damage per hat you're wearing.",
+        "pl": "Zyskujesz 5% obrażeń za każdy założony kapelusz."
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/augment405_small.png",
       "tier": "prismatic",
@@ -25615,19 +25577,6 @@ window.ARENA_GAME_DATA = {
       },
       "descriptions": {},
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/promqueen_small.png",
-      "tier": "prismatic",
-      "rarity": "kPrismatic",
-      "price": 0,
-      "categories": []
-    },
-    "1424": {
-      "id": "1424",
-      "names": {
-        "en": "???",
-        "pl": "???"
-      },
-      "descriptions": {},
-      "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/kiwi/augments/icons/missingping_small.png",
       "tier": "prismatic",
       "rarity": "kPrismatic",
       "price": 0,

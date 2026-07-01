@@ -1127,7 +1127,10 @@ function parsePublicRoute() {
 
 async function loadPublicProfile(route, options = {}) {
   const routeKey = `${route.region}/${route.slug}`;
-  if (!options.force && state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) return;
+  if (!options.force && state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) {
+    render();
+    return;
+  }
 
   if (state.publicProfile?.routeKey !== routeKey) {
     state.publicChampionSearch = "";
@@ -1872,7 +1875,7 @@ function assetName(asset) {
 }
 
 function assetDescription(asset) {
-  return cleanText(asset.descriptions?.[state.language] || asset.descriptions?.en || asset.description);
+  return normalizeDescription(asset.descriptions?.[state.language] || asset.descriptions?.en || asset.description);
 }
 
 function tierLabel(tier) {
@@ -2634,6 +2637,15 @@ function extractNumericId(value) {
 
 function normalize(value) {
   return cleanText(value).toLocaleLowerCase("pl-PL");
+}
+
+function normalizeDescription(value) {
+  return String(value ?? "")
+    .replace(/\r\n/g, "\n")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\s*\n\s*/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 function normalizeLookupKey(value) {

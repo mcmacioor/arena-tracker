@@ -183,12 +183,6 @@ a {
   justify-self: start;
 }
 
-.is-public-route .profile-hero,
-.is-public-route .profile-tabs,
-.is-public-route .profile-ad {
-  display: none;
-}
-
 .account-menu {
   position: relative;
 }
@@ -1641,7 +1635,7 @@ textarea:focus {
   bottom: calc(100% + 10px);
   z-index: 120;
   display: none;
-  width: min(320px, calc(100vw - 32px));
+  width: min(360px, calc(100vw - 32px));
   transform: translateX(-50%);
   padding: 12px;
   border: 1px solid #4a4e59;
@@ -1691,6 +1685,7 @@ textarea:focus {
 
 .asset-tooltip-title strong {
   font-size: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .asset-tooltip-title em {
@@ -1700,8 +1695,10 @@ textarea:focus {
 
 .asset-tooltip-desc {
   color: #d4d1c7;
+  font-size: 0.92rem;
   line-height: 1.35;
   white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .is-public-route [data-route="friends"] {
