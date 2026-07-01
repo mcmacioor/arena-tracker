@@ -17,8 +17,9 @@ const MAX_BODY_BYTES = 1_000_000;
 const ARENA_QUEUE_IDS = [1750];
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
-const RIOT_SYNC_MAX_LIMIT = 300;
+const RIOT_SYNC_MAX_LIMIT = 500;
 const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
+const PUBLIC_PROFILE_FETCH_BATCH = RIOT_SYNC_DEFAULT_LIMIT;
 const PUBLIC_PROFILE_CACHE_TTL_MS = 60 * 60 * 1000;
 const RIOT_FETCH_TIMEOUT_MS = 20_000;
 const RIOT_MATCH_DETAIL_CONCURRENCY = 4;
@@ -395,6 +396,8 @@ async function getPublicProfile(req, res, url) {
   const region = normalizePublicRegion(url.searchParams.get("region"));
   const slug = cleanText(url.searchParams.get("slug"));
   const forceRefresh = url.searchParams.get("refresh") === "1";
+  const limit = clamp(Number(url.searchParams.get("limit") || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
+  const batch = clamp(Number(url.searchParams.get("batch") || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
 
   if (!region || !slug) {
     sendJson(res, 400, { error: "Brakuje regionu albo nazwy profilu." });
@@ -409,7 +412,8 @@ async function getPublicProfile(req, res, url) {
   });
 
   if (user && forceRefresh) {
-    const fetched = await fetchRiotPublicProfile(region, slug).catch(() => null);
+    const cached = findCachedPublicProfile(db, region, slug);
+    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch }).catch(() => null);
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -426,7 +430,7 @@ async function getPublicProfile(req, res, url) {
       return;
     }
 
-    const fetched = await fetchRiotPublicProfile(region, slug).catch(() => null);
+    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch }).catch(() => null);
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -532,17 +536,39 @@ async function searchRiotProfiles(req, res, url) {
   sendJson(res, 200, { results: results.slice(0, 8) });
 }
 
-async function fetchRiotPublicProfile(region, slug) {
+async function fetchRiotPublicProfile(region, slug, options = {}) {
   if (!process.env.RIOT_API_KEY) return null;
   const parsed = parsePublicProfileSlug(slug);
   if (!parsed) return null;
+  const limit = clamp(Number(options.limit || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
+  const batch = clamp(Number(options.batch || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
+  const existing = options.existing || null;
   const routing = routingForRegion(region);
   const account = await fetchRiotAccount({ ...parsed, routing });
   const summoner = await fetchSummonerByPuuid(region, account.puuid);
-  const matchIds = await fetchArenaMatchIds(account, routing, PUBLIC_PROFILE_MATCH_LIMIT, {
+  const matchIds = await fetchArenaMatchIds(account, routing, limit, {
     startTime: seasonStartTimestamp(),
   });
-  const details = await fetchMatchDetails(routing, matchIds);
+  const existingMatches = Array.isArray(existing?.matches)
+    ? existing.matches.map((match) => normalizeMatch(match, "public", "riot"))
+    : [];
+  const existingByMatchId = new Map(
+    existingMatches
+      .filter((match) => match.source?.matchId && Array.isArray(match.players) && match.players.length)
+      .map((match) => [match.source.matchId, match]),
+  );
+  const reusedMatches = [];
+  const idsToFetch = [];
+
+  matchIds.forEach((matchId) => {
+    const existingMatch = existingByMatchId.get(matchId);
+    if (existingMatch) reusedMatches.push(existingMatch);
+    else idsToFetch.push(matchId);
+  });
+
+  const idsToFetchNow = idsToFetch.slice(0, batch);
+  const pendingCount = Math.max(0, idsToFetch.length - idsToFetchNow.length);
+  const details = await fetchMatchDetails(routing, idsToFetchNow);
   const profile = {
     gameName: account.gameName || parsed.gameName,
     tagLine: account.tagLine || parsed.tagLine,
@@ -550,17 +576,26 @@ async function fetchRiotPublicProfile(region, slug) {
     region,
     puuid: account.puuid,
     profileIconId: summoner?.profileIconId || null,
-    lastSyncedAt: new Date().toISOString(),
+    lastSyncedAt: pendingCount ? existing?.riotProfile?.lastSyncedAt || null : new Date().toISOString(),
+    lastSyncAttemptAt: new Date().toISOString(),
   };
-  const matches = details
+  const importedMatches = details
     .map((detail) => mapRiotMatch(detail, account.puuid, "public"))
-    .filter(Boolean)
+    .filter(Boolean);
+  const matches = mergeMatchesByKey([...importedMatches, ...reusedMatches])
     .sort((a, b) => new Date(b.date) - new Date(a.date));
   return {
     id: publicProfileCacheId(profile.region, publicProfileSlug(profile)),
     riotProfile: profile,
     matches,
-    updatedAt: profile.lastSyncedAt,
+    sync: {
+      scannedCount: details.length,
+      reusedCount: reusedMatches.length,
+      pendingCount,
+      totalRiotMatchCount: matchIds.length,
+      hasMore: pendingCount > 0,
+    },
+    updatedAt: profile.lastSyncAttemptAt,
   };
 }
 
@@ -590,6 +625,16 @@ async function savePublicProfileCache(profile) {
 
 function publicProfileCacheId(region, slug) {
   return `${normalizePublicRegion(region)}:${normalizeSlug(slug)}`;
+}
+
+function mergeMatchesByKey(matches) {
+  const merged = new Map();
+  matches.forEach((match) => {
+    const key = matchDedupeKey(match);
+    if (!key || merged.has(key)) return;
+    merged.set(key, match);
+  });
+  return [...merged.values()];
 }
 
 function searchResultFromProfile(profile, source) {
@@ -649,6 +694,7 @@ function buildPublicProfile(user, matches) {
       won: wonChampions.length,
       total: GAME_DATA.champions?.length || 0,
     },
+    sync: user.sync || null,
     wonChampions: wonChampions.map((stat) => ({
       champion: stat.champion,
       wins: stat.wins,
@@ -743,6 +789,7 @@ async function syncRiotMatches(req, res, user) {
   const body = await readJsonBody(req);
   const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
   const scope = body.scope === "season" ? "season" : "recent";
+  const batch = clamp(Number(body.batch || limit), 1, limit);
   const profile = user.riotProfile;
 
   if (!profile?.gameName || !profile?.tagLine) {
@@ -773,7 +820,9 @@ async function syncRiotMatches(req, res, user) {
     }
   });
 
-  const matchDetails = await fetchMatchDetails(profile.routing, idsToFetch);
+  const idsToFetchNow = idsToFetch.slice(0, batch);
+  const pendingCount = Math.max(0, idsToFetch.length - idsToFetchNow.length);
+  const matchDetails = await fetchMatchDetails(profile.routing, idsToFetchNow);
 
   const imported = [
     ...matchDetails
@@ -790,7 +839,8 @@ async function syncRiotMatches(req, res, user) {
       puuid: account.puuid,
       profileIconId: summoner?.profileIconId || profile.profileIconId || null,
       verifiedAt: new Date().toISOString(),
-      lastSyncedAt: new Date().toISOString(),
+      lastSyncAttemptAt: new Date().toISOString(),
+      lastSyncedAt: pendingCount ? profile.lastSyncedAt : new Date().toISOString(),
     };
 
     const importedByKey = new Map(imported.map((match) => [matchDedupeKey(match), match]));
@@ -824,6 +874,9 @@ async function syncRiotMatches(req, res, user) {
     importedCount,
     scannedCount: matchDetails.length,
     reusedCount: reusedMatches.length,
+    pendingCount,
+    totalRiotMatchCount: matchIds.length,
+    hasMore: pendingCount > 0,
     scope,
     matches: db.matches.filter((match) => match.userId === user.id),
     user: publicUser(db.users.find((item) => item.id === user.id)),
@@ -1103,8 +1156,13 @@ async function serveStatic(req, res, url) {
     const info = await stat(filePath);
     if (!info.isFile()) throw new Error("Not a file");
     const data = await readFile(filePath);
-    const type = contentTypes[path.extname(filePath)] || "application/octet-stream";
-    res.writeHead(200, { "Content-Type": type });
+    const extension = path.extname(filePath);
+    const type = contentTypes[extension] || "application/octet-stream";
+    const headers = { "Content-Type": type };
+    if ([".html", ".js", ".css"].includes(extension)) {
+      headers["Cache-Control"] = "no-store";
+    }
+    res.writeHead(200, headers);
     res.end(data);
   } catch {
     if (!path.extname(relativePath)) {

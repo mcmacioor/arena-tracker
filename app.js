@@ -10,7 +10,10 @@ const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_LIMIT = 80;
-const RIOT_SEASON_SYNC_LIMIT = 300;
+const RIOT_SEASON_SYNC_LIMIT = 500;
+const RIOT_SYNC_BATCH = 80;
+const RIOT_RECENT_SYNC_TIMEOUT_MS = 180000;
+const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
 
 const translations = {
   pl: {
@@ -380,7 +383,7 @@ async function initializeBackend() {
       state.user = session.user;
       await loadServerMatches();
       render();
-      await syncRiotMatches({ automatic: true });
+      void syncRiotMatches({ automatic: true, deep: true, timeoutMs: RIOT_SEASON_SYNC_TIMEOUT_MS });
     } catch (error) {
       if (error.status !== 401) throw error;
     }
@@ -1010,14 +1013,51 @@ async function loadPublicProfile(route, options = {}) {
   renderPublicProfile();
 
   try {
-    const params = new URLSearchParams({ region: route.region, slug: route.slug });
-    if (options.force) params.set("refresh", "1");
+    const fetchPublicBatch = async (forceRefresh) => {
+      const params = new URLSearchParams({
+        region: route.region,
+        slug: route.slug,
+        limit: String(RIOT_SEASON_SYNC_LIMIT),
+        batch: String(RIOT_SYNC_BATCH),
+      });
+      if (forceRefresh) params.set("refresh", "1");
+      return apiRequest(`/api/public-profile?${params.toString()}`, {
+        timeoutMs: forceRefresh ? RIOT_RECENT_SYNC_TIMEOUT_MS : 60000,
+      });
+    };
+
+    let data = await fetchPublicBatch(Boolean(options.force));
+    state.publicProfile = {
+      routeKey,
+      loading: false,
+      refreshing: Boolean(options.force && data.sync?.hasMore),
+      error: "",
+      data,
+    };
+    renderPublicProfile();
+
+    if (options.force) {
+      const maxPasses = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SYNC_BATCH) + 2;
+      for (let pass = 0; data.sync?.hasMore && pass < maxPasses; pass += 1) {
+        if (state.publicProfile?.routeKey !== routeKey) return;
+        data = await fetchPublicBatch(true);
+        state.publicProfile = {
+          routeKey,
+          loading: false,
+          refreshing: Boolean(data.sync?.hasMore),
+          error: "",
+          data,
+        };
+        renderPublicProfile();
+      }
+    }
+
     state.publicProfile = {
       routeKey,
       loading: false,
       refreshing: false,
-      error: "",
-      data: await apiRequest(`/api/public-profile?${params.toString()}`, { timeoutMs: options.force ? 180000 : 60000 }),
+      error: data.sync?.hasMore ? "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę." : "",
+      data,
     };
   } catch (error) {
     state.publicProfile = { routeKey, loading: false, refreshing: false, error: error.message, data: previousData };
@@ -1719,7 +1759,7 @@ async function submitAuthForm(form, path, message) {
 
     showAccountMessage(message, "success");
     render();
-    void syncRiotMatches({ automatic: true, timeoutMs: 180000 });
+    void syncRiotMatches({ automatic: true, deep: true, timeoutMs: RIOT_SEASON_SYNC_TIMEOUT_MS });
   } catch (error) {
     showAccountMessage(error.message, "error");
   }
@@ -1838,6 +1878,12 @@ async function saveRiotProfile() {
   }
 
   const body = Object.fromEntries(new FormData(dom.riotProfileForm).entries());
+  const parsedInlineRiotId = parseRiotId(body.gameName);
+  if (parsedInlineRiotId && !cleanText(body.tagLine)) {
+    body.gameName = parsedInlineRiotId.gameName;
+    body.tagLine = parsedInlineRiotId.tagLine;
+  }
+
   if (!cleanText(body.gameName) || !cleanText(body.tagLine)) {
     showAccountMessage("Uzupełnij nazwę w grze i tag Riot ID.", "error");
     return;
@@ -1856,7 +1902,7 @@ async function saveRiotProfile() {
     fillRiotProfileForm();
     showAccountMessage("Konto League zapisane.", "success");
     render();
-    void syncRiotMatches({ automatic: true, timeoutMs: 180000 });
+    void syncRiotMatches({ automatic: true, deep: true, timeoutMs: RIOT_SEASON_SYNC_TIMEOUT_MS });
   } catch (error) {
     showAccountMessage(error.message, "error");
   } finally {
@@ -1878,6 +1924,7 @@ async function syncRiotMatches(options = {}) {
   }
 
   if (state.isAutoSyncing) {
+    if (!options.automatic) showAccountMessage("Synchronizacja już trwa.", "success");
     return;
   }
 
@@ -1888,20 +1935,47 @@ async function syncRiotMatches(options = {}) {
     el("span", "", "Aktualizuję mecze Areny."),
   );
 
+  const syncLimit = options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT;
+  const syncTimeout = options.timeoutMs || (options.deep ? RIOT_SEASON_SYNC_TIMEOUT_MS : RIOT_RECENT_SYNC_TIMEOUT_MS);
+  const syncBatch = options.deep ? RIOT_SYNC_BATCH : RIOT_SYNC_LIMIT;
+  let processedCount = 0;
+  let latestData = null;
+
   try {
-    const data = await apiRequest("/api/riot/sync", {
-      method: "POST",
-      timeoutMs: options.timeoutMs || 180000,
-      body: {
-        limit: options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT,
-        scope: options.deep ? "season" : "recent",
-      },
-    });
-    state.user = data.user;
-    state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+    const maxPasses = options.deep ? Math.ceil(syncLimit / syncBatch) + 2 : 1;
+    for (let pass = 0; pass < maxPasses; pass += 1) {
+      const data = await apiRequest("/api/riot/sync", {
+        method: "POST",
+        timeoutMs: syncTimeout,
+        body: {
+          limit: syncLimit,
+          batch: syncBatch,
+          scope: options.deep ? "season" : "recent",
+        },
+      });
+      latestData = data;
+      processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
+      state.user = data.user;
+      state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+      state.syncError = "";
+      fillRiotProfileForm();
+      dom.riotSyncStatus.replaceChildren(
+        el("strong", "", "Synchronizuję..."),
+        el("span", "", data.pendingCount ? `Zostało ${data.pendingCount} meczów.` : "Kończę aktualizację."),
+      );
+      render();
+
+      if (!options.deep || !data.hasMore) break;
+    }
+
     state.syncError = "";
     fillRiotProfileForm();
-    if (!options.automatic) showAccountMessage(`Zsynchronizowano ${(data.scannedCount || 0) + (data.reusedCount || 0)} meczów.`, "success");
+    if (!options.automatic) {
+      showAccountMessage(`Zsynchronizowano ${processedCount} meczów.`, "success");
+    }
+    if (latestData?.hasMore) {
+      state.syncError = "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę.";
+    }
     render();
   } catch (error) {
     state.syncError = error.message;
