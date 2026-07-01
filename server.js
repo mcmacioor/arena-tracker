@@ -1,7 +1,7 @@
 const http = require("node:http");
 const { createHash, randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
 const { existsSync, readFileSync } = require("node:fs");
-const { mkdir, readFile, rename, writeFile, stat } = require("node:fs/promises");
+const { mkdir, readFile, rename, unlink, writeFile, stat } = require("node:fs/promises");
 const path = require("node:path");
 
 const ROOT = __dirname;
@@ -108,7 +108,7 @@ const server = http.createServer(async (req, res) => {
   } catch (error) {
     console.error(error);
     sendJson(res, error.status || 500, {
-      error: error.status ? error.message : "Internal server error",
+      error: apiErrorMessage(error),
     });
   }
 });
@@ -423,7 +423,7 @@ async function getPublicProfile(req, res, url) {
   const slug = cleanText(url.searchParams.get("slug"));
   const forceRefresh = url.searchParams.get("refresh") === "1";
   const limit = clamp(Number(url.searchParams.get("limit") || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
-  const batch = clamp(Number(url.searchParams.get("batch") || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
+  const batch = limit;
   const syncJobId = cleanText(url.searchParams.get("syncJobId"));
 
   if (!region || !slug) {
@@ -440,7 +440,7 @@ async function getPublicProfile(req, res, url) {
 
   if (user && forceRefresh) {
     const cached = findCachedPublicProfile(db, region, slug);
-    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId }).catch(() => null);
+    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -457,7 +457,12 @@ async function getPublicProfile(req, res, url) {
       return;
     }
 
-    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId }).catch(() => null);
+    let fetched = null;
+    try {
+      fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
+    } catch (error) {
+      if (forceRefresh || !cached) throw error;
+    }
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -568,7 +573,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const parsed = parsePublicProfileSlug(slug);
   if (!parsed) return null;
   const limit = clamp(Number(options.limit || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
-  const batch = clamp(Number(options.batch || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
+  const batch = limit;
   const existing = options.existing || null;
   const routing = routingForRegion(region);
   const cacheId = publicProfileCacheId(region, slug);
@@ -593,7 +598,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
     : [];
   const existingByMatchId = new Map(
     existingMatches
-      .filter((match) => match.source?.matchId && Array.isArray(match.players) && match.players.length)
+      .filter((match) => match.source?.matchId && matchHasCompletePlayerLoadout(match))
       .map((match) => [match.source.matchId, match]),
   );
   if (!job) {
@@ -657,8 +662,15 @@ function findCachedPublicProfile(db, region, slug) {
 }
 
 function isPublicProfileCacheStale(profile) {
+  if (!profile.riotProfile?.profileIconId) return true;
   const updatedAt = Date.parse(profile.updatedAt || profile.riotProfile?.lastSyncedAt || "");
   return !updatedAt || Date.now() - updatedAt > PUBLIC_PROFILE_CACHE_TTL_MS;
+}
+
+function apiErrorMessage(error) {
+  if (error?.status && error.message) return error.message;
+  if (error?.name === "SyntaxError") return "Nie udało się przetworzyć danych wejściowych.";
+  return "Wystąpił błąd po stronie serwera. Spróbuj ponownie za chwilę.";
 }
 
 async function savePublicProfileCache(profile) {
@@ -747,7 +759,7 @@ function buildPublicProfile(user, matches) {
       averagePlacement: stat.avg,
       icon: GAME_DATA.championIcons?.[stat.champion] || "",
     })),
-    matches: matches.slice(0, 80).map(publicMatchSummary),
+    matches: matches.map(publicMatchSummary),
     topDuo: getPartnerStatsForMatches(matches).slice(0, 8),
   };
 }
@@ -842,8 +854,8 @@ async function syncRiotMatches(req, res, user) {
 
   const body = await readJsonBody(req);
   const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
-  const scope = body.scope === "season" ? "season" : "recent";
-  const batch = clamp(Number(body.batch || limit), 1, limit);
+  const scope = "season";
+  const batch = limit;
   const syncJobId = cleanText(body.syncJobId);
   const profile = user.riotProfile;
 
@@ -876,7 +888,7 @@ async function syncRiotMatches(req, res, user) {
     const idsToFetch = [];
     matchIds.forEach((matchId) => {
       const existingMatch = existingRiotMatches.get(matchId);
-      if (!(existingMatch && Array.isArray(existingMatch.players) && existingMatch.players.length)) {
+      if (!matchHasCompletePlayerLoadout(existingMatch)) {
         idsToFetch.push(matchId);
       }
     });
@@ -1003,9 +1015,13 @@ async function fetchSummonerByPuuid(region, puuid) {
 async function fetchArenaMatchIds(account, routing, limit, options = {}) {
   const ids = [];
   for (const queueId of ARENA_QUEUE_IDS) {
-    let start = 0;
-    while (ids.length < limit) {
-      const count = Math.max(1, Math.min(100, limit - ids.length));
+    const pageSize = 100;
+    const pageStarts = Array.from(
+      { length: Math.ceil(limit / pageSize) },
+      (_, index) => index * pageSize,
+    );
+    const pages = await Promise.all(pageStarts.map(async (start) => {
+      const count = Math.max(1, Math.min(pageSize, limit - start));
       const params = new URLSearchParams({
         queue: String(queueId),
         start: String(start),
@@ -1016,11 +1032,11 @@ async function fetchArenaMatchIds(account, routing, limit, options = {}) {
         account.puuid,
       )}/ids?${params.toString()}`;
       const queueIds = await riotFetch(routing, pathName);
-      if (!Array.isArray(queueIds) || !queueIds.length) break;
-      ids.push(...queueIds);
-      if (queueIds.length < count) break;
-      start += count;
-    }
+      return { start, ids: Array.isArray(queueIds) ? queueIds : [] };
+    }));
+    pages
+      .sort((a, b) => a.start - b.start)
+      .forEach((page) => ids.push(...page.ids));
   }
   return [...new Set(ids)].slice(0, limit);
 }
@@ -1039,7 +1055,7 @@ async function fetchMatchDetails(routing, matchIds) {
         const detail = await riotFetch(routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
         details.push(detail);
       } catch (error) {
-        if ([401, 403].includes(Number(error.status))) throw error;
+        if ([401, 403, 429, 500, 502, 503, 504].includes(Number(error.status))) throw error;
         console.warn(`[riot] skipped match ${matchId}: ${error.message}`);
       }
     }
@@ -1047,6 +1063,17 @@ async function fetchMatchDetails(routing, matchIds) {
 
   await Promise.all(Array.from({ length: workerCount }, worker));
   return details;
+}
+
+function matchHasCompletePlayerLoadout(match) {
+  const players = Array.isArray(match?.players) ? match.players : [];
+  const expectedPlayerCount = ARENA_MAX_PLACEMENT * 3;
+  if (players.length < expectedPlayerCount) return false;
+  return players.every((player) => {
+    const augments = Array.isArray(player.augments) ? player.augments : [];
+    const items = Array.isArray(player.items) ? player.items : [];
+    return augments.length > 0 && items.length > 0;
+  });
 }
 
 async function riotFetch(routing, pathName, attempt = 0) {
@@ -1068,7 +1095,10 @@ async function riotFetch(routing, pathName, attempt = 0) {
       timeoutError.status = 504;
       throw timeoutError;
     }
-    throw error;
+    const networkError = new Error("Nie udało się połączyć z Riot API. Spróbuj ponownie za chwilę.");
+    networkError.status = 502;
+    networkError.cause = error;
+    throw networkError;
   } finally {
     clearTimeout(timeout);
   }
@@ -1291,12 +1321,34 @@ async function mutateDb(mutator) {
     const db = await readDb();
     await mutator(db);
     const tempPath = `${DB_PATH}.${process.pid}.${Date.now()}.tmp`;
-    await writeFile(tempPath, `${JSON.stringify(db, null, 2)}\n`, "utf8");
-    await rename(tempPath, DB_PATH);
+    const payload = `${JSON.stringify(db, null, 2)}\n`;
+    await writeFile(tempPath, payload, "utf8");
+    await replaceFileWithRetry(tempPath, DB_PATH, payload);
     return db;
   });
   dbWriteQueue = operation.catch(() => {});
   return operation;
+}
+
+async function replaceFileWithRetry(tempPath, targetPath, fallbackPayload) {
+  let lastError;
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    try {
+      await rename(tempPath, targetPath);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (!["EPERM", "EBUSY", "EACCES"].includes(error.code)) throw error;
+      await delay(40 * 2 ** attempt);
+    }
+  }
+
+  // Windows can briefly lock the db file during antivirus/indexer scans. The
+  // queued writer already serialized app writes, so this keeps sync from
+  // failing with a random 500 when the atomic rename keeps being blocked.
+  await writeFile(targetPath, fallbackPayload, "utf8");
+  await unlink(tempPath).catch(() => {});
+  if (lastError) console.warn(`[db] fell back after rename failed: ${lastError.code}`);
 }
 
 function parseDbJson(text) {

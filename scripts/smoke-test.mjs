@@ -135,17 +135,17 @@ try {
     `getComputedStyle(document.querySelector("#languageFlag")).display !== "none" && document.querySelector('#languageSelect option[value="pl"]').textContent.trim() === "PL"`,
   );
   assert(languageFlagVisible, "Language switch should use a CSS flag and plain language code");
-  const searchClickDoesNotNavigate = await evalPage(
+  const searchClickNavigates = await evalPage(
     cdp,
     `(() => {
-      const before = location.pathname;
       const form = document.querySelector(".top-player-search");
-      if (typeof selectSearchResult !== "function" || !form) return false;
-      selectSearchResult(form, { gameName: "Tester", tagLine: "EUW", region: "euw1" });
-      return location.pathname === before && form.querySelector('input[name="riotId"]').value === "Tester#EUW";
+      if (typeof activateSearchResult !== "function" || !form) return false;
+      activateSearchResult(form, { gameName: "Tester", tagLine: "EUW", region: "euw1" });
+      return location.pathname === "/euw/Tester-EUW";
     })()`,
   );
-  assert(searchClickDoesNotNavigate, "Clicking a search suggestion should only fill the search field");
+  assert(searchClickNavigates, "Clicking a search suggestion should open that profile");
+  await evalPage(cdp, `history.pushState(null, "", "/#dashboard"); updateRoute()`);
 
   await evalPage(cdp, `location.hash = "champions"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
@@ -158,18 +158,23 @@ try {
   assert(collectionText.includes("Vi"), "Won champion Vi missing from collection");
   assert(collectionText.includes("Lee Sin"), "Canonical Lee Sin missing from collection");
   assert(!collectionText.includes("LeeSin"), "Raw Riot champion key should not be rendered");
-  const collectionIconCount = await evalPage(
+  const collectionCardCount = await evalPage(
     cdp,
-    `document.querySelectorAll("#championCollection .champion-icon").length`,
+    `document.querySelectorAll("#championCollection .champion-collection-card").length`,
+  );
+  const collectionHasChampionArt = await evalPage(
+    cdp,
+    `getComputedStyle(document.querySelector("#championCollection .champion-collection-card")).backgroundImage.includes("ddragon")`,
   );
   const championCount = await evalPage(cdp, `window.ARENA_GAME_DATA.champions.length`);
-  assert(collectionIconCount === championCount, `Expected all champion icons by default, got ${collectionIconCount}`);
+  assert(collectionCardCount === championCount, `Expected all champion cards by default, got ${collectionCardCount}`);
+  assert(collectionHasChampionArt, "Champion cards should render champion art backgrounds");
   await evalPage(cdp, `document.querySelector('[data-collection-mode="won"]').click()`);
-  const wonIconCount = await evalPage(
+  const wonCardCount = await evalPage(
     cdp,
-    `document.querySelectorAll("#championCollection .champion-icon").length`,
+    `document.querySelectorAll("#championCollection .champion-collection-card").length`,
   );
-  assert(wonIconCount === 2, `Expected 2 won champion icons, got ${wonIconCount}`);
+  assert(wonCardCount === 2, `Expected 2 won champion cards, got ${wonCardCount}`);
   await evalPage(cdp, `document.querySelector('[data-collection-mode="all"]').click()`);
 
   await evalPage(cdp, `document.querySelector("#championSearchInput").value = "Vi"`);
@@ -353,7 +358,7 @@ try {
   await evalPage(cdp, `document.querySelector("#loginEmail").value = "wrong@example.com"`);
   await evalPage(cdp, `document.querySelector("#loginPassword").value = "badpass123"`);
   await evalPage(cdp, `document.querySelector("#loginForm").requestSubmit()`);
-  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 250))`, true);
+  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 750))`, true);
   const loginErrorVisible = await evalPage(
     cdp,
     `document.querySelector("#accountStatus").classList.contains("is-error") && !document.querySelector("#accountStatus").classList.contains("is-hidden")`,

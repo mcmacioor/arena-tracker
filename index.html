@@ -34,7 +34,6 @@
               <input name="riotId" type="search" autocomplete="off" placeholder="Szukaj gracza" />
               <div class="search-results" data-search-results></div>
             </div>
-            <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
           </form>
           <a class="coffee-link top-coffee" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
             <span aria-hidden="true">☕</span>
@@ -53,7 +52,7 @@
               class="account-menu-button"
               id="accountMenuButton"
               type="button"
-              aria-haspopup="dialog"
+              aria-haspopup="menu"
               aria-expanded="false"
             >
               <img
@@ -65,6 +64,11 @@
               <span id="accountMenuLabel">Konto</span>
               <span class="account-chevron" aria-hidden="true"></span>
             </button>
+            <div class="account-dropdown" id="accountDropdown" aria-hidden="true">
+              <button type="button" data-account-action="profile">Profil</button>
+              <button type="button" data-account-action="settings">Ustawienia</button>
+              <button type="button" data-account-action="logout">Wyloguj</button>
+            </div>
           </div>
         </header>
 
@@ -87,7 +91,6 @@
               <input name="riotId" type="search" autocomplete="off" placeholder="Riot ID, np. No Chrystus#2137" />
               <div class="search-results" data-search-results></div>
             </div>
-            <button class="primary-action icon-action" type="submit" aria-label="Szukaj">→</button>
           </form>
         </section>
 
@@ -465,7 +468,6 @@
             </div>
           </form>
           <div class="status-box" id="riotSyncStatus"></div>
-          <button class="ghost-action" type="button" id="logoutButton">Wyloguj</button>
         </div>
       </section>
     </div>

@@ -11,10 +11,7 @@ const ITEM_DETAILS = GAME_DATA.itemDetails || {};
 const AUGMENT_DETAILS = GAME_DATA.augmentDetails || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
-const RIOT_SYNC_LIMIT = 80;
 const RIOT_SEASON_SYNC_LIMIT = 500;
-const RIOT_SYNC_BATCH = 80;
-const RIOT_RECENT_SYNC_TIMEOUT_MS = 180000;
 const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
 
 const translations = {
@@ -377,6 +374,8 @@ function cacheDom() {
     accountMenu: document.getElementById("accountMenu"),
     brandHomeButton: document.getElementById("brandHomeButton"),
     accountMenuButton: document.getElementById("accountMenuButton"),
+    accountDropdown: document.getElementById("accountDropdown"),
+    accountActionButtons: document.querySelectorAll("[data-account-action]"),
     accountAvatar: document.getElementById("accountAvatar"),
     accountMenuLabel: document.getElementById("accountMenuLabel"),
     landingSearch: document.getElementById("landingSearch"),
@@ -453,7 +452,6 @@ function cacheDom() {
     confirmResetForm: document.getElementById("confirmResetForm"),
     confirmResetPassword: document.getElementById("confirmResetPassword"),
     resetTokenStatus: document.getElementById("resetTokenStatus"),
-    logoutButton: document.getElementById("logoutButton"),
     profilePanel: document.getElementById("profilePanel"),
     profileAvatar: document.getElementById("profileAvatar"),
     profileName: document.getElementById("profileName"),
@@ -512,15 +510,37 @@ function bindEvents() {
     });
   });
 
-  dom.accountMenuButton.addEventListener("click", () => {
-    openAccountOverlay(state.user ? "profile" : "login");
+  dom.accountMenuButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    if (!state.user) {
+      openAccountOverlay("login");
+      return;
+    }
+    toggleAccountDropdown();
+  });
+
+  dom.accountActionButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      closeAccountDropdown();
+      if (button.dataset.accountAction === "profile") {
+        goToOwnProfile();
+        return;
+      }
+      if (button.dataset.accountAction === "settings") {
+        openAccountOverlay("profile");
+        return;
+      }
+      if (button.dataset.accountAction === "logout") {
+        await logout();
+      }
+    });
   });
 
   dom.accountOverlayBackdrop.addEventListener("click", closeAccountOverlay);
   dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
 
   dom.profileSyncButton.addEventListener("click", async () => {
-    if (state.publicRoute) {
+    if (state.publicRoute && !isViewingOwnProfile()) {
       await loadPublicProfile(state.publicRoute, { force: true });
       return;
     }
@@ -579,6 +599,7 @@ function bindEvents() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeAccountOverlay();
+      closeAccountDropdown();
       closeChampionDetail();
       closeMatchDetail();
       closeAllSearchResults();
@@ -586,6 +607,7 @@ function bindEvents() {
   });
 
   document.addEventListener("click", (event) => {
+    if (!event.target.closest("#accountMenu")) closeAccountDropdown();
     if (event.target.closest("[data-player-search-form]")) return;
     closeAllSearchResults();
   });
@@ -654,8 +676,6 @@ function bindEvents() {
     await confirmPasswordReset();
   });
 
-  dom.logoutButton.addEventListener("click", logout);
-
   dom.riotProfileForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     await saveRiotProfile();
@@ -664,13 +684,40 @@ function bindEvents() {
 
 function handleBrandHomeClick() {
   if (state.user) {
-    window.location.hash = "dashboard";
+    goToOwnProfile();
     return;
   }
 
   const input = document.querySelector(".top-player-search input[name='riotId']")
     || document.querySelector(".landing-player-search input[name='riotId']");
   input?.focus();
+}
+
+function goToOwnProfile() {
+  const profile = state.user?.riotProfile;
+  if (!profile?.gameName || !profile?.tagLine) {
+    window.history.pushState(null, "", "/#dashboard");
+    updateRoute();
+    return;
+  }
+
+  const path = `/${publicRegionSlug(profile.region)}/${encodeURIComponent(`${profile.gameName}-${profile.tagLine}`)}#dashboard`;
+  window.history.pushState(null, "", path);
+  updateRoute();
+}
+
+function toggleAccountDropdown() {
+  const isOpen = dom.accountMenu.classList.toggle("is-open");
+  dom.accountDropdown?.setAttribute("aria-hidden", String(!isOpen));
+  dom.accountMenuButton.setAttribute("aria-expanded", String(isOpen));
+}
+
+function closeAccountDropdown() {
+  dom.accountMenu.classList.remove("is-open");
+  dom.accountDropdown?.setAttribute("aria-hidden", "true");
+  if (!dom.accountOverlay.classList.contains("is-open")) {
+    dom.accountMenuButton.setAttribute("aria-expanded", "false");
+  }
 }
 
 function setActiveRoute(route) {
@@ -703,6 +750,7 @@ function setAuthTab(tabName) {
 }
 
 function openAccountOverlay(tabName = "login") {
+  closeAccountDropdown();
   if (!state.user) setAuthTab(tabName === "profile" ? "login" : tabName);
   dom.accountOverlay.classList.add("is-open");
   dom.accountOverlay.setAttribute("aria-hidden", "false");
@@ -877,6 +925,7 @@ function renderDetailStat(label, value) {
 function closeAccountOverlay() {
   dom.accountOverlay.classList.remove("is-open");
   dom.accountOverlay.setAttribute("aria-hidden", "true");
+  closeAccountDropdown();
   dom.accountMenuButton.setAttribute("aria-expanded", "false");
   if (window.location.hash.startsWith("#account")) {
     window.history.replaceState(null, "", `#${state.activeRoute || "dashboard"}`);
@@ -1153,12 +1202,11 @@ async function loadPublicProfile(route, options = {}) {
         region: route.region,
         slug: route.slug,
         limit: String(RIOT_SEASON_SYNC_LIMIT),
-        batch: String(RIOT_SYNC_BATCH),
+        batch: String(RIOT_SEASON_SYNC_LIMIT),
       });
       if (forceRefresh) params.set("refresh", "1");
-      if (state.publicProfile?.syncJobId) params.set("syncJobId", state.publicProfile.syncJobId);
       return apiRequest(`/api/public-profile?${params.toString()}`, {
-        timeoutMs: forceRefresh ? RIOT_RECENT_SYNC_TIMEOUT_MS : 60000,
+        timeoutMs: forceRefresh ? RIOT_SEASON_SYNC_TIMEOUT_MS : 60000,
       });
     };
 
@@ -1166,36 +1214,17 @@ async function loadPublicProfile(route, options = {}) {
     state.publicProfile = {
       routeKey,
       loading: false,
-      refreshing: Boolean(options.force && data.sync?.hasMore),
+      refreshing: false,
       error: "",
-      syncJobId: data.sync?.jobId || "",
       data,
     };
     render();
-
-    if (options.force) {
-      const maxPasses = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SYNC_BATCH) + 2;
-      for (let pass = 0; data.sync?.hasMore && pass < maxPasses; pass += 1) {
-        if (state.publicProfile?.routeKey !== routeKey) return;
-        data = await fetchPublicBatch(true);
-        state.publicProfile = {
-          routeKey,
-          loading: false,
-          refreshing: Boolean(data.sync?.hasMore),
-          error: "",
-          syncJobId: data.sync?.jobId || "",
-          data,
-        };
-        render();
-      }
-    }
 
     state.publicProfile = {
       routeKey,
       loading: false,
       refreshing: false,
       error: data.sync?.hasMore ? "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę." : "",
-      syncJobId: data.sync?.jobId || "",
       data,
     };
   } catch (error) {
@@ -1204,7 +1233,6 @@ async function loadPublicProfile(route, options = {}) {
       loading: false,
       refreshing: false,
       error: error.message,
-      syncJobId: "",
       data: previousData,
     };
   }
@@ -1235,8 +1263,9 @@ function render() {
 }
 
 function renderProfileHero(matches) {
-  const publicData = state.publicRoute ? state.publicProfile?.data : null;
-  const publicState = state.publicRoute ? state.publicProfile : null;
+  const ownPublicProfile = isViewingOwnProfile();
+  const publicData = state.publicRoute && !ownPublicProfile ? state.publicProfile?.data : null;
+  const publicState = state.publicRoute && !ownPublicProfile ? state.publicProfile : null;
   const profile = publicData?.profile || state.user?.riotProfile;
   const won = getWonChampionStats(matches).length;
   const total = CHAMPIONS.length;
@@ -1282,7 +1311,10 @@ function renderVictoryProgress(matches) {
   const completed = won.length;
   const percent = total ? (completed / total) * 100 : 0;
 
-  dom.progressCounter.textContent = `${completed} / ${total}`;
+  dom.progressCounter.replaceChildren(
+    el("span", "progress-score", `${completed}/${total}`),
+    el("span", "progress-percent", `${Math.round(percent)}%`),
+  );
   dom.victoryProgress.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.querySelector("span").style.width = `${percent}%`;
   dom.victoryProgress.setAttribute("aria-label", `${completed} / ${total} ${t("common.championsWon")}`);
@@ -1475,10 +1507,10 @@ function renderPublicProgress(progress) {
 
 function renderPublicChampionCard(stat, caption, complete = true) {
   const root = el("article", `champion-collection-card ${complete ? "is-complete" : "is-missing"} public-card`);
-  const icon = stat.icon ? imageIcon(stat.icon, "champion-icon") : renderChampionIcon(stat.champion);
+  setChampionCardBackground(root, stat.champion);
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion), el("span", "", caption));
-  root.append(icon, body);
+  root.append(body, renderWinDots(stat.wins));
   return root;
 }
 
@@ -1545,11 +1577,19 @@ function publicRegionSlug(region) {
 }
 
 function getSortedMatches() {
-  const publicMatches = state.publicRoute && state.publicProfile?.data?.matches
+  const publicMatches = state.publicRoute && !isViewingOwnProfile() && state.publicProfile?.data?.matches
     ? state.publicProfile.data.matches.map(normalizeMatch).filter(Boolean)
     : null;
   return [...(publicMatches || state.matches)]
     .sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+function isViewingOwnProfile() {
+  const profile = state.user?.riotProfile;
+  if (!profile?.gameName || !profile?.tagLine || !state.publicRoute) return false;
+  const ownSlug = normalizeLookupKey(`${profile.gameName}-${profile.tagLine}`);
+  const routeSlug = normalizeLookupKey(safeDecode(state.publicRoute.slug));
+  return normalizeRegion(profile.region) === normalizeRegion(state.publicRoute.region) && ownSlug === routeSlug;
 }
 
 function renderMetrics(matches) {
@@ -1720,10 +1760,11 @@ function renderChampionPill(stat) {
   const root = el("button", "champion-pill");
   root.type = "button";
   root.dataset.championDetail = stat.champion;
+  setChampionCardBackground(root, stat.champion);
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(el("span", "", `${stat.wins} ${t("common.win")}`));
-  root.append(renderChampionIcon(stat.champion), body);
+  root.append(body, renderWinDots(stat.wins));
   return root;
 }
 
@@ -1731,6 +1772,7 @@ function renderChampionCollectionCard(stat) {
   const root = el("button", `champion-collection-card ${stat.wins ? "is-complete" : "is-missing"}`);
   root.type = "button";
   root.dataset.championDetail = stat.champion;
+  setChampionCardBackground(root, stat.champion);
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(
@@ -1744,7 +1786,22 @@ function renderChampionCollectionCard(stat) {
           : t("champions.noGames"),
     ),
   );
-  root.append(renderChampionIcon(stat.champion), body);
+  root.append(body, renderWinDots(stat.wins));
+  return root;
+}
+
+function setChampionCardBackground(root, champion) {
+  const championName = canonicalChampionName(champion);
+  const src = championName ? CHAMPION_ICONS[championName] : "";
+  if (src) root.style.setProperty("--champion-art", `url("${src}")`);
+}
+
+function renderWinDots(wins) {
+  const root = el("span", "champion-win-dots");
+  const count = Math.max(0, Math.min(3, Number(wins || 0)));
+  for (let index = 0; index < count; index += 1) {
+    root.append(el("span", "", ""));
+  }
   return root;
 }
 
@@ -2136,41 +2193,32 @@ async function syncRiotMatches(options = {}) {
     el("span", "", "Pracuję nad historią Areny."),
   );
 
-  const syncLimit = options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT;
-  const syncTimeout = options.timeoutMs || (options.deep ? RIOT_SEASON_SYNC_TIMEOUT_MS : RIOT_RECENT_SYNC_TIMEOUT_MS);
-  const syncBatch = options.deep ? RIOT_SYNC_BATCH : RIOT_SYNC_LIMIT;
+  const syncLimit = RIOT_SEASON_SYNC_LIMIT;
+  const syncTimeout = options.timeoutMs || RIOT_SEASON_SYNC_TIMEOUT_MS;
   let processedCount = 0;
   let latestData = null;
-  let syncJobId = "";
 
   try {
-    const maxPasses = options.deep ? Math.ceil(syncLimit / syncBatch) + 2 : 1;
-    for (let pass = 0; pass < maxPasses; pass += 1) {
-      const data = await apiRequest("/api/riot/sync", {
-        method: "POST",
-        timeoutMs: syncTimeout,
-        body: {
-          limit: syncLimit,
-          batch: syncBatch,
-          scope: options.deep ? "season" : "recent",
-          syncJobId,
-        },
-      });
-      latestData = data;
-      syncJobId = data.syncJobId || "";
-      processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
-      state.user = data.user;
-      state.matches = data.matches.map(normalizeMatch).filter(Boolean);
-      state.syncError = "";
-      fillRiotProfileForm();
-      dom.riotSyncStatus.replaceChildren(
-        el("strong", "", "Synchronizuję..."),
-        el("span", "", data.pendingCount ? `Zostało ${data.pendingCount} meczów.` : "Kończę aktualizację."),
-      );
-      render();
-
-      if (!options.deep || !data.hasMore) break;
-    }
+    const data = await apiRequest("/api/riot/sync", {
+      method: "POST",
+      timeoutMs: syncTimeout,
+      body: {
+        limit: syncLimit,
+        batch: syncLimit,
+        scope: "season",
+      },
+    });
+    latestData = data;
+    processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
+    state.user = data.user;
+    state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+    state.syncError = "";
+    fillRiotProfileForm();
+    dom.riotSyncStatus.replaceChildren(
+      el("strong", "", "Synchronizuję..."),
+      el("span", "", "Kończę aktualizację."),
+    );
+    render();
 
     state.syncError = "";
     fillRiotProfileForm();
