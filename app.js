@@ -234,6 +234,7 @@ const state = {
   user: null,
   publicProfile: null,
   publicRoute: null,
+  publicChampionSearch: "",
   language: localStorage.getItem(LANGUAGE_STORAGE_KEY) || "pl",
   backendAvailable: false,
   riotStatus: null,
@@ -281,6 +282,7 @@ function cacheDom() {
     profileSyncNote: document.getElementById("profileSyncNote"),
     exportProgressButton: document.getElementById("exportProgressButton"),
     languageSelect: document.getElementById("languageSelect"),
+    languageFlag: document.getElementById("languageFlag"),
     accountOverlay: document.getElementById("accountOverlay"),
     accountOverlayBackdrop: document.getElementById("accountOverlayBackdrop"),
     accountOverlayClose: document.getElementById("accountOverlayClose"),
@@ -322,10 +324,14 @@ function cacheDom() {
     publicProfileAvatar: document.getElementById("publicProfileAvatar"),
     publicProfileTitle: document.getElementById("publicProfileTitle"),
     publicProfileMeta: document.getElementById("publicProfileMeta"),
+    publicSyncButton: document.getElementById("publicSyncButton"),
+    publicSyncStatus: document.getElementById("publicSyncStatus"),
+    publicChampionSearch: document.getElementById("publicChampionSearch"),
     publicProgressCounter: document.getElementById("publicProgressCounter"),
     publicVictoryProgress: document.getElementById("publicVictoryProgress"),
     publicWonChampions: document.getElementById("publicWonChampions"),
     publicMissingChampions: document.getElementById("publicMissingChampions"),
+    publicMatchHistory: document.getElementById("publicMatchHistory"),
     publicTopDuo: document.getElementById("publicTopDuo"),
     friendForm: document.getElementById("friendForm"),
     friendRiotId: document.getElementById("friendRiotId"),
@@ -411,6 +417,11 @@ function bindEvents() {
     await syncRiotMatches({ automatic: false, deep: true });
   });
 
+  dom.publicSyncButton?.addEventListener("click", async () => {
+    if (!state.publicRoute) return;
+    await loadPublicProfile(state.publicRoute, { force: true });
+  });
+
   dom.exportProgressButton.addEventListener("click", exportProgressPng);
 
   dom.playerSearchForms.forEach((form) => {
@@ -425,6 +436,11 @@ function bindEvents() {
     localStorage.setItem(LANGUAGE_STORAGE_KEY, state.language);
     applyLanguage();
     render();
+  });
+
+  dom.publicChampionSearch?.addEventListener("input", () => {
+    state.publicChampionSearch = dom.publicChampionSearch.value;
+    renderPublicProfile();
   });
 
   dom.championSearchInput.addEventListener("input", () => {
@@ -743,9 +759,9 @@ function handlePlayerSearchSubmit(event) {
   event.preventDefault();
   const form = event.currentTarget;
   const formData = new FormData(form);
-  const selected = form._searchResults?.[0];
+  const selected = form._selectedResult || form._searchResults?.[0];
   if (selected) {
-    selectSearchResult(form, selected);
+    activateSearchResult(form, selected);
     return;
   }
 
@@ -768,6 +784,7 @@ function handlePlayerSearchSubmit(event) {
 function handlePlayerSearchInput(event) {
   const form = event.currentTarget;
   if (!["INPUT", "SELECT"].includes(event.target.tagName)) return;
+  form._selectedResult = null;
   updateSearchPlaceholder(form);
   window.clearTimeout(state.searchTimers.get(form));
   state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 220));
@@ -841,11 +858,16 @@ function selectSearchResult(form, result) {
   const regionSelect = form.querySelector('select[name="region"]');
   input.value = `${result.gameName}#${result.tagLine}`;
   regionSelect.value = normalizeRegion(result.region);
+  form._selectedResult = result;
+  updateSearchPlaceholder(form);
   hideSearchResults(form);
+}
 
+function activateSearchResult(form, result) {
   if (form.dataset.searchAction === "friend") {
     addFriendProfile({ gameName: result.gameName, tagLine: result.tagLine }, result.region);
-    input.value = "";
+    form.querySelector('input[name="riotId"]').value = "";
+    form._selectedResult = null;
     return;
   }
 
@@ -955,23 +977,37 @@ function parsePublicRoute() {
   };
 }
 
-async function loadPublicProfile(route) {
+async function loadPublicProfile(route, options = {}) {
   const routeKey = `${route.region}/${route.slug}`;
-  if (state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) return;
+  if (!options.force && state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) return;
 
-  state.publicProfile = { routeKey, loading: true, error: "" };
+  if (state.publicProfile?.routeKey !== routeKey) {
+    state.publicChampionSearch = "";
+    if (dom.publicChampionSearch) dom.publicChampionSearch.value = "";
+  }
+
+  const previousData = state.publicProfile?.routeKey === routeKey ? state.publicProfile.data : null;
+  state.publicProfile = {
+    routeKey,
+    loading: !previousData,
+    refreshing: Boolean(options.force),
+    error: "",
+    data: previousData,
+  };
   renderPublicProfile();
 
   try {
     const params = new URLSearchParams({ region: route.region, slug: route.slug });
+    if (options.force) params.set("refresh", "1");
     state.publicProfile = {
       routeKey,
       loading: false,
+      refreshing: false,
       error: "",
       data: await apiRequest(`/api/public-profile?${params.toString()}`),
     };
   } catch (error) {
-    state.publicProfile = { routeKey, loading: false, error: error.message };
+    state.publicProfile = { routeKey, loading: false, refreshing: false, error: error.message, data: previousData };
   }
 
   renderPublicProfile();
@@ -1043,6 +1079,7 @@ function renderVictoryProgress(matches) {
 
 function renderAccount() {
   dom.accountMenuLabel.textContent = state.user ? state.user.displayName : "Konto";
+  dom.accountOverlay.classList.toggle("is-profile-mode", Boolean(state.user));
   updateAccountAvatars();
   renderAccountPublicLink();
 
@@ -1091,6 +1128,7 @@ function renderAccount() {
 
 function renderAccountPublicLink() {
   const path = state.user?.riotProfile?.publicPath;
+  if (!dom.publicProfileLinkBox || !dom.publicProfileLink) return;
   dom.publicProfileLinkBox.classList.toggle("is-hidden", !path);
   if (!path) {
     dom.publicProfileLink.removeAttribute("href");
@@ -1110,34 +1148,38 @@ function renderPublicProfile() {
   if (!publicState || !state.publicRoute) {
     dom.publicProfileTitle.textContent = "ArenaTracker";
     dom.publicProfileMeta?.replaceChildren();
+    renderPublicSyncState();
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren();
-    dom.publicMissingChampions.replaceChildren();
+    dom.publicMatchHistory?.replaceChildren();
     dom.publicTopDuo.replaceChildren();
     return;
   }
 
-  if (publicState.loading) {
+  if (publicState.loading && !publicState.data) {
     dom.publicProfileTitle.textContent = "Synchronizuję...";
     dom.publicProfileMeta?.replaceChildren();
+    renderPublicSyncState(publicState);
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren(emptyState("Ładuję profil.", "Chwila."));
-    dom.publicMissingChampions.replaceChildren();
+    dom.publicMatchHistory?.replaceChildren();
     dom.publicTopDuo.replaceChildren();
     return;
   }
 
-  if (publicState.error) {
+  if (publicState.error && !publicState.data) {
     dom.publicProfileTitle.textContent = "Nie znaleziono profilu";
     dom.publicProfileMeta?.replaceChildren();
+    renderPublicSyncState(publicState);
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
     dom.publicWonChampions.replaceChildren(emptyState(publicState.error, "Sprawdź region i nazwę w linku."));
-    dom.publicMissingChampions.replaceChildren();
+    dom.publicMatchHistory?.replaceChildren();
     dom.publicTopDuo.replaceChildren();
     return;
   }
 
   const data = publicState.data;
+  renderPublicSyncState(publicState);
   dom.publicProfileAvatar.src = data.profile.profileIconUrl || DEFAULT_AUTH_AVATAR;
   dom.publicProfileTitle.textContent = `${data.profile.gameName}#${data.profile.tagLine}`;
   const meta = [
@@ -1149,17 +1191,25 @@ function renderPublicProfile() {
   }
   dom.publicProfileMeta?.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
   renderPublicProgress(data.progress);
+  const championQuery = normalizeLookupKey(state.publicChampionSearch);
+  const wonChampions = championQuery
+    ? data.wonChampions.filter((stat) => normalizeLookupKey(stat.champion).includes(championQuery))
+    : data.wonChampions;
   dom.publicWonChampions.replaceChildren(
-    ...(data.wonChampions.length
-      ? data.wonChampions.map((stat) => renderPublicChampionCard(stat, `${stat.wins} win · śr. #${formatAveragePlacement(stat.averagePlacement)}`))
-      : [emptyState("Brak wygranych championów.", "Publiczny profil uzupełni się po synchronizacji.")]),
+    ...(wonChampions.length
+      ? wonChampions.map((stat) => renderPublicChampionCard(stat, `${stat.wins} win · śr. #${formatAveragePlacement(stat.averagePlacement)}`))
+      : [data.wonChampions.length
+          ? emptyState("Brak wyników.", "Zmień tekst w wyszukiwarce championów.")
+          : emptyState("Brak wygranych championów.", "Publiczny profil uzupełni się po synchronizacji.")]),
   );
-  dom.publicMissingChampions.replaceChildren(
-    ...(data.missingChampions.length
-      ? data.missingChampions
-          .slice(0, 24)
-          .map((stat) => renderPublicChampionCard(stat, "Brakuje wygranej", false))
-      : [emptyState("Kolekcja zamknięta.", "Każdy champion ma wygraną.")]),
+  dom.publicMatchHistory?.replaceChildren(
+    ...(data.matches?.length
+      ? data.matches
+          .slice(0, 8)
+          .map(normalizeMatch)
+          .filter(Boolean)
+          .map((match) => renderMatchCard(match, { dense: true, public: true }))
+      : [emptyState("Brak historii meczów.", "Synchronizacja uzupełni ostatnie gry.")]),
   );
   dom.publicTopDuo.replaceChildren(
     ...(data.topDuo.length
@@ -1173,6 +1223,22 @@ function renderPublicProfile() {
         })
       : [emptyState("Brak danych duo.", "Synchronizacja uzupełni partnerów.")]),
   );
+}
+
+function renderPublicSyncState(publicState = state.publicProfile) {
+  const isBusy = Boolean(publicState?.loading || publicState?.refreshing);
+  if (dom.publicSyncButton) {
+    dom.publicSyncButton.disabled = isBusy;
+    dom.publicSyncButton.classList.toggle("is-syncing", isBusy);
+    dom.publicSyncButton.textContent = isBusy ? "Synchronizuję..." : "Synchronizuj";
+  }
+  if (dom.publicSyncStatus) {
+    dom.publicSyncStatus.textContent = isBusy
+      ? "Aktualizuję sezon z Riot Match-V5."
+      : publicState?.error
+        ? publicState.error
+        : "";
+  }
 }
 
 function renderPublicProgress(progress) {
@@ -1208,6 +1274,8 @@ function getAccountAvatarSrc() {
 function applyLanguage() {
   document.documentElement.lang = state.language;
   dom.languageSelect.value = state.language;
+  dom.languageFlag?.classList.toggle("is-pl", state.language !== "en");
+  dom.languageFlag?.classList.toggle("is-en", state.language === "en");
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
@@ -1509,8 +1577,8 @@ function renderMatchCard(match, options) {
     el("span", "tag", `Patch ${match.patch}`),
   );
 
-  const augmentLimit = options.compact ? 3 : options.dense ? 4 : 6;
-  const itemLimit = options.compact ? 2 : options.dense ? 5 : 7;
+  const augmentLimit = 6;
+  const itemLimit = 7;
   const augmentTags = renderAssetGroup("Augmenty", match.augments, augmentLimit);
   const itemTags = renderAssetGroup("Itemy", match.items, itemLimit);
 

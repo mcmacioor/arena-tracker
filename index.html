@@ -41,10 +41,11 @@
             <span data-i18n="actions.coffee">Postaw kawę</span>
           </a>
           <label class="language-switch top-language-switch">
-            <span data-i18n="settings.language">Język</span>
+            <span class="language-label" data-i18n="settings.language">Język</span>
+            <span class="language-flag is-pl" id="languageFlag" aria-hidden="true"></span>
             <select id="languageSelect" aria-label="Język">
-              <option value="pl">🇵🇱 PL</option>
-              <option value="en">🇬🇧 EN</option>
+              <option value="pl">PL</option>
+              <option value="en">EN</option>
             </select>
           </label>
           <div class="account-menu" id="accountMenu">
@@ -265,6 +266,10 @@
                   <h2 id="publicProfileTitle">ArenaTracker</h2>
                   <div class="profile-hero-meta public-profile-meta" id="publicProfileMeta"></div>
                 </div>
+                <div class="public-profile-actions">
+                  <button class="primary-action" id="publicSyncButton" type="button">Synchronizuj</button>
+                  <span id="publicSyncStatus"></span>
+                </div>
               </div>
               <div class="progress-panel compact-progress" aria-labelledby="publicProgressTitle">
                 <div class="progress-head">
@@ -284,14 +289,18 @@
               <section class="panel" aria-labelledby="publicWonTitle">
                 <div class="panel-head">
                   <h2 id="publicWonTitle">Wygrani championi</h2>
+                  <label class="public-champion-search">
+                    <span>Szukaj</span>
+                    <input id="publicChampionSearch" type="search" autocomplete="off" placeholder="np. Zac" />
+                  </label>
                 </div>
                 <div class="champion-collection compact-collection" id="publicWonChampions"></div>
               </section>
-              <section class="panel" aria-labelledby="publicMissingTitle">
+              <section class="panel" aria-labelledby="publicHistoryTitle">
                 <div class="panel-head">
-                  <h2 id="publicMissingTitle">Brakujący</h2>
+                  <h2 id="publicHistoryTitle">Historia meczów</h2>
                 </div>
-                <div class="champion-collection compact-collection" id="publicMissingChampions"></div>
+                <div class="match-list public-match-list" id="publicMatchHistory"></div>
               </section>
               <section class="panel" aria-labelledby="publicDuoTitle">
                 <div class="panel-head">
@@ -456,10 +465,6 @@
             </div>
           </form>
           <div class="status-box" id="riotSyncStatus"></div>
-          <div class="status-box public-link-box is-hidden" id="publicProfileLinkBox">
-            <strong>Publiczny profil</strong>
-            <a class="inline-link" id="publicProfileLink" href="#dashboard"></a>
-          </div>
           <button class="ghost-action" type="button" id="logoutButton">Wyloguj</button>
         </div>
       </section>

@@ -391,6 +391,7 @@ async function saveRiotProfile(req, res, user) {
 async function getPublicProfile(req, res, url) {
   const region = normalizePublicRegion(url.searchParams.get("region"));
   const slug = cleanText(url.searchParams.get("slug"));
+  const forceRefresh = url.searchParams.get("refresh") === "1";
 
   if (!region || !slug) {
     sendJson(res, 400, { error: "Brakuje regionu albo nazwy profilu." });
@@ -404,9 +405,18 @@ async function getPublicProfile(req, res, url) {
     return normalizePublicRegion(profile.region) === region && normalizeSlug(publicProfileSlug(profile)) === normalizeSlug(slug);
   });
 
+  if (user && forceRefresh) {
+    const fetched = await fetchRiotPublicProfile(region, slug).catch(() => null);
+    if (fetched) {
+      await savePublicProfileCache(fetched);
+      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
+      return;
+    }
+  }
+
   if (!user) {
     const cached = findCachedPublicProfile(db, region, slug);
-    const shouldRefresh = !cached || isPublicProfileCacheStale(cached);
+    const shouldRefresh = forceRefresh || !cached || isPublicProfileCacheStale(cached);
 
     if (!shouldRefresh && cached) {
       sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
@@ -607,7 +617,29 @@ function buildPublicProfile(user, matches) {
       icon: GAME_DATA.championIcons?.[stat.champion] || "",
     })),
     missingChampions,
+    matches: matches.slice(0, 16).map(publicMatchSummary),
     topDuo: getPartnerStatsForMatches(matches).slice(0, 8),
+  };
+}
+
+function publicMatchSummary(match) {
+  return {
+    id: match.id,
+    date: match.date,
+    playedAt: match.playedAt,
+    patch: match.patch,
+    champion: match.champion,
+    partner: match.partner,
+    teammates: Array.isArray(match.teammates)
+      ? match.teammates.map((teammate) => ({
+          champion: teammate.champion,
+          riotId: teammate.riotId,
+          placement: teammate.placement,
+        }))
+      : [],
+    placement: match.placement,
+    augments: match.augments || [],
+    items: match.items || [],
   };
 }
 

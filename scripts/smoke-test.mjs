@@ -130,6 +130,22 @@ try {
     `getComputedStyle(document.querySelector("#brandHomeButton")).display !== "none"`,
   );
   assert(topbarBrandVisible, "Top bar brand should be visible");
+  const languageFlagVisible = await evalPage(
+    cdp,
+    `getComputedStyle(document.querySelector("#languageFlag")).display !== "none" && document.querySelector('#languageSelect option[value="pl"]').textContent.trim() === "PL"`,
+  );
+  assert(languageFlagVisible, "Language switch should use a CSS flag and plain language code");
+  const searchClickDoesNotNavigate = await evalPage(
+    cdp,
+    `(() => {
+      const before = location.pathname;
+      const form = document.querySelector(".top-player-search");
+      if (typeof selectSearchResult !== "function" || !form) return false;
+      selectSearchResult(form, { gameName: "Tester", tagLine: "EUW", region: "euw1" });
+      return location.pathname === before && form.querySelector('input[name="riotId"]').value === "Tester#EUW";
+    })()`,
+  );
+  assert(searchClickDoesNotNavigate, "Clicking a search suggestion should only fill the search field");
 
   await evalPage(cdp, `location.hash = "champions"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);

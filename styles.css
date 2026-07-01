@@ -12,6 +12,7 @@
   --green: #87d48d;
   --red: #ff7078;
   --shadow: 0 24px 80px rgb(0 0 0 / 32%);
+  --page-max: 1640px;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -152,6 +153,8 @@ a {
 
 .main {
   min-width: 0;
+  width: min(100%, var(--page-max));
+  margin: 0 auto;
   padding: 22px;
 }
 
@@ -342,11 +345,17 @@ a {
   position: relative;
   display: flex;
   align-items: center;
+  gap: 8px;
   width: 104px;
   min-width: 104px;
+  min-height: 42px;
+  padding: 0 8px;
+  border: 1px solid #343838;
+  border-radius: 7px;
+  background: #0d0f10;
 }
 
-.top-language-switch span {
+.top-language-switch .language-label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -354,8 +363,35 @@ a {
   clip: rect(0 0 0 0);
 }
 
+.language-flag {
+  position: relative;
+  width: 22px;
+  height: 16px;
+  flex: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid #3b4040;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%);
+}
+
+.language-flag.is-pl {
+  background: linear-gradient(#f4f4ef 0 50%, #dc3754 50% 100%);
+}
+
+.language-flag.is-en {
+  background:
+    linear-gradient(90deg, transparent 0 42%, #f4f4ef 42% 58%, transparent 58%),
+    linear-gradient(transparent 0 36%, #f4f4ef 36% 64%, transparent 64%),
+    linear-gradient(34deg, transparent 0 45%, #cf3147 45% 55%, transparent 55%),
+    linear-gradient(-34deg, #253f8e 0 45%, #cf3147 45% 55%, #253f8e 55% 100%);
+}
+
 .top-language-switch select {
+  width: 44px;
   min-height: 42px;
+  border: 0;
+  padding: 0;
+  background: transparent;
   font-weight: 900;
 }
 
@@ -1000,7 +1036,12 @@ textarea:focus {
   font-weight: 900;
 }
 
-.split-layout,
+.split-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
 .account-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
@@ -1115,6 +1156,11 @@ textarea:focus {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0;
+}
+
+.account-overlay.is-profile-mode .account-dialog h2,
+.account-overlay.is-profile-mode .account-dialog-brand {
+  display: none;
 }
 
 .account-dialog-brand {
@@ -1270,7 +1316,8 @@ textarea:focus {
 }
 
 .public-profile-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 14px;
 }
@@ -1278,6 +1325,47 @@ textarea:focus {
 .public-profile-head .profile-avatar {
   width: 48px;
   height: 48px;
+}
+
+.public-profile-actions {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+}
+
+.public-profile-actions span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.primary-action.is-syncing::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  border: 2px solid rgb(5 5 5 / 35%);
+  border-top-color: #050505;
+  border-radius: 50%;
+  animation: spin 760ms linear infinite;
+}
+
+.public-champion-search {
+  display: grid;
+  gap: 4px;
+  min-width: min(260px, 45%);
+}
+
+.public-champion-search span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.public-champion-search input {
+  min-height: 36px;
+  border-radius: 7px;
 }
 
 .compact-progress {
@@ -1737,6 +1825,10 @@ textarea:focus {
   gap: 16px;
 }
 
+.profile-panel .form-actions {
+  justify-content: center;
+}
+
 .profile-summary {
   display: flex;
   align-items: center;
@@ -1868,6 +1960,12 @@ textarea:focus {
     background-position:
       220px 0,
       0 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
   }
 }
 
