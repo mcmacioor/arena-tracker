@@ -9,7 +9,11 @@ const DATA_DIR = path.join(ROOT, "data");
 const DB_PATH = path.join(DATA_DIR, "arenatracker-db.json");
 const RESET_OUTBOX_PATH = path.join(DATA_DIR, "password-reset-outbox.json");
 const PORT = Number(process.env.PORT || 4173);
-const HOST = process.env.HOST || "127.0.0.1";
+const DEFAULT_HOST =
+  process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_PROJECT_ID || process.env.NODE_ENV === "production"
+    ? "0.0.0.0"
+    : "127.0.0.1";
+const HOST = process.env.HOST || DEFAULT_HOST;
 const SESSION_COOKIE = "arena_session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;

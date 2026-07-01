@@ -1825,7 +1825,9 @@ textarea:focus {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  max-width: 260px;
+  max-width: min(100%, 260px);
+  min-width: 0;
+  vertical-align: top;
 }
 
 .asset-tag.is-silver {
@@ -1848,7 +1850,8 @@ textarea:focus {
   border-color: rgb(126 213 255 / 60%);
 }
 
-.asset-tag > span:last-child {
+.asset-tag-label {
+  display: block;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2095,7 +2098,7 @@ textarea:focus {
 
 .player-card-assets .tag {
   min-height: 21px;
-  max-width: 190px;
+  max-width: min(100%, 190px);
   padding: 0 6px;
   border-radius: 5px;
   font-size: 0.66rem;

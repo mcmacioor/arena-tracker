@@ -1892,11 +1892,13 @@ function renderAssetTags(container, tags, emptyLabel) {
 function renderTagPill(tag) {
   const normalized = normalizeAssetTag(tag);
   const root = el("span", `tag asset-tag ${normalized.tier ? `is-${normalized.tier}` : ""}`);
+  const name = assetName(normalized);
   root.tabIndex = 0;
+  root.title = name;
   if (normalized.icon) {
     root.append(imageIcon(normalized.icon, "tag-icon"));
   }
-  root.append(el("span", "", assetName(normalized)));
+  root.append(el("span", "asset-tag-label", name));
   const tooltip = renderAssetTooltip(normalized);
   if (tooltip) root.append(tooltip);
   return root;
