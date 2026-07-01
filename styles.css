@@ -1330,13 +1330,23 @@ textarea:focus {
 .public-profile-actions {
   display: grid;
   justify-items: end;
+  align-self: start;
+  min-width: 140px;
   gap: 6px;
+}
+
+.public-profile-actions .primary-action {
+  min-width: 136px;
 }
 
 .public-profile-actions span {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
+}
+
+.public-profile-actions span:empty {
+  display: none;
 }
 
 .primary-action.is-syncing::before {

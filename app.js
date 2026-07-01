@@ -240,6 +240,7 @@ const state = {
   riotStatus: null,
   resetToken: "",
   isAutoSyncing: false,
+  syncError: "",
   visibleMatchCount: 8,
   friends: loadFriends(),
   friendProfiles: new Map(),
@@ -428,6 +429,7 @@ function bindEvents() {
     updateSearchPlaceholder(form);
     form.addEventListener("submit", handlePlayerSearchSubmit);
     form.addEventListener("input", handlePlayerSearchInput);
+    form.addEventListener("focusin", handlePlayerSearchFocus);
     form.addEventListener("click", handlePlayerSearchClick);
   });
 
@@ -787,7 +789,13 @@ function handlePlayerSearchInput(event) {
   form._selectedResult = null;
   updateSearchPlaceholder(form);
   window.clearTimeout(state.searchTimers.get(form));
-  state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 220));
+  state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 80));
+}
+
+function handlePlayerSearchFocus(event) {
+  const form = event.currentTarget;
+  if (!event.target.matches('input[name="riotId"]')) return;
+  if (cleanText(event.target.value).length) updateSearchResults(form);
 }
 
 function handlePlayerSearchClick(event) {
@@ -804,6 +812,7 @@ async function updateSearchResults(form) {
   const query = cleanText(formData.get("riotId"));
   const region = normalizeRegion(formData.get("region"));
   if (query.length < 1) {
+    form._searchRequestId = (form._searchRequestId || 0) + 1;
     hideSearchResults(form);
     return;
   }
@@ -811,13 +820,17 @@ async function updateSearchResults(form) {
   const resultsBox = form.querySelector("[data-search-results]");
   resultsBox.classList.add("is-open");
   resultsBox.replaceChildren(el("div", "search-results-status", "Szukam..."));
+  const requestId = (form._searchRequestId || 0) + 1;
+  form._searchRequestId = requestId;
 
   try {
     const params = new URLSearchParams({ q: query, region });
-    const data = await apiRequest(`/api/riot/search?${params.toString()}`);
+    const data = await apiRequest(`/api/riot/search?${params.toString()}`, { timeoutMs: 8000 });
+    if (form._searchRequestId !== requestId) return;
     form._searchResults = data.results || [];
     renderSearchResults(form, form._searchResults, query);
   } catch (error) {
+    if (form._searchRequestId !== requestId) return;
     form._searchResults = [];
     resultsBox.replaceChildren(el("div", "search-results-status", error.message));
   }
@@ -1004,7 +1017,7 @@ async function loadPublicProfile(route, options = {}) {
       loading: false,
       refreshing: false,
       error: "",
-      data: await apiRequest(`/api/public-profile?${params.toString()}`),
+      data: await apiRequest(`/api/public-profile?${params.toString()}`, { timeoutMs: options.force ? 180000 : 60000 }),
     };
   } catch (error) {
     state.publicProfile = { routeKey, loading: false, refreshing: false, error: error.message, data: previousData };
@@ -1108,6 +1121,22 @@ function renderAccount() {
     dom.riotSyncStatus.replaceChildren(
       el("strong", "", "Konto League nie jest jeszcze zapisane."),
       el("span", "", "Po zapisaniu synchronizacja Areny uruchomi się automatycznie."),
+    );
+    return;
+  }
+
+  if (state.isAutoSyncing) {
+    dom.riotSyncStatus.replaceChildren(
+      el("strong", "", "Synchronizuję..."),
+      el("span", "", "Możesz zamknąć panel. Konto League jest już zapisane."),
+    );
+    return;
+  }
+
+  if (state.syncError) {
+    dom.riotSyncStatus.replaceChildren(
+      el("strong", "", "Synchronizacja nie powiodła się."),
+      el("span", "", state.syncError),
     );
     return;
   }
@@ -1233,11 +1262,7 @@ function renderPublicSyncState(publicState = state.publicProfile) {
     dom.publicSyncButton.textContent = isBusy ? "Synchronizuję..." : "Synchronizuj";
   }
   if (dom.publicSyncStatus) {
-    dom.publicSyncStatus.textContent = isBusy
-      ? "Aktualizuję sezon z Riot Match-V5."
-      : publicState?.error
-        ? publicState.error
-        : "";
+    dom.publicSyncStatus.textContent = publicState?.error ? publicState.error : "";
   }
 }
 
@@ -1443,7 +1468,7 @@ function refreshFriendProfiles() {
     if (cached?.loading || cached?.data || cached?.error) return;
     state.friendProfiles.set(friend.key, { loading: true });
     const params = new URLSearchParams({ region: publicRegionSlug(friend.region), slug: friend.slug });
-    apiRequest(`/api/public-profile?${params.toString()}`)
+    apiRequest(`/api/public-profile?${params.toString()}`, { timeoutMs: 60000 })
       .then((data) => state.friendProfiles.set(friend.key, { data }))
       .catch((error) => state.friendProfiles.set(friend.key, { error: error.message }))
       .finally(() => renderFriendRanking(getSortedMatches()));
@@ -1694,7 +1719,7 @@ async function submitAuthForm(form, path, message) {
 
     showAccountMessage(message, "success");
     render();
-    await syncRiotMatches({ automatic: true });
+    void syncRiotMatches({ automatic: true, timeoutMs: 180000 });
   } catch (error) {
     showAccountMessage(error.message, "error");
   }
@@ -1813,15 +1838,32 @@ async function saveRiotProfile() {
   }
 
   const body = Object.fromEntries(new FormData(dom.riotProfileForm).entries());
+  if (!cleanText(body.gameName) || !cleanText(body.tagLine)) {
+    showAccountMessage("Uzupełnij nazwę w grze i tag Riot ID.", "error");
+    return;
+  }
+
+  const submitButton = dom.riotProfileForm.querySelector('button[type="submit"]');
+  const previousLabel = submitButton?.textContent || "";
   try {
-    const data = await apiRequest("/api/riot/profile", { method: "POST", body });
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Zapisuję...";
+    }
+    state.syncError = "";
+    const data = await apiRequest("/api/riot/profile", { method: "POST", body, timeoutMs: 30000 });
     state.user = data.user;
     fillRiotProfileForm();
     showAccountMessage("Konto League zapisane.", "success");
     render();
-    await syncRiotMatches({ automatic: true });
+    void syncRiotMatches({ automatic: true, timeoutMs: 180000 });
   } catch (error) {
     showAccountMessage(error.message, "error");
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = previousLabel;
+    }
   }
 }
 
@@ -1840,6 +1882,7 @@ async function syncRiotMatches(options = {}) {
   }
 
   state.isAutoSyncing = true;
+  state.syncError = "";
   dom.riotSyncStatus.replaceChildren(
     el("strong", "", "Synchronizuję..."),
     el("span", "", "Aktualizuję mecze Areny."),
@@ -1848,6 +1891,7 @@ async function syncRiotMatches(options = {}) {
   try {
     const data = await apiRequest("/api/riot/sync", {
       method: "POST",
+      timeoutMs: options.timeoutMs || 180000,
       body: {
         limit: options.deep ? RIOT_SEASON_SYNC_LIMIT : RIOT_SYNC_LIMIT,
         scope: options.deep ? "season" : "recent",
@@ -1855,10 +1899,12 @@ async function syncRiotMatches(options = {}) {
     });
     state.user = data.user;
     state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+    state.syncError = "";
     fillRiotProfileForm();
     if (!options.automatic) showAccountMessage(`Zsynchronizowano ${(data.scannedCount || 0) + (data.reusedCount || 0)} meczów.`, "success");
     render();
   } catch (error) {
+    state.syncError = error.message;
     if (!options.automatic) showAccountMessage(error.message, "error");
     render();
   } finally {
@@ -1877,18 +1923,34 @@ function fillRiotProfileForm() {
 
 async function apiRequest(path, options = {}) {
   const headers = { Accept: "application/json" };
+  const controller = options.timeoutMs ? new AbortController() : null;
+  const timeoutId = controller
+    ? window.setTimeout(() => controller.abort(), options.timeoutMs)
+    : null;
   const request = {
     method: options.method || "GET",
     credentials: "same-origin",
     headers,
   };
+  if (controller) request.signal = controller.signal;
 
   if (options.body !== undefined) {
     headers["Content-Type"] = "application/json";
     request.body = JSON.stringify(options.body);
   }
 
-  const response = await fetch(path, request);
+  let response;
+  try {
+    response = await fetch(path, request);
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error("Przekroczono czas oczekiwania. Spróbuj ponownie za chwilę.");
+    }
+    throw error;
+  } finally {
+    if (timeoutId) window.clearTimeout(timeoutId);
+  }
+
   const contentType = response.headers.get("content-type") || "";
   const data = contentType.includes("application/json") ? await response.json() : {};
 

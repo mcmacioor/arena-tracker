@@ -1,7 +1,7 @@
 const http = require("node:http");
 const { createHash, randomBytes, scryptSync, timingSafeEqual } = require("node:crypto");
 const { existsSync, readFileSync } = require("node:fs");
-const { mkdir, readFile, writeFile, stat } = require("node:fs/promises");
+const { mkdir, readFile, rename, writeFile, stat } = require("node:fs/promises");
 const path = require("node:path");
 
 const ROOT = __dirname;
@@ -20,6 +20,8 @@ const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 300;
 const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
 const PUBLIC_PROFILE_CACHE_TTL_MS = 60 * 60 * 1000;
+const RIOT_FETCH_TIMEOUT_MS = 20_000;
+const RIOT_MATCH_DETAIL_CONCURRENCY = 4;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -39,6 +41,7 @@ const REGIONS = new Set([
   "tw2",
   "vn2",
 ]);
+let dbWriteQueue = Promise.resolve();
 const PUBLIC_REGION_ALIASES = new Map([
   ["br", "br1"],
   ["eune", "eun1"],
@@ -458,6 +461,14 @@ async function searchRiotProfiles(req, res, url) {
   const db = await readDb();
   const normalizedQuery = normalizeSlug(query.replace("#", "-"));
   const results = [];
+  const seen = new Set();
+  const addResult = (result, options = {}) => {
+    const key = normalizeSlug(result.slug);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    if (options.prepend) results.unshift(result);
+    else results.push(result);
+  };
   db.users.forEach((user) => {
     const profile = user.riotProfile;
     if (!profile?.gameName || !profile?.tagLine) return;
@@ -465,7 +476,7 @@ async function searchRiotProfiles(req, res, url) {
     const slug = publicProfileSlug(profile);
     const haystack = normalizeSlug(`${profile.gameName} ${profile.tagLine} ${slug}`);
     if (!haystack.includes(normalizedQuery)) return;
-    results.push(searchResultFromProfile(profile, "ArenaTracker"));
+    addResult(searchResultFromProfile(profile, "ArenaTracker"));
   });
   db.publicProfiles.forEach((publicProfile) => {
     const profile = publicProfile.riotProfile;
@@ -474,10 +485,27 @@ async function searchRiotProfiles(req, res, url) {
     const slug = publicProfileSlug(profile);
     const haystack = normalizeSlug(`${profile.gameName} ${profile.tagLine} ${slug}`);
     if (!haystack.includes(normalizedQuery)) return;
-    const result = searchResultFromProfile(profile, "Riot cache");
-    if (!results.some((item) => normalizeSlug(item.slug) === normalizeSlug(result.slug))) {
-      results.push(result);
-    }
+    addResult(searchResultFromProfile(profile, "Riot cache"));
+  });
+
+  const userRegionById = new Map(
+    db.users.map((user) => [user.id, normalizePublicRegion(user.riotProfile?.region)]),
+  );
+  db.matches.forEach((match) => {
+    const matchRegion = normalizePublicRegion(match.source?.region || userRegionById.get(match.userId) || region);
+    if (matchRegion !== region) return;
+    const participants = [
+      ...(Array.isArray(match.players) ? match.players : []),
+      ...(Array.isArray(match.teammates) ? match.teammates : []),
+    ];
+    participants.forEach((participant) => {
+      const parsed = parseRiotIdQuery(participant.riotId);
+      if (!parsed) return;
+      const slug = publicProfileSlug(parsed);
+      const haystack = normalizeSlug(`${parsed.gameName} ${parsed.tagLine} ${slug}`);
+      if (!haystack.includes(normalizedQuery)) return;
+      addResult(searchResultFromRiotId(parsed, region, "historia meczów", GAME_DATA.championIcons?.[participant.champion]));
+    });
   });
 
   const exact = parseRiotIdQuery(query);
@@ -495,9 +523,7 @@ async function searchRiotProfiles(req, res, url) {
         },
         "Riot",
       );
-      if (!results.some((item) => normalizeSlug(item.slug) === normalizeSlug(result.slug))) {
-        results.unshift(result);
-      }
+      addResult(result, { prepend: true });
     } catch {
       // Exact Riot lookup is optional; local indexed profiles still work.
     }
@@ -516,11 +542,7 @@ async function fetchRiotPublicProfile(region, slug) {
   const matchIds = await fetchArenaMatchIds(account, routing, PUBLIC_PROFILE_MATCH_LIMIT, {
     startTime: seasonStartTimestamp(),
   });
-  const details = [];
-  for (const matchId of matchIds) {
-    const detail = await riotFetch(routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
-    details.push(detail);
-  }
+  const details = await fetchMatchDetails(routing, matchIds);
   const profile = {
     gameName: account.gameName || parsed.gameName,
     tagLine: account.tagLine || parsed.tagLine,
@@ -578,6 +600,24 @@ function searchResultFromProfile(profile, source) {
     slug: publicProfileSlug(profile),
     publicPath: `/${publicRegionSlug(profile.region)}/${encodeURIComponent(publicProfileSlug(profile))}`,
     profileIconUrl: profileIconUrl(profile.profileIconId),
+    caption: source,
+  };
+}
+
+function searchResultFromRiotId(parsed, region, source, iconUrl = "") {
+  const profile = {
+    gameName: parsed.gameName,
+    tagLine: parsed.tagLine,
+    region,
+  };
+  const slug = publicProfileSlug(profile);
+  return {
+    gameName: profile.gameName,
+    tagLine: profile.tagLine,
+    region,
+    slug,
+    publicPath: `/${publicRegionSlug(region)}/${encodeURIComponent(slug)}`,
+    profileIconUrl: cleanText(iconUrl),
     caption: source,
   };
 }
@@ -733,12 +773,7 @@ async function syncRiotMatches(req, res, user) {
     }
   });
 
-  const matchDetails = [];
-
-  for (const matchId of idsToFetch) {
-    const detail = await riotFetch(profile.routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
-    matchDetails.push(detail);
-  }
+  const matchDetails = await fetchMatchDetails(profile.routing, idsToFetch);
 
   const imported = [
     ...matchDetails
@@ -864,13 +899,53 @@ async function fetchArenaMatchIds(account, routing, limit, options = {}) {
   return [...new Set(ids)].slice(0, limit);
 }
 
+async function fetchMatchDetails(routing, matchIds) {
+  if (!matchIds.length) return [];
+  const details = [];
+  let cursor = 0;
+  const workerCount = Math.min(RIOT_MATCH_DETAIL_CONCURRENCY, matchIds.length);
+
+  async function worker() {
+    while (cursor < matchIds.length) {
+      const matchId = matchIds[cursor];
+      cursor += 1;
+      try {
+        const detail = await riotFetch(routing, `/lol/match/v5/matches/${encodeURIComponent(matchId)}`);
+        details.push(detail);
+      } catch (error) {
+        if ([401, 403].includes(Number(error.status))) throw error;
+        console.warn(`[riot] skipped match ${matchId}: ${error.message}`);
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: workerCount }, worker));
+  return details;
+}
+
 async function riotFetch(routing, pathName, attempt = 0) {
-  const response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
-    headers: {
-      "X-Riot-Token": process.env.RIOT_API_KEY,
-      "User-Agent": "ArenaTracker/0.5 local dev",
-    },
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), RIOT_FETCH_TIMEOUT_MS);
+  let response;
+
+  try {
+    response = await fetch(`https://${routing}.api.riotgames.com${pathName}`, {
+      signal: controller.signal,
+      headers: {
+        "X-Riot-Token": process.env.RIOT_API_KEY,
+        "User-Agent": "ArenaTracker/0.5 local dev",
+      },
+    });
+  } catch (error) {
+    if (error.name === "AbortError") {
+      const timeoutError = new Error("Riot API nie odpowiedziało w czasie.");
+      timeoutError.status = 504;
+      throw timeoutError;
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!response.ok) {
     if (response.status === 429 && attempt < 2) {
@@ -1070,22 +1145,71 @@ async function readJsonBody(req) {
 async function readDb() {
   await mkdir(DATA_DIR, { recursive: true });
   try {
-    return normalizeDb(JSON.parse(await readFile(DB_PATH, "utf8")));
+    return normalizeDb(parseDbJson(await readFile(DB_PATH, "utf8")));
   } catch {
     return normalizeDb({});
   }
 }
 
 async function mutateDb(mutator) {
-  const db = await readDb();
-  try {
+  const operation = dbWriteQueue.then(async () => {
+    const db = await readDb();
     await mutator(db);
+    const tempPath = `${DB_PATH}.${process.pid}.${Date.now()}.tmp`;
+    await writeFile(tempPath, `${JSON.stringify(db, null, 2)}\n`, "utf8");
+    await rename(tempPath, DB_PATH);
+    return db;
+  });
+  dbWriteQueue = operation.catch(() => {});
+  return operation;
+}
+
+function parseDbJson(text) {
+  try {
+    return JSON.parse(text);
   } catch (error) {
-    if (error.status) throw error;
+    const end = findFirstJsonObjectEnd(text);
+    if (end > 0) return JSON.parse(text.slice(0, end));
     throw error;
   }
-  await writeFile(DB_PATH, `${JSON.stringify(db, null, 2)}\n`, "utf8");
-  return db;
+}
+
+function findFirstJsonObjectEnd(text) {
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  let started = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    if (!started) {
+      if (/\s/.test(char)) continue;
+      if (char !== "{") return -1;
+      started = true;
+      depth = 1;
+      continue;
+    }
+
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+      } else if (char === "\\") {
+        escaped = true;
+      } else if (char === "\"") {
+        inString = false;
+      }
+      continue;
+    }
+
+    if (char === "\"") inString = true;
+    else if (char === "{") depth += 1;
+    else if (char === "}") {
+      depth -= 1;
+      if (depth === 0) return index + 1;
+    }
+  }
+
+  return -1;
 }
 
 function normalizeDb(db) {
