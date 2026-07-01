@@ -163,9 +163,9 @@ a {
   top: 0;
   z-index: 40;
   display: grid;
-  grid-template-columns: minmax(170px, 220px) minmax(360px, 620px) auto auto auto;
+  grid-template-columns: minmax(160px, 210px) minmax(320px, 560px) auto auto auto;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   justify-content: center;
   min-height: 64px;
   margin: -22px -22px 12px;
@@ -539,9 +539,9 @@ a {
 
 .top-player-search {
   justify-self: center;
-  grid-template-columns: 110px minmax(360px, 1fr);
-  width: min(48vw, 650px);
-  max-width: 650px;
+  grid-template-columns: 104px minmax(300px, 1fr);
+  width: min(42vw, 560px);
+  max-width: 560px;
   padding: 6px;
   background: #101213;
   box-shadow:
@@ -711,8 +711,8 @@ a {
 
 .top-coffee {
   justify-self: end;
-  min-width: 132px;
-  padding: 0 12px;
+  min-width: 142px;
+  padding: 0 14px;
   white-space: nowrap;
 }
 
@@ -1040,8 +1040,8 @@ textarea:focus {
   position: relative;
   overflow: hidden;
   margin-bottom: 12px;
-  min-height: 150px;
-  padding: 24px;
+  min-height: 124px;
+  padding: 20px 24px;
   border-color: rgb(201 170 98 / 20%);
   background:
     radial-gradient(circle at 82% 20%, rgb(135 212 141 / 10%), transparent 28%),
@@ -1055,7 +1055,7 @@ textarea:focus {
   align-items: center;
   justify-items: center;
   gap: 16px;
-  min-height: 96px;
+  min-height: 78px;
   margin-bottom: 0;
 }
 
@@ -1087,18 +1087,18 @@ textarea:focus {
   grid-column: 1 / -1;
   display: grid;
   justify-items: center;
-  margin-top: -86px;
+  margin-top: -72px;
   font-family: "Cascadia Mono", Consolas, monospace;
 }
 
 .progress-score {
   color: #ffd400;
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.45rem);
   line-height: 0.95;
 }
 
 .progress-percent {
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--muted);
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
@@ -1569,21 +1569,40 @@ textarea:focus {
   position: relative;
   display: grid;
   align-items: end;
+  isolation: isolate;
   min-height: 150px;
   height: 150px;
   overflow: hidden;
   padding: 0;
-  background:
-    linear-gradient(180deg, transparent 0 42%, rgb(0 0 0 / 84%) 100%),
-    var(--champion-art, linear-gradient(135deg, #191b1b, #080909));
-  background-position: center;
-  background-size: cover;
+  background: #080909;
   transition:
     opacity 150ms ease,
     transform 150ms ease,
     border-color 150ms ease,
     box-shadow 150ms ease,
     filter 150ms ease;
+}
+
+.champion-pill::before,
+.champion-collection-card::before {
+  position: absolute;
+  inset: -8px;
+  z-index: 0;
+  background: var(--champion-art, linear-gradient(135deg, #191b1b, #080909)) center / cover;
+  content: "";
+  filter: blur(3px) saturate(1.08) brightness(0.82);
+  transform: scale(1.04);
+}
+
+.champion-pill::after,
+.champion-collection-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 6%) 0%, rgb(0 0 0 / 34%) 45%, rgb(0 0 0 / 90%) 100%),
+    radial-gradient(circle at 50% 74%, rgb(0 0 0 / 42%), transparent 38%);
+  content: "";
 }
 
 .champion-pill,
@@ -1611,7 +1630,10 @@ textarea:focus {
 
 .champion-collection-card.is-missing {
   opacity: 0.62;
-  filter: grayscale(0.25);
+}
+
+.champion-collection-card.is-missing::before {
+  filter: grayscale(0.7) blur(3px) brightness(0.56);
 }
 
 .champion-pill strong,
@@ -1624,9 +1646,10 @@ textarea:focus {
 
 .champion-card-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  align-self: end;
   min-width: 0;
-  padding: 14px;
+  padding: 0 14px 18px;
   text-align: center;
 }
 
@@ -1645,22 +1668,17 @@ textarea:focus {
   line-height: 1.45;
 }
 
-.champion-win-dots {
-  position: absolute;
-  left: 50%;
-  bottom: 12px;
-  z-index: 2;
-  display: flex;
-  gap: 7px;
-  transform: translateX(-50%);
+.champion-card-copy strong {
+  color: #fffaf0;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 82%);
 }
 
-.champion-win-dots span {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #ffd400;
-  box-shadow: 0 0 14px rgb(255 212 0 / 32%);
+.champion-card-copy span {
+  color: #e0d7c9;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 78%);
 }
 
 .match-card {
@@ -1946,13 +1964,13 @@ textarea:focus {
 
 .player-detail-list {
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .match-team-group {
   display: grid;
-  gap: 10px;
-  padding: 12px;
+  gap: 8px;
+  padding: 9px;
   border: 1px solid #343838;
   border-radius: 8px;
   background:
@@ -1964,11 +1982,11 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 28px;
-  padding-bottom: 8px;
+  min-height: 22px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #202323;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -1979,19 +1997,20 @@ textarea:focus {
 
 .match-team-players {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .player-detail-card {
   display: grid;
-  grid-template-columns: 42px minmax(180px, 220px) minmax(0, 1fr) auto;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
   grid-template-areas:
-    "icon copy assets place";
+    "icon copy place"
+    "assets assets assets";
   align-items: center;
-  gap: 8px 10px;
-  min-height: 78px;
-  padding: 10px;
+  gap: 6px 8px;
+  min-height: 0;
+  padding: 8px;
   border: 1px solid #343838;
   border-radius: 8px;
   background: #0c0d0d;
@@ -2012,13 +2031,16 @@ textarea:focus {
 
 .player-detail-card .champion-icon {
   grid-area: icon;
+  width: 30px;
+  height: 30px;
 }
 
 .player-card-copy {
   grid-area: copy;
   display: grid;
-  gap: 3px;
+  gap: 1px;
   min-width: 0;
+  font-size: 0.82rem;
 }
 
 .player-card-copy strong {
@@ -2038,31 +2060,32 @@ textarea:focus {
   grid-area: assets;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 6px;
+  gap: 4px;
   padding-top: 0;
 }
 
 .player-card-assets .match-asset-group {
-  gap: 4px;
+  gap: 3px;
 }
 
 .player-card-assets .match-tags {
-  gap: 5px;
+  gap: 4px;
 }
 
 .player-card-assets .asset-group-label {
-  font-size: 0.66rem;
+  font-size: 0.6rem;
 }
 
 .player-card-assets .tag-icon {
-  width: 16px;
-  height: 16px;
-  flex-basis: 16px;
+  width: 14px;
+  height: 14px;
+  flex-basis: 14px;
 }
 
 .player-detail-card em {
   grid-area: place;
   color: var(--green);
+  font-size: 0.84rem;
   font-style: normal;
   font-weight: 900;
 }
@@ -2409,6 +2432,7 @@ textarea:focus {
   .form-grid,
   .compact-grid,
   .detail-stats,
+  .match-team-players,
   .segmented-control {
     grid-template-columns: 1fr;
   }

@@ -1510,7 +1510,7 @@ function renderPublicChampionCard(stat, caption, complete = true) {
   setChampionCardBackground(root, stat.champion);
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion), el("span", "", caption));
-  root.append(body, renderWinDots(stat.wins));
+  root.append(body);
   return root;
 }
 
@@ -1764,7 +1764,7 @@ function renderChampionPill(stat) {
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(el("span", "", `${stat.wins} ${t("common.win")}`));
-  root.append(body, renderWinDots(stat.wins));
+  root.append(body);
   return root;
 }
 
@@ -1786,7 +1786,7 @@ function renderChampionCollectionCard(stat) {
           : t("champions.noGames"),
     ),
   );
-  root.append(body, renderWinDots(stat.wins));
+  root.append(body);
   return root;
 }
 
@@ -1794,15 +1794,6 @@ function setChampionCardBackground(root, champion) {
   const championName = canonicalChampionName(champion);
   const src = championName ? CHAMPION_ICONS[championName] : "";
   if (src) root.style.setProperty("--champion-art", `url("${src}")`);
-}
-
-function renderWinDots(wins) {
-  const root = el("span", "champion-win-dots");
-  const count = Math.max(0, Math.min(3, Number(wins || 0)));
-  for (let index = 0; index < count; index += 1) {
-    root.append(el("span", "", ""));
-  }
-  return root;
 }
 
 function renderChampionIcon(champion) {

@@ -164,7 +164,7 @@ try {
   );
   const collectionHasChampionArt = await evalPage(
     cdp,
-    `getComputedStyle(document.querySelector("#championCollection .champion-collection-card")).backgroundImage.includes("ddragon")`,
+    `getComputedStyle(document.querySelector("#championCollection .champion-collection-card")).getPropertyValue("--champion-art").includes("ddragon")`,
   );
   const championCount = await evalPage(cdp, `window.ARENA_GAME_DATA.champions.length`);
   assert(collectionCardCount === championCount, `Expected all champion cards by default, got ${collectionCardCount}`);
