@@ -35,6 +35,9 @@
               <div class="search-results" data-search-results></div>
             </div>
           </form>
+          <a class="top-nav-link top-leaderboard-link" href="/leaderboard" data-route="leaderboard">
+            Leaderboard
+          </a>
           <a class="coffee-link top-coffee" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
             <span aria-hidden="true">☕</span>
             <span data-i18n="actions.coffee">Postaw kawę</span>
@@ -47,29 +50,6 @@
               <option value="en">EN</option>
             </select>
           </label>
-          <div class="account-menu" id="accountMenu">
-            <button
-              class="account-menu-button"
-              id="accountMenuButton"
-              type="button"
-              aria-haspopup="menu"
-              aria-expanded="false"
-            >
-              <img
-                class="account-avatar"
-                id="accountAvatar"
-                src="https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png"
-                alt=""
-              />
-              <span id="accountMenuLabel">Konto</span>
-              <span class="account-chevron" aria-hidden="true"></span>
-            </button>
-            <div class="account-dropdown" id="accountDropdown" aria-hidden="true">
-              <button type="button" data-account-action="profile">Profil</button>
-              <button type="button" data-account-action="settings">Ustawienia</button>
-              <button type="button" data-account-action="logout">Wyloguj</button>
-            </div>
-          </div>
         </header>
 
         <section class="landing-search" id="landingSearch" aria-labelledby="landingSearchTitle">
@@ -123,7 +103,6 @@
           <a class="nav-link" href="#dashboard" data-route="dashboard" data-i18n="tabs.summary">Podsumowanie</a>
           <a class="nav-link" href="#matches" data-route="matches" data-i18n="tabs.history">Historia</a>
           <a class="nav-link" href="#champions" data-route="champions" data-i18n="tabs.wins">Championi</a>
-          <a class="nav-link" href="#friends" data-route="friends" data-i18n="tabs.group">Moja grupa</a>
         </nav>
 
         <section class="ad-slot profile-ad" aria-label="Reklama">Reklama</section>
@@ -232,6 +211,30 @@
                 <button class="ghost-action" type="submit">Dodaj</button>
               </form>
               <div class="friend-ranking" id="friendRanking"></div>
+            </section>
+          </div>
+
+          <div class="view" id="leaderboardView" data-view="leaderboard">
+            <section class="leaderboard-page" aria-labelledby="leaderboardTitle">
+              <div class="leaderboard-hero">
+                <div class="landing-logo leaderboard-logo" aria-hidden="true">
+                  <span>LoL</span>
+                  <strong>ArenaTracker</strong>
+                </div>
+                <h1 id="leaderboardTitle">Leaderboard</h1>
+                <div class="leaderboard-podium" id="leaderboardPodium"></div>
+              </div>
+
+              <section class="panel leaderboard-panel" aria-label="Tabela leaderboardu">
+                <div class="panel-head leaderboard-toolbar">
+                  <div>
+                    <p class="eyebrow">Live season</p>
+                    <h2>Ranking profili</h2>
+                  </div>
+                  <button class="ghost-action" id="leaderboardRefreshButton" type="button">OdĹ›wieĹĽ</button>
+                </div>
+                <div class="leaderboard-table" id="leaderboardRows"></div>
+              </section>
             </section>
           </div>
 

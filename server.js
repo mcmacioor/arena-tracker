@@ -172,6 +172,11 @@ async function routeApi(req, res, url) {
     return;
   }
 
+  if (method === "GET" && url.pathname === "/api/leaderboard") {
+    await getLeaderboard(req, res, url);
+    return;
+  }
+
   if (method === "GET" && url.pathname === "/api/matches") {
     const auth = await requireAuth(req, res);
     if (!auth) return;
@@ -487,7 +492,79 @@ async function getPublicProfile(req, res, url) {
     .map((match) => normalizeMatch(match, user.id, match.source?.type || "riot"))
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  sendJson(res, 200, buildPublicProfile(user, matches));
+  const cached = findCachedPublicProfile(db, region, slug);
+  if (cached && Array.isArray(cached.matches) && cached.matches.length >= matches.length) {
+    sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+    return;
+  }
+
+  const payload = buildPublicProfile(user, matches);
+  if (cached?.riotProfile?.profileIconId) {
+    payload.profile.profileIconUrl = profileIconUrl(cached.riotProfile.profileIconId);
+  }
+  if (cached?.riotProfile?.lastSyncedAt || cached?.updatedAt) {
+    payload.profile.lastSyncedAt = cached.riotProfile.lastSyncedAt || cached.updatedAt;
+  }
+  sendJson(res, 200, payload);
+}
+
+async function getLeaderboard(req, res, url) {
+  const limit = clamp(Number(url.searchParams.get("limit") || 50), 1, 100);
+  const db = await readDb();
+  const rowsByKey = new Map();
+
+  const addRow = (profile, matches, source, updatedAt) => {
+    if (!profile?.gameName || !profile?.tagLine) return;
+    const region = normalizePublicRegion(profile.region);
+    const slug = publicProfileSlug({ ...profile, region });
+    const key = publicProfileCacheId(region, slug);
+    const normalizedMatches = Array.isArray(matches)
+      ? matches.map((match) => normalizeMatch(match, source, match.source?.type || "riot")).filter(Boolean)
+      : [];
+    const championStats = getChampionStatsForMatches(normalizedMatches);
+    const championWins = championStats.filter((stat) => stat.wins > 0).length;
+    const wins = normalizedMatches.filter((match) => Number(match.placement) === 1).length;
+    const top4 = normalizedMatches.filter((match) => Number(match.placement) <= 4).length;
+    const score = championWins * 100 + wins * 20 + top4 * 3 + normalizedMatches.length;
+    const row = {
+      gameName: profile.gameName,
+      tagLine: profile.tagLine,
+      region,
+      slug,
+      publicPath: `/${publicRegionSlug(region)}/${encodeURIComponent(slug)}`,
+      profileIconUrl: profileIconUrl(profile.profileIconId),
+      score,
+      championWins,
+      wins,
+      top4,
+      matches: normalizedMatches.length,
+      lastSyncedAt: profile.lastSyncedAt || updatedAt || null,
+    };
+    const existing = rowsByKey.get(key);
+    if (!existing || row.matches > existing.matches || Date.parse(row.lastSyncedAt || "") > Date.parse(existing.lastSyncedAt || "")) {
+      rowsByKey.set(key, row);
+    }
+  };
+
+  db.publicProfiles.forEach((entry) => {
+    addRow(entry.riotProfile, entry.matches || [], "public", entry.updatedAt);
+  });
+
+  db.users.forEach((user) => {
+    if (!user.riotProfile?.gameName || !user.riotProfile?.tagLine) return;
+    const matches = db.matches.filter((match) => match.userId === user.id);
+    addRow(user.riotProfile, matches, user.id, user.riotProfile.lastSyncedAt || user.updatedAt);
+  });
+
+  const rows = [...rowsByKey.values()]
+    .sort((a, b) => b.score - a.score || b.championWins - a.championWins || b.wins - a.wins || b.matches - a.matches)
+    .slice(0, limit)
+    .map((row, index) => ({ ...row, rank: index + 1 }));
+
+  sendJson(res, 200, {
+    rows,
+    updatedAt: new Date().toISOString(),
+  });
 }
 
 async function searchRiotProfiles(req, res, url) {
@@ -632,7 +709,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
     routing,
     region,
     puuid: account.puuid,
-    profileIconId: summoner?.profileIconId || null,
+    profileIconId: summoner?.profileIconId || existing?.riotProfile?.profileIconId || null,
     lastSyncedAt: pendingCount ? existing?.riotProfile?.lastSyncedAt || null : new Date().toISOString(),
     lastSyncAttemptAt: new Date().toISOString(),
   };

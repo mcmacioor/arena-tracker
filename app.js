@@ -346,6 +346,12 @@ const state = {
   visibleMatchCount: 8,
   friends: loadFriends(),
   friendProfiles: new Map(),
+  leaderboard: {
+    loading: false,
+    error: "",
+    rows: [],
+    updatedAt: "",
+  },
   searchTimers: new WeakMap(),
   filters: {
     championSearch: "",
@@ -464,6 +470,9 @@ function cacheDom() {
     riotSyncStatus: document.getElementById("riotSyncStatus"),
     publicProfileLinkBox: document.getElementById("publicProfileLinkBox"),
     publicProfileLink: document.getElementById("publicProfileLink"),
+    leaderboardPodium: document.getElementById("leaderboardPodium"),
+    leaderboardRows: document.getElementById("leaderboardRows"),
+    leaderboardRefreshButton: document.getElementById("leaderboardRefreshButton"),
     toast: document.getElementById("toast"),
     emptyStateTemplate: document.getElementById("emptyStateTemplate"),
   });
@@ -477,16 +486,6 @@ async function initializeBackend() {
   try {
     state.riotStatus = await apiRequest("/api/health");
     state.backendAvailable = true;
-
-    try {
-      const session = await apiRequest("/api/auth/me");
-      state.user = session.user;
-      await loadServerMatches();
-      render();
-      void syncRiotMatches({ automatic: true, deep: true, timeoutMs: RIOT_SEASON_SYNC_TIMEOUT_MS });
-    } catch (error) {
-      if (error.status !== 401) throw error;
-    }
   } catch {
     state.backendAvailable = false;
     state.user = null;
@@ -494,6 +493,9 @@ async function initializeBackend() {
 
   fillRiotProfileForm();
   render();
+  if (state.activeRoute === "leaderboard" && state.backendAvailable) {
+    void loadLeaderboard({ force: true });
+  }
 }
 
 function bindEvents() {
@@ -503,14 +505,14 @@ function bindEvents() {
 
   dom.brandHomeButton?.addEventListener("click", handleBrandHomeClick);
 
-  document.querySelectorAll(".nav-link").forEach((link) => {
+  document.querySelectorAll(".nav-link, .top-nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       closeAccountOverlay();
       setActiveRoute(link.dataset.route);
     });
   });
 
-  dom.accountMenuButton.addEventListener("click", (event) => {
+  dom.accountMenuButton?.addEventListener("click", (event) => {
     event.stopPropagation();
     if (!state.user) {
       openAccountOverlay("login");
@@ -536,8 +538,8 @@ function bindEvents() {
     });
   });
 
-  dom.accountOverlayBackdrop.addEventListener("click", closeAccountOverlay);
-  dom.accountOverlayClose.addEventListener("click", closeAccountOverlay);
+  dom.accountOverlayBackdrop?.addEventListener("click", closeAccountOverlay);
+  dom.accountOverlayClose?.addEventListener("click", closeAccountOverlay);
 
   dom.profileSyncButton.addEventListener("click", async () => {
     if (state.publicRoute && !isViewingOwnProfile()) {
@@ -553,6 +555,7 @@ function bindEvents() {
   });
 
   dom.exportProgressButton.addEventListener("click", exportProgressPng);
+  dom.leaderboardRefreshButton?.addEventListener("click", () => loadLeaderboard({ force: true }));
 
   dom.playerSearchForms.forEach((form) => {
     updateSearchPlaceholder(form);
@@ -612,6 +615,13 @@ function bindEvents() {
     closeAllSearchResults();
   });
 
+  dom.leaderboardRows?.addEventListener("click", (event) => {
+    const row = event.target.closest("[data-public-path]");
+    if (!row) return;
+    window.history.pushState(null, "", row.dataset.publicPath);
+    updateRoute();
+  });
+
   [dom.championCollection, dom.wonChampionStrip].forEach((container) => {
     container.addEventListener("click", (event) => {
       const card = event.target.closest("[data-champion-detail]");
@@ -652,45 +662,45 @@ function bindEvents() {
     openPlayerProfile(friend.dataset.friendProfile, friend.dataset.friendRegion);
   });
 
-  dom.authSwitches.forEach((switchButton) => {
+  dom.authSwitches?.forEach((switchButton) => {
     switchButton.addEventListener("click", () => setAuthTab(switchButton.dataset.authSwitch));
   });
 
-  dom.loginForm.addEventListener("submit", async (event) => {
+  dom.loginForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await submitAuthForm(dom.loginForm, "/api/auth/login", "Zalogowano.");
   });
 
-  dom.registerForm.addEventListener("submit", async (event) => {
+  dom.registerForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await submitAuthForm(dom.registerForm, "/api/auth/register", "Utworzono konto.");
   });
 
-  dom.resetPasswordForm.addEventListener("submit", async (event) => {
+  dom.resetPasswordForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await requestPasswordReset();
   });
 
-  dom.confirmResetForm.addEventListener("submit", async (event) => {
+  dom.confirmResetForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await confirmPasswordReset();
   });
 
-  dom.riotProfileForm.addEventListener("submit", async (event) => {
+  dom.riotProfileForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
     await saveRiotProfile();
   });
 }
 
 function handleBrandHomeClick() {
-  if (state.user) {
-    goToOwnProfile();
-    return;
-  }
-
-  const input = document.querySelector(".top-player-search input[name='riotId']")
-    || document.querySelector(".landing-player-search input[name='riotId']");
-  input?.focus();
+  window.history.pushState(null, "", "/");
+  state.publicRoute = null;
+  state.publicProfile = null;
+  state.activeMatchId = "";
+  updateRoute();
+  requestAnimationFrame(() => {
+    document.querySelector(".landing-player-search input[name='riotId']")?.focus();
+  });
 }
 
 function goToOwnProfile() {
@@ -707,15 +717,17 @@ function goToOwnProfile() {
 }
 
 function toggleAccountDropdown() {
+  if (!dom.accountMenu || !dom.accountMenuButton) return;
   const isOpen = dom.accountMenu.classList.toggle("is-open");
   dom.accountDropdown?.setAttribute("aria-hidden", String(!isOpen));
   dom.accountMenuButton.setAttribute("aria-expanded", String(isOpen));
 }
 
 function closeAccountDropdown() {
+  if (!dom.accountMenu) return;
   dom.accountMenu.classList.remove("is-open");
   dom.accountDropdown?.setAttribute("aria-hidden", "true");
-  if (!dom.accountOverlay.classList.contains("is-open")) {
+  if (!dom.accountOverlay?.classList.contains("is-open")) {
     dom.accountMenuButton.setAttribute("aria-expanded", "false");
   }
 }
@@ -724,7 +736,8 @@ function setActiveRoute(route) {
   state.activeRoute = route;
   document.body.classList.toggle("is-public-route", Boolean(state.publicRoute));
   document.body.classList.toggle("is-guest-home", !state.user && route === "dashboard" && !state.publicRoute);
-  document.querySelectorAll(".nav-link").forEach((link) => {
+  document.body.classList.toggle("is-leaderboard-route", route === "leaderboard");
+  document.querySelectorAll(".nav-link, .top-nav-link").forEach((link) => {
     link.classList.toggle("is-active", link.dataset.route === route);
   });
   document.querySelectorAll(".view").forEach((view) => {
@@ -733,6 +746,7 @@ function setActiveRoute(route) {
 }
 
 function setAuthTab(tabName) {
+  if (!dom.accountTitle) return;
   const titleByTab = {
     login: "Zaloguj",
     register: "Rejestracja",
@@ -750,11 +764,12 @@ function setAuthTab(tabName) {
 }
 
 function openAccountOverlay(tabName = "login") {
+  if (!dom.accountOverlay) return;
   closeAccountDropdown();
   if (!state.user) setAuthTab(tabName === "profile" ? "login" : tabName);
   dom.accountOverlay.classList.add("is-open");
   dom.accountOverlay.setAttribute("aria-hidden", "false");
-  dom.accountMenuButton.setAttribute("aria-expanded", "true");
+  dom.accountMenuButton?.setAttribute("aria-expanded", "true");
   requestAnimationFrame(() => {
     const target = state.user
       ? dom.riotGameName
@@ -923,10 +938,11 @@ function renderDetailStat(label, value) {
 }
 
 function closeAccountOverlay() {
+  if (!dom.accountOverlay) return;
   dom.accountOverlay.classList.remove("is-open");
   dom.accountOverlay.setAttribute("aria-hidden", "true");
   closeAccountDropdown();
-  dom.accountMenuButton.setAttribute("aria-expanded", "false");
+  dom.accountMenuButton?.setAttribute("aria-expanded", "false");
   if (window.location.hash.startsWith("#account")) {
     window.history.replaceState(null, "", `#${state.activeRoute || "dashboard"}`);
   }
@@ -1122,6 +1138,16 @@ function friendKey(region, parsed) {
 }
 
 function updateRoute() {
+  if (isLeaderboardPath()) {
+    closeAccountOverlay();
+    state.publicRoute = null;
+    state.activeMatchId = "";
+    setActiveRoute("leaderboard");
+    renderResetTokenView();
+    void loadLeaderboard();
+    return;
+  }
+
   const publicRoute = parsePublicRoute();
   if (publicRoute) {
     closeAccountOverlay();
@@ -1153,25 +1179,32 @@ function updateRoute() {
     return;
   }
   if (route === "account") {
-    setActiveRoute(state.activeRoute || "dashboard");
-    openAccountOverlay(token || "login");
+    window.history.replaceState(null, "", "/");
+    state.publicRoute = null;
+    state.activeMatchId = "";
+    setActiveRoute("dashboard");
     renderResetTokenView();
     return;
   }
   closeAccountOverlay();
   state.activeMatchId = "";
-  const knownRoute = document.querySelector(`[data-view="${route}"]`) ? route : "dashboard";
+  const knownRoute = document.querySelector(`[data-view="${route}"]`) && route !== "friends" ? route : "dashboard";
   setActiveRoute(knownRoute);
   renderResetTokenView();
 }
 
 function parsePublicRoute() {
   const segments = window.location.pathname.split("/").filter(Boolean);
+  if (segments[0] === "leaderboard") return null;
   if (segments.length < 2 || segments[0].includes(".")) return null;
   return {
     region: segments[0],
     slug: safeDecode(segments.slice(1).join("/")),
   };
+}
+
+function isLeaderboardPath() {
+  return window.location.pathname.replace(/\/+$/, "") === "/leaderboard";
 }
 
 async function loadPublicProfile(route, options = {}) {
@@ -1240,6 +1273,43 @@ async function loadPublicProfile(route, options = {}) {
   render();
 }
 
+async function loadLeaderboard(options = {}) {
+  if (!state.backendAvailable && !options.force) {
+    renderLeaderboard();
+    return;
+  }
+  if (state.leaderboard.loading) return;
+  if (state.leaderboard.rows.length && !options.force) {
+    renderLeaderboard();
+    return;
+  }
+
+  state.leaderboard = {
+    ...state.leaderboard,
+    loading: true,
+    error: "",
+  };
+  renderLeaderboard();
+
+  try {
+    const data = await apiRequest("/api/leaderboard?limit=50", { timeoutMs: 60000 });
+    state.leaderboard = {
+      loading: false,
+      error: "",
+      rows: Array.isArray(data.rows) ? data.rows : [],
+      updatedAt: data.updatedAt || new Date().toISOString(),
+    };
+  } catch (error) {
+    state.leaderboard = {
+      ...state.leaderboard,
+      loading: false,
+      error: error.message,
+    };
+  }
+
+  renderLeaderboard();
+}
+
 function syncFiltersFromDom() {
   // Collection filters are owned by the Wygrane view.
 }
@@ -1258,6 +1328,7 @@ function render() {
   renderChampionCollection(matches);
   renderMatchDetailPage();
   renderPublicProfile();
+  renderLeaderboard();
   renderAccount();
   renderResetTokenView();
 }
@@ -1301,8 +1372,8 @@ function renderProfileHero(matches) {
     : profile || state.publicRoute
       ? ""
       : state.language === "en"
-        ? "Log in and save League profile to sync."
-        : "Zaloguj się i zapisz konto League, żeby synchronizować.";
+        ? "Search a player profile to sync public Arena data."
+        : "Wyszukaj profil gracza, zeby synchronizowac publiczne dane Areny.";
 }
 
 function renderVictoryProgress(matches) {
@@ -1320,7 +1391,97 @@ function renderVictoryProgress(matches) {
   dom.victoryProgress.setAttribute("aria-label", `${completed} / ${total} ${t("common.championsWon")}`);
 }
 
+function renderLeaderboard() {
+  if (!dom.leaderboardRows || !dom.leaderboardPodium) return;
+  const { rows, loading, error } = state.leaderboard;
+
+  if (dom.leaderboardRefreshButton) {
+    dom.leaderboardRefreshButton.disabled = loading;
+    dom.leaderboardRefreshButton.classList.toggle("is-syncing", loading);
+    dom.leaderboardRefreshButton.textContent = loading
+      ? state.language === "en" ? "Refreshing..." : "Odswiezam..."
+      : state.language === "en" ? "Refresh" : "Odswiez";
+  }
+
+  if (loading && !rows.length) {
+    dom.leaderboardPodium.replaceChildren(emptyState(
+      state.language === "en" ? "Loading leaderboard." : "Laduje leaderboard.",
+      state.language === "en" ? "Synced profiles will appear here." : "Zsynchronizowane profile pojawia sie tutaj.",
+    ));
+    dom.leaderboardRows.replaceChildren();
+    return;
+  }
+
+  if (error && !rows.length) {
+    dom.leaderboardPodium.replaceChildren();
+    dom.leaderboardRows.replaceChildren(emptyState(error, state.backendAvailable ? "" : "Uruchom node server.js."));
+    return;
+  }
+
+  if (!rows.length) {
+    dom.leaderboardPodium.replaceChildren();
+    dom.leaderboardRows.replaceChildren(emptyState(
+      state.language === "en" ? "No synced profiles yet." : "Nie ma jeszcze zsynchronizowanych profili.",
+      state.language === "en" ? "Search and sync a profile first." : "Najpierw wyszukaj i zsynchronizuj profil.",
+    ));
+    return;
+  }
+
+  dom.leaderboardPodium.replaceChildren(...renderLeaderboardPodium(rows.slice(0, 3)));
+  dom.leaderboardRows.replaceChildren(renderLeaderboardHeader(), ...rows.map(renderLeaderboardRow));
+}
+
+function renderLeaderboardHeader() {
+  const root = el("div", "leaderboard-row leaderboard-header");
+  root.append(
+    el("span", "", "Rank"),
+    el("span", "", ""),
+    el("span", "", state.language === "en" ? "Player" : "Gracz"),
+    el("span", "", "Score"),
+    el("span", "", state.language === "en" ? "Champions" : "Championi"),
+    el("span", "", state.language === "en" ? "Wins" : "Winy"),
+    el("span", "", "Top 4"),
+    el("span", "", state.language === "en" ? "Matches" : "Mecze"),
+  );
+  return root;
+}
+
+function renderLeaderboardPodium(rows) {
+  const ordered = [rows[1], rows[0], rows[2]].filter(Boolean);
+  return ordered.map((row) => {
+    const card = el("button", `leaderboard-podium-card is-rank-${row.rank}`);
+    card.type = "button";
+    card.dataset.publicPath = row.publicPath;
+    card.append(
+      el("span", "leaderboard-rank-crown", row.rank === 1 ? "#1" : `#${row.rank}`),
+      imageIcon(row.profileIconUrl || DEFAULT_AUTH_AVATAR, "leaderboard-avatar"),
+      el("strong", "", row.gameName || "Unknown"),
+      el("span", "", `#${row.tagLine || ""}`),
+      el("em", "", `${row.championWins || 0} / ${CHAMPIONS.length}`),
+    );
+    return card;
+  });
+}
+
+function renderLeaderboardRow(row) {
+  const root = el("button", "leaderboard-row");
+  root.type = "button";
+  root.dataset.publicPath = row.publicPath;
+  root.append(
+    el("strong", "leaderboard-rank", `#${row.rank}`),
+    imageIcon(row.profileIconUrl || DEFAULT_AUTH_AVATAR, "leaderboard-row-avatar"),
+    el("span", "leaderboard-player", `${row.gameName}#${row.tagLine}`),
+    el("strong", "leaderboard-score", String(row.score || 0)),
+    el("span", "", String(row.championWins || 0)),
+    el("span", "", String(row.wins || 0)),
+    el("span", "", String(row.top4 || 0)),
+    el("span", "", String(row.matches || 0)),
+  );
+  return root;
+}
+
 function renderAccount() {
+  if (!dom.accountMenuLabel || !dom.accountOverlay) return;
   dom.accountMenuLabel.textContent = state.user ? state.user.displayName : "Konto";
   dom.accountOverlay.classList.toggle("is-profile-mode", Boolean(state.user));
   updateAccountAvatars();
@@ -1517,6 +1678,7 @@ function renderPublicChampionCard(stat, caption, complete = true) {
 function updateAccountAvatars() {
   const src = getAccountAvatarSrc();
   [dom.accountAvatar, dom.accountDialogAvatar, dom.profileAvatar, dom.profileHeroAvatar].forEach((image) => {
+    if (!image) return;
     image.src = src;
     image.classList.toggle("is-hidden", !src);
   });

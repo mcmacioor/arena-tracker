@@ -315,7 +315,7 @@ try {
     cdp,
     `getComputedStyle(document.querySelector(".profile-hero")).display !== "none"
       && getComputedStyle(document.querySelector(".profile-tabs")).display !== "none"
-      && getComputedStyle(document.querySelector("[data-route='friends']")).display === "none"`,
+      && document.querySelector("[data-route='friends']") == null`,
   );
   assert(publicChromeVisible, "Public profiles should show the shared profile hero and tabs without the private group tab");
   await evalPage(cdp, `openMatchDetail("smoke-1")`);
@@ -328,51 +328,63 @@ try {
   );
   assert(publicMatchDetailFound, "Public profile match detail should render the selected match");
 
+  const accountMenuRemoved = await evalPage(cdp, `document.querySelector("#accountMenuButton") == null`);
+  assert(accountMenuRemoved, "Login/account menu should be removed from the visible app chrome");
+
+  const brandReturnsHome = await evalPage(
+    cdp,
+    `(() => {
+      history.pushState(null, "", "/euw/Smoke-Tester#dashboard");
+      updateRoute();
+      document.querySelector("#brandHomeButton").click();
+      return location.pathname === "/" && document.body.classList.contains("is-guest-home");
+    })()`,
+  );
+  assert(brandReturnsHome, "ArenaTracker brand should return to the landing search");
+
   await evalPage(
     cdp,
     `(() => {
-      history.pushState(null, "", "/#friends");
-      state.publicRoute = null;
-      state.publicProfile = null;
+      history.pushState(null, "", "/leaderboard");
       updateRoute();
+      state.leaderboard = {
+        loading: false,
+        error: "",
+        updatedAt: new Date().toISOString(),
+        rows: [{
+          rank: 1,
+          gameName: "Smoke",
+          tagLine: "Tester",
+          region: "euw1",
+          publicPath: "/euw/Smoke-Tester",
+          profileIconUrl: window.ARENA_GAME_DATA.championIcons.Malphite,
+          score: 244,
+          championWins: 2,
+          wins: 2,
+          top4: 3,
+          matches: 4,
+        }],
+      };
+      renderLeaderboard();
     })()`,
   );
-  await evalPage(cdp, `location.hash = "friends"`);
-  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
-  const friendsText = await evalPage(cdp, `document.querySelector("#friendRanking").innerText`);
-  assert(friendsText.includes("Zaloguj"), "Friend ranking should require login");
-
-  await evalPage(cdp, `document.querySelector("#accountMenuButton").click()`);
-  const accountOverlayOpen = await evalPage(
+  const leaderboardVisible = await evalPage(
     cdp,
-    `document.querySelector("#accountOverlay").classList.contains("is-open")`,
+    `document.querySelector('[data-view="leaderboard"]').classList.contains("is-visible")
+      && document.querySelector("#leaderboardRows").innerText.includes("Smoke#Tester")`,
   );
-  assert(accountOverlayOpen, "Account button should open the account modal");
-  const profileHidden = await evalPage(
+  assert(leaderboardVisible, "Leaderboard view should render cached public profiles");
+  const leaderboardClickNavigates = await evalPage(
     cdp,
-    `document.querySelector("#profilePanel").classList.contains("is-hidden")`,
+    `(() => {
+      document.querySelector("#leaderboardRows [data-public-path]").click();
+      return location.pathname === "/euw/Smoke-Tester";
+    })()`,
   );
-  assert(profileHidden, "Riot profile panel should stay hidden while logged out");
-  const authAvatar = await evalPage(cdp, `document.querySelector("#accountDialogAvatar").src`);
-  assert(authAvatar.includes("Malphite.png"), "Logged-out auth avatar should use Malphite");
-  await evalPage(cdp, `document.querySelector("#loginEmail").value = "wrong@example.com"`);
-  await evalPage(cdp, `document.querySelector("#loginPassword").value = "badpass123"`);
-  await evalPage(cdp, `document.querySelector("#loginForm").requestSubmit()`);
-  await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 750))`, true);
-  const loginErrorVisible = await evalPage(
-    cdp,
-    `document.querySelector("#accountStatus").classList.contains("is-error") && !document.querySelector("#accountStatus").classList.contains("is-hidden")`,
-  );
-  assert(loginErrorVisible, "Login errors should be shown inside the account modal");
-  await evalPage(cdp, `document.querySelector('[data-auth-switch="reset"]').click()`);
-  const resetVisible = await evalPage(
-    cdp,
-    `document.querySelector('#resetPasswordForm').classList.contains('is-visible')`,
-  );
-  assert(resetVisible, "Reset password tab did not become visible");
+  assert(leaderboardClickNavigates, "Leaderboard rows should open public profiles");
 
   if (errors.length) throw new Error(`Browser errors: ${errors.join("; ")}`);
-  console.log("Smoke test passed: data aliases, filters, details and account modal.");
+  console.log("Smoke test passed: public profiles, details, champions and leaderboard.");
 } finally {
   browserProcess.kill();
 }
