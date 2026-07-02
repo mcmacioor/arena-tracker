@@ -16,10 +16,7 @@
       <main class="main">
         <header class="topbar" aria-label="Konto użytkownika">
           <button class="brand top-brand" id="brandHomeButton" type="button" aria-label="ArenaTracker">
-            <span class="brand-mark" aria-hidden="true">AT</span>
-            <span>
-              <strong>ArenaTracker</strong>
-            </span>
+            <img class="brand-logo" src="/assets/arena-tracker-logo.png" alt="" />
           </button>
           <form class="player-search-form top-player-search" data-player-search-form data-search-action="open">
             <select name="region" aria-label="Serwer">
@@ -53,11 +50,8 @@
         </header>
 
         <section class="landing-search" id="landingSearch" aria-labelledby="landingSearchTitle">
-          <div class="landing-logo" aria-hidden="true">
-            <span>LoL</span>
-            <strong>ArenaTracker</strong>
-          </div>
-          <h1 id="landingSearchTitle">Znajdź profil Arena</h1>
+          <h1 id="landingSearchTitle">Znajdź profil</h1>
+          <p class="landing-subtitle">Śledź wygranych championów, historię Areny i postęp w wyzwaniu.</p>
           <form class="player-search-form landing-player-search" data-player-search-form data-search-action="open">
             <select name="region" aria-label="Serwer">
               <option value="euw1">EUW</option>
@@ -91,9 +85,6 @@
           <div class="profile-hero-actions">
             <button class="primary-action" id="profileSyncButton" type="button" data-i18n="actions.sync">
               Synchronizuj
-            </button>
-            <button class="ghost-action" id="exportProgressButton" type="button" data-i18n="actions.exportPng">
-              Eksport PNG
             </button>
           </div>
           <div class="profile-sync-note" id="profileSyncNote"></div>
@@ -217,10 +208,7 @@
           <div class="view" id="leaderboardView" data-view="leaderboard">
             <section class="leaderboard-page" aria-labelledby="leaderboardTitle">
               <div class="leaderboard-hero">
-                <div class="landing-logo leaderboard-logo" aria-hidden="true">
-                  <span>LoL</span>
-                  <strong>ArenaTracker</strong>
-                </div>
+                <img class="leaderboard-logo" src="/assets/arena-tracker-logo.png" alt="" />
                 <h1 id="leaderboardTitle">Leaderboard</h1>
                 <div class="leaderboard-podium" id="leaderboardPodium"></div>
               </div>
@@ -533,7 +521,6 @@
       </div>
     </template>
     <script src="/assets/game-data.js"></script>
-    <script src="/assets/external-builds.js"></script>
     <script src="/app.js" defer></script>
   </body>
 </html>

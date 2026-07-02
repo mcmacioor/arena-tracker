@@ -9,7 +9,6 @@ const CHAMPION_KEYS = GAME_DATA.championKeys || {};
 const CHAMPION_ALIASES = GAME_DATA.championAliases || {};
 const ITEM_DETAILS = GAME_DATA.itemDetails || {};
 const AUGMENT_DETAILS = GAME_DATA.augmentDetails || {};
-const EXTERNAL_BUILDS = globalThis.ARENA_EXTERNAL_BUILDS || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SEASON_SYNC_LIMIT = 500;
@@ -18,7 +17,6 @@ const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
 const translations = {
   pl: {
     "actions.sync": "Synchronizuj",
-    "actions.exportPng": "Eksport PNG",
     "actions.coffee": "Postaw kawę",
     "settings.language": "Język",
     "nav.history": "Historia",
@@ -86,7 +84,6 @@ const translations = {
   },
   en: {
     "actions.sync": "Sync",
-    "actions.exportPng": "Export PNG",
     "actions.coffee": "Buy coffee",
     "settings.language": "Language",
     "nav.history": "History",
@@ -393,7 +390,6 @@ function cacheDom() {
     profileHeroMeta: document.getElementById("profileHeroMeta"),
     profileSyncButton: document.getElementById("profileSyncButton"),
     profileSyncNote: document.getElementById("profileSyncNote"),
-    exportProgressButton: document.getElementById("exportProgressButton"),
     languageSelect: document.getElementById("languageSelect"),
     languageFlag: document.getElementById("languageFlag"),
     accountOverlay: document.getElementById("accountOverlay"),
@@ -558,7 +554,6 @@ function bindEvents() {
     await loadPublicProfile(state.publicRoute, { force: true });
   });
 
-  dom.exportProgressButton.addEventListener("click", exportProgressPng);
   dom.leaderboardRefreshButton?.addEventListener("click", () => loadLeaderboard({ force: true }));
 
   dom.playerSearchForms.forEach((form) => {
@@ -812,7 +807,7 @@ function openChampionDetail(champion) {
           );
           return row;
         })
-      : [el("article", "detail-history-row", t("champions.noSavedGames"))]),
+      : [el("article", "detail-history-row is-empty", t("champions.noSavedGames"))]),
   );
   dom.championDetailOverlay.classList.add("is-open");
   dom.championDetailOverlay.setAttribute("aria-hidden", "false");
@@ -823,237 +818,27 @@ function closeChampionDetail() {
   dom.championDetailOverlay.setAttribute("aria-hidden", "true");
 }
 
-function renderChampionBuild(champion, matches = []) {
+function renderChampionBuild(champion) {
   if (!dom.championDetailBuild) return;
-  const build = createChampionBuild(champion, matches);
-  const externalBuild = build.external;
+  const championName = canonicalChampionName(champion) || champion;
+  const url = `https://www.metasrc.com/lol/arena/build/${metasrcChampionSlug(championName)}`;
   dom.championDetailBuild.classList.remove("is-hidden");
-
-  const title = state.language === "en" ? "Champion build" : "Build championa";
-  const sourceLabel = state.language === "en" ? "Source" : "Źródło";
-  const root = el("section", "external-build-card");
-  const header = el("div", "external-build-head");
-  const headerCopy = el("div", "external-build-title");
-  headerCopy.append(
-    el("p", "eyebrow", externalBuild?.patch ? `${t("common.patch")} ${externalBuild.patch}` : title),
-    el("h3", "", `${canonicalChampionName(champion) || champion} ${title}`),
+  const link = el(
+    "a",
+    "metasrc-build-link",
+    state.language === "en" ? "Check build on MetaSRC" : "Sprawdź build na MetaSRC",
   );
-  header.append(headerCopy);
-  if (externalBuild?.sourceUrl) {
-    const source = el(
-      "a",
-      "external-build-source",
-      `${sourceLabel}: ${externalBuild.source || "MetaSRC"}`,
-    );
-    source.href = externalBuild.sourceUrl;
-    source.target = "_blank";
-    source.rel = "noreferrer";
-    header.append(source);
-  }
-
-  const metrics = el("div", "external-build-metrics");
-  [
-    [t("common.games"), build.games || externalBuild?.games],
-    [t("common.wins"), build.wins || ""],
-    [t("champions.avgPlace"), build.avg ? formatAveragePlacement(build.avg) : externalBuild?.avgPlacement],
-    [state.language === "en" ? "Top 3" : "Top 3", externalBuild?.top3Rate],
-    [state.language === "en" ? "Tier" : "Tier", externalBuild?.tier],
-  ].forEach(([label, value]) => {
-    if (value !== "" && value !== undefined && value !== null) {
-      metrics.append(renderExternalBuildMetric(label, value));
-    }
-  });
-
-  const grid = el("div", "external-build-grid");
-  build.blocks
-    .map((block) => renderExternalBuildBlock(block.title, block.entries, block.emptyLabel))
-    .filter(Boolean)
-    .forEach((block) => grid.append(block));
-
-  root.append(header, metrics);
-  if (build.note) root.append(el("p", "external-build-note", build.note));
-  root.append(grid);
-  dom.championDetailBuild.replaceChildren(root);
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  dom.championDetailBuild.replaceChildren(link);
 }
 
-function createChampionBuild(champion, matches = []) {
-  const external = getExternalChampionBuild(champion);
-  const localAugments = aggregateChampionAssets(matches, "augments", null, 6);
-  const localBoots = aggregateChampionAssets(matches, "items", isBootAsset, 4);
-  const localBuild = aggregateChampionAssets(
-    matches,
-    "items",
-    (asset) => !isBootAsset(asset) && !isPrismaticItem(asset),
-    8,
-  );
-  const localPrismatic = aggregateChampionAssets(matches, "items", isPrismaticItem, 5);
-  const externalAugments = externalEntries(external?.augments?.overall, "augment", 6);
-  const externalBoots = externalEntries(external?.boots, "item", 4, isBootAsset);
-  const externalBuild = externalEntries(
-    external?.itemsByRound,
-    "item",
-    8,
-    (asset) => !isBootAsset(asset) && !isPrismaticItem(asset),
-  );
-  const externalPrismatic = externalEntries(external?.prismaticItems, "item", 5, isPrismaticItem);
-  const games = matches.length;
-  const placements = matches.map((match) => match.placement).filter(Boolean);
-  const wins = matches.filter((match) => match.placement === 1).length;
-  const emptyLabel = state.language === "en"
-    ? "No build data for this champion yet."
-    : "Brak danych buildów dla tego championa.";
-
-  return {
-    external,
-    games,
-    wins,
-    avg: average(placements),
-    note: external
-      ? state.language === "en"
-        ? "Categories use your synced matches first. MetaSRC data fills gaps when local games are missing."
-        : "Kategorie najpierw korzystają z Twoich zsynchronizowanych meczów. Dane MetaSRC uzupełniają braki."
-      : "",
-    blocks: [
-      {
-        title: state.language === "en" ? "Best augments" : "Najlepsze augmenty",
-        entries: localAugments.length ? localAugments : externalAugments,
-        emptyLabel,
-      },
-      {
-        title: state.language === "en" ? "Boots" : "Jakie buty",
-        entries: localBoots.length ? localBoots : externalBoots,
-        emptyLabel,
-      },
-      {
-        title: state.language === "en" ? "Build" : "Jaki build",
-        entries: localBuild.length ? localBuild : externalBuild,
-        emptyLabel,
-      },
-      {
-        title: state.language === "en" ? "Best prismatic items" : "Najlepsze pryzmatyczne",
-        entries: localPrismatic.length ? localPrismatic : externalPrismatic,
-        emptyLabel,
-      },
-    ],
-  };
-}
-
-function aggregateChampionAssets(matches, property, filter, limit) {
-  const grouped = new Map();
-  matches.forEach((match) => {
-    const seen = new Set();
-    (Array.isArray(match[property]) ? match[property] : [])
-      .map(normalizeAssetTag)
-      .filter((asset) => asset?.name || asset?.id)
-      .filter((asset) => !filter || filter(asset))
-      .forEach((asset) => {
-        const key = assetStableKey(asset);
-        if (!key || seen.has(key)) return;
-        seen.add(key);
-        if (!grouped.has(key)) {
-          grouped.set(key, {
-            asset,
-            games: 0,
-            wins: 0,
-            placementTotal: 0,
-          });
-        }
-        const stat = grouped.get(key);
-        stat.asset = { ...stat.asset, ...asset };
-        stat.games += 1;
-        stat.placementTotal += match.placement || ARENA_MAX_PLACEMENT;
-        if (match.placement === 1) stat.wins += 1;
-      });
-  });
-
-  return [...grouped.values()]
-    .map((entry) => ({
-      ...entry.asset,
-      source: "local",
-      games: entry.games,
-      wins: entry.wins,
-      avgPlacement: entry.games ? entry.placementTotal / entry.games : 0,
-    }))
-    .sort((a, b) => {
-      const avgDiff = Number(a.avgPlacement || ARENA_MAX_PLACEMENT) - Number(b.avgPlacement || ARENA_MAX_PLACEMENT);
-      return b.wins - a.wins
-        || avgDiff
-        || b.games - a.games
-        || assetName(a).localeCompare(assetName(b));
-    })
-    .slice(0, limit);
-}
-
-function externalEntries(entries = [], kind, limit, filter) {
-  if (!Array.isArray(entries)) return [];
-  return entries
-    .map((entry) => ({ ...normalizeAssetTag(entry), ...entry, source: "external", kind }))
-    .filter((entry) => !filter || filter(entry))
-    .slice(0, limit);
-}
-
-function assetStableKey(asset) {
-  return cleanText(asset.id) || normalizeLookupKey(asset.names?.en || asset.name || assetName(asset));
-}
-
-function isBootAsset(asset) {
-  const tier = cleanText(asset.tier).toLowerCase();
-  if (tier === "boots") return true;
-  const key = normalizeLookupKey(asset.names?.en || asset.name || assetName(asset));
-  return /boots|shoes|greaves|steelcaps|treads|swifties|swiftmarch|lucidity|sorcerer/.test(key);
-}
-
-function isPrismaticItem(asset) {
-  const tier = cleanText(asset.tier).toLowerCase();
-  if (tier === "prismatic") return true;
-  const id = cleanText(asset.id);
-  return id.startsWith("44") || ["228002"].includes(id);
-}
-
-function getExternalChampionBuild(champion) {
-  const championName = canonicalChampionName(champion);
-  const key = normalizeLookupKey(championName || champion);
-  return EXTERNAL_BUILDS[key] || EXTERNAL_BUILDS[String(championName || champion).toLowerCase()] || null;
-}
-
-function renderExternalBuildMetric(label, value) {
-  const root = el("article", "external-build-metric");
-  root.append(el("span", "", label), el("strong", "", String(value)));
-  return root;
-}
-
-function renderExternalBuildBlock(title, entries = [], emptyLabel = "") {
-  if ((!Array.isArray(entries) || !entries.length) && !emptyLabel) return null;
-  const root = el("section", "external-build-block");
-  const list = el("div", "external-build-assets");
-  if (Array.isArray(entries) && entries.length) {
-    entries.forEach((entry) => list.append(renderExternalBuildAsset(entry)));
-  } else {
-    list.append(el("p", "external-build-empty", emptyLabel));
-  }
-  root.append(el("h4", "", title), list);
-  return root;
-}
-
-function renderExternalBuildAsset(entry) {
-  const root = el("article", "external-build-asset");
-  const tag = renderTagPill(entry);
-  const meta = entry.source === "local"
-    ? [
-        entry.games ? `${entry.games} ${state.language === "en" ? "games" : "gier"}` : "",
-        entry.wins ? `${entry.wins} ${t("common.win")}` : "",
-        entry.avgPlacement ? `${t("common.average")} #${formatAveragePlacement(entry.avgPlacement)}` : "",
-      ]
-    : [
-        entry.rating ? `Tier ${entry.rating}` : "",
-        entry.pickRate ? `${entry.pickRate} ${state.language === "en" ? "pick" : "wyb."}` : "",
-        entry.buyRate ? `${entry.buyRate} ${state.language === "en" ? "buy" : "kup."}` : "",
-        entry.games ? `${entry.games} ${state.language === "en" ? "games" : "gier"}` : "",
-      ];
-  root.append(tag);
-  const visibleMeta = meta.filter(Boolean);
-  if (visibleMeta.length) root.append(el("span", "external-build-meta", visibleMeta.join(" · ")));
-  return root;
+function metasrcChampionSlug(champion) {
+  return normalizeLookupKey(champion)
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function openMatchDetail(matchId) {
@@ -1630,7 +1415,6 @@ function renderProfileHero(matches) {
   dom.profileSyncButton.textContent = isSyncing
     ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
     : t("actions.sync");
-  dom.exportProgressButton.disabled = !matches.length;
   dom.profileSyncNote.textContent = publicState?.error
     ? publicState.error
     : isSyncing
@@ -2265,7 +2049,7 @@ function renderHistoryMatches(matches) {
 }
 
 function renderMatchCard(match, options) {
-  const root = el("button", "match-card");
+  const root = el("button", `match-card is-place-${match.placement}`);
   root.type = "button";
   root.dataset.matchDetail = match.id;
   const topLine = el("div", "match-topline");

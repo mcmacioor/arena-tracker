@@ -199,25 +199,14 @@ try {
   assert(detailOpen, "Champion detail modal should open after clicking a champion");
   const detailText = await evalPage(cdp, `document.querySelector("#championDetailOverlay").innerText`);
   assert(detailText.includes("Średnie miejsce"), "Champion detail should include average placement");
-  const generatedBuildCategories = await evalPage(
+  const metasrcBuildLink = await evalPage(
     cdp,
     `(() => {
-      const blocks = [...document.querySelectorAll("#championDetailBuild .external-build-block h4")]
-        .map((node) => node.textContent.trim());
-      return document.querySelector("#championDetailBuild .external-build-card") != null
-        && blocks.length === 4
-        && !blocks.some((text) => /Round|Runda/.test(text));
+      const link = document.querySelector("#championDetailBuild .metasrc-build-link");
+      return link != null && link.href.includes("metasrc.com/lol/arena/build/vi");
     })()`,
   );
-  assert(generatedBuildCategories, "Champion detail should generate build categories from match data");
-  await evalPage(cdp, `document.querySelector("#championDetailClose").click()`);
-  await evalPage(cdp, `openChampionDetail("Lissandra")`);
-  const externalBuildVisible = await evalPage(
-    cdp,
-    `document.querySelector("#championDetailBuild .external-build-card") != null
-      && document.querySelector("#championDetailBuild a")?.href.includes("metasrc.com")`,
-  );
-  assert(externalBuildVisible, "Champion detail should show manually maintained external builds");
+  assert(metasrcBuildLink, "Champion detail should show a MetaSRC build link");
   await evalPage(cdp, `document.querySelector("#championDetailClose").click()`);
 
   await evalPage(cdp, `location.hash = "matches"`);
