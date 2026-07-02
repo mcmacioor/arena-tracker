@@ -1343,7 +1343,7 @@ textarea:focus {
 .progress-head {
   position: relative;
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr) minmax(180px, 0.8fr);
+  grid-template-columns: 56px minmax(0, 1fr);
   align-items: center;
   gap: 16px;
   min-height: 76px;
@@ -1375,11 +1375,13 @@ textarea:focus {
 }
 
 .progress-head strong {
-  grid-column: 3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   display: grid;
   justify-items: center;
-  justify-self: center;
   margin-top: 0;
+  transform: translate(-50%, -50%);
   font-family: "Cascadia Mono", Consolas, monospace;
 }
 
@@ -1600,9 +1602,25 @@ textarea:focus {
 }
 
 .detail-stat {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: 8px;
-  padding: 12px;
+  min-height: 86px;
+  align-content: center;
+  padding: 14px;
+  background:
+    radial-gradient(circle at 88% 12%, rgb(201 170 98 / 12%), transparent 34%),
+    linear-gradient(145deg, #111313, #070808);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
+}
+
+.detail-stat::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), rgb(135 212 141 / 58%));
+  content: "";
 }
 
 .detail-stat span {
@@ -1612,7 +1630,9 @@ textarea:focus {
 }
 
 .detail-stat strong {
-  font-size: 1.08rem;
+  color: #fff9df;
+  font-size: 1.22rem;
+  text-shadow: 0 8px 24px rgb(201 170 98 / 16%);
 }
 
 .champion-build-section {
@@ -1949,6 +1969,9 @@ textarea:focus {
   content: "";
   filter: saturate(1.06) brightness(0.92);
   transform: none;
+  transition:
+    filter 180ms ease,
+    transform 220ms ease;
 }
 
 .champion-pill::after,
@@ -1981,6 +2004,12 @@ textarea:focus {
     0 0 22px rgb(201 170 98 / 16%);
 }
 
+.champion-pill:hover::before,
+.champion-collection-card:hover::before {
+  filter: saturate(1.12) brightness(1.02);
+  transform: scale(1.08);
+}
+
 .champion-collection-card.is-complete {
   border-color: rgb(201 170 98 / 82%);
 }
@@ -2007,11 +2036,11 @@ textarea:focus {
   align-self: end;
   min-width: 0;
   width: 100%;
-  padding: 5px 8px 6px;
+  padding: 4px 8px 5px;
   border-top: 1px solid rgb(255 212 0 / 12%);
   background:
-    linear-gradient(180deg, rgb(14 6 9 / 32%), rgb(12 7 8 / 76%));
-  backdrop-filter: blur(4px);
+    linear-gradient(180deg, rgb(14 6 9 / 20%), rgb(12 7 8 / 72%));
+  backdrop-filter: blur(3px);
   text-align: center;
 }
 
@@ -2522,6 +2551,154 @@ textarea:focus {
   font-weight: 900;
 }
 
+.live-game-page {
+  display: grid;
+  gap: 14px;
+}
+
+.live-game-status {
+  min-height: 0;
+}
+
+.live-status-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 58px;
+  padding: 12px 14px;
+  border: 1px solid #343838;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgb(135 212 141 / 8%), transparent 46%),
+    #0c0d0d;
+}
+
+.live-status-card strong {
+  font-size: 1rem;
+}
+
+.live-status-card span {
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.live-team-list {
+  display: grid;
+  gap: 10px;
+}
+
+.live-team-card {
+  display: grid;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid #343838;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgb(201 170 98 / 7%), transparent 40%),
+    #0a0b0b;
+}
+
+.live-team-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 22px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #202323;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.live-team-head span {
+  color: var(--green);
+}
+
+.live-player-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.live-player-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 6px 9px;
+  align-items: center;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #303434;
+  border-radius: 8px;
+  color: var(--text);
+  background: #0c0d0d;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.live-player-card:hover:not(:disabled) {
+  border-color: rgb(201 170 98 / 48%);
+  background: #111313;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 24%);
+}
+
+.live-player-card:disabled {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.live-player-avatar,
+.live-player-card .champion-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.live-player-copy {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.live-player-copy strong,
+.live-player-copy span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.live-player-copy span {
+  color: var(--muted);
+}
+
+.live-player-facts {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.live-player-facts em {
+  min-height: 20px;
+  padding: 2px 6px;
+  border: 1px solid #2f3434;
+  border-radius: 5px;
+  color: #d4d1c7;
+  background: #101212;
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 850;
+}
+
 .team-detail-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -2939,7 +3116,12 @@ textarea:focus {
   }
 
   .progress-head strong {
-    grid-column: 1;
+    position: static;
+    transform: none;
     font-size: 1rem;
+  }
+
+  .live-player-grid {
+    grid-template-columns: 1fr;
   }
 }

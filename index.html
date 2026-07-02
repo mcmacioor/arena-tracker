@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ArenaTracker</title>
     <meta
       name="description"
-      content="ArenaTracker to minimalistyczny tracker zwycięstw League of Legends Arena."
+      content="ArenaTracker is a minimalist League of Legends Arena wins tracker."
     />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles.css?v=0.5.1" />
   </head>
   <body>
     <div class="app-shell">
       <main class="main">
-        <header class="topbar" aria-label="Konto użytkownika">
+        <header class="topbar" aria-label="ArenaTracker navigation">
           <button class="brand top-brand" id="brandHomeButton" type="button" aria-label="ArenaTracker">
             <img class="brand-logo" src="/assets/arena-tracker-logo.png" alt="" />
           </button>
@@ -28,11 +28,11 @@
               <option value="tr1">TR</option>
             </select>
             <div class="search-field">
-              <input name="riotId" type="search" autocomplete="off" placeholder="Szukaj gracza" />
+              <input name="riotId" type="search" autocomplete="off" placeholder="Game name + #EUW" />
               <div class="search-results" data-search-results></div>
             </div>
           </form>
-          <a class="top-nav-link top-leaderboard-link" href="/leaderboard" data-route="leaderboard">
+          <a class="top-nav-link top-leaderboard-link" href="/leaderboard" data-route="leaderboard" data-i18n="leaderboard.title">
             Leaderboard
           </a>
           <a class="coffee-link top-coffee" href="https://buycoffee.to/" target="_blank" rel="noreferrer">
@@ -40,18 +40,20 @@
             <span data-i18n="actions.coffee">Postaw kawę</span>
           </a>
           <label class="language-switch top-language-switch">
-            <span class="language-label" data-i18n="settings.language">Język</span>
-            <span class="language-flag is-pl" id="languageFlag" aria-hidden="true"></span>
-            <select id="languageSelect" aria-label="Język">
-              <option value="pl">PL</option>
+            <span class="language-label" data-i18n="settings.language">Language</span>
+            <span class="language-flag is-en" id="languageFlag" aria-hidden="true"></span>
+            <select id="languageSelect" aria-label="Language">
               <option value="en">EN</option>
+              <option value="pl">PL</option>
             </select>
           </label>
         </header>
 
         <section class="landing-search" id="landingSearch" aria-labelledby="landingSearchTitle">
-          <h1 id="landingSearchTitle">Znajdź profil</h1>
-          <p class="landing-subtitle">Śledź wygranych championów, historię Areny i postęp w wyzwaniu.</p>
+          <h1 id="landingSearchTitle" data-i18n="landing.title">Find an Arena profile</h1>
+          <p class="landing-subtitle" data-i18n="landing.subtitle">
+            Track champion wins, Arena history, and your progress toward the full collection.
+          </p>
           <form class="player-search-form landing-player-search" data-player-search-form data-search-action="open">
             <select name="region" aria-label="Serwer">
               <option value="euw1">EUW</option>
@@ -62,7 +64,7 @@
               <option value="tr1">TR</option>
             </select>
             <div class="search-field">
-              <input name="riotId" type="search" autocomplete="off" placeholder="Riot ID, np. No Chrystus#2137" />
+              <input name="riotId" type="search" autocomplete="off" placeholder="Game name + #EUW" />
               <div class="search-results" data-search-results></div>
             </div>
           </form>
@@ -94,9 +96,10 @@
           <a class="nav-link" href="#dashboard" data-route="dashboard" data-i18n="tabs.summary">Podsumowanie</a>
           <a class="nav-link" href="#matches" data-route="matches" data-i18n="tabs.history">Historia</a>
           <a class="nav-link" href="#champions" data-route="champions" data-i18n="tabs.wins">Championi</a>
+          <a class="nav-link" href="#live" data-route="live-game" data-i18n="tabs.live">Live game</a>
         </nav>
 
-        <section class="ad-slot profile-ad" aria-label="Reklama">Reklama</section>
+        <section class="ad-slot profile-ad" aria-label="Advertisement" data-i18n="common.ad">Ad</section>
 
         <section class="view-stack">
           <div class="view is-visible" id="dashboardView" data-view="dashboard">
@@ -145,7 +148,9 @@
                   <h2 id="historyTitle" data-i18n="history.title">Historia</h2>
               </div>
               <div class="match-list" id="matchList"></div>
-              <button class="ghost-action show-more-action" id="showMoreMatchesButton" type="button">Pokaż więcej</button>
+              <button class="ghost-action show-more-action" id="showMoreMatchesButton" type="button" data-i18n="actions.showMore">
+                Show more
+              </button>
             </section>
           </div>
 
@@ -217,9 +222,9 @@
                 <div class="panel-head leaderboard-toolbar">
                   <div>
                     <p class="eyebrow" id="leaderboardRegionLabel">Live season</p>
-                    <h2>Ranking profili</h2>
+                    <h2 data-i18n="leaderboard.profiles">Profile ranking</h2>
                   </div>
-                  <button class="ghost-action" id="leaderboardRefreshButton" type="button">OdĹ›wieĹĽ</button>
+                  <button class="ghost-action" id="leaderboardRefreshButton" type="button" data-i18n="actions.refresh">Refresh</button>
                 </div>
                 <div class="leaderboard-table" id="leaderboardRows"></div>
               </section>
@@ -251,17 +256,33 @@
             </section>
           </div>
 
+          <div class="view" id="liveGameView" data-view="live-game">
+            <section class="panel live-game-page" aria-labelledby="liveGameTitle">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="live.eyebrow">Current Arena match</p>
+                  <h2 id="liveGameTitle" data-i18n="live.title">Live game</h2>
+                </div>
+                <button class="ghost-action" id="liveGameRefreshButton" type="button" data-i18n="actions.refresh">
+                  Refresh
+                </button>
+              </div>
+              <div class="live-game-status" id="liveGameStatus"></div>
+              <div class="live-team-list" id="liveGameTeams"></div>
+            </section>
+          </div>
+
           <div class="view public-profile-view" id="publicProfileView" data-view="public-profile">
             <section class="panel public-hero" aria-labelledby="publicProfileTitle">
               <div class="public-profile-head">
                 <img class="profile-avatar" id="publicProfileAvatar" alt="" />
                 <div>
-                  <p class="eyebrow">Publiczny profil</p>
+                  <p class="eyebrow" data-i18n="public.profile">Public profile</p>
                   <h2 id="publicProfileTitle">ArenaTracker</h2>
                   <div class="profile-hero-meta public-profile-meta" id="publicProfileMeta"></div>
                 </div>
                 <div class="public-profile-actions">
-                  <button class="primary-action" id="publicSyncButton" type="button">Synchronizuj</button>
+                  <button class="primary-action" id="publicSyncButton" type="button" data-i18n="actions.sync">Sync</button>
                   <span id="publicSyncStatus"></span>
                 </div>
               </div>
@@ -284,7 +305,7 @@
                 <div class="panel-head">
                   <h2 id="publicWonTitle" data-i18n="progress.title">Wygrani championi</h2>
                   <label class="public-champion-search">
-                    <span>Szukaj</span>
+                    <span data-i18n="champions.search">Search champion</span>
                     <input id="publicChampionSearch" type="search" autocomplete="off" placeholder="np. Zac" />
                   </label>
                 </div>
@@ -479,7 +500,7 @@
         <div class="detail-stats" id="championDetailStats"></div>
         <div class="champion-build-section" id="championDetailBuild"></div>
         <div>
-          <h3>Historia</h3>
+          <h3 data-i18n="history.title">History</h3>
           <div class="detail-history" id="championDetailHistory"></div>
         </div>
       </section>
@@ -499,15 +520,15 @@
         </div>
         <div class="detail-stats" id="matchDetailStats"></div>
         <div class="match-detail-section">
-          <h3>Drużyna</h3>
+          <h3 data-i18n="common.team">Team</h3>
           <div class="team-detail-list" id="matchDetailTeam"></div>
         </div>
         <div class="match-detail-section">
-          <h3>Augmenty</h3>
+          <h3 data-i18n="common.augments">Augments</h3>
           <div class="match-tags detail-tags" id="matchDetailAugments"></div>
         </div>
         <div class="match-detail-section">
-          <h3>Itemy</h3>
+          <h3 data-i18n="common.items">Items</h3>
           <div class="match-tags detail-tags" id="matchDetailItems"></div>
         </div>
       </section>
@@ -521,6 +542,6 @@
       </div>
     </template>
     <script src="/assets/game-data.js"></script>
-    <script src="/app.js" defer></script>
+    <script src="/app.js?v=0.5.1" defer></script>
   </body>
 </html>

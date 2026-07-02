@@ -1,4 +1,4 @@
-const APP_VERSION = "0.5.0";
+const APP_VERSION = "0.5.1";
 const GAME_DATA = globalThis.ARENA_GAME_DATA || {};
 const DATA_DRAGON_VERSION = GAME_DATA.version || "16.13.1";
 const STORAGE_KEY = "arenatracker.matches.v1";
@@ -17,7 +17,13 @@ const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
 const translations = {
   pl: {
     "actions.sync": "Synchronizuj",
+    "actions.refresh": "Odśwież",
+    "actions.add": "Dodaj",
     "actions.coffee": "Postaw kawę",
+    "landing.title": "Znajdź profil",
+    "landing.subtitle": "Śledź wygranych championów, historię Areny i postęp w wyzwaniu.",
+    "leaderboard.title": "Leaderboard",
+    "leaderboard.profiles": "Ranking profili",
     "settings.language": "Język",
     "nav.history": "Historia",
     "nav.wins": "Championi",
@@ -25,10 +31,13 @@ const translations = {
     "tabs.history": "Historia",
     "tabs.wins": "Championi",
     "tabs.group": "Moja grupa",
+    "tabs.live": "Live game",
     "progress.label": "Postęp",
     "progress.title": "Wygrani championi",
     "history.title": "Historia",
     "friends.title": "Moja grupa",
+    "friends.loginRequired": "Zaloguj się, żeby utworzyć grupę.",
+    "friends.privateCaption": "Ranking znajomych jest prywatny dla konta.",
     "matchDetails.title": "Szczegóły meczu",
     "actions.showMore": "Pokaż więcej",
     "actions.backToHistory": "Wróć do historii",
@@ -41,6 +50,8 @@ const translations = {
     "common.players": "Gracze",
     "common.augments": "Augmenty",
     "common.items": "Itemy",
+    "common.team": "Drużyna",
+    "common.ad": "Reklama",
     "common.noData": "Brak danych dla tych filtrów.",
     "common.status": "Status",
     "common.unknownPlayer": "Nieznany gracz",
@@ -81,10 +92,56 @@ const translations = {
     "sort.missing": "Najbliżej wygranej",
     "public.notFound": "Nie znaleziono profilu",
     "public.profile": "Publiczny profil",
+    "live.eyebrow": "Aktualna gra Arena",
+    "live.title": "Live game",
+    "live.checking": "Sprawdzam aktualną grę...",
+    "live.notPlaying": "Ten gracz nie gra teraz Areny.",
+    "live.noProfile": "Najpierw wybierz profil gracza.",
+    "live.error": "Nie udało się sprawdzić live game.",
+    "live.active": "Arena trwa teraz.",
+    "live.team": "Drużyna",
+    "live.level": "Poziom",
+    "live.soloq": "SoloQ",
+    "live.unranked": "Unranked",
+    "account.label": "Konto",
+    "account.login": "Zaloguj",
+    "account.savedLeague": "Konto League zapisane.",
+    "account.saveLeague": "Zapisz konto League",
+    "account.noLeague": "Konto League nie jest jeszcze zapisane.",
+    "account.noLeagueCaption": "Po zapisaniu synchronizacja Areny uruchomi się automatycznie.",
+    "account.syncingCaption": "Możesz zamknąć panel. Konto League jest już zapisane.",
+    "account.syncFailed": "Synchronizacja nie powiodła się.",
+    "account.localProfile": "Profil zapisany lokalnie.",
+    "account.verified": "Zweryfikowano",
+    "account.loginRequired": "Najpierw zaloguj się do ArenaTracker.",
+    "account.syncAlreadyRunning": "Synchronizacja już trwa.",
+    "account.completeRiotId": "Uzupełnij nazwę w grze i tag Riot ID.",
+    "account.saving": "Zapisuję...",
+    "public.loading": "Ładuję profil.",
+    "public.wait": "Chwila.",
+    "public.checkLink": "Sprawdź region i nazwę w linku.",
+    "public.noResults": "Brak wyników.",
+    "public.changeSearch": "Zmień tekst w wyszukiwarce championów.",
+    "public.noWonChampions": "Brak wygranych championów.",
+    "public.noWonCaption": "Publiczny profil uzupełni się po synchronizacji.",
+    "public.noHistory": "Brak historii meczów.",
+    "public.noHistoryCaption": "Synchronizacja uzupełni ostatnie gry.",
+    "public.noDuo": "Brak danych duo.",
+    "public.noDuoCaption": "Synchronizacja uzupełni partnerów.",
+    "match.notFound": "Nie znaleziono meczu.",
+    "match.notFoundCaption": "Wróć do historii i wybierz pozycję jeszcze raz.",
+    "match.noFullPlayers": "Brak pełnej listy graczy.",
+    "match.noFullPlayersCaption": "Kolejna synchronizacja uzupełni nowszy format meczu.",
   },
   en: {
     "actions.sync": "Sync",
+    "actions.refresh": "Refresh",
+    "actions.add": "Add",
     "actions.coffee": "Buy coffee",
+    "landing.title": "Find an Arena profile",
+    "landing.subtitle": "Track champion wins, Arena history, and your progress toward the full collection.",
+    "leaderboard.title": "Leaderboard",
+    "leaderboard.profiles": "Profile ranking",
     "settings.language": "Language",
     "nav.history": "History",
     "nav.wins": "Champions",
@@ -92,10 +149,13 @@ const translations = {
     "tabs.history": "History",
     "tabs.wins": "Champions",
     "tabs.group": "My group",
+    "tabs.live": "Live game",
     "progress.label": "Progress",
     "progress.title": "Champion wins",
     "history.title": "History",
     "friends.title": "My group",
+    "friends.loginRequired": "Log in to create a group.",
+    "friends.privateCaption": "Friend rankings are private to your account.",
     "matchDetails.title": "Match details",
     "actions.showMore": "Show more",
     "actions.backToHistory": "Back to history",
@@ -108,6 +168,8 @@ const translations = {
     "common.players": "Players",
     "common.augments": "Augments",
     "common.items": "Items",
+    "common.team": "Team",
+    "common.ad": "Ad",
     "common.noData": "No data for these filters.",
     "common.status": "Status",
     "common.unknownPlayer": "Unknown player",
@@ -148,6 +210,46 @@ const translations = {
     "sort.missing": "Closest to win",
     "public.notFound": "Profile not found",
     "public.profile": "Public profile",
+    "live.eyebrow": "Current Arena match",
+    "live.title": "Live game",
+    "live.checking": "Checking current game...",
+    "live.notPlaying": "This player is not in an Arena game right now.",
+    "live.noProfile": "Choose a player profile first.",
+    "live.error": "Could not check live game.",
+    "live.active": "Arena is live now.",
+    "live.team": "Team",
+    "live.level": "Level",
+    "live.soloq": "SoloQ",
+    "live.unranked": "Unranked",
+    "account.label": "Account",
+    "account.login": "Sign in",
+    "account.savedLeague": "League account saved.",
+    "account.saveLeague": "Save League account",
+    "account.noLeague": "League account is not saved yet.",
+    "account.noLeagueCaption": "Arena sync starts automatically after saving.",
+    "account.syncingCaption": "You can close this panel. League account is already saved.",
+    "account.syncFailed": "Sync failed.",
+    "account.localProfile": "Profile saved locally.",
+    "account.verified": "Verified",
+    "account.loginRequired": "Sign in to ArenaTracker first.",
+    "account.syncAlreadyRunning": "Sync is already running.",
+    "account.completeRiotId": "Enter game name and Riot ID tag.",
+    "account.saving": "Saving...",
+    "public.loading": "Loading profile.",
+    "public.wait": "One moment.",
+    "public.checkLink": "Check the region and profile name in the link.",
+    "public.noResults": "No results.",
+    "public.changeSearch": "Change the champion search text.",
+    "public.noWonChampions": "No champion wins yet.",
+    "public.noWonCaption": "Public profile will fill after sync.",
+    "public.noHistory": "No match history.",
+    "public.noHistoryCaption": "Sync will fill recent games.",
+    "public.noDuo": "No duo data.",
+    "public.noDuoCaption": "Sync will fill Arena partners.",
+    "match.notFound": "Match not found.",
+    "match.notFoundCaption": "Go back to history and choose it again.",
+    "match.noFullPlayers": "No full player list.",
+    "match.noFullPlayersCaption": "Next sync will fill the newer match format.",
   },
 };
 
@@ -335,7 +437,7 @@ const state = {
   publicProfile: null,
   publicRoute: null,
   publicChampionSearch: "",
-  language: localStorage.getItem(LANGUAGE_STORAGE_KEY) || "pl",
+  language: localStorage.getItem(LANGUAGE_STORAGE_KEY) || "en",
   backendAvailable: false,
   riotStatus: null,
   resetToken: "",
@@ -350,6 +452,12 @@ const state = {
     rows: [],
     updatedAt: "",
     region: "euw1",
+  },
+  liveGame: {
+    loading: false,
+    error: "",
+    data: null,
+    profileKey: "",
   },
   searchTimers: new WeakMap(),
   filters: {
@@ -473,6 +581,10 @@ function cacheDom() {
     leaderboardPodium: document.getElementById("leaderboardPodium"),
     leaderboardRows: document.getElementById("leaderboardRows"),
     leaderboardRefreshButton: document.getElementById("leaderboardRefreshButton"),
+    liveGameTitle: document.getElementById("liveGameTitle"),
+    liveGameStatus: document.getElementById("liveGameStatus"),
+    liveGameTeams: document.getElementById("liveGameTeams"),
+    liveGameRefreshButton: document.getElementById("liveGameRefreshButton"),
     toast: document.getElementById("toast"),
     emptyStateTemplate: document.getElementById("emptyStateTemplate"),
   });
@@ -544,6 +656,7 @@ function bindEvents() {
   dom.profileSyncButton.addEventListener("click", async () => {
     if (state.publicRoute && !isViewingOwnProfile()) {
       await loadPublicProfile(state.publicRoute, { force: true });
+      await checkLiveGameForCurrentProfile({ navigateIfActive: true });
       return;
     }
     await syncRiotMatches({ automatic: false, deep: true });
@@ -552,9 +665,11 @@ function bindEvents() {
   dom.publicSyncButton?.addEventListener("click", async () => {
     if (!state.publicRoute) return;
     await loadPublicProfile(state.publicRoute, { force: true });
+    await checkLiveGameForCurrentProfile({ navigateIfActive: true });
   });
 
   dom.leaderboardRefreshButton?.addEventListener("click", () => loadLeaderboard({ force: true }));
+  dom.liveGameRefreshButton?.addEventListener("click", () => checkLiveGameForCurrentProfile({ navigateIfActive: false, force: true }));
 
   dom.playerSearchForms.forEach((form) => {
     updateSearchPlaceholder(form);
@@ -656,6 +771,12 @@ function bindEvents() {
     openPlayerProfile(player.dataset.playerProfile, player.dataset.playerRegion);
   });
 
+  dom.liveGameTeams?.addEventListener("click", (event) => {
+    const player = event.target.closest("[data-player-profile]");
+    if (!player) return;
+    openPlayerProfile(player.dataset.playerProfile, player.dataset.playerRegion);
+  });
+
   dom.friendRanking.addEventListener("click", (event) => {
     const friend = event.target.closest("[data-friend-profile]");
     if (!friend) return;
@@ -748,11 +869,11 @@ function setActiveRoute(route) {
 function setAuthTab(tabName) {
   if (!dom.accountTitle) return;
   const titleByTab = {
-    login: "Zaloguj",
-    register: "Rejestracja",
-    reset: "Reset hasła",
+    login: t("account.login"),
+    register: state.language === "en" ? "Create account" : "Rejestracja",
+    reset: state.language === "en" ? "Reset password" : "Reset hasła",
   };
-  dom.accountTitle.textContent = titleByTab[tabName] || "Zaloguj";
+  dom.accountTitle.textContent = titleByTab[tabName] || t("account.login");
   if (!state.user) {
     dom.accountStatus.replaceChildren();
     dom.accountStatus.classList.add("is-hidden");
@@ -855,12 +976,9 @@ function renderMatchDetailPage() {
   if (!dom.matchDetailPageTitle) return;
   const match = getSortedMatches().find((item) => item.id === state.activeMatchId);
   if (!match) {
-    dom.matchDetailPageTitle.textContent = "Mecz";
+    dom.matchDetailPageTitle.textContent = state.language === "en" ? "Match" : "Mecz";
     dom.matchDetailPageStats.replaceChildren(renderDetailStat(t("common.status"), t("common.noData")));
-    dom.matchDetailPagePlayers.replaceChildren(emptyState(
-      state.language === "en" ? "Match not found." : "Nie znaleziono meczu.",
-      state.language === "en" ? "Go back to history and choose it again." : "Wróć do historii i wybierz pozycję jeszcze raz.",
-    ));
+    dom.matchDetailPagePlayers.replaceChildren(emptyState(t("match.notFound"), t("match.notFoundCaption")));
     dom.matchDetailPageAugments.replaceChildren();
     dom.matchDetailPageItems.replaceChildren();
     return;
@@ -877,18 +995,178 @@ function renderMatchDetailPage() {
   renderAssetTags(dom.matchDetailPageItems, match.items, t("common.noItems"));
 }
 
+function currentProfileForLive() {
+  if (state.publicRoute && !isViewingOwnProfile()) {
+    const profile = state.publicProfile?.data?.profile;
+    if (profile?.gameName && profile?.tagLine) return profile;
+    const parsed = parseRiotId(safeDecode(state.publicRoute.slug));
+    if (parsed) {
+      return {
+        gameName: parsed.gameName,
+        tagLine: parsed.tagLine,
+        region: normalizeRegion(state.publicRoute.region),
+      };
+    }
+    return null;
+  }
+
+  return state.user?.riotProfile || null;
+}
+
+function liveProfileKey(profile) {
+  if (!profile?.gameName || !profile?.tagLine) return "";
+  return `${normalizeRegion(profile.region)}:${normalizeLookupKey(profile.gameName)}:${normalizeLookupKey(profile.tagLine)}`;
+}
+
+async function checkLiveGameForCurrentProfile(options = {}) {
+  const profile = currentProfileForLive();
+  if (!profile?.gameName || !profile?.tagLine) {
+    state.liveGame = {
+      loading: false,
+      error: t("live.noProfile"),
+      data: null,
+      profileKey: "",
+    };
+    renderLiveGame();
+    return null;
+  }
+
+  const profileKey = liveProfileKey(profile);
+  if (state.liveGame.loading && state.liveGame.profileKey === profileKey && !options.force) return state.liveGame.data;
+
+  state.liveGame = {
+    loading: true,
+    error: "",
+    data: state.liveGame.profileKey === profileKey ? state.liveGame.data : null,
+    profileKey,
+  };
+  renderLiveGame();
+
+  try {
+    const params = new URLSearchParams({
+      region: normalizeRegion(profile.region || state.publicRoute?.region || "euw1"),
+      riotId: `${profile.gameName}#${profile.tagLine}`,
+    });
+    const data = await apiRequest(`/api/riot/live-game?${params.toString()}`, { timeoutMs: 45000 });
+    state.liveGame = {
+      loading: false,
+      error: "",
+      data,
+      profileKey,
+    };
+    renderLiveGame();
+    if (data?.active && options.navigateIfActive) {
+      window.location.hash = "live";
+    }
+    return data;
+  } catch (error) {
+    state.liveGame = {
+      loading: false,
+      error: error.message || t("live.error"),
+      data: null,
+      profileKey,
+    };
+    renderLiveGame();
+    return null;
+  }
+}
+
+function renderLiveGame() {
+  if (!dom.liveGameStatus || !dom.liveGameTeams) return;
+  const live = state.liveGame;
+  const profile = currentProfileForLive();
+  if (dom.liveGameTitle) {
+    dom.liveGameTitle.textContent = live.data?.active && live.data?.profile
+      ? `${live.data.profile.gameName}#${live.data.profile.tagLine}`
+      : t("live.title");
+  }
+
+  if (!profile && !live.data) {
+    dom.liveGameStatus.replaceChildren(emptyState(t("live.noProfile"), ""));
+    dom.liveGameTeams.replaceChildren();
+    return;
+  }
+
+  if (live.loading) {
+    dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.checking"), profile ? `${profile.gameName}#${profile.tagLine}` : ""));
+    dom.liveGameTeams.replaceChildren();
+    return;
+  }
+
+  if (live.error) {
+    dom.liveGameStatus.replaceChildren(emptyState(live.error, t("live.error")));
+    dom.liveGameTeams.replaceChildren();
+    return;
+  }
+
+  const data = live.data;
+  if (!data?.active) {
+    dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.notPlaying"), profile ? `${profile.gameName}#${profile.tagLine}` : ""));
+    dom.liveGameTeams.replaceChildren();
+    return;
+  }
+
+  const queueLabel = data.queueId ? `Queue ${data.queueId}` : "Arena";
+  dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.active"), queueLabel));
+  dom.liveGameTeams.replaceChildren(...(data.teams || []).map((team, index) => renderLiveTeam(team, index, data.region)));
+}
+
+function renderLiveStatus(title, caption) {
+  const root = el("article", "live-status-card");
+  root.append(el("strong", "", title));
+  if (caption) root.append(el("span", "", caption));
+  return root;
+}
+
+function renderLiveTeam(team, index, region) {
+  const root = el("article", "live-team-card");
+  const placement = team.placement || index + 1;
+  const head = el("div", "live-team-head");
+  head.append(
+    el("strong", "", `${t("live.team")} #${placement}`),
+    el("span", "", `${team.players?.length || 0} ${t("common.playersLower")}`),
+  );
+  const grid = el("div", "live-player-grid");
+  (team.players || []).forEach((player) => grid.append(renderLivePlayer(player, region)));
+  root.append(head, grid);
+  return root;
+}
+
+function renderLivePlayer(player, region) {
+  const root = el("button", "live-player-card");
+  root.type = "button";
+  root.dataset.playerProfile = player.riotId || "";
+  root.dataset.playerRegion = region || "euw1";
+  root.disabled = !player.riotId;
+  const avatar = player.profileIconUrl
+    ? imageIcon(player.profileIconUrl, "live-player-avatar")
+    : renderChampionIcon(player.champion);
+  const copy = el("span", "live-player-copy");
+  copy.append(
+    el("strong", "", player.riotId || t("common.unknownPlayer")),
+    el("span", "", player.champion || "Unknown"),
+  );
+  const facts = el("span", "live-player-facts");
+  facts.append(
+    el("em", "", `${t("live.level")} ${player.summonerLevel || "-"}`),
+    el("em", "", player.soloRank || t("live.unranked")),
+  );
+  root.append(avatar, copy, facts);
+  return root;
+}
+
 function renderMatchPlayers(match) {
   const players = getMatchPlayers(match);
   if (!players.length) return [emptyState(
-    state.language === "en" ? "No full player list." : "Brak pełnej listy graczy.",
-    state.language === "en" ? "Next sync will fill the newer match format." : "Kolejna synchronizacja uzupełni nowszy format meczu.",
+    t("match.noFullPlayers"),
+    t("match.noFullPlayersCaption"),
   )];
   const groups = groupPlayersByTeam(players);
   return groups.map((group, index) => {
     const root = el("article", "match-team-group");
     const header = el("div", "match-team-head");
     header.append(
-      el("strong", "", `${state.language === "en" ? "Team" : "Drużyna"} #${group.placement}`),
+      el("strong", "", `${t("common.team")} #${group.placement}`),
       el("span", "", `${group.players.length} ${t("common.playersLower")}`),
     );
     const list = el("div", "match-team-players");
@@ -1089,7 +1367,9 @@ function updateSearchPlaceholder(form) {
   const input = form.querySelector('input[name="riotId"]');
   const region = normalizeRegion(form.querySelector('select[name="region"]')?.value);
   if (!input) return;
-  input.placeholder = `Nazwa gry + #${regionLabel(region)}`;
+  input.placeholder = state.language === "en"
+    ? `Game name + #${regionLabel(region)}`
+    : `Nazwa gry + #${regionLabel(region)}`;
 }
 
 function getLeaderboardRegion() {
@@ -1192,14 +1472,19 @@ function updateRoute() {
     state.publicRoute = publicRoute;
     const rawRoute = window.location.hash.replace("#", "") || "dashboard";
     const [route, token] = rawRoute.split("/");
-    const requestedRoute = route === "match" ? "match-detail" : route;
+    const requestedRoute = route === "match" ? "match-detail" : route === "live" ? "live-game" : route;
     const knownRoute = document.querySelector(`[data-view="${requestedRoute}"]`)
       && !["friends", "public-profile"].includes(requestedRoute)
       ? requestedRoute
       : "dashboard";
     state.activeMatchId = route === "match" ? decodeURIComponent(token || "") : "";
     setActiveRoute(knownRoute);
-    loadPublicProfile(publicRoute);
+    if (knownRoute === "live-game") {
+      void checkLiveGameForCurrentProfile({ navigateIfActive: false })
+        .finally(() => loadPublicProfile(publicRoute));
+    } else {
+      loadPublicProfile(publicRoute);
+    }
     renderResetTokenView();
     return;
   }
@@ -1226,8 +1511,12 @@ function updateRoute() {
   }
   closeAccountOverlay();
   state.activeMatchId = "";
-  const knownRoute = document.querySelector(`[data-view="${route}"]`) && route !== "friends" ? route : "dashboard";
+  const requestedRoute = route === "live" ? "live-game" : route;
+  const knownRoute = document.querySelector(`[data-view="${requestedRoute}"]`) && requestedRoute !== "friends" ? requestedRoute : "dashboard";
   setActiveRoute(knownRoute);
+  if (knownRoute === "live-game") {
+    void checkLiveGameForCurrentProfile({ navigateIfActive: false });
+  }
   renderResetTokenView();
 }
 
@@ -1378,6 +1667,7 @@ function render() {
   renderHistoryMatches(matches);
   renderChampionCollection(matches);
   renderMatchDetailPage();
+  renderLiveGame();
   renderPublicProfile();
   renderLeaderboard();
   renderAccount();
@@ -1538,7 +1828,7 @@ function renderLeaderboardRow(row) {
 
 function renderAccount() {
   if (!dom.accountMenuLabel || !dom.accountOverlay) return;
-  dom.accountMenuLabel.textContent = state.user ? state.user.displayName : "Konto";
+  dom.accountMenuLabel.textContent = state.user ? state.user.displayName : t("account.label");
   dom.accountOverlay.classList.toggle("is-profile-mode", Boolean(state.user));
   updateAccountAvatars();
   renderAccountPublicLink();
@@ -1547,17 +1837,19 @@ function renderAccount() {
   dom.profilePanel.classList.toggle("is-hidden", !state.user);
 
   if (!state.user) {
-    dom.accountTitle.textContent ||= "Zaloguj";
-    dom.profileName.textContent = "Konto";
+    dom.accountTitle.textContent ||= t("account.login");
+    dom.profileName.textContent = t("account.label");
     dom.profileEmail.textContent = "";
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Po zalogowaniu zapiszesz konto League."),
-      el("span", "", state.backendAvailable ? "Synchronizacja ruszy automatycznie." : "Uruchom node server.js."),
+      el("strong", "", state.language === "en" ? "Sign in to save a League account." : "Po zalogowaniu zapiszesz konto League."),
+      el("span", "", state.backendAvailable
+        ? state.language === "en" ? "Sync will start automatically." : "Synchronizacja ruszy automatycznie."
+        : state.language === "en" ? "Start node server.js." : "Uruchom node server.js."),
     );
     return;
   }
 
-  dom.accountTitle.textContent = "Konto";
+  dom.accountTitle.textContent = t("account.label");
   dom.accountStatus.replaceChildren();
   dom.accountStatus.classList.add("is-hidden");
   dom.profileName.textContent = state.user.displayName;
@@ -1566,23 +1858,23 @@ function renderAccount() {
   const profile = state.user.riotProfile;
   if (!profile) {
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Konto League nie jest jeszcze zapisane."),
-      el("span", "", "Po zapisaniu synchronizacja Areny uruchomi się automatycznie."),
+      el("strong", "", t("account.noLeague")),
+      el("span", "", t("account.noLeagueCaption")),
     );
     return;
   }
 
   if (state.isAutoSyncing) {
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Synchronizuję..."),
-      el("span", "", "Możesz zamknąć panel. Konto League jest już zapisane."),
+      el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
+      el("span", "", t("account.syncingCaption")),
     );
     return;
   }
 
   if (state.syncError) {
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Synchronizacja nie powiodła się."),
+      el("strong", "", t("account.syncFailed")),
       el("span", "", state.syncError),
     );
     return;
@@ -1594,10 +1886,10 @@ function renderAccount() {
       "span",
       "",
       profile.lastSyncedAt
-        ? `Ostatni sync: ${relativeTime(profile.lastSyncedAt)}.`
+        ? `${t("common.lastSync")}: ${relativeTime(profile.lastSyncedAt)}.`
         : profile.verifiedAt
-          ? `Zweryfikowano: ${formatDate(profile.verifiedAt)}.`
-          : "Profil zapisany lokalnie.",
+          ? `${t("account.verified")}: ${formatDate(profile.verifiedAt)}.`
+          : t("account.localProfile"),
     ),
   );
 }
@@ -1633,22 +1925,22 @@ function renderPublicProfile() {
   }
 
   if (publicState.loading && !publicState.data) {
-    dom.publicProfileTitle.textContent = "Synchronizuję...";
+    dom.publicProfileTitle.textContent = state.language === "en" ? "Syncing..." : "Synchronizuję...";
     dom.publicProfileMeta?.replaceChildren();
     renderPublicSyncState(publicState);
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
-    dom.publicWonChampions.replaceChildren(emptyState("Ładuję profil.", "Chwila."));
+    dom.publicWonChampions.replaceChildren(emptyState(t("public.loading"), t("public.wait")));
     dom.publicMatchHistory?.replaceChildren();
     dom.publicTopDuo.replaceChildren();
     return;
   }
 
   if (publicState.error && !publicState.data) {
-    dom.publicProfileTitle.textContent = "Nie znaleziono profilu";
+    dom.publicProfileTitle.textContent = t("public.notFound");
     dom.publicProfileMeta?.replaceChildren();
     renderPublicSyncState(publicState);
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
-    dom.publicWonChampions.replaceChildren(emptyState(publicState.error, "Sprawdź region i nazwę w linku."));
+    dom.publicWonChampions.replaceChildren(emptyState(publicState.error, t("public.checkLink")));
     dom.publicMatchHistory?.replaceChildren();
     dom.publicTopDuo.replaceChildren();
     return;
@@ -1660,7 +1952,7 @@ function renderPublicProfile() {
   dom.publicProfileTitle.textContent = `${data.profile.gameName}#${data.profile.tagLine}`;
   const meta = [
     regionLabel(data.profile.region),
-    `${data.progress.won} / ${data.progress.total} ${state.language === "en" ? "champions won" : "z wygraną"}`,
+    `${data.progress.won} / ${data.progress.total} ${t("common.championsWon")}`,
   ];
   if (data.profile.lastSyncedAt) {
     meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${relativeTime(data.profile.lastSyncedAt)}`);
@@ -1673,10 +1965,13 @@ function renderPublicProfile() {
     : data.wonChampions;
   dom.publicWonChampions.replaceChildren(
     ...(wonChampions.length
-      ? wonChampions.map((stat) => renderPublicChampionCard(stat, `${stat.wins} win · śr. #${formatAveragePlacement(stat.averagePlacement)}`))
+      ? wonChampions.map((stat) => renderPublicChampionCard(
+          stat,
+          `${stat.wins} ${t("common.win")} · ${t("common.average")} #${formatAveragePlacement(stat.averagePlacement)}`,
+        ))
       : [data.wonChampions.length
-          ? emptyState("Brak wyników.", "Zmień tekst w wyszukiwarce championów.")
-          : emptyState("Brak wygranych championów.", "Publiczny profil uzupełni się po synchronizacji.")]),
+          ? emptyState(t("public.noResults"), t("public.changeSearch"))
+          : emptyState(t("public.noWonChampions"), t("public.noWonCaption"))]),
   );
   dom.publicMatchHistory?.replaceChildren(
     ...(data.matches?.length
@@ -1685,7 +1980,7 @@ function renderPublicProfile() {
           .map(normalizeMatch)
           .filter(Boolean)
           .map((match) => renderMatchCard(match, { dense: true, public: true }))
-      : [emptyState("Brak historii meczów.", "Synchronizacja uzupełni ostatnie gry.")]),
+      : [emptyState(t("public.noHistory"), t("public.noHistoryCaption"))]),
   );
   dom.publicTopDuo.replaceChildren(
     ...(data.topDuo.length
@@ -1693,11 +1988,11 @@ function renderPublicProfile() {
           const root = el("article", "partner-card");
           root.append(
             el("strong", "", stat.name),
-            el("span", "", `${stat.games} gier · średnio #${formatAveragePlacement(stat.averagePlacement)}`),
+            el("span", "", `${stat.games} ${t("common.gamesLower")} · ${t("common.average")} #${formatAveragePlacement(stat.averagePlacement)}`),
           );
           return root;
         })
-      : [emptyState("Brak danych duo.", "Synchronizacja uzupełni partnerów.")]),
+      : [emptyState(t("public.noDuo"), t("public.noDuoCaption"))]),
   );
 }
 
@@ -1706,7 +2001,9 @@ function renderPublicSyncState(publicState = state.publicProfile) {
   if (dom.publicSyncButton) {
     dom.publicSyncButton.disabled = isBusy;
     dom.publicSyncButton.classList.toggle("is-syncing", isBusy);
-    dom.publicSyncButton.textContent = isBusy ? "Synchronizuję..." : "Synchronizuj";
+    dom.publicSyncButton.textContent = isBusy
+      ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
+      : t("actions.sync");
   }
   if (dom.publicSyncStatus) {
     dom.publicSyncStatus.textContent = publicState?.error ? publicState.error : "";
@@ -1752,10 +2049,11 @@ function applyLanguage() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  dom.playerSearchForms?.forEach(updateSearchPlaceholder);
 }
 
 function t(key) {
-  return translations[state.language]?.[key] || translations.pl[key] || key;
+  return translations[state.language]?.[key] || translations.en[key] || translations.pl[key] || key;
 }
 
 function regionLabel(region) {
@@ -1873,7 +2171,7 @@ function renderFriendRanking(matches) {
   if (!dom.friendRanking) return;
 
   if (!state.user) {
-    dom.friendRanking.replaceChildren(emptyState("Zaloguj się, żeby utworzyć grupę.", "Ranking znajomych jest prywatny dla konta."));
+    dom.friendRanking.replaceChildren(emptyState(t("friends.loginRequired"), t("friends.privateCaption")));
     return;
   }
 
@@ -2342,7 +2640,7 @@ async function logout() {
 
 async function saveRiotProfile() {
   if (!state.user) {
-    showAccountMessage("Najpierw zaloguj się do ArenaTracker.", "error");
+    showAccountMessage(t("account.loginRequired"), "error");
     return;
   }
 
@@ -2354,7 +2652,7 @@ async function saveRiotProfile() {
   }
 
   if (!cleanText(body.gameName) || !cleanText(body.tagLine)) {
-    showAccountMessage("Uzupełnij nazwę w grze i tag Riot ID.", "error");
+    showAccountMessage(t("account.completeRiotId"), "error");
     return;
   }
 
@@ -2363,13 +2661,13 @@ async function saveRiotProfile() {
   try {
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = "Zapisuję...";
+      submitButton.textContent = t("account.saving");
     }
     state.syncError = "";
     const data = await apiRequest("/api/riot/profile", { method: "POST", body, timeoutMs: 30000 });
     state.user = data.user;
     fillRiotProfileForm();
-    showAccountMessage("Konto League zapisane.", "success");
+    showAccountMessage(t("account.savedLeague"), "success");
     render();
     void syncRiotMatches({ automatic: true, deep: true, timeoutMs: RIOT_SEASON_SYNC_TIMEOUT_MS });
   } catch (error) {
@@ -2384,7 +2682,7 @@ async function saveRiotProfile() {
 
 async function syncRiotMatches(options = {}) {
   if (!state.user) {
-    if (!options.automatic) showAccountMessage("Najpierw zaloguj się do ArenaTracker.", "error");
+    if (!options.automatic) showAccountMessage(t("account.loginRequired"), "error");
     return;
   }
 
@@ -2393,15 +2691,15 @@ async function syncRiotMatches(options = {}) {
   }
 
   if (state.isAutoSyncing) {
-    if (!options.automatic) showAccountMessage("Synchronizacja już trwa.", "success");
+    if (!options.automatic) showAccountMessage(t("account.syncAlreadyRunning"), "success");
     return;
   }
 
   state.isAutoSyncing = true;
   state.syncError = "";
   dom.riotSyncStatus.replaceChildren(
-    el("strong", "", "Synchronizuję..."),
-    el("span", "", "Pracuję nad historią Areny."),
+    el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
+    el("span", "", state.language === "en" ? "Working through Arena history." : "Pracuję nad historią Areny."),
   );
 
   const syncLimit = RIOT_SEASON_SYNC_LIMIT;
@@ -2426,18 +2724,27 @@ async function syncRiotMatches(options = {}) {
     state.syncError = "";
     fillRiotProfileForm();
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", "Synchronizuję..."),
-      el("span", "", "Kończę aktualizację."),
+      el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
+      el("span", "", state.language === "en" ? "Finishing update." : "Kończę aktualizację."),
     );
     render();
 
     state.syncError = "";
     fillRiotProfileForm();
     if (!options.automatic) {
-      showAccountMessage(`Zsynchronizowano ${processedCount} meczów.`, "success");
+      showAccountMessage(
+        state.language === "en"
+          ? `Synced ${processedCount} matches.`
+          : `Zsynchronizowano ${processedCount} meczów.`,
+        "success",
+      );
     }
     if (latestData?.hasMore) {
-      state.syncError = "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę.";
+      state.syncError = state.language === "en"
+        ? "Sync stopped before finishing. Try again in a moment."
+        : "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę.";
+    } else {
+      await checkLiveGameForCurrentProfile({ navigateIfActive: true, force: true });
     }
     render();
   } catch (error) {
@@ -2481,7 +2788,9 @@ async function apiRequest(path, options = {}) {
     response = await fetch(path, request);
   } catch (error) {
     if (error.name === "AbortError") {
-      throw new Error("Przekroczono czas oczekiwania. Spróbuj ponownie za chwilę.");
+      throw new Error(state.language === "en"
+        ? "Request timed out. Try again in a moment."
+        : "Przekroczono czas oczekiwania. Spróbuj ponownie za chwilę.");
     }
     throw error;
   } finally {
