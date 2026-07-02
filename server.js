@@ -510,12 +510,18 @@ async function getPublicProfile(req, res, url) {
 
 async function getLeaderboard(req, res, url) {
   const limit = clamp(Number(url.searchParams.get("limit") || 50), 1, 100);
+  const regionFilter = normalizePublicRegion(url.searchParams.get("region"));
+  if (regionFilter && !REGIONS.has(regionFilter)) {
+    sendJson(res, 400, { message: "Nieprawidlowy region." });
+    return;
+  }
   const db = await readDb();
   const rowsByKey = new Map();
 
   const addRow = (profile, matches, source, updatedAt) => {
     if (!profile?.gameName || !profile?.tagLine) return;
     const region = normalizePublicRegion(profile.region);
+    if (regionFilter && region !== regionFilter) return;
     const slug = publicProfileSlug({ ...profile, region });
     const key = publicProfileCacheId(region, slug);
     const normalizedMatches = Array.isArray(matches)
@@ -562,6 +568,7 @@ async function getLeaderboard(req, res, url) {
     .map((row, index) => ({ ...row, rank: index + 1 }));
 
   sendJson(res, 200, {
+    region: regionFilter || null,
     rows,
     updatedAt: new Date().toISOString(),
   });

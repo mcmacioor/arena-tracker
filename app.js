@@ -351,6 +351,7 @@ const state = {
     error: "",
     rows: [],
     updatedAt: "",
+    region: "euw1",
   },
   searchTimers: new WeakMap(),
   filters: {
@@ -470,6 +471,7 @@ function cacheDom() {
     riotSyncStatus: document.getElementById("riotSyncStatus"),
     publicProfileLinkBox: document.getElementById("publicProfileLinkBox"),
     publicProfileLink: document.getElementById("publicProfileLink"),
+    leaderboardRegionLabel: document.getElementById("leaderboardRegionLabel"),
     leaderboardPodium: document.getElementById("leaderboardPodium"),
     leaderboardRows: document.getElementById("leaderboardRows"),
     leaderboardRefreshButton: document.getElementById("leaderboardRefreshButton"),
@@ -561,6 +563,7 @@ function bindEvents() {
     updateSearchPlaceholder(form);
     form.addEventListener("submit", handlePlayerSearchSubmit);
     form.addEventListener("input", handlePlayerSearchInput);
+    form.addEventListener("change", handlePlayerSearchChange);
     form.addEventListener("focusin", handlePlayerSearchFocus);
     form.addEventListener("click", handlePlayerSearchClick);
   });
@@ -983,6 +986,15 @@ function handlePlayerSearchInput(event) {
   state.searchTimers.set(form, window.setTimeout(() => updateSearchResults(form), 80));
 }
 
+function handlePlayerSearchChange(event) {
+  const form = event.currentTarget;
+  if (!event.target.matches('select[name="region"]')) return;
+  updateSearchPlaceholder(form);
+  if (form.classList.contains("top-player-search") && state.activeRoute === "leaderboard") {
+    void loadLeaderboard({ force: true });
+  }
+}
+
 function handlePlayerSearchFocus(event) {
   const form = event.currentTarget;
   if (!event.target.matches('input[name="riotId"]')) return;
@@ -1057,6 +1069,11 @@ function updateSearchPlaceholder(form) {
   const region = normalizeRegion(form.querySelector('select[name="region"]')?.value);
   if (!input) return;
   input.placeholder = `Nazwa gry + #${regionLabel(region)}`;
+}
+
+function getLeaderboardRegion() {
+  const regionSelect = document.querySelector('.top-player-search select[name="region"]');
+  return normalizeRegion(regionSelect?.value || state.leaderboard.region || "euw1");
 }
 
 function selectSearchResult(form, result) {
@@ -1274,6 +1291,16 @@ async function loadPublicProfile(route, options = {}) {
 }
 
 async function loadLeaderboard(options = {}) {
+  const region = getLeaderboardRegion();
+  if (state.leaderboard.region !== region) {
+    state.leaderboard = {
+      loading: false,
+      error: "",
+      rows: [],
+      updatedAt: "",
+      region,
+    };
+  }
   if (!state.backendAvailable && !options.force) {
     renderLeaderboard();
     return;
@@ -1286,18 +1313,21 @@ async function loadLeaderboard(options = {}) {
 
   state.leaderboard = {
     ...state.leaderboard,
+    region,
     loading: true,
     error: "",
   };
   renderLeaderboard();
 
   try {
-    const data = await apiRequest("/api/leaderboard?limit=50", { timeoutMs: 60000 });
+    const params = new URLSearchParams({ limit: "50", region });
+    const data = await apiRequest(`/api/leaderboard?${params.toString()}`, { timeoutMs: 60000 });
     state.leaderboard = {
       loading: false,
       error: "",
       rows: Array.isArray(data.rows) ? data.rows : [],
       updatedAt: data.updatedAt || new Date().toISOString(),
+      region: data.region || region,
     };
   } catch (error) {
     state.leaderboard = {
@@ -1393,7 +1423,13 @@ function renderVictoryProgress(matches) {
 
 function renderLeaderboard() {
   if (!dom.leaderboardRows || !dom.leaderboardPodium) return;
-  const { rows, loading, error } = state.leaderboard;
+  const { rows, loading, error, region } = state.leaderboard;
+  if (dom.leaderboardRegionLabel) {
+    const label = regionLabel(region || getLeaderboardRegion());
+    dom.leaderboardRegionLabel.textContent = state.language === "en"
+      ? `Live season - ${label}`
+      : `Sezon live - ${label}`;
+  }
 
   if (dom.leaderboardRefreshButton) {
     dom.leaderboardRefreshButton.disabled = loading;

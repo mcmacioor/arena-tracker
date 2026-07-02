@@ -351,6 +351,7 @@ try {
         loading: false,
         error: "",
         updatedAt: new Date().toISOString(),
+        region: "euw1",
         rows: [{
           rank: 1,
           gameName: "Smoke",
