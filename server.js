@@ -31,6 +31,7 @@ const RIOT_LIVE_PARTICIPANT_CONCURRENCY = 18;
 const RIOT_LIVE_OPTIONAL_TIMEOUT_MS = 1_200;
 const ARENA_LIVE_TEAM_SIZE = 3;
 const LIVE_GAME_CACHE_TTL_MS = 30 * 1000;
+const LIVE_GAME_STALE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_ROUTING = "europe";
 const ROUTINGS = new Set(["americas", "asia", "europe", "sea"]);
 const REGIONS = new Set([
@@ -442,7 +443,7 @@ async function getPublicProfile(req, res, url) {
   const slug = cleanText(url.searchParams.get("slug"));
   const forceRefresh = url.searchParams.get("refresh") === "1";
   const limit = clamp(Number(url.searchParams.get("limit") || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
-  const batch = limit;
+  const batch = clamp(Number(url.searchParams.get("batch") || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
   const syncJobId = cleanText(url.searchParams.get("syncJobId"));
 
   if (!region || !slug) {
@@ -457,7 +458,7 @@ async function getPublicProfile(req, res, url) {
     return normalizePublicRegion(profile.region) === region && normalizeSlug(publicProfileSlug(profile)) === normalizeSlug(slug);
   });
 
-  if (user && forceRefresh) {
+  if (user && (forceRefresh || syncJobId)) {
     const cached = findCachedPublicProfile(db, region, slug);
     const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
     if (fetched) {
@@ -469,7 +470,7 @@ async function getPublicProfile(req, res, url) {
 
   if (!user) {
     const cached = findCachedPublicProfile(db, region, slug);
-    const shouldRefresh = forceRefresh || !cached || isPublicProfileCacheStale(cached);
+    const shouldRefresh = forceRefresh || Boolean(syncJobId) || !cached || isPublicProfileCacheStale(cached);
 
     if (!shouldRefresh && cached) {
       sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
@@ -691,72 +692,80 @@ async function getLiveGame(req, res, url) {
     return;
   }
 
-  const routing = routingForRegion(region);
-  const account = await fetchRiotAccount({ ...parsed, routing });
-  const liveFetchOptions = { timeoutMs: RIOT_LIVE_OPTIONAL_TIMEOUT_MS, retries: 0 };
-  const summoner = await fetchSummonerByPuuid(region, account.puuid, liveFetchOptions).catch(() => null);
-  const activeGame = await fetchActiveGameByPuuid(region, account.puuid, { timeoutMs: 6_000, retries: 0 });
+  try {
+    const routing = routingForRegion(region);
+    const account = await fetchRiotAccount({ ...parsed, routing });
+    const liveFetchOptions = { timeoutMs: RIOT_LIVE_OPTIONAL_TIMEOUT_MS, retries: 0 };
+    const summoner = await fetchSummonerByPuuid(region, account.puuid, liveFetchOptions).catch(() => null);
+    const activeGame = await fetchActiveGameByPuuid(region, account.puuid, { timeoutMs: 8_000, retries: 1 });
 
-  if (!activeGame || !ARENA_QUEUE_IDS.includes(Number(activeGame.gameQueueConfigId))) {
+    if (!activeGame || !ARENA_QUEUE_IDS.includes(Number(activeGame.gameQueueConfigId))) {
+      const payload = {
+        active: false,
+        region,
+        profile: {
+          gameName: account.gameName || parsed.gameName,
+          tagLine: account.tagLine || parsed.tagLine,
+          region,
+          profileIconUrl: profileIconUrl(summoner?.profileIconId),
+        },
+        fetchedAt: new Date().toISOString(),
+      };
+      liveGameCache.set(cacheKey, { data: payload, expiresAt: Date.now() + LIVE_GAME_CACHE_TTL_MS });
+      sendJson(res, 200, payload);
+      return;
+    }
+
+    const participants = Array.isArray(activeGame.participants) ? activeGame.participants : [];
+    const players = await mapWithConcurrency(participants, RIOT_LIVE_PARTICIPANT_CONCURRENCY, async (participant, index) => {
+      const [participantSummoner, rank] = await Promise.all([
+        withTimeout(fetchLiveParticipantSummoner(region, participant, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
+        withTimeout(fetchSoloQueueRank(region, participant.puuid, participant.summonerId, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
+      ]);
+      const champion = championNameById(participant.championId);
+      return {
+        riotId: formatLiveRiotId(participant),
+        puuid: cleanText(participant.puuid),
+        teamId: liveTeamId(participant),
+        liveOrder: index,
+        champion,
+        championIconUrl: GAME_DATA.championIcons?.[champion] || "",
+        profileIconUrl: profileIconUrl(participantSummoner?.profileIconId || participant.profileIconId),
+        summonerLevel: participantSummoner?.summonerLevel || null,
+        soloRank: formatSoloQueueRank(rank),
+      };
+    });
+
     const payload = {
-      active: false,
+      active: true,
       region,
+      queueId: activeGame.gameQueueConfigId,
+      gameId: cleanText(activeGame.gameId),
+      gameStartTime: activeGame.gameStartTime || null,
+      gameLength: activeGame.gameLength || 0,
       profile: {
         gameName: account.gameName || parsed.gameName,
         tagLine: account.tagLine || parsed.tagLine,
         region,
         profileIconUrl: profileIconUrl(summoner?.profileIconId),
       },
+      teams: groupLiveTeams(players),
       fetchedAt: new Date().toISOString(),
     };
     liveGameCache.set(cacheKey, { data: payload, expiresAt: Date.now() + LIVE_GAME_CACHE_TTL_MS });
     sendJson(res, 200, payload);
-    return;
+  } catch (error) {
+    if (cached?.data && cached.expiresAt + LIVE_GAME_STALE_TTL_MS > Date.now()) {
+      sendJson(res, 200, {
+        ...cached.data,
+        cached: true,
+        stale: true,
+        warning: apiErrorMessage(error),
+      });
+      return;
+    }
+    throw error;
   }
-
-  const participants = Array.isArray(activeGame.participants) ? activeGame.participants : [];
-  const players = await mapWithConcurrency(participants, RIOT_LIVE_PARTICIPANT_CONCURRENCY, async (participant, index) => {
-    const [participantSummoner, rank] = await Promise.all([
-      withTimeout(fetchLiveParticipantSummoner(region, participant, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
-      withTimeout(fetchSoloQueueRank(region, participant.puuid, participant.summonerId, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
-    ]);
-    const champion = championNameById(participant.championId);
-    return {
-      riotId: formatLiveRiotId(participant),
-      puuid: cleanText(participant.puuid),
-      teamId: cleanText(
-        participant.playerSubteamId
-          ?? participant.subteamId
-          ?? participant.teamId
-          ?? Math.floor(index / ARENA_LIVE_TEAM_SIZE) + 1,
-      ),
-      liveOrder: index,
-      champion,
-      championIconUrl: GAME_DATA.championIcons?.[champion] || "",
-      profileIconUrl: profileIconUrl(participantSummoner?.profileIconId || participant.profileIconId),
-      summonerLevel: participantSummoner?.summonerLevel || null,
-      soloRank: formatSoloQueueRank(rank),
-    };
-  });
-
-  const payload = {
-    active: true,
-    region,
-    queueId: activeGame.gameQueueConfigId,
-    gameId: cleanText(activeGame.gameId),
-    gameStartTime: activeGame.gameStartTime || null,
-    gameLength: activeGame.gameLength || 0,
-    profile: {
-      gameName: account.gameName || parsed.gameName,
-      tagLine: account.tagLine || parsed.tagLine,
-      region,
-      profileIconUrl: profileIconUrl(summoner?.profileIconId),
-    },
-    teams: groupLiveTeams(players),
-    fetchedAt: new Date().toISOString(),
-  };
-  liveGameCache.set(cacheKey, { data: payload, expiresAt: Date.now() + LIVE_GAME_CACHE_TTL_MS });
-  sendJson(res, 200, payload);
 }
 
 async function fetchRiotPublicProfile(region, slug, options = {}) {
@@ -764,7 +773,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const parsed = parsePublicProfileSlug(slug);
   if (!parsed) return null;
   const limit = clamp(Number(options.limit || PUBLIC_PROFILE_MATCH_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
-  const batch = limit;
+  const batch = clamp(Number(options.batch || PUBLIC_PROFILE_FETCH_BATCH), 1, limit);
   const existing = options.existing || null;
   const routing = routingForRegion(region);
   const cacheId = publicProfileCacheId(region, slug);
@@ -784,6 +793,8 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
       startTime: seasonStartTimestamp(),
     });
   }
+  const rankedEntries = await fetchRankedEntries(region, account.puuid, summoner?.id)
+    .catch(() => existing?.riotProfile?.rankedEntries || []);
   const existingMatches = Array.isArray(existing?.matches)
     ? existing.matches.map((match) => normalizeMatch(match, "public", "riot"))
     : [];
@@ -820,6 +831,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
     region,
     puuid: account.puuid,
     profileIconId: summoner?.profileIconId || existing?.riotProfile?.profileIconId || null,
+    rankedEntries: formatRankedEntries(rankedEntries),
     lastSyncedAt: pendingCount ? existing?.riotProfile?.lastSyncedAt || null : new Date().toISOString(),
     lastSyncAttemptAt: new Date().toISOString(),
   };
@@ -936,6 +948,7 @@ function buildPublicProfile(user, matches) {
       region: profile.region,
       slug: publicProfileSlug(profile),
       profileIconUrl: profileIconUrl(profile.profileIconId),
+      rankedEntries: formatRankedEntries(profile.rankedEntries || []),
       lastSyncedAt: profile.lastSyncedAt || user.updatedAt || null,
     },
     progress: {
@@ -1046,7 +1059,7 @@ async function syncRiotMatches(req, res, user) {
   const body = await readJsonBody(req);
   const limit = clamp(Number(body.limit || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
   const scope = "season";
-  const batch = limit;
+  const batch = clamp(Number(body.batch || RIOT_SYNC_DEFAULT_LIMIT), 1, limit);
   const syncJobId = cleanText(body.syncJobId);
   const profile = user.riotProfile;
 
@@ -1099,6 +1112,8 @@ async function syncRiotMatches(req, res, user) {
   job.expiresAt = Date.now() + SYNC_JOB_TTL_MS;
   const pendingCount = job.remainingIds.length;
   const matchDetails = await fetchMatchDetails(profile.routing, idsToFetchNow);
+  const rankedEntries = await fetchRankedEntries(profile.region, account.puuid, summoner?.id)
+    .catch(() => profile.rankedEntries || []);
 
   const imported = matchDetails
     .map((detail) => mapRiotMatch(detail, account.puuid, user.id))
@@ -1112,6 +1127,7 @@ async function syncRiotMatches(req, res, user) {
       ...profile,
       puuid: account.puuid,
       profileIconId: summoner?.profileIconId || profile.profileIconId || null,
+      rankedEntries: formatRankedEntries(rankedEntries),
       verifiedAt: new Date().toISOString(),
       lastSyncAttemptAt: new Date().toISOString(),
       lastSyncedAt: pendingCount ? profile.lastSyncedAt : new Date().toISOString(),
@@ -1222,7 +1238,7 @@ async function fetchActiveGameByPuuid(region, puuid, options) {
   }
 }
 
-async function fetchSoloQueueRank(region, puuid, summonerId, options) {
+async function fetchRankedEntries(region, puuid, summonerId, options) {
   let entries = [];
   if (puuid) {
     try {
@@ -1234,7 +1250,12 @@ async function fetchSoloQueueRank(region, puuid, summonerId, options) {
   if (!entries.length && summonerId) {
     entries = await riotFetch(region, `/lol/league/v4/entries/by-summoner/${encodeURIComponent(summonerId)}`, options);
   }
-  return Array.isArray(entries) ? entries.find((entry) => entry.queueType === "RANKED_SOLO_5x5") || null : null;
+  return Array.isArray(entries) ? entries : [];
+}
+
+async function fetchSoloQueueRank(region, puuid, summonerId, options) {
+  const entries = await fetchRankedEntries(region, puuid, summonerId, options);
+  return entries.find((entry) => entry.queueType === "RANKED_SOLO_5x5") || null;
 }
 
 function withTimeout(promise, timeoutMs, fallback) {
@@ -1675,6 +1696,7 @@ function publicUser(user) {
           publicPath: `/${publicRegionSlug(user.riotProfile.region)}/${encodeURIComponent(publicProfileSlug(user.riotProfile))}`,
           profileIconId: user.riotProfile.profileIconId || null,
           profileIconUrl: profileIconUrl(user.riotProfile.profileIconId),
+          rankedEntries: formatRankedEntries(user.riotProfile.rankedEntries || []),
           verifiedAt: user.riotProfile.verifiedAt,
           lastSyncedAt: user.riotProfile.lastSyncedAt,
         }
@@ -1709,6 +1731,31 @@ function formatSoloQueueRank(entry) {
   if (!entry?.tier || !entry?.rank) return "";
   const lp = Number(entry.leaguePoints || 0);
   return `${entry.tier} ${entry.rank}${Number.isFinite(lp) ? ` ${lp} LP` : ""}`;
+}
+
+function formatRankedEntries(entries) {
+  return (Array.isArray(entries) ? entries : [])
+    .filter((entry) => entry?.queueType && entry?.tier && entry?.rank)
+    .map((entry) => ({
+      queueType: cleanText(entry.queueType),
+      tier: cleanText(entry.tier),
+      rank: cleanText(entry.rank),
+      leaguePoints: Number(entry.leaguePoints || 0),
+      wins: Number(entry.wins || 0),
+      losses: Number(entry.losses || 0),
+      display: formatSoloQueueRank(entry),
+    }));
+}
+
+function liveTeamId(participant) {
+  return cleanText(
+    participant.playerSubteamId
+      ?? participant.subteamId
+      ?? participant.playerSubteam
+      ?? participant.subteam
+      ?? participant.teamId
+      ?? "",
+  );
 }
 
 function groupLiveTeams(players) {

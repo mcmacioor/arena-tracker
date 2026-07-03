@@ -12,11 +12,13 @@ const AUGMENT_DETAILS = GAME_DATA.augmentDetails || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SEASON_SYNC_LIMIT = 500;
+const RIOT_SEASON_SYNC_BATCH = 80;
 const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
 
 const translations = {
   pl: {
     "actions.sync": "Synchronizuj",
+    "actions.syncing": "Synchronizuję...",
     "actions.refresh": "Odśwież",
     "actions.add": "Dodaj",
     "actions.coffee": "Postaw kawę",
@@ -99,6 +101,8 @@ const translations = {
     "live.noProfile": "Najpierw wybierz profil gracza.",
     "live.error": "Nie udało się sprawdzić live game.",
     "live.active": "Arena trwa teraz.",
+    "live.arena": "Arena",
+    "live.live": "Live",
     "live.team": "Drużyna",
     "live.level": "Poziom",
     "live.soloq": "SoloQ",
@@ -135,6 +139,7 @@ const translations = {
   },
   en: {
     "actions.sync": "Sync",
+    "actions.syncing": "Syncing...",
     "actions.refresh": "Refresh",
     "actions.add": "Add",
     "actions.coffee": "Buy coffee",
@@ -217,6 +222,8 @@ const translations = {
     "live.noProfile": "Choose a player profile first.",
     "live.error": "Could not check live game.",
     "live.active": "Arena is live now.",
+    "live.arena": "Arena",
+    "live.live": "Live",
     "live.team": "Team",
     "live.level": "Level",
     "live.soloq": "SoloQ",
@@ -459,6 +466,7 @@ const state = {
     data: null,
     profileKey: "",
   },
+  liveTimerId: null,
   searchTimers: new WeakMap(),
   filters: {
     championSearch: "",
@@ -1082,18 +1090,21 @@ function renderLiveGame() {
   }
 
   if (!profile && !live.data) {
+    stopLiveTimer();
     dom.liveGameStatus.replaceChildren(emptyState(t("live.noProfile"), ""));
     dom.liveGameTeams.replaceChildren();
     return;
   }
 
   if (live.loading) {
+    stopLiveTimer();
     dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.checking"), profile ? `${profile.gameName}#${profile.tagLine}` : ""));
     dom.liveGameTeams.replaceChildren();
     return;
   }
 
   if (live.error) {
+    stopLiveTimer();
     dom.liveGameStatus.replaceChildren(emptyState(live.error, t("live.error")));
     dom.liveGameTeams.replaceChildren();
     return;
@@ -1101,21 +1112,70 @@ function renderLiveGame() {
 
   const data = live.data;
   if (!data?.active) {
+    stopLiveTimer();
     dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.notPlaying"), profile ? `${profile.gameName}#${profile.tagLine}` : ""));
     dom.liveGameTeams.replaceChildren();
     return;
   }
 
   const queueLabel = data.queueId ? `Queue ${data.queueId}` : "Arena";
-  dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.active"), queueLabel));
+  dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.active"), queueLabel, data));
   dom.liveGameTeams.replaceChildren(...(data.teams || []).map((team, index) => renderLiveTeam(team, index, data.region)));
+  updateLiveTimers();
+  ensureLiveTimer();
 }
 
-function renderLiveStatus(title, caption) {
-  const root = el("article", "live-status-card");
-  root.append(el("strong", "", title));
+function renderLiveStatus(title, caption, liveData = null) {
+  const root = el("article", `live-status-card ${liveData?.active ? "is-live" : ""}`);
+  if (liveData?.active) {
+    const main = el("div", "live-status-main");
+    main.append(
+      el("strong", "", t("live.arena")),
+      el("span", "live-badge", t("live.live")),
+      el("span", "live-duration", "0:00"),
+    );
+    const timer = main.querySelector(".live-duration");
+    timer.dataset.liveTimer = "true";
+    timer.dataset.liveStart = liveData.gameStartTime || "";
+    timer.dataset.liveLength = liveData.gameLength || "0";
+    root.append(main);
+  } else {
+    root.append(el("strong", "", title));
+  }
   if (caption) root.append(el("span", "", caption));
   return root;
+}
+
+function ensureLiveTimer() {
+  if (state.liveTimerId) return;
+  state.liveTimerId = window.setInterval(updateLiveTimers, 1000);
+}
+
+function stopLiveTimer() {
+  if (!state.liveTimerId) return;
+  window.clearInterval(state.liveTimerId);
+  state.liveTimerId = null;
+}
+
+function updateLiveTimers() {
+  const timers = document.querySelectorAll("[data-live-timer]");
+  if (!timers.length) {
+    stopLiveTimer();
+    return;
+  }
+  timers.forEach((node) => {
+    const startedAt = Number(node.dataset.liveStart || 0);
+    const gameLength = Number(node.dataset.liveLength || 0);
+    const fromStart = startedAt ? Math.floor((Date.now() - startedAt) / 1000) : 0;
+    node.textContent = formatDuration(Math.max(0, fromStart, gameLength));
+  });
+}
+
+function formatDuration(totalSeconds) {
+  const safeSeconds = Math.max(0, Math.floor(Number(totalSeconds) || 0));
+  const minutes = Math.floor(safeSeconds / 60);
+  const seconds = safeSeconds % 60;
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
 }
 
 function renderLiveTeam(team, index, region) {
@@ -1133,7 +1193,7 @@ function renderLiveTeam(team, index, region) {
 }
 
 function renderLivePlayer(player, region) {
-  const root = el("button", "live-player-card");
+  const root = el("button", `live-player-card ${isFocusedLivePlayer(player, region) ? "is-focus-player" : ""}`);
   root.type = "button";
   root.dataset.playerProfile = player.riotId || "";
   root.dataset.playerRegion = region || "euw1";
@@ -1142,17 +1202,56 @@ function renderLivePlayer(player, region) {
     ? imageIcon(player.profileIconUrl, "live-player-avatar")
     : renderChampionIcon(player.champion);
   const copy = el("span", "live-player-copy");
+  const championLine = el("span", "live-champion-line");
+  if (player.championIconUrl) championLine.append(imageIcon(player.championIconUrl, "live-champion-mini"));
+  championLine.append(el("span", "", player.champion || "Unknown"));
   copy.append(
     el("strong", "", player.riotId || t("common.unknownPlayer")),
-    el("span", "", player.champion || "Unknown"),
+    championLine,
   );
   const facts = el("span", "live-player-facts");
   facts.append(
-    el("em", "", `${t("live.level")} ${player.summonerLevel || "-"}`),
-    el("em", "", player.soloRank || t("live.unranked")),
+    el("em", "live-level-chip", `${t("live.level")} ${player.summonerLevel || "-"}`),
+    renderRankChip(player.soloRank || t("live.unranked")),
   );
   root.append(avatar, copy, facts);
   return root;
+}
+
+function isFocusedLivePlayer(player, region) {
+  const profile = currentProfileForLive();
+  if (!profile?.gameName || !profile?.tagLine || !player?.riotId) return false;
+  const parsed = parseRiotId(player.riotId);
+  if (!parsed) return false;
+  return normalizeRegion(region || profile.region) === normalizeRegion(profile.region)
+    && normalizeLookupKey(parsed.gameName) === normalizeLookupKey(profile.gameName)
+    && normalizeLookupKey(parsed.tagLine) === normalizeLookupKey(profile.tagLine);
+}
+
+function renderRankChip(rankText) {
+  const tier = rankTier(rankText);
+  const chip = el("em", `live-rank-chip is-${tier.key}`);
+  chip.append(el("span", `rank-icon is-${tier.key}`, tier.short));
+  chip.append(el("span", "", rankText));
+  return chip;
+}
+
+function rankTier(rankText) {
+  const value = cleanText(rankText).toUpperCase();
+  const tiers = [
+    ["CHALLENGER", "challenger", "C"],
+    ["GRANDMASTER", "grandmaster", "GM"],
+    ["MASTER", "master", "M"],
+    ["DIAMOND", "diamond", "D"],
+    ["EMERALD", "emerald", "E"],
+    ["PLATINUM", "platinum", "P"],
+    ["GOLD", "gold", "G"],
+    ["SILVER", "silver", "S"],
+    ["BRONZE", "bronze", "B"],
+    ["IRON", "iron", "I"],
+  ];
+  const found = tiers.find(([needle]) => value.includes(needle));
+  return found ? { key: found[1], short: found[2] } : { key: "unranked", short: "U" };
 }
 
 function renderMatchPlayers(match) {
@@ -1557,34 +1656,44 @@ async function loadPublicProfile(route, options = {}) {
   render();
 
   try {
-    const fetchPublicBatch = async (forceRefresh) => {
+    const fetchPublicBatch = async ({ forceRefresh = false, syncJobId = "" } = {}) => {
       const params = new URLSearchParams({
         region: route.region,
         slug: route.slug,
         limit: String(RIOT_SEASON_SYNC_LIMIT),
-        batch: String(RIOT_SEASON_SYNC_LIMIT),
+        batch: String(RIOT_SEASON_SYNC_BATCH),
       });
       if (forceRefresh) params.set("refresh", "1");
+      if (syncJobId) params.set("syncJobId", syncJobId);
       return apiRequest(`/api/public-profile?${params.toString()}`, {
         timeoutMs: forceRefresh ? RIOT_SEASON_SYNC_TIMEOUT_MS : 60000,
       });
     };
 
-    let data = await fetchPublicBatch(Boolean(options.force));
-    state.publicProfile = {
-      routeKey,
-      loading: false,
-      refreshing: false,
-      error: "",
-      data,
-    };
-    render();
+    let data = await fetchPublicBatch({ forceRefresh: Boolean(options.force) });
+    let guard = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SEASON_SYNC_BATCH) + 2;
+    while (data?.sync?.hasMore && data.sync.jobId && guard > 0) {
+      guard -= 1;
+      state.publicProfile = {
+        routeKey,
+        loading: false,
+        refreshing: true,
+        error: "",
+        data,
+      };
+      render();
+      data = await fetchPublicBatch({ forceRefresh: true, syncJobId: data.sync.jobId });
+    }
 
     state.publicProfile = {
       routeKey,
       loading: false,
       refreshing: false,
-      error: data.sync?.hasMore ? "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę." : "",
+      error: data.sync?.hasMore
+        ? state.language === "en"
+          ? "Sync stopped before finishing. Try again in a moment."
+          : "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę."
+        : "",
       data,
     };
   } catch (error) {
@@ -1695,25 +1804,57 @@ function renderProfileHero(matches) {
   if (profile?.lastSyncedAt) {
     meta.push(`${t("common.lastSync")}: ${relativeTime(profile.lastSyncedAt)}`);
   }
-  dom.profileHeroMeta.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
+  dom.profileHeroMeta.replaceChildren(...renderProfileMetaNodes(meta, profile?.rankedEntries));
 
   const canSync = state.publicRoute
     ? Boolean(state.backendAvailable && !publicState?.loading && !publicState?.refreshing)
     : Boolean(state.user?.riotProfile && state.backendAvailable && !state.isAutoSyncing);
   dom.profileSyncButton.disabled = !canSync;
   const isSyncing = state.isAutoSyncing || Boolean(publicState?.loading || publicState?.refreshing);
-  dom.profileSyncButton.textContent = isSyncing
-    ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
-    : t("actions.sync");
+  dom.profileSyncButton.textContent = isSyncing ? t("actions.syncing") : t("actions.sync");
   dom.profileSyncNote.textContent = publicState?.error
     ? publicState.error
     : isSyncing
-    ? "Synchronizuję..."
+    ? t("actions.syncing")
     : profile || state.publicRoute
       ? ""
       : state.language === "en"
         ? "Search a player profile to sync public Arena data."
         : "Wyszukaj profil gracza, zeby synchronizowac publiczne dane Areny.";
+}
+
+function renderProfileMetaNodes(meta, rankedEntries = []) {
+  const nodes = meta.map((item) => el("span", "profile-meta-pill", item));
+  formatProfileRanks(rankedEntries).forEach((rank) => {
+    const node = el("span", `profile-meta-pill profile-rank-pill is-${rank.tierKey}`);
+    node.append(el("span", `rank-icon is-${rank.tierKey}`, rank.short));
+    node.append(el("span", "", `${rank.label}: ${rank.display}`));
+    nodes.push(node);
+  });
+  return nodes;
+}
+
+function formatProfileRanks(entries = []) {
+  const queueLabels = {
+    RANKED_SOLO_5x5: "Solo/Duo",
+    RANKED_FLEX_SR: "Flex",
+  };
+  const entriesByQueue = new Map(
+    (Array.isArray(entries) ? entries : [])
+      .filter((entry) => entry?.queueType)
+      .map((entry) => [entry.queueType, entry]),
+  );
+  return Object.entries(queueLabels).map(([queueType, label]) => {
+    const entry = entriesByQueue.get(queueType);
+    const display = entry?.display || t("live.unranked");
+    const tier = rankTier(display);
+    return {
+      label,
+      display,
+      tierKey: tier.key,
+      short: tier.short,
+    };
+  });
 }
 
 function renderVictoryProgress(matches) {
@@ -1866,7 +2007,7 @@ function renderAccount() {
 
   if (state.isAutoSyncing) {
     dom.riotSyncStatus.replaceChildren(
-      el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
+      el("strong", "", t("actions.syncing")),
       el("span", "", t("account.syncingCaption")),
     );
     return;
@@ -1925,7 +2066,7 @@ function renderPublicProfile() {
   }
 
   if (publicState.loading && !publicState.data) {
-    dom.publicProfileTitle.textContent = state.language === "en" ? "Syncing..." : "Synchronizuję...";
+    dom.publicProfileTitle.textContent = t("actions.syncing");
     dom.publicProfileMeta?.replaceChildren();
     renderPublicSyncState(publicState);
     renderPublicProgress({ won: 0, total: CHAMPIONS.length });
@@ -1955,9 +2096,9 @@ function renderPublicProfile() {
     `${data.progress.won} / ${data.progress.total} ${t("common.championsWon")}`,
   ];
   if (data.profile.lastSyncedAt) {
-    meta.push(`${state.language === "en" ? "Last sync" : "Ostatni sync"}: ${relativeTime(data.profile.lastSyncedAt)}`);
+    meta.push(`${t("common.lastSync")}: ${relativeTime(data.profile.lastSyncedAt)}`);
   }
-  dom.publicProfileMeta?.replaceChildren(...meta.map((item) => el("span", "profile-meta-pill", item)));
+  dom.publicProfileMeta?.replaceChildren(...renderProfileMetaNodes(meta, data.profile.rankedEntries));
   renderPublicProgress(data.progress);
   const championQuery = normalizeLookupKey(state.publicChampionSearch);
   const wonChampions = championQuery
@@ -2001,9 +2142,7 @@ function renderPublicSyncState(publicState = state.publicProfile) {
   if (dom.publicSyncButton) {
     dom.publicSyncButton.disabled = isBusy;
     dom.publicSyncButton.classList.toggle("is-syncing", isBusy);
-    dom.publicSyncButton.textContent = isBusy
-      ? state.language === "en" ? "Syncing..." : "Synchronizuję..."
-      : t("actions.sync");
+    dom.publicSyncButton.textContent = isBusy ? t("actions.syncing") : t("actions.sync");
   }
   if (dom.publicSyncStatus) {
     dom.publicSyncStatus.textContent = publicState?.error ? publicState.error : "";
@@ -2369,8 +2508,8 @@ function renderMatchCard(match, options) {
 
   const augmentLimit = 6;
   const itemLimit = 7;
-  const augmentTags = renderAssetGroup("Augmenty", match.augments, augmentLimit);
-  const itemTags = renderAssetGroup("Itemy", match.items, itemLimit);
+  const augmentTags = renderAssetGroup(t("common.augments"), match.augments, augmentLimit);
+  const itemTags = renderAssetGroup(t("common.items"), match.items, itemLimit);
 
   root.append(topLine, meta);
   if (augmentTags) root.append(augmentTags);
@@ -2698,7 +2837,7 @@ async function syncRiotMatches(options = {}) {
   state.isAutoSyncing = true;
   state.syncError = "";
   dom.riotSyncStatus.replaceChildren(
-    el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
+    el("strong", "", t("actions.syncing")),
     el("span", "", state.language === "en" ? "Working through Arena history." : "Pracuję nad historią Areny."),
   );
 
@@ -2708,26 +2847,43 @@ async function syncRiotMatches(options = {}) {
   let latestData = null;
 
   try {
-    const data = await apiRequest("/api/riot/sync", {
-      method: "POST",
-      timeoutMs: syncTimeout,
-      body: {
-        limit: syncLimit,
-        batch: syncLimit,
-        scope: "season",
-      },
-    });
-    latestData = data;
-    processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
-    state.user = data.user;
-    state.matches = data.matches.map(normalizeMatch).filter(Boolean);
-    state.syncError = "";
-    fillRiotProfileForm();
-    dom.riotSyncStatus.replaceChildren(
-      el("strong", "", state.language === "en" ? "Syncing..." : "Synchronizuję..."),
-      el("span", "", state.language === "en" ? "Finishing update." : "Kończę aktualizację."),
-    );
-    render();
+    let syncJobId = "";
+    let guard = Math.ceil(syncLimit / RIOT_SEASON_SYNC_BATCH) + 2;
+    do {
+      const data = await apiRequest("/api/riot/sync", {
+        method: "POST",
+        timeoutMs: syncTimeout,
+        body: {
+          limit: syncLimit,
+          batch: RIOT_SEASON_SYNC_BATCH,
+          scope: "season",
+          ...(syncJobId ? { syncJobId } : {}),
+        },
+      });
+      latestData = data;
+      processedCount = data.totalRiotMatchCount || ((data.scannedCount || 0) + (data.reusedCount || 0));
+      state.user = data.user;
+      state.matches = data.matches.map(normalizeMatch).filter(Boolean);
+      state.syncError = "";
+      fillRiotProfileForm();
+      dom.riotSyncStatus.replaceChildren(
+        el("strong", "", t("actions.syncing")),
+        el(
+          "span",
+          "",
+          data.hasMore
+            ? state.language === "en"
+              ? `${data.pendingCount || 0} matches left.`
+              : `Zostało ${data.pendingCount || 0} meczów.`
+            : state.language === "en"
+              ? "Finishing update."
+              : "Kończę aktualizację.",
+        ),
+      );
+      render();
+      syncJobId = data.syncJobId || "";
+      guard -= 1;
+    } while (latestData?.hasMore && syncJobId && guard > 0);
 
     state.syncError = "";
     fillRiotProfileForm();

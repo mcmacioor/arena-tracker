@@ -198,7 +198,10 @@ try {
   );
   assert(detailOpen, "Champion detail modal should open after clicking a champion");
   const detailText = await evalPage(cdp, `document.querySelector("#championDetailOverlay").innerText`);
-  assert(detailText.includes("Średnie miejsce"), "Champion detail should include average placement");
+  assert(
+    detailText.includes("Średnie miejsce") || detailText.includes("Average place"),
+    "Champion detail should include average placement",
+  );
   const metasrcBuildLink = await evalPage(
     cdp,
     `(() => {
@@ -217,7 +220,11 @@ try {
     "Numeric augment id should resolve to a localized name",
   );
   assert(!matchText.includes("1324"), "Numeric augment id should not be rendered raw");
-  assert(matchText.toLowerCase().includes("augmenty") && matchText.toLowerCase().includes("itemy"), "Match cards should split augments and items");
+  assert(
+    (matchText.toLowerCase().includes("augmenty") || matchText.toLowerCase().includes("augments"))
+      && (matchText.toLowerCase().includes("itemy") || matchText.toLowerCase().includes("items")),
+    "Match cards should split augments and items",
+  );
   const matchChampionIconCount = await evalPage(
     cdp,
     `document.querySelectorAll("#matchList .match-champion-icons .champion-icon").length`,
@@ -245,7 +252,7 @@ try {
     matchDetailText.includes("Shake Proteinowy") || matchDetailText.includes("Protein Shake"),
     "Match detail should include resolved augment names",
   );
-  assert(matchDetailText.includes("Gracze"), "Match detail should show players");
+  assert(matchDetailText.includes("Gracze") || matchDetailText.includes("Players"), "Match detail should show players");
   const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailPageTitle").textContent`);
   assert(!matchDetailTitle.includes("+"), "Match detail title should not duplicate the team title");
   const playerCards = await evalPage(
@@ -332,6 +339,7 @@ try {
     cdp,
     `document.querySelector('[data-view="match-detail"]').classList.contains("is-visible")
       && !document.querySelector("#matchDetailView").innerText.includes("Nie znaleziono meczu.")
+      && !document.querySelector("#matchDetailView").innerText.includes("Match not found.")
       && document.querySelector("#matchDetailPageTitle").textContent !== "Mecz"`,
   );
   assert(publicMatchDetailFound, "Public profile match detail should render the selected match");
