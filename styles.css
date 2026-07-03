@@ -439,6 +439,15 @@ a {
   flex-wrap: wrap;
 }
 
+.profile-rank-row {
+  display: flex;
+  flex: 1 0 100%;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
 .profile-meta-pill {
   display: inline-flex;
   align-items: center;

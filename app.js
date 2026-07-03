@@ -1840,12 +1840,18 @@ function renderProfileHero(matches) {
 
 function renderProfileMetaNodes(meta, rankedEntries = []) {
   const nodes = meta.map((item) => el("span", "profile-meta-pill", item));
+  const rankNodes = [];
   formatProfileRanks(rankedEntries).forEach((rank) => {
     const node = el("span", `profile-meta-pill profile-rank-pill is-${rank.tierKey}`);
     node.append(renderRankIcon({ key: rank.tierKey, label: rank.tierLabel }));
     node.append(el("span", "", `${rank.label}: ${rank.display}`));
-    nodes.push(node);
+    rankNodes.push(node);
   });
+  if (rankNodes.length) {
+    const rankRow = el("div", "profile-rank-row");
+    rankRow.append(...rankNodes);
+    nodes.push(rankRow);
+  }
   return nodes;
 }
 
