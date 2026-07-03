@@ -452,12 +452,18 @@ a {
 .profile-rank-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 10px;
+  min-height: 40px;
+  padding: 5px 13px 5px 10px;
   color: #e7e1cc;
   border-color: rgb(201 170 98 / 34%);
   background:
     linear-gradient(135deg, rgb(201 170 98 / 12%), rgb(6 8 8 / 94%)),
     #101212;
+}
+
+.profile-rank-pill span {
+  white-space: nowrap;
 }
 
 .profile-hero-actions {
@@ -2790,34 +2796,71 @@ textarea:focus {
 
 .rank-icon {
   display: block;
-  width: 26px;
-  height: 26px;
-  flex: 0 0 26px;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
   object-fit: contain;
   filter:
-    drop-shadow(0 0 8px rgb(201 170 98 / 20%))
+    brightness(1.28)
+    saturate(1.18)
+    drop-shadow(0 0 8px rgb(201 170 98 / 28%))
     drop-shadow(0 2px 4px rgb(0 0 0 / 54%));
 }
 
 .profile-rank-pill .rank-icon {
-  width: 34px;
-  height: 34px;
-  flex-basis: 34px;
-  margin-block: -6px;
-  margin-left: -3px;
+  width: 40px;
+  height: 40px;
+  flex-basis: 40px;
+  margin-block: -3px;
+  margin-left: -5px;
+  transform: scale(1.55);
+  transform-origin: center;
+}
+
+.profile-rank-pill .rank-icon.is-challenger,
+.profile-rank-pill .rank-icon.is-grandmaster,
+.profile-rank-pill .rank-icon.is-master {
+  transform: scale(1.9);
 }
 
 .live-rank-chip .rank-icon {
-  width: 24px;
-  height: 24px;
-  flex-basis: 24px;
-  margin-block: -4px;
+  width: 26px;
+  height: 26px;
+  flex-basis: 26px;
+  margin-block: -3px;
   margin-left: -2px;
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
+.live-rank-chip .rank-icon.is-challenger,
+.live-rank-chip .rank-icon.is-grandmaster,
+.live-rank-chip .rank-icon.is-master {
+  transform: scale(1.55);
 }
 
 .rank-icon.is-unranked {
-  opacity: 0.7;
-  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 55%));
+  opacity: 0.9;
+  filter:
+    brightness(1.08)
+    drop-shadow(0 2px 3px rgb(0 0 0 / 55%));
+  transform: none;
+}
+
+.profile-rank-pill .rank-icon.is-unranked {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+  margin-block: 0;
+  margin-left: -1px;
+}
+
+.live-rank-chip .rank-icon.is-unranked {
+  width: 22px;
+  height: 22px;
+  flex-basis: 22px;
+  margin-block: -2px;
+  margin-left: 0;
 }
 
 .team-detail-list {
