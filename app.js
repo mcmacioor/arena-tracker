@@ -14,6 +14,8 @@ const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SEASON_SYNC_LIMIT = 500;
 const RIOT_SEASON_SYNC_BATCH = 80;
 const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
+const RANK_EMBLEM_BASE_URL = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem";
+const UNRANKED_EMBLEM_URL = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/unranked-emblem.png";
 
 const translations = {
   pl: {
@@ -1231,27 +1233,40 @@ function isFocusedLivePlayer(player, region) {
 function renderRankChip(rankText) {
   const tier = rankTier(rankText);
   const chip = el("em", `live-rank-chip is-${tier.key}`);
-  chip.append(el("span", `rank-icon is-${tier.key}`, tier.short));
+  chip.append(renderRankIcon(tier));
   chip.append(el("span", "", rankText));
   return chip;
+}
+
+function renderRankIcon(tier) {
+  const image = imageIcon(rankIconUrl(tier.key), `rank-icon is-${tier.key}`);
+  image.alt = tier.label;
+  image.title = tier.label;
+  return image;
 }
 
 function rankTier(rankText) {
   const value = cleanText(rankText).toUpperCase();
   const tiers = [
-    ["CHALLENGER", "challenger", "C"],
-    ["GRANDMASTER", "grandmaster", "GM"],
-    ["MASTER", "master", "M"],
-    ["DIAMOND", "diamond", "D"],
-    ["EMERALD", "emerald", "E"],
-    ["PLATINUM", "platinum", "P"],
-    ["GOLD", "gold", "G"],
-    ["SILVER", "silver", "S"],
-    ["BRONZE", "bronze", "B"],
-    ["IRON", "iron", "I"],
+    ["CHALLENGER", "challenger", "Challenger"],
+    ["GRANDMASTER", "grandmaster", "Grandmaster"],
+    ["MASTER", "master", "Master"],
+    ["DIAMOND", "diamond", "Diamond"],
+    ["EMERALD", "emerald", "Emerald"],
+    ["PLATINUM", "platinum", "Platinum"],
+    ["GOLD", "gold", "Gold"],
+    ["SILVER", "silver", "Silver"],
+    ["BRONZE", "bronze", "Bronze"],
+    ["IRON", "iron", "Iron"],
   ];
   const found = tiers.find(([needle]) => value.includes(needle));
-  return found ? { key: found[1], short: found[2] } : { key: "unranked", short: "U" };
+  return found ? { key: found[1], label: found[2] } : { key: "unranked", label: t("live.unranked") };
+}
+
+function rankIconUrl(tierKey) {
+  return tierKey === "unranked"
+    ? UNRANKED_EMBLEM_URL
+    : `${RANK_EMBLEM_BASE_URL}/emblem-${tierKey}.png`;
 }
 
 function renderMatchPlayers(match) {
@@ -1827,7 +1842,7 @@ function renderProfileMetaNodes(meta, rankedEntries = []) {
   const nodes = meta.map((item) => el("span", "profile-meta-pill", item));
   formatProfileRanks(rankedEntries).forEach((rank) => {
     const node = el("span", `profile-meta-pill profile-rank-pill is-${rank.tierKey}`);
-    node.append(el("span", `rank-icon is-${rank.tierKey}`, rank.short));
+    node.append(renderRankIcon({ key: rank.tierKey, label: rank.tierLabel }));
     node.append(el("span", "", `${rank.label}: ${rank.display}`));
     nodes.push(node);
   });
@@ -1848,13 +1863,13 @@ function formatProfileRanks(entries = []) {
     const entry = entriesByQueue.get(queueType);
     const display = entry?.display || t("live.unranked");
     const tier = rankTier(display);
-    return {
-      label,
-      display,
-      tierKey: tier.key,
-      short: tier.short,
-    };
-  });
+      return {
+        label,
+        display,
+        tierKey: tier.key,
+        tierLabel: tier.label,
+      };
+    });
 }
 
 function renderVictoryProgress(matches) {

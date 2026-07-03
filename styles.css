@@ -2789,44 +2789,35 @@ textarea:focus {
 }
 
 .rank-icon {
-  display: inline-grid;
-  width: 19px;
-  height: 19px;
-  place-items: center;
-  border: 1px solid rgb(255 255 255 / 18%);
-  border-radius: 50%;
-  color: #f5f2e9;
-  background: #252828;
-  font-size: 0.56rem;
-  font-weight: 950;
-  line-height: 1;
+  display: block;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 8px rgb(201 170 98 / 20%))
+    drop-shadow(0 2px 4px rgb(0 0 0 / 54%));
 }
 
-.rank-icon.is-iron,
-.rank-icon.is-bronze {
-  background: linear-gradient(135deg, #4c3428, #171313);
+.profile-rank-pill .rank-icon {
+  width: 34px;
+  height: 34px;
+  flex-basis: 34px;
+  margin-block: -6px;
+  margin-left: -3px;
 }
 
-.rank-icon.is-silver {
-  background: linear-gradient(135deg, #9aa7ad, #20272b);
+.live-rank-chip .rank-icon {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  margin-block: -4px;
+  margin-left: -2px;
 }
 
-.rank-icon.is-gold {
-  color: #221806;
-  background: linear-gradient(135deg, #f4d878, #a87518);
-}
-
-.rank-icon.is-platinum,
-.rank-icon.is-emerald {
-  background: linear-gradient(135deg, #5fe0b3, #0e3f37);
-}
-
-.rank-icon.is-diamond,
-.rank-icon.is-master,
-.rank-icon.is-grandmaster,
-.rank-icon.is-challenger {
-  background: linear-gradient(135deg, #b981ff, #304dff 54%, #11131d);
-  box-shadow: 0 0 16px rgb(129 114 255 / 30%);
+.rank-icon.is-unranked {
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 55%));
 }
 
 .team-detail-list {
