@@ -1121,10 +1121,20 @@ function renderLiveGame() {
   }
 
   const queueLabel = data.queueId ? `Queue ${data.queueId}` : "Arena";
+  const players = livePlayersFromData(data);
   dom.liveGameStatus.replaceChildren(renderLiveStatus(t("live.active"), queueLabel, data));
-  dom.liveGameTeams.replaceChildren(...(data.teams || []).map((team, index) => renderLiveTeam(team, index, data.region)));
+  dom.liveGameTeams.replaceChildren(...players.map((player) => renderLivePlayer(player, data.region)));
   updateLiveTimers();
   ensureLiveTimer();
+}
+
+function livePlayersFromData(data) {
+  if (Array.isArray(data?.players)) {
+    return [...data.players].sort((a, b) => Number(a.liveOrder || 0) - Number(b.liveOrder || 0));
+  }
+  return (Array.isArray(data?.teams) ? data.teams : [])
+    .flatMap((team) => Array.isArray(team.players) ? team.players : [])
+    .sort((a, b) => Number(a.liveOrder || 0) - Number(b.liveOrder || 0));
 }
 
 function renderLiveStatus(title, caption, liveData = null) {
@@ -1178,20 +1188,6 @@ function formatDuration(totalSeconds) {
   const minutes = Math.floor(safeSeconds / 60);
   const seconds = safeSeconds % 60;
   return `${minutes}:${String(seconds).padStart(2, "0")}`;
-}
-
-function renderLiveTeam(team, index, region) {
-  const root = el("article", "live-team-card");
-  const placement = team.placement || index + 1;
-  const head = el("div", "live-team-head");
-  head.append(
-    el("strong", "", `${t("live.team")} #${placement}`),
-    el("span", "", `${team.players?.length || 0} ${t("common.playersLower")}`),
-  );
-  const grid = el("div", "live-player-grid");
-  (team.players || []).forEach((player) => grid.append(renderLivePlayer(player, region)));
-  root.append(head, grid);
-  return root;
 }
 
 function renderLivePlayer(player, region) {

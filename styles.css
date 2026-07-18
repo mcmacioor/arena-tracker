@@ -2656,40 +2656,7 @@ textarea:focus {
 
 .live-team-list {
   display: grid;
-  gap: 10px;
-}
-
-.live-team-card {
-  display: grid;
-  gap: 8px;
-  padding: 9px;
-  border: 1px solid #343838;
-  border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgb(201 170 98 / 7%), transparent 40%),
-    #0a0b0b;
-}
-
-.live-team-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 22px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid #202323;
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.live-team-head span {
-  color: var(--green);
-}
-
-.live-player-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 8px;
 }
 
@@ -3300,7 +3267,7 @@ textarea:focus {
     font-size: 1rem;
   }
 
-  .live-player-grid {
+  .live-team-list {
     grid-template-columns: 1fr;
   }
 }

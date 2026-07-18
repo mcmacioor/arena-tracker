@@ -31,7 +31,6 @@ const RIOT_FETCH_TIMEOUT_MS = 20_000;
 const RIOT_MATCH_DETAIL_CONCURRENCY = 4;
 const RIOT_LIVE_PARTICIPANT_CONCURRENCY = 18;
 const RIOT_LIVE_OPTIONAL_TIMEOUT_MS = 1_200;
-const ARENA_LIVE_TEAM_SIZE = 3;
 const LIVE_GAME_CACHE_TTL_MS = 30 * 1000;
 const LIVE_GAME_STALE_TTL_MS = 5 * 60 * 1000;
 const DEFAULT_ROUTING = "europe";
@@ -745,7 +744,6 @@ async function getLiveGame(req, res, url) {
     }
 
     const participants = Array.isArray(activeGame.participants) ? activeGame.participants : [];
-    const teamSize = arenaLiveTeamSize(activeGame.gameQueueConfigId, participants.length);
     const players = await mapWithConcurrency(participants, RIOT_LIVE_PARTICIPANT_CONCURRENCY, async (participant, index) => {
       const [participantSummoner, rank] = await Promise.all([
         withTimeout(fetchLiveParticipantSummoner(region, participant, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
@@ -755,7 +753,6 @@ async function getLiveGame(req, res, url) {
       return {
         riotId: formatLiveRiotId(participant),
         puuid: cleanText(participant.puuid),
-        teamId: liveTeamId(participant),
         liveOrder: index,
         champion,
         championIconUrl: GAME_DATA.championIcons?.[champion] || "",
@@ -778,7 +775,8 @@ async function getLiveGame(req, res, url) {
         region,
         profileIconUrl: profileIconUrl(summoner?.profileIconId),
       },
-      teams: groupLiveTeams(players, teamSize),
+      players: players.sort((a, b) => Number(a.liveOrder || 0) - Number(b.liveOrder || 0)),
+      teams: [],
       fetchedAt: new Date().toISOString(),
     };
     liveGameCache.set(cacheKey, { data: payload, expiresAt: Date.now() + LIVE_GAME_CACHE_TTL_MS });
@@ -1797,48 +1795,6 @@ function formatRankedEntries(entries) {
       wins: Number(entry.wins || 0),
       losses: Number(entry.losses || 0),
       display: formatSoloQueueRank(entry),
-    }));
-}
-
-function liveTeamId(participant) {
-  return cleanText(
-    participant.playerSubteamId
-      ?? participant.subteamId
-      ?? participant.playerSubteam
-      ?? participant.subteam
-      ?? participant.teamId
-      ?? "",
-  );
-}
-
-function arenaLiveTeamSize(queueId, participantCount) {
-  const count = Number(participantCount || 0);
-  if (count >= 12 && count % 3 === 0) return 3;
-  if (count >= 12 && count % 2 === 0) return 2;
-  return ARENA_LIVE_TEAM_SIZE;
-}
-
-function groupLiveTeams(players, teamSize = ARENA_LIVE_TEAM_SIZE) {
-  const meaningfulTeamIds = new Set(players.map((player) => cleanText(player.teamId)).filter(Boolean));
-  const hasOnlyClassicTeamIds = meaningfulTeamIds.size <= 2
-    && [...meaningfulTeamIds].every((teamId) => ["100", "200"].includes(teamId));
-  const shouldChunkArenaTeams = (meaningfulTeamIds.size <= 1 || hasOnlyClassicTeamIds)
-    && players.length > teamSize;
-  const teams = new Map();
-  players.forEach((player, index) => {
-    const key = shouldChunkArenaTeams
-      ? `team-${Math.floor(index / teamSize) + 1}`
-      : cleanText(player.teamId) || `team-${Math.floor(index / teamSize) + 1}`;
-    if (!teams.has(key)) teams.set(key, { key, players: [] });
-    teams.get(key).players.push(player);
-  });
-
-  return [...teams.values()]
-    .sort((a, b) => Number(a.key) - Number(b.key) || String(a.key).localeCompare(String(b.key)))
-    .map((team, index) => ({
-      teamId: team.key,
-      placement: index + 1,
-      players: team.players.sort((a, b) => Number(a.liveOrder || 0) - Number(b.liveOrder || 0)),
     }));
 }
 
