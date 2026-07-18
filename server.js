@@ -18,7 +18,9 @@ const SESSION_COOKIE = "arena_session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 1_000_000;
-const ARENA_QUEUE_IDS = [1750];
+const DEFAULT_ARENA_QUEUE_IDS = [1740, 1750, 1700, 1710];
+const ARENA_QUEUE_IDS = parseNumberList(process.env.ARENA_QUEUE_IDS, DEFAULT_ARENA_QUEUE_IDS);
+const ARENA_QUEUE_ID_SET = new Set(ARENA_QUEUE_IDS);
 const ARENA_MAX_PLACEMENT = 6;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 500;
@@ -69,6 +71,32 @@ const syncJobs = new Map();
 const publicSyncJobs = new Map();
 const liveGameCache = new Map();
 const SYNC_JOB_TTL_MS = 10 * 60 * 1000;
+
+function parseNumberList(value, fallback) {
+  const parsed = String(value || "")
+    .split(",")
+    .map((item) => Number(item.trim()))
+    .filter((item) => Number.isFinite(item) && item > 0);
+  return [...new Set([...(fallback || []), ...parsed])];
+}
+
+function isArenaQueueId(queueId) {
+  return ARENA_QUEUE_ID_SET.has(Number(queueId));
+}
+
+function isArenaGameMode(gameMode) {
+  const mode = cleanText(gameMode).toUpperCase();
+  return mode === "CHERRY" || mode === "ARENA";
+}
+
+function isArenaLiveGame(game) {
+  return Boolean(game) && (isArenaQueueId(game.gameQueueConfigId) || isArenaGameMode(game.gameMode));
+}
+
+function isArenaMatchDetail(detail) {
+  const info = detail?.info || {};
+  return isArenaQueueId(info.queueId) || isArenaGameMode(info.gameMode);
+}
 
 function getSyncJob(store, jobId, options) {
   const job = jobId ? store.get(jobId) : null;
@@ -697,9 +725,9 @@ async function getLiveGame(req, res, url) {
     const account = await fetchRiotAccount({ ...parsed, routing });
     const liveFetchOptions = { timeoutMs: RIOT_LIVE_OPTIONAL_TIMEOUT_MS, retries: 0 };
     const summoner = await fetchSummonerByPuuid(region, account.puuid, liveFetchOptions).catch(() => null);
-    const activeGame = await fetchActiveGameByPuuid(region, account.puuid, { timeoutMs: 8_000, retries: 1 });
+    const activeGame = await fetchActiveGameByPuuid(region, account.puuid, { timeoutMs: 12_000, retries: 2 });
 
-    if (!activeGame || !ARENA_QUEUE_IDS.includes(Number(activeGame.gameQueueConfigId))) {
+    if (!isArenaLiveGame(activeGame)) {
       const payload = {
         active: false,
         region,
@@ -717,6 +745,7 @@ async function getLiveGame(req, res, url) {
     }
 
     const participants = Array.isArray(activeGame.participants) ? activeGame.participants : [];
+    const teamSize = arenaLiveTeamSize(activeGame.gameQueueConfigId, participants.length);
     const players = await mapWithConcurrency(participants, RIOT_LIVE_PARTICIPANT_CONCURRENCY, async (participant, index) => {
       const [participantSummoner, rank] = await Promise.all([
         withTimeout(fetchLiveParticipantSummoner(region, participant, liveFetchOptions), RIOT_LIVE_OPTIONAL_TIMEOUT_MS, null),
@@ -749,7 +778,7 @@ async function getLiveGame(req, res, url) {
         region,
         profileIconUrl: profileIconUrl(summoner?.profileIconId),
       },
-      teams: groupLiveTeams(players),
+      teams: groupLiveTeams(players, teamSize),
       fetchedAt: new Date().toISOString(),
     };
     liveGameCache.set(cacheKey, { data: payload, expiresAt: Date.now() + LIVE_GAME_CACHE_TTL_MS });
@@ -1269,14 +1298,13 @@ function withTimeout(promise, timeoutMs, fallback) {
 }
 
 async function fetchArenaMatchIds(account, routing, limit, options = {}) {
-  const ids = [];
-  for (const queueId of ARENA_QUEUE_IDS) {
-    const pageSize = 100;
-    const pageStarts = Array.from(
-      { length: Math.ceil(limit / pageSize) },
-      (_, index) => index * pageSize,
-    );
-    const pages = await Promise.all(pageStarts.map(async (start) => {
+  const pageSize = 100;
+  const pageStarts = Array.from(
+    { length: Math.ceil(limit / pageSize) },
+    (_, index) => index * pageSize,
+  );
+  const pageTasks = ARENA_QUEUE_IDS.flatMap((queueId, queueIndex) =>
+    pageStarts.map(async (start) => {
       const count = Math.max(1, Math.min(pageSize, limit - start));
       const params = new URLSearchParams({
         queue: String(queueId),
@@ -1287,14 +1315,39 @@ async function fetchArenaMatchIds(account, routing, limit, options = {}) {
       const pathName = `/lol/match/v5/matches/by-puuid/${encodeURIComponent(
         account.puuid,
       )}/ids?${params.toString()}`;
-      const queueIds = await riotFetch(routing, pathName);
-      return { start, ids: Array.isArray(queueIds) ? queueIds : [] };
-    }));
-    pages
-      .sort((a, b) => a.start - b.start)
-      .forEach((page) => ids.push(...page.ids));
-  }
-  return [...new Set(ids)].slice(0, limit);
+      try {
+        const queueIds = await riotFetch(routing, pathName);
+        return { queueId, queueIndex, start, ids: Array.isArray(queueIds) ? queueIds : [] };
+      } catch (error) {
+        if ([400, 404].includes(Number(error.status))) {
+          console.warn(`[riot] skipped arena queue ${queueId}: ${error.message}`);
+          return { queueId, queueIndex, start, ids: [] };
+        }
+        throw error;
+      }
+    }),
+  );
+  const pages = await Promise.all(pageTasks);
+  const deduped = [];
+  const seen = new Set();
+  pages
+    .sort((a, b) => a.start - b.start || a.queueIndex - b.queueIndex)
+    .forEach((page) => {
+      page.ids.forEach((matchId) => {
+        if (!seen.has(matchId)) {
+          deduped.push(matchId);
+          seen.add(matchId);
+        }
+      });
+    });
+  return deduped
+    .sort((a, b) => matchIdSortValue(b) - matchIdSortValue(a) || String(b).localeCompare(String(a)))
+    .slice(0, limit);
+}
+
+function matchIdSortValue(matchId) {
+  const numeric = String(matchId || "").match(/_(\d+)$/);
+  return numeric ? Number(numeric[1]) : 0;
 }
 
 async function fetchMatchDetails(routing, matchIds) {
@@ -1385,7 +1438,7 @@ async function riotFetch(routing, pathName, optionsOrAttempt = 0) {
 }
 
 function mapRiotMatch(detail, puuid, userId) {
-  if (!ARENA_QUEUE_IDS.includes(Number(detail.info?.queueId))) return null;
+  if (!isArenaMatchDetail(detail)) return null;
   const participant = detail.info.participants.find((item) => item.puuid === puuid);
   if (!participant) return null;
   const placementFor = (item) => clamp(Number(item.placement || item.subteamPlacement || (item.win ? 1 : ARENA_MAX_PLACEMENT)), 1, ARENA_MAX_PLACEMENT);
@@ -1758,14 +1811,24 @@ function liveTeamId(participant) {
   );
 }
 
-function groupLiveTeams(players) {
+function arenaLiveTeamSize(queueId, participantCount) {
+  const count = Number(participantCount || 0);
+  if (count >= 12 && count % 3 === 0) return 3;
+  if (count >= 12 && count % 2 === 0) return 2;
+  return ARENA_LIVE_TEAM_SIZE;
+}
+
+function groupLiveTeams(players, teamSize = ARENA_LIVE_TEAM_SIZE) {
   const meaningfulTeamIds = new Set(players.map((player) => cleanText(player.teamId)).filter(Boolean));
-  const shouldChunkArenaTeams = meaningfulTeamIds.size <= 1 && players.length > ARENA_LIVE_TEAM_SIZE;
+  const hasOnlyClassicTeamIds = meaningfulTeamIds.size <= 2
+    && [...meaningfulTeamIds].every((teamId) => ["100", "200"].includes(teamId));
+  const shouldChunkArenaTeams = (meaningfulTeamIds.size <= 1 || hasOnlyClassicTeamIds)
+    && players.length > teamSize;
   const teams = new Map();
   players.forEach((player, index) => {
     const key = shouldChunkArenaTeams
-      ? `team-${Math.floor(index / ARENA_LIVE_TEAM_SIZE) + 1}`
-      : cleanText(player.teamId) || `team-${Math.floor(index / ARENA_LIVE_TEAM_SIZE) + 1}`;
+      ? `team-${Math.floor(index / teamSize) + 1}`
+      : cleanText(player.teamId) || `team-${Math.floor(index / teamSize) + 1}`;
     if (!teams.has(key)) teams.set(key, { key, players: [] });
     teams.get(key).players.push(player);
   });

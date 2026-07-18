@@ -1,11 +1,11 @@
 window.ARENA_GAME_DATA = {
-  "version": "16.13.1",
-  "generatedAt": "2026-07-01T16:29:39.011Z",
+  "version": "16.14.1",
+  "generatedAt": "2026-07-18T17:53:38.632Z",
   "sources": {
     "dataDragonVersions": "https://ddragon.leagueoflegends.com/api/versions.json",
-    "champion": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/en_US/champion.json",
-    "item": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/en_US/item.json",
-    "itemPl": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/pl_PL/item.json",
+    "champion": "https://ddragon.leagueoflegends.com/cdn/16.14.1/data/en_US/champion.json",
+    "item": "https://ddragon.leagueoflegends.com/cdn/16.14.1/data/en_US/item.json",
+    "itemPl": "https://ddragon.leagueoflegends.com/cdn/16.14.1/data/pl_PL/item.json",
     "arenaAugments": "https://raw.communitydragon.org/latest/cdragon/arena/en_us.json",
     "arenaAugmentsPl": "https://raw.communitydragon.org/latest/cdragon/arena/pl_pl.json",
     "cherryAugments": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/cherry-augments.json",
@@ -715,179 +715,179 @@ window.ARENA_GAME_DATA = {
     "zyra": "Zyra"
   },
   "championIcons": {
-    "Aatrox": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aatrox.png",
-    "Ahri": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ahri.png",
-    "Akali": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Akali.png",
-    "Akshan": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Akshan.png",
-    "Alistar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Alistar.png",
-    "Ambessa": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ambessa.png",
-    "Amumu": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Amumu.png",
-    "Anivia": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Anivia.png",
-    "Annie": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Annie.png",
-    "Aphelios": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aphelios.png",
-    "Ashe": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ashe.png",
-    "Aurelion Sol": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/AurelionSol.png",
-    "Aurora": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aurora.png",
-    "Azir": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Azir.png",
-    "Bard": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Bard.png",
-    "Bel'Veth": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Belveth.png",
-    "Blitzcrank": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Blitzcrank.png",
-    "Brand": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Brand.png",
-    "Braum": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Braum.png",
-    "Briar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Briar.png",
-    "Caitlyn": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Caitlyn.png",
-    "Camille": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Camille.png",
-    "Cassiopeia": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Cassiopeia.png",
-    "Cho'Gath": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Chogath.png",
-    "Corki": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Corki.png",
-    "Darius": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Darius.png",
-    "Diana": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Diana.png",
-    "Draven": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Draven.png",
-    "Dr. Mundo": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/DrMundo.png",
-    "Ekko": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ekko.png",
-    "Elise": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Elise.png",
-    "Evelynn": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Evelynn.png",
-    "Ezreal": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ezreal.png",
-    "Fiddlesticks": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fiddlesticks.png",
-    "Fiora": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fiora.png",
-    "Fizz": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fizz.png",
-    "Galio": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Galio.png",
-    "Gangplank": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gangplank.png",
-    "Garen": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Garen.png",
-    "Gnar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gnar.png",
-    "Gragas": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gragas.png",
-    "Graves": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Graves.png",
-    "Gwen": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gwen.png",
-    "Hecarim": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Hecarim.png",
-    "Heimerdinger": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Heimerdinger.png",
-    "Hwei": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Hwei.png",
-    "Illaoi": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Illaoi.png",
-    "Irelia": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Irelia.png",
-    "Ivern": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ivern.png",
-    "Janna": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Janna.png",
-    "Jarvan IV": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/JarvanIV.png",
-    "Jax": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jax.png",
-    "Jayce": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jayce.png",
-    "Jhin": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jhin.png",
-    "Jinx": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jinx.png",
-    "Kai'Sa": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kaisa.png",
-    "Kalista": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kalista.png",
-    "Karma": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Karma.png",
-    "Karthus": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Karthus.png",
-    "Kassadin": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kassadin.png",
-    "Katarina": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Katarina.png",
-    "Kayle": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kayle.png",
-    "Kayn": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kayn.png",
-    "Kennen": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kennen.png",
-    "Kha'Zix": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Khazix.png",
-    "Kindred": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kindred.png",
-    "Kled": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kled.png",
-    "Kog'Maw": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/KogMaw.png",
-    "K'Sante": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/KSante.png",
-    "LeBlanc": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Leblanc.png",
-    "Lee Sin": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/LeeSin.png",
-    "Leona": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Leona.png",
-    "Lillia": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lillia.png",
-    "Lissandra": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lissandra.png",
-    "Locke": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Locke.png",
-    "Lucian": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lucian.png",
-    "Lulu": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lulu.png",
-    "Lux": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lux.png",
-    "Malphite": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png",
-    "Malzahar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malzahar.png",
-    "Maokai": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Maokai.png",
-    "Master Yi": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MasterYi.png",
-    "Mel": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Mel.png",
-    "Milio": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Milio.png",
-    "Miss Fortune": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MissFortune.png",
-    "Wukong": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MonkeyKing.png",
-    "Mordekaiser": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Mordekaiser.png",
-    "Morgana": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Morgana.png",
-    "Naafiri": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Naafiri.png",
-    "Nami": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nami.png",
-    "Nasus": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nasus.png",
-    "Nautilus": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nautilus.png",
-    "Neeko": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Neeko.png",
-    "Nidalee": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nidalee.png",
-    "Nilah": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nilah.png",
-    "Nocturne": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nocturne.png",
-    "Nunu & Willump": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nunu.png",
-    "Olaf": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Olaf.png",
-    "Orianna": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Orianna.png",
-    "Ornn": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ornn.png",
-    "Pantheon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Pantheon.png",
-    "Poppy": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Poppy.png",
-    "Pyke": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Pyke.png",
-    "Qiyana": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Qiyana.png",
-    "Quinn": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Quinn.png",
-    "Rakan": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rakan.png",
-    "Rammus": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rammus.png",
-    "Rek'Sai": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/RekSai.png",
-    "Rell": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rell.png",
-    "Renata Glasc": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Renata.png",
-    "Renekton": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Renekton.png",
-    "Rengar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rengar.png",
-    "Riven": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Riven.png",
-    "Rumble": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rumble.png",
-    "Ryze": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ryze.png",
-    "Samira": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Samira.png",
-    "Sejuani": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sejuani.png",
-    "Senna": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Senna.png",
-    "Seraphine": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Seraphine.png",
-    "Sett": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sett.png",
-    "Shaco": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shaco.png",
-    "Shen": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shen.png",
-    "Shyvana": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shyvana.png",
-    "Singed": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Singed.png",
-    "Sion": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sion.png",
-    "Sivir": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sivir.png",
-    "Skarner": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Skarner.png",
-    "Smolder": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Smolder.png",
-    "Sona": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sona.png",
-    "Soraka": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Soraka.png",
-    "Swain": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Swain.png",
-    "Sylas": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sylas.png",
-    "Syndra": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Syndra.png",
-    "Tahm Kench": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/TahmKench.png",
-    "Taliyah": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Taliyah.png",
-    "Talon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Talon.png",
-    "Taric": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Taric.png",
-    "Teemo": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Teemo.png",
-    "Thresh": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Thresh.png",
-    "Tristana": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Tristana.png",
-    "Trundle": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Trundle.png",
-    "Tryndamere": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Tryndamere.png",
-    "Twisted Fate": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/TwistedFate.png",
-    "Twitch": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Twitch.png",
-    "Udyr": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Udyr.png",
-    "Urgot": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Urgot.png",
-    "Varus": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Varus.png",
-    "Vayne": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vayne.png",
-    "Veigar": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Veigar.png",
-    "Vel'Koz": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Velkoz.png",
-    "Vex": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vex.png",
-    "Vi": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png",
-    "Viego": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Viego.png",
-    "Viktor": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Viktor.png",
-    "Vladimir": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vladimir.png",
-    "Volibear": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Volibear.png",
-    "Warwick": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Warwick.png",
-    "Xayah": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Xayah.png",
-    "Xerath": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Xerath.png",
-    "Xin Zhao": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/XinZhao.png",
-    "Yasuo": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yasuo.png",
-    "Yone": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yone.png",
-    "Yorick": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yorick.png",
-    "Yunara": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yunara.png",
-    "Yuumi": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yuumi.png",
-    "Zaahen": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zaahen.png",
-    "Zac": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zac.png",
-    "Zed": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zed.png",
-    "Zeri": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zeri.png",
-    "Ziggs": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ziggs.png",
-    "Zilean": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zilean.png",
-    "Zoe": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zoe.png",
-    "Zyra": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zyra.png"
+    "Aatrox": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Aatrox.png",
+    "Ahri": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ahri.png",
+    "Akali": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Akali.png",
+    "Akshan": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Akshan.png",
+    "Alistar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Alistar.png",
+    "Ambessa": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ambessa.png",
+    "Amumu": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Amumu.png",
+    "Anivia": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Anivia.png",
+    "Annie": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Annie.png",
+    "Aphelios": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Aphelios.png",
+    "Ashe": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ashe.png",
+    "Aurelion Sol": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/AurelionSol.png",
+    "Aurora": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Aurora.png",
+    "Azir": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Azir.png",
+    "Bard": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Bard.png",
+    "Bel'Veth": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Belveth.png",
+    "Blitzcrank": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Blitzcrank.png",
+    "Brand": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Brand.png",
+    "Braum": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Braum.png",
+    "Briar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Briar.png",
+    "Caitlyn": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Caitlyn.png",
+    "Camille": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Camille.png",
+    "Cassiopeia": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Cassiopeia.png",
+    "Cho'Gath": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Chogath.png",
+    "Corki": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Corki.png",
+    "Darius": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Darius.png",
+    "Diana": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Diana.png",
+    "Draven": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Draven.png",
+    "Dr. Mundo": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/DrMundo.png",
+    "Ekko": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ekko.png",
+    "Elise": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Elise.png",
+    "Evelynn": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Evelynn.png",
+    "Ezreal": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ezreal.png",
+    "Fiddlesticks": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Fiddlesticks.png",
+    "Fiora": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Fiora.png",
+    "Fizz": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Fizz.png",
+    "Galio": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Galio.png",
+    "Gangplank": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Gangplank.png",
+    "Garen": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Garen.png",
+    "Gnar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Gnar.png",
+    "Gragas": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Gragas.png",
+    "Graves": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Graves.png",
+    "Gwen": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Gwen.png",
+    "Hecarim": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Hecarim.png",
+    "Heimerdinger": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Heimerdinger.png",
+    "Hwei": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Hwei.png",
+    "Illaoi": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Illaoi.png",
+    "Irelia": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Irelia.png",
+    "Ivern": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ivern.png",
+    "Janna": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Janna.png",
+    "Jarvan IV": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/JarvanIV.png",
+    "Jax": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Jax.png",
+    "Jayce": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Jayce.png",
+    "Jhin": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Jhin.png",
+    "Jinx": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Jinx.png",
+    "Kai'Sa": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kaisa.png",
+    "Kalista": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kalista.png",
+    "Karma": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Karma.png",
+    "Karthus": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Karthus.png",
+    "Kassadin": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kassadin.png",
+    "Katarina": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Katarina.png",
+    "Kayle": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kayle.png",
+    "Kayn": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kayn.png",
+    "Kennen": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kennen.png",
+    "Kha'Zix": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Khazix.png",
+    "Kindred": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kindred.png",
+    "Kled": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Kled.png",
+    "Kog'Maw": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/KogMaw.png",
+    "K'Sante": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/KSante.png",
+    "LeBlanc": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Leblanc.png",
+    "Lee Sin": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/LeeSin.png",
+    "Leona": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Leona.png",
+    "Lillia": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Lillia.png",
+    "Lissandra": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Lissandra.png",
+    "Locke": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Locke.png",
+    "Lucian": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Lucian.png",
+    "Lulu": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Lulu.png",
+    "Lux": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Lux.png",
+    "Malphite": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Malphite.png",
+    "Malzahar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Malzahar.png",
+    "Maokai": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Maokai.png",
+    "Master Yi": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/MasterYi.png",
+    "Mel": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Mel.png",
+    "Milio": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Milio.png",
+    "Miss Fortune": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/MissFortune.png",
+    "Wukong": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/MonkeyKing.png",
+    "Mordekaiser": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Mordekaiser.png",
+    "Morgana": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Morgana.png",
+    "Naafiri": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Naafiri.png",
+    "Nami": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nami.png",
+    "Nasus": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nasus.png",
+    "Nautilus": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nautilus.png",
+    "Neeko": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Neeko.png",
+    "Nidalee": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nidalee.png",
+    "Nilah": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nilah.png",
+    "Nocturne": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nocturne.png",
+    "Nunu & Willump": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Nunu.png",
+    "Olaf": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Olaf.png",
+    "Orianna": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Orianna.png",
+    "Ornn": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ornn.png",
+    "Pantheon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Pantheon.png",
+    "Poppy": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Poppy.png",
+    "Pyke": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Pyke.png",
+    "Qiyana": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Qiyana.png",
+    "Quinn": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Quinn.png",
+    "Rakan": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Rakan.png",
+    "Rammus": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Rammus.png",
+    "Rek'Sai": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/RekSai.png",
+    "Rell": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Rell.png",
+    "Renata Glasc": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Renata.png",
+    "Renekton": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Renekton.png",
+    "Rengar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Rengar.png",
+    "Riven": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Riven.png",
+    "Rumble": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Rumble.png",
+    "Ryze": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ryze.png",
+    "Samira": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Samira.png",
+    "Sejuani": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sejuani.png",
+    "Senna": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Senna.png",
+    "Seraphine": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Seraphine.png",
+    "Sett": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sett.png",
+    "Shaco": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Shaco.png",
+    "Shen": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Shen.png",
+    "Shyvana": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Shyvana.png",
+    "Singed": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Singed.png",
+    "Sion": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sion.png",
+    "Sivir": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sivir.png",
+    "Skarner": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Skarner.png",
+    "Smolder": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Smolder.png",
+    "Sona": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sona.png",
+    "Soraka": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Soraka.png",
+    "Swain": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Swain.png",
+    "Sylas": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Sylas.png",
+    "Syndra": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Syndra.png",
+    "Tahm Kench": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/TahmKench.png",
+    "Taliyah": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Taliyah.png",
+    "Talon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Talon.png",
+    "Taric": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Taric.png",
+    "Teemo": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Teemo.png",
+    "Thresh": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Thresh.png",
+    "Tristana": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Tristana.png",
+    "Trundle": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Trundle.png",
+    "Tryndamere": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Tryndamere.png",
+    "Twisted Fate": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/TwistedFate.png",
+    "Twitch": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Twitch.png",
+    "Udyr": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Udyr.png",
+    "Urgot": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Urgot.png",
+    "Varus": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Varus.png",
+    "Vayne": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Vayne.png",
+    "Veigar": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Veigar.png",
+    "Vel'Koz": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Velkoz.png",
+    "Vex": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Vex.png",
+    "Vi": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Vi.png",
+    "Viego": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Viego.png",
+    "Viktor": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Viktor.png",
+    "Vladimir": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Vladimir.png",
+    "Volibear": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Volibear.png",
+    "Warwick": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Warwick.png",
+    "Xayah": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Xayah.png",
+    "Xerath": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Xerath.png",
+    "Xin Zhao": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/XinZhao.png",
+    "Yasuo": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Yasuo.png",
+    "Yone": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Yone.png",
+    "Yorick": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Yorick.png",
+    "Yunara": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Yunara.png",
+    "Yuumi": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Yuumi.png",
+    "Zaahen": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zaahen.png",
+    "Zac": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zac.png",
+    "Zed": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zed.png",
+    "Zeri": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zeri.png",
+    "Ziggs": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Ziggs.png",
+    "Zilean": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zilean.png",
+    "Zoe": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zoe.png",
+    "Zyra": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/champion/Zyra.png"
   },
   "items": {
     "1001": "Boots",
@@ -1597,711 +1597,711 @@ window.ARENA_GAME_DATA = {
     "994403": "Golden Spatula"
   },
   "itemIcons": {
-    "1001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1001.png",
-    "1004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1004.png",
-    "1006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1006.png",
-    "1011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1011.png",
-    "1018": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1018.png",
-    "1026": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1026.png",
-    "1027": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1027.png",
-    "1028": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1028.png",
-    "1029": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1029.png",
-    "1031": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1031.png",
-    "1033": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1033.png",
-    "1035": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1035.png",
-    "1036": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1036.png",
-    "1037": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1037.png",
-    "1038": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1038.png",
-    "1039": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1039.png",
-    "1040": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1040.png",
-    "1042": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1042.png",
-    "1043": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1043.png",
-    "1052": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1052.png",
-    "1053": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1053.png",
-    "1054": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1054.png",
-    "1055": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1055.png",
-    "1056": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1056.png",
-    "1057": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1057.png",
-    "1058": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1058.png",
-    "1082": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1082.png",
-    "1083": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1083.png",
-    "1086": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1086.png",
-    "1090": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1090.png",
-    "1091": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1091.png",
-    "1092": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1092.png",
-    "1093": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1093.png",
-    "1094": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1094.png",
-    "1101": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1101.png",
-    "1102": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1102.png",
-    "1103": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1103.png",
-    "1104": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1104.png",
-    "1105": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1105.png",
-    "1106": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1106.png",
-    "1107": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1107.png",
-    "1111": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1111.png",
-    "1120": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1120.png",
-    "1200": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1200.png",
-    "1201": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1201.png",
-    "1202": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1202.png",
-    "1203": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1203.png",
-    "1204": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1204.png",
-    "1205": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1205.png",
-    "1206": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1206.png",
-    "1207": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1207.png",
-    "1208": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1208.png",
-    "1209": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1209.png",
-    "1210": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1210.png",
-    "1211": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1211.png",
-    "1220": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1220.png",
-    "1221": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1221.png",
-    "1222": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1222.png",
-    "1500": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1500.png",
-    "1501": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1501.png",
-    "1502": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1502.png",
-    "1503": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1503.png",
-    "1504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1504.png",
-    "1505": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1505.png",
-    "1506": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1506.png",
-    "1507": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1507.png",
-    "1508": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1508.png",
-    "1509": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1509.png",
-    "1510": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1510.png",
-    "1511": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1511.png",
-    "1512": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1512.png",
-    "1515": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1515.png",
-    "1516": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1516.png",
-    "1517": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1517.png",
-    "1518": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1518.png",
-    "1519": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1519.png",
-    "1520": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1520.png",
-    "1521": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1521.png",
-    "1522": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1522.png",
-    "1523": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1523.png",
-    "1524": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1524.png",
-    "2001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2001.png",
-    "2002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2002.png",
-    "2003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2003.png",
-    "2007": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2007.png",
-    "2010": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2010.png",
-    "2015": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2015.png",
-    "2019": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2019.png",
-    "2020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2020.png",
-    "2021": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2021.png",
-    "2022": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2022.png",
-    "2031": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2031.png",
-    "2033": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2033.png",
-    "2049": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2049.png",
-    "2050": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2050.png",
-    "2051": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2051.png",
-    "2052": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2052.png",
-    "2055": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2055.png",
-    "2056": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2056.png",
-    "2065": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2065.png",
-    "2138": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2138.png",
-    "2139": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2139.png",
-    "2140": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2140.png",
-    "2141": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2141.png",
-    "2142": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2142.png",
-    "2143": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2143.png",
-    "2144": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2144.png",
-    "2145": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2145.png",
-    "2146": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2146.png",
-    "2147": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2147.png",
-    "2150": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2150.png",
-    "2151": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2151.png",
-    "2152": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2152.png",
-    "2161": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2161.png",
-    "2162": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2162.png",
-    "2163": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2163.png",
-    "2403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2403.png",
-    "2420": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2420.png",
-    "2421": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2421.png",
-    "2422": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2422.png",
-    "2501": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2501.png",
-    "2502": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2502.png",
-    "2503": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2503.png",
-    "2504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2504.png",
-    "2508": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2508.png",
-    "2510": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2510.png",
-    "2512": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2512.png",
-    "2517": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2517.png",
-    "2520": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2520.png",
-    "2522": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2522.png",
-    "2523": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2523.png",
-    "2524": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2524.png",
-    "2525": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2525.png",
-    "2526": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2526.png",
-    "2530": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2530.png",
-    "3001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3001.png",
-    "3002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3002.png",
-    "3003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3003.png",
-    "3004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3004.png",
-    "3005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3005.png",
-    "3006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3006.png",
-    "3008": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3008.png",
-    "3009": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3009.png",
-    "3010": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3010.png",
-    "3011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3011.png",
-    "3012": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3012.png",
-    "3013": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3013.png",
-    "3020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3020.png",
-    "3023": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3023.png",
-    "3024": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3024.png",
-    "3026": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3026.png",
-    "3031": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3031.png",
-    "3032": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3032.png",
-    "3033": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3033.png",
-    "3035": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3035.png",
-    "3036": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3036.png",
-    "3039": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3039.png",
-    "3040": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3040.png",
-    "3041": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3041.png",
-    "3042": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3042.png",
-    "3044": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3044.png",
-    "3046": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3046.png",
-    "3047": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3047.png",
-    "3050": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3050.png",
-    "3051": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3051.png",
-    "3053": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3053.png",
-    "3057": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3057.png",
-    "3065": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3065.png",
-    "3066": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3066.png",
-    "3067": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3067.png",
-    "3068": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3068.png",
-    "3070": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3070.png",
-    "3071": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3071.png",
-    "3072": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3072.png",
-    "3073": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3073.png",
-    "3074": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3074.png",
-    "3075": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3075.png",
-    "3076": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3076.png",
-    "3077": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3077.png",
-    "3078": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3078.png",
-    "3082": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3082.png",
-    "3083": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3083.png",
-    "3084": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3084.png",
-    "3085": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3085.png",
-    "3086": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3086.png",
-    "3087": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3087.png",
-    "3089": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3089.png",
-    "3091": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3091.png",
-    "3094": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3094.png",
-    "3095": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3095.png",
-    "3097": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3097.png",
-    "3100": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3100.png",
-    "3102": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3102.png",
-    "3105": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3105.png",
-    "3107": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3107.png",
-    "3108": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3108.png",
-    "3109": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3109.png",
-    "3110": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3110.png",
-    "3111": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3111.png",
-    "3112": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3112.png",
-    "3113": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3113.png",
-    "3114": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3114.png",
-    "3115": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3115.png",
-    "3116": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3116.png",
-    "3117": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3117.png",
-    "3118": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3118.png",
-    "3119": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3119.png",
-    "3121": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3121.png",
-    "3123": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3123.png",
-    "3124": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3124.png",
-    "3128": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3128.png",
-    "3131": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3131.png",
-    "3133": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3133.png",
-    "3134": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3134.png",
-    "3135": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3135.png",
-    "3137": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3137.png",
-    "3139": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3139.png",
-    "3140": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3140.png",
-    "3142": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3142.png",
-    "3143": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3143.png",
-    "3144": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3144.png",
-    "3145": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3145.png",
-    "3146": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3146.png",
-    "3147": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3147.png",
-    "3152": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3152.png",
-    "3153": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3153.png",
-    "3155": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3155.png",
-    "3156": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3156.png",
-    "3157": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3157.png",
-    "3158": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3158.png",
-    "3161": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3161.png",
-    "3165": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3165.png",
-    "3168": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3168.png",
-    "3170": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3170.png",
-    "3171": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3171.png",
-    "3172": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3172.png",
-    "3173": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3173.png",
-    "3174": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3174.png",
-    "3175": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3175.png",
-    "3176": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3176.png",
-    "3177": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3177.png",
-    "3179": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3179.png",
-    "3181": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3181.png",
-    "3184": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3184.png",
-    "3190": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3190.png",
-    "3193": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3193.png",
-    "3211": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3211.png",
-    "3222": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3222.png",
-    "3302": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3302.png",
-    "3330": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3330.png",
-    "3340": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3340.png",
-    "3348": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3348.png",
-    "3349": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3349.png",
-    "3363": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3363.png",
-    "3364": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3364.png",
-    "3398": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3398.png",
-    "3399": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3399.png",
-    "3400": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3400.png",
-    "3430": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3430.png",
-    "3504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3504.png",
-    "3508": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3508.png",
-    "3513": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3513.png",
-    "3599": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3599.png",
-    "3600": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3600.png",
-    "3742": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3742.png",
-    "3748": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3748.png",
-    "3801": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3801.png",
-    "3802": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3802.png",
-    "3803": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3803.png",
-    "3814": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3814.png",
-    "3850": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3850.png",
-    "3851": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3851.png",
-    "3853": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3853.png",
-    "3854": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3854.png",
-    "3855": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3855.png",
-    "3857": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3857.png",
-    "3858": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3858.png",
-    "3859": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3859.png",
-    "3860": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3860.png",
-    "3862": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3862.png",
-    "3863": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3863.png",
-    "3864": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3864.png",
-    "3865": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3865.png",
-    "3866": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3866.png",
-    "3867": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3867.png",
-    "3869": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3869.png",
-    "3870": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3870.png",
-    "3871": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3871.png",
-    "3876": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3876.png",
-    "3877": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3877.png",
-    "3901": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3901.png",
-    "3902": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3902.png",
-    "3903": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3903.png",
-    "3916": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3916.png",
-    "4003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4003.png",
-    "4004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4004.png",
-    "4005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4005.png",
-    "4010": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4010.png",
-    "4011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4011.png",
-    "4012": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4012.png",
-    "4013": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4013.png",
-    "4014": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4014.png",
-    "4015": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4015.png",
-    "4016": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4016.png",
-    "4017": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4017.png",
-    "4401": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4401.png",
-    "4402": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4402.png",
-    "4403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4403.png",
-    "4628": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4628.png",
-    "4629": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4629.png",
-    "4630": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4630.png",
-    "4632": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4632.png",
-    "4633": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4633.png",
-    "4635": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4635.png",
-    "4636": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4636.png",
-    "4637": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4637.png",
-    "4638": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4638.png",
-    "4641": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4641.png",
-    "4642": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4642.png",
-    "4643": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4643.png",
-    "4644": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4644.png",
-    "4645": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4645.png",
-    "4646": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4646.png",
-    "6029": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6029.png",
-    "6032": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6032.png",
-    "6035": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6035.png",
-    "6333": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6333.png",
-    "6609": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6609.png",
-    "6610": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6610.png",
-    "6616": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6616.png",
-    "6617": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6617.png",
-    "6620": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6620.png",
-    "6621": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6621.png",
-    "6630": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6630.png",
-    "6631": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6631.png",
-    "6632": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6632.png",
-    "6653": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6653.png",
-    "6655": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6655.png",
-    "6656": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6656.png",
-    "6657": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6657.png",
-    "6660": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6660.png",
-    "6662": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6662.png",
-    "6664": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6664.png",
-    "6665": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6665.png",
-    "6667": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6667.png",
-    "6670": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6670.png",
-    "6671": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6671.png",
-    "6672": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6672.png",
-    "6673": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6673.png",
-    "6675": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6675.png",
-    "6676": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6676.png",
-    "6677": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6677.png",
-    "6690": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6690.png",
-    "6691": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6691.png",
-    "6692": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6692.png",
-    "6693": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6693.png",
-    "6694": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6694.png",
-    "6695": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6695.png",
-    "6696": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6696.png",
-    "6697": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6697.png",
-    "6698": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6698.png",
-    "6699": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6699.png",
-    "6700": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6700.png",
-    "6701": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6701.png",
-    "6702": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6702.png",
-    "7050": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/7050.png",
-    "8001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8001.png",
-    "8010": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8010.png",
-    "8020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8020.png",
-    "9168": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9168.png",
-    "9171": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9171.png",
-    "9172": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9172.png",
-    "9173": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9173.png",
-    "9174": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9174.png",
-    "9175": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9175.png",
-    "9176": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9176.png",
-    "9177": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9177.png",
-    "9178": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9178.png",
-    "9179": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9179.png",
-    "9180": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9180.png",
-    "9181": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9181.png",
-    "9183": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9183.png",
-    "9184": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9184.png",
-    "9185": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9185.png",
-    "9187": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9187.png",
-    "9188": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9188.png",
-    "9189": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9189.png",
-    "9190": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9190.png",
-    "9192": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9192.png",
-    "9193": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9193.png",
-    "9271": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9271.png",
-    "9272": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9272.png",
-    "9273": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9273.png",
-    "9274": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9274.png",
-    "9275": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9275.png",
-    "9276": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9276.png",
-    "9277": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9277.png",
-    "9278": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9278.png",
-    "9279": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9279.png",
-    "9280": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9280.png",
-    "9281": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9281.png",
-    "9283": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9283.png",
-    "9284": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9284.png",
-    "9285": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9285.png",
-    "9287": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9287.png",
-    "9288": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9288.png",
-    "9289": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9289.png",
-    "9290": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9290.png",
-    "9292": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9292.png",
-    "9293": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9293.png",
-    "9300": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9300.png",
-    "9301": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9301.png",
-    "9302": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9302.png",
-    "9303": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9303.png",
-    "9304": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9304.png",
-    "9305": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9305.png",
-    "9306": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9306.png",
-    "9307": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9307.png",
-    "9308": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9308.png",
-    "9400": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9400.png",
-    "9401": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9401.png",
-    "9402": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9402.png",
-    "9403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9403.png",
-    "9404": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9404.png",
-    "9405": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9405.png",
-    "9406": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9406.png",
-    "9407": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9407.png",
-    "9408": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9408.png",
-    "123430": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/123430.png",
-    "124011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/124011.png",
-    "126697": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/126697.png",
-    "220000": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220000.png",
-    "220001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220001.png",
-    "220002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220002.png",
-    "220003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220003.png",
-    "220004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220004.png",
-    "220005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220005.png",
-    "220006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220006.png",
-    "220007": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220007.png",
-    "220008": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220008.png",
-    "220009": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220009.png",
-    "220010": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220010.png",
-    "220011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220011.png",
-    "220012": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220012.png",
-    "220013": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220013.png",
-    "221011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221011.png",
-    "221026": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221026.png",
-    "221031": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221031.png",
-    "221038": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221038.png",
-    "221043": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221043.png",
-    "221053": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221053.png",
-    "221057": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221057.png",
-    "221058": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221058.png",
-    "222022": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222022.png",
-    "222051": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222051.png",
-    "222065": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222065.png",
-    "222141": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222141.png",
-    "222502": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222502.png",
-    "222503": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222503.png",
-    "222504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222504.png",
-    "222510": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222510.png",
-    "222512": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222512.png",
-    "222517": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222517.png",
-    "222522": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222522.png",
-    "222523": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222523.png",
-    "222524": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222524.png",
-    "222525": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222525.png",
-    "222526": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222526.png",
-    "222530": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222530.png",
-    "223001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223001.png",
-    "223002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223002.png",
-    "223003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223003.png",
-    "223004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223004.png",
-    "223005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223005.png",
-    "223006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223006.png",
-    "223008": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223008.png",
-    "223009": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223009.png",
-    "223011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223011.png",
-    "223020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223020.png",
-    "223026": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223026.png",
-    "223031": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223031.png",
-    "223032": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223032.png",
-    "223033": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223033.png",
-    "223036": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223036.png",
-    "223039": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223039.png",
-    "223040": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223040.png",
-    "223042": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223042.png",
-    "223046": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223046.png",
-    "223047": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223047.png",
-    "223050": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223050.png",
-    "223053": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223053.png",
-    "223057": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223057.png",
-    "223065": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223065.png",
-    "223067": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223067.png",
-    "223068": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223068.png",
-    "223069": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223069.png",
-    "223071": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223071.png",
-    "223072": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223072.png",
-    "223073": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223073.png",
-    "223074": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223074.png",
-    "223075": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223075.png",
-    "223078": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223078.png",
-    "223084": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223084.png",
-    "223085": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223085.png",
-    "223087": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223087.png",
-    "223089": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223089.png",
-    "223091": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223091.png",
-    "223094": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223094.png",
-    "223095": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223095.png",
-    "223100": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223100.png",
-    "223102": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223102.png",
-    "223105": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223105.png",
-    "223107": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223107.png",
-    "223109": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223109.png",
-    "223110": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223110.png",
-    "223111": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223111.png",
-    "223112": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223112.png",
-    "223115": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223115.png",
-    "223116": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223116.png",
-    "223118": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223118.png",
-    "223119": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223119.png",
-    "223121": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223121.png",
-    "223124": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223124.png",
-    "223135": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223135.png",
-    "223137": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223137.png",
-    "223139": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223139.png",
-    "223142": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223142.png",
-    "223143": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223143.png",
-    "223146": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223146.png",
-    "223152": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223152.png",
-    "223153": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223153.png",
-    "223156": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223156.png",
-    "223157": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223157.png",
-    "223158": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223158.png",
-    "223161": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223161.png",
-    "223165": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223165.png",
-    "223172": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223172.png",
-    "223177": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223177.png",
-    "223181": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223181.png",
-    "223184": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223184.png",
-    "223185": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223185.png",
-    "223190": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223190.png",
-    "223193": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223193.png",
-    "223222": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223222.png",
-    "223302": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223302.png",
-    "223504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223504.png",
-    "223508": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223508.png",
-    "223742": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223742.png",
-    "223748": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223748.png",
-    "223814": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223814.png",
-    "224004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224004.png",
-    "224005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224005.png",
-    "224401": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224401.png",
-    "224403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224403.png",
-    "224628": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224628.png",
-    "224629": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224629.png",
-    "224633": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224633.png",
-    "224636": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224636.png",
-    "224637": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224637.png",
-    "224644": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224644.png",
-    "224645": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224645.png",
-    "224646": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224646.png",
-    "226035": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226035.png",
-    "226333": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226333.png",
-    "226609": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226609.png",
-    "226610": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226610.png",
-    "226616": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226616.png",
-    "226617": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226617.png",
-    "226620": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226620.png",
-    "226621": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226621.png",
-    "226630": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226630.png",
-    "226631": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226631.png",
-    "226632": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226632.png",
-    "226653": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226653.png",
-    "226655": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226655.png",
-    "226656": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226656.png",
-    "226657": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226657.png",
+    "1001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1001.png",
+    "1004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1004.png",
+    "1006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1006.png",
+    "1011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1011.png",
+    "1018": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1018.png",
+    "1026": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1026.png",
+    "1027": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1027.png",
+    "1028": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1028.png",
+    "1029": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1029.png",
+    "1031": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1031.png",
+    "1033": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1033.png",
+    "1035": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1035.png",
+    "1036": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1036.png",
+    "1037": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1037.png",
+    "1038": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1038.png",
+    "1039": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1039.png",
+    "1040": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1040.png",
+    "1042": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1042.png",
+    "1043": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1043.png",
+    "1052": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1052.png",
+    "1053": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1053.png",
+    "1054": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1054.png",
+    "1055": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1055.png",
+    "1056": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1056.png",
+    "1057": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1057.png",
+    "1058": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1058.png",
+    "1082": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1082.png",
+    "1083": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1083.png",
+    "1086": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1086.png",
+    "1090": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1090.png",
+    "1091": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1091.png",
+    "1092": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1092.png",
+    "1093": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1093.png",
+    "1094": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1094.png",
+    "1101": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1101.png",
+    "1102": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1102.png",
+    "1103": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1103.png",
+    "1104": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1104.png",
+    "1105": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1105.png",
+    "1106": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1106.png",
+    "1107": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1107.png",
+    "1111": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1111.png",
+    "1120": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1120.png",
+    "1200": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1200.png",
+    "1201": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1201.png",
+    "1202": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1202.png",
+    "1203": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1203.png",
+    "1204": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1204.png",
+    "1205": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1205.png",
+    "1206": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1206.png",
+    "1207": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1207.png",
+    "1208": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1208.png",
+    "1209": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1209.png",
+    "1210": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1210.png",
+    "1211": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1211.png",
+    "1220": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1220.png",
+    "1221": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1221.png",
+    "1222": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1222.png",
+    "1500": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1500.png",
+    "1501": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1501.png",
+    "1502": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1502.png",
+    "1503": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1503.png",
+    "1504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1504.png",
+    "1505": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1505.png",
+    "1506": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1506.png",
+    "1507": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1507.png",
+    "1508": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1508.png",
+    "1509": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1509.png",
+    "1510": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1510.png",
+    "1511": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1511.png",
+    "1512": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1512.png",
+    "1515": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1515.png",
+    "1516": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1516.png",
+    "1517": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1517.png",
+    "1518": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1518.png",
+    "1519": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1519.png",
+    "1520": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1520.png",
+    "1521": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1521.png",
+    "1522": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1522.png",
+    "1523": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1523.png",
+    "1524": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1524.png",
+    "2001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2001.png",
+    "2002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2002.png",
+    "2003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2003.png",
+    "2007": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2007.png",
+    "2010": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2010.png",
+    "2015": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2015.png",
+    "2019": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2019.png",
+    "2020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2020.png",
+    "2021": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2021.png",
+    "2022": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2022.png",
+    "2031": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2031.png",
+    "2033": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2033.png",
+    "2049": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2049.png",
+    "2050": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2050.png",
+    "2051": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2051.png",
+    "2052": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2052.png",
+    "2055": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2055.png",
+    "2056": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2056.png",
+    "2065": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2065.png",
+    "2138": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2138.png",
+    "2139": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2139.png",
+    "2140": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2140.png",
+    "2141": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2141.png",
+    "2142": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2142.png",
+    "2143": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2143.png",
+    "2144": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2144.png",
+    "2145": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2145.png",
+    "2146": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2146.png",
+    "2147": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2147.png",
+    "2150": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2150.png",
+    "2151": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2151.png",
+    "2152": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2152.png",
+    "2161": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2161.png",
+    "2162": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2162.png",
+    "2163": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2163.png",
+    "2403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2403.png",
+    "2420": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2420.png",
+    "2421": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2421.png",
+    "2422": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2422.png",
+    "2501": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2501.png",
+    "2502": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2502.png",
+    "2503": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2503.png",
+    "2504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2504.png",
+    "2508": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2508.png",
+    "2510": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2510.png",
+    "2512": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2512.png",
+    "2517": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2517.png",
+    "2520": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2520.png",
+    "2522": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2522.png",
+    "2523": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2523.png",
+    "2524": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2524.png",
+    "2525": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2525.png",
+    "2526": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2526.png",
+    "2530": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2530.png",
+    "3001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3001.png",
+    "3002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3002.png",
+    "3003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3003.png",
+    "3004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3004.png",
+    "3005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3005.png",
+    "3006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3006.png",
+    "3008": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3008.png",
+    "3009": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3009.png",
+    "3010": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3010.png",
+    "3011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3011.png",
+    "3012": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3012.png",
+    "3013": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3013.png",
+    "3020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3020.png",
+    "3023": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3023.png",
+    "3024": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3024.png",
+    "3026": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3026.png",
+    "3031": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3031.png",
+    "3032": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3032.png",
+    "3033": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3033.png",
+    "3035": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3035.png",
+    "3036": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3036.png",
+    "3039": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3039.png",
+    "3040": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3040.png",
+    "3041": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3041.png",
+    "3042": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3042.png",
+    "3044": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3044.png",
+    "3046": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3046.png",
+    "3047": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3047.png",
+    "3050": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3050.png",
+    "3051": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3051.png",
+    "3053": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3053.png",
+    "3057": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3057.png",
+    "3065": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3065.png",
+    "3066": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3066.png",
+    "3067": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3067.png",
+    "3068": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3068.png",
+    "3070": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3070.png",
+    "3071": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3071.png",
+    "3072": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3072.png",
+    "3073": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3073.png",
+    "3074": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3074.png",
+    "3075": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3075.png",
+    "3076": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3076.png",
+    "3077": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3077.png",
+    "3078": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3078.png",
+    "3082": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3082.png",
+    "3083": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3083.png",
+    "3084": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3084.png",
+    "3085": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3085.png",
+    "3086": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3086.png",
+    "3087": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3087.png",
+    "3089": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3089.png",
+    "3091": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3091.png",
+    "3094": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3094.png",
+    "3095": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3095.png",
+    "3097": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3097.png",
+    "3100": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3100.png",
+    "3102": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3102.png",
+    "3105": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3105.png",
+    "3107": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3107.png",
+    "3108": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3108.png",
+    "3109": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3109.png",
+    "3110": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3110.png",
+    "3111": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3111.png",
+    "3112": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3112.png",
+    "3113": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3113.png",
+    "3114": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3114.png",
+    "3115": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3115.png",
+    "3116": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3116.png",
+    "3117": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3117.png",
+    "3118": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3118.png",
+    "3119": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3119.png",
+    "3121": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3121.png",
+    "3123": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3123.png",
+    "3124": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3124.png",
+    "3128": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3128.png",
+    "3131": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3131.png",
+    "3133": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3133.png",
+    "3134": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3134.png",
+    "3135": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3135.png",
+    "3137": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3137.png",
+    "3139": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3139.png",
+    "3140": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3140.png",
+    "3142": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3142.png",
+    "3143": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3143.png",
+    "3144": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3144.png",
+    "3145": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3145.png",
+    "3146": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3146.png",
+    "3147": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3147.png",
+    "3152": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3152.png",
+    "3153": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3153.png",
+    "3155": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3155.png",
+    "3156": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3156.png",
+    "3157": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3157.png",
+    "3158": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3158.png",
+    "3161": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3161.png",
+    "3165": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3165.png",
+    "3168": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3168.png",
+    "3170": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3170.png",
+    "3171": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3171.png",
+    "3172": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3172.png",
+    "3173": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3173.png",
+    "3174": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3174.png",
+    "3175": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3175.png",
+    "3176": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3176.png",
+    "3177": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3177.png",
+    "3179": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3179.png",
+    "3181": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3181.png",
+    "3184": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3184.png",
+    "3190": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3190.png",
+    "3193": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3193.png",
+    "3211": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3211.png",
+    "3222": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3222.png",
+    "3302": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3302.png",
+    "3330": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3330.png",
+    "3340": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3340.png",
+    "3348": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3348.png",
+    "3349": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3349.png",
+    "3363": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3363.png",
+    "3364": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3364.png",
+    "3398": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3398.png",
+    "3399": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3399.png",
+    "3400": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3400.png",
+    "3430": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3430.png",
+    "3504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3504.png",
+    "3508": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3508.png",
+    "3513": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3513.png",
+    "3599": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3599.png",
+    "3600": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3600.png",
+    "3742": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3742.png",
+    "3748": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3748.png",
+    "3801": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3801.png",
+    "3802": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3802.png",
+    "3803": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3803.png",
+    "3814": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3814.png",
+    "3850": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3850.png",
+    "3851": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3851.png",
+    "3853": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3853.png",
+    "3854": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3854.png",
+    "3855": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3855.png",
+    "3857": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3857.png",
+    "3858": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3858.png",
+    "3859": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3859.png",
+    "3860": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3860.png",
+    "3862": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3862.png",
+    "3863": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3863.png",
+    "3864": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3864.png",
+    "3865": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3865.png",
+    "3866": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3866.png",
+    "3867": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3867.png",
+    "3869": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3869.png",
+    "3870": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3870.png",
+    "3871": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3871.png",
+    "3876": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3876.png",
+    "3877": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3877.png",
+    "3901": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3901.png",
+    "3902": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3902.png",
+    "3903": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3903.png",
+    "3916": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3916.png",
+    "4003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4003.png",
+    "4004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4004.png",
+    "4005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4005.png",
+    "4010": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4010.png",
+    "4011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4011.png",
+    "4012": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4012.png",
+    "4013": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4013.png",
+    "4014": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4014.png",
+    "4015": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4015.png",
+    "4016": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4016.png",
+    "4017": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4017.png",
+    "4401": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4401.png",
+    "4402": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4402.png",
+    "4403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4403.png",
+    "4628": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4628.png",
+    "4629": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4629.png",
+    "4630": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4630.png",
+    "4632": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4632.png",
+    "4633": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4633.png",
+    "4635": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4635.png",
+    "4636": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4636.png",
+    "4637": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4637.png",
+    "4638": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4638.png",
+    "4641": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4641.png",
+    "4642": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4642.png",
+    "4643": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4643.png",
+    "4644": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4644.png",
+    "4645": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4645.png",
+    "4646": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4646.png",
+    "6029": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6029.png",
+    "6032": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6032.png",
+    "6035": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6035.png",
+    "6333": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6333.png",
+    "6609": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6609.png",
+    "6610": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6610.png",
+    "6616": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6616.png",
+    "6617": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6617.png",
+    "6620": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6620.png",
+    "6621": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6621.png",
+    "6630": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6630.png",
+    "6631": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6631.png",
+    "6632": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6632.png",
+    "6653": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6653.png",
+    "6655": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6655.png",
+    "6656": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6656.png",
+    "6657": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6657.png",
+    "6660": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6660.png",
+    "6662": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6662.png",
+    "6664": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6664.png",
+    "6665": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6665.png",
+    "6667": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6667.png",
+    "6670": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6670.png",
+    "6671": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6671.png",
+    "6672": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6672.png",
+    "6673": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6673.png",
+    "6675": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6675.png",
+    "6676": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6676.png",
+    "6677": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6677.png",
+    "6690": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6690.png",
+    "6691": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6691.png",
+    "6692": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6692.png",
+    "6693": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6693.png",
+    "6694": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6694.png",
+    "6695": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6695.png",
+    "6696": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6696.png",
+    "6697": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6697.png",
+    "6698": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6698.png",
+    "6699": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6699.png",
+    "6700": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6700.png",
+    "6701": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6701.png",
+    "6702": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6702.png",
+    "7050": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/7050.png",
+    "8001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8001.png",
+    "8010": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8010.png",
+    "8020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8020.png",
+    "9168": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9168.png",
+    "9171": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9171.png",
+    "9172": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9172.png",
+    "9173": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9173.png",
+    "9174": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9174.png",
+    "9175": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9175.png",
+    "9176": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9176.png",
+    "9177": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9177.png",
+    "9178": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9178.png",
+    "9179": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9179.png",
+    "9180": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9180.png",
+    "9181": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9181.png",
+    "9183": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9183.png",
+    "9184": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9184.png",
+    "9185": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9185.png",
+    "9187": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9187.png",
+    "9188": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9188.png",
+    "9189": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9189.png",
+    "9190": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9190.png",
+    "9192": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9192.png",
+    "9193": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9193.png",
+    "9271": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9271.png",
+    "9272": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9272.png",
+    "9273": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9273.png",
+    "9274": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9274.png",
+    "9275": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9275.png",
+    "9276": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9276.png",
+    "9277": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9277.png",
+    "9278": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9278.png",
+    "9279": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9279.png",
+    "9280": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9280.png",
+    "9281": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9281.png",
+    "9283": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9283.png",
+    "9284": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9284.png",
+    "9285": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9285.png",
+    "9287": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9287.png",
+    "9288": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9288.png",
+    "9289": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9289.png",
+    "9290": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9290.png",
+    "9292": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9292.png",
+    "9293": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9293.png",
+    "9300": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9300.png",
+    "9301": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9301.png",
+    "9302": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9302.png",
+    "9303": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9303.png",
+    "9304": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9304.png",
+    "9305": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9305.png",
+    "9306": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9306.png",
+    "9307": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9307.png",
+    "9308": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9308.png",
+    "9400": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9400.png",
+    "9401": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9401.png",
+    "9402": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9402.png",
+    "9403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9403.png",
+    "9404": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9404.png",
+    "9405": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9405.png",
+    "9406": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9406.png",
+    "9407": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9407.png",
+    "9408": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9408.png",
+    "123430": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/123430.png",
+    "124011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/124011.png",
+    "126697": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/126697.png",
+    "220000": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220000.png",
+    "220001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220001.png",
+    "220002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220002.png",
+    "220003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220003.png",
+    "220004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220004.png",
+    "220005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220005.png",
+    "220006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220006.png",
+    "220007": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220007.png",
+    "220008": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220008.png",
+    "220009": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220009.png",
+    "220010": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220010.png",
+    "220011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220011.png",
+    "220012": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220012.png",
+    "220013": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220013.png",
+    "221011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221011.png",
+    "221026": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221026.png",
+    "221031": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221031.png",
+    "221038": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221038.png",
+    "221043": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221043.png",
+    "221053": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221053.png",
+    "221057": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221057.png",
+    "221058": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221058.png",
+    "222022": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222022.png",
+    "222051": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222051.png",
+    "222065": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222065.png",
+    "222141": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222141.png",
+    "222502": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222502.png",
+    "222503": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222503.png",
+    "222504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222504.png",
+    "222510": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222510.png",
+    "222512": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222512.png",
+    "222517": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222517.png",
+    "222522": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222522.png",
+    "222523": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222523.png",
+    "222524": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222524.png",
+    "222525": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222525.png",
+    "222526": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222526.png",
+    "222530": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222530.png",
+    "223001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223001.png",
+    "223002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223002.png",
+    "223003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223003.png",
+    "223004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223004.png",
+    "223005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223005.png",
+    "223006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223006.png",
+    "223008": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223008.png",
+    "223009": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223009.png",
+    "223011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223011.png",
+    "223020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223020.png",
+    "223026": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223026.png",
+    "223031": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223031.png",
+    "223032": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223032.png",
+    "223033": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223033.png",
+    "223036": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223036.png",
+    "223039": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223039.png",
+    "223040": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223040.png",
+    "223042": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223042.png",
+    "223046": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223046.png",
+    "223047": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223047.png",
+    "223050": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223050.png",
+    "223053": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223053.png",
+    "223057": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223057.png",
+    "223065": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223065.png",
+    "223067": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223067.png",
+    "223068": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223068.png",
+    "223069": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223069.png",
+    "223071": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223071.png",
+    "223072": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223072.png",
+    "223073": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223073.png",
+    "223074": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223074.png",
+    "223075": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223075.png",
+    "223078": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223078.png",
+    "223084": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223084.png",
+    "223085": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223085.png",
+    "223087": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223087.png",
+    "223089": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223089.png",
+    "223091": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223091.png",
+    "223094": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223094.png",
+    "223095": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223095.png",
+    "223100": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223100.png",
+    "223102": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223102.png",
+    "223105": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223105.png",
+    "223107": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223107.png",
+    "223109": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223109.png",
+    "223110": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223110.png",
+    "223111": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223111.png",
+    "223112": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223112.png",
+    "223115": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223115.png",
+    "223116": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223116.png",
+    "223118": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223118.png",
+    "223119": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223119.png",
+    "223121": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223121.png",
+    "223124": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223124.png",
+    "223135": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223135.png",
+    "223137": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223137.png",
+    "223139": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223139.png",
+    "223142": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223142.png",
+    "223143": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223143.png",
+    "223146": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223146.png",
+    "223152": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223152.png",
+    "223153": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223153.png",
+    "223156": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223156.png",
+    "223157": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223157.png",
+    "223158": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223158.png",
+    "223161": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223161.png",
+    "223165": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223165.png",
+    "223172": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223172.png",
+    "223177": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223177.png",
+    "223181": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223181.png",
+    "223184": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223184.png",
+    "223185": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223185.png",
+    "223190": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223190.png",
+    "223193": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223193.png",
+    "223222": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223222.png",
+    "223302": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223302.png",
+    "223504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223504.png",
+    "223508": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223508.png",
+    "223742": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223742.png",
+    "223748": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223748.png",
+    "223814": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223814.png",
+    "224004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224004.png",
+    "224005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224005.png",
+    "224401": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224401.png",
+    "224403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224403.png",
+    "224628": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224628.png",
+    "224629": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224629.png",
+    "224633": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224633.png",
+    "224636": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224636.png",
+    "224637": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224637.png",
+    "224644": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224644.png",
+    "224645": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224645.png",
+    "224646": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224646.png",
+    "226035": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226035.png",
+    "226333": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226333.png",
+    "226609": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226609.png",
+    "226610": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226610.png",
+    "226616": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226616.png",
+    "226617": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226617.png",
+    "226620": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226620.png",
+    "226621": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226621.png",
+    "226630": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226630.png",
+    "226631": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226631.png",
+    "226632": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226632.png",
+    "226653": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226653.png",
+    "226655": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226655.png",
+    "226656": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226656.png",
+    "226657": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226657.png",
     "226660": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6660_tank_t2_bamiscinder.png",
-    "226662": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226662.png",
-    "226664": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226664.png",
-    "226665": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226665.png",
-    "226667": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226667.png",
-    "226671": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226671.png",
-    "226672": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226672.png",
-    "226673": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226673.png",
-    "226675": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226675.png",
-    "226676": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226676.png",
-    "226691": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226691.png",
-    "226692": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226692.png",
-    "226693": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226693.png",
-    "226694": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226694.png",
-    "226695": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226695.png",
-    "226696": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226696.png",
-    "226697": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226697.png",
-    "226698": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226698.png",
-    "226699": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226699.png",
-    "226701": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226701.png",
-    "228001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228001.png",
-    "228002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228002.png",
-    "228003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228003.png",
-    "228004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228004.png",
-    "228005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228005.png",
-    "228006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228006.png",
-    "228008": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228008.png",
-    "228009": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228009.png",
-    "228020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228020.png",
-    "322065": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322065.png",
-    "322526": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322526.png",
-    "322530": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322530.png",
-    "323002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323002.png",
-    "323003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323003.png",
-    "323004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323004.png",
-    "323040": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323040.png",
-    "323042": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323042.png",
-    "323050": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323050.png",
-    "323070": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323070.png",
-    "323075": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323075.png",
-    "323107": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323107.png",
-    "323109": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323109.png",
-    "323110": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323110.png",
-    "323119": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323119.png",
-    "323121": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323121.png",
-    "323190": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323190.png",
-    "323222": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323222.png",
-    "323504": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323504.png",
-    "324005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/324005.png",
-    "326616": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326616.png",
-    "326617": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326617.png",
-    "326620": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326620.png",
-    "326621": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326621.png",
-    "326657": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326657.png",
-    "328020": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/328020.png",
-    "443054": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443054.png",
-    "443055": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443055.png",
-    "443056": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443056.png",
-    "443058": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443058.png",
-    "443059": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443059.png",
-    "443060": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443060.png",
-    "443061": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443061.png",
-    "443062": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443062.png",
-    "443063": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443063.png",
-    "443064": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443064.png",
-    "443069": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443069.png",
-    "443079": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443079.png",
-    "443080": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443080.png",
-    "443081": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443081.png",
-    "443083": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443083.png",
-    "443090": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443090.png",
-    "443193": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443193.png",
-    "444636": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444636.png",
-    "444637": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444637.png",
-    "444644": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444644.png",
-    "446632": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446632.png",
-    "446656": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446656.png",
-    "446667": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446667.png",
-    "446671": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446671.png",
-    "446691": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446691.png",
-    "446693": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446693.png",
-    "447100": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447100.png",
-    "447101": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447101.png",
-    "447102": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447102.png",
-    "447103": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447103.png",
-    "447104": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447104.png",
-    "447105": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447105.png",
-    "447106": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447106.png",
-    "447107": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447107.png",
-    "447108": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447108.png",
-    "447109": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447109.png",
-    "447110": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447110.png",
-    "447111": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447111.png",
-    "447112": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447112.png",
-    "447113": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447113.png",
-    "447114": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447114.png",
-    "447115": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447115.png",
-    "447116": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447116.png",
-    "447118": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447118.png",
-    "447119": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447119.png",
-    "447120": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447120.png",
-    "447121": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447121.png",
-    "447122": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447122.png",
-    "447123": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447123.png",
-    "550001": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550001.png",
-    "550002": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550002.png",
-    "550003": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550003.png",
-    "550004": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550004.png",
-    "550005": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550005.png",
-    "550006": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550006.png",
-    "550007": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550007.png",
-    "663039": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663039.png",
-    "663056": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663056.png",
-    "663058": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663058.png",
-    "663059": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663059.png",
-    "663060": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663060.png",
-    "663064": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663064.png",
-    "663146": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663146.png",
-    "663172": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663172.png",
-    "663193": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663193.png",
-    "664011": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664011.png",
-    "664403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664403.png",
-    "664644": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664644.png",
-    "667101": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667101.png",
-    "667109": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667109.png",
-    "667112": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667112.png",
-    "667666": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667666.png",
-    "994403": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/994403.png"
+    "226662": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226662.png",
+    "226664": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226664.png",
+    "226665": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226665.png",
+    "226667": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226667.png",
+    "226671": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226671.png",
+    "226672": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226672.png",
+    "226673": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226673.png",
+    "226675": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226675.png",
+    "226676": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226676.png",
+    "226691": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226691.png",
+    "226692": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226692.png",
+    "226693": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226693.png",
+    "226694": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226694.png",
+    "226695": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226695.png",
+    "226696": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226696.png",
+    "226697": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226697.png",
+    "226698": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226698.png",
+    "226699": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226699.png",
+    "226701": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226701.png",
+    "228001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228001.png",
+    "228002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228002.png",
+    "228003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228003.png",
+    "228004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228004.png",
+    "228005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228005.png",
+    "228006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228006.png",
+    "228008": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228008.png",
+    "228009": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228009.png",
+    "228020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228020.png",
+    "322065": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322065.png",
+    "322526": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322526.png",
+    "322530": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322530.png",
+    "323002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323002.png",
+    "323003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323003.png",
+    "323004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323004.png",
+    "323040": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323040.png",
+    "323042": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323042.png",
+    "323050": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323050.png",
+    "323070": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323070.png",
+    "323075": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323075.png",
+    "323107": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323107.png",
+    "323109": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323109.png",
+    "323110": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323110.png",
+    "323119": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323119.png",
+    "323121": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323121.png",
+    "323190": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323190.png",
+    "323222": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323222.png",
+    "323504": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323504.png",
+    "324005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/324005.png",
+    "326616": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326616.png",
+    "326617": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326617.png",
+    "326620": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326620.png",
+    "326621": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326621.png",
+    "326657": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326657.png",
+    "328020": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/328020.png",
+    "443054": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443054.png",
+    "443055": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443055.png",
+    "443056": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443056.png",
+    "443058": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443058.png",
+    "443059": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443059.png",
+    "443060": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443060.png",
+    "443061": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443061.png",
+    "443062": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443062.png",
+    "443063": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443063.png",
+    "443064": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443064.png",
+    "443069": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443069.png",
+    "443079": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443079.png",
+    "443080": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443080.png",
+    "443081": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443081.png",
+    "443083": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443083.png",
+    "443090": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443090.png",
+    "443193": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443193.png",
+    "444636": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444636.png",
+    "444637": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444637.png",
+    "444644": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444644.png",
+    "446632": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446632.png",
+    "446656": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446656.png",
+    "446667": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446667.png",
+    "446671": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446671.png",
+    "446691": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446691.png",
+    "446693": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446693.png",
+    "447100": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447100.png",
+    "447101": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447101.png",
+    "447102": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447102.png",
+    "447103": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447103.png",
+    "447104": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447104.png",
+    "447105": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447105.png",
+    "447106": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447106.png",
+    "447107": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447107.png",
+    "447108": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447108.png",
+    "447109": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447109.png",
+    "447110": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447110.png",
+    "447111": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447111.png",
+    "447112": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447112.png",
+    "447113": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447113.png",
+    "447114": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447114.png",
+    "447115": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447115.png",
+    "447116": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447116.png",
+    "447118": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447118.png",
+    "447119": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447119.png",
+    "447120": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447120.png",
+    "447121": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447121.png",
+    "447122": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447122.png",
+    "447123": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447123.png",
+    "550001": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550001.png",
+    "550002": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550002.png",
+    "550003": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550003.png",
+    "550004": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550004.png",
+    "550005": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550005.png",
+    "550006": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550006.png",
+    "550007": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550007.png",
+    "663039": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663039.png",
+    "663056": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663056.png",
+    "663058": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663058.png",
+    "663059": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663059.png",
+    "663060": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663060.png",
+    "663064": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663064.png",
+    "663146": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663146.png",
+    "663172": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663172.png",
+    "663193": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663193.png",
+    "664011": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664011.png",
+    "664403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664403.png",
+    "664644": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664644.png",
+    "667101": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667101.png",
+    "667109": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667109.png",
+    "667112": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667112.png",
+    "667666": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667666.png",
+    "994403": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/994403.png"
   },
   "itemAliases": {
     "boots": "1001",
@@ -3261,7 +3261,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Move Speed",
         "pl": "25 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1001.png",
       "tier": "boots",
       "price": 300,
       "categories": [
@@ -3278,7 +3278,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Base Mana Regen",
         "pl": "50% podstawowej regeneracji many"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1004.png",
       "tier": "",
       "price": 200,
       "categories": [
@@ -3295,7 +3295,7 @@ window.ARENA_GAME_DATA = {
         "en": "100% Base Health Regen",
         "pl": "100% podstawowej regeneracji zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1006.png",
       "tier": "",
       "price": 300,
       "categories": [
@@ -3312,7 +3312,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health",
         "pl": "350 pkt. zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1011.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -3329,7 +3329,7 @@ window.ARENA_GAME_DATA = {
         "en": "15% Critical Strike Chance",
         "pl": "15% szansy na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1018.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1018.png",
       "tier": "",
       "price": 600,
       "categories": [
@@ -3346,7 +3346,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power",
         "pl": "45 pkt. mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1026.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1026.png",
       "tier": "",
       "price": 850,
       "categories": [
@@ -3363,7 +3363,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Mana",
         "pl": "300 pkt. many"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1027.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1027.png",
       "tier": "",
       "price": 300,
       "categories": [
@@ -3380,7 +3380,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health",
         "pl": "150 pkt. zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1028.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1028.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -3397,7 +3397,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Armor",
         "pl": "15 pkt. pancerza"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1029.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1029.png",
       "tier": "",
       "price": 300,
       "categories": [
@@ -3414,7 +3414,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Armor",
         "pl": "40 pkt. pancerza"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1031.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1031.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -3431,7 +3431,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Magic Resist",
         "pl": "20 pkt. odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1033.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1033.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -3448,7 +3448,7 @@ window.ARENA_GAME_DATA = {
         "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Challenging Path:\nSmiting 5 times consumes this item and upgrades your Smite to Challenging Smite, increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health. Challenging Smite marks champions for 4 seconds. Damaging a marked champion deals an additional true damage to them over 2.5 seconds. You take 10% reduced damage from marked champions. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.\nOnly attacks and abilities apply Challenging Smite's burn",
         "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Wyzywająca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Wyzywającego Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu. Wyzywające Porażenie oznacza bohaterów na 4 sek. Zadawanie obrażeń oznaczonym bohaterom zadaje im dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 2.5 sek. Oznaczeni bohaterowie zadają ci o 10% mniej obrażeń. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia.\nTylko ataki i umiejętności nakładają efekt spalenia Wyzywającego Porażenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1035.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1035.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -3467,7 +3467,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Attack Damage",
         "pl": "10 pkt. obrażeń od ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1036.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1036.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -3485,7 +3485,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage",
         "pl": "25 pkt. obrażeń od ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1037.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1037.png",
       "tier": "",
       "price": 875,
       "categories": [
@@ -3502,7 +3502,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage",
         "pl": "40 pkt. obrażeń od ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1038.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1038.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -3519,7 +3519,7 @@ window.ARENA_GAME_DATA = {
         "en": "7%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Chilling Path:\nSmiting 5 times consumes this item and upgrades your Smite to Chilling Smite, increasing its damage to monsters to 900 and damage to minions to 500 +10% target max Health. Chilling Smite deals true damage to champions and steals 20% of their Move Speed for 2 seconds. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
         "pl": "7%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Mrożąca Ścieżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Mrożącego Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. i obrażenia przeciwko stworom do 500 pkt. + 10% maks. zdrowia celu. Mrożące Porażenie zadaje 0 pkt. obrażeń nieuchronnych bohaterom i wykrada 20% ich prędkości ruchu na 2 sek. Łowca:\nZabijanie dużych potworów z dżungli zapewnia dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1039.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1039.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -3538,7 +3538,7 @@ window.ARENA_GAME_DATA = {
         "en": "8%\nOmnivamp against jungle monsters\nSear:\nDamaging jungle monsters burns them for magic damage over 5 seconds. Auto Path:\nSmiting 5 times consumes this item and upgrades your Attack-Smite, increasing its damage to monsters to 900. Huntsman:\nKilling large jungle monsters grants bonus experience. Recoup:\nRegen up to Mana (based on missing mana) per second when in the jungle or river.\nConsuming this item grants all item effects permanently and increases Smite damage to monsters. If you have gained more gold from minions than jungle monsters, gold and experience from minions is heavily reduced. Healing is not reduced on AoE attacks. If two levels behind the average champion level of the game, monster kills grant bonus experience.",
         "pl": "8%\nwszechwampiryzmu przeciwko potworom z dżungli\nPrzypalenie:\nZadawanie obrażeń potworom z dżungli podpala je, przez co otrzymują one 0 pkt. obrażeń magicznych w ciągu 5 sek. Autościeżka:\nUżycie Porażenia 5 razy zużywa ten przedmiot i ulepsza Porażenie do Ataku-Porażenia, zwiększając jego obrażenia przeciwko potworom do 900 pkt. Łowca:\nZabijanie dużych potworów z dżungli daje dodatkowe pkt. doświadczenia. Odzyskiwanie:\nRegenerujesz do 0 pkt. many (w zależności od brakującej many) na sekundę, gdy znajdujesz się w dżungli lub w rzece.\nZużycie tego przedmiotu na stałe przyznaje wszystkie jego efekty oraz zwiększa obrażenia zadawane potworom przez Porażenie. W przypadku zdobycia większej liczby szt. złota ze stworów niż z potworów z dżungli ilość złota i doświadczenia zdobywanego ze stworów jest znacznie zmniejszona. Leczenie nie jest zmniejszone przy atakach obszarowych. Jeśli bohater posiada poziom niższy o 2 od średniego poziomu bohaterów w grze, zabijanie potworów daje mu dodatkowe pkt. doświadczenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1040.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1040.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -3557,7 +3557,7 @@ window.ARENA_GAME_DATA = {
         "en": "10% Attack Speed",
         "pl": "10% prędkości ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1042.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1042.png",
       "tier": "",
       "price": 250,
       "categories": [
@@ -3574,7 +3574,7 @@ window.ARENA_GAME_DATA = {
         "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit.",
         "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1043.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1043.png",
       "tier": "",
       "price": 700,
       "categories": [
@@ -3592,7 +3592,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Power",
         "pl": "20 pkt. mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1052.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1052.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -3609,7 +3609,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n7% Life Steal",
         "pl": "15 pkt. obrażeń od ataku\n7% kradzieży życia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1053.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1053.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -3627,7 +3627,7 @@ window.ARENA_GAME_DATA = {
         "en": "110 Health\nEnduring Focus\nRestore 4 Health every 5 seconds.\nAfter taking damage from a champion, restore Health over 8 seconds.\nHelping Hand\nAttacks deal 5 bonus physical damage to minions.",
         "pl": "110 pkt. zdrowia\nNieprzerwane Skupienie\nPrzywraca 4 pkt. zdrowia co 5 sek.\nPo otrzymaniu obrażeń od bohatera przywracasz zdrowie w ciągu 8 sek.\nPomocna Dłoń\nAtaki zadają 5 pkt. dodatkowych obrażeń fizycznych stworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1054.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1054.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3646,7 +3646,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Attack Damage\n80 Health\n2.5% Omnivamp",
         "pl": "10 pkt. obrażeń od ataku\n80 pkt. zdrowia\n2.5% wszechwampiryzmu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1055.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1055.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3667,7 +3667,7 @@ window.ARENA_GAME_DATA = {
         "en": "18 Ability Power\n90 Health\nDrain\nRestore 1 Mana every second, increased to 2 Mana per second for 5 seconds after dealing damage to an enemy champion. If you can't gain Mana, heal for 45% of this value instead.\nHelping Hand\nAttacks deal 5 bonus physical damage to minions.",
         "pl": "18 pkt. mocy umiejętności\n90 pkt. zdrowia\nCzerpanie\nPrzywraca 1 pkt. many co sekundę, zwiększone do 2 pkt. many na sekundę na 5 sek. po zadaniu obrażeń wrogiemu bohaterowi. Jeśli nie możesz zyskać many, leczysz się o 45% tej wartości.\nPomocna Dłoń\nAtaki zadają 5 pkt. dodatkowych obrażeń fizycznych stworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1056.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1056.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -3687,7 +3687,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Magic Resist",
         "pl": "45 pkt. odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1057.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1057.png",
       "tier": "",
       "price": 850,
       "categories": [
@@ -3704,7 +3704,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power",
         "pl": "65 pkt. mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1058.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1058.png",
       "tier": "",
       "price": 1200,
       "categories": [
@@ -3721,7 +3721,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Ability Power\n50 Health\nGlory\nTakedowns grant Glory, up to 10. 5 Glory\nis lost on death.\nGain 4 Ability Power per Glory.",
         "pl": "15 pkt. mocy umiejętności\n50 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę, maks. 10. Liczba ładunków Chwały\ntraconych po śmierci: 5.\nZyskujesz 4 pkt. mocy umiejętności za każdy ładunek Chwały."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1082.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1082.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -3740,7 +3740,7 @@ window.ARENA_GAME_DATA = {
         "en": "7 Attack Damage\nReap\nRestore 3 Health On-Hit.\nKilling minions grants 1 gold, up to 100. Reaching the limit grants another 350 gold.",
         "pl": "7 pkt. obrażeń od ataku\nSkoszenie\nOdzyskujesz 3 pkt. zdrowia przy trafieniu.\nZabijanie stworów zapewnia 1 szt. złota, maks. 100 szt. złota. Osiągnięcie limitu zapewnia 350 szt. dodatkowego złota."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1083.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1083.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3759,7 +3759,7 @@ window.ARENA_GAME_DATA = {
         "en": "8 Attack Damage\n15% Attack Speed\n1.5% Omnivamp",
         "pl": "8 pkt. obrażeń od ataku\n15% prędkości ataku\n1.5% wszechwampiryzmu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1086.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1086.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -3776,7 +3776,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Góra"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1090.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1090.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -3790,7 +3790,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Środek"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1091.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1091.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -3804,7 +3804,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Dół"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1092.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1092.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -3818,7 +3818,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Wsparcie"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1093.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1093.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -3832,7 +3832,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Zadanie: Dżungla"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1094.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1094.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -3849,7 +3849,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1101.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1101.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3866,7 +3866,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1102.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1102.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3883,7 +3883,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1103.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1103.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3900,7 +3900,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nCrush the Eye of the Herald, begining the ritual to summon Rift Herald. You may click the Rift Herald after it has summoned to control how it charges. This control effect can be done once when it is summoned, and once each time a nearby enemy structure dies.",
         "pl": "Użycie — Zużyj:\nZniszcz Oko Herolda, by rozpocząć rytuał przyzywający Herolda. Możesz kliknąć na Herolda po przyzwaniu go, by kontrolować jego szarżę. Kontrolę można uzyskać raz po przyzwaniu go oraz ponownie za każdym razem, gdy wroga budowla zostanie zniszczona."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1104.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1104.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -3918,7 +3918,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Mosstomper that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants a Shield while out of combat and after killing large monsters.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Mchściciela, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, ukończy twoje zadanie dżungli i zapewni tarczę, gdy nie jesteś w walce oraz po zabiciu dużych potworów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1105.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1105.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3935,7 +3935,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Gustwalker that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and grants Move Speed upon entering brush, increased when killing large monsters.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Podmuszka, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i zapewnia prędkość ruchu po wejściu w zarośla. Premia zostaje zwiększona podczas zabijania dużych potworów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1106.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1106.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3952,7 +3952,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jungle Companions\nSummon a Scorchclaw that assists you against monsters.\nThe companion grows as you hunt monsters, empowering your Smite. When fully grown, it completes your Jungle Quest and periodically imbues your next Attack or Ability to burn enemies and Slow them. Killing large monsters readies this immediately.",
         "pl": "Towarzysze dżungli\nPrzyzywasz Żaroszpona, który pomaga ci w walce z potworami.\nTowarzysz rozwija się podczas polowania na potwory i wzmacnia twoje Porażenie. Gdy dorośnie, kończy twoje zadanie dżungli i okresowo nasyci twój następny atak lub umiejętność, by podpalały i spowalniały wrogów. Zabijanie dużych potworów natychmiast udostępnia ten efekt."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1107.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1107.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -3969,7 +3969,7 @@ window.ARENA_GAME_DATA = {
         "en": "25% Attack Speed\n100 Move Speed\n10 Ability Haste\n12 Magic Penetration\n25 Armor\n20 Magic Resist\n30% Tenacity\nJarvan One\nGives you stats and passives from all boots.\nRequires Augment: Quest: Sneakerhead",
         "pl": "25% prędkości ataku\n100 jedn. prędkości ruchu\n10 jedn. przyspieszenia umiejętności\n12 pkt. przebicia odporności na magię\n25 pkt. pancerza\n20 pkt. odporności na magię\n30% nieustępliwości\nJarvan One\nZapewnia statystyki i efekty bierne wszystkich butów.\nWymagane ulepszenie: Zadanie: Miłośnik butów"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1111.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1111.png",
       "tier": "boots",
       "price": 300,
       "categories": [
@@ -3992,7 +3992,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\n8 Armor\n8 Magic Resist\nHelping Hand\nAttacks deal 5 bonus physical damage to minions.",
         "pl": "150 pkt. zdrowia\n8 pkt. pancerza\n8 pkt. odporności na magię\nPomocna Dłoń\nAtaki zadają 5 pkt. dodatkowych obrażeń fizycznych stworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1120.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1120.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -4012,7 +4012,7 @@ window.ARENA_GAME_DATA = {
         "en": "Takedown champions, minions, towers, plates, and epic monsters to complete your quest. Earn points much faster in top lane!\nRewards\n• Teleport as a 3rd Summoner Spell\n• Flat bonus experience, more experience from all sources, and increased level cap",
         "pl": "Bierz udział w zabójstwach bohaterów, zabijaj stwory, potężne potwory oraz niszcz wieże i płyty opancerzenia, aby ukończyć zadanie. Zdobywaj punkty w górnej alei znacznie szybciej!\nNagrody\n• Trzeci czar przywoływacza, czyli Teleportacja\n• Stałe dodatkowe doświadczenie, więcej doświadczenia z innych źródeł i podniesienie limitu poziomu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1200.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1200.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4029,7 +4029,7 @@ window.ARENA_GAME_DATA = {
         "en": "Takedown champions, minions, towers, plates, and epic monsters to complete your quest. Earn points much faster in mid lane!\nRewards\n• Upgrade boots to tier 3\n• Increased Bonus AD and AP",
         "pl": "Bierz udział w zabójstwach bohaterów, zabijaj stwory, potężne potwory oraz niszcz wieże i płyty opancerzenia, aby ukończyć zadanie. Zdobywaj punkty w środkowej alei znacznie szybciej!\nNagrody\n• Ulepsz buty do 3. poziomu\n• Zwiększone dodatkowe obrażenia od ataku i moc umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1201.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1201.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4046,7 +4046,7 @@ window.ARENA_GAME_DATA = {
         "en": "Takedown champions, minions, towers, plates, and epic monsters to complete your quest. Earn points much faster in bot lane!\nRewards\n• Gold imediately and Increased gold from Minion kills and champion takedowns\n• A bonus item slot for your boots",
         "pl": "Bierz udział w zabójstwach bohaterów, zabijaj stwory, potężne potwory oraz niszcz wieże i płyty opancerzenia, aby ukończyć zadanie. Zdobywaj punkty znacznie szybciej w dolnej alei!\nNagrody\n• Natychmiastowe złoto i zwiększone złoto za zabójstwa stworów i bohaterów\n• Dodatkowe miejsce na buty"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1202.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1202.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4063,7 +4063,7 @@ window.ARENA_GAME_DATA = {
         "en": "Control wards always go into your role quest slot. Upgrade your Support Item to complete your quest. Earn points by damaging enemy champions or turrets, or killing minions while near an ally. Earn points much faster in bot Lane!\nRewards\n• Upgraded support item\n• Discounted control wards",
         "pl": "Totemy Kontroli zawsze trafiają do twojego gniazda misji roli. Ulepsz swój przedmiot dla wspierających, aby ukończyć zadanie. Zdobywaj punkty, zadając obrażenia wrogim bohaterom lub wieżom albo zabijając stwory w pobliżu sojusznika. Zdobywaj punkty znacznie szybciej w dolnej alei!\nNagrody\n• Ulepszony przedmiot dla wspierającego\n• Zniżka na Totemy Kontroli"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1203.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1203.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4080,7 +4080,7 @@ window.ARENA_GAME_DATA = {
         "en": "Upgrade your Jungle Pet to complete your quest. Earn points by killing jungle monsters.\nRewards\n• Upgraded jungle pet and Smite\n• Increased gold and XP from large monsters\n• Bonus movement speed in the jungle",
         "pl": "Rozwiń swojego towarzysza dżungli, aby ukończyć zadanie. Zdobywaj punkty, zabijając potwory z dżungli.\nNagrody\n• Ulepszony towarzysz dżungli i Porażenie\n• Zwiększona ilość złota i PD zdobywanych z dużych potworów\n• Dodatkowa prędkość ruchu w dżungli"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1204.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1204.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4094,7 +4094,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Nagroda za zadanie dżungli"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1205.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1205.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4111,7 +4111,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• Upgrade boots to tier 3\n• +8% bonus Attack Damage and Ability Power",
         "pl": "Nagrody\n• Ulepsz buty do 3. poziomu\n• +8% dodatkowych obrażeń od ataku i mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1206.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1206.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4128,7 +4128,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• +300immediately and Boots move to a 7th slot, freeing up your inventory for 6 items\n• +2from Minion kills\n• +40from Champion takedowns",
         "pl": "Nagrody\n• +300natychmiast, a Buty zostają przeniesione do 7. miejsca, zwalniając miejsce w ekwipunku na 6 przedmiotów\n• +2za zabójstwa stworów\n• +40za udział w zabójstwach bohaterów"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1207.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1207.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4145,7 +4145,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• A new slot for control wards\n• Discounted control wards\n• Bounty of Worlds item",
         "pl": "Nagrody\n• Nowe miejsce na Totemy Kontroli\n• Zniżka na Totemy Kontroli\n• Bogactwo Światów"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1208.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1208.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4162,7 +4162,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• Upgraded Smite and evolve jungle pet to Mosstomper\n• Increased gold and XP from large monsters\n• Bonus movement speed in the jungle",
         "pl": "Nagrody\n• Ulepszone Porażenie i rozwinięcie towarzysza dżungli do Mchściciela\n• Zwiększona ilość złota i PD zdobywane z dużych potworów\n• Dodatkowa prędkość ruchu w dżungli"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1209.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1209.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4176,7 +4176,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Nagroda za zadanie dżungli"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1210.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1210.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4190,7 +4190,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Nagroda za zadanie dżungli"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1211.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1211.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4207,7 +4207,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• Extra Action - Teleport: After channeling for 0 seconds, become Untargetable and travel to target allied structure, minion, or ward.\n• Flat bonus experience, more experience from all sources, and an increased level cap",
         "pl": "Nagrody\n• Dodatkowa akcja — Teleportacja: Po 0 sek. przygotowania nie można cię obrać za cel i przenosisz się do sojuszniczej budowli, stwora lub totemu.\n• Stała premia do doświadczenia, więcej doświadczenia ze wszystkich źródeł i zwiększony limit poziomu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1220.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1220.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4224,7 +4224,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rewards\n• Enhance your Teleport with a large max-health shield on use\n• Flat bonus experience, more experience from all sources, and an increased level cap",
         "pl": "Nagrody\n• Teleportacja zapewnia tarczę skalującą się z maksymalnym zdrowiem po użyciu\n• Stałe dodatkowe doświadczenie, więcej doświadczenia ze wszystkich źródeł i podniesienie limitu poziomu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1221.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1221.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4241,7 +4241,7 @@ window.ARENA_GAME_DATA = {
         "en": "Takedown champions, minions, towers, plates, and epic monsters to complete your quest. Earn points much faster in top lane!\nRewards\n• Enhance your Teleport with a large max-health shield on use\n• Flat bonus experience, more experience from all sources, and increased level cap",
         "pl": "Bierz udział w zabójstwach bohaterów, zabijaj stwory, potężne potwory oraz niszcz wieże i płyty opancerzenia, aby ukończyć zadanie. Zdobywaj punkty w górnej alei znacznie szybciej!\nNagrody\n• Teleportacja zapewnia tarczę skalującą się z maksymalnym zdrowiem po użyciu\n• Stałe dodatkowe doświadczenie, więcej doświadczenia ze wszystkich źródeł i podniesienie limitu poziomu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1222.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1222.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4255,7 +4255,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Pociski Penetrujące"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1500.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1500.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4271,7 +4271,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Umocnienia"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1501.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1501.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -4286,7 +4286,7 @@ window.ARENA_GAME_DATA = {
         "en": "Reinforced\nTurrets take 80% reduced damage, including True Damage, when no enemy Lane Minions or Rift Herald are nearby.\nMelee Weakness\nTurrets take 20% increased damage from melee Champions.",
         "pl": "Umocnienie\nWieże otrzymują o 80% mniejsze obrażenia, w tym obrażenia nieuchronne, kiedy w pobliżu nie ma wrogich stworów ani Herolda.\nSłabość w Zwarciu\nWieże otrzymują o 20% większe obrażenia od bohaterów walczących w zwarciu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1502.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1502.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4302,7 +4302,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Oko Strażnika"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1503.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1503.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4318,7 +4318,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Awangarda"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1504.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4337,7 +4337,7 @@ window.ARENA_GAME_DATA = {
         "en": "Reinforced\nTurrets take 80% reduced damage, including True Damage, when no enemy Lane Minions or Rift Herald are nearby.\nMelee Weakness\nTurrets take 20% increased damage from melee Champions.\nRegeneration\nInhibitor turrets have health regeneration but cannot regenerate past their current segment at 30%, 75%, and 100% health.",
         "pl": "Umocnienie\nWieże otrzymują o 80% mniejsze obrażenia, w tym obrażenia nieuchronne, kiedy w pobliżu nie ma wrogich stworów ani Herolda.\nSłabość w Zwarciu\nWieże otrzymują o 20% większe obrażenia od bohaterów walczących w zwarciu.\nRegeneracja\nWieże inhibitorów posiadają regenerację zdrowia, ale jest ona ograniczona do obecnego segmentu zdrowia (progi wynoszą 30%, 75% i 100% zdrowia)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1505.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1505.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4356,7 +4356,7 @@ window.ARENA_GAME_DATA = {
         "en": "Reinforced\nTurrets take 80% reduced damage, including True Damage, when no enemy Lane Minions or Rift Herald are nearby.\nMelee Weakness\nTurrets take 20% increased damage from melee Champions.\nRegeneration\nInhibitor turrets have health regeneration but cannot regenerate past their current segment at 30%, 75%, and 100% health.",
         "pl": "Umocnienie\nWieże otrzymują o 80% mniejsze obrażenia, w tym obrażenia nieuchronne, kiedy w pobliżu nie ma wrogich stworów ani Herolda.\nSłabość w Zwarciu\nWieże otrzymują o 20% większe obrażenia od bohaterów walczących w zwarciu.\nRegeneracja\nWieże inhibitorów posiadają regenerację zdrowia, ale jest ona ograniczona do obecnego segmentu zdrowia (progi wynoszą 30%, 75% i 100% zdrowia)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1506.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1506.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4372,7 +4372,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przeładowanie"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1507.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1507.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4388,7 +4388,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Skarpety Przeciwwieżowe"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1508.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1508.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4404,7 +4404,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Werwa"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1509.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1509.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4420,7 +4420,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Cudaczna Werwa"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1510.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1510.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4436,7 +4436,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Mechaniczny Superpancerz"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1511.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1511.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4452,7 +4452,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Mechaniczne Superpole Mocy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1512.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1512.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4468,7 +4468,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Opancerzenie Wieży"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1515.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1515.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4482,7 +4482,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Struktura Nagród"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1516.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1516.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4498,7 +4498,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Struktura Nagród"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1517.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1517.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4514,7 +4514,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Struktura Nagród"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1518.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1518.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4530,7 +4530,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Struktura Nagród"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1519.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1519.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4546,7 +4546,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przeładowanie"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1520.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1520.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4562,7 +4562,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Fortyfikacja"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1521.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1521.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4576,7 +4576,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Wzmocnienie wieży"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1522.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1522.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4591,7 +4591,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przeładowanie"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1523.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1523.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4607,7 +4607,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Przerost"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/1524.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/1524.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -4625,7 +4625,7 @@ window.ARENA_GAME_DATA = {
         "en": "Teleports your champion to the Summoning Platform after 8 seconds. Any damage taken will cancel the teleport.",
         "pl": "Po 8 sek. teleportuje twojego bohatera na platformę startową. Otrzymanie obrażeń przerwie teleportację."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2001.png",
       "tier": "",
       "price": 60,
       "categories": []
@@ -4637,7 +4637,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ulepszony Powrót"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2002.png",
       "tier": "",
       "price": 60,
       "categories": []
@@ -4652,7 +4652,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nRestores 120 Health over 15 seconds.",
         "pl": "Użyj\nPrzywraca 120 pkt. zdrowia przez 15 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2003.png",
       "tier": "",
       "price": 50,
       "categories": [
@@ -4669,7 +4669,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Wyłączono Powrót"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2007.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2007.png",
       "tier": "",
       "price": 60,
       "categories": []
@@ -4684,7 +4684,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nEat the biscuit to restore Health over 5 seconds, increased based on missing health. Consuming or selling a biscuit permanently grants 30 maximum Health.",
         "pl": "Użycie — Zużyj:\nZjadasz ciastko, aby odzyskać zdrowie w ciągu 5 sek. Efekt leczenia jest zwiększony w zależności od twojego brakującego zdrowia. Zjedzenie lub sprzedanie ciastka na stałe zapewni ci 30 pkt. maksymalnego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2010.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2010.png",
       "tier": "",
       "price": 50,
       "categories": []
@@ -4699,7 +4699,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\nJolt\nEnergized Attacks deal an additional 50 magic damage.",
         "pl": "15 pkt. obrażeń od ataku\nIskra\nNaładowane ataki zadają dodatkowo 50 pkt. obrażeń magicznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2015.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2015.png",
       "tier": "",
       "price": 700,
       "categories": [
@@ -4717,7 +4717,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n30 Armor",
         "pl": "15 pkt. obrażeń od ataku\n30 pkt. pancerza"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2019.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2019.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -4735,7 +4735,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n10 Ability Haste\n5 Lethality",
         "pl": "25 pkt. obrażeń od ataku\n10 jedn. przyspieszenia umiejętności\n5 pkt. destrukcji"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2020.png",
       "tier": "",
       "price": 1337,
       "categories": [
@@ -4754,7 +4754,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n250 Health",
         "pl": "15 pkt. obrażeń od ataku\n250 pkt. zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2021.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2021.png",
       "tier": "",
       "price": 1150,
       "categories": [
@@ -4772,7 +4772,7 @@ window.ARENA_GAME_DATA = {
         "en": "5 Ability Haste",
         "pl": "5 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2022.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2022.png",
       "tier": "",
       "price": 250,
       "categories": [
@@ -4789,7 +4789,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active\n(2 charges)\nRestores 100 Health over 12 seconds.\nRefills upon visiting the shop.",
         "pl": "Użyj\n(ładunki: 2)\nPrzywraca 100 pkt. zdrowia w ciągu 12 sek.\nOdnawia się, ilekroć odwiedzisz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2031.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2031.png",
       "tier": "",
       "price": 150,
       "categories": [
@@ -4810,7 +4810,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nConsumes a charge to restore 100 Health and 75 Mana over 12 seconds. During this time, damaging Abilities and Attacks burn enemy champions for 15 (20 if you cannot gain Mana) magic damage over 3 seconds. Holds up to 3 charges and refills upon visiting the shop.\nCorrupting damage is reduced to 50% when triggered by area of effect or periodic damage.",
         "pl": "Użycie — Zużyj:\nZużywa ładunek i przywraca 100 pkt. zdrowia oraz 75 pkt. many w ciągu 12 sek. Użyte w tym czasie zadające obrażenia ataki oraz umiejętności podpalają wrogich bohaterów, przez co otrzymują oni 15 pkt. (20 pkt., jeśli nie możesz zyskać many) obrażeń magicznych w ciągu 3 sek. Przechowuje do 3 ładunków, które odnawiają się, ilekroć odwiedzisz sklep.\nObrażenia skażenia zmniejszają się do 50%, gdy zostanie ono nałożone przez efekt obszarowy lub obrażenia rozłożone w czasie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2033.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2033.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -4831,7 +4831,7 @@ window.ARENA_GAME_DATA = {
         "en": "15% Heal and Shield Power\n20 Ability Power\n20 Ability Haste\nRecovery\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 3 Health instead.",
         "pl": "15% siły leczenia i tarcz\n20 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 3 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2049.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2049.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -4852,7 +4852,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n35 Ability Power\n15 Ability Haste",
         "pl": "300 pkt. zdrowia\n35 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2050.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2050.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -4873,7 +4873,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\nRecovery:\nRestores 20 Health every 5 seconds. Undaunted:\nBlocks 15 damage from attacks and spells from champions (25% effectiveness vs. damage over time abilities).",
         "pl": "150 pkt. zdrowia\nRegeneracja:\nPrzywraca 20 pkt. zdrowia co 5 sek. Niewzruszenie:\nBlokuje 15 pkt. obrażeń od ataków i zaklęć bohaterów (efektywne w 25% w przypadku umiejętności zadających obrażenia w czasie)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2051.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2051.png",
       "tier": "",
       "price": 950,
       "categories": [
@@ -4892,7 +4892,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nServes a scrumptious scoop to a nearby Poro, causing it to grow in size.\nThis savory blend of Avarosan hen and local Freljordian herbs—picked daily and flash-frozen—contains the essential nutrients necessary to keep your Poro cool and calm.\nAll proceeds will be donated towards preserving the habitat of the endangered Spotted Poro.",
         "pl": "Użycie — Zużyj:\nSerwuje przepyszną porcję pobliskiemu Poro, zwiększając jego rozmiary.\nTa pyszna mieszanka avarosańskich kur i organicznych ziół freljordzkich, które po zebraniu są od razu mrożone, zawiera wszystkie składniki potrzebne, by Poro pozostał spokojny i zrelaksowany.\nCały dochód zostanie przekazany na rzecz ochrony środowiska zagrożonego Cętkowanego Poro."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2052.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2052.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -4907,7 +4907,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nPlaces a Control Ward that grants vision and reveals enemy Stealth Wards, traps and Camouflaged enemies.",
         "pl": "Użyj\nUmieszcza Totem Kontroli, który zapewnia wizję i ujawnia wrogie Totemy Ukrycia, pułapki oraz zakamuflowanych wrogów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2055.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2055.png",
       "tier": "",
       "price": 75,
       "categories": [
@@ -4927,7 +4927,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nPlaces a Stealth Ward on the ground that lasts 60 seconds, is Invisible to enemies but grants your team vision of the surrounding area.",
         "pl": "Użycie — Zużyj:\nNa 60 sek. umieszcza na ziemi niewidoczny dla wrogów Totem Ukrycia, który zapewnia twojej drużynie wizję na pobliskim obszarze."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2056.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2056.png",
       "tier": "",
       "price": 40,
       "categories": [
@@ -4947,7 +4947,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n15 Ability Haste\n4% Move Speed\n125% Base Mana Regen\nInspiring Speech\nGrant nearby allies 30% Move Speed for 4 seconds.",
         "pl": "50 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\n125% podstawowej regeneracji many\nInspirująca Przemowa\nZapewnia pobliskim sojusznikom 30% prędkości ruchu na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2065.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2065.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -4969,7 +4969,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 300 Health, 25% Tenacity and increased size for 3 minutes. While active, you leave a path behind that boosts allied champions' Move Speed by 15%.",
         "pl": "Użyj\nZapewnia 300 pkt. zdrowia, 25% nieustępliwości oraz zwiększony rozmiar na 3 min. Gdy ten efekt jest aktywny, pozostawiasz za sobą ścieżkę, która zapewnia sojusznikom 15% dodatkowej prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2138.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2138.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -4989,7 +4989,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 50 Ability Power and 15% Mana Regen for 3 minutes. While active, damaging a champion or turret deals 25 bonus true damage (5s against champions).",
         "pl": "Użyj\nZapewnia 50 pkt. mocy umiejętności oraz 15% regeneracji many na 3 min. Gdy ten efekt jest aktywny, trafienie bohatera lub wieży zadaje 25 pkt. dodatkowych obrażeń nieuchronnych ( 5 sek. odnowienia przeciwko bohaterom)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2139.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2139.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -5008,7 +5008,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 30 Attack Damage and 12% Physical Vamp against champions for 3 minutes.",
         "pl": "Użyj\nZapewnia 30 pkt. obrażeń od ataku oraz 12% fizycznego wampiryzmu (przeciwko bohaterom) na 3 min."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2140.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2140.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -5028,7 +5028,7 @@ window.ARENA_GAME_DATA = {
         "en": "Helps you get on a head.\nActive - Consume:\nThis juice does nothing.",
         "pl": "Pomaga znaleźć nakrycie głowy.\nUżycie — Zużyj:\nTen sok nic nie robi."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2141.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2141.png",
       "tier": "",
       "price": 300,
       "categories": [
@@ -5046,7 +5046,7 @@ window.ARENA_GAME_DATA = {
         "en": "Juices do not stack with themselves, but you can have multiple different ones active.\nActive - Consume:\nAutomatically activates on Combat Start. Drink to gain 30+ 10% bonus Ability Power or 18+ 10% bonus Attack Damage for the next round.\nMade with 100% real cherries. Warning: May cause imbiber to deal tons of damage.",
         "pl": "Soki zapewniające dany efekt nie kumulują się ze sobą, ale możesz aktywować jednocześnie wiele soków zapewniających różne efekty.\nUżycie — Zużyj:\nAktywuje się automatycznie przy rozpoczęciu walki. Wypij, aby zyskać 30pkt. + 10% dodatkowej mocy umiejętności lub 18pkt. + 10% dodatkowych obrażeń od ataku w następnej rundzie.\nWytłoczony ze 100-procentowo prawdziwych czereśni. Uwaga: Może sprawić, że pijący będzie zadawać mnóstwo obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2142.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2142.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -5064,7 +5064,7 @@ window.ARENA_GAME_DATA = {
         "en": "Juices do not stack with themselves, but you can have multiple different ones active.\nActive - Consume:\nAutomatically activates on Combat Start. Drink to gain 300+ 10% Health for the next round.\nOur specially formulated veggie blend is proven to harden your skin to resist even the strongest attacks!",
         "pl": "Soki zapewniające dany efekt nie kumulują się ze sobą, ale możesz aktywować jednocześnie wiele soków zapewniających różne efekty.\nUżycie — Zużyj:\nAktywuje się automatycznie przy rozpoczęciu walki. Wypij, by zyskać 300pkt. + 10% zdrowia w następnej rundzie.\nUdowodniono, że specjalnie opracowane przez nas połączenie warzyw utwardzi twoją skórę, by mogła odeprzeć nawet najsilniejszy atak!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2143.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2143.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -5082,7 +5082,7 @@ window.ARENA_GAME_DATA = {
         "en": "Juices do not stack with themselves, but you can have multiple different ones active.\nActive - Consume:\nAutomatically activates on Combat Start. Drink to gain 20+ 15% Ability Haste for the next round.\nFor people who gotta go FAST. Made with lightning. REAL lightning!",
         "pl": "Soki zapewniające dany efekt nie kumulują się ze sobą, ale możesz aktywować jednocześnie wiele soków zapewniających różne efekty.\nUżycie — Zużyj:\nAktywuje się automatycznie przy rozpoczęciu walki. Wypij, by zyskać 20jedn. + 15% przyspieszenia umiejętności w następnej rundzie.\nDla ludzi, którzy muszą za… suwać! Wykonano z błyskawic. PRAWDZIWYCH błyskawic!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2144.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2144.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -5100,7 +5100,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nRoll to gain 1 additional reroll.\nFor when skill isn't enough.",
         "pl": "Użycie — Zużyj:\nRzuć, aby zyskać 1 dodatkową wymianę.\nGdy umiejętności to za mało."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2145.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2145.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -5117,7 +5117,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nRoll to gain 5 additional rerolls.\nFor when skill isn't enough.",
         "pl": "Użycie — Zużyj:\nRzuć, aby zyskać następującą liczbę dodatkowych wymian: 5.\nGdy umiejętności to za mało."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2146.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2146.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -5134,7 +5134,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nGain 1 augment level.\nGood for you.",
         "pl": "Użycie — Zużyj:\nZyskaj 1 poziom ulepszenia.\nGratulacje."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2147.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2147.png",
       "tier": "",
       "price": 1250,
       "categories": [
@@ -5151,7 +5151,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 1 Skill Point.\nThis item does not increase your level or allow allocating skill points past the normal maximum in a skill",
         "pl": "Użyj\nPrzyznaje 1 pkt. umiejętności.\nTen przedmiot nie zwiększa twojego poziomu ani nie umożliwia zwiększenia poziomu umiejętności ponad normalny limit."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2150.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2150.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -5168,7 +5168,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 5 true damage on hit against minions for 60 seconds. When this effect expires, gain 60 gold.",
         "pl": "Użyj\nPrzez 60 sek. zapewnia zadawanie stworom 5 pkt. obrażeń nieuchronnych przy trafieniu. Gdy ten efekt wygaśnie, zyskujesz 60 szt. złota."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2151.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2151.png",
       "tier": "",
       "price": 50,
       "categories": [
@@ -5187,7 +5187,7 @@ window.ARENA_GAME_DATA = {
         "en": "Consume\nGrants 25 Adaptive Force for 60 seconds.",
         "pl": "Użyj\nZapewnia 25 pkt. siły adaptacyjnej na 60 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2152.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2152.png",
       "tier": "",
       "price": 50,
       "categories": [
@@ -5205,7 +5205,7 @@ window.ARENA_GAME_DATA = {
         "en": "Drink to permanently gain 20+ 3% bonus Ability Power or 12+ 3% bonus Attack Damage. And a hat!\nMade with 100% real cherries. Warning: May cause imbiber to deal tons of damage.",
         "pl": "Wypij, aby na stałe zyskać 20pkt. + 3% dodatkowej mocy umiejętności lub 12pkt. + 3% dodatkowych obrażeń od ataku. No i kapelusz!\nWytłoczony ze 100-procentowo prawdziwych czereśni. Uwaga: Może sprawić, że pijący będzie zadawać mnóstwo obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2161.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2161.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -5223,7 +5223,7 @@ window.ARENA_GAME_DATA = {
         "en": "Drink to permanently gain 200+ 3% Health. And a hat!\nOur specially formulated veggie blend is proven to harden your skin to resist even the strongest attacks!",
         "pl": "Wypij, aby na stałe zyskać 200 pkt. + 3% zdrowia No i kapelusz!\nUdowodniono, że specjalnie opracowane przez nas połączenie warzyw utwardzi twoją skórę, by mogła odeprzeć nawet najsilniejszy atak!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2162.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2162.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -5241,7 +5241,7 @@ window.ARENA_GAME_DATA = {
         "en": "Drink to permanently gain 10+ 5% Ability Haste. And a hat!\nFor people who gotta go FAST. Made with lightning. REAL lightning!",
         "pl": "Wypij, aby na stałe zyskać 10 jedn. + 5% przyspieszenia umiejętności. No i kapelusz!\nDla tych, którzy muszą ZASUWAĆ. Wykonano z błyskawic. PRAWDZIWYCH błyskawic!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2163.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2163.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -5259,7 +5259,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nKill target lane minion. (0s)",
         "pl": "Użycie — Zużyj:\nZabij wybranego stwora w alei. (0 sek.)"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2403.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -5274,7 +5274,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n25 Armor\nTime Stop\n(Single use)\nEnter Stasis for 2.5 seconds.",
         "pl": "40 pkt. mocy umiejętności\n25 pkt. pancerza\nZatrzymanie Czasu\n(jednorazowe)\nWchodzisz w stan inercji na 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2420.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2420.png",
       "tier": "",
       "price": 1600,
       "categories": [
@@ -5293,7 +5293,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n25 Armor\nShattered Time\nArmguard is broken, but can still be upgraded.\nAfter breaking one Armguard, the shopkeeper will only sell you Shattered Armguard.",
         "pl": "40 pkt. mocy umiejętności\n25 pkt. pancerza\nUjarzmiony Czas\nNaramiennik jest zepsuty, ale wciąż może zostać ulepszony.\nPo zepsuciu jednego Naramiennika handlarz sprzeda ci jedynie Strzaskane Naramienniki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2421.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2421.png",
       "tier": "",
       "price": 1600,
       "categories": []
@@ -5308,7 +5308,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Move Speed\nGrants an additional 10 Move Speed. Boots that build from Slightly Magical Footwear retain this bonus Move Speed.",
         "pl": "25 jedn. prędkości ruchu\nZapewnia dodatkowo 10 jedn. prędkości ruchu. Buty, które powstaną z Lekko Magicznego Obuwia, zachowają dodatkową prędkość ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2422.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2422.png",
       "tier": "boots",
       "price": 300,
       "categories": [
@@ -5325,7 +5325,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n550 Health\nTyranny\nGain 2.5% of your bonus Health as Attack Damage.\nRetribution\nGain up to 12% increased Attack Damage based on your percent missing Health.",
         "pl": "30 pkt. obrażeń od ataku\n550 pkt. zdrowia\nTyrania\nZyskujesz 2.5% swojego dodatkowego zdrowia jako obrażenia od ataku.\nOdkupienie\nZyskujesz do 12% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2501.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2501.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -5343,7 +5343,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n50 Armor\n15 Ability Haste\nAnguish\nEvery 4 seconds while in combat with champions, deal magic damage to nearby enemy champions and heal for 250% of the damage dealt.",
         "pl": "400 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCierpienie\nCo każde 4 sek. podczas walki z bohaterami zadajesz obrażenia magiczne pobliskim wrogom i leczysz się o 250% zadanych obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2502.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2502.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -5363,7 +5363,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDamaging Abilities deals bonus magic damage for 3 seconds.\nBlackfire\nFor each enemy champion, epic and large monster affected by your Baleful Blaze, gain 4% Ability Power.",
         "pl": "80 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nUmiejętności zadające obrażenia zadają dodatkowe obrażenia magiczne przez 3 sek.\nMroczny Ogień\nZa każdego wrogiego bohatera oraz epickiego lub dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz 4% mocy umiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2503.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2503.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -5383,7 +5383,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n80 Magic Resist\n100% Base Health Regen\nMagebane\nAfter not taking magic damage for 15 seconds, gain a magic shield.",
         "pl": "400 pkt. zdrowia\n80 pkt. odporności na magię\n100% podstawowej regeneracji zdrowia\nZmora Maga\nJeśli przez 15 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2504.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -5402,7 +5402,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\nInflame\nDamaging Abilities deal 15 bonus magic damage over 3 seconds.\nDeals an additional 45 magic damage to monsters.",
         "pl": "30 pkt. mocy umiejętności\nZaognienie\nUmiejętności zadające obrażenia zadają 15 pkt. dodatkowych obrażeń magicznych przez 3 sek.\nZadaje dodatkowo 45 pkt. obrażeń magicznych potworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2508.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2508.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -5419,7 +5419,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n60 Ability Power\n20 Ability Haste\n20% Attack Speed\nSpellblade\n(0s)\nAfter using an Ability, your next Attack deals bonus magic damage and heals you for On-Hit and then applies On-Hit effects an additional time.",
         "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2510.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2510.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -5440,7 +5440,7 @@ window.ARENA_GAME_DATA = {
         "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\nAfter casting your Ultimate, your next 3 basic attacks gain 50% Attack Speed and Critically Strike for 80% of your normal Critical Strike damage for 8 seconds. If an attack would already Critically Strike, instead it deals 15% bonus true damage.",
         "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) na 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 80% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje 15% dodatkowych obrażeń nieuchronnych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2512.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2512.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -5460,7 +5460,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Attack Damage\n5% Omnivamp\n20% Tenacity\nFamine\nGain Ability Haste based on your Bonus AD.\nFeast\nWhen a champion that you damaged recently dies, gain Omnivamp for a moderate duration.",
         "pl": "65 pkt. obrażeń od ataku\n5% wszechwampiryzmu\n20% nieustępliwości\nGłód\nZyskujesz przyspieszenie umiejętności zależne od twoich dodatkowych obrażeń od ataku.\nUczta\nGdy zginie bohater, który otrzymał od ciebie niedawno obrażenia, na chwilę zyskujesz premię do wszechwampiryzmu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2517.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2517.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -5481,7 +5481,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nShaped Charge\n(0s)\nDealing Ability damage to a Champion or Epic Monster deals an additional true damage.\nSabotage\nTaking down a champion within 3 seconds of damaging them grants Sabotage for 90 seconds. While you have Sabotage, your next Attack against an Epic Monster or Turret deals an additional true damage over 3 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nUkształtowany Ładunek\n(0 sek.)\nZadawanie obrażeń od umiejętności bohaterom lub potężnym potworom zadaje dodatkowo 0 pkt. obrażeń nieuchronnych.\nSabotaż\nUdział w eliminacji wroga w ciągu 3 sek. od zadania mu obrażeń zapewnia Sabotaż na 90 sek. Gdy masz Sabotaż, twój następny atak przeciwko potężnemu potworowi lub wieży zadaje dodatkowo 0 pkt. obrażeń nieuchronnych w ciągu 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2520.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2520.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -5500,7 +5500,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n300 Mana\n10 Ability Haste\nMana Made Real\n(0s)\nFor 8 seconds, your mana is Empowered. While Empowered, your spells cost 100% more Mana, you gain increased Ability damage, Shielding, and Healing, and your basic ability cooldowns progress 30% faster.",
         "pl": "90 pkt. mocy umiejętności\n300 pkt. many\n10 jedn. przyspieszenia umiejętności\nUcieleśnienie Many\n(0 sek.)\nTwoja mana zostaje wzmocniona na 8 sek. W czasie tego wzmocnienia twoje zaklęcia kosztują o 100% więcej many, ale zyskujesz 0 do obrażeń od umiejętności, tarcz i leczenia, a twoje odnawianie umiejętności podstawowych upływa o 30% szybciej."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2522.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2522.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -5519,7 +5519,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n25% Critical Strike Chance\nMagnification\nDeal up to 10% increased damage with Attacks, based on how far away the enemy is (max damage at 500 range).\nArcane Aim\nWhen a champion that you damaged within 3 seconds dies, gain 100 additional attack range for 8 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\nPowiększenie\nZadajesz do 10% więcej obrażeń atakami w oparciu o dystans do wroga (maksymalne obrażenia przy dystansie 500 jedn.).\nCelność Arkanów\nGdy bohater, który otrzymał od ciebie obrażenia, zginie w ciągu 3 sek., zyskujesz 100 jedn. dodatkowego zasięgu ataku na 8 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2523.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2523.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -5537,7 +5537,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n15 Ability Haste\n20 Armor\n20 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 20 Move Speed. While you have Fanfare, nearby allies, including yourself, gain Attack Speed.",
         "pl": "200 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\n20 pkt. pancerza\n20 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 20 jedn. prędkości ruchu. Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2524.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2524.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -5559,9 +5559,9 @@ window.ARENA_GAME_DATA = {
         "en": "600 Health\n20 Ability Haste\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% causes you to gain maximum Health for 5 seconds, then heal Health over the duration. While regenerating Health, you gain 15% increased Size, 10% Move Speed, and 25% Tenacity.",
         "pl": "600 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz 0 pkt. maksymalnego zdrowia na 5 sek., a następnie leczysz 0 pkt. zdrowia w czasie. Regenerując zdrowie, zyskujesz 15% rozmiaru, 10% prędkości ruchu i 25% nieustępliwości."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2525.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2525.png",
       "tier": "",
-      "price": 2500,
+      "price": 2600,
       "categories": [
         "Health",
         "NonbootsMovement",
@@ -5579,7 +5579,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2526.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2526.png",
       "tier": "",
       "price": 2250,
       "categories": [
@@ -5598,7 +5598,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n1000 Mana\n100% Base Mana Regen\nHarmony\nGain % Heal and Shield Power.\nConsonance\nWhile you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest health nearby ally champion.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n1000 pkt. many\n100% podstawowej regeneracji many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nKonsonans\nGdy ty lub sojusznik, który został przez ciebie uleczony lub osłonięty tarczą w ostatnich 3 sek., znajdujecie się w walce z bohaterami, pobliski sojusznik o najniższym poziomie zdrowia zostaje uleczony co sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/2530.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/2530.png",
       "tier": "",
       "price": 2250,
       "categories": [
@@ -5618,7 +5618,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized, cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist.",
         "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony, zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i odporności na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3001.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -5638,7 +5638,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n40 Armor\n4% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
         "pl": "250 pkt. zdrowia\n40 pkt. pancerza\n4% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3002.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -5657,7 +5657,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana.",
         "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3003.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -5676,7 +5676,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 3 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana.",
         "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3004.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -5697,7 +5697,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 125 move speed. Casting a spell or attacking will end this effect.",
         "pl": "45 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 125 jedn. prędkości ruchu. Atak lub rzucenie zaklęcia zakończy ten efekt."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3005.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -5714,7 +5714,7 @@ window.ARENA_GAME_DATA = {
         "en": "25% Attack Speed\n45 Move Speed",
         "pl": "25% prędkości ataku\n45 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3006.png",
       "tier": "boots",
       "price": 1100,
       "categories": [
@@ -5732,7 +5732,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Move Speed\n4% Omnivamp\nSlay\nGain 0.6% Omnivamp on Champion takedown, stacking up to 10 times.",
         "pl": "45 jedn. prędkości ruchu\n4% wszechwampiryzmu\nZgładzenie\nZyskujesz 0.6% wszechwampiryzmu przy udziale w zabójstwie bohatera. Efekt kumuluje się do 10 razy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3008.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3008.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -5751,7 +5751,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Move Speed\nFleetfooted\nReduce the effectiveness of Slows by 25%.",
         "pl": "55 jedn. prędkości ruchu\nZwinne Kroki\nZmniejsza skuteczność spowolnień o 25%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3009.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3009.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -5768,7 +5768,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Move Speed\nSynchrony\nGain 10 Move Speed when out of combat.\nSymbiosis\nAfter traveling 150000 units of distance, transform into Synchronized Souls.",
         "pl": "40 jedn. prędkości ruchu\nHarmonia\nZyskujesz 10 jedn. prędkości ruchu poza walką.\nSymbioza\nPo przebyciu 150000 jedn. odległości zamienia się w Zsynchronizowane Dusze."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3010.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3010.png",
       "tier": "boots",
       "price": 900,
       "categories": [
@@ -5785,7 +5785,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n10% Heal and Shield Power\n75% Base Mana Regen\n15 Ability Haste\nPuffcap Toxin:\nDealing damage applies 40% Grievous Wounds to champions for 3 seconds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "35 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n75% podstawowej regeneracji many\n15 jedn. przyspieszenia umiejętności\nGnijąca Toksyna:\nZadawanie wrogim bohaterom obrażeń nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3011.png",
       "tier": "",
       "price": 1900,
       "categories": [
@@ -5804,7 +5804,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n50% Base Mana Regen\nHarmony:\nGain 25% Base Health Regen per 25% Base Mana Regen.\n'These blessed waters still carry their power to the worthy.'",
         "pl": "200 pkt. zdrowia\n50% podstawowej regeneracji many\nHarmonia:\nZyskujesz 25% podstawowej regeneracji zdrowia za każde 25% podstawowej regeneracji many.\n„Te uświęcone wody wciąż niosą swoją moc dla godnych”."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3012.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3012.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -5822,7 +5822,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Move Speed\nVoidborn\nGain Empowered Recall.\nSynchrony\nGain 45 Move Speed when out of combat.",
         "pl": "45 jedn. prędkości ruchu\nDziecko Pustki\nZyskujesz Ulepszony Powrót.\nHarmonia\nZyskujesz 45 jedn. prędkości ruchu poza walką."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3013.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3013.png",
       "tier": "boots",
       "price": 900,
       "categories": [
@@ -5839,7 +5839,7 @@ window.ARENA_GAME_DATA = {
         "en": "12 Magic Penetration\n45 Move Speed",
         "pl": "12 pkt. przebicia odporności na magię\n45 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3020.png",
       "tier": "boots",
       "price": 1100,
       "categories": [
@@ -5857,7 +5857,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\n25 Armor\n5 Ability Haste\n'Fashionable and functional.'",
         "pl": "150 pkt. zdrowia\n25 pkt. pancerza\n5 jedn. przyspieszenia umiejętności\n„Funkcjonalne i stylowe”."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3023.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3023.png",
       "tier": "",
       "price": 1050,
       "categories": [
@@ -5876,7 +5876,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Armor\n300 Mana\n10 Ability Haste",
         "pl": "25 pkt. pancerza\n300 pkt. many\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3024.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3024.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -5896,7 +5896,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n45 Armor\nRebirth\nUpon taking lethal damage, restores 50% base Health and 100% max Mana after 4 seconds of Stasis.",
         "pl": "55 pkt. obrażeń od ataku\n45 pkt. pancerza\nOdrodzenie\nPo otrzymaniu śmiertelnych obrażeń przywraca 50% podstawowego zdrowia i 100% maksymalnej many po 4 sek. inercji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3026.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3026.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -5914,7 +5914,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Attack Damage\n25% Critical Strike Chance\n30% Critical Strike Damage",
         "pl": "75 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\n30% obrażeń trafienia krytycznego"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3031.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3031.png",
       "tier": "",
       "price": 3500,
       "categories": [
@@ -5932,7 +5932,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n40% Attack Speed\n0% Critical Strike Chance\nPractice Makes Lethal\nOn-Attack, gain Critical Strike Chance permanently up to 25%.\nFlurry\nOn-Attacking an enemy champion, gain 30% Attack Speed for 6 seconds (30 second cooldown).\nAttacks reduce this cooldown by 1 second, increased to 2 seconds for Critical Strikes.",
         "pl": "50 pkt. obrażeń od ataku\n40% prędkości ataku\n0% szansy na trafienie krytyczne\nTrening Czyni Zabójcę\nPrzy ataku na stałe zyskujesz szansę na trafienie krytyczne, maks. 25%.\nGrad Ciosów\nPrzy ataku wrogiego bohatera zyskujesz 30% prędkości ataku na 6 sek. (30 sek. czasu odnowienia).\nAtaki skracają czas odnowienia o 1 sek. lub 2 sek. w przypadku trafień krytycznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3032.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3032.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -5951,7 +5951,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n30% Armor Penetration\n25% Critical Strike Chance\nGrievous Wounds\nDealing physical damage applies 40% Wounds to enemy champions for 3 seconds.",
         "pl": "35 pkt. obrażeń od ataku\n30% przebicia pancerza\n25% szansy na trafienie krytyczne\nGłębokie Rany\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich zranienie o wartości 40% na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3033.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3033.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -5970,7 +5970,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n18% Armor Penetration",
         "pl": "20 pkt. obrażeń od ataku\n18% przebicia pancerza"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3035.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3035.png",
       "tier": "",
       "price": 1450,
       "categories": [
@@ -5988,7 +5988,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n35% Armor Penetration\n25% Critical Strike Chance\nGiant Slayer\nDeal up to 15% bonus damage against champions based on their bonus Health. Maximum damage bonus reached at 1500 bonus Health.",
         "pl": "35 pkt. obrażeń od ataku\n35% przebicia pancerza\n25% szansy na trafienie krytyczne\nPogromca Olbrzymów\nZadajesz do 15% dodatkowych obrażeń bohaterom w oparciu o ich dodatkowe zdrowie. Maksymalna premia obrażeń zostaje osiągnięta przy 1500 pkt. dodatkowego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3036.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3036.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -6007,7 +6007,7 @@ window.ARENA_GAME_DATA = {
         "en": "700 Health\n20% Critical Strike Chance\n10 Ability Haste\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
         "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\n10 jedn. przyspieszenia umiejętności\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3039.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3039.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -6025,7 +6025,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power.\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
         "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3040.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3040.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -6044,7 +6044,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Power\n100 Health\nGlory\nTakedowns grant Glory, up to 25. 10 Glory\nis lost on death.\nGain 5 Ability Power per Glory\nand 10% Move Speed at 10 or higher Glory.",
         "pl": "20 pkt. mocy umiejętności\n100 pkt. zdrowia\nChwała\nUdziały w zabójstwach zapewniają Chwałę, maks. 25. Liczba ładunków Chwały\ntraconych po śmierci: 10.\nZyskujesz 5 pkt. mocy umiejętności za każdy ładunek Chwały\noraz 10% prędkości ruchu, gdy posiadasz 10 lub więcej ładunków Chwały."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3041.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3041.png",
       "tier": "",
       "price": 1500,
       "categories": [
@@ -6063,7 +6063,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage.\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit.\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage.",
         "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku.\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu.\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3042.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3042.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -6084,7 +6084,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n200 Health\nRage\nAttacking grants Move Speed for 2 seconds.",
         "pl": "15 pkt. obrażeń od ataku\n200 pkt. zdrowia\nSzał\nAtaki zapewniają prędkość ruchu na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3044.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3044.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -6103,7 +6103,7 @@ window.ARENA_GAME_DATA = {
         "en": "65% Attack Speed\n25% Critical Strike Chance\n10% Move Speed\nSpectral Waltz\nBecome Ghosted.",
         "pl": "65% prędkości ataku\n25% szansy na trafienie krytyczne\n10% prędkości ruchu\nWidmowy Walc\nZyskujesz przenikanie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3046.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3046.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -6122,7 +6122,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Armor\n45 Move Speed\nPlating\nReduces incoming damage from Attacks by 10%.",
         "pl": "25 pkt. pancerza\n45 jedn. prędkości ruchu\nOpancerzenie\nZmniejsza obrażenia otrzymywane od ataków o 10%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3047.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3047.png",
       "tier": "boots",
       "price": 1200,
       "categories": [
@@ -6140,7 +6140,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n25 Armor\n25 Magic Resist\n10 Ability Haste\nFrostfire Tempest\nCasting your Ultimate summons a storm around you for 5 seconds. The storm deals 30 magic damage per second to enemy champions and Slows them by 30%.",
         "pl": "300 pkt. zdrowia\n25 pkt. pancerza\n25 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nNawałnica Mroźnego Ognia\nRzucenie superumiejętności przywołuje wokół ciebie burzę na 5 sek. Burza zadaje wrogim bohaterom 30 pkt. obrażeń magicznych na sekundę i spowalnia ich o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3050.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3050.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -6160,7 +6160,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n20% Attack Speed",
         "pl": "20 pkt. obrażeń od ataku\n20% prędkości ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3051.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3051.png",
       "tier": "",
       "price": 1200,
       "categories": [
@@ -6178,7 +6178,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage.\nLifeline\nTaking damage that would reduce your Health below 30% grants a decaying Shield for 4.5 seconds.",
         "pl": "400 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskujesz dodatkowe obrażenia od ataku.\nLinia Życia\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, na 4.5 sek. zyskujesz zanikającą tarczę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3053.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3053.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -6197,7 +6197,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit.",
         "pl": "10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3057.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3057.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -6215,7 +6215,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n50 Magic Resist\n10 Ability Haste\n100% Base Health Regen\nBoundless Vitality\nHeals and Shields on you are increased by 25%.",
         "pl": "400 pkt. zdrowia\n50 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji zdrowia\nNieograniczona Żywotność\nOtrzymywane leczenie i tarcze zwiększone są o 25%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3065.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3065.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -6236,7 +6236,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n4% Move Speed",
         "pl": "200 pkt. zdrowia\n4% prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3066.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3066.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -6254,7 +6254,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n10 Ability Haste",
         "pl": "200 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3067.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3067.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -6273,7 +6273,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n50 Armor\n10 Ability Haste\nImmolate\nAfter taking or dealing damage, deal magic damage per second to nearby enemies for 3 seconds.",
         "pl": "350 pkt. zdrowia\n50 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje obrażenia magiczne na sekundę pobliskim wrogom przez 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3068.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3068.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -6293,7 +6293,7 @@ window.ARENA_GAME_DATA = {
         "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 3 max Mana (doubled vs. champions), up to 360.\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
         "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt.\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3070.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3070.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -6311,7 +6311,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n400 Health\n20 Ability Haste\nCarve\nDealing physical damage to champions reduces the target's Armor by 6% for 6 seconds. (stacks 5 times).\nFervor\nDealing physical damage grants 20 Move Speed for 2 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nDrążenie\nZadawanie obrażeń fizycznych bohaterom zmniejsza pancerz celu o 6% na 6 sek. (kumuluje się 5 razy).\nFerwor\nZadawanie obrażeń fizycznych zapewnia 20 jedn. prędkości ruchu na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3071.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3071.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6334,7 +6334,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Attack Damage\n15% Life Steal\nIchorshield\nConvert excess healing from your Lifesteal to a Shield.",
         "pl": "80 pkt. obrażeń od ataku\n15% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3072.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3072.png",
       "tier": "",
       "price": 3400,
       "categories": [
@@ -6352,7 +6352,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n20% Attack Speed\n450 Health\nHexcharged\nGain 30 Ultimate Ability Haste.\nOverdrive\nAfter casting your Ultimate, gain % Attack Speed and % Move Speed for 8 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n20% prędkości ataku\n450 pkt. zdrowia\nHexnaładowanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nNadbieg\nPo rzuceniu superumiejętności zyskujesz 0% prędkości ataku i 0% prędkości ruchu na 8 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3073.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3073.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6374,7 +6374,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Attack Damage\n15 Ability Haste\n12% Life Steal\nCleave\nAttacks deal physical damage to nearby enemies. Ravenous Crescent\nDeal physical damage to enemies around you.\nYour Life Steal applies to this damage.",
         "pl": "65 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n12% kradzieży życia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom. Krwiożerczy Półksiężyc\nZadaje obrażenia fizyczne wrogom dookoła ciebie.\nTwoja kradzież życia ma zastosowanie dla tych obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3074.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3074.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -6395,7 +6395,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\n75 Armor\nThorns\nWhen struck by an Attack, deal magic damage to the attacker and apply 40% Wounds for 3 seconds if they are a champion.",
         "pl": "150 pkt. zdrowia\n75 pkt. pancerza\nKolce\nGdy trafia cię atak, zadajesz obrażenia magiczne napastnikowi i nakładasz na niego zranienie o wartości 40% na 3 sek., jeżeli jest bohaterem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3075.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3075.png",
       "tier": "",
       "price": 2450,
       "categories": [
@@ -6413,7 +6413,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Armor\nThorns\nWhen hit by an Attack, deal magic damage to the attacker and apply 40% Wounds for 3 seconds if they are a champion.",
         "pl": "30 pkt. pancerza\nKolce\nGdy trafia cię atak, zadajesz 0 pkt. obrażeń magicznych napastnikowi i nakładasz na niego Głebokie Rany o wartości 40% na 3 sek., jeżeli jest bohaterem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3076.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3076.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -6430,7 +6430,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\nCleave\nAttacks deal physical damage to nearby enemies.\nCrescent\nDeal physical damage to enemies around you.",
         "pl": "20 pkt. obrażeń od ataku\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nPółksiężyc\nZadaje obrażenia fizyczne wrogom dookoła ciebie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3077.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3077.png",
       "tier": "",
       "price": 1200,
       "categories": [
@@ -6448,7 +6448,7 @@ window.ARENA_GAME_DATA = {
         "en": "36 Attack Damage\n30% Attack Speed\n333 Health\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit.\nQuicken\nAttacking grants 20 Move Speed for 2 seconds.",
         "pl": "36 pkt. obrażeń od ataku\n30% prędkości ataku\n333 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu.\nŻwawość\nAtaki zapewniają 20 jedn. prędkości ruchu na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3078.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3078.png",
       "tier": "",
       "price": 3333,
       "categories": [
@@ -6471,7 +6471,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Armor\nRock Solid\nReduce incoming damage from Attacks.",
         "pl": "40 pkt. pancerza\nTwardy jak Skała\nZmniejsza obrażenia otrzymywane od ataków."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3082.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3082.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -6488,7 +6488,7 @@ window.ARENA_GAME_DATA = {
         "en": "1000 Health\n100% Base Health Regen\nWarmog's Heart\nIf you have 2000 bonus Health and have not taken damage within 8 seconds, restore Health per second.\nWarmog's Vitality\nGain bonus Health equal to 12% of your Item Health ( 0 ).",
         "pl": "1000 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\nSerce Plemienia\nGdy masz 2000 pkt. dodatkowego zdrowia i nie zadano ci obrażeń w ciągu 8 sek., odzyskujesz 0 pkt. zdrowia na sekundę.\nWitalność Plemienia\nZapewnia dodatkowe zdrowie równe 12% zdrowia z przedmiotów ( 0 pkt. )."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3083.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3083.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -6506,7 +6506,7 @@ window.ARENA_GAME_DATA = {
         "en": "900 Health\n100% Base Health Regen\nColossal Consumption\n(0s) per target\nIf an enemy champion is nearby for a few seconds, your next Attack against them deals 70 plus 6% of your max Health as bonus physical damage and grants 10% of the damage as max Health.\nGoliath\nFor each 1000 max Health, gain 3% increased size, up to 30%.",
         "pl": "900 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\nKolosalna Konsumpcja\n(0 sek.) na cel\nJeśli wrogi bohater jest w pobliżu przez kilka sekund, twój kolejny atak przeciwko niemu zadaje dodatkowe obrażenia fizyczne równe 70 pkt. + 6% maksymalnego zdrowia i zapewnia maksymalne zdrowie równe 10% tej wartości.\nGoliat\nZa każde 1000 pkt. maksymalnego zdrowia zyskujesz 3% rozmiaru, maks. 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3084.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3084.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6524,7 +6524,7 @@ window.ARENA_GAME_DATA = {
         "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nWind's Fury\nAttacks fire bolts at 2 additional enemies near the target.\nEach bolt deals physical damage and applies On-Hit effects.",
         "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nAtaki wystrzeliwują pociski w dodatkowych wrogów (2) w pobliżu celu.\nKażdy pocisk zadaje obrażenia fizyczne i nakłada efekty przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3085.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3085.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -6544,7 +6544,7 @@ window.ARENA_GAME_DATA = {
         "en": "15% Attack Speed\n15% Critical Strike Chance\n4% Move Speed",
         "pl": "15% prędkości ataku\n15% szansy na trafienie krytyczne\n4% prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3086.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3086.png",
       "tier": "",
       "price": 1200,
       "categories": [
@@ -6563,7 +6563,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n45 Ability Power\n30% Attack Speed\n4% Move Speed\nElectrospark\nYour Energized Attacks fire chain lightning, applying On-Hit effects and dealing magic damage to nearby targets.\nElectroshock\nBasic Attacks grant extra Energized stacks.",
         "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne pobliskim celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3087.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3087.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6584,7 +6584,7 @@ window.ARENA_GAME_DATA = {
         "en": "130 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30%.",
         "pl": "130 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3089.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3089.png",
       "tier": "",
       "price": 3500,
       "categories": [
@@ -6601,7 +6601,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Attack Speed\n45 Magic Resist\n20% Tenacity\nFray\nAttacks deal bonus magic damage On-Hit.",
         "pl": "50% prędkości ataku\n45 pkt. odporności na magię\n20% nieustępliwości\nBitwa\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3091.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3091.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -6621,7 +6621,7 @@ window.ARENA_GAME_DATA = {
         "en": "35% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nSharpshooter\nYour Energized Attack deals 40 bonus magic damage and gains 35% bonus Attack Range.",
         "pl": "35% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nStrzelec Wyborowy\nTwoje naładowane ataki zadają 40 pkt. dodatkowych obrażeń magicznych i zyskują 35% dodatkowego zasięgu ataku."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3094.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3094.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -6640,7 +6640,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
         "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3095.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3095.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6660,7 +6660,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Movement Speed for 1.5 seconds.",
         "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 pkt. dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3097.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3097.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -6680,7 +6680,7 @@ window.ARENA_GAME_DATA = {
         "en": "100 Ability Power\n6% Move Speed\n10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus magic damage On-Hit.",
         "pl": "100 pkt. mocy umiejętności\n6% prędkości ruchu\n10 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia magiczne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3100.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3100.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -6700,7 +6700,7 @@ window.ARENA_GAME_DATA = {
         "en": "105 Ability Power\n40 Magic Resist\nAnnul\nGrants a Spell Shield that blocks the next enemy Ability.",
         "pl": "105 pkt. mocy umiejętności\n40 pkt. odporności na magię\nUchylenie\nZapewnia tarczę magii, która blokuje kolejną umiejętność wroga."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3102.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3102.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -6718,7 +6718,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Armor\n25 Magic Resist\n10 Ability Haste",
         "pl": "25 pkt. pancerza\n25 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3105.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3105.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -6738,7 +6738,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\n15 Ability Haste\n100% Base Mana Regen\n10% Heal and Shield Power\nIntervention\nRestore 150 - 350 Health to allied units and deal 10% max Health true damage to enemy champions after 2.5 seconds.",
         "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3107.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3107.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -6758,7 +6758,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Ability Power\n10 Ability Haste",
         "pl": "25 pkt. mocy umiejętności\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3108.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3108.png",
       "tier": "",
       "price": 850,
       "categories": [
@@ -6777,7 +6777,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n40 Armor\n10 Ability Haste\n100% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy.",
         "pl": "200 pkt. zdrowia\n40 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji zdrowia\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 14% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom. Ślubowanie\n(0 sek.)\nWyznacz Godnego sojusznika."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3109.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3109.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -6800,7 +6800,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Armor\n400 Mana\n20 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20%.",
         "pl": "75 pkt. pancerza\n400 pkt. many\n20 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3110.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3110.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -6821,7 +6821,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Magic Resist\n45 Move Speed\n30% Tenacity",
         "pl": "20 pkt. odporności na magię\n45 jedn. prędkości ruchu\n30% nieustępliwości"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3111.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3111.png",
       "tier": "boots",
       "price": 1250,
       "categories": [
@@ -6840,7 +6840,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n150 Health\nRecovery:\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 15 Health instead.",
         "pl": "50 pkt. mocy umiejętności\n150 pkt. zdrowia\nRegeneracja:\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3112.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3112.png",
       "tier": "",
       "price": 950,
       "categories": [
@@ -6860,7 +6860,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\n4% Move Speed",
         "pl": "30 pkt. mocy umiejętności\n4% prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3113.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3113.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -6878,7 +6878,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Base Mana Regen\n8% Heal and Shield Power",
         "pl": "50% podstawowej regeneracji many\n8% siły leczenia i tarcz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3114.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3114.png",
       "tier": "",
       "price": 600,
       "categories": [
@@ -6895,7 +6895,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n50% Attack Speed\n15 Ability Haste\nIcathian Bite\nAttacks deal bonus magic damage On-Hit.",
         "pl": "80 pkt. mocy umiejętności\n50% prędkości ataku\n15 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają dodatkowe obrażenia magiczne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3115.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3115.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -6915,7 +6915,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n400 Health\nRimefrost\nDamaging Abilities Slow enemies by 30% for 1 second.",
         "pl": "65 pkt. mocy umiejętności\n400 pkt. zdrowia\nZmarzlina\nUmiejętności zadające obrażenia spowalniają wrogów o 30% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3116.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3116.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -6934,7 +6934,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Move Speed\nWhen out of combat for at least 5 seconds, increase this item's effect to 45.",
         "pl": "25 jedn. prędkości ruchu\nGdy przebywasz poza walką przez co najmniej 5 sek., efekt tego przedmiotu zwiększa się do  45 jedn."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3117.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3117.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -6951,7 +6951,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n600 Mana\n15 Ability Haste\nScorn\nGain 20 Ultimate Ability Haste.\nHatefog\nDamaging a champion with your Ultimate burns the ground beneath them for 3s, dealing magic damage per second and reducing their Magic Resist.",
         "pl": "90 pkt. mocy umiejętności\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPogarda\nOtrzymujesz 20 jedn. przyspieszenia superumiejętności.\nMgła Nienawiści\nZadanie bohaterowi obrażeń za pomocą superumiejętności podpala ziemię pod nim na 3 sek., zadając obrażenia magiczne na sekundę i zmniejszając jego odporność na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3118.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3118.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -6970,7 +6970,7 @@ window.ARENA_GAME_DATA = {
         "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 3 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana.",
         "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 3 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3119.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3119.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -6989,7 +6989,7 @@ window.ARENA_GAME_DATA = {
         "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health.\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
         "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3121.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3121.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -7008,7 +7008,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\nGrievous Wounds\nDealing physical damage to champions applies 40% Wounds for 3 seconds.",
         "pl": "15 pkt. obrażeń od ataku\nGłębokie Rany\nZadawanie bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3123.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3123.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -7025,7 +7025,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n30 Ability Power\n25% Attack Speed\nWrath\nAttacks deal 30 bonus magic damage On-Hit.\nSeething Strike\nAttacks grant 8% Attack Speed for 3 seconds. (stacks 4 times).\nWhile fully stacked, every third Attack applies On-Hit effects twice.",
         "pl": "30 pkt. obrażeń od ataku\n30 pkt. mocy umiejętności\n25% prędkości ataku\nGniew\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nWrzące Uderzenie\nAtaki zapewniają 8% prędkości ataku na 3 sek. (kumuluje się 4 razy).\nPrzy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3124.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3124.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7045,7 +7045,7 @@ window.ARENA_GAME_DATA = {
         "en": "120 Ability Power\n10 Ability Haste\nActive -\nThe Silence:\nDeal magic damage equal to 15% of the Target's Max Health, and then amplify damage they take by 15% for 4 seconds (90(0s)).",
         "pl": "120 pkt. mocy umiejętności\n10 jedn. przyspieszenia umiejętności\nUżycie —\nCisza:\nZadajesz obrażenia magiczne równe 15% maks. zdrowia celu, następnie wzmacniasz otrzymywane przez wroga obrażenia o 15% na 4 sek. (90(0 sek.))."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3128.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3128.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -7063,7 +7063,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n25% Attack Speed\n18 Lethality\nActive -\nDivine Blessing:\nGrants 100% Attack Speed and 100% Critical Strike Chance for 3 seconds or 3 basic attacks (90(0s)).",
         "pl": "30 pkt. obrażeń od ataku\n25% prędkości ataku\n18 pkt. destrukcji\nUżycie —\nNiebiańskie Błogosławieństwo:\nZwiększa twoją prędkość ataku o 100%, a szansę na trafienie krytyczne o 100% na 3 sek. albo na następującą liczbę ataków podstawowych: 3 (90(0 sek.))."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3131.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3131.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -7082,7 +7082,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n10 Ability Haste",
         "pl": "20 pkt. obrażeń od ataku\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3133.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3133.png",
       "tier": "",
       "price": 1050,
       "categories": [
@@ -7101,7 +7101,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n10 Lethality",
         "pl": "20 pkt. obrażeń od ataku\n10 pkt. destrukcji"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3134.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3134.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -7119,7 +7119,7 @@ window.ARENA_GAME_DATA = {
         "en": "95 Ability Power\n40% Magic Penetration",
         "pl": "95 pkt. mocy umiejętności\n40% przebicia odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3135.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3135.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7137,7 +7137,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Ability Power\n30% Magic Penetration\n20 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals.",
         "pl": "75 pkt. mocy umiejętności\n30% przebicia odporności na magię\n20 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3137.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3137.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7156,7 +7156,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n35 Magic Resist\n10% Life Steal\nACTIVE\nQuicksilver\nRemoves all crowd control debuffs (excluding Airborne ) and grants Move Speed.",
         "pl": "50 pkt. obrażeń od ataku\n35 pkt. odporności na magię\n10% kradzieży życia\nUŻYCIE\nŻywe Srebro\nUsuwa wszystkie efekty kontroli tłumu działające na twojego bohatera (z wyjątkiem wyrzucenia w powietrze ) oraz zwiększa prędkość ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3139.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3139.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -7178,7 +7178,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Magic Resist\nQuicksilver\nRemove all crowd control debuffs (excluding Airborne ).",
         "pl": "30 pkt. odporności na magię\nŻywe Srebro\nUsuwa wszystkie efekty kontroli tłumu (z wyjątkiem wyrzucenia w powietrze )."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3140.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3140.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -7196,7 +7196,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\n4% Move Speed\nHaunt\nGain Move Speed while out of combat.\nWraith Step\nGain Move Speed and Ghosting for seconds.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\n4% prędkości ruchu\nNawiedzenie\nZyskujesz 0 jedn. prędkości ruchu poza walką.\nUpiorny Krok\nZyskujesz premię do prędkości ruchu i przenikanie na 0 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3142.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3142.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -7216,7 +7216,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n75 Armor\nResilience\nReceive 30% less damage from Critical Strikes.\nHumility\nSlow nearby enemies by 70% for 2 seconds.",
         "pl": "350 pkt. zdrowia\n75 pkt. pancerza\nWytrzymałość\nTrafienia krytyczne zadają ci o 30% obrażeń mniej.\nPokora\nSpowalnia pobliskich wrogów o 70% na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3143.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3143.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -7236,7 +7236,7 @@ window.ARENA_GAME_DATA = {
         "en": "20% Attack Speed\nBullseye\nDamaging a champion deals bonus magic damage.\nAttacks reduce this cooldown by 1 second.",
         "pl": "20% prędkości ataku\nW Dziesiątkę\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne.\nAtaki skracają czas odnowienia tej umiejętności o 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3144.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3144.png",
       "tier": "",
       "price": 600,
       "categories": [
@@ -7253,7 +7253,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\nRevved\nDamaging a champion deals bonus magic damage.",
         "pl": "45 pkt. mocy umiejętności\nWysokie Obroty\nTrafienie bohatera zadaje dodatkowe obrażenia magiczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3145.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3145.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -7270,7 +7270,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n40 Attack Damage\n10% Omnivamp\nACTIVE\n(0s)\nLightning Bolt\nShocks the target enemy champion, dealing magic damage and slowing them by 25% for 1.5 seconds.",
         "pl": "80 pkt. mocy umiejętności\n40 pkt. obrażeń od ataku\n10% wszechwampiryzmu\nUŻYCIE\n(0 sek.)\nPiorun\nRazi wrogiego bohatera obranego za cel, zadając 0 pkt. obrażeń magicznych i spowalniając go o 25% na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3146.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3146.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7291,7 +7291,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\n200 Health\nMadness\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 6%.",
         "pl": "30 pkt. mocy umiejętności\n200 pkt. zdrowia\nSzaleństwo\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 6%)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3147.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3147.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -7306,10 +7306,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Hextechowy Pas Rakietowy"
       },
       "descriptions": {
-        "en": "70 Ability Power\n300 Health\n20 Ability Haste\nSupersonic\nDash in target direction, unleashing missiles that deal magic damage.",
-        "pl": "70 pkt. mocy umiejętności\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nPonaddźwiękowość\nDoskakujesz w wybranym kierunku, wystrzeliwując pociski, które zadają obrażenia magiczne."
+        "en": "60 Ability Power\n350 Health\n20 Ability Haste\nSupersonic\nDash in target direction, unleashing missiles that deal magic damage.",
+        "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nPonaddźwiękowość\nDoskakujesz w wybranym kierunku, wystrzeliwując pociski, które zadają obrażenia magiczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3152.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3152.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -7331,7 +7331,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n25% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks deal a percentage of enemy's current Health as bonus physical damage On-Hit.\nClawing Shadows\nAttacking a champion 3 times Slows them by 30% for 1 second.",
         "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n10% kradzieży życia\nOstrze Mgły\nAtaki zadają dodatkowe obrażenia fizyczne przy trafieniu równe procentowi aktualnego zdrowia celu.\nChwytające Cienie\nZaatakowanie bohatera 3 razy spowalnia go o 30% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3153.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3153.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -7352,7 +7352,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n25 Magic Resist\nLifeline\nTaking magic damage that would reduce your Health below 30% grants a magic damage Shield for 2.5 seconds.",
         "pl": "25 pkt. obrażeń od ataku\n25 pkt. odporności na magię\nLinia Życia\nPrzy otrzymaniu obrażeń magicznych, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą obrażenia magiczne na 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3155.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3155.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -7370,7 +7370,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n15 Ability Haste\n40 Magic Resist\nLifeline\nTaking magic damage that would reduce your Health below 30% grants a magic damage Shield for 3 seconds and 10% Omnivamp until end of combat.",
         "pl": "60 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n40 pkt. odporności na magię\nLinia Życia\nPrzy otrzymaniu obrażeń magicznych, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą obrażenia magiczne na 3 sek. i 10% wszechwampiryzmu do końca walki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3156.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3156.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -7391,7 +7391,7 @@ window.ARENA_GAME_DATA = {
         "en": "105 Ability Power\n50 Armor\nTime Stop\nEnter Stasis for 2.5 seconds.",
         "pl": "105 pkt. mocy umiejętności\n50 pkt. pancerza\nZatrzymanie Czasu\nWchodzisz w stan inercji na 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3157.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3157.png",
       "tier": "",
       "price": 3250,
       "categories": [
@@ -7410,7 +7410,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Ability Haste\n45 Move Speed\nIonian Insight\nGain 10 Summoner Spell Haste.",
         "pl": "10 jedn. przyspieszenia umiejętności\n45 jedn. prędkości ruchu\nIoniańska Przenikliwość\nZyskujesz 10 jedn. przyspieszenia czarów przywoływacza."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3158.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3158.png",
       "tier": "boots",
       "price": 900,
       "categories": [
@@ -7428,7 +7428,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n450 Health\nDragonforce\nGain 25 Basic Ability Haste.\nFocused Will\nDealing damage with Abilities increases your Champion's Ability and Passive damage by 3% for 6 seconds. (stacks 4 times).",
         "pl": "45 pkt. obrażeń od ataku\n450 pkt. zdrowia\nSiła Smoka\nZyskujesz 25 jedn. przyspieszenia umiejętności podstawowych.\nSkupiona Wola\nZadawanie obrażeń umiejętnościami zwiększa obrażenia od umiejętności (również biernej) twojego bohatera o 3% na 6 sek. (kumuluje się 4 razy)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3161.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3161.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -7447,7 +7447,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Ability Power\n350 Health\n15 Ability Haste\nGrievous Wounds\nDealing magic damage to champions applies 40% Wounds for 3 seconds.",
         "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nGłębokie Rany\nZadawanie bohaterom obrażeń magicznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3165.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3165.png",
       "tier": "",
       "price": 2850,
       "categories": [
@@ -7464,10 +7464,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Nieśmiertelna Ścieżka"
       },
       "descriptions": {
-        "en": "45 Move Speed\n4% Omnivamp\nSlay\nGain 0.6% Omnivamp on Champion takedown, stacking up to 10 times.\nNow and Forever\nWhile above half Health, deal 5% increased damage.\nWhile below half Health, gain 15% increased healing, shielding, and regeneration.",
-        "pl": "45 jedn. prędkości ruchu\n4% wszechwampiryzmu\nZgładzenie\nZyskujesz 0.6% wszechwampiryzmu przy udziale w zabójstwie bohatera. Efekt kumuluje się do 10 razy.\nTeraz i na zawsze\nGdy masz ponad połowę zdrowia, zadajesz o 5% więcej obrażeń.\nGdy masz mniej niż połowę zdrowia, zyskujesz 15% wzmocnienia leczenia, tarcz i regeneracji."
+        "en": "45 Move Speed\n4% Omnivamp\nSlay\nGain 0.6% Omnivamp on Champion takedown, stacking up to 10 times.\nNow and Forever\nWhile above half Health, deal 4% increased damage.\nWhile below half Health, gain 12% increased healing, shielding, and regeneration.",
+        "pl": "45 jedn. prędkości ruchu\n4% wszechwampiryzmu\nZgładzenie\nZyskujesz 0.6% wszechwampiryzmu przy udziale w zabójstwie bohatera. Efekt kumuluje się do 10 razy.\nTeraz i na zawsze\nGdy masz ponad połowę zdrowia, zadajesz o 4% więcej obrażeń.\nGdy masz mniej niż połowę zdrowia, zyskujesz 12% wzmocnienia leczenia, tarcz i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3168.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3168.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -7486,7 +7486,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Move Speed\nFleetfooted\nReduce the effectiveness of Slows by 40%.\nNoxian Fervor\nGain 5% of your Move Speed as Adaptive Force.",
         "pl": "65 jedn. prędkości ruchu\nZwinne Kroki\nZmniejsza skuteczność spowolnień o 40%.\nNoxiański Ferwor\nZyskujesz 5% swojej prędkości ruchu jako siłę adaptacyjną."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3170.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3170.png",
       "tier": "boots",
       "price": 1000,
       "categories": [
@@ -7503,7 +7503,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Haste\n45 Move Speed\nIonian Insight\nGain 20 Summoner Spell Haste.\nNoxian Haste\nEmpowering or protecting allies with abilities, dealing damage to enemy Champions with abilities, or casting a Summoner Spell grants Move Speed for 4 seconds.\nNoxian Haste can only be triggered once per Ability cast.",
         "pl": "20 jedn. przyspieszenia umiejętności\n45 jedn. prędkości ruchu\nIoniańska Przenikliwość\nZyskujesz 20 jedn. przyspieszenia czarów przywoływacza.\nNoxiańskie Przyspieszenie\nWzmocnienie lub ochrona sojuszników umiejętnościami, zadawanie obrażeń wrogim bohaterom za pomocą umiejętności czy rzucenie czaru przywoływacza zapewnia 0 jedn. prędkości ruchu na 4 sek.\nNoxiańskie Przyspieszenie może być aktywowane tylko raz na użytą umiejętność."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3171.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3171.png",
       "tier": "boots",
       "price": 900,
       "categories": [
@@ -7521,7 +7521,7 @@ window.ARENA_GAME_DATA = {
         "en": "40% Attack Speed\n45 Move Speed\n5% Life Steal\nNoxian Gait\nAttacks against Champions grant Move Speed On-Hit decaying over 2 seconds.",
         "pl": "40% prędkości ataku\n45 jedn. prędkości ruchu\n5% kradzieży życia\nNoxiański Chód\nAtaki przeciwko bohaterom zapewniają prędkość ruchu przy trafieniu zanikającą w ciągu 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3172.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3172.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -7540,7 +7540,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Magic Resist\n45 Move Speed\n30% Tenacity\nNoxian Persistence\n(0s)\nAfter taking magic damage from a Champion, gain a magic shield for 5 seconds.",
         "pl": "30 pkt. odporności na magię\n45 jedn. prędkości ruchu\n30% nieustępliwości\nNoxiańska Wytrwałość\n(0 sek.)\nPo otrzymaniu obrażeń magicznych od bohatera zyskujesz magiczną tarczę o wartości 0 pkt. na 5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3173.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3173.png",
       "tier": "boots",
       "price": 1250,
       "categories": [
@@ -7560,7 +7560,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Armor\n45 Move Speed\nPlating\nReduces incoming damage from Attacks by 10%.\nNoxian Endurance\n(0s)\nAfter taking physical damage from a Champion, gain a physical shield for 5 seconds.",
         "pl": "35 pkt. pancerza\n45 jedn. prędkości ruchu\nOpancerzenie\nZmniejsza obrażenia otrzymywane od ataków o 10%.\nNoxiańska Wytrzymałość\n(0 sek.)\nPo otrzymaniu obrażeń fizycznych od bohatera zyskujesz fizyczną tarczę o wartości 0 pkt. na 5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3174.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3174.png",
       "tier": "boots",
       "price": 1200,
       "categories": [
@@ -7578,7 +7578,7 @@ window.ARENA_GAME_DATA = {
         "en": "18 Magic Penetration\n8% Magic Penetration\n45 Move Speed",
         "pl": "18 pkt. przebicia odporności na magię\n8% przebicia odporności na magię\n45 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3175.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3175.png",
       "tier": "boots",
       "price": 1100,
       "categories": [
@@ -7596,7 +7596,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Move Speed\nOmnipresent\nGain a new Active: Teleport.\nVoidborn\nGain Empowered Recall.\nNoxian Synchrony\nGain 45 Move Speed and 8% total Move Speed when out of combat.",
         "pl": "55 jedn. prędkości ruchu\nWszechobecny\nZdobywasz nową umiejętność aktywną: Teleportacja\nDziecko Pustki\nZyskaj Ulepszony Powrót.\nNoxiański Synchronizm\nZyskujesz 45 jedn. prędkości ruchu oraz 8% całkowitej prędkości ruchu poza walką."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3176.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3176.png",
       "tier": "boots",
       "price": 900,
       "categories": [
@@ -7613,7 +7613,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n150 Health\n15 Ability Haste",
         "pl": "30 pkt. obrażeń od ataku\n150 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3177.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3177.png",
       "tier": "",
       "price": 950,
       "categories": [
@@ -7633,7 +7633,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n18 Lethality\n15 Ability Haste\nNightstalker\nAfter being unseen by enemies briefly, your next attack against a champion deals an additional true damage.\nBlackout\nWhen you are near enemy Stealth Wards and traps, reveal them briefly. While revealing wards, your attacks deal bonus damage to them.",
         "pl": "60 pkt. obrażeń od ataku\n18 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nNocny Drapieżca\nGdy wrogowie nie widzieli cię od jakiegoś czasu, twój następny atak przeciwko bohaterom zada dodatkowo obrażenia nieuchronne.\nZaciemnienie\nGdy znajdziesz się w pobliżu wrogich Totemów Ukrycia i pułapek, chwilowo je ujawnisz. Gdy ujawniasz totemy, twoje ataki zadają im dodatkowe obrażenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3179.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3179.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -7654,7 +7654,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage, increased against Structures.\nBoarding Party\nNearby allied siege and super minions gain Armor and Magic Resist.",
         "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje dodatkowe obrażenia fizyczne, zwiększone przeciwko budowlom.\nZałoga Abordażowa\nPobliskie sojusznicze stwory oblężnicze i superstwory zyskują pancerz i odporność na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3181.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3181.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7673,7 +7673,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n150 Health\n5% Life Steal",
         "pl": "25 pkt. obrażeń od ataku\n150 pkt. zdrowia\n5% kradzieży życia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3184.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3184.png",
       "tier": "",
       "price": 950,
       "categories": [
@@ -7693,7 +7693,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n30 Armor\n30 Magic Resist\n10 Ability Haste\nDevotion\nGrant nearby allies a 290 - 360 Shield that decays over 2.5 seconds.",
         "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nOddanie\nZapewniasz pobliskim sojusznikom 290-360 pkt. tarczy zanikającej w ciągu 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3190.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3190.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -7716,7 +7716,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Armor\n60 Magic Resist\n15 Ability Haste\nFortify:\nTaking damage from a champion grants a stack of Armor and Magic Resist for 6 seconds.\nMax 5 stacks; 1 per champion.\nActive -\nUnbreakable:\nGain a Shield that decays and grow in size.",
         "pl": "60 pkt. pancerza\n60 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUmocnienie:\nOtrzymywanie obrażeń od bohaterów zapewnia ładunek 0 pkt. pancerza i 0 pkt. odporności na magię na 6 sek.\nMaks. 5 ładunków, 1 ładunek na bohatera.\nUżycie —\nNiezłomność:\nZyskujesz zanikającą tarczę i zwiększasz swój rozmiar."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3193.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3193.png",
       "tier": "",
       "price": 3150,
       "categories": [
@@ -7737,7 +7737,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n35 Magic Resist\n100% Base Health Regen",
         "pl": "200 pkt. zdrowia\n35 pkt. odporności na magię\n100% podstawowej regeneracji zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3211.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3211.png",
       "tier": "",
       "price": 1250,
       "categories": [
@@ -7756,7 +7756,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n100% Base Mana Regen\n12% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health.",
         "pl": "250 pkt. zdrowia\n100% podstawowej regeneracji many\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3222.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3222.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -7778,7 +7778,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n35% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit.\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 10% Armor Penetration and Magic Penetration for 5s.",
         "pl": "30 pkt. obrażeń od ataku\n35% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku: Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 10% przebicia pancerza oraz przebicie odporności na magię na 5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3302.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3302.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -7799,7 +7799,7 @@ window.ARENA_GAME_DATA = {
         "en": "Cannot be sold\nActive - Trinket:\nPlaces an effigy that lasts for seconds and appears exactly as Fiddlesticks does to enemies. Stores one charge every seconds, up to maximum 2 charges.\nEnemy champions approaching an effigy will activate it, causing the effigy to fake a random action, after which the effigy will fall apart.",
         "pl": "Nie można sprzedać\nUżycie — Talizman:\nUmieszcza kukłę, która utrzymuje się przez 0 sek. i wygląda dla wrogów jak Fiddlesticks. Co 0 sek. zyskuje jeden ładunek, aż do maks. 2 ładunków.\nWrodzy bohaterowie, którzy zbliżą się do Kukły, aktywują ją, co sprawi, że uda ona wykonanie losowego działania, a następnie się rozpadnie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3330.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3330.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7820,7 +7820,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active\n( 210 - 90 s, max 2 charges)\nPlaces an Invisible Stealth Ward that grants vision for 90-120 seconds.",
         "pl": "Użycie\n( 210-90 sek., maksymalna liczba ładunków: 2)\nUmieszcza niewidzialny Totem Ukrycia, który zapewnia wizję na 90-120 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3340.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3340.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7841,7 +7841,7 @@ window.ARENA_GAME_DATA = {
         "en": "UNIQUE Active - Hunter's Sight:\nAn arcane mist grants vision in the target area for 5 seconds, revealing enemy champions and granting True Sight of traps in the area for 3 seconds (30 second cooldown).",
         "pl": "UNIKALNE Użycie — Wzrok Łowcy:\nMagiczna mgła odkrywa wybrany obszar na 5 sek., ujawniając wrogich bohaterów i dając prawdziwe widzenie pułapek na tym obszarze na 3 sek. (30 sek. odnowienia)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3348.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3348.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7862,7 +7862,7 @@ window.ARENA_GAME_DATA = {
         "en": "Lucent Singularity",
         "pl": "Świetlista Osobliwość"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3349.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3349.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7883,7 +7883,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active\n( 198 - 99 s)\nReveals a distant area for 2 seconds and leaves a Ward that expires upon spotting an enemy champion.",
         "pl": "Użycie\n( 198-99 sek.)\nUjawnia odległy obszar na 2 sek. i umieszcza Totem, który znika po wykryciu wrogiego bohatera."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3363.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3363.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7902,7 +7902,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active\n( 160 - 100 s, max 2 charges)\nReveals enemy Stealth Wards and traps around you for 8 seconds.",
         "pl": "Użycie\n( 160-100 sek., maksymalna liczba ładunków: 2)\nUjawnia wrogie Totemy Ukrycia i pułapki wokół ciebie na 8 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3364.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3364.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -7921,7 +7921,7 @@ window.ARENA_GAME_DATA = {
         "en": "Obtained from a Cat Shaco Box. Click to Consume: Gain gold.",
         "pl": "Otrzymany z Kociego Pudełka Shaco. Kliknij, aby użyć: Zdobywasz złoto."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3398.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3398.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -7939,7 +7939,7 @@ window.ARENA_GAME_DATA = {
         "en": "'Party Favor' Obtained from a Party Drake. Click to Consume: Gain a pile of gold, and 1 skill point!\nSkill Points will not take you over your maximum number of skill points, nor will they make you better at playing League of Legends. Additional terms and conditions may apply.",
         "pl": "„Imprezowy Podarek” Otrzymany od Imprezowego Smoka. Kliknij, aby użyć: Zdobywasz kupkę złota i 1 punkt umiejętności!\nNie możesz przekroczyć maksymalnej liczby punktów umiejętności. Te punkty nie sprawią, że zaczniesz lepiej grać w League of Legends. Mogą obowiązywać dodatkowe warunki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3399.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3399.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -7957,7 +7957,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nGain 0 gold.\nBonus gold given to an ally when Pyke executes an enemy champion using his Ultimate Ability. If no ally was involved in the kill, Pyke gets to keep the Cut!",
         "pl": "Użycie — Zużyj:\nZyskujesz 0 szt. złota.\nDodatkowe złoto przyznawane sojusznikowi, kiedy Pyke wykończy wrogiego bohatera swoją superumiejętnością. Jeśli żaden sojusznik nie wziął udziału w zabójstwie, Pyke zachowa dodatkową Działkę!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3400.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3400.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -7975,7 +7975,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n15 Ability Haste\n25% Critical Strike Chance\nWrath and Ruin\nOn spell cast, gain 2.5% Critical Strike Chance for 6 seconds, stacking up to 20%.\nSalvage the Wreckage\nYour spells have a chance equal to your Critical Strike Chance to grant you or your targeted ally a shield for for 3s.",
         "pl": "50 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nGniew i Ruina\nPodczas rzucania zaklęć zyskujesz 2.5% szansy na trafienie krytyczne na 6 sek. Efekt kumuluje się maksymalnie do 20%.\nZgliszcza\nTwoje zaklęcia mają szansę równą szansie na trafienie krytyczne na przyznanie tarczy o wytrzymałości 0 pkt. na 3 sek. tobie i sojusznikowi obranemu za cel."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3430.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3430.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -7994,7 +7994,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n10% Heal and Shield Power\n125% Base Mana Regen\n4% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit.",
         "pl": "45 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n125% podstawowej regeneracji many\n4% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3504.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -8014,7 +8014,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit.",
         "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3508.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3508.png",
       "tier": "",
       "price": 3050,
       "categories": [
@@ -8036,7 +8036,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nCrush the Eye of the Herald, begining the ritual to summon Rift Herald. You may click the Rift Herald after it has summoned to control how it charges. This control effect can be done once when it is summoned, and once each time a nearby enemy structure dies.",
         "pl": "Użycie — Zużyj:\nZniszcz Oko Herolda, by rozpocząć rytuał przyzywający Herolda. Możesz kliknąć na Herolda po przyzwaniu go, by kontrolować jego szarżę. Kontrolę można uzyskać raz po przyzwaniu go oraz ponownie za każdym razem, gdy wroga budowla zostanie zniszczona."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3513.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3513.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -8054,7 +8054,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nBind with an ally for the remainder of the game, becoming Oathsworn Allies. Oathsworn empowers you both while near one another.",
         "pl": "Użycie — Zużyj:\nNawiąż więź z sojusznikiem do końca gry, by zostać Zaprzysiężonymi Sojusznikami. Przysięga wzmocni was, gdy znajdziecie się blisko siebie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3599.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3599.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -8071,7 +8071,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nBind with an ally for the remainder of the game, becoming Oathsworn Allies. Oathsworn empowers you both while near one another.\nRequired to use Kalista's Ultimate Ability.",
         "pl": "Użycie — Zużyj:\nNawiąż więź z sojusznikiem do końca gry, by zostać Zaprzysiężonymi Sojusznikami. Przysięga wzmocni was, gdy znajdziecie się blisko siebie.\nPotrzebne do użycia superumiejętności Kalisty."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3600.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3600.png",
       "tier": "",
       "price": 0,
       "categories": [
@@ -8088,7 +8088,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n55 Armor\n4% Move Speed\nShipwrecker\nWhile moving, build up to 20 bonus Move Speed. Your next Attack discharges built up Move Speed to deal bonus physical damage.\nUnsinkable\nReduce the effectiveness of Slows by 15%.",
         "pl": "350 pkt. zdrowia\n55 pkt. pancerza\n4% prędkości ruchu\nNiszczyciel Statków\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu. Twój następny atak rozładuje skumulowaną prędkość ruchu, by zadać dodatkowe obrażenia fizyczne.\nNiezatapialny\nZmniejsza skuteczność spowolnień o 15%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3742.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3742.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -8108,7 +8108,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n600 Health\nCleave\nAttacks deal physical damage on-hit and to enemies behind the target.\nTitanic Crescent\nEmpower your next Cleave\nto deal bonus physical damage On-Hit and deal bonus physical damage to enemies behind the target.",
         "pl": "40 pkt. obrażeń od ataku\n600 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne przy trafieniu wrogom znajdującym się za celem.\nKolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3748.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3748.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -8128,7 +8128,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n100% Base Health Regen",
         "pl": "200 pkt. zdrowia\n100% podstawowej regeneracji zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3801.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3801.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -8146,7 +8146,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n300 Mana\n10 Ability Haste\nEnlighten\nLevelling up restores 20% max Mana over 3 seconds.",
         "pl": "40 pkt. mocy umiejętności\n300 pkt. many\n10 jedn. przyspieszenia umiejętności\nOświecenie\nIlekroć zdobywasz poziom, odzyskujesz 20% maksymalnej many w ciągu 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3802.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3802.png",
       "tier": "",
       "price": 1200,
       "categories": [
@@ -8167,7 +8167,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n375 Mana\nEternity\nRestores 10% of the damage taken from champions as Mana.\nCasting an Ability heals for 25% of Mana spent.",
         "pl": "300 pkt. zdrowia\n375 pkt. many\nWieczność\nPrzywraca manę równą 10% obrażeń otrzymanych od bohaterów.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3803.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3803.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -8187,7 +8187,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15 Lethality\n250 Health\nAnnul\nGrants a Spell Shield that blocks the next enemy Ability.",
         "pl": "50 pkt. obrażeń od ataku\n15 pkt. destrukcji\n250 pkt. zdrowia\nUchylenie\nZapewnia tarczę magii, która blokuje kolejną umiejętność wroga."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3814.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3814.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -8206,7 +8206,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Ability Power\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Frostfang, gaining Active -\nWarding.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
         "pl": "10 pkt. mocy umiejętności\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Lodowy Kieł i zyskać Użycie —\nUmieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3850.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3850.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8228,7 +8228,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Ability Power\n70 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into World Rune T2.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "15 pkt. mocy umiejętności\n70 pkt. zdrowia\n50% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Runę Świata Poziomu 2.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3851.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3851.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8248,7 +8248,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n75 Health\n100% Base Mana Regen\n3 Gold Per 10 Seconds\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "40 pkt. mocy umiejętności\n75 pkt. zdrowia\n100% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3853.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3853.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8268,7 +8268,7 @@ window.ARENA_GAME_DATA = {
         "en": "4 Attack Damage\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\nQuest:\nEarn 500 gold from this item to transform it into Runesteel Spaulders, gaining Warding.",
         "pl": "4 pkt. obrażeń od ataku\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\nZadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Ochraniacze z Runicznej Stali i zyskać Umieszczanie Totemów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3854.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3854.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8290,7 +8290,7 @@ window.ARENA_GAME_DATA = {
         "en": "6 Attack Damage\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Pauldrons of Whiterock.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "6 pkt. obrażeń od ataku\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Naramienniki spod Białej Skały.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3855.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3855.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8310,7 +8310,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n250 Health\n100% Base Health Regen\n3 Gold Per 10 Seconds\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "15 pkt. obrażeń od ataku\n250 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3857.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3857.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8330,7 +8330,7 @@ window.ARENA_GAME_DATA = {
         "en": "7 Ability Power\n50 Health\n50% Base Health Regen\n2 Gold Per 10 Seconds\nQuest:\nEarn 500 gold from this item to transform it into Targon's Buckler, gaining Warding.",
         "pl": "7 pkt. mocy umiejętności\n50 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n2 szt. złota co 10 sek.\nZadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Puklerz Targonu i zyskać Umieszczanie Totemów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3858.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3858.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8352,7 +8352,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Ability Power\n100 Health\n75% Base Health Regen\n3 Gold Per 10 Seconds\nSpoils of War:\nWhile nearby an allied champion, Attacks execute minions below 0% of their max Health. Killing a minion grants the same kill gold to the nearest allied champion. These effects recharge every 0 seconds (Max 0 charges). Quest:\nEarn 1000 gold from this item to transform it into Bulwark of the Mountain.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "10 pkt. mocy umiejętności\n100 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nŁupy Wojenne:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, twoje ataki wykańczają stwory, których poziom zdrowia wynosi mniej niż 0% ich maks. zdrowia. Zabicie stwora przyznaje tyle samo szt. złota najbliższemu sojuszniczemu bohaterowi. Te efekty odnawiają się co 0 sek. (maks. liczba ładunków: 0). Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bastion Góry.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3859.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3859.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8372,7 +8372,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Power\n250 Health\n100% Base Health Regen\n3 Gold Per 10 Seconds\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "20 pkt. mocy umiejętności\n250 pkt. zdrowia\n100% podstawowej regeneracji zdrowia\n3 szt. złota co 10 sek.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3860.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3860.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8392,7 +8392,7 @@ window.ARENA_GAME_DATA = {
         "en": "6 Attack Damage\n25 Health\n25% Base Mana Regen\n2 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 500 gold from this item to transform it into Harrowing Crescent, gaining Active -\nWarding.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.",
         "pl": "6 pkt. obrażeń od ataku\n25 pkt. zdrowia\n25% podstawowej regeneracji many\n2 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 500 szt. złota przy użyciu tego przedmiotu, by przemienić go w Półksiężycowe Ostrze Harrowing i zyskać Użycie —\nUmieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3862.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3862.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8414,7 +8414,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Attack Damage\n60 Health\n50% Base Mana Regen\n3 Gold Per 10 Seconds\nTribute:\nWhile nearby an ally champion, damaging Abilities and Attacks against champions or buildings grant 20 gold. This can occur up to 3 times every 36 seconds. Quest:\nEarn 1000 gold from this item to transform it into Black Mist Scythe.\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "10 pkt. obrażeń od ataku\n60 pkt. zdrowia\n50% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nDanina:\nGdy znajdujesz się w pobliżu sojuszniczego bohatera, umiejętności zadające obrażenia i ataki użyte przeciwko bohaterom lub budowlom zapewniają 20 szt. złota. Efekt może wystąpić do 3 razy w ciągu 36 sek. Zadanie:\nZdobądź 1000 szt. złota przy użyciu tego przedmiotu, by przemienić go w Kosę Czarnej Mgły i zyskać Umieszczanie Totemów.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3863.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3863.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8434,7 +8434,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n75 Health\n100% Base Mana Regen\n3 Gold Per 10 Seconds\nThis item grants reduced gold from minions if anyone on your team with this item kill excessive numbers of them.\nACTIVE\nWard\nPlace an Invisible Stealth Ward that grants vision. Stores 0 Stealth Wards, which refill upon visiting the shop.",
         "pl": "20 pkt. obrażeń od ataku\n75 pkt. zdrowia\n100% podstawowej regeneracji many\n3 szt. złota co 10 sek.\nTen przedmiot zapewnia zmniejszoną ilość złota ze stworów, jeśli ktokolwiek z twojej drużyny, kto go posiada, zabije ich zbyt wiele.\nUŻYCIE\nTotem\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję. Przechowuje następującą liczbę Totemów Ukrycia: 0. Totemy odnawiają się, ilekroć odwiedzasz sklep."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3864.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3864.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8451,7 +8451,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Atlas Świata"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3865.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3865.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8472,7 +8472,7 @@ window.ARENA_GAME_DATA = {
         "en": "100 Health\n50% Base Health Regen\n50% Base Mana Regen\n5 Gold Per 10 Seconds\nSupport Quest\nEarn 0 gold from this item to transform it into Bounty of Worlds.\nShared Riches\n(0s, max 0 charges)\nWhile near an ally champion, damage enemy champions or kill minions to gain gold. Active\n(3 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "100 pkt. zdrowia\n50% podstawowej regeneracji zdrowia\n50% podstawowej regeneracji many\n5 szt. złota co 10 sek.\nZadanie wspierających:\nZdobądź 0 szt. złota przy użyciu tego przedmiotu, by przemienić go w Bogactwo Światów.\nWspólne Bogactwo\n(0 sek., maksymalna liczba ładunków: 0)\nGdy jesteś w pobliżu sojuszniczego bohatera, zyskujesz złoto za zadawanie bohaterom obrażeń lub zabijanie stworów. Użycie\n(ładunki: 3)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3866.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3866.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8493,7 +8493,7 @@ window.ARENA_GAME_DATA = {
         "en": "5 Gold Per 10 Seconds\n75% Base Health Regen\n75% Base Mana Regen\n200 Health\nUpgrade\nThis item can be upgraded into Bloodsong, Celestial Opposition, Dream Maker, Zaz'Zak's Realmspike, or Solstice Sleigh for free. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "5 szt. złota co 10 sek.\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n200 pkt. zdrowia\nUlepszenie\nTen przedmiot można ulepszyć do Krwawej Pieśni, Astralnego Sprzeciwu, Spełniacza Marzeń, Kolca Królestwa Zaz'Zaka lub Sań Przesilenia za darmo. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3867.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3867.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8514,7 +8514,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nBlessing of the Mountain\nReduce incoming champion damage for 2 seconds after taking damage from a champion. When the effect ends, slow nearby enemies by 50% for 1.5 seconds.\nActive\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nBłogosławieństwo Gór\nZmniejsza obrażenia otrzymywane od bohaterów przez 2 sek. po ich otrzymaniu. Gdy efekt dobiegnie końca, spowalnia pobliskich wrogów o 50% na 1.5 sek.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3869.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3869.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8536,7 +8536,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nDream Maker\nHealing or Shielding another ally blows Dream Bubbles to them for 3 seconds. Their next Attack deals bonus magic damage On-Hit and the next damage they take is reduced. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nSpełniacz Marzeń\nLeczenie lub osłonięcie tarczą innego sojusznika rzuca w niego Bańkami Marzeń utrzymującymi się przez 3 sek. Jego kolejny atak zadaje dodatkowe obrażenia magiczne przy trafieniu, a kolejne przyjęte przez niego obrażenia zostają zmniejszone. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3870.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3870.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8558,7 +8558,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nVoid Explosion\nDealing Ability damage to a champion causes an explosion that deals magic damage.\nActive\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nEksplozja Pustki\nZadanie bohaterowi obrażeń umiejętnością wywołuje eksplozję, która zadaje obrażenia magiczne.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3871.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3871.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8580,7 +8580,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nGoing Sledding\nSlowing or Immobilizing an enemy champion near allies restores Health and grants 20% decaying Move Speed for 2.5 seconds to you and a nearby ally. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nNa Saniach\nSpowolnienie lub unieruchomienie wrogiego bohatera w pobliżu sojuszników przywraca zdrowie i zapewnia 20% zanikającej prędkości ruchu na 2.5 sek. tobie i pobliskiemu sojusznikowi. Użycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3876.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3876.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8602,7 +8602,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n75% Base Health Regen\n75% Base Mana Regen\n9 Gold Per 10 Seconds\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit. If the target is a champion, they take increased damage for 4 seconds. Active\n(4 charges)\nPlaces an Invisible Stealth Ward that grants vision.",
         "pl": "200 pkt. zdrowia\n75% podstawowej regeneracji zdrowia\n75% podstawowej regeneracji many\n9 szt. złota co 10 sek.\nCzaroostrze\nPo użyciu umiejętności twój następny atak zada dodatkowe obrażenia fizyczne przy trafieniu. Jeśli cel jest bohaterem, otrzymuje zwiększone obrażenia przez 4 sek.\nUżycie\n(ładunki: 4)\nUmieszczasz niewidzialny Totem Ukrycia, który zapewnia wizję."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3877.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3877.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -8621,7 +8621,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Strzelać bez Rozkazu\n500 Srebrnych Węży"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3901.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3901.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -8636,7 +8636,7 @@ window.ARENA_GAME_DATA = {
         "en": "Cannon Barrage additionally fires a mega-cannonball at the center of the Barrage, dealing bonus true damage and Slowing.",
         "pl": "Kanonada dodatkowo wystrzeliwuje w centrum ostrzału megakulę armatnią, która zadaje dodatkowe obrażenia nieuchronne i spowalnia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3902.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3902.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -8651,7 +8651,7 @@ window.ARENA_GAME_DATA = {
         "en": "Allies in the Cannon Barrage gain bonus Move Speed.",
         "pl": "Sojusznicy w obszarze Kanonady zyskują premię do prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3903.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3903.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -8666,7 +8666,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Ability Power\nGrievous Wounds\nDealing magic damage to champions applies 40% Wounds for 3 seconds.",
         "pl": "25 pkt. mocy umiejętności\nGłębokie Rany\nZadawanie bohaterom obrażeń magicznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/3916.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/3916.png",
       "tier": "",
       "price": 800,
       "categories": [
@@ -8683,7 +8683,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n5 Lethality\n4% Move Speed\nActive -\nSoul Anchor\n(0s)\nMark your current location. After 4 seconds, return to that location. You may recast at any point during Soul Anchor's\nduration to return to your marked location early.",
         "pl": "25 pkt. obrażeń od ataku\n5 pkt. destrukcji\n4% prędkości ruchu\nUżycie —\nPrzywiązanie Duszy\n(0 sek.)\nOznacz miejsce, w którym się obecnie znajdujesz. Po 4 sek. powróć do tego miejsca. W czasie trwania Przywiązania Duszy\nmożesz w dowolnej chwili użyć go ponownie, aby powrócić do oznaczonego miejsca wcześniej."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4003.png",
       "tier": "",
       "price": 1600,
       "categories": [
@@ -8702,7 +8702,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15 Lethality\n4% Move Speed\nActive -\nSoul Anchor\n(0s)\nMark your current location. After 4 seconds, return to that location. You may recast at any point during Soul Anchor's\nduration to return to your marked location early.",
         "pl": "50 pkt. obrażeń od ataku\n15 pkt. destrukcji\n4% prędkości ruchu\nUżycie —\nPrzywiązanie Duszy\n(0 sek.)\nOznacz miejsce, w którym się obecnie znajdujesz. Po 4 sek. powróć do tego miejsca. W czasie trwania Przywiązania Duszy\nmożesz w dowolnej chwili użyć go ponownie, aby powrócić do oznaczonego miejsca wcześniej."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4004.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -8721,7 +8721,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 20 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 7% Vulnerable for 4 seconds.",
         "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4005.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -8741,7 +8741,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n350 Health\n15 Ability Haste\nVile Decay\nDealing magic damage with abilities or passives to champions reduces their Magic Resist by 7.5% for 6 seconds. (Stacks 4 times).",
         "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nNiecny Rozkład\nZadawanie bohaterom obrażeń magicznych za pomocą umiejętności do użycia oraz umiejętności biernych zmniejsza ich odporność na magię o 7.5% na 6 sek. (Kumuluje się 4 razy)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4010.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4010.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -8761,7 +8761,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
         "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4011.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -8782,7 +8782,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n45 Armor\n45 Magic Resist\n30% Tenacity\nThe Feast:\nWhenever a nearby ally champion becomes affected by an immobilizing crowd control effect, instead you are stunned for that duration. (20(0s)).",
         "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n45 pkt. odporności na magię\n30% nieustępliwości\nUczta:\nGdy pobliski sojuszniczy bohater zostanie dotknięty unieruchamiającym efektem kontroli tłumu, przekierowujesz ten efekt na siebie i jesteś pod wpływem ogłuszenia na czas trwania tego efektu. (20(0 sek.))."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4012.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4012.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -8802,7 +8802,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n30 Armor\n30 Magic Resist\n30% Tenacity\nChain Lightning:\nYou deal 20% reduced ability damage. On a 1 second cadence, enemies you've damaged with abilities chain 66.6% of the ability damage you've dealt them to another nearby enemy, prioritizing champions.",
         "pl": "70 pkt. mocy umiejętności\n30 pkt. pancerza\n30 pkt. odporności na magię\n30% nieustępliwości\nŁańcuch Piorunów:\nZadajesz o 20% mniej obrażeń od umiejętności. Przez 1 sek. wrogowie, którym zadano obrażenia za pomocą umiejętności, przenoszą 66.6% zadanych im obrażeń od umiejętności na innego pobliskiego wroga, priorytetowo traktując bohaterów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4013.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4013.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -8822,7 +8822,7 @@ window.ARENA_GAME_DATA = {
         "en": "60% Attack Speed\n600 Health\nEncroaching Frost:\nOn-Hit, apply a stacking move speed slow for 1.5 seconds. This effect stacks up to 35%.",
         "pl": "60% prędkości ataku\n600 pkt. zdrowia\nSiarczysty Mróz:\nprzy trafieniu nakłada kumulujące się spowolnienie prędkości ruchu na 1.5 sek. Efekt ten kumuluje się do 35%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4014.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4014.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -8842,7 +8842,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n5% Move Speed\n22% Armor Penetration\n30% Magic Penetration\nGiant Slayer\nDeal up to 15% bonus damage against champions with greater max Health than you.\nMax damage increase reached when Health difference is greater than 3000.",
         "pl": "60 pkt. mocy umiejętności\n5% prędkości ruchu\n22% przebicia pancerza\n30% przebicia odporności na magię\nPogromca Olbrzymów\nZadajesz do 15% dodatkowych obrażeń bohaterom, którzy mają więcej maksymalnego zdrowia od ciebie.\nZwiększenie obrażeń osiąga najwyższą wartość, gdy różnica w maksymalnym zdrowiu jest większa niż 3000 pkt."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4015.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4015.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -8864,7 +8864,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n15% Heal and Shield Power\n25 Ability Haste\nPromise\nGain 10% of your Promised ally's Ability Power, and grant your Promised ally 10% of your Ability Haste.\nACTIVE\n(0s)\nPromise\nMake a Promise to an ally.",
         "pl": "50 pkt. mocy umiejętności\n15% siły leczenia i tarcz\n25 jedn. przyspieszenia umiejętności\nObietnica\nZyskujesz 10% mocy umiejętności od sojusznika, któremu złożono Obietnicę, i zapewniasz mu 10% swojego przyspieszenia umiejętności.\nUŻYCIE\n(0 sek.)\nObietnica\nZłóż sojusznikowi Obietnicę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4016.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4016.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -8883,7 +8883,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n12 Lethality\nChar\n(0s) per target\nYour next Ability hit Burns enemies for to current Health physical damage over 4 seconds, based on how much more max Health they have than you.\nBonus damage maximum is reached at 3000 health difference",
         "pl": "40 pkt. obrażeń od ataku\n12 pkt. destrukcji\nZwęglenie\n(0 sek.) na cel\nTwoja następna umiejętność nakłada na wrogów podpalenie, zadając im obrażenia fizyczne równe 0-0 bieżącego zdrowia w ciągu 4 sek., zależnie od tego, ile więcej maksymalnego zdrowia cel ma od ciebie.\nMaksymalne dodatkowe obrażenia zostaną osiągnięte przy różnicy wynoszącej 3000 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4017.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4017.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -8901,7 +8901,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n55 Magic Resist\n4% Move Speed\nSteadfast\nGain 70 Magic Resist and 6% bonus Move Speed after taking magic damage from Champions 8 times.",
         "pl": "400 pkt. zdrowia\n55 pkt. odporności na magię\n4% prędkości ruchu\nNiewzruszenie\nZyskujesz 70 pkt. odporności na magię i 6% premii do prędkości ruchu po otrzymaniu obrażeń magicznych od bohaterów następującą liczbę razy: 8."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4401.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4401.png",
       "tier": "prismatic",
       "price": 2800,
       "categories": [
@@ -8920,7 +8920,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n400 Health\n300 Mana\n10 Ability Haste\nEternity:\nRestore Mana equal to 15% of premitigation damage taken from champions, and Health equal to 25% of Mana spent, up to 20 Health per cast, per second. Innervate:\nAfter using an ability, restore 3% missing Health and 3% missing Mana over 3 seconds.\n\"Cast down the Noxians\"\n– Bobdyr, Temple Guardsman",
         "pl": "30 pkt. obrażeń od ataku\n400 pkt. zdrowia\n300 pkt. many\n10 jedn. przyspieszenia umiejętności\nWieczność:\nPrzywraca manę równą wartości 15% czystych obrażeń otrzymanych od bohaterów oraz zdrowie równe 25% zużytej many, maks. 20 pkt. zdrowia na użycie, na sekundę. Odświeżenie:\nPo użyciu umiejętności odzyskujesz 3% brakującego zdrowia oraz 3% brakującej many w ciągu 3 sek.\n„Uciskać Noxian”\n— Bobdyr, Strażnik Świątyni"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4402.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4402.png",
       "tier": "prismatic",
       "price": 2950,
       "categories": [
@@ -8941,7 +8941,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n120 Ability Power\n50% Attack Speed\n30% Critical Strike Chance\n250 Health\n30 Armor\n30 Magic Resist\n250 Mana\n20 Ability Haste\n10% Move Speed\n10% Life Steal\n100% Base Health Regen\n100% Base Mana Regen\nDoing Something:\nYou are permanently On Fire!\n\"It must do something...\nDeclined, it does EVERYTHING\"",
         "pl": "70 pkt. obrażeń od ataku\n120 pkt. mocy umiejętności\n50% prędkości ataku\n30% szansy na trafienie krytyczne\n250 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n250 pkt. many\n20 jedn. przyspieszenia umiejętności\n10% prędkości ruchu\n10% kradzieży życia\n100% podstawowej regeneracji zdrowia\n100% podstawowej regeneracji many\nRobi Coś:\nStale igrasz z ogniem!\n„Przecież musi coś robić…\nNie tylko coś, robi WSZYSTKO!”"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4403.png",
       "tier": "prismatic",
       "price": 7187,
       "categories": [
@@ -8970,7 +8970,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Ability Power\n25 Ability Haste\nHypershot\nDealing Ability damage to champions at 600 range or greater Reveals them for 6 seconds.\nFocus\nWhen Hypershot\nis triggered, Reveal all other enemy champions within 1400 range of them for 3 seconds.",
         "pl": "75 pkt. mocy umiejętności\n25 jedn. przyspieszenia umiejętności\nHiperstrzał\nZadawanie bohaterom obrażeń za pomocą umiejętności w zasięgu co najmniej 600 jedn. ujawnia ich na 6 sek.\nSkupienie\nGdy Hiperstrzał\njest aktywny, ujawniasz wszystkich innych wrogich bohaterów w zasięgu 1400 jedn. na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4628.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4628.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -8988,7 +8988,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n350 Health\n25 Ability Haste\n4% Move Speed\nSpelldance\nDealing magic or true damage to champions grants Move Speed for 4 seconds.",
         "pl": "70 pkt. mocy umiejętności\n350 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\nCzarowny Pląs\nZadawanie bohaterom obrażeń magicznych lub nieuchronnych zapewnia prędkość ruchu na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4629.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4629.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9008,7 +9008,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Ability Power\n13% Magic Penetration",
         "pl": "25 pkt. mocy umiejętności\n13% przebicia odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4630.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4630.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -9026,7 +9026,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n25 Magic Resist\nAnnul\nGrants a Spell Shield that blocks the next enemy Ability.",
         "pl": "40 pkt. mocy umiejętności\n25 pkt. odporności na magię\nUchylenie\nZapewnia tarczę magii, która blokuje kolejną umiejętność wroga."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4632.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4632.png",
       "tier": "",
       "price": 1600,
       "categories": [
@@ -9044,7 +9044,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp.\nVoid Infusion\nGain 2% of your bonus Health as Ability Power.",
         "pl": "70 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskaj wszechwampiryzm.\nInfuzja Pustki\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4633.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4633.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -9064,7 +9064,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Power\n250 Health\n5% Omnivamp",
         "pl": "20 pkt. mocy umiejętności\n250 pkt. zdrowia\n5% wszechwampiryzmu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4635.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4635.png",
       "tier": "",
       "price": 1265,
       "categories": [
@@ -9083,7 +9083,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n300 Health\n25 Ability Haste\nSoulrend:\nDamaging a champion with Attacks or Abilities deals an additional magic damage and grants you 25% Move Speed for 1.5 seconds (30(0s) per champion).\nMythic Passive: Grants all other Legendary items 5 Ability Haste.\nDamaging a new champion will extend the duration of the Move Speed bonus.",
         "pl": "90 pkt. mocy umiejętności\n300 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nRozerwanie Duszy:\nZadanie bohaterowi obrażeń atakami lub umiejętnościami zadaje dodatkowo 0 pkt. obrażeń magicznych i zapewnia ci 25% prędkości ruchu na 1.5 sek. (30(0 sek.) na bohatera).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 jedn. przyspieszenia umiejętności.\nZadanie obrażeń innemu bohaterowi wydłuży czas działania premii do prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4636.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4636.png",
       "tier": "",
       "price": 2765,
       "categories": [
@@ -9104,7 +9104,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Ability Power\n350 Health\nAzakana's Gaze:\nDealing Ability damage burns enemies for max Health magic damage every second for 4 seconds. Dark Pact:\nGain 2% of your bonus Health as Ability Power.\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
         "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana:\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe ich maksymalnego zdrowia co sekundę przez 4 sek. Mroczny Pakt:\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności.\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4637.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4637.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9122,7 +9122,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\n10 Ability Haste\n10 Armor\n15 Magic Resist\nArcane Cache\nThis item can store up to 3 purchased Control Wards.",
         "pl": "150 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\n10 pkt. pancerza\n15 pkt. odporności na magię\nTajemna Skrytka\nTen przedmiot może przechowywać do 3 zakupionych Totemów Kontroli."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4638.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4638.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -9145,7 +9145,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Health\n25% Base Mana Regen\nArcane Cache:\nThis item can store up to 2 purchased Control Wards.",
         "pl": "80 pkt. zdrowia\n25% podstawowej regeneracji many\nTajemna Skrytka:\nTen przedmiot może przechowywać do 2 zakupionych Totemów Kontroli."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4641.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4641.png",
       "tier": "",
       "price": 350,
       "categories": [
@@ -9169,7 +9169,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Ability Power\n100% Base Mana Regen\n10 Ability Haste",
         "pl": "20 pkt. mocy umiejętności\n100% podstawowej regeneracji many\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4642.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4642.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -9189,7 +9189,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n20 Ability Haste\n25 Armor\n30 Magic Resist\nArcane Cache\nThis item can store up to 3 purchased Control Wards.\nBehold\nIncrease your Stealth Ward and Control Ward placement caps by 1.",
         "pl": "250 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n25 pkt. pancerza\n30 pkt. odporności na magię\nTajemna Skrytka\nTen przedmiot może przechowywać do 3 zakupionych Totemów Kontroli.\nWejrzenie\nZwiększa limity ustawionych Totemów Ukrycia i Totemów Kontroli o 1."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4643.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4643.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -9212,7 +9212,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard:\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. (40(0s)).\nMythic Passive: Grants all other Legendary items 1% Move Speed and 8 Ability Power.\nItem cooldown is restarted when damage is taken from champions.",
         "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona:\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. (40(0 sek.)).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 1% prędkości ruchu i 8 pkt. mocy umiejętności.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4644.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4644.png",
       "tier": "",
       "price": 2865,
       "categories": [
@@ -9233,7 +9233,7 @@ window.ARENA_GAME_DATA = {
         "en": "110 Ability Power\n15 Magic Penetration\nCinderbloom\nMagic and true damage Critically Strike enemies below 40% Health, dealing 20% increased damage.",
         "pl": "110 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\nRozkwit Żaru\nObrażenia magiczne i obrażenia nieuchronne trafiają krytycznie wrogów, którzy mają mniej niż 40% zdrowia, zadając obrażenia zwiększone o 20%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4645.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4645.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -9251,7 +9251,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n15 Magic Penetration\n6% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them.\nSquall\nAfter 2 seconds, deal magic damage. If the target dies before Squall\ntriggers, it damages nearby enemies.",
         "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n6% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada na niego Nawałnicę.\nNawałnica\nPo 2 sek. zadaje obrażenia magicznych. Jeśli cel zginie przed aktywacją Nawałnicy, zada ona obrażenia pobliskim wrogom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/4646.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/4646.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -9271,7 +9271,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\nActive -\nCrescent:\nDeal damage to nearby enemies.",
         "pl": "30 pkt. obrażeń od ataku\nUżycie —\nPółksiężyc:\nZadaj obrażenia przeciwnikom znajdującym się w pobliżu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6029.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6029.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -9289,7 +9289,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a permanent stat bonus. And a hat!",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór stałej premii statystyk. No i kapelusz!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6032.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6032.png",
       "tier": "",
       "price": 750,
       "categories": [
@@ -9322,7 +9322,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n300 Health\n40 Magic Resist\nActive -\nQuicksilver:\nRemove all crowd control debuffs and gain Tenacity and Slow Resistance.",
         "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n40 pkt. odporności na magię\nUżycie —\nŻywe Srebro:\nUsuwa wszystkie efekty kontroli tłumu; zyskujesz nieustępliwość i odporność na spowolnienia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6035.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6035.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9343,7 +9343,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n50 Armor\n15 Ability Haste\nIgnore Pain\nA percentage of damage taken is dealt to you over 3 seconds instead.\nDefy\nWhen a champion that you damaged within 3 seconds dies, cleanse Ignore Pain's\nremaining damage and restore Health over 2 seconds.",
         "pl": "60 pkt. obrażeń od ataku\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nIgnorowany Ból\nProcent otrzymywanych obrażeń jest ci zadawany w ciągu 3 sek.\nPrzeciwstawienie\nJeżeli bohater, któremu udało ci się zadać obrażenia w ciągu 3 sek., zginie, pozostałe obrażenia Ignorowanego Bólu\nzostaną usunięte i przywrócisz sobie zdrowie w przeciągu 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6333.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6333.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -9362,7 +9362,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n450 Health\n15 Ability Haste\nHackshorn\nDealing physical damage applies 40% Wounds to enemy champions for 3 seconds.",
         "pl": "45 pkt. obrażeń od ataku\n450 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nZłamany Róg\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich zranienie o wartości 40% na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6609.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6609.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9382,7 +9382,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n400 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health.",
         "pl": "45 pkt. obrażeń od ataku\n400 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6610.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6610.png",
       "tier": "",
       "price": 3100,
       "categories": [
@@ -9402,7 +9402,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n10% Heal and Shield Power\n125% Base Mana Regen\n10 Ability Haste\nRapids\nHealing or Shielding an ally grants you both 40 Ability Power and 15 Ability Haste for 6 seconds.",
         "pl": "35 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n125% podstawowej regeneracji many\n10 jedn. przyspieszenia umiejętności\nFale\nUleczenie lub osłonięcie sojusznika tarczą zapewnia wam 40 pkt. mocy umiejętności i 15 jedn. przyspieszenia umiejętności na 6 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6616.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6616.png",
       "tier": "",
       "price": 2250,
       "categories": [
@@ -9422,7 +9422,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Ability Power\n200 Health\n20 Ability Haste\n125% Base Mana Regen\nStarlit Grace\nHealing or shielding an ally chains the effect to another ally (excluding yourself), healing 30% or shielding 35% of the original amount.",
         "pl": "25 pkt. mocy umiejętności\n200 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nŁaska Gwiazd\nLeczenie lub osłonięcie sojusznika tarczą przenoszą się łańcuchowo na innego sojusznika (z wyjątkiem ciebie), zapewniając mu leczenie w wysokości 30% lub tarczę w wysokości 35% pierwotnej wartości."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6617.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6617.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -9443,7 +9443,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n200 Health\n20 Ability Haste\n125% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health.",
         "pl": "35 pkt. mocy umiejętności\n200 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy, by przywrócić zdrowie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6620.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6620.png",
       "tier": "",
       "price": 2200,
       "categories": [
@@ -9464,7 +9464,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n16% Heal and Shield Power\n100% Base Mana Regen\nFirst Light\nGain 2% Heal and Shield Power and 10 Ability Power per 100% Base Mana Regen.",
         "pl": "45 pkt. mocy umiejętności\n16% siły leczenia i tarcz\n100% podstawowej regeneracji many\nPierwsze Światło\nZyskujesz 2% siły leczenia i tarcz oraz 10 pkt. mocy umiejętności za każde 100% podstawowej regeneracji many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6621.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6621.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -9482,7 +9482,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n400 Health\n20 Ability Haste\n8% Omnivamp\nMythic Passive: Grants all other Legendary items 75 Health and 3 Ability Haste.\nActive -\nThirsting Slash:\nDeal damage to nearby enemies. Restore Health for each champion hit.",
         "pl": "55 pkt. obrażeń od ataku\n400 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n8% wszechwampiryzmu\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 75 pkt. zdrowia i   3 jedn. przyspieszenia umiejętności.\nUżycie —\nSpragnione Cięcie:\nZadaje obrażenia pobliskim wrogom. Przywracasz sobie zdrowie za każdego trafionego bohatera."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6630.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6630.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -9505,7 +9505,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n25% Attack Speed\n450 Health\nCleave\nAttacks deal physical damage to nearby enemies.\nBreaking Shockwave\nDeal physical damage and Slow nearby enemies by 35%.\nGain 35% decaying Move Speed per champion hit for 3 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n450 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 35%.\nZa każdego trafionego bohatera otrzymasz 35% prędkości ruchu, która zanika przez 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6631.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6631.png",
       "tier": "",
       "price": 3300,
       "categories": [
@@ -9525,7 +9525,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + target max Health physical damage. If the target is a champion, also heal for 55% of the premitigation damage.\n3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters.",
         "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + maksymalnego zdrowia celu. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń.\n3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6632.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6632.png",
       "tier": "",
       "price": 3450,
       "categories": [
@@ -9548,7 +9548,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n300 Health\nTorment\nDamaging Abilities burn enemies for 2% max Health magic damage per second for 3 seconds.\nSuffering\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 6%.",
         "pl": "60 pkt. mocy umiejętności\n300 pkt. zdrowia\nUdręka\nUmiejętności zadające obrażenia podpalają wrogów, przez co otrzymują oni obrażenia magiczne równe 2% maksymalnego zdrowia co sekundę przez 3 sek.\nCierpienie\nZa każdą sekundę spędzoną w walce z wrogimi bohaterami zyskujesz 2% premii do obrażeń (maks. 6%)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6653.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6653.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9566,7 +9566,7 @@ window.ARENA_GAME_DATA = {
         "en": "100 Ability Power\n600 Mana\n10 Ability Haste\nEcho\nDamaging Abilities fire 6 Echoes that deal bonus magic damage to the target and nearby enemies. Remaining Echoes fire on the primary target, dealing 20% damage.",
         "pl": "100 pkt. mocy umiejętności\n600 pkt. many\n10 jedn. przyspieszenia umiejętności\nEcho\nUmiejętności zadające obrażenia wystrzeliwują następującą liczbę Ech: 6, które zadają dodatkowe obrażenia magiczne celowi i pobliskim wrogom. Pozostałe Echa zostają wystrzelone w kierunku głównego celu, zadając mu obrażenia w wysokości 20%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6655.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6655.png",
       "tier": "",
       "price": 2750,
       "categories": [
@@ -9586,7 +9586,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nMythic Passive: Grants all other Legendary items 10 Ability Power.\nActive -\nGlaciate:\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
         "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 10 pkt. mocy umiejętności.\nUżycie —\nOblodzenie:\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6656.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6656.png",
       "tier": "",
       "price": 2865,
       "categories": [
@@ -9609,7 +9609,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health, 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana.\nCasting an ability heals for 25% of Mana spent.",
         "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia, 30 pkt. many i 3 pkt. mocy umiejętności, do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6657.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6657.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -9630,7 +9630,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Health\n5 Ability Haste\nImmolate\nAfter taking or dealing damage, deal magic damage to nearby enemies for 3 seconds.",
         "pl": "150 pkt. zdrowia\n5 jedn. przyspieszenia umiejętności\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje obrażenia magiczne pobliskim wrogom przez 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6660.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6660.png",
       "tier": "",
       "price": 900,
       "categories": [
@@ -9648,7 +9648,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n50 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows.",
         "pl": "300 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6662.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6662.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -9670,7 +9670,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n40 Magic Resist\n10 Ability Haste\n100% Base Health Regen\nImmolate\nAfter taking or dealing damage, deal magic damage per second to nearby enemies for 3 seconds.\nDesolate\nKilling an enemy deals magic damage around them.",
         "pl": "400 pkt. zdrowia\n40 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji zdrowia\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje obrażenia magiczne na sekundę pobliskim wrogom przez 3 sek.\nOdosobnienie\nZabicie wroga zadaje obrażenia magiczne wokół niego."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6664.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6664.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -9692,7 +9692,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n45 Armor\n45 Magic Resist\nVoidborn Resilience\nAfter 5 seconds of champion combat, increase your bonus Armor and Magic Resist by 30% until end of combat.",
         "pl": "350 pkt. zdrowia\n45 pkt. pancerza\n45 pkt. odporności na magię\nWytrzymałość Dzieci Pustki\nPo upływie 5 sek. w walce z bohaterami twój dodatkowy pancerz i odporność na magię zwiększają się o 30% do końca walki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6665.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6665.png",
       "tier": "",
       "price": 3200,
       "categories": [
@@ -9712,7 +9712,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n30 Armor\n30 Magic Resist\n10 Ability Haste\nGuiding Light:\nUpon casting your Ultimate you Transcend, increasing your Max Health by 12.5% for 9s. While Transcended you and allies within 1200 range of you heal for 10% of your max Health over the duration (90(0s)).\nMythic Passive: Grants all other Legendary items 75 Health.",
         "pl": "350 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nPrzewodnie Światło:\nPo użyciu superumiejętności zyskujesz Transcendencję, zwiększając swoje maks. zdrowie o 12.5% na 9 sek. Podczas Transcendencji ty i twoi sojusznicy znajdujący się w zasięgu 1200 jedn. leczycie się o 10% swojego maks. zdrowia (90(0 sek.)).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 75 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6667.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6667.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -9734,7 +9734,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n20% Critical Strike Chance",
         "pl": "15 pkt. obrażeń od ataku\n20% szansy na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6670.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6670.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -9752,7 +9752,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15% Attack Speed\n20% Critical Strike Chance\n7% Move Speed\nMythic Passive: Grants all other Legendary items 5 Attack Damage.\nMaximum missile damage dealt when enemy Health is below 25%.\nCloudburst's dash cannot pass through terrain.\nActive -\nCloudburst:\nDash in target direction, firing three missiles at the lowest Health enemy near your destination. Deals physical damage, increased against low Health targets.",
         "pl": "50 pkt. obrażeń od ataku\n15% prędkości ataku\n20% szansy na trafienie krytyczne\n7% prędkości ruchu\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. obrażeń od ataku.\nPocisk zadaje maksymalne obrażenia, gdy wróg ma mniej niż 25% zdrowia.\nDoskok Urwania Chmury nie pozwala na przekraczanie terenu.\nUżycie —\nUrwanie Chmury:\nDoskakujesz w wybranym kierunku, wystrzeliwując 3 pociski w stronę wroga o najniższym poziomie zdrowia w pobliżu miejsca docelowego. Zadaje obrażenia fizyczne, które zostają zwiększone przeciwko celom o niskim poziomie zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6671.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6671.png",
       "tier": "",
       "price": 3500,
       "categories": [
@@ -9773,7 +9773,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n40% Attack Speed\n4% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit, increased based on their missing Health.",
         "pl": "45 pkt. obrażeń od ataku\n40% prędkości ataku\n4% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu, zwiększonych w zależności od brakującego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6672.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6672.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9793,7 +9793,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n25% Critical Strike Chance\nLifeline\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\nLinia Życia\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6673.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6673.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9811,7 +9811,7 @@ window.ARENA_GAME_DATA = {
         "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nTranscendence\nAttacks reduce Basic Ability cooldowns by 15% of their remaining cooldown.",
         "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nTranscendencja\nTwoje ataki skracają czasy odnowienia podstawowych umiejętności o 15% pozostałego czasu odnowienia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6675.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6675.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -9830,7 +9830,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold.",
         "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6676.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6676.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9849,7 +9849,7 @@ window.ARENA_GAME_DATA = {
         "en": "25% Attack Speed\nWrath:\nAttacks apply 20 magic damage On-Hit. Seething Strike:\nBasic attacks grant 5% Attack Speed, stacking up to 3 times for a maximum of Attack Speed.",
         "pl": "25% prędkości ataku\nGniew:\nAtaki zadają 20 pkt. obrażeń magicznych przy trafieniu. Wrzące Uderzenie:\nAtaki podstawowe zapewniają 5% prędkości ataku. Efekt kumuluje się do 3 razy i zapewnia maksymalnie 0 jedn. prędkości ataku."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6677.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6677.png",
       "tier": "",
       "price": 1100,
       "categories": [
@@ -9867,7 +9867,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n4% Move Speed",
         "pl": "15 pkt. obrażeń od ataku\n4% prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6690.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6690.png",
       "tier": "",
       "price": 775,
       "categories": [
@@ -9885,7 +9885,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n18 Lethality\n15 Ability Haste\nNightstalker:\nYour Abilities deal up to an additional 16% damage based on the target's missing health. When a champion that you have damaged within the last 3 seconds dies, you become Untargetable from non-structures for 1.5 seconds (30(0s)) until your next action.\nMythic Passive: Grants all other Legendary items 5 Ability Haste and 5 Move Speed.",
         "pl": "60 pkt. obrażeń od ataku\n18 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nNocny Drapieżca:\nTwoje umiejętności zadają maksymalnie do 16% dodatkowych obrażeń zależnie od brakującego zdrowia celu. Gdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jednostki niebędące budowlami nie mogą obrać cię za cel przez 1.5 sek. (30(0 sek.)) do czasu podjęcia przez ciebie kolejnego działania.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 jedn. przyspieszenia umiejętności i 5 jedn. prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6691.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6691.png",
       "tier": "",
       "price": 2950,
       "categories": [
@@ -9908,7 +9908,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n15 Ability Haste\nEver Rising Moon\nHitting a champion with 2 separate Attacks or Abilities within 2 seconds grants you a Shield for 2 seconds.",
         "pl": "60 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\nWiecznie Wschodzący Księżyc\nTrafienie bohatera 2 różnymi atakami lub umiejętnościami w ciągu 2 sek. zapewnia tarczę na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6692.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6692.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -9927,7 +9927,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nAmbush Predator:\nAfter entering a bush your next damaging Attack or Ability on enemy champions deals 10% of their current health over 4 seconds, revealing them and reducing their vision radius for the duration. (5(0s)).",
         "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nCzyhający Drapieżnik:\nPo wejściu w zarośla twój następny atak lub umiejętność zadające obrażenia przeciwko wrogiemu bohaterowi zadaje mu obrażenia równe 10% jego aktualnego zdrowia w ciągu 4 sekund, ujawnia go i zmniejsza jego pole widzenia na czas trwania tego efektu. (5(0 sek.))"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6693.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6693.png",
       "tier": "",
       "price": 2850,
       "categories": [
@@ -9947,7 +9947,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n35% Armor Penetration\n15 Ability Haste\nBitter Cold\nDamaging Abilities Slow enemies below 50% Health by 30% for 1 second.",
         "pl": "45 pkt. obrażeń od ataku\n35% przebicia pancerza\n15 jedn. przyspieszenia umiejętności\nPrzenikliwe Zimno\nUmiejętności zadające obrażenia spowalniają wrogów poniżej 50% zdrowia o 30% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6694.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6694.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -9967,7 +9967,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n15 Lethality\nShield Reaver\nDamaging an enemy champion reduces Shields they gain by % for 3 seconds.\nIf they were not already affected by Shield Reaver, reduce Shields on them by %.",
         "pl": "55 pkt. obrażeń od ataku\n15 pkt. destrukcji\nŁupieżca Tarcz\nZadawanie obrażeń wrogim bohaterom obniża wartość nakładanych na nich tarcz o 0% na 3 sek.\nJeśli cel nie był dotknięty efektem Łupieżcy Tarcz, obniżasz wytrzymałość nałożonych na niego tarcz o 0%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6695.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6695.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -9985,7 +9985,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\n20 Ability Haste\nFlux\nWhen a champion that you damaged within 3 seconds dies, refund some of your Ultimate Ability's total cooldown.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nFluktuacja\nZa każdym razem, gdy wrogi bohater zginie w ciągu 3 sek. od zadania mu obrażeń, przywraca część całkowitego czasu odnowienia twojej superumiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6696.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6696.png",
       "tier": "",
       "price": 2750,
       "categories": [
@@ -10004,7 +10004,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\n10 Ability Haste\nEminence\nWhen a champion that you damaged within 3 seconds dies, gain 12 Attack Damage plus 3 per champion killed for 90 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nEminencja\nGdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., zyskujesz 12 pkt. obrażeń od ataku plus 3 pkt. za każdego zabitego bohatera na 90 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6697.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6697.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -10025,7 +10025,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\n10 Ability Haste\nCleave\nAttacks deal physical damage to nearby enemies.\nHeretical Cleave\nDeal physical damage around you.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nHeretyczne Rozpłatanie\nZadajesz obrażenia fizyczne wokół siebie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6698.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6698.png",
       "tier": "",
       "price": 2850,
       "categories": [
@@ -10046,7 +10046,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n10 Lethality\n10 Ability Haste\nGalvanize\nDamaging an Enemy Champions with an ability triggers Energized if it is ready.\nFirmament\nYour Energized Attack deals % target's Current Health as bonus physical damage and grants you bonus Lethality for 4 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n10 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie, jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe % bieżącego zdrowia celu i zapewniają ci dodatkową destrukcję na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6699.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6699.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -10067,7 +10067,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n30 Armor\n5% Move Speed\nAegis:\nEvery 8(0s), block the first Attack that would hit you. While the shield is broken, your first attack against a champion refunds 50% of its current Cooldown and grants 20% Movement Speed for a short duration.",
         "pl": "50 pkt. obrażeń od ataku\n30 pkt. pancerza\n5% prędkości ruchu\nEgida:\nCo 8(0 sek.) blokujesz pierwszy atak, który by cię trafił. Gdy tarcza jest zniszczona, twój pierwszy atak przeciwko bohaterowi skraca jej obecny czas odnowienia o 50% i zapewnia 20% prędkości ruchu na krótki czas."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6700.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6700.png",
       "tier": "",
       "price": 2675,
       "categories": [
@@ -10089,7 +10089,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality. This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję. Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6701.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6701.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -10109,7 +10109,7 @@ window.ARENA_GAME_DATA = {
         "en": "UNIQUE Active:\nScout target area, granting vision for 5 seconds. Reveal enemy champions and grant True Sight of traps in the area for 3 seconds (60 second cooldown).",
         "pl": "UNIKALNE Użycie:\nPrzeprowadza zwiad na wybranym obszarze, zapewniając wizję na 5 sek. Ujawnia wrogich bohaterów i zapewnia prawdziwe widzenie pułapek na danym obszarze na 3 sek. (60 sek. odnowienia)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/6702.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/6702.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -10127,7 +10127,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Gangplank Placeholder"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/7050.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/7050.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10142,7 +10142,7 @@ window.ARENA_GAME_DATA = {
         "en": "650 Health\n20 Ability Haste\nVendetta\nYou gain Vendetta stacks over time Each stack of Vendetta grants you 1% reduced damage from your Nemesis.\nVengeance\nAt maximum stacks, your Nemesis has reduced Tenacity while near you.\nACTIVE\n(0s)\nVow\nChoose a Nemesis.",
         "pl": "650 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nWendeta\nZ upływem czasu zyskujesz ładunki Wendety. Z każdym ładunkiem Wendety zyskujesz 1% zmniejszenia obrażeń otrzymywanych od swojego arcywroga.\nZemsta\nJeśli posiadasz maksymalną liczbę ładunków, twój arcywróg ma mniej nieustępliwości, gdy znajduje się w pobliżu ciebie.\nUŻYCIE\n(0 sek.)\nPrzysięga\nWybierz arcywroga."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8001.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -10162,7 +10162,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n400 Health\n15 Ability Haste\nVile Decay\nDealing magic damage with abilities or passives to champions reduces their Magic Resist by 7.5% for 6 seconds. (Stacks 4 times).",
         "pl": "65 pkt. mocy umiejętności\n400 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nNiecny Rozkład\nZadawanie bohaterom obrażeń magicznych za pomocą umiejętności do użycia oraz umiejętności biernych zmniejsza ich odporność na magię o 7.5% na 6 sek. (Kumuluje się 4 razy)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8010.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8010.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -10182,7 +10182,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n45 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
         "pl": "350 pkt. zdrowia\n45 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/8020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/8020.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -10203,7 +10203,7 @@ window.ARENA_GAME_DATA = {
         "en": "Prove yourself, and Miss Fortune will approve an inventory upgrade.\n[Unlocked by completing achievements.]",
         "pl": "Wykaż się, a Miss Fortune zgodzi się na ulepszenie ekwipunku.\n[Odblokowuje się za wypełnianie osiągnięć]."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9168.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9168.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10218,7 +10218,7 @@ window.ARENA_GAME_DATA = {
         "en": "Orbiting projectiles damage and knock back enemies.\nEvolve: Health Regeneration\nDamage, Ability Haste, Area Size, Projectile Count, Duration",
         "pl": "Orbitujące pociski zadają wrogom obrażenia i ich odrzucają.\nRozwój: regeneracja zdrowia\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9171.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9171.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10233,7 +10233,7 @@ window.ARENA_GAME_DATA = {
         "en": "Summons a Yuum.Ai drone. Yuum.Ai damages and knocks up enemies, and also gathers XP.\nEvolve: Pickup Radius\nDamage, Ability Haste, Area Size, Duration, Pickup Radius",
         "pl": "Przywołuje drona Yuum.AI. Yuum.AI zadaje obrażenia wrogom, wyrzuca ich w powietrze i zdobywa PD.\nRozwój: zasięg podnoszenia\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, zasięg podnoszenia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9172.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9172.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10248,7 +10248,7 @@ window.ARENA_GAME_DATA = {
         "en": "Damages nearby enemies, scaling with your Max Health.\nEvolve: Max Health\nDamage, Area Size, Max Health",
         "pl": "Zadaje pobliskim wrogom obrażenia skalujące się z twoim maksymalnym zdrowiem.\nRozwój: maksymalne zdrowie\nObrażenia, zasięg obszarowy, maksymalne zdrowie"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9173.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9173.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10263,7 +10263,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires lightning that bounces between enemies with the highest health.\nEvolve: Max Health\nDamage, Ability Haste, Area Size, Crit Chance, Duration",
         "pl": "Ciska błyskawicą, która odbija się pomiędzy wrogami z najwyższym poziomem zdrowia.\nRozwój: maksymalne zdrowie\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9174.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9174.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10278,7 +10278,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a crescent shaped projectiles to the left and right of your character.\nEvolve: Ability Haste\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela pociskami w kształcie półksiężyca w lewo i prawo od twojej postaci.\nRozwój: przyspieszenie umiejętności\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9175.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9175.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10293,7 +10293,7 @@ window.ARENA_GAME_DATA = {
         "en": "Deals area damage over time in a cone.\nEvolve: Duration\nDamage, Ability Haste, Duration, Area Size",
         "pl": "Zadaje obrażenia w czasie na obszarze w kształcie stożka.\nRozwój: czas działania\nObrażenia, przyspieszenie umiejętności, czas działania, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9176.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9176.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10308,7 +10308,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires projectiles that create lingering fire areas.\nEvolve: Area Size\nDamage, Ability Haste, Area Size, Projectile Count, Duration",
         "pl": "Strzela pociskami, które tworzą utrzymujące się podpalone obszary.\nRozwój: zasięg obszarowy\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9177.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9177.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10323,7 +10323,7 @@ window.ARENA_GAME_DATA = {
         "en": "A massive explosion that kills all normal enemies and heavily damages Elites. Long cooldown.\nEvolve: EXP\nDamage, Ability Haste, Area Size",
         "pl": "Wielka eksplozja, która zabija wszystkich zwykłych wrogów i zadaje wysokie obrażenia elitom. Długi czas odnowienia.\nRozwój: PD\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9178.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9178.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10338,7 +10338,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a cone of projectiles with bonus crit chance in a random direction. Projectiles pierce on crit.\nEvolve: Crit Chance\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Wystrzeliwuje pociski na obszarze w kształcie stożka w losowym kierunku. Pociski mają premię do szansy na trafienie krytyczne. Pociski przebijają przy trafieniu krytycznym.\nRozwój: szansa na trafienie krytyczne\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9179.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9179.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10353,7 +10353,7 @@ window.ARENA_GAME_DATA = {
         "en": "Rapidly fires projectiles at the nearest enemy, dealing damage to the first target hit.\nEvolve: Ability Haste\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Szybko wystrzeliwuje pociski w pobliskich wrogów, zadając obrażenia pierwszemu trafionemu celowi.\nRozwój: przyspieszenie umiejętności\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9180.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9180.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10368,7 +10368,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a rotating stream of projectiles.\nEvolve: Health Regeneration\nDamage, Crit Chance, Projectile Count",
         "pl": "Wystrzeliwuje obracający się strumień pocisków.\nRozwój: regeneracja zdrowia\nObrażenia, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9181.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9181.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10383,7 +10383,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires returning projectiles at the closest enemy.\nEvolve: Movement Speed\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela powracającymi pociskami w najbliższych wrogów.\nRozwój: prędkość ruchu\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9183.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9183.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10398,7 +10398,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires orbital strikes with bonus crit chance at random enemies, dealing high damage in a small area.\nEvolve: Crit Chance\nDamage, Ability Haste, Area Size, Crit Chance",
         "pl": "Przeprowadza ostrzał orbitalny, mający dodatkową szansę na trafienie krytyczne w losowych wrogów, który zadaje wysokie obrażenia na niewielkim obszarze.\nRozwój: szansa na trafienie krytyczne\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9184.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9184.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10413,7 +10413,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires explosives that bounce between enemies.\nEvolve: Damage\nDamage, Ability Haste, Area Size",
         "pl": "Strzela ładunkami wybuchowymi, które przeskakują między wrogami.\nRozwój: obrażenia\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9185.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9185.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10428,7 +10428,7 @@ window.ARENA_GAME_DATA = {
         "en": "Summons Robo-Tibbers. Robo-Tibbers swipes, dealing area damage. Robo-Tibbers focuses on enemies with the most health.\nEvolve: Duration\nDamage, Ability Haste, Area Size, Duration, Movement Speed",
         "pl": "Przywołuje Robo-Tibbersa. Robo-Tibbers wyprowadza zamaszysty atak, zadając obrażenia obszarowe. Robo-Tibbers skupia się na wrogach z najwyższym poziomem zdrowia.\nRozwój: czas działania\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, prędkość ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9187.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9187.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10443,7 +10443,7 @@ window.ARENA_GAME_DATA = {
         "en": "Drops timed explosive projectiles in a ring that explode for large area damage.\nEvolve: Area Size\nDamage, Ability Haste, Area Size, Projectile Count",
         "pl": "Rozrzuca wybuchowe pociski z zapalnikiem czasowym na obszarze w kształcie pierścienia, które wybuchają i zadają wysokie obrażenia obszarowe.\nRozwój: zasięg obszarowy\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9188.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9188.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10458,7 +10458,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a rotating stream of projectiles.\nEvolve: Health Regeneration\nDamage, Crit Chance, Projectile Count",
         "pl": "Wystrzeliwuje obracający się strumień pocisków.\nRozwój: regeneracja zdrowia\nObrażenia, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9189.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9189.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10473,7 +10473,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires piercing projectiles that bounce off walls.\nEvolve: Projectile Count\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela przebijającymi pociskami, które odbijają się od ścian.\nRozwój: liczba pocisków\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9190.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9190.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10485,7 +10485,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Truciciel Odciśniętej Łapy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9192.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9192.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10500,7 +10500,7 @@ window.ARENA_GAME_DATA = {
         "en": "Blocks damage freezing enemies. Damage scales with Armor and Max Health.\nEvolve: Armor\nDamage, Ability Haste, Area Size, Duration, Armor",
         "pl": "Blokuje obrażenia i zamraża wrogów. Obrażenia skalują się z pancerzem i maksymalnym zdrowiem.\nRozwój: pancerz\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, pancerz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9193.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9193.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10515,7 +10515,7 @@ window.ARENA_GAME_DATA = {
         "en": "Permanently orbiting projectiles damage and knock back enemies.\nDamage, Ability Haste, Projectile Count, Area Size, Duration",
         "pl": "Stale orbitujące pociski zadają wrogom obrażenia i ich odrzucają.\nObrażenia, przyspieszenie umiejętności, liczba pocisków, zasięg obszarowy, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9271.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9271.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10530,7 +10530,7 @@ window.ARENA_GAME_DATA = {
         "en": "Summons a Yuum.Ai drone. Yuum.Ai damages and knocks up enemies, and also gathers XP. After dealing enough damage it will drop a healing pickup.\nDamage, Ability Haste, Area Size, Duration, Pickup Radius",
         "pl": "Przywołuje drona Yuum.AI. Yuum.AI zadaje obrażenia wrogom, wyrzuca ich w powietrze i zdobywa PD. Po zadaniu wystarczającej ilości obrażeń upuści przedmiot leczący.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, zasięg podnoszenia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9272.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9272.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10545,7 +10545,7 @@ window.ARENA_GAME_DATA = {
         "en": "Damages nearby enemies, scaling with your Max Health. Enemies killed within the burn zone explode.\nDamage, Area Size, Max Health",
         "pl": "Zadaje pobliskim wrogom obrażenia skalujące się z twoim maksymalnym zdrowiem. Wrogowie zabici na podpalonym obszarze wybuchają.\nObrażenia, zasięg obszarowy, maksymalne zdrowie"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9273.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9273.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10560,7 +10560,7 @@ window.ARENA_GAME_DATA = {
         "en": "Creates a storm around targeted enemies that deals damage for a duration.\nDamage, Ability Haste, Area Size, Crit Chance, Duration",
         "pl": "Tworzy burzę wokół wrogów obranych za cel, która zadaje obrażenia przez pewien czas.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9274.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9274.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10575,7 +10575,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a beams of light across the screen.\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela promieniami światła przez cały ekran.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9275.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9275.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10590,7 +10590,7 @@ window.ARENA_GAME_DATA = {
         "en": "Deals area damage over time in a cone. Enemies damaged are slowed and eventually stunned. Stunned enemies take extra damage.\nDamage, Ability Haste, Duration, Area Size",
         "pl": "Zadaje obrażenia w czasie na obszarze w kształcie stożka. Wrogowie, którzy otrzymają obrażenia, zostają spowolnieni, a później ogłuszeni. Ogłuszeni wrogowie otrzymują dodatkowe obrażenia.\nObrażenia, przyspieszenie umiejętności, czas działania, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9276.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9276.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10605,7 +10605,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires projectiles that create lingering fire areas. Areas of fire grow in size and deal increased damage over time.\nDamage, Ability Haste, Area Size,, Projectiles, Duration",
         "pl": "Strzela pociskami, które tworzą utrzymujące się podpalone obszary. Podpalone obszary powiększają się i zadają więcej obrażeń w czasie.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, pociski, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9277.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9277.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10620,7 +10620,7 @@ window.ARENA_GAME_DATA = {
         "en": "A massive explosion that kills all normal enemies and heavily damages Elites. Enemies killed drop increased EXP and have a chance to drop gold. Long cooldown.\nDamage, Ability Haste, Area Size",
         "pl": "Wielka eksplozja, która zabija wszystkich zwykłych wrogów i zadaje wysokie obrażenia elitom. Zabici wrogowie upuszczają więcej PD i mają szansę na upuszczenie złota. Długi czas odnowienia.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9278.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9278.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10635,7 +10635,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires a cone of projectiles with bonus crit chance in a random direction. Projectiles pierce on crit.\nEvolve: Crit Chance\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Wystrzeliwuje pociski na obszarze w kształcie stożka w losowym kierunku. Pociski mają premię do szansy na trafienie krytyczne. Pociski przebijają przy trafieniu krytycznym.\nRozwój: szansa na trafienie krytyczne\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9279.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9279.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10650,7 +10650,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires projectiles extremely rapidly at the nearest enemy, dealing damage to the first target hit.\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Bardzo szybko wystrzeliwuje pociski w pobliskich wrogów, zadając obrażenia pierwszemu trafionemu celowi.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9280.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9280.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10665,7 +10665,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires two constant streams of missiles around you. The streams rotate in opposite directions.\nDamage, Crit Chance, Projectile Count",
         "pl": "Uwalnia wokół ciebie dwa ciągłe strumienie pocisków. Strumienie obracają się w przeciwnych kierunkach.\nObrażenia, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9281.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9281.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10680,7 +10680,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires returning projectiles that explode into smaller projectiles at the closest enemy.\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela w najbliższych wrogów powracającymi pociskami, które wybuchają, rozpadając się na mniejsze pociski.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9283.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9283.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10695,7 +10695,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires orbital bombardments at random enemies, ending with a large strike.\nDamage, Ability Haste, Area Size, Crit Chance",
         "pl": "Prowadzi orbitalne bombardowanie wymierzone w losowych wrogów, które kończy się potężnym nalotem.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9284.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9284.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10710,7 +10710,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires explosives that bounce endlessly between enemies as long as it can find a target.\nDamage, Ability Haste, Area Size",
         "pl": "Strzela ładunkami wybuchowymi, które w nieskończoność przeskakują między wrogami, o ile są w stanie znaleźć cel.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9285.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9285.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10725,7 +10725,7 @@ window.ARENA_GAME_DATA = {
         "en": "Summons Enraged Robo-Tibbers. Robo-Tibbers swipes, dealing area damage. Enraged Robo-Tibbers focuses on enemies with the most health and grows larger, faster and deals more damage over the duration.\nDamage, Ability Haste, Area Size, Duration, Movement Speed",
         "pl": "Przywołuje Rozwścieczonego Robo-Tibbersa. Robo-Tibbers wyprowadza zamaszysty atak, zadając obrażenia obszarowe. Rozwścieczony Robo-Tibbers skupia się na wrogach z najwyższym poziomem zdrowia. Jego rozmiar, szybkość ruchu oraz zadawane obrażenia zwiększają się w czasie.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, prędkość ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9287.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9287.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10740,7 +10740,7 @@ window.ARENA_GAME_DATA = {
         "en": "Drops timed explosive projectiles in a ring that explode and release additional explosions for massive area damage.\nDamage, Ability Haste, Area Size, Projectile Count",
         "pl": "Upuszcza wybuchowe pociski z zapalnikiem czasowym na obszarze w kształcie pierścienia, które eksplodują i wywołują dodatkowe wybuchy, zadając potężne obrażenia obszarowe.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9288.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9288.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10755,7 +10755,7 @@ window.ARENA_GAME_DATA = {
         "en": "A train randomly drives through enemies. Trains generate explosions in their wake and knock up enemies. Enemies killed have a chance to drop gold.\nDamage, Ability Haste, Crit Chance, Armor",
         "pl": "Pociąg losowo przejeżdża przez wrogów. Pociągi tworzą na swojej drodze eksplozje i podrzucają wrogów. Istnieje szansa, że zabici wrogowie upuszczą złoto.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pancerz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9289.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9289.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10770,7 +10770,7 @@ window.ARENA_GAME_DATA = {
         "en": "Fires projectiles that bounce off walls, damaging all enemies they pass through. Arrows deal more damage each time they bounce.\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Strzela pociskami odbijającymi się od ścian i zadającymi obrażenia wszystkim wrogom, przez których przenikną. Strzały zadają więcej obrażeń po każdym odbiciu.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9290.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9290.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10782,7 +10782,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Chemiczny Dozownik Niedźwiedziej Łapy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9292.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9292.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10797,7 +10797,7 @@ window.ARENA_GAME_DATA = {
         "en": "Blocks damage freezing enemies and granting a shield. Damage scales with Armor and shield scales with Max health. When the shield expires it freezes all nearby enemies again.\nDamage, Ability Haste, Area Size, Duration, Max Health, Armor",
         "pl": "Blokuje obrażenia, zamraża wrogów i zapewnia tarczę. Obrażenia skalują się z pancerzem, a tarcza z maksymalnym zdrowiem. Gdy tarcza przestanie działać, ponownie zamraża wszystkich pobliskich wrogów.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania, maksymalne zdrowie, pancerz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9293.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9293.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10812,7 +10812,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jinx shoots out a barrage of bullets in a target direction.\nEvolve: Ability Haste\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Jinx strzela salwą kul w wybranym kierunku.\nRozwój: przyspieszenie umiejętności\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9300.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9300.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10827,7 +10827,7 @@ window.ARENA_GAME_DATA = {
         "en": "Leona slams her shield, dealing damage in a cone that scales with her armor.\nEvolve: Armor\nDamage, Ability Haste, Area Size, Crit Chance, Armor",
         "pl": "Leona ciska tarczą, zadając obrażenia na obszarze w kształcie stożka, które skalują się z jej pancerzem.\nRozwój: pancerz\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, pancerz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9301.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9301.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10842,7 +10842,7 @@ window.ARENA_GAME_DATA = {
         "en": "Seraphine sends out a wave of sound, damaging and slowing enemies hit.\nEvolve: Projectile Count\nDamage, Ability Haste, Crit Chance, Projectile Count, Duration",
         "pl": "Seraphine uwalnia falę dźwięku, która zadaje trafionym wrogom obrażenia i ich spowalnia.\nRozwój: liczba pocisków\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9302.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9302.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10857,7 +10857,7 @@ window.ARENA_GAME_DATA = {
         "en": "Briar sweeps in front of her, dealing damage that scales with her Max Health.\nEvolve: Max Health\nDamage, Ability Haste, Area Size, Crit Chance, Max Health",
         "pl": "Briar wykonuje zamach przed sobą, zadając obrażenia skalujące się z jej maksymalnym zdrowiem.\nRozwój: maksymalne zdrowie\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, maksymalne zdrowie"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9303.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9303.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10872,7 +10872,7 @@ window.ARENA_GAME_DATA = {
         "en": "Yasuo gains 25 Flow per second, and more when he moves and dashes.\nAt 100 Flow, he lets out a whirlwind. damaging all enemies in a line.\nEvolve: Crit Chance\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Yasuo zyskuje 25 pkt. Płynności na sekundę. Wartość ta wzrasta, kiedy Yasuo porusza się i używa doskoków.\nPrzy 100 pkt. Płynności wypuszcza trąbę powietrzną, która zadaje obrażenia wszystkim wrogom w linii.\nRozwój: szansa na trafienie krytyczne\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, ilość pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9304.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9304.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10887,7 +10887,7 @@ window.ARENA_GAME_DATA = {
         "en": "Illaoi slams the ground with her idol, dealing damage in an area around the impact and spawning a tentacle that will attack nearby enemies.\nEvolve: Duration\nDamage, Ability Haste, Area Size, Duration",
         "pl": "Illaoi uderza w ziemię swoim posążkiem, zadając obrażania na obszarze wokół miejsca uderzenia i tworząc mackę, która atakuje pobliskich wrogów.\nRozwój: czas działania\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9305.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9305.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10902,7 +10902,7 @@ window.ARENA_GAME_DATA = {
         "en": "Xayah throws out a dagger infront of her that pierces through enemies, dealing less damage to subsequent enemies and leaves a Dagger in the ground.\nEvolve: Pickup Radius\nDamage, Ability Haste, Crit Chance, Projectile Count, Duration",
         "pl": "Xayah rzuca przed siebie sztyletem, który przeszywa wrogów, zadając zmniejszone obrażenia kolejnym wrogom. Następnie pozostawia sztylet na ziemi.\nRozwój: zasięg podnoszenia\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9306.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9306.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10917,7 +10917,7 @@ window.ARENA_GAME_DATA = {
         "en": "Aurora shoots a hex through the air, guiding it as it flies. Enemies hit take damage and are Hexed. Every 3rd cast, she purges Hexed targets, dealing bonus damage.\nEvolve: Exp Gain\nDamage, Ability Haste, Crit Chance, Projectiles, Exp",
         "pl": "Aurora rzuca urok, którym kieruje podczas lotu. Trafieni wrogowie otrzymują obrażenia i zostaje na nich nałożony urok. Przy co 3. rzuceniu Aurora zdejmuje urok, zadając dodatkowe obrażenia wrogom, którzy byli pod jego wpływem.\nRozwój: zdobywane PD\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, PD"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9307.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9307.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10932,7 +10932,7 @@ window.ARENA_GAME_DATA = {
         "en": "Riven passively gains Move Speed and gains charge as she moves. At max charge she jumps forward, dealing damage in an area. Every second cast knocks up.\nEvolve: Movement Speed\nDamage, Area Size, Crit Chance, Movement Speed",
         "pl": "Riven biernie zyskuje prędkość ruchu i ładunki podczas poruszania się. Przy maksymalnej liczbie ładunków skacze w przód, zadając obrażenia na obszarze. Każde co drugie rzucenie podrzuca.\nRozwój: prędkość ruchu\nObrażenia, zasięg obszarowy, szansa na trafienie krytyczne, prędkość ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9308.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9308.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10947,7 +10947,7 @@ window.ARENA_GAME_DATA = {
         "en": "Jinx shoots out a barrage of bullets in a target direction. Bullets now pierce, dealing less damage to targets hit after the first. Cooldown is heavily reduced.\nDamage, Ability Haste, Crit Chance, Projectile Count",
         "pl": "Jinx strzela salwą kul w wybranym kierunku. Kule teraz przebijają, zadając mniej obrażeń kolejnym celom. Czas odnowienia zostaje znacznie skrócony.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9400.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9400.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10962,7 +10962,7 @@ window.ARENA_GAME_DATA = {
         "en": "Hits a larger area and applies Sunlight to enemies. Sunlight can be detonated by allies or other weapons for bonus damage.\nDamage, Ability Haste, Area Size, Crit Chance, Armor",
         "pl": "Trafia na większym obszarze i nakłada na wrogów Słoneczny Blask. Słoneczny Blask może zostać zdetonowany przez sojuszników lub inne bronie, dzięki czemu zada dodatkowe obrażenia.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, pancerz"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9401.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9401.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10977,7 +10977,7 @@ window.ARENA_GAME_DATA = {
         "en": "Waves now come back upon reaching their end point, dealing damage again and shooting past Seraphine\nDamage, Ability Haste, Crit Chance, Projectile Count, Duration",
         "pl": "Fale teraz zaczynają wracać, gdy dotrą do punktu końcowego. Ponownie zadają obrażenia i przelatują za Seraphine.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9402.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9402.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -10992,7 +10992,7 @@ window.ARENA_GAME_DATA = {
         "en": "Briar sweeps in front of her, applying a stacking bleed and dealing damage that scales with her Max Health.\nDamage, Ability Haste, Area Size, Crit Chance, Max Health",
         "pl": "Briar wykonuje zamach przed sobą, nakładając kumulujące się krwawienie i zadając obrażenia skalujące się z jej maksymalnym zdrowiem.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, szansa na trafienie krytyczne, maksymalne zdrowie"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9403.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11007,7 +11007,7 @@ window.ARENA_GAME_DATA = {
         "en": "Yasuo hones his energy, shooting fewer and larger tornadoes that curve through the air and leave damaging tempests at their end point.\nDamage, Abilty Haste, Crit Chance, Projectile Count, Area Size, Duration",
         "pl": "Yasuo skupia swoją energię, tworząc mniejszą liczbę większych tornad, które przecinają powietrze i pozostawiają za sobą zadające obrażenia burze w miejscu docelowym.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków, zasięg obszarowy, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9404.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9404.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11022,7 +11022,7 @@ window.ARENA_GAME_DATA = {
         "en": "Illaoi slams the ground with her idol, dealing damage in an area around the impact and spawning a tentacle that will attack nearby enemies. There is a chance to summon a GIANT TENTACLE that deals increased damage.\nDamage, Ability Haste, Area Size, Duration",
         "pl": "Illaoi uderza w ziemię swoim posążkiem, zadając obrażania na obszarze wokół miejsca uderzenia i tworząc mackę, która atakuje pobliskich wrogów. Istnieje szansa na przyzwanie OLBRZYMIEJ MACKI, która zadaje zwiększone obrażenia.\nObrażenia, przyspieszenie umiejętności, zasięg obszarowy, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9405.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9405.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11037,7 +11037,7 @@ window.ARENA_GAME_DATA = {
         "en": "Xayah now also throws a familiar dagger behind her. This special dagger will bounce from enemy to enemy, dealing damage and then return to Xayah granting her a small shield.\nDamage, Ability Haste, Crit Chance, Projectile Count, Duration",
         "pl": "Xayah ciska teraz za siebie sztylet chowańca. Ten specjalny sztylet będzie odbijać się od wroga do wroga, zadając obrażenia. Następnie powróci do Xayah, zapewniając jej niewielką tarczę.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, liczba pocisków, czas działania"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9406.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9406.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11052,7 +11052,7 @@ window.ARENA_GAME_DATA = {
         "en": "Aurora now shoots more hexes and her purge now deals damage in an area around Hexed target.\nDamage, Ability Haste, Crit Chance, Projectiles, Duration, Exp",
         "pl": "Aurora teraz rzuca więcej uroków, a jej oczyszczenie zadaje obrażenia na obszarze wokół celu pod wpływem uroku.\nObrażenia, przyspieszenie umiejętności, szansa na trafienie krytyczne, pociski, czas działania, PD"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9407.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9407.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11067,7 +11067,7 @@ window.ARENA_GAME_DATA = {
         "en": "Riven passively gains Move Speed and gains charge as she moves. At max charge she jumps forward, dealing damage in an area. Every second cast knocks up enemies and ruptures the area, causing a second detonation that damages and knocks up again.\nDamage, Area Size, Crit Chance, Movement Speed",
         "pl": "Riven biernie zyskuje prędkość ruchu i ładunki podczas poruszania się. Przy maksymalnej liczbie ładunków skacze w przód, zadając obrażenia na obszarze. Każde co drugie rzucenie podrzuca wrogów i rozrywa obszar, wywołując drugą eksplozję, która ponownie zadaje obrażenia i podrzuca wrogów.\nObrażenia, zasięg obszarowy, szansa na trafienie krytyczne, prędkość ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/9408.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/9408.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11082,7 +11082,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Ability Power\n10 Ability Haste\n25% Critical Strike Chance\n4% Move Speed\nWrath and Ruin\nOn spell cast, gain 2.5% Critical Strike Chance for 6 seconds, stacking up to 20%.\nSalvage the Wreckage\nYour spells have a chance equal to your Critical Strike Chance to grant you or your targeted ally a shield for for 3s.",
         "pl": "55 pkt. mocy umiejętności\n10 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nGniew i Ruina\nPodczas rzucania zaklęć zyskujesz 2.5% szansy na trafienie krytyczne na 6 sek. Efekt kumuluje się maksymalnie do 20%.\nZgliszcza\nTwoje zaklęcia mają szansę równą szansie na trafienie krytyczne na przyznanie tarczy o wytrzymałości 0 pkt. na 3 sek. tobie i sojusznikowi obranemu za cel."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/123430.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/123430.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -11102,7 +11102,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n200 Health\n12% Heal and Shield Power\n15 Ability Haste\nEffervescence\nGain + 1.2% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
         "pl": "45 pkt. mocy umiejętności\n200 pkt. zdrowia\n12% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1.2% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/124011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/124011.png",
       "tier": "",
       "price": 2350,
       "categories": [
@@ -11123,7 +11123,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n18 Lethality\n10 Ability Haste\nEminence\nGain temporary AD based on champion kills on kill.",
         "pl": "55 pkt. obrażeń od ataku\n18 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nEminencja\nZyskujesz tymczasowe obrażenia od ataku przy zabójstwie bohaterów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/126697.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/126697.png",
       "tier": "",
       "price": 2950,
       "categories": [
@@ -11144,7 +11144,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a permanent stat bonus.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór stałej premii statystyk."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220000.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220000.png",
       "tier": "",
       "price": 750,
       "categories": [
@@ -11177,7 +11177,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Fighter item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla wojowników."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220001.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11192,7 +11192,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Marksman item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla strzelców."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220002.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11207,7 +11207,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Assassin item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla zabójców."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220003.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11222,7 +11222,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Mage item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla magów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220004.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11237,7 +11237,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Tank item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla obrońców."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220005.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11252,7 +11252,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Legendary Support item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór legendarnego przedmiotu dla wspierających."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220006.png",
       "tier": "",
       "price": 2250,
       "categories": []
@@ -11267,7 +11267,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nAutomatically open a semi-random selection for a Prismatic item.",
         "pl": "Użycie — Zużyj:\nAutomatycznie otwiera częściowo losowy wybór przedmiotu pryzmatycznego."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220007.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220007.png",
       "tier": "",
       "price": 4000,
       "categories": [
@@ -11284,7 +11284,7 @@ window.ARENA_GAME_DATA = {
         "en": "Redeem during a Shopping Phase to gain a Stat Anvil!",
         "pl": "Odbierz podczas fazy zakupów, aby zdobyć Kowadło Statystyk!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220008.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220008.png",
       "tier": "",
       "price": 750,
       "categories": []
@@ -11299,7 +11299,7 @@ window.ARENA_GAME_DATA = {
         "en": "Redeem during a Shopping Phase to gain a Stat Anvil!",
         "pl": "Odbierz podczas fazy zakupów, aby zdobyć Kowadło Statystyk!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220009.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220009.png",
       "tier": "",
       "price": 750,
       "categories": []
@@ -11314,7 +11314,7 @@ window.ARENA_GAME_DATA = {
         "en": "Redeem during a Shopping Phase to gain a Stat Anvil!",
         "pl": "Odbierz podczas fazy zakupów, aby zdobyć Kowadło Statystyk!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220010.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220010.png",
       "tier": "",
       "price": 750,
       "categories": []
@@ -11329,7 +11329,7 @@ window.ARENA_GAME_DATA = {
         "en": "Redeem during a Shopping Phase to gain a Stat Anvil and 1 bonus rerolls!",
         "pl": "Odbierz podczas fazy zakupów, aby zdobyć Kowadło Statystyk i następującą liczbę dodatkowych wymian: 1!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220011.png",
       "tier": "",
       "price": 750,
       "categories": []
@@ -11344,7 +11344,7 @@ window.ARENA_GAME_DATA = {
         "en": "Increase the effectiveness of stat shards.",
         "pl": "Zwiększ skuteczność odłamków statystyk."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220012.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220012.png",
       "tier": "",
       "price": 2500,
       "categories": []
@@ -11359,7 +11359,7 @@ window.ARENA_GAME_DATA = {
         "en": "Active - Consume:\nServes a scrumptious scoop to a nearby Poro, causing it to grow in size.\nThis savory blend of Avarosan hen and Freljordian herbs—now finished with a touch of refined Demacian sugarcraft—contains the essential nutrients necessary to keep your Poro positively radiant.\nAll proceeds will be donated towards the Cloudfield Youth Choir. Help a Demacian child afford an etwahl, today!",
         "pl": "Użycie — Zużyj:\nSerwuje przepyszną porcję pobliskiemu Poro, zwiększając jego rozmiary.\nTa smakowita mieszanka avarosańskich kur i freljordzkich ziół — teraz z dodatkiem wyrafinowanego demaciańskiego cukiernictwa — zawiera niezbędne składniki odżywcze, dzięki którym twój Poro będzie promienieć z radości.\nCały dochód zostanie przekazany na rzecz Młodzieżowego Chóru z Chmurłanu. Pomóż demaciańskiemu dziecku kupić etwahl!"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/220013.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/220013.png",
       "tier": "",
       "price": 0,
       "categories": []
@@ -11374,7 +11374,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health",
         "pl": "300 pkt. zdrowia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221011.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11391,7 +11391,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power",
         "pl": "45 pkt. mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221026.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221026.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11408,7 +11408,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Armor",
         "pl": "40 pkt. pancerza"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221031.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221031.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11425,7 +11425,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage",
         "pl": "40 pkt. obrażeń od ataku"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221038.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221038.png",
       "tier": "",
       "price": 1300,
       "categories": [
@@ -11442,7 +11442,7 @@ window.ARENA_GAME_DATA = {
         "en": "15% Attack Speed\nSting\nAttacks deal 15 bonus physical damage On-Hit.",
         "pl": "15% prędkości ataku\nŻądełko\nAtaki zadają 15 pkt. dodatkowych obrażeń fizycznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221043.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221043.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11460,7 +11460,7 @@ window.ARENA_GAME_DATA = {
         "en": "15 Attack Damage\n7% Life Steal",
         "pl": "15 pkt. obrażeń od ataku\n7% kradzieży życia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221053.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221053.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11478,7 +11478,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Magic Resist",
         "pl": "30 pkt. odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221057.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221057.png",
       "tier": "",
       "price": 450,
       "categories": [
@@ -11495,7 +11495,7 @@ window.ARENA_GAME_DATA = {
         "en": "120 Ability Power",
         "pl": "120 pkt. mocy umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/221058.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/221058.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11512,7 +11512,7 @@ window.ARENA_GAME_DATA = {
         "en": "5 Ability Haste",
         "pl": "5 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222022.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222022.png",
       "tier": "",
       "price": 250,
       "categories": [
@@ -11529,7 +11529,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\nRecovery\nRestores 20 Health every 5 seconds.\nUndaunted\nBlocks 12 damage from attacks and spells from champions (25% effectiveness vs. damage over time abilities).",
         "pl": "300 pkt. zdrowia\nRegeneracja\nPrzywraca 20 pkt. zdrowia co 5 sek.\nNiewzruszenie\nBlokuje 12 pkt. obrażeń od ataków i zaklęć bohaterów (efektywne w 25% w przypadku umiejętności zadających obrażenia w czasie)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222051.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222051.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11548,7 +11548,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Ability Power\n15 Ability Haste\n6% Move Speed\n150% Base Mana Regen\nInspiring Speech\nGrants nearby allies Move Speed for a few seconds.",
         "pl": "55 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n6% prędkości ruchu\n150% podstawowej regeneracji many\nInspirująca Przemowa\nZapewnia pobliskim sojusznikom premię do prędkości ruchu na kilka sekund."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222065.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222065.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11570,7 +11570,7 @@ window.ARENA_GAME_DATA = {
         "en": "Helps you get on a head.\nActive - Consume:\nThis juice does nothing.",
         "pl": "Pomaga znaleźć nakrycie głowy.\nUżycie — Zużyj:\nTen sok nic nie robi."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222141.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222141.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -11587,7 +11587,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n50 Armor\n10 Ability Haste\nAnguish\nEvery 4 seconds while in combat with champions, deal magic damage to nearby enemy champions and heal for 250% of the damage dealt.",
         "pl": "350 pkt. zdrowia\n50 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\nCierpienie\nCo każde 4 sek. podczas walki z bohaterami zadajesz obrażenia magiczne pobliskim wrogom i leczysz się o 250% zadanych obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222502.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222502.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11608,7 +11608,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n600 Mana\n20 Ability Haste\nBaleful Blaze\nDealing damage with Abilities causes enemies to burn. This damage increases to Monsters.\nBlackfire\nFor each enemy Champion, Epic Monster, and Large Monster affected by your Baleful Blaze, gain Ability Power.",
         "pl": "60 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nZłowrogi Płomień\nZadawanie obrażeń umiejętnościami podpala wrogów. Obrażenia wzrastają w przypadku potworów.\nMroczny Ogień\nZa każdego wrogiego bohatera, potężnego potwora i dużego potwora będącego pod wpływem twojego Złowrogiego Płomienia\nzyskujesz moc umiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222503.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222503.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11628,7 +11628,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n80 Magic Resist\nMagebane\nAfter not taking magic damage for 10 seconds, gain a magic shield.",
         "pl": "350 pkt. zdrowia\n80 pkt. odporności na magię\nZmora Maga\nJeśli przez 10 sek. nie otrzymasz obrażeń magicznych od bohaterów, zyskasz magiczną tarczę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222504.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11647,7 +11647,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n60 Ability Power\n20 Ability Haste\n20% Attack Speed\nSpellblade\n(0s)\nAfter using an Ability, your next Attack deals bonus magic damage and heals you for On-Hit and then applies On-Hit effects an additional time.",
         "pl": "300 pkt. zdrowia\n60 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n20% prędkości ataku\nCzaroostrze\n(0 sek.)\nPo użyciu umiejętności twój następny atak zada 0 pkt. dodatkowych obrażeń magicznych i leczy cię o 0 pkt. przy trafieniu i dodatkowy raz nałoży efekty przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222510.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222510.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11668,7 +11668,7 @@ window.ARENA_GAME_DATA = {
         "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nNight Vigil\nGain 30 Ultimate Ability Haste.\nOpening Barrage\n(0s)\nAfter casting your Ultimate, your next 3 basic attacks within 8 seconds gain 50% Attack Speed and Critically Strike for 75% of your normal Critical Strike damage. If an attack would already Critically Strike, it deals normal Critical Strike damage and also deals 10% bonus true damage.",
         "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNocne Czuwanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nOtwierająca Salwa\n(0 sek.)\nPo użyciu superumiejętności twoje kolejne ataki podstawowe (3) w ciągu 8 sek. zyskują 50% prędkości ataku i trafiają krytycznie, zadając 75% normalnych obrażeń krytycznych. Jeśli dany atak trafiłby krytycznie bez tego efektu, zadaje normalne obrażenia krytyczne oraz 10% dodatkowych obrażeń nieuchronnych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222512.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222512.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11688,7 +11688,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n5% Omnivamp\n20% Tenacity\nFamine\nGain Ability Haste based on your Bonus AD.\nFeast\nWhen a champion that you damaged recently dies, gain Omnivamp for a moderate duration.",
         "pl": "60 pkt. obrażeń od ataku\n5% wszechwampiryzmu\n20% nieustępliwości\nGłód\nZyskujesz przyspieszenie umiejętności zależne od twoich dodatkowych obrażeń od ataku.\nUczta\nGdy zginie bohater, który otrzymał od ciebie niedawno obrażenia, na chwilę zyskujesz premię do wszechwampiryzmu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222517.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222517.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11708,7 +11708,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n300 Mana\n10 Ability Haste\nMana Made Real\n(0s)\nFor 8 seconds, your mana is Empowered. While Empowered, your spells cost 100% more Mana, you gain increased Ability damage, Shielding, and Healing, and your basic ability cooldowns progress 30% faster.",
         "pl": "90 pkt. mocy umiejętności\n300 pkt. many\n10 jedn. przyspieszenia umiejętności\nUcieleśnienie Many\n(0 sek.)\nTwoja mana zostaje wzmocniona na 8 sek. W czasie tego wzmocnienia twoje zaklęcia kosztują o 100% więcej many, ale zyskujesz 0 do obrażeń od umiejętności, tarcz i leczenia, a twoje odnawianie umiejętności podstawowych upływa o 30% szybciej."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222522.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222522.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11728,7 +11728,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n25% Critical Strike Chance\nMagnification\nDeal up to 10% increased damage with Attacks, based on how far away the enemy is (max damage at 500 range).\nArcane Aim\nWhen a champion that you damaged within 3 seconds dies, gain 150 additional attack range for 15 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\nPowiększenie\nZadajesz do 10% więcej obrażeń atakami w oparciu o dystans do wroga (maksymalne obrażenia przy dystansie 500 jedn.).\nCelność Arkanów\nGdy bohater, który otrzymał od ciebie obrażenia, zginie w ciągu 3 sek., zyskujesz 150 jedn. dodatkowego zasięgu ataku na 15 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222523.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222523.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11746,7 +11746,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n10 Ability Haste\n25 Armor\n25 Magic Resist\nFanfare\nSlowing or Immobilizing an enemy champion grants Fanfare for seconds. Fanfare grants you 35 Move Speed. While you have Fanfare, nearby allies, including yourself, gain Attack Speed.",
         "pl": "200 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\n25 pkt. pancerza\n25 pkt. odporności na magię\nFanfara\nSpowolnienie lub unieruchomienie wrogiego bohatera zapewnia Fanfarę na 0 sek. Fanfara zapewnia 35 jedn. prędkości ruchu. Póki masz Fanfarę, zarówno ty, jak i pobliscy sojusznicy zyskujecie 0 jedn. prędkości ataku."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222524.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222524.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11764,7 +11764,7 @@ window.ARENA_GAME_DATA = {
         "en": "600 Health\n15 Ability Haste\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% causes you to gain maximum Health for 5 seconds, then heal Health over the duration. While regenerating Health, you gain 15% increased Size, 10% Move Speed, and 25% Tenacity.",
         "pl": "600 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz 0 pkt. maksymalnego zdrowia na 5 sek., a następnie leczysz 0 pkt. zdrowia w czasie. Regenerując zdrowie, zyskujesz 15% rozmiaru, 10% prędkości ruchu i 25% nieustępliwości."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222525.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222525.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11784,7 +11784,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHoly\nGain Heal and Shield Power.\nMana Charge\nAfter 2 combat rounds, this item transforms into Diadem of Songs.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nŚwiętość\nZyskujesz 0 pkt. siły leczenia i tarcz.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Diadem Pieśni."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222526.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222526.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11803,7 +11803,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n1000 Mana\n100% Base Mana Regen\nHarmony\nGain % Heal and Shield Power.\nConsonance\nWhile you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest health nearby ally champion for.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n1000 pkt. many\n100% podstawowej regeneracji many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nKonsonans\nGdy ty lub sojusznik, który został przez ciebie uleczony lub osłonięty tarczą w ostatnich 3 sek., znajdujecie się w walce z bohaterami, pobliski sojusznik o najniższym poziomie zdrowia zostaje uleczony o 0 pkt. co sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/222530.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/222530.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11823,7 +11823,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCoruscation:\nAfter Immobilizing champions or being Immobilized, cause that target and all nearby enemy champions to take 7% increased damage for 5 seconds.\nMythic Passive: Grants all other Legendary items 5 Armor and Magic Resist",
         "pl": "200 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nIskrzenie:\nPo unieruchomieniu bohaterów lub gdy bohater sam zostanie unieruchomiony, zwiększa obrażenia otrzymywane przez cel i wszystkich pobliskich wrogich bohaterów o 7% na 5 sek.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. pancerza i  pkt. odporności na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223001.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11843,7 +11843,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
         "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości:Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223002.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11862,7 +11862,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 2% bonus Mana.\nMana Charge\nAfter 2 combat rounds, this item transforms into Seraph's Embrace.",
         "pl": "55 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 2% twojej dodatkowej many.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Uścisk Serafina."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223003.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11881,7 +11881,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n600 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage equal to.\nMana Charge\nAfter 2 combat rounds, this item transforms into Muramana.",
         "pl": "40 pkt. obrażeń od ataku\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz dodatkowe obrażenia od ataku równe 0 pkt.\nDoładowanie Many\nPo 2 rundach walk ten przedmiot zmienia się w Muramanę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223004.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -11902,7 +11902,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Move Speed\nWall Walk\n(0s)\nGain the ability to walk through walls for 6 seconds. While inside walls, gain 300 move speed. Casting a spell or attacking will end this effect.",
         "pl": "70 jedn. prędkości ruchu\nSpacer przez Ścianę\n(0 sek.)\nZyskujesz zdolność do przechodzenia przez ściany na 6 sek. Będąc wewnątrz ścian, zyskujesz 300 jedn. prędkości ruchu. Atak lub rzucenie zaklęcia zakończy ten efekt."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223005.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -11919,7 +11919,7 @@ window.ARENA_GAME_DATA = {
         "en": "35% Attack Speed\n55 Move Speed",
         "pl": "35% prędkości ataku\n55 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223006.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -11937,7 +11937,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Move Speed\n4% Omnivamp\nSlay\nGain 0.6% Omnivamp on Champion takedown, stacking up to 10 times.",
         "pl": "45 jedn. prędkości ruchu\n4% wszechwampiryzmu\nZgładzenie\nZyskujesz 0.6% wszechwampiryzmu przy udziale w zabójstwie bohatera. Efekt kumuluje się do 10 razy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223008.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223008.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -11956,7 +11956,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Move Speed\nThe strength of movement slowing effects is reduced by 40%.",
         "pl": "70 jedn. prędkości ruchu\nEfekty spowalniające prędkość ruchu są osłabione o 40%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223009.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223009.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -11973,7 +11973,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n10% Heal and Shield Power\n75% Base Mana Regen\n15 Ability Haste\nPuffcap Toxin\nDealing damage applies 40% Grievous Wounds to champions for 3 seconds.\nIf an enemy heals for more than 80% of their maximum health while continously affected by Grievous Wounds, it is increased to 60% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "35 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n75% podstawowej regeneracji many\n15 jedn. przyspieszenia umiejętności\nGnijąca Toksyna\nZadawanie wrogim bohaterom obrażeń nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 80% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 60% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223011.png",
       "tier": "",
       "price": 1900,
       "categories": [
@@ -11992,7 +11992,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Magic Penetration\n55 Move Speed",
         "pl": "20 pkt. przebicia odporności na magię\n55 jedn. prędkości ruchu"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223020.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -12010,7 +12010,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n45 Armor\nSaving Grace:\nUpon taking lethal damage, restores 50% base Health and 100% max Mana after 4 seconds of stasis. This effect has a one round cooldown.",
         "pl": "55 pkt. obrażeń od ataku\n45 pkt. pancerza\nZbawienie:\nPo otrzymaniu śmiertelnych obrażeń przywraca 50% podstawowego zdrowia i 100% maksymalnej many po 4 sek. inercji. Ten efekt odnawia się przez jedną rundę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223026.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223026.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12028,7 +12028,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Attack Damage\n25% Critical Strike Chance\n30% Critical Strike Damage",
         "pl": "75 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\n30% obrażeń trafienia krytycznego"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223031.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223031.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12046,7 +12046,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n40% Attack Speed\n0% Critical Strike Chance\nPractice Makes Lethal\nOn-Attack, gain Critical Strike Chance permanently up to 25%.\nFlurry\nOn-Attacking an enemy champion, gain 30% Attack Speed for 6 seconds (30 second cooldown).\nAttacks reduce this cooldown by 1 second, increased to 2 seconds for Critical Strikes.",
         "pl": "45 pkt. obrażeń od ataku\n40% prędkości ataku\n0% szansy na trafienie krytyczne\nTrening Czyni Zabójcę\nPrzy ataku na stałe zyskujesz szansę na trafienie krytyczne, maks. 25%.\nGrad Ciosów\nPrzy ataku wrogiego bohatera zyskujesz 30% prędkości ataku na 6 sek. (30 sek. czasu odnowienia).\nAtaki skracają czas odnowienia o 1 sek. lub 2 sek. w przypadku trafień krytycznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223032.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223032.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12064,7 +12064,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n30% Armor Penetration\n25% Critical Strike Chance\nSepsis\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "30 pkt. obrażeń od ataku\n30% przebicia pancerza\n25% szansy na trafienie krytyczne\nSepsa\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223033.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223033.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12083,7 +12083,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n40% Armor Penetration\n25% Critical Strike Chance",
         "pl": "30 pkt. obrażeń od ataku\n40% przebicia pancerza\n25% szansy na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223036.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223036.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12102,7 +12102,7 @@ window.ARENA_GAME_DATA = {
         "en": "700 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
         "pl": "700 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223039.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223039.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12121,7 +12121,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n1200 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 4% bonus Mana. (0).\nLifeline\nUpon taking damage that would reduce your Health below 30%, gain a 350 + 0% current Mana Shield for 3s (0s).",
         "pl": "60 pkt. mocy umiejętności\n1200 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 4% twojej dodatkowej many (0 pkt.).\nLinia Życia\nPo otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, na 3 sek. zyskujesz Tarczę Many o wytrzymałości równej 350 pkt. + 0% aktualnej many (0 sek.)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223040.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223040.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12140,7 +12140,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage based on Mana.\nShock\nAttacks against champions deal additional physical damage.",
         "pl": "40 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz dodatkowe obrażenia od ataku w zależności od many.\nSzok\nAtaki wymierzone w bohaterów zadają dodatkowe obrażenia fizyczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223042.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223042.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12158,10 +12158,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Widmowy Tancerz"
       },
       "descriptions": {
-        "en": "60% Attack Speed\n8% Move Speed\n25% Critical Strike Chance\nSpectral Waltz\nBecome Ghosted.",
-        "pl": "60% prędkości ataku\n8% prędkości ruchu\n25% szansy na trafienie krytyczne\nWidmowy Walc\nZyskujesz przenikanie."
+        "en": "65% Attack Speed\n10% Move Speed\n25% Critical Strike Chance\nSpectral Waltz\nBecome Ghosted.",
+        "pl": "65% prędkości ataku\n10% prędkości ruchu\n25% szansy na trafienie krytyczne\nWidmowy Walc\nZyskujesz przenikanie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223046.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223046.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12180,7 +12180,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Armor\n30 Move Speed\nReduces incoming damage from Attacks by 14%.",
         "pl": "25 pkt. pancerza\n30 jedn. prędkości ruchu\nZmniejsza obrażenia otrzymywane od ataków o 14%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223047.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223047.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -12198,7 +12198,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n25 Armor\n15 Ability Haste\n30 Magic Resist\nFrostfire Tempest\nCasting your Ultimate summons a storm around you for 5 seconds. The storm deals magic damage per second to enemy champions and Slows them by 30%.",
         "pl": "300 pkt. zdrowia\n25 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\n30 pkt. odporności na magię\nNawałnica Mroźnego Ognia\nRzucenie superumiejętności przywołuje wokół ciebie burzę na 5 sek. Burza zadaje wrogim bohaterom 0 pkt. obrażeń magicznych na sekundę i spowalnia ich o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223050.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223050.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12218,7 +12218,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n20% Tenacity\nThe Claws that Catch\nGain bonus Attack Damage.\nLifeline\n(0s)\nUpon taking damage that would reduce your Health below 30%, gain a Shield decaying over 4.5 seconds.",
         "pl": "300 pkt. zdrowia\n20% nieustępliwości\nPazury do Chwytania\nZyskaj 0 pkt. dodatkowych obrażeń od ataku.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, zyskujesz 0 pkt. tarczy. Tarcza stopniowo zanika w ciągu 4.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223053.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223053.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12237,7 +12237,7 @@ window.ARENA_GAME_DATA = {
         "en": "10 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack is enhanced with additional damage.",
         "pl": "10 jedn. przyspieszenia umiejętności\nCzaroostrze\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223057.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223057.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12255,7 +12255,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n40 Magic Resist\n10 Ability Haste\nBoundless Vitality\nIncreases all Healing and Shielding effectiveness on you by 30%.",
         "pl": "300 pkt. zdrowia\n40 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nNieograniczona Żywotność\nWzmacnia otrzymywane leczenie i tarcze o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223065.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223065.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12276,7 +12276,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n10 Ability Haste",
         "pl": "200 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223067.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223067.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -12295,7 +12295,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n40 Armor\n10 Ability Haste\nImmolate\nAfter taking or dealing damage, deal magic damage per second to nearby enemies for 3 seconds.",
         "pl": "350 pkt. zdrowia\n40 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje 0 pkt. obrażeń magicznych na sekundę pobliskim wrogom przez 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223068.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223068.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12315,7 +12315,7 @@ window.ARENA_GAME_DATA = {
         "en": "1000 Health\n100 Armor\n80 Magic Resist\n25 Ability Haste\n200% Base Health Regen\nImmolate\nAfter taking or dealing damage, deal magic damage per second to nearby enemies for 5 seconds.\nDesolate\nKilling an enemy deals magic damage around them.",
         "pl": "1000 pkt. zdrowia\n100 pkt. pancerza\n80 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\n200% podstawowej regeneracji zdrowia\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje 0 pkt. obrażeń magicznych na sekundę pobliskim wrogom przez 5 sek.\nOdosobnienie\nZabicie wroga zadaje obrażenia magiczne wokół niego."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223069.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223069.png",
       "tier": "",
       "price": 6000,
       "categories": [
@@ -12339,7 +12339,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n350 Health\n20 Ability Haste\nCarve\nDealing physical damage to champions reduces the target's Armor by 6% for 6 seconds. (Stacks 5 times).\nFervor\nDealing physical damage grants 20 Move Speed for 2 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n350 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nDrążenie\nZadawanie obrażeń fizycznych bohaterom zmniejsza pancerz celu o 6% na 6 sek. (Kumuluje się 5 razy).\nFerwor\nZadawanie obrażeń fizycznych zapewnia 20 jedn. prędkości ruchu na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223071.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223071.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12362,7 +12362,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n18% Life Steal\nIchorshield\nConvert excess healing from your Life Steal to a Shield.",
         "pl": "70 pkt. obrażeń od ataku\n18% kradzieży życia\nTarcza Boskiej Krwi\nPrzekształca nadwyżkę zdrowia pochodzącego z kradzieży życia w tarczę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223072.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223072.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12380,7 +12380,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n30% Attack Speed\n450 Health\nHexcharged\nGain 30 Ultimate Ability Haste.\nOverdrive\nAfter casting your Ultimate, gain % Attack Speed and % Move Speed for 8 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n30% prędkości ataku\n450 pkt. zdrowia\nHexnaładowanie\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nNadbieg\nPo rzuceniu superumiejętności zyskujesz 0% prędkości ataku i 0% prędkości ruchu na 8 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223073.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223073.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12402,7 +12402,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n15 Ability Haste\n15% Life Steal\nCleave:\nAttacks and Abilities deal physical damage to other nearby enemies. Activate to hit nearby enemies.\nRavenous Crescent\nDeal physical damage to enemies around you.\nYour Life Steal applies to this damage.",
         "pl": "70 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n15% kradzieży życia\nRozpłatanie:\nAtaki i umiejętności zadają obrażenia fizyczne innym pobliskim wrogom. Użyj, aby trafić pobliskich wrogów.\nKrwiożerczy Półksiężyc\nZadaje obrażenia fizyczne wrogom dookoła ciebie.\nTwoja kradzież życia działa z tymi obrażeniami."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223074.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223074.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12423,7 +12423,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n60 Armor\nThorns:\nWhen struck by an Attack, deal damage to the attacker and apply 40% Grievous Wounds if they are a champion.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "300 pkt. zdrowia\n60 pkt. pancerza\nKolce:\nGdy trafia cię atak, zadajesz obrażenia napastnikowi i nakładasz na niego Głębokie Rany o wartości 40%, jeżeli jest bohaterem.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223075.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223075.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12441,7 +12441,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n25% Attack Speed\n375 Health\n20 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack is enhanced with additional physical damage.\nQuicken\nBasic attacks grant Move Speed.",
         "pl": "40 pkt. obrażeń od ataku\n25% prędkości ataku\n375 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowo obrażenia fizyczne.\nŻwawość\nAtaki podstawowe zapewniają prędkość ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223078.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223078.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12464,7 +12464,7 @@ window.ARENA_GAME_DATA = {
         "en": "700 Health\nColossal Consumption\n(0s) per target\nCharge up a powerful attack against a champion over time while near them. The charged attack deals bonus physical damage and grants permanent max Health.\nGoliath\nGain increased size based on Total Health.",
         "pl": "700 pkt. zdrowia\nKolosalna Konsumpcja\n(0 sek.) na cel\nPrzygotowujesz potężny atak przeciwko bohaterowi, jeśli znajdujesz się blisko niego. Naładowany atak zadaje dodatkowe obrażenia fizyczne i zapewnia stałe maksymalne zdrowie.\nGoliat\nZwiększasz swój rozmiar w oparciu o łączne zdrowie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223084.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223084.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12481,7 +12481,7 @@ window.ARENA_GAME_DATA = {
         "en": "45% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nWind's Fury\nWhen Attacking, bolts are fired at up to 2 enemies near the target. Bolts apply On-Hit effects and can Critically Strike.\nItem is for Ranged champions only.",
         "pl": "45% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nFuria Wiatru\nGdy atakujesz, wystrzeliwujesz pociski w kierunku maks. 2 wrogów w pobliżu celu. Pociski nakładają efekty przy trafieniu i mogą trafić krytycznie.\nPrzedmiot tylko dla bohaterów walczących z dystansu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223085.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223085.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12501,7 +12501,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n45 Ability Power\n30% Attack Speed\n4% Move Speed\nElectrospark\nYour Energized Attacks fire chain lightning, applying On-Hit effects and dealing magic damage to up to targets.\nElectroshock\nBasic Attacks grant extra Energized stacks.",
         "pl": "45 pkt. obrażeń od ataku\n45 pkt. mocy umiejętności\n30% prędkości ataku\n4% prędkości ruchu\nElektryczna Iskra\nTwoje naładowane ataki wystrzeliwują łańcuch piorunów, nakładając efekty przy trafieniu i zadając obrażenia magiczne 0 celom.\nRażenie Prądem\nAtaki podstawowe zapewniają dodatkowe ładunki Naładowania."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223087.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223087.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12521,7 +12521,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\nMagical Opus\nIncreases your total Ability Power by 30%.",
         "pl": "65 pkt. mocy umiejętności\nMagiczne Dzieło\nZwiększa twoją całkowitą moc umiejętności o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223089.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223089.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12538,7 +12538,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Attack Speed\n45 Magic Resist\n20% Tenacity\nFray:\nAttacks apply magic damage On-Hit and grant Move Speed.",
         "pl": "50% prędkości ataku\n45 pkt. odporności na magię\n20% nieustępliwości\nBitwa:\nAtaki zadają obrażenia magiczne przy trafieniu i zapewniają prędkość ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223091.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223091.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12555,10 +12555,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Ognista Armata"
       },
       "descriptions": {
-        "en": "30% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nEnergized\nMoving and Attacking generates an Energized Attack.\nSharpshooter\nYour Energized Attack applies 200 bonus magic damage. In addition, Energized attacks gain up to 35% bonus Attack Range.",
-        "pl": "30% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nStrzelec Wyborowy\nTwoje naładowane ataki zadają 200 pkt. dodatkowych obrażeń magicznych. Ponadto zasięg twoich naładowanych ataków jest zwiększony o maksymalnie 35%."
+        "en": "35% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nEnergized\nMoving and Attacking generates an Energized Attack.\nSharpshooter\nYour Energized Attack applies 200 bonus magic damage. In addition, Energized attacks gain up to 35% bonus Attack Range.",
+        "pl": "35% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nStrzelec Wyborowy\nTwoje naładowane ataki zadają 200 pkt. dodatkowych obrażeń magicznych. Ponadto zasięg twoich naładowanych ataków jest zwiększony o maksymalnie 35%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223094.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223094.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12577,7 +12577,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20% Attack Speed\n25% Critical Strike Chance\nEnergized\nMoving and Attacking generates an Energized Attack.\nBolt\nYour Energized Attack applies bonus magic damage and grants 45% Move Speed for 2s.\nEnergized stacks twice as fast in Arena.",
         "pl": "50 pkt. obrażeń od ataku\n20% prędkości ataku\n25% szansy na trafienie krytyczne\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nGrom\nTwoje naładowane ataki zadają 0 dodatkowych obrażeń magicznych i zapewniają 45% prędkości ruchu na 2 sek.\nNaładowane ataki kumulują się dwa razy szybciej na Arenie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223095.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223095.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12595,7 +12595,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n10% Move Speed\n20 Ability Haste\nSpellblade\n(0s)\nAfter using an Ability, your next Attack is enhanced with an additional magic damage On-Hit.",
         "pl": "80 pkt. mocy umiejętności\n10% prędkości ruchu\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\n(0 sek.)\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowo 0 pkt. obrażeń magicznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223100.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223100.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12615,7 +12615,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n40 Magic Resist\nAnnul\nGrants a Spell Shield that blocks the next enemy Ability.\nItem cooldown is restarted if you take damage from champions before it is completed.",
         "pl": "80 pkt. mocy umiejętności\n40 pkt. odporności na magię\nUchylenie\nZapewnia tarczę magii, która blokuje kolejną umiejętność wroga.\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223102.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223102.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12633,7 +12633,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Armor\n30 Magic Resist\n10 Ability Haste",
         "pl": "30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223105.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223105.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -12653,7 +12653,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\n15 Ability Haste\n100% Base Mana Regen\n12% Heal and Shield Power\nACTIVE\n(0s)\nIntervention\nTarget an area within. After 2.5 seconds, call down a beam of light to restore Health to allies and damage enemy champions.",
         "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n12% siły leczenia i tarcz\nUŻYCIE\n(0 sek.)\nInterwencja\nWybierz obszar wewnątrz. Po 2,5 sek. uderzy promień światła, który przywróci sojusznikom zdrowie i zada obrażenia wrogim bohaterom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223107.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223107.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12673,7 +12673,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n50 Armor\n15 Ability Haste\nSacrifice\nWhile near your Worthy ally, take 12% of the damage they receive and heal for 12% of the damage they deal to Champions.\nACTIVE\n(0s)\nPledge\nDesignate an ally who is Worthy.",
         "pl": "400 pkt. zdrowia\n50 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 12% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom.\nUŻYCIE\n(0 sek.)\nŚlubowanie\nWskaż sojusznika, który jest Godny."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223109.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223109.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12695,7 +12695,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Armor\n450 Mana\n15 Ability Haste\nWinter's Caress\nReduces the Attack Speed of nearby enemies.",
         "pl": "90 pkt. pancerza\n450 pkt. many\n15 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich wrogów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223110.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223110.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12716,7 +12716,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Magic Resist\n30 Move Speed\n30% Tenacity",
         "pl": "30 pkt. odporności na magię\n30 jedn. prędkości ruchu\n30% nieustępliwości"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223111.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223111.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -12735,7 +12735,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Ability Power\n25 Ability Haste\nRecovery\nRestores 10 Mana every 5 seconds. If you can't gain mana, restores 15 Health instead.",
         "pl": "55 pkt. mocy umiejętności\n25 jedn. przyspieszenia umiejętności\nRegeneracja\nPrzywraca 10 pkt. many co 5 sek. Jeśli nie możesz zyskać many, przywraca 15 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223112.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223112.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -12755,7 +12755,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n45% Attack Speed\n10 Ability Haste\nIcathian Bite\nAttacks apply magic damage On-Hit.",
         "pl": "70 pkt. mocy umiejętności\n45% prędkości ataku\n10 jedn. przyspieszenia umiejętności\nIcathiańskie Ukąszenie\nAtaki zadają obrażenia magiczne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223115.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223115.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12775,7 +12775,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n350 Health\nRimefrost\nDamaging Abilities Slow enemies by 30% for 1 second.",
         "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\nZmarzlina\nUmiejętności zadające obrażenia spowalniają wrogów o 30% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223116.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223116.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12794,7 +12794,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n600 Mana\n20 Ability Haste\nScorn\nYour Ultimate spells gain Ability Haste.\nHatefog\nDamaging a champion with your Ultimate Burns the ground beneath them, dealing damage and reducing their Magic Resist.",
         "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nPogarda\nTwoje superumiejętności zyskują przyspieszenie umiejętności.\nMgła Nienawiści\nZadanie bohaterowi obrażeń za pomocą superumiejętności podpala ziemię pod nim, zadając obrażenia i zmniejszając jego odporność na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223118.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223118.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12813,7 +12813,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n600 Mana\n15 Ability Haste\nAwe:\nGain bonus Health equal to Total Mana. Mana Charge:\nAfter 2 combat rounds, this item transforms into Fimbulwinter.",
         "pl": "400 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw:\nZyskujesz dodatkowe zdrowie równe całkowitej manie. Doładowanie Many:\nPo 2 rundach walk ten przedmiot zmienia się w Wielką Zimę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223119.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223119.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12832,7 +12832,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n1000 Mana\n15 Ability Haste\nAwe:\nGain bonus Health based on Mana. Everlasting:\nImmobilizing or Slowing an enemy champion grants a Shield. The Shield is increased if more than one enemy is nearby.",
         "pl": "400 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw:\nZyskujesz dodatkowe zdrowie w zależności od many. Nieprzemijalność:\nUnieruchomienie lub spowolnienie wrogiego bohatera zapewnia tarczę. Tarcza zostaje wzmocniona, jeśli w pobliżu znajduje się więcej niż jeden wróg."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223121.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223121.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12851,7 +12851,7 @@ window.ARENA_GAME_DATA = {
         "en": "20 Attack Damage\n25 Ability Power\n25% Attack Speed\nAttacks apply 30 magic damage On-Hit.\nSeething Strike\nBasic attacks grant 8% Attack Speed, stacking up to 4 times for a maximum of Attack Speed. While fully stacked, every third Attack applies your On-Hit effects twice.",
         "pl": "20 pkt. obrażeń od ataku\n25 pkt. mocy umiejętności\n25% prędkości ataku\nAtaki zadają 30 pkt. obrażeń magicznych przy trafieniu.\nWrzące Uderzenie\nAtaki podstawowe zapewniają 8% prędkości ataku. Efekt kumuluje się do 4 razy i zapewnia maks. 0 prędkości ataku. Przy maksymalnej liczbie ładunków każdy co trzeci atak nakłada efekty przy trafieniu podwójnie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223124.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223124.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12871,7 +12871,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n40% Magic Penetration",
         "pl": "65 pkt. mocy umiejętności\n40% przebicia odporności na magię"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223135.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223135.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12889,7 +12889,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n30% Magic Penetration\n15 Ability Haste\nLife from Death\nWhen a champion that you damaged within 3 seconds dies, a nova spreads from their corpse that heals.",
         "pl": "60 pkt. mocy umiejętności\n30% przebicia odporności na magię\n15 jedn. przyspieszenia umiejętności\nŻycie ze Śmierci\nPo śmierci bohatera, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jego ciało wybucha, lecząc."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223137.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223137.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12908,7 +12908,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n40 Magic Resist\n10% Life Steal\nActive -\nQuicksilver:\nRemove all crowd control debuffs and gain Move Speed.",
         "pl": "45 pkt. obrażeń od ataku\n40 pkt. odporności na magię\n10% kradzieży życia\nUżycie —\nŻywe Srebro:\nUsuwa wszystkie efekty kontroli tłumu i zapewnia dodatkową prędkość ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223139.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223139.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12930,7 +12930,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n22 Lethality\n4% Move Speed\nHaunt\nGain Move Speed while out of combat.\nACTIVE\n(0s)\nWraith Step\nGain Move Speed and Ghosting.",
         "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n4% prędkości ruchu\nNawiedzenie\nZyskujesz 0 jedn. prędkości ruchu poza walką.\nUŻYCIE\n(0 sek.)\nUpiorny Krok\nZyskujesz premię do prędkości ruchu i przenikanie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223142.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223142.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12950,7 +12950,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n75 Armor\nResilience\nCritical Strikes deal 30% less damage to you.\nHumility\nSlow nearby enemies.\nACTIVE\n(0s)\nHumility\nBriefly Slow nearby enemies by 70% for 2 seconds.",
         "pl": "300 pkt. zdrowia\n75 pkt. pancerza\nWytrzymałość\nTrafienia krytyczne zadają o 30% mniej obrażeń posiadaczowi przedmiotu.\nPokora\nSpowalnia pobliskich wrogów.\nUŻYCIE\n(0 sek.)\nPokora\nChwilowo spowalnia pobliskich wrogów o 70% na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223143.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223143.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12970,7 +12970,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n45 Attack Damage\n15% Omnivamp\nACTIVE\n(0s)\nLightning Bolt\nShocks the target enemy champion, dealing magic damage and Slowing them by 25% for 1.5 seconds.",
         "pl": "90 pkt. mocy umiejętności\n45 pkt. obrażeń od ataku\n15% wszechwampiryzmu\nUŻYCIE\n(0 sek.)\nPiorun\nRazi wrogiego bohatera obranego za cel, zadając 0 pkt. obrażeń magicznych i spowalniając go o 25% na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223146.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223146.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -12991,7 +12991,7 @@ window.ARENA_GAME_DATA = {
         "en": "95 Ability Power\n400 Health\n20 Ability Haste\nActive -\nSupersonic:\nDash in target direction, unleashing an arc of magic missiles that deal damage.",
         "pl": "95 pkt. mocy umiejętności\n400 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nUżycie —\nPonaddźwiękowość:\nDoskakujesz w wybranym kierunku, wystrzeliwując łuk magicznych pocisków, które zadają obrażenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223152.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223152.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13013,7 +13013,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n20% Attack Speed\n10% Life Steal\nMist's Edge\nAttacks apply an additional enemy current Health physical damage On-Hit.\nClawing Shadows\n(0s)\nAttacking a champion 3 times Slows them.",
         "pl": "30 pkt. obrażeń od ataku\n20% prędkości ataku\n10% kradzieży życia\nOstrze Mgły\nAtaki zadają dodatkowo obrażenia fizyczne równe aktualnego zdrowia celu przy trafieniu.\nChwytające Cienie\n(0 sek.)\nZaatakowanie bohatera 3 razy spowalnia go."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223153.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223153.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13034,7 +13034,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15 Ability Haste\n40 Magic Resist\nLifeline\nUpon taking magic damage that would reduce Health below 30%, gain a magic damage Shield. When Lifeline\ntriggers, gain Omnivamp until the end of combat.",
         "pl": "50 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\n40 pkt. odporności na magię\nLinia Życia\nPrzy otrzymaniu obrażeń magicznych, które zmniejszyłyby twoje zdrowie do poziomu niższego niż 30%, zyskujesz tarczę pochłaniającą obrażenia magiczne. Gdy aktywuje się Linia Życia, zyskujesz wszechwampiryzm do końca walki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223156.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223156.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13055,7 +13055,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n50 Armor\nActive -\nStasis:\nYou become Invulnerable and Untargetable for 2.5 seconds, but are prevented from taking any other actions during this time (120s).",
         "pl": "80 pkt. mocy umiejętności\n50 pkt. pancerza\nUżycie —\nInercja:\nZyskujesz niewrażliwość i nie można obrać cię za cel przez 2.5 sek. Podczas trwania tego efektu nie możesz wykonywać żadnych innych czynności (120 sek.)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223157.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223157.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13074,7 +13074,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Haste\n45 Move Speed\nGain 10 Summoner Spell Haste.",
         "pl": "40 jedn. przyspieszenia umiejętności\n45 jedn. prędkości ruchu\nZyskujesz 10 jedn. przyspieszenia czarów przywoływacza."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223158.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223158.png",
       "tier": "boots",
       "price": 500,
       "categories": [
@@ -13092,7 +13092,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n350 Health\nDragonforce\nGain 25 Basic Ability Haste.\nFocused Will\nDealing damage with Abilities increases your Champion's Ability and Passive damage by 3% for 6 seconds. (stacks 4 times).",
         "pl": "40 pkt. obrażeń od ataku\n350 pkt. zdrowia\nSiła Smoka\nZyskujesz 25 jedn. przyspieszenia podstawowych umiejętności.\nSkupiona Wola\nZadawanie obrażeń umiejętnościami zwiększa obrażenia od umiejętności (również biernej) twojego bohatera o 3% na 6 sek. (kumuluje się 4 razy)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223161.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223161.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13111,7 +13111,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n250 Health\n15 Ability Haste\nAffliction\nDealing magic damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "90 pkt. mocy umiejętności\n250 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nChoroba\nZadawanie wrogim bohaterom obrażeń magicznych nakłada na nich 40Głębokie Rany o wartości % na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223165.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223165.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13131,7 +13131,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Attack Speed\n10% Move Speed\n30 Ability Haste\n20% Tenacity\nLike the Wind\nGain 5% Move Speed On-Hit for 6 seconds, stacking up to 25% Move Speed.",
         "pl": "50% prędkości ataku\n10% prędkości ruchu\n30 jedn. przyspieszenia umiejętności\n20% nieustępliwości\nJak Wiatr\nZyskujesz 5% prędkości ruchu przy trafieniu na 6 sek., kumulującej się do 25% prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223172.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223172.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13152,7 +13152,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n250 Health\n15 Ability Haste",
         "pl": "25 pkt. obrażeń od ataku\n250 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223177.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223177.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -13172,7 +13172,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n500 Health\n4% Move Speed\nSkipper\nEvery fifth Attack against champions and epic monsters deals bonus physical damage, increased to against structures.\nSolo Party\nWhile no allied champions are within 1500 range, you gain Armor and Magic Resist.",
         "pl": "40 pkt. obrażeń od ataku\n500 pkt. zdrowia\n4% prędkości ruchu\nSzyper\nKażdy co piąty atak przeciwko bohaterom i potężnym potworom zadaje 0 pkt. dodatkowych obrażeń fizycznych, zwiększonych do 0 pkt. przeciwko budowlom.\nSolówka\nJeśli w odległości 1500 jedn. od ciebie nie ma żadnych sojuszniczych bohaterów, zyskujesz 0 pkt. pancerza i odporności na magię."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223181.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223181.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13191,7 +13191,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n35% Attack Speed\n5% Life Steal",
         "pl": "25 pkt. obrażeń od ataku\n35% prędkości ataku\n5% kradzieży życia"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223184.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223184.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -13211,7 +13211,7 @@ window.ARENA_GAME_DATA = {
         "en": "25 Attack Damage\n11 Lethality\n10 Ability Haste\nAgricultural Reaper\nIncreases effects of Power Flower by 20%. Gain 100 Move Speed for 3s after attacking a plant.",
         "pl": "25 pkt. obrażeń od ataku\n11 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nRolny Żniwiarz\nWzmacnia efekty Kwiatu Mocy o 20%. Zyskujesz 100 jedn. prędkości ruchu przez 3 sek. po zaatakowaniu rośliny."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223185.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223185.png",
       "tier": "",
       "price": 500,
       "categories": [
@@ -13230,7 +13230,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n25 Armor\n35 Magic Resist\n25 Ability Haste\nDevotion\nGrant nearby allies a Shield, decaying over time.",
         "pl": "400 pkt. zdrowia\n25 pkt. pancerza\n35 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nOddanie\nZapewniasz pobliskim sojusznikom tarczę, która zanika z czasem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223190.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223190.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13253,7 +13253,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Armor\n60 Magic Resist\n15 Ability Haste\nFortify:\nTaking damage from a champion grants a stack of Armor and Magic Resist for 6 seconds.\nMax 5 stacks; 1 per champion.\nActive -\nUnbreakable:\nGain a Shield that decays and grow in size.",
         "pl": "60 pkt. pancerza\n60 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUmocnienie:\nOtrzymywanie obrażeń od bohaterów zapewnia ładunek 0 pkt. pancerza i 0 pkt. odporności na magię na 6 sek.\nMaks. 5 ładunków, 1 ładunek na bohatera.\nUżycie —\nNiezłomność:\nZyskujesz zanikającą tarczę i zwiększasz swój rozmiar."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223193.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223193.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13274,7 +13274,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n100% Base Mana Regen\n12% Heal and Shield Power\nACTIVE\n(0s)\nPurify\nRestore Health and Remove all crowd control debuffs (except Knockups and Suppression ) from an ally champion.",
         "pl": "400 pkt. zdrowia\n100% podstawowej regeneracji many\n12% siły leczenia i tarcz\nUŻYCIE\n(0 sek.)\nOczyszczenie\nRegeneruje zdrowie i usuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem )."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223222.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223222.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13296,7 +13296,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Attack Damage\n40% Attack Speed\nShadow\nAttacks deal 30 bonus magic damage On-Hit.\nJuxtaposition\nAlternate between Light and Dark Attacks against champions: Light Attacks grant Armor and Magic Resist for 5s. Dark Attacks grant 8% Armor Penetration and Magic Penetration for 5s.",
         "pl": "30 pkt. obrażeń od ataku\n40% prędkości ataku\nCień\nAtaki zadają 30 pkt. dodatkowych obrażeń magicznych przy trafieniu.\nZestawienie\nAtakowanie bohaterów na przemian aktywuje efekty Światła i Mroku: Ataki Światła zapewniają pancerz i odporność na magię na 5 sek. Ataki Mroku zapewniają 8% przebicia pancerza oraz przebicia odporności na magię na 5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223302.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223302.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13317,7 +13317,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n12% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding another ally enhances you both for 6 seconds, granting your Attacks 40% Attack Speed and 25 magic damage On-Hit.",
         "pl": "40 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie innego sojusznika tarczą wzmacnia was na 6 sek. i zapewnia waszym atakom 40% prędkości ataku i 25 pkt. obrażeń magicznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223504.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13337,7 +13337,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20 Ability Haste\n25% Critical Strike Chance\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage and grants Mana On-Hit.",
         "pl": "50 pkt. obrażeń od ataku\n20 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nCzaroostrze\nPo użyciu umiejętności twój następny atak zadaje dodatkowe obrażenia fizyczne i zapewnia manę przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223508.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223508.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13359,7 +13359,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n40 Armor\n7% Move Speed\nShipwrecker\nWhile moving, build up Move Speed. Your next Attack discharges built up Move Speed to deal damage. If dealt by a Melee champion at top speed, the Attack also Slows the target.\nUnsinkable\nThe strength of movement slowing effects is reduced.",
         "pl": "300 pkt. zdrowia\n40 pkt. pancerza\n7% prędkości ruchu\nNiszczyciel Statków\nPoruszając się, zyskujesz dodatkową prędkość ruchu. Twój następny atak rozładuje skumulowaną prędkość ruchu, by zadać obrażenia. Jeśli obrażenia zostały zadane przez bohatera walczącego w zwarciu przy maks. prędkości, ten atak dodatkowo spowolni cel.\nNiezatapialny\nEfekty spowalniające prędkość ruchu są osłabione."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223742.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223742.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13379,7 +13379,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n400 Health\nColossus:\nGain bonus Attack Damage based off of bonus Health. Cleave:\nAttacks apply additional damage On-Hit, creating a shockwave that deals damage to enemies behind the target. Titanic Crescent\nEmpower your next Cleave\nto deal bonus physical damage On-Hit and deal bonus physical damage to enemies behind the target.",
         "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nKolos:\nZyskujesz dodatkowe obrażenia od ataku zależne od dodatkowego zdrowia. Rozpłatanie:\nAtaki zadają dodatkowe obrażenia przy trafieniu, tworząc falę uderzeniową, która zadaje obrażenia wrogom znajdującym się za celem. Kolosalny Półksiężyc\nWzmacniasz twoje następne Rozpłatanie, aby zadało dodatkowe obrażenia fizyczne przy trafieniu oraz dodatkowe obrażenia fizyczne wrogom znajdującym się za celem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223748.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223748.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13399,7 +13399,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n14 Lethality\n375 Health\nAnnul\n(0s)\nGain a Spell Shield that blocks the next enemy Ability.\nItem's cooldown is restarted if you take damage before it is completed.",
         "pl": "45 pkt. obrażeń od ataku\n14 pkt. destrukcji\n375 pkt. zdrowia\nUchylenie\n(0 sek.)\nZyskujesz tarczę magii, która blokuje kolejną umiejętność wroga.\nOtrzymanie obrażeń resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/223814.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/223814.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13418,7 +13418,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n21 Lethality\nActive -\nSoul Anchor\n(0s)\nMark your current location. After 5 seconds, return to that location. You may recast at any point during Soul Anchor's\nduration to return to your marked location early.",
         "pl": "60 pkt. obrażeń od ataku\n21 pkt. destrukcji\nUżycie —\nPrzywiązanie Duszy\n(0 sek.)\nOznacz miejsce, w którym się obecnie znajdujesz. Po 5 sek. powróć do tego miejsca. W czasie trwania Przywiązania Duszy\nmożesz w dowolnej chwili użyć go ponownie, aby powrócić do oznaczonego miejsca wcześniej."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224004.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13436,7 +13436,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 15 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 6% Vulnerable for 4 seconds.",
         "pl": "60 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 15 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 6% wrażliwości na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224005.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13456,7 +13456,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n50 Magic Resist\n4% Move Speed\nAbsorb\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 10) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks.\nDissipate\nWhile at 10 stacks of Steadfast, gain 50 Magic Resist and 14% increased Move Speed.\nOne spell can add a new stack of Steadfast every 1 second.",
         "pl": "400 pkt. zdrowia\n50 pkt. odporności na magię\n4% prędkości ruchu\nPochłonięcie\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 10) na 7 sek. Efekty unieruchamiające wrogów zapewniają dodatkowe 2 ład.\nRozproszenie\nMając następującą liczbę ładunków Niewzruszenia: 10, zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu.\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224401.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224401.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13475,7 +13475,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Attack Damage\n125 Ability Power\n60% Attack Speed\n25% Critical Strike Chance\n250 Health\n30 Armor\n30 Magic Resist\n250 Mana\n20 Ability Haste\n10% Move Speed\n10% Omnivamp\n100% Base Health Regen\n100% Base Mana Regen\nDoing Something\nYou are permanently On Fire!\n\"It must do something...\nDeclined, it does EVERYTHING\"",
         "pl": "90 pkt. obrażeń od ataku\n125 pkt. mocy umiejętności\n60% prędkości ataku\n25% szansy na trafienie krytyczne\n250 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n250 pkt. many\n20 jedn. przyspieszenia umiejętności\n10% prędkości ruchu\n10% wszechwampiryzmu\n100% podstawowej regeneracji zdrowia\n100% podstawowej regeneracji many\nRobi Coś\nStale igrasz z ogniem!\n„Przecież musi coś robić…\nNie tylko coś, robi WSZYSTKO!”"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224403.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13504,7 +13504,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n25 Ability Haste\nHypershot\nDealing Ability damage to champions at 600 range or greater Reveals them for 6 seconds.\nFocus\nWhen Hypershot\nis triggered, Reveal all other enemy champions within 1400 range of them for 3 seconds.",
         "pl": "90 pkt. mocy umiejętności\n25 jedn. przyspieszenia umiejętności\nHiperstrzał\nZadawanie bohaterom obrażeń za pomocą umiejętności w zasięgu co najmniej 600 jedn. ujawnia ich na 6 sek.\nSkupienie\nGdy Hiperstrzał\njest aktywny, ujawniasz wszystkich innych wrogich bohaterów w zasięgu 1400 jedn. na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224628.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224628.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13522,7 +13522,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n350 Health\n35 Ability Haste\n4% Move Speed\nSpelldance\nDealing magic or true damage to champions grants Move Speed for 4 seconds.",
         "pl": "65 pkt. mocy umiejętności\n350 pkt. zdrowia\n35 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\nCzarowny Pląs\nZadawanie bohaterom obrażeń magicznych lub nieuchronnych zapewnia 0 jedn. prędkości ruchu na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224629.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224629.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13542,7 +13542,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n350 Health\n15 Ability Haste\nVoid Corruption\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 8%. At maximum strength, gain Omnivamp.\nVoid Infusion\nGain 2% of your bonus Health as Ability Power.",
         "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nSpaczenie Pustki\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 8%). Przy maksymalnej wartości zyskujesz wszechwampiryzm.\nInfuzja Pustki\nZyskujesz 2% swojego dodatkowego zdrowia jako moc umiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224633.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224633.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13562,7 +13562,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n300 Health\n25 Ability Haste\nSoulrend\nDamaging a champion with Attacks or Abilities deals an additional magic damage and grants you 25% Move Speed for 1.5 seconds (30(0s) per champion).\nDamaging a new champion will extend the duration of the Move Speed bonus.",
         "pl": "90 pkt. mocy umiejętności\n300 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nRozerwanie Duszy\nZadanie bohaterowi obrażeń atakami lub umiejętnościami zadaje dodatkowo 0 pkt. obrażeń magicznych i zapewnia ci 25% prędkości ruchu na 1.5 sek. (30(0 sek.) na bohatera).\nZadanie obrażeń nowemu bohaterowi wydłuży czas działania premii do prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224636.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224636.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13583,7 +13583,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Ability Power\n350 Health\nAzakana's Gaze\nDealing Ability damage burns enemies for max Health magic damage every second for 4 seconds.\nDark Pact\nGain 2% of your bonus Health as Ability Power.\nAzakana's Gaze\ndeals a maximum of 40 damage to monsters.",
         "pl": "75 pkt. mocy umiejętności\n350 pkt. zdrowia\nSpojrzenie Azakana\nZadawanie bohaterom obrażeń za pomocą umiejętności podpala ich, przez co otrzymują oni dodatkowo obrażenia magiczne równe ich maksymalnego zdrowia co sekundę przez 4 sek.\nMroczny Pakt\nZyskaj 2% swojego dodatkowego zdrowia jako moc umiejętności.\nSpojrzenie Azakana\nzadaje maks. 40 pkt. obrażeń potworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224637.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224637.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13601,7 +13601,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 2.5 seconds after taking champion damage. ((0s).\nItem cooldown is restarted when damage is taken from champions.",
         "pl": "85 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 2.5 sek. po otrzymaniu obrażeń od bohaterów. ((0 sek.)).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224644.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224644.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13621,7 +13621,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n10 Magic Penetration\nCinderbloom\nMagic and true damage Critically Strikes enemies below 40% Health, dealing 15% increased damage.",
         "pl": "90 pkt. mocy umiejętności\n10 pkt. przebicia odporności na magię\nRozkwit Żaru\nObrażenia magiczne i obrażenia nieuchronne trafiają krytycznie wrogów, którzy mają mniej niż 40% zdrowia, zadając obrażenia zwiększone o 15%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224645.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224645.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13639,7 +13639,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n15 Magic Penetration\n4% Move Speed\nStormraider\nDealing 25% of a champion's maximum Health within 2.5s applies Squall\nto them and grants 25% Move Speed for 1.5 seconds.\nSquall\nAfter 2 seconds, deal magic damage. If the target dies before Squall\ntriggers, it damages nearby enemies and you gain 25% Move Speed for 1.5 seconds.",
         "pl": "90 pkt. mocy umiejętności\n15 pkt. przebicia odporności na magię\n4% prędkości ruchu\nSiewca Burzy\nZadanie obrażeń równych 25% maksymalnego zdrowia bohatera w ciągu 2.5 sek. nakłada Nawałnicę\ni zapewnia 25% prędkości ruchu na 1.5 sek.\nNawałnica\nPo 2 sek. zadaje obrażenia magicznych. Jeśli cel zginie przed aktywacją Nawałnicy, zada ona obrażenia pobliskim wrogom, a ty zyskasz 25% prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/224646.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/224646.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13659,7 +13659,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n300 Health\n40 Magic Resist\nActive -\nQuicksilver:\nRemove all crowd control debuffs and gain Tenacity and Slow Resistance.",
         "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n40 pkt. odporności na magię\nUżycie —\nŻywe Srebro:\nUsuwa wszystkie efekty kontroli tłumu; zyskujesz nieustępliwość i odporność na spowolnienia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226035.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226035.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13680,7 +13680,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n10 Ability Haste\n45 Armor\nIgnore Pain\nDamage taken is dealt to you over time instead.\nDefy\nChampion takedowns cleanse Ignore Pain's\nremaining damage pool and restore Health over time.",
         "pl": "60 pkt. obrażeń od ataku\n10 jedn. przyspieszenia umiejętności\n45 pkt. pancerza\nIgnorowany Ból\nOtrzymywane przez ciebie obrażenia są rozłożone w czasie.\nPrzeciwstawienie\nUdziały w zabójstwach bohaterów oczyszczają pulę obrażeń Ignorowanego Bólu\ni przywracają zdrowie wraz z upływem czasu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226333.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226333.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13699,7 +13699,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n450 Health\n15 Ability Haste\nHackshorn\nDealing physical damage applies 40% Grievous Wounds to enemy champions for 3 seconds.\nIf an enemy heals for more than 60% of their maximum health while continously affected by Grievous Wounds, it is increased to 80% Grievous Wounds.\nGrievous Wounds reduces the effectiveness of Healing and Regeneration effects.",
         "pl": "45 pkt. obrażeń od ataku\n450 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nZłamany Róg\nZadawanie wrogim bohaterom obrażeń fizycznych nakłada na nich Głębokie Rany o wartości 40% na 3 sek.\nJeśli wróg uleczy się o więcej niż 60% swojego maksymalnego zdrowia, będąc pod ciągłym wpływem Głębokich Ran, ich wartość zostaje zwiększona do 80% Głębokich Ran.\nGłębokie Rany osłabiają efektywność leczenia i regeneracji."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226609.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226609.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13719,7 +13719,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n350 Health\n10 Ability Haste\nLightshield Strike\nYour first Attack against a champion Critically Strikes and restores Health.",
         "pl": "40 pkt. obrażeń od ataku\n350 pkt. zdrowia\n10 jedn. przyspieszenia umiejętności\nUderzenie Promiennej Tarczy\nTwój pierwszy atak przeciwko bohaterowi trafia krytycznie i przywraca zdrowie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226610.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226610.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13739,7 +13739,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n14% Heal and Shield Power\n150% Base Mana Regen\n15 Ability Haste\nRapids\nHealing or Shielding an ally grants you both 40 Ability Power and 15 Ability Haste for 6 seconds.",
         "pl": "65 pkt. mocy umiejętności\n14% siły leczenia i tarcz\n150% podstawowej regeneracji many\n15 jedn. przyspieszenia umiejętności\nFale\nUleczenie lub osłonięcie sojusznika tarczą zapewnia wam 40 pkt. mocy umiejętności i 15 jedn. przyspieszenia umiejętności na 6 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226616.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226616.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13759,7 +13759,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n200 Health\n30 Ability Haste\n125% Base Mana Regen\nStarlit Grace\nHealing or shielding yourself or an ally chains to the other champion, healing 20% or shielding 25% of the original amount.",
         "pl": "35 pkt. mocy umiejętności\n200 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nŁaska Gwiazd\nLeczenie lub osłonięcie tarczą siebie bądź sojusznika przenosi się na tego drugiego bohatera, zapewniając mu leczenie w wysokości 20% lub tarczę w wysokości 25% pierwotnej wartości."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226617.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226617.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13780,7 +13780,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Ability Power\n300 Health\n30 Ability Haste\n150% Base Mana Regen\nSoul Siphon:\nDamaging a champion grants a Soul Shard. Healing or Shielding an ally consumes all Soul Shards\nto restore Health and deals magic damage per Shard to the nearest enemy champion.",
         "pl": "40 pkt. mocy umiejętności\n300 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz:\nZadanie obrażeń bohaterowi zapewnia Odłamek Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie Odłamki Dusz, przywracając zdrowie i zadając najbliższemu wrogiemu bohaterowi obrażenia magiczne za każdy odłamek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226620.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226620.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13801,7 +13801,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n12% Heal and Shield Power\n200% Base Mana Regen\nFirst Light\nGain 3% Heal and Shield Power and 10 Ability Power per 100% Base Mana Regen.",
         "pl": "45 pkt. mocy umiejętności\n12% siły leczenia i tarcz\n200% podstawowej regeneracji many\nPierwsze Światło\nZyskujesz 3% siły leczenia i tarcz oraz 10 pkt. mocy umiejętności za każde 100% podstawowej regeneracji many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226621.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226621.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13819,7 +13819,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n400 Health\n20 Ability Haste\n10% Omnivamp\nActive -\nThirsting Slash:\nDeal damage to nearby enemies. Restore Health for each champion hit.",
         "pl": "55 pkt. obrażeń od ataku\n400 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n10% wszechwampiryzmu\nUżycie —\nSpragnione Cięcie:\nZadaje obrażenia pobliskim wrogom. Przywracasz sobie zdrowie za każdego trafionego bohatera."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226630.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226630.png",
       "tier": "",
       "price": 2750,
       "categories": [
@@ -13840,7 +13840,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n15% Attack Speed\n375 Health\nCleave\nAttacks deal physical damage to nearby enemies.\nBreaking Shockwave\nDeal physical damage and Slow nearby enemies by 40%.\nGain 40% decaying Move Speed per champion hit for 3 seconds.",
         "pl": "40 pkt. obrażeń od ataku\n15% prędkości ataku\n375 pkt. zdrowia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nNiszczycielska Fala\nZadajesz obrażenia fizyczne i spowalniasz pobliskich wrogów o 40%.\nZa każdego trafionego bohatera otrzymasz 40% prędkości ruchu, która zanika przez 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226631.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226631.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13861,7 +13861,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n300 Health\n20 Ability Haste\nSpellblade:\nAfter using an Ability, your next Attack is enhanced with an additional + target max Health physical damage. If the target is a champion, also heal for 55% of the premitigation damage.\n3% Armor Penetration and 3% Magic Penetration.\nSpellblade\ndeals min damage to units, but no more than damage to Monsters.",
         "pl": "40 pkt. obrażeń od ataku\n300 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze:\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia fizyczne równe 0 + maks. zdrowia celu. Jeśli celem jest bohater, leczysz się o 55% czystych obrażeń.\n3% przebicia pancerza i 3% przebicia odporności na magię.\nCzaroostrze\nzada co najmniej 0 pkt. obrażeń jednostkom, ale nie więcej niż 0 pkt. obrażeń potworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226632.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226632.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13884,7 +13884,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n250 Health\nTorment\nDamaging Abilities Burn enemies for 2% max Health magic damage per second for 3 seconds.\nSuffering\nFor each second in combat with enemy champions, deal 2% bonus damage, up to 6%.",
         "pl": "50 pkt. mocy umiejętności\n250 pkt. zdrowia\nUdręka\nUmiejętności zadające obrażenia podpalają wrogów, przez co otrzymują oni obrażenia magiczne równe 2% maksymalnego zdrowia co sekundę przez 3 sek.\nCierpienie\nZa każdą sekundę spędzoną w walce przeciwko wrogim bohaterom zadajesz 2% dodatkowych obrażeń (maks. 6%)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226653.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226653.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13902,7 +13902,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Ability Power\n600 Mana\n25 Ability Haste\nEcho\nDamaging Abilities consume all the charges to deal an additional magic damage to the target and one additional nearby target per charge. If there are insufficient targets in range, for each remaining shot, repeat the damage on the primary target.",
         "pl": "85 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nEcho\nUmiejętności zadające obrażenia zużywają wszystkie ładunki, by zadać dodatkowe obrażenia magiczne celowi i jednemu dodatkowemu pobliskiemu celowi za każdy ładunek. Jeśli w zasięgu nie ma wystarczającej liczby celów, za każdy pozostały strzał zadajesz ponowne obrażenia głównemu celowi."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226655.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226655.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13922,7 +13922,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n250 Health\n600 Mana\n20 Ability Haste\nACTIVE\n(0s)\nGlaciate\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
         "pl": "70 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226656.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226656.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13945,7 +13945,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n350 Health\n300 Mana\nTimeless\nAfter 2 combat rounds, this item gains an additional 50 Ability Power, 300 Health, and 400 Mana, and you gain a level.\nEternity\nTaking damage from champions restores 7% of premitigation damage as Mana. Casting an ability heals for 25% of Mana spent, up to 20 Health per cast, per second.",
         "pl": "60 pkt. mocy umiejętności\n350 pkt. zdrowia\n300 pkt. many\nWiekuistość\nPo 2 rundach walki ten przedmiot zyskuje dodatkowo 50 pkt. mocy umiejętności, 300 pkt. zdrowia i 400 pkt. many, natomiast ty zdobywasz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 7% czystych otrzymanych obrażeń. Rzucenie umiejętności leczy o 25% zużytej many, maks. o 20 pkt. zdrowia na jedno użycie umiejętności, na sekundę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226657.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226657.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -13984,7 +13984,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n45 Armor\n15 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack deals bonus physical damage On-Hit and creates a frost field for 2s that Slows.",
         "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n15 jedn. przyspieszenia umiejętności\nCzaroostrze\nPo użyciu umiejętności następny atak zadaje dodatkowe obrażenia fizyczne przy trafieniu oraz na 2 sek. tworzy pole lodowe, które spowalnia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226662.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226662.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14006,7 +14006,7 @@ window.ARENA_GAME_DATA = {
         "en": "450 Health\n40 Magic Resist\n10 Ability Haste\nImmolate\nAfter taking or dealing damage, deal magic damage per second to nearby enemies for 3 seconds.\nDesolate\nKilling an enemy deals magic damage around them.",
         "pl": "450 pkt. zdrowia\n40 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nPożoga\nPo otrzymaniu lub zadaniu obrażeń zadaje obrażenia magiczne na sekundę pobliskim wrogom przez 3 sek.\nOdosobnienie\nZabicie wroga zadaje obrażenia magiczne wokół niego."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226664.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226664.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14027,7 +14027,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n35 Armor\n35 Magic Resist\nVoidborn Resilience\nAfter 5 seconds of champion combat, increase your bonus Armor and Magic Resist by 40% until end of combat.",
         "pl": "350 pkt. zdrowia\n35 pkt. pancerza\n35 pkt. odporności na magię\nWytrzymałość Dzieci Pustki\nPo upływie 5 sek. w walce z bohaterami twój dodatkowy pancerz i odporność na magię zwiększają się o 40% do końca walki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226665.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226665.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14047,7 +14047,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n30 Armor\n30 Magic Resist\n10 Ability Haste\nGuiding Light:\nUpon casting your Ultimate you Transcend, increasing your Max Health by 12.5% for 9s. While Transcended you and allies within 1200 range of you heal for 10% of your max Health over the duration (90(0s)).\nMythic Passive: Grants all other Legendary items 75 Health.",
         "pl": "350 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nPrzewodnie Światło:\nPo użyciu superumiejętności zyskujesz Transcendencję, zwiększając swoje maks. zdrowie o 12.5% na 9 sek. Podczas Transcendencji ty i twoi sojusznicy znajdujący się w zasięgu 1200 jedn. leczycie się o 10% twojego maks. zdrowia przez czas trwania efektu (90(0 sek.)).\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 75 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226667.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226667.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14069,7 +14069,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15% Attack Speed\n20% Critical Strike Chance\n7% Move Speed\nMythic Passive: Grants all other Legendary items 5 Attack Damage.\nMaximum missile damage dealt when enemy Health is below 25%.\nCloudburst's dash cannot pass through terrain.\nActive -\nCloudburst:\nDash in target direction, firing three missiles at the lowest Health enemy near your destination. Deals physical damage, increased against low Health targets.",
         "pl": "50 pkt. obrażeń od ataku\n15% prędkości ataku\n20% szansy na trafienie krytyczne\n7% prędkości ruchu\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 pkt. obrażeń od ataku.\nPocisk zadaje maksymalne obrażenia, gdy wróg ma mniej niż 25% zdrowia.\nDoskok Urwania Chmury nie pozwala na przekraczanie terenu.\nUżycie —\nUrwanie Chmury:\nDoskakujesz w wybranym kierunku, wystrzeliwując 3 pociski w stronę wroga o najniższym poziomie zdrowia w pobliżu miejsca docelowego. Zadaje obrażenia fizyczne, które zostają zwiększone przeciwko celom o niskim poziomie zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226671.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226671.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14087,10 +14087,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Pogromca Krakenów"
       },
       "descriptions": {
-        "en": "50 Attack Damage\n35% Attack Speed\n7% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit, increased based on their missing Health.",
-        "pl": "50 pkt. obrażeń od ataku\n35% prędkości ataku\n7% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu, zwiększonych w zależności od brakującego zdrowia."
+        "en": "50 Attack Damage\n40% Attack Speed\n7% Move Speed\nBring It Down\nEvery third Attack deals bonus physical damage On-Hit, increased based on their missing Health.",
+        "pl": "50 pkt. obrażeń od ataku\n40% prędkości ataku\n7% prędkości ruchu\nPowalenie\nKażdy co trzeci atak zadaje pkt. dodatkowych obrażeń fizycznych przy trafieniu, zwiększonych w zależności od brakującego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226672.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226672.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14110,7 +14110,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n25% Critical Strike Chance\nLifeline\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
         "pl": "55 pkt. obrażeń od ataku\n25% szansy na trafienie krytyczne\nLinia Życia\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226673.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226673.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14125,10 +14125,10 @@ window.ARENA_GAME_DATA = {
         "pl": "Migoczące Ostrza Navori"
       },
       "descriptions": {
-        "en": "35% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nTranscendence\nYour Attacks reduce your non-Ultimate Ability cooldowns by 15% of their remaining cooldown.",
-        "pl": "35% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nTranscendencja\nAtaki skracają czasy odnowienia podstawowych umiejętności o 15% pozostałego czasu odnowienia."
+        "en": "40% Attack Speed\n25% Critical Strike Chance\n4% Move Speed\nTranscendence\nYour Attacks reduce your non-Ultimate Ability cooldowns by 15% of their remaining cooldown.",
+        "pl": "40% prędkości ataku\n25% szansy na trafienie krytyczne\n4% prędkości ruchu\nTranscendencja\nAtaki skracają czasy odnowienia podstawowych umiejętności o 15% pozostałego czasu odnowienia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226675.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226675.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14147,7 +14147,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n12 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 125 bonus gold.",
         "pl": "45 pkt. obrażeń od ataku\n12 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 125 szt. złota."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226676.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226676.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14166,7 +14166,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n22 Lethality\n15 Ability Haste\nNightstalker:\nYour Abilities deal up to an additional 16% damage based on the target's missing health. When a champion that you have damaged within the last 3 seconds dies, you become Untargetable from non-structures for 1.5 seconds (30(0s)) until your next action.\nMythic Passive: Grants all other Legendary items 5 Ability Haste and 5 Move Speed.",
         "pl": "60 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nNocny Drapieżca:\nTwoje umiejętności zadają maksymalnie do 16% dodatkowych obrażeń zależnie od brakującego zdrowia celu. Gdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jednostki niebędące budowlami nie mogą obrać cię za cel przez 1.5 sek. (30(0 sek.)) do czasu podjęcia przez ciebie kolejnego działania.\nMityczne bierne: Zapewnia wszystkim pozostałym legendarnym przedmiotom 5 jedn. przyspieszenia umiejętności i 5 jedn. prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226691.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226691.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14188,7 +14188,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n15 Ability Haste\nEver Rising Moon\nHitting a champion with 2 separate Attacks or Abilities within 2 seconds grants you a Shield for 2 seconds.",
         "pl": "60 pkt. obrażeń od ataku\n15 jedn. przyspieszenia umiejętności\nWiecznie Wschodzący Księżyc\nTrafienie bohatera 2 różnymi atakami lub umiejętnościami w ciągu 2 sek. zapewnia tarczę na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226692.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226692.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14207,7 +14207,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n22 Lethality\n15 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage. For the next 3 seconds, you deal increased damage to the target.",
         "pl": "55 pkt. obrażeń od ataku\n22 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia. Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226693.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226693.png",
       "tier": "",
       "price": 2750,
       "categories": [
@@ -14227,7 +14227,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n40% Armor Penetration\n15 Ability Haste\nBitter Cold\nDamaging Abilities Slow enemies below 50% Health by 50% for 1 second.",
         "pl": "50 pkt. obrażeń od ataku\n40% przebicia pancerza\n15 jedn. przyspieszenia umiejętności\nPrzenikliwe Zimno\nUmiejętności zadające obrażenia spowalniają wrogów poniżej 50% zdrowia o 50% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226694.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226694.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14247,7 +14247,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n19 Lethality\nShield Reaver\nDealing damage to an enemy champion reduces any shields they gain. When you damage an enemy who is unaffected by Shield Reaver, reduce all shields on them.\nItem performance differs for melee and ranged users.",
         "pl": "55 pkt. obrażeń od ataku\n19 pkt. destrukcji\nŁupieżca Tarcz\nZadawanie obrażeń wrogim bohaterom obniża wartość nałożonych na nich tarcz. Gdy zadajesz obrażenia wrogowi, który nie jest dotknięty efektem Łupieżcy Tarcz, obniżasz wartość nałożonych na niego tarcz.\nEfektywność tego przedmiotu jest różna w przypadku bohaterów walczących w zwarciu i  z dystansu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226695.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226695.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14265,7 +14265,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n18 Lethality\n20 Ability Haste\nApophthegm\nYour Ultimate Abilities deal 20% increased damage.",
         "pl": "45 pkt. obrażeń od ataku\n18 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nApoftegm\nTwoje superumiejętności zadają o 20% więcej obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226696.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226696.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14284,7 +14284,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n18 Lethality\n10 Ability Haste\nEminence\nWhen a champion that you have damaged with the last 3 seconds dies, gain 15 Attack Damage for the rest of the round, or until slain. Eminence's Attack Damage is permanently increased by 2 each time this triggers.",
         "pl": "50 pkt. obrażeń od ataku\n18 pkt. destrukcji\n10 jedn. przyspieszenia umiejętności\nEminencja\nGdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., zyskujesz 15 pkt. obrażeń od ataku do końca rundy lub do momentu śmierci. Obrażenia od ataku przyznawane przez Eminencję na stałe wzrastają o 2 pkt. po każdej aktywacji tego efektu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226697.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226697.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14305,7 +14305,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n18 Lethality\n15 Ability Haste\nCleave\nAttacks deal physical damage to nearby enemies.\nHeretical Cleave\n(0s)\nDeal physical damage around you.",
         "pl": "50 pkt. obrażeń od ataku\n18 pkt. destrukcji\n15 jedn. przyspieszenia umiejętności\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom.\nHeretyczne Rozpłatanie\n(0 sek.)\nZadajesz 0 pkt. obrażeń fizycznych wokół siebie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226698.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226698.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14326,7 +14326,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n20 Lethality\n20 Ability Haste\nGalvanize\nDamaging an Enemy Champions with an ability triggers Energized if it is ready.\nFirmament\nYour Energized Attack deals % target's Current Health as bonus physical damage and grants you Lethality for 4 seconds.",
         "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nGalwanizacja\nZadanie obrażeń wrogim bohaterom za pomocą umiejętności aktywuje Naładowanie, jeśli jest ono gotowe.\nSklepienie\nTwoje naładowane ataki zadają dodatkowe obrażenia fizyczne równe 0% bieżącego zdrowia celu i zapewniają ci 0 pkt. destrukcji na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226699.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226699.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14347,7 +14347,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n15 Lethality\nPreparation\nAfter being out of combat with Champions for 8 seconds gain Lethality. This Lethality lasts for 3 seconds after dealing damage to champions.\nExtraction\nWhen a champion that you damaged within 3 seconds dies, gain 200 decaying Move Speed for 1.5 seconds.",
         "pl": "50 pkt. obrażeń od ataku\n15 pkt. destrukcji\nPrzygotowanie\nGdy pozostaniesz poza walką z bohaterami przez 8 sek., zyskujesz destrukcję. Destrukcja działa przez 3 sek. po zadaniu bohaterom obrażeń.\nEkstrakcja\nGdy bohater zginie w ciągu 3 sek. po zadaniu mu przez ciebie obrażeń, zyskujesz 200 jedn. zanikającej prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/226701.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/226701.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14367,7 +14367,7 @@ window.ARENA_GAME_DATA = {
         "en": "650 Health\n20 Ability Haste\nVendetta:\nTake reduced damage against your Nemesis. They have reduced Tenacity while near you.\nActive can be cast at global range.\n\"She swore to dedicate her life to his destruction...\"\nActive -\nVow:\nChoose a Nemesis (90s).",
         "pl": "650 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nWendeta:\nOtrzymujesz mniejsze obrażenia od swojego arcywroga. Twój arcywróg ma mniej nieustępliwości, gdy znajduje się w pobliżu ciebie.\nEfekt użycia ma globalny zasięg.\n„Przysięgła, że poświęci swoje życie, by go unicestwić…”\nUżycie —\nPrzysięga:\nWybierz arcywroga (90 sek.)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228001.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14387,7 +14387,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Ability Power\n50 Armor\n20 Ability Haste\nMagical Opus:\nIncreases your total Ability Power by 50% (0).\nTime Stop\nEnter Stasis for 2.5 seconds.",
         "pl": "300 pkt. mocy umiejętności\n50 pkt. pancerza\n20 jedn. przyspieszenia umiejętności\nMagiczne Dzieło:\nZwiększa twoją całkowitą moc umiejętności o 50% (0 pkt.).\nZatrzymanie Czasu\nWchodzisz w stan inercji na 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228002.png",
       "tier": "",
       "price": 6000,
       "categories": [
@@ -14406,7 +14406,7 @@ window.ARENA_GAME_DATA = {
         "en": "150 Attack Damage\n20% Critical Strike Chance\n45% Critical Strike Damage\n20 Lethality\nDeath and Taxes:\nDealing damage that would leave an enemy champion below 7% Health executes them. Champion kills grant an additional 250 gold and heal you for 30% of the targets max health.",
         "pl": "150 pkt. obrażeń od ataku\n20% szansy na trafienie krytyczne\n45% obrażeń trafienia krytycznego\n20 pkt. destrukcji\nŚmierć i Podatki:\nZadawanie obrażeń, które pozostawiają wrogich bohaterów z mniejszym poziomem zdrowia niż 7%, zabija ich. Zabójstwa bohaterów zapewniają 250 szt. dodatkowego złota i leczą cię o 30% maksymalnego zdrowia celu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228003.png",
       "tier": "",
       "price": 9000,
       "categories": [
@@ -14425,7 +14425,7 @@ window.ARENA_GAME_DATA = {
         "en": "800 Health\n50 Armor\n100 Magic Resist\nVoidborn Resilience:\nFor each second in champion combat gain a stack granting 2 Armor and Magic Resist, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage (healing you for the same amount), and increasing your bonus resists by 20% until end of combat. The drain repeats every 4s as long as you stay in combat. Absorb:\nTaking magic damage from enemy Champions grants a stack of Steadfast (max 8) for 7 seconds. Enemy Immobilizing effects grant an additional 2 stacks. Dissipate:\nWhile at 8 stacks of Steadfast, gain 50 Magic Resist and 14% increased Move Speed.\nOne spell can add a new stack of Steadfast every 1 second.",
         "pl": "800 pkt. zdrowia\n50 pkt. pancerza\n100 pkt. odporności na magię\nWytrzymałość Dzieci Pustki:\nZa każdą sekundę w walce z bohaterami zyskujesz ładunek zapewniający 2 pkt. pancerza i odporności na magię. Maksymalna liczba ładunków: 8. Po osiągnięciu maksymalnej liczby ładunków przedmiot zostaje wzmocniony, natychmiast czerpiąc zdrowie od pobliskich wrogów, zadając im obrażenia magiczne i lecząc cię o taką samą wartość, oraz zwiększa twój dodatkowy pancerz i odporność na magię o 20% do końca walki. Czerpanie powtarza się co 4 sek. dopóki pozostajesz w walce. Pochłonięcie:\nOtrzymanie obrażeń magicznych od wrogiego bohatera zapewnia ładunek Niewzruszenia (maks. 8) na 7 sek. Wrogie efekty unieruchamiające zapewniają następującą liczbę dodatkowych ładunków: 2. Rozproszenie:\nMając następującą liczbę ładunków: 8 Niewzruszenia, zyskujesz 50 pkt. odporności na magię i 14% prędkości ruchu.\nJedno zaklęcie może dodać nowy ładunek Niewzruszenia co 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228004.png",
       "tier": "",
       "price": 6000,
       "categories": [
@@ -14445,7 +14445,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n700 Health\n40 Ability Haste\nCarve\nDealing physical damage to champions reduces the target's Armor by 6% for 6 seconds. (stacks 5 times).\nFervor\nDealing physical damage grants 20 Move Speed for 2 seconds.",
         "pl": "70 pkt. obrażeń od ataku\n700 pkt. zdrowia\n40 jedn. przyspieszenia umiejętności\nDrążenie\nZadawanie obrażeń fizycznych bohaterom zmniejsza pancerz celu o 6% na 6 sek. (kumuluje się 5 razy).\nFerwor\nZadawanie obrażeń fizycznych zapewnia 20 jedn. prędkości ruchu na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228005.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -14468,7 +14468,7 @@ window.ARENA_GAME_DATA = {
         "en": "130 Attack Damage\n40% Attack Speed\n15 Ability Haste\n30% Life Steal\nCleave\nAttacks deal physical damage to nearby enemies. Ravenous Crescent\nDeal physical damage to enemies around you.\nYour Life Steal applies to this damage.",
         "pl": "130 pkt. obrażeń od ataku\n40% prędkości ataku\n15 jedn. przyspieszenia umiejętności\n30% kradzieży życia\nRozpłatanie\nAtaki zadają obrażenia fizyczne pobliskim wrogom. Krwiożerczy Półksiężyc\nZadaje obrażenia fizyczne wrogom dookoła ciebie.\nTwoja kradzież życia ma zastosowanie dla tych obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228006.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -14489,7 +14489,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Attack Damage\n85 Ability Power\n30% Attack Speed\n25 Ability Haste\n600 Health\n50 Armor\n10% Move Speed\n20% Critical Strike Chance",
         "pl": "65 pkt. obrażeń od ataku\n85 pkt. mocy umiejętności\n30% prędkości ataku\n25 jedn. przyspieszenia umiejętności\n600 pkt. zdrowia\n50 pkt. pancerza\n10% prędkości ruchu\n20% szansy na trafienie krytyczne"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228008.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228008.png",
       "tier": "",
       "price": 9000,
       "categories": [
@@ -14512,7 +14512,7 @@ window.ARENA_GAME_DATA = {
         "en": "Molds into another item each Shopping Phase.",
         "pl": "Przemienia się w inny przedmiot w każdej fazie zakupów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228009.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228009.png",
       "tier": "",
       "price": 2500,
       "categories": []
@@ -14527,7 +14527,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
         "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nZatracenie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/228020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/228020.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -14549,7 +14549,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n15 Ability Haste\n6% Move Speed\n150% Base Mana Regen\nInspiring Speech\nGrant nearby allies 30% Move Speed for 4 seconds.",
         "pl": "65 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n6% prędkości ruchu\n150% podstawowej regeneracji many\nInspirująca Przemowa\nZapewnia pobliskim sojusznikom 30% prędkości ruchu na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322065.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322065.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -14571,7 +14571,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n75% Base Mana Regen\n300 Mana\nHarmony\nGain % Heal and Shield Power.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 4 max Mana (doubled vs. champions).\nTransforms into Diadem of Songs at 360 max Mana.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n75% podstawowej regeneracji many\n300 pkt. many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 4 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Diadem Pieśni przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322526.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322526.png",
       "tier": "",
       "price": 2250,
       "categories": [
@@ -14590,7 +14590,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n8% Heal and Shield Power\n1000 Mana\n100% Base Mana Regen\nHarmony\nGain % Heal and Shield Power.\nConsonance\nWhile you or any ally you've healed or shielded in the last 3 seconds is in combat with champions, each second, heal the lowest health nearby ally champion.",
         "pl": "200 pkt. zdrowia\n8% siły leczenia i tarcz\n1000 pkt. many\n100% podstawowej regeneracji many\nHarmonia\nZyskujesz 0% siły leczenia i tarcz.\nKonsonans\nGdy ty lub sojusznik, który został przez ciebie uleczony lub osłonięty tarczą w ostatnich 3 sek., znajdujecie się w walce z bohaterami, pobliski sojusznik o najniższym poziomie zdrowia zostaje uleczony co sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/322530.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/322530.png",
       "tier": "",
       "price": 2250,
       "categories": [
@@ -14610,7 +14610,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n45 Armor\n6% Move Speed\nLead the Way\nWhile moving, build up to 20 bonus Move Speed.\nAt max speed: Create a trail that grants allied champions Move Speed equal to 15% of yours. If you are Melee, your next Attack Slows the target by 50% for 1 second.",
         "pl": "300 pkt. zdrowia\n45 pkt. pancerza\n6% prędkości ruchu\nProwadź Naprzód\nPoruszając się, zyskujesz do 20 jedn. dodatkowej prędkości ruchu.\nPrzy maksymalnej prędkości: Tworzysz za sobą ścieżkę, która zapewnia sojuszniczym bohaterom prędkość ruchu równą 15% twojej. Jeśli grasz bohaterem walczącym w zwarciu, twój kolejny atak spowalnia cel o 50% na 1 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323002.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -14629,7 +14629,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n600 Mana\n25 Ability Haste\nAwe\nGain Ability Power equal to 1% bonus Mana.\nManaflow\n(8s, max 5 charges)\nLanding Abilities grants 9.5 max Mana (doubled vs. champions).\nTransforms into Seraph's Embrace at 360 max Mana.",
         "pl": "70 pkt. mocy umiejętności\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz moc umiejętności równą 1% twojej dodatkowej many.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 5)\nTrafianie umiejętnościami zapewnia 9.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Uścisk Serafina przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323003.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14648,7 +14648,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n500 Mana\n15 Ability Haste\nAwe\nGain bonus Attack Damage.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grants 6.5 max Mana (doubled vs. champions).\nTransforms into Muramana at 360 max Mana.",
         "pl": "35 pkt. obrażeń od ataku\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. premii do obrażeń od ataku.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Muramanę przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323004.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14669,7 +14669,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n1000 Mana\n25 Ability Haste\nAwe\nGain Ability Power.\nLifeline\n(0s)\nTaking damage that would reduce your Health below 30% grants a Shield for 3 seconds.",
         "pl": "70 pkt. mocy umiejętności\n1000 pkt. many\n25 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. mocy umiejętności.\nLinia Życia\n(0 sek.)\nPrzy otrzymaniu obrażeń, które zmniejszyłyby twoje zdrowie do poziomu mniejszego niż 30%, zyskujesz tarczę pochłaniającą 0 pkt. obrażeń na 3 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323040.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323040.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14688,7 +14688,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Attack Damage\n1000 Mana\n15 Ability Haste\nAwe\nGain 2% max Mana as bonus Attack Damage.\nShock\nAttacks against champions deal 1.2% max Mana as bonus physical damage On-Hit.\nDamaging Abilities against champions deal 3% - 4% max Mana as bonus physical damage.",
         "pl": "35 pkt. obrażeń od ataku\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 2% maksymalnej many jako dodatkowe obrażenia od ataku.\nSzok\nAtaki wymierzone w bohaterów zadają 1.2% maksymalnej many jako dodatkowe obrażenia fizyczne przy trafieniu.\nUmiejętności zadające obrażenia bohaterom zadają 3-4% maksymalnej many jako dodatkowe obrażenia fizyczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323042.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323042.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14709,7 +14709,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n30 Armor\n30 Magic Resist\n10 Ability Haste\nFrostfire Tempest\nCasting your Ultimate summons a storm around you for 5 seconds. The storm deals 30 magic damage per second to enemy champions and Slows them by 30%.",
         "pl": "350 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nNawałnica Mroźnego Ognia\nRzucenie superumiejętności przywołuje wokół ciebie burzę na 5 sek. Burza zadaje wrogim bohaterom 30 pkt. obrażeń magicznych na sekundę i spowalnia ich o 30%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323050.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323050.png",
       "tier": "",
       "price": 2300,
       "categories": [
@@ -14729,7 +14729,7 @@ window.ARENA_GAME_DATA = {
         "en": "240 Mana\nManaflow\n(8s, max 4 charges)\nLanding Abilities grants 6.5 max Mana (doubled vs. champions), up to 360.\nHelping Hand\nAttacks deal an additional 5 physical damage to minions.",
         "pl": "240 pkt. many\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom), maks. 360 pkt.\nPomocna Dłoń\nAtaki zadają dodatkowo 5 pkt. obrażeń fizycznych stworom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323070.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323070.png",
       "tier": "",
       "price": 400,
       "categories": [
@@ -14747,7 +14747,7 @@ window.ARENA_GAME_DATA = {
         "en": "200 Health\n85 Armor\nThorns\nWhen struck by an Attack, deal magic damage to the attacker and apply 40% Wounds for 3 seconds if they are a champion.",
         "pl": "200 pkt. zdrowia\n85 pkt. pancerza\nKolce\nGdy trafia cię atak, zadajesz obrażenia magiczne napastnikowi i nakładasz na niego zranienie o wartości 40% na 3 sek., jeżeli jest bohaterem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323075.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323075.png",
       "tier": "",
       "price": 2650,
       "categories": [
@@ -14765,7 +14765,7 @@ window.ARENA_GAME_DATA = {
         "en": "30 Ability Power\n15 Ability Haste\n100% Base Mana Regen\n10% Heal and Shield Power\nIntervention\nRestore 150 - 350 Health to allied units and deal 10% max Health true damage to enemy champions after 2.5 seconds.",
         "pl": "30 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n100% podstawowej regeneracji many\n10% siły leczenia i tarcz\nInterwencja\nPo 2,5 sek. przywracasz 150-350 pkt. zdrowia sojuszniczym jednostkom, a wrogim bohaterom zadajesz obrażenia nieuchronne równe 10% ich maksymalnego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323107.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323107.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -14785,7 +14785,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n50 Armor\n10 Ability Haste\n150% Base Health Regen\nSacrifice\nWhile near your Worthy ally, take 14% of the damage they receive and heal for 12% of the damage they deal to champions. Pledge\n(0s)\nDesignate an ally as Worthy.",
         "pl": "300 pkt. zdrowia\n50 pkt. pancerza\n10 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji zdrowia\nPoświęcenie\nGdy w pobliżu znajduje się twój Godzien sojusznik, przyjmujesz 14% otrzymywanych przez niego obrażeń na siebie i leczysz się o 12% obrażeń zadawanych przez niego bohaterom. Ślubowanie\n(0 sek.)\nWyznacz Godnego sojusznika."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323109.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323109.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14808,7 +14808,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Armor\n500 Mana\n25 Ability Haste\nWinter's Caress\nReduce the Attack Speed of nearby champions by 20%.",
         "pl": "75 pkt. pancerza\n500 pkt. many\n25 jedn. przyspieszenia umiejętności\nPieszczoty Zimy\nZmniejsza prędkość ataku pobliskich bohaterów o 20%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323110.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323110.png",
       "tier": "",
       "price": 2700,
       "categories": [
@@ -14829,7 +14829,7 @@ window.ARENA_GAME_DATA = {
         "en": "550 Health\n500 Mana\n15 Ability Haste\nAwe\nGain Health.\nManaflow\n(8s, max 4 charges)\nLanding Attacks and Abilities grant 6.5 max Mana (doubled vs. champions).\nTransforms into Fimbulwinter at 360 max Mana.",
         "pl": "550 pkt. zdrowia\n500 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nPrzepływ Many\n(8 sek., maks. liczba ładunków: 4)\nTrafianie atakami i umiejętnościami zapewnia 6.5 pkt. maksymalnej many (podwojone przeciwko bohaterom).\nZmienia się w Wielką Zimę przy 360 pkt. maksymalnej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323119.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323119.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -14848,7 +14848,7 @@ window.ARENA_GAME_DATA = {
         "en": "550 Health\n1000 Mana\n15 Ability Haste\nAwe\nGain Health.\nEverlasting\n(0s)\nImmobilizing or Slowing (Melee only) an enemy champion grants a Shield for 3 seconds.\nThe Shield is increased by 80% if more than one enemy is nearby.",
         "pl": "550 pkt. zdrowia\n1000 pkt. many\n15 jedn. przyspieszenia umiejętności\nPodziw\nZyskujesz 0 pkt. zdrowia.\nNieprzemijalność\n(0 sek.)\nUnieruchomienie lub spowolnienie (tylko w przypadku bohaterów walczących w zwarciu) wrogiego bohatera zapewniają tarczę na 3 sek.\nTarcza zostaje wzmocniona o 80%, jeśli w pobliżu znajduje się więcej niż jeden wróg."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323121.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323121.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -14867,7 +14867,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n30 Armor\n30 Magic Resist\n10 Ability Haste\nDevotion\nGrant nearby allies a 290 - 360 Shield that decays over 2.5 seconds.",
         "pl": "250 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\nOddanie\nZapewniasz pobliskim sojusznikom 290-360 pkt. tarczy zanikającej w ciągu 2.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323190.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323190.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -14890,7 +14890,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n100% Base Mana Regen\n15% Heal and Shield Power\n15 Ability Haste\nPurify\nRemove all crowd control debuffs (excluding Airborne and Suppression ) from an ally champion and restore 100 - 250 Health.",
         "pl": "400 pkt. zdrowia\n100% podstawowej regeneracji many\n15% siły leczenia i tarcz\n15 jedn. przyspieszenia umiejętności\nOczyszczenie\nUsuwa wszystkie efekty kontroli tłumu z sojuszniczego bohatera (poza podrzuceniem oraz przygwożdżeniem ) i przywraca mu 100-250 pkt. zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323222.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323222.png",
       "tier": "",
       "price": 2800,
       "categories": [
@@ -14912,7 +14912,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Ability Power\n10% Heal and Shield Power\n150% Base Mana Regen\n6% Move Speed\nSanctify\nHealing or Shielding an ally enhances you both for 6 seconds, granting 25% Attack Speed and 20 magic damage On-Hit.",
         "pl": "55 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n150% podstawowej regeneracji many\n6% prędkości ruchu\nUświęcenie\nUleczenie lub osłonięcie sojusznika tarczą wzmacnia was na 6 sek. i zapewnia 25% prędkości ataku i 20 pkt. obrażeń magicznych przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/323504.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/323504.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -14932,7 +14932,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n15 Ability Haste\n150% Base Mana Regen\nControl\nGain 20 Ability Haste for your abilities with Immobilizing effects.\nCommand\nOn Immobilizing an enemy champion, mark them as 7% Vulnerable for 4 seconds.",
         "pl": "65 pkt. mocy umiejętności\n15 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nKontrola\nZyskujesz 20 jedn. przyspieszenia umiejętności dla swoich umiejętności z efektami unieruchamiającymi.\nRozkaz\nPrzy unieruchomieniu wrogiego bohatera oznacz go statusem 7% wrażliwości na 4 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/324005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/324005.png",
       "tier": "",
       "price": 2400,
       "categories": [
@@ -14952,7 +14952,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n10% Heal and Shield Power\n150% Base Mana Regen\n10 Ability Haste\nRapids\nHealing or Shielding an ally grants you both 40 Ability Power and 15 Ability Haste for 6 seconds.",
         "pl": "45 pkt. mocy umiejętności\n10% siły leczenia i tarcz\n150% podstawowej regeneracji many\n10 jedn. przyspieszenia umiejętności\nFale\nUleczenie lub osłonięcie sojusznika tarczą zapewnia wam 40 pkt. mocy umiejętności i 15 jedn. przyspieszenia umiejętności na 6 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326616.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326616.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -14972,7 +14972,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n400 Health\n20 Ability Haste\n150% Base Mana Regen\nStarlit Grace\nHealing or shielding an ally chains the effect to another ally (excluding yourself), healing 30% or shielding 35% of the original amount.",
         "pl": "35 pkt. mocy umiejętności\n400 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nŁaska Gwiazd\nLeczenie lub osłonięcie sojusznika tarczą przenoszą się łańcuchowo na innego sojusznika (z wyjątkiem ciebie), zapewniając mu leczenie w wysokości 30% lub tarczę w wysokości 35% pierwotnej wartości."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326617.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326617.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -14993,7 +14993,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n250 Health\n20 Ability Haste\n150% Base Mana Regen\nSoul Siphon\nGain 30% of pre-mitigation damage dealt to champions as Soul Charges. Healing or Shielding an ally consumes all Soul Charges\nto restore Health.",
         "pl": "35 pkt. mocy umiejętności\n250 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nPochłanianie Dusz\nZyskujesz 30% czystych obrażeń zadanych bohaterom jako Naładowanie Duszy. Leczenie lub osłonięcie sojusznika tarczą zużywa wszystkie ładunki Naładowania Duszy, by przywrócić zdrowie."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326620.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326620.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -15014,7 +15014,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Ability Power\n20% Heal and Shield Power\n150% Base Mana Regen\nFirst Light\nGain 2% Heal and Shield Power and 10 Ability Power per 100% Base Mana Regen.",
         "pl": "50 pkt. mocy umiejętności\n20% siły leczenia i tarcz\n150% podstawowej regeneracji many\nPierwsze Światło\nZyskujesz 2% siły leczenia i tarcz oraz 10 pkt. mocy umiejętności za każde 100% podstawowej regeneracji many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326621.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326621.png",
       "tier": "",
       "price": 2900,
       "categories": [
@@ -15032,7 +15032,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Ability Power\n350 Health\n500 Mana\nTimeless\nThis item gains 10 Health, 30 Mana and 3 Ability Power every 60 seconds up to 10 times. Upon reaching max stacks, gain a level.\nEternity\nTaking damage from champions restores 10% of the damage as Mana.\nCasting an ability heals for 25% of Mana spent.",
         "pl": "45 pkt. mocy umiejętności\n350 pkt. zdrowia\n500 pkt. many\nWiekuistość\nPrzedmiot co 60 sek. zyskuje 10 pkt. zdrowia, 30 pkt. many i 3 pkt. mocy umiejętności, do 10 razy. Po osiągnięciu maksymalnej liczby ładunków zyskujesz poziom.\nWieczność\nOtrzymanie obrażeń od bohaterów przywraca manę równą 10% obrażeń.\nRzucenie umiejętności leczy o 25% wydanej many."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/326657.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/326657.png",
       "tier": "",
       "price": 2600,
       "categories": [
@@ -15053,7 +15053,7 @@ window.ARENA_GAME_DATA = {
         "en": "350 Health\n50 Magic Resist\n15 Ability Haste\nUnmake\nNearby enemy champions take 12% more magic damage.",
         "pl": "350 pkt. zdrowia\n50 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\nUnicestwienie\nPobliscy wrodzy bohaterowie otrzymują o 12% więcej obrażeń magicznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/328020.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/328020.png",
       "tier": "",
       "price": 2850,
       "categories": [
@@ -15074,7 +15074,7 @@ window.ARENA_GAME_DATA = {
         "en": "50% Attack Speed\n55 Armor\n5% Move Speed\nGash\nAttacks apply true damage on hit.",
         "pl": "50% prędkości ataku\n55 pkt. pancerza\n5% prędkości ruchu\nSzrama\nAtaki nakładają obrażenia nieuchronne przy trafieniu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443054.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443054.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15093,7 +15093,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n45% Attack Speed\n15% Move Speed\nPolarity\nOn Attack, if the target is different from the target you most recently triggered an Energized Attack on, ready Energize.\nDynamo\nEnergized Attacks deal an additional magic damage based on the Target's Current Health.",
         "pl": "55 pkt. obrażeń od ataku\n45% prędkości ataku\n15% prędkości ruchu\nBiegunowość\nPrzy ataku, jeśli cel jest inny niż cel, który otrzymał twój poprzedni Naładowany atak, przygotuj Naładowanie.\nDynamo\nNaładowane ataki zadają dodatkowe obrażenia magiczne zależne od bieżącego zdrowia celu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443055.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443055.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15112,7 +15112,7 @@ window.ARENA_GAME_DATA = {
         "en": "Supremacy\nIncreases your Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, increased by 0% per round win and -3% each round lost after acquiring this item.",
         "pl": "Supremacja\nZwiększa twoje zdrowie, pancerz, odporność na magię, obrażenia od ataku, moc umiejętności i prędkość ataku o %. Wartość wzrasta o 0% za każdą wygraną rundę oraz o -3% za każdą przegraną rundę, licząc od momentu zakupienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443056.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443056.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15135,7 +15135,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n100 Armor\nImmovable as the Earth\nIncrease your armor by 20%, and gain Block Chance based on your Armor.",
         "pl": "300 pkt. zdrowia\n100 pkt. pancerza\nNiewzruszoność Ziemi\nZwiększa twój pancerz o 20%. Zyskujesz szansę na zablokowanie zależną od twojego pancerza."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443058.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443058.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15153,7 +15153,7 @@ window.ARENA_GAME_DATA = {
         "en": "300 Health\n100 Magic Resist\nLimitless as the Stars\nIncrease your Magic Resist by 20%. Reduce all damage you take from non-Basic Attack sources by a percentage, scaling with your Magic Resist up to a cap of 50%.",
         "pl": "300 pkt. zdrowia\n100 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 20%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię, do maks. 50%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443059.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443059.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15171,7 +15171,7 @@ window.ARENA_GAME_DATA = {
         "en": "110 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage, scaling up to 50% of your Critical Strike Chance.",
         "pl": "110 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego, które skalują się do 50% twojej szansy na trafienie krytyczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443060.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443060.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15190,7 +15190,7 @@ window.ARENA_GAME_DATA = {
         "en": "900 Health\n30 Ability Haste\n25% Critical Strike Chance\nAtrophy\nWhen you Immobilizing a target roll your Critical Chance to increase their duration by 0.25 +33% seconds.",
         "pl": "900 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\n25% szansy na trafienie krytyczne\nAtrofia\nGdy unieruchamiasz cel, wykonujesz rzut na szansę na trafienie krytyczne, aby wydłużyć czas działania efektu o 0.25 + 33% sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443061.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443061.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15210,7 +15210,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n20 Ability Haste\n15% Heal and Shield Power\nPatronage\nStore 15% of the total damage you've dealt to enemies. Whenever this exceeds 333, consume it to heal yourself and your nearest ally for that amount.",
         "pl": "80 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n15% siły leczenia i tarcz\nPatronat\nPrzechowuje 15% całkowitych obrażeń zadanych wrogom. Za każdym razem, gdy wartość ta przekroczy 333, jest ona zużywana, aby uleczyć ciebie i twojego najbliższego sojusznika o tę wartość."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443062.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443062.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15229,7 +15229,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Armor\n50 Magic Resist\n25 Ability Haste\nEnduring Vitality\nGain +2.5% Heal and Shield Power per 100 Missing Health, up to 60%.",
         "pl": "50 pkt. pancerza\n50 pkt. odporności na magię\n25 jedn. przyspieszenia umiejętności\nZahartowana Żywotność\nZyskujesz +2.5% siły leczenia i tarcz za każde 100 pkt. brakującego zdrowia, maksymalnie 60%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443063.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443063.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15248,7 +15248,7 @@ window.ARENA_GAME_DATA = {
         "en": "? Attack Damage? Attack Speed? Critical Strike Chance? Critical Strike Damage? Ability Power? Ability Haste? Health?% Base Health Regen? Mana?% Base Mana Regen? Armor? Magic Resist? ||?% Lethality and Armor Penetration? ||?% Magic Penetration?% Lifesteal?% Omnivamp? ||?% Move Speed?% Heal and Shield Power\nACTIVE\nImbricate\nRe-roll the stats on Talisman of Ascension. Each time you do so, the stats get stronger. Twice Per Round (Thrice with Apex Inventor).",
         "pl": "? Obrażenia od ataku? Prędkość ataku? Szansa na trafienie krytyczne? Obrażenia trafienia krytycznego? Moc umiejętności? Przyspieszenie umiejętności? Zdrowie?% Podstawowa regeneracja zdrowia? Mana?% Podstawowa regeneracja many? Pancerz? Odporność na magię? ||?% Destrukcja i przebicie pancerza? ||?% Przebicie odporności na magię?% Kradzież życia?% Wszechwampiryzm? ||?% Prędkość ruchu?% Siła leczenia i tarcz\nUŻYCIE\nNa Zakładkę\nWymień statystyki Talizmanu Wstąpienia. Z każdą wymianą statystyki stają się silniejsze. Dwa razy na rundę (trzy razy w przypadku posiadania Genialnego Wynalazcy)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443064.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443064.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15283,7 +15283,7 @@ window.ARENA_GAME_DATA = {
         "en": "45 Attack Damage\n40% Attack Speed\n25% Critical Strike Chance\nScour\nOn Critical Strike: Apply a bleed, dealing 25% of the damage done + physical damage on hit over 2 seconds. This effect stacks any number of times. Apply a 7% Slow for 2 seconds. This effect stacks up to 35%.",
         "pl": "45 pkt. obrażeń od ataku\n40% prędkości ataku\n25% szansy na trafienie krytyczne\nPrzeczesanie\nPrzy trafieniu krytycznym: Nakłada krwawienie, które zadaje 25% zadanych obrażeń + 0 pkt. obrażeń fizycznych przy trafieniu w ciągu 2 sek. Efekt może się kumulować dowolną liczbę razy. Nakłada 7% spowolnienia na 2 sek. Efekt kumuluje się do 35%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443069.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443069.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15302,7 +15302,7 @@ window.ARENA_GAME_DATA = {
         "en": "600 Health\n80 Adaptive Force\nIgnore the next time you are Immobilized, instead dropping a chemical cannister nearby (s Cooldown). Picking up the cannister reduces the Cooldown by 15 seconds and restores 4% max Health. Enemies stepping on the cannister destroy it.",
         "pl": "600 pkt. zdrowia\n80 pkt. siły adaptacyjnej\nZignoruj następne unieruchomienie, upuszczając w pobliżu pojemnik z chemikaliami (czas odnowienia: 0 sek.). Podniesienie kanistra skraca czas odnowienia o 15 sek. i przywraca 4% maks. zdrowia. Wrogowie, którzy nadepną na kanister, niszczą go."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443079.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443079.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15321,7 +15321,7 @@ window.ARENA_GAME_DATA = {
         "en": "Unanimity\nGain a percent of your teammate's Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, and Ability Haste, increased significantly if they also have Twin Mask and are alive.",
         "pl": "Jednomyślność\nZyskujesz określony procent zdrowia, pancerza, odporności na magię, obrażeń od ataku, mocy umiejętności, prędkości ataku i przyspieszenia umiejętności swojego współgracza. Efekt znacząco wzrasta, jeśli współgracz również posiada Bliźniaczą Maskę i żyje."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443080.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443080.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15344,7 +15344,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n50% Attack Speed\n6% Move Speed\nCovering Fire\nEvery 10 seconds, Autocast fires a bolt towards a nearby target, dealing physical damage and applying On-Hit effects.\nEnergized\nMoving and Attacking generates an Energized Attack.\nUnload\nYour Energized Attacks trigger your Autocast effects.",
         "pl": "70 pkt. obrażeń od ataku\n50% prędkości ataku\n6% prędkości ruchu\nOgień Osłonowy\nCo 10 sek. automatycznie wystrzeliwuje pocisk w kierunku pobliskiego celu, zadając 0 pkt. obrażeń fizycznych i nakładając efekty przy trafieniu.\nNaładowanie\nPoruszanie się i trafianie atakami generuje naładowany atak.\nRozładowanie\nTwoje naładowane ataki aktywują efekty automatycznego użycia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443081.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443081.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15363,7 +15363,7 @@ window.ARENA_GAME_DATA = {
         "en": "1100 Health\n4% Move Speed\nWarmog's Heart\nRequires 1350 bonus Health.\nRestore Health per second. If you have not taken damage within 4 seconds, restore an additional Health per second.",
         "pl": "1100 pkt. zdrowia\n4% prędkości ruchu\nSerce Plemienia\nWymaga 1350 pkt. dodatkowego zdrowia.\nPrzywraca 0 pkt. zdrowia co sekundę. Jeśli przez 4 sek. nie zadano ci obrażeń, odzyskujesz dodatkowo 0 pkt. zdrowia co sekundę."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443083.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443083.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15382,7 +15382,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Adaptive Force\n50% Attack Speed\n5% Move Speed\nSow\nIncrease your Attack Speed from all sources by 15%.\nReap\nOn-Hit, deal max Health true damage, and reduce their Max Health by the damage dealt for the rest of the round. Consecutive hits against the same enemy increase this amount by 0.1%.",
         "pl": "40 pkt. siły adaptacyjnej\n50% prędkości ataku\n5% prędkości ruchu\nWysiew\nZwiększa twoją prędkość ataku ze wszystkich źródeł o 15%.\nSkoszenie\nprzy trafieniu zadaje obrażenia nieuchronne zależne od maksymalnego zdrowia i do końca rundy zmniejsza maksymalne zdrowie celu o wartość zadanych obrażeń. Następujące po sobie trafienia w tego samego wroga zwiększają tę wartość o 0.1%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443090.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443090.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15403,7 +15403,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Armor\n65 Magic Resist\n15 Ability Haste\n10% Move Speed\nActive -\nUnbreakable:\nGain a Shield that decays and grow in size.",
         "pl": "65 pkt. pancerza\n65 pkt. odporności na magię\n15 jedn. przyspieszenia umiejętności\n10% prędkości ruchu\nUżycie —\nNiezłomność:\nZyskujesz zanikającą tarczę i zwiększasz swój rozmiar."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/443193.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/443193.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15424,7 +15424,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n300 Health\n25 Ability Haste\nSoulrend\n(0s) per champion\nDamaging a champion with Attacks or Abilities deals an additional magic damage and grants you 40% Move Speed for 1.5 seconds.\nDamaging a new champion will extend the duration of the Move Speed bonus.",
         "pl": "90 pkt. mocy umiejętności\n300 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nRozerwanie Duszy\n(0 sek.) na bohatera\nZadanie bohaterowi obrażeń atakami lub umiejętnościami zadaje dodatkowo 0 pkt. obrażeń magicznych i zapewnia ci 40% prędkości ruchu na 1.5 sek.\nZadanie obrażeń nowemu bohaterowi wydłuży czas działania premii do prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444636.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444636.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15445,7 +15445,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n700 Health\nSinister Pact\nGain +1.5% Ability Power and 1.5% Move Speed per 100 Missing Health, up to 45%.",
         "pl": "80 pkt. mocy umiejętności\n700 pkt. zdrowia\nZłowrogi Pakt\nZyskujesz +1.5% mocy umiejętności i 1.5% prędkości ruchu za każde 100 pkt. brakującego zdrowia, maks. 45%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444637.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444637.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15463,7 +15463,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Ability Power\n350 Health\n600 Mana\n25 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 90%. Safeguard persists for 1.25 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
         "pl": "85 pkt. mocy umiejętności\n350 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 90%. Osłona utrzymuje się przez 1.25 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/444644.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/444644.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15483,7 +15483,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Attack Damage\n350 Health\n20 Ability Haste\nSpellblade\nAfter using an Ability, your next Attack is enhanced with additional damage. If the target is a champion, also heal.",
         "pl": "55 pkt. obrażeń od ataku\n350 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nCzaroostrze\nTwój następny atak po użyciu umiejętności jest wzmocniony i zadaje dodatkowe obrażenia. Jeśli cel jest bohaterem, uleczysz się."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446632.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446632.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15506,7 +15506,7 @@ window.ARENA_GAME_DATA = {
         "en": "100 Ability Power\n250 Health\n600 Mana\n25 Ability Haste\nACTIVE\n(0s)\nGlaciate\nDeal damage in a cone, Slowing enemies hit. Enemies at the center of the cone are Rooted instead.",
         "pl": "100 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n25 jedn. przyspieszenia umiejętności\nUŻYCIE\n(0 sek.)\nOblodzenie\nZadaje obrażenia w stożku, spowalniając trafionych wrogów. Wrogowie znajdujący się w centrum stożka zostają unieruchomieni."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446656.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446656.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15529,7 +15529,7 @@ window.ARENA_GAME_DATA = {
         "en": "400 Health\n35 Armor\n35 Magic Resist\n12% Heal and Shield Power\nJudgement\nGain 30 Ultimate Haste.\nGuiding Light\nUpon casting your Ultimate you Transcend, increasing your Max Health by for 9 seconds. While Transcended, you and allies within 5000 range of you heal for over the duration (0s).",
         "pl": "400 pkt. zdrowia\n35 pkt. pancerza\n35 pkt. odporności na magię\n12% siły leczenia i tarcz\nOsąd\nZyskujesz 30 jedn. przyspieszenia superumiejętności.\nPrzewodnie Światło\nPo użyciu superumiejętności zyskujesz Transcendencję, zwiększając swoje maksymalne zdrowie o 0 pkt. na 9 sek. Podczas trwania Transcendencji ty i twoi sojusznicy znajdujący się w zasięgu 5000 jedn. leczycie się o 0 pkt. (0 sek.)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446667.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446667.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15551,7 +15551,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Attack Damage\n30% Attack Speed\n25% Critical Strike Chance\n6% Move Speed\nCloudburst II\nDash in target direction over terrain, firing three missiles at the lowest Health enemy near your destination. Deals physical damage, increased against low Health targets.",
         "pl": "65 pkt. obrażeń od ataku\n30% prędkości ataku\n25% szansy na trafienie krytyczne\n6% prędkości ruchu\nUrwanie Chmury II\nDoskakujesz w wybranym kierunku nad przeszkodami terenowymi, wystrzeliwując 3 pociski w stronę wroga o najniższym poziomie zdrowia w pobliżu miejsca docelowego. Zadaje obrażenia fizyczne, które zostają zwiększone przeciwko celom o niskim poziomie zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446671.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446671.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15572,7 +15572,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n20 Lethality\n20 Ability Haste\nNightstalker\nYour Abilities deal up to an additional percent damage based on the target's missing health. When a champion that you have damaged within the last 3 seconds dies, you become Untargetable from non-structures for 1.5 seconds (0s).",
         "pl": "50 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nNocny Drapieżca\nTwoje umiejętności zadają dodatkową wartość procentową obrażeń zależną od brakującego zdrowia celu. Gdy zginie bohater, który otrzymał od ciebie obrażenia w ciągu ostatnich 3 sek., jednostki niebędące budowlami nie mogą obrać cię za cel przez 1,5 sek. (0 sek.)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446691.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446691.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15594,7 +15594,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n20 Lethality\n20 Ability Haste\nSandswipe\nDash through target enemy, dealing a part of the target's maximum Health as bonus Physical Damage. For the next 3 seconds, you deal increased damage to the target.",
         "pl": "60 pkt. obrażeń od ataku\n20 pkt. destrukcji\n20 jedn. przyspieszenia umiejętności\nPiaskowe Machnięcie\nDoskakujesz przez wybranego wroga, zadając mu dodatkowe obrażenia fizyczne równe procentowi jego maksymalnego zdrowia. Przez następne 3 sek. zadajesz temu celowi więcej obrażeń."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/446693.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/446693.png",
       "tier": "",
       "price": 1000,
       "categories": [
@@ -15614,7 +15614,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Adaptive Force\n60% Attack Speed\n6% Move Speed\nBlur\nOn-Hit reduce the remaining cooldowns of your Dash and Blink Abilities by 20% (reduced to 5% for Ultimates).",
         "pl": "65 pkt. siły adaptacyjnej\n60% prędkości ataku\n6% prędkości ruchu\nRozmycie\nprzy trafieniu skraca pozostały czas odnowienia umiejętności z doskokiem i mignięciem o 20% (do 5% w przypadku superumiejętności)."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447100.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447100.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15635,7 +15635,7 @@ window.ARENA_GAME_DATA = {
         "en": "70% Attack Speed\n40 Ability Haste\n8% Move Speed\nMoney In The Bank\nYour Attacks and Abilities have a 12% chance to bank between 30 and 245 Gold when they hit an enemy. On Round Win, cash out. On Round Lose, lose 25% of your bank.",
         "pl": "70% prędkości ataku\n40 jedn. przyspieszenia umiejętności\n8% prędkości ruchu\nKasa na Koncie\nTwoje ataki i umiejętności przy każdym trafieniu wroga mają 12% szansy na zachowanie od 30 do 245 szt. złota. Po wygranej rundzie złoto jest wypłacane. Po przegranej rundzie tracisz 25% zgromadzonej sumy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447101.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447101.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15654,7 +15654,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n40% Attack Speed\n300 Health\nZZ'Rot\n(0s)\nOn Attack or when damaging an enemy with an ability, summon 8 Voidgrubs to Attack the target. Voidgrubs deal magic damage and live for up to 3 seconds.\nWhen you die, spawn 6.",
         "pl": "80 pkt. mocy umiejętności\n40% prędkości ataku\n300 pkt. zdrowia\nZz'Rot\n(0 sek.)\nPrzy ataku lub zadaniu wrogowi obrażeń za pomocą umiejętności przywołuje następującą liczbę Czerwi Pustki: 8, które atakują cel. Czerwie Pustki zadają 0 pkt. obrażeń magicznych i żyją maksymalnie 3 sek.\nPo śmierci przywołujesz następująca liczbę Czerwi Pustki: 6."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447102.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447102.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15673,7 +15673,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n30 Ability Haste\n15% Omnivamp\nScarlet Allegiance\nThreshold 30% Lifesteal/Omnivamp: Gain 500 Max Health. Drain 10% of all damage nearby enemies take.",
         "pl": "70 pkt. obrażeń od ataku\n30 jedn. przyspieszenia umiejętności\n15% wszechwampiryzmu\nSzkarłatny Hołd\nPróg 30% kradzieży życia / wszechwampiryzmu: Zyskujesz 500 pkt. maksymalnego zdrowia. Czerpiesz 10% wszystkich obrażeń otrzymywanych przez pobliskich wrogów."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447103.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447103.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15692,7 +15692,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n20 Ability Haste\n200 Health\nFill the Soul\nAny Ability cast within 800 range grants you a charge.\nAt 30 charges, gain Shield, Ability Power, and Move Speed for the rest of the round.",
         "pl": "70 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n200 pkt. zdrowia\nNapełnienie Duszy\nKażda umiejętność użyta w obrębie 800 jedn. zapewnia ładunek.\nPrzy 30 ładunkach zyskujesz tarczę o wytrzymałości 0 pkt., 0 pkt. mocy umiejętności i 0 jedn. prędkości ruchu do końca rundy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447104.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447104.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15711,7 +15711,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Ability Power\n18% Heal and Shield Power\n30 Ability Haste\n125% Base Mana Regen\nACTIVE\n(0s)\nVigilance\nTeleport to your ally and grant shield for 5s when landing. Can be used when Ally is downed.",
         "pl": "70 pkt. mocy umiejętności\n18% siły leczenia i tarcz\n30 jedn. przyspieszenia umiejętności\n125% podstawowej regeneracji many\nUŻYCIE\n(0 sek.)\nCzujność\nTeleportujesz się do sojusznika i przyznajesz mu tarczę o wytrzymałości 0 pkt. na 5 sek. przy lądowaniu. Można użyć, gdy sojusznik jest powalony."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447105.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447105.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15730,7 +15730,7 @@ window.ARENA_GAME_DATA = {
         "en": "Inner Flame\nIncreases your Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, and Ability Haste by 4% per Dragon Soul you possess.\nEvery 2 rounds, gain a Dragon Soul.\nIf you already have every elemental soul and would gain another, an ancient power awakens within...\nWhen purchased, if it is past round 5, immediately gain 1 soul, plus 1 for every 2 rounds beyond round 5.",
         "pl": "Wewnętrzny Płomień\nZwiększa twoje zdrowie, pancerz, odporność na magię, obrażenia od ataku, moc umiejętności, prędkość ataku i przyspieszenie umiejętności o 4% za każdą posiadaną Duszę Smoka.\nCo 2 rundy zyskujesz Duszę Smoka.\nJeśli posiadasz już duszę każdego żywiołu, w twoim wnętrzu budzi się pradawna moc…\nW przypadku zakupienia po rundzie 5. natychmiast zyskujesz 1 Duszę plus 1 Duszę za każde 2 rundy liczone po rundzie 5."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447106.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447106.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15753,7 +15753,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Adaptive Force\n50% Attack Speed\n8% Move Speed\nAttacks and Non-Ultimate Abilities grant stacks. Gain Ultimate Damage and Ultimate Ability Haste per stack.",
         "pl": "80 pkt. siły adaptacyjnej\n50% prędkości ataku\n8% prędkości ruchu\nAtaki i zwykłe umiejętności zapewniają ładunki. Twoja superumiejętność zyskuje obrażenia i przyspieszenie superumiejętności za każdy ładunek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447107.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447107.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15773,7 +15773,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n20 Ability Haste\n4% Move Speed\nHelix\nMoving, attacking, and dealing damage with an ability grants 30 Energized stacks and triggers Energized Actions if it is ready.\nSpiral Out\nOn Energized Action, gain a Rune stack for the rest of the round. Then fire a missile at the target for each Rune stack, dealing magic damage.",
         "pl": "80 pkt. mocy umiejętności\n20 jedn. przyspieszenia umiejętności\n4% prędkości ruchu\nHelisa\nPoruszanie się, atakowanie i zadawanie obrażeń za pomocą umiejętności zapewnia następującą liczbę ładunków naładowania: 30 i aktywuje naładowane działania, jeśli są one gotowe.\nSpirala\nPrzy naładowanym działaniu zyskujesz ładunek Runy do końca rundy. Następnie wystrzeliwujesz w cel pocisk za każdy ładunek Runy, zadając 0 pkt. obrażeń magicznych."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447108.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447108.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15791,7 +15791,7 @@ window.ARENA_GAME_DATA = {
         "en": "80 Ability Power\n30 Armor\n30 Magic Resist\nWatch Them Fall\nOn Immobilize or Grounding an enemy champion, summon a comet above them. The comet lands after 1 second, dealing additional magic damage in the area. This effect has a 6s cooldown per target per spell cast.",
         "pl": "80 pkt. mocy umiejętności\n30 pkt. pancerza\n30 pkt. odporności na magię\nPodziwiaj Ich Upadek\nPrzy unieruchomieniu lub uziemieniu wrogiego bohatera przywołujesz nad nim kometę. Kometa ląduje po 1 sek., zadając dodatkowo 0 pkt. obrażeń magicznych na danym obszarze. Czas odnowienia tego efektu wynosi 6 sek. dla każdego użytego zaklęcia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447109.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447109.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15810,7 +15810,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Ability Power\n400 Health\n30% Tenacity\nRelentless\nWhen you use an Ability, reset your auto attack timer and gain 90% Attack Speed for your next 2 Attacks.\nWhen you Attack, reduce your non-Dash and Blink Abilities Ability Cooldowns by 0.5 seconds.",
         "pl": "85 pkt. mocy umiejętności\n400 pkt. zdrowia\n30% nieustępliwości\nBezwzględność: Użycie umiejętności resetuje czas ataku podstawowego i przyznaje ci 90% prędkości ataku na kolejne ataki (2).\nGdy atakujesz, skróć czasy odnowienia swoich umiejętności, które nie są doskokami ani mignięciami, o 0.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447110.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447110.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15829,7 +15829,7 @@ window.ARENA_GAME_DATA = {
         "en": "40 Attack Damage\n400 Health\nTyranny\nGain AD equal to 3% Bonus HP.\nRetribution\nGain up to 17.5% increased AD based on your percent missing Health.",
         "pl": "40 pkt. obrażeń od ataku\n400 pkt. zdrowia\nTyrania\nZyskujesz 0 pkt. obrażeń od ataku, co równa się 3% dodatkowego zdrowia.\nOdkupienie\nZyskujesz do 17.5% zwiększonych obrażeń od ataku w zależności od procenta brakującego zdrowia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447111.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447111.png",
       "tier": "prismatic",
       "price": 2500,
       "categories": [
@@ -15847,7 +15847,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Adaptive Force\n500 Health\n20 Ability Haste\nHack the Meat\nDealing damage shreds 3 Armor and Magic Resist for 5 seconds, stacking up to 10 times. Applying stacks has a 1 second cooldown per Ability.\nCannibalize\nOn Champion Takedown, steal 10% of their stats and size for the rest of the round.",
         "pl": "70 pkt. siły adaptacyjnej\n500 pkt. zdrowia\n20 jedn. przyspieszenia umiejętności\nSiekać Mięso\nZadawanie obrażeń osłabia pancerz i odporność na magię o 3 pkt. na 5 sek. Efekt kumuluje się do 10 razy. Nakładanie ładunków ma 1 sek. czasu odnowienia na każdą umiejętność.\nKanibalizm\nPo udziale w zabójstwie bohatera ukradnij 10% jego statystyk i rozmiaru do końca rundy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447112.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447112.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15867,7 +15867,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n12 Magic Penetration\n600 Mana\n20 Ability Haste\nThe Bomb\nAbility damage marks the target, storing 20% of the damage dealt (increased to 25% against Immobilized enemies).\n3 seconds after you last damage the target with an ability, detonate the stored damage on them. If at any point the damage is enough to kill the target, detonate immediately.",
         "pl": "90 pkt. mocy umiejętności\n12 pkt. przebicia odporności na magię\n600 pkt. many\n20 jedn. przyspieszenia umiejętności\nBomba\nObrażenia od umiejętności oznaczają cel. Oznaczenie przechowuje 20% zadanych obrażeń (zwiększone do 25% w przypadku unieruchomionych wrogów).\nPo 3 sek. od ostatniego zadania celowi obrażeń za pomocą umiejętności bomba wybucha, zadając mu obrażenia równe przechowywanej wartości. Jeśli przechowywane obrażenia w którejkolwiek chwili osiągną wartość wystarczającą, by zabić cel, bomba wybucha natychmiastowo."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447113.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447113.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15886,7 +15886,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Armor\n35 Magic Resist\n40% Attack Speed\nReverberate\nAt combat start gain 50 max Health per 10% bonus Attack Speed.\nResonate\nAttacks deal magic damage On-Hit.\nRumble\nImmobilizing or Grounding an enemy champion applies On-Hit effects 3 times.",
         "pl": "35 pkt. pancerza\n35 pkt. odporności na magię\n40% prędkości ataku\nPogłos\nNa początku walki zyskujesz 50 pkt. maksymalnego zdrowia za każde 10% dodatkowej prędkości ataku.\nRezonans\nAtaki zadają 0 pkt. obrażeń magicznych przy trafieniu.\nGrzmot\nUnieruchomienie lub uziemienie wrogiego bohatera nakłada przy trafieniu 3 razy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447114.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447114.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15907,7 +15907,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Attack Damage\n15 Lethality\n8% Move Speed\nEnd the Line\nAt the start of each round, declare the lowest health enemy the Regent. Getting a takedown on the Regent grants you a permanent 15 Attack Damage and refreshes your Ultimate's Cooldown.",
         "pl": "60 pkt. obrażeń od ataku\n15 pkt. destrukcji\n8% prędkości ruchu\nOstatni z Rodu\nNa początku każdej rundy mianuj Regentem wroga o najniższym poziomie zdrowia. Udział w zabójstwie Regenta na stałe zapewnia ci 15 pkt. obrażeń od ataku i odświeża czas odnowienia twojej superumiejętności."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447115.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447115.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15926,7 +15926,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Adaptive Force\n400 Health\n30 Ability Haste\nBetween the Ribs\nYou can see weakpoints in nearby enemy champions. Dealing damage through the weakpoint deals an additional max Health true damage and grants Move Speed for 1.5 seconds.",
         "pl": "85 pkt. siły adaptacyjnej\n400 pkt. zdrowia\n30 jedn. przyspieszenia umiejętności\nMiędzy Żebra\nWidzisz słabe punkty pobliskich wrogich bohaterów. Zadanie obrażeń poprzez trafienie słabych punktów zadaje dodatkowe obrażenia nieuchronne równe 0 pkt. maksymalnego zdrowia i zapewnia 0 jedn. prędkości ruchu na 1.5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447116.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447116.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15946,7 +15946,7 @@ window.ARENA_GAME_DATA = {
         "en": "85 Adaptive Force\n400 Health\n15 Ability Haste\nSpark\n(5s) Cooldown\nAttack or Ability hits against an enemy champion Burn them for magic damage over 3 seconds.\nCleansing Flame\n(0s) per champion\nApplying a Burn to an enemy champion creates a nearby Blaze for 5 seconds. While in a Blaze, you gain Move Speed and restore Health per second, while enemies take magic damage per second.\nThe size and strength of each Blaze scale the number unique Burn sources you have.",
         "pl": "85 pkt. siły adaptacyjnej\n400 pkt. zdrowia\n15 jedn. przyspieszenia umiejętności\nIskra\n(5 sek.) czasu odnowienia\nTrafienie wrogiego bohatera atakiem lub umiejętnością podpala go, zadając 0 pkt. obrażeń magicznych w ciągu 3 sek.\nOczyszczający Płomień\n(0 sek.) na bohatera\nNałożenie podpalenia na wrogiego bohatera stawia pobliski obszar w Płomieniach na 5 sek. Stojąc w obszarze objętym Płomieniami, zyskujesz 0 jedn. prędkości ruchu i przywracasz 0 pkt. zdrowia na sekundę, podczas gdy wrogowie otrzymują 0 pkt. obrażeń magicznych na sekundę.\nRozmiar i siła Płomieni zależą od liczby twoich unikalnych źródeł podpalenia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447118.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447118.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15966,7 +15966,7 @@ window.ARENA_GAME_DATA = {
         "en": "500 Health\n30 Armor\n30 Magic Resist\n20 Ability Haste\nCall Lightning\nEvery 16 seconds, Autocast summon a stormcloud above you, which after a brief delay fires a lightning bolt, dealing plus 10% max Health magic damage and Slowing by 30% for 2 seconds.\nIf you are struck by the lightning, gain a Shield for 2 seconds.\nFully Automated\nYour Autocast spells benefit from your Ability Haste.\nCall Lighting has a minimum cooldown of 5 seconds.",
         "pl": "500 pkt. zdrowia\n30 pkt. pancerza\n30 pkt. odporności na magię\n20 jedn. przyspieszenia umiejętności\nWezwanie Błyskawicy\nCo 16 sek. automatycznie przywołujesz nad sobą burzową chmurę, która po krótkim czasie uderza błyskawicą, zadając obrażenia magiczne równe 0 pkt. plus 10% maksymalnego zdrowia i spowalnia o 30% na 2 sek.\nJeśli błyskawica trafi ciebie, nakłada na ciebie tarczę o wytrzymałości 0 pkt. na 2 sek.\nPełna Automatyzacja\nCzas odnowienia twoich automatycznie używanych umiejętności skaluje się z przyspieszeniem umiejętności.\nMinimalny czas odnowienia Wezwania Błyskawicy wynosi 5 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447119.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447119.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -15984,7 +15984,7 @@ window.ARENA_GAME_DATA = {
         "en": "75 Adaptive Force\n40% Attack Speed\nReach Weapon\nIncrease your attack range by 75.\nSweet Spot\nDeal up to 30% increased damage with Attacks and 50% with Abilities based on how far your target is from you. Damage caps at 700 units.",
         "pl": "75 pkt. siły adaptacyjnej\n40% prędkości ataku\nBroń Zasięgowa\nZwiększ swój zasięg ataku o 75 jedn.\nZłoty Środek\nZadawaj do 30% obrażeń więcej za pomocą ataków oraz 50% za pomocą umiejętności w zależności od dystansu, który dzieli cię od celu. Maksymalną premię osiągniesz, atakując z odległości 700 jedn."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447120.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447120.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -16002,7 +16002,7 @@ window.ARENA_GAME_DATA = {
         "en": "70 Attack Damage\n100 Ability Power\nThe Path Between\nThreshold 100 bonus AD and 140 AP: Chakram orbit you, dealing continuous damage to enemies they strike.\nSpirit World: Gain Ability Power and Ability Haste.\nMaterial World: Gain Attack Damage and Attack Speed.",
         "pl": "70 pkt. obrażeń od ataku\n100 pkt. mocy umiejętności\nŚcieżka Pomiędzy\nPróg 100 pkt. dodatkowych obrażeń od ataku i 140 pkt. mocy umiejętności: Wokół ciebie orbitują Czakramy, które zadają ciągłe obrażenia wrogom, których trafią.\nŚwiat Duchów: Zyskujesz moc umiejętności i przyspieszenie umiejętności.\nŚwiat Materialny: Zyskujesz obrażenia od ataku i prędkość ataku."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447121.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447121.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -16025,7 +16025,7 @@ window.ARENA_GAME_DATA = {
         "en": "900 Health\n25 Ability Haste\nAccretion\nOn-Hit, gain 1 stack of Accretion, and 5 stacks for immobilizing an enemy champion. These stacks last for the rest of the round, up to 50. Each stack increases your size by 2%.\nACTIVE\n(0s)\nDark Star\nSummon a Black Hole that scales with your size. Slowing nearby enemies by 30% while those in the center are pulled closer and take magic damage each second, granting you 1 stack of Accretion. The Black Hole lasts for seconds.\nIncreases in size every 10 stacks.",
         "pl": "900 pkt. zdrowia\n25 jedn. przyspieszenia umiejętności\nNarastanie\nZyskujesz 1 ładunek Narastania przy trafieniu oraz następującą liczbę ładunków: 5 za unieruchomienie wrogiego bohatera. Ładunki utrzymują się do końca rundy. Maksymalnie można zgromadzić ich 50. Każdy ładunek zwiększa twój rozmiar o 2%.\nUŻYCIE\n(0 sek.)\nMroczna Gwiazda\nPrzywołujesz czarną dziurę, która skaluje się z twoim rozmiarem. Czarna dziura spowalnia pobliskich wrogów o 30%, a wrogowie w jej centrum zostają wciągnięci bliżej i otrzymują 0 pkt. obrażeń magicznych co sekundę, przyznając ci 1 ładunek Narastania. Czarna dziura utrzymuje się przez 0 sek.\nRozmiar czarnej dziury zwiększa się z każdym co 10. ładunkiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447122.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447122.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -16045,7 +16045,7 @@ window.ARENA_GAME_DATA = {
         "en": "30% Attack Speed\n15% Heal and Shield Power\n40 Ability Haste\n150% Base Mana Regen\nPull Their Strings\n(0s)\nAttacking a champion adds a stack for 15 seconds. At 4 stacks, Berserk them for 2 seconds. You grant Berserk enemies an additional Attack Speed and 40% Move Speed.\nHealing, Shielding, or buffing yourself or an ally with an Ability reduces the Cooldown by 5 seconds.\nIf only one enemy is alive, instead Fear them for the same duration.",
         "pl": "30% prędkości ataku\n15% siły leczenia i tarcz\n40 jedn. przyspieszenia umiejętności\n150% podstawowej regeneracji many\nManipulacja\n(0 sek.)\nAtakowanie bohatera dodaje ładunek trwający 15 sek. Po zgromadzeniu 4 ładunków nakładasz na niego stan Berserka na 2 sek. Wrogom z nałożonym Berserkiem zapewniasz dodatkowe 0 jedn. prędkości ataku i 40% prędkości ruchu.\nLeczenie, nakładanie tarcz lub wzmacnianie sojuszników za pomocą umiejętności skraca ten czas odnowienia o 5 sek.\nJeśli żyje tylko jeden wróg, przestraszysz go na ten sam czas."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/447123.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/447123.png",
       "tier": "prismatic",
       "price": 2750,
       "categories": [
@@ -16061,7 +16061,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochlapanie paska zdrowia: niebieski"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550001.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550001.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16106,7 +16106,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochlapanie paska zdrowia: pomarańczowy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550002.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550002.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16151,7 +16151,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochlapanie paska zdrowia: zielony"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550003.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550003.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16196,7 +16196,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochlapanie paska zdrowia: różowy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550004.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550004.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16241,7 +16241,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Oczyszczenie paska zdrowia: zresetuj kolor"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550005.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550005.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16286,7 +16286,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Ochlapanie paska zdrowia: tęczowy"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550006.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550006.png",
       "tier": "trinket",
       "price": 0,
       "categories": [
@@ -16331,7 +16331,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Imprezowy Podarek"
       },
       "descriptions": {},
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/550007.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/550007.png",
       "tier": "trinket",
       "price": 10,
       "categories": [
@@ -16379,7 +16379,7 @@ window.ARENA_GAME_DATA = {
         "en": "500 Health\n20% Critical Strike Chance\nBig Hands\nGain 0-30% Critical Strike Chance, scaling with your bonus Health.",
         "pl": "500 pkt. zdrowia\n20% szansy na trafienie krytyczne\nWielkie Dłonie\nZyskujesz 0-30% szansy na trafienie krytyczne. Wartość skaluje się z twoim dodatkowym zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663039.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663039.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16398,7 +16398,7 @@ window.ARENA_GAME_DATA = {
         "en": "Supremacy\nIncreases your Health, Armor, Magic Resist, Attack Damage, Ability Power, Attack Speed, and Ability Haste by 20%, increased by 0% perTakedown and -3% per Death after acquiring this item.",
         "pl": "Supremacja\nZwiększa twoje zdrowie, pancerz, odporność na magię, obrażenia od ataku, moc umiejętności, prędkość ataku i przyspieszenie umiejętności o 20%, zwiększone o 0% za każdy udział w zabójstwie i o -3% za każdy zgon po zdobyciu tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663056.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663056.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16421,7 +16421,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n80 Armor\nImmovable as the Earth\nIncrease your armor by 20%, and gain Block Chance based on your Armor.",
         "pl": "250 pkt. zdrowia\n80 pkt. pancerza\nNiewzruszoność Ziemi\nZwiększa twój pancerz o 20%. Zyskujesz szansę na zablokowanie zależną od twojego pancerza."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663058.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663058.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16439,7 +16439,7 @@ window.ARENA_GAME_DATA = {
         "en": "250 Health\n60 Magic Resist\nLimitless as the Stars\nIncrease your Magic Resist by 10%. Reduce all damage you take from non-Basic Attack sources by a percentage, scaling with your Magic Resist up to a cap of 25%.",
         "pl": "250 pkt. zdrowia\n60 pkt. odporności na magię\nBezkresność Gwiazd\nZwiększa twoją odporność na magię o 10%. Zmniejsza wszystkie obrażenia pochodzące ze źródeł innych niż ataki podstawowe o pewną wartość procentową. Wartość skaluje się z twoją odpornością na magię, do maks. 25%."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663059.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663059.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16457,7 +16457,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Adaptive Force\n50% Critical Strike Chance\nExcoriate\nEach Critical strike deals random bonus Critical Strike Damage, scaling up to 50% of your Critical Strike Chance.",
         "pl": "90 pkt. siły adaptacyjnej\n50% szansy na trafienie krytyczne\nObdarcie ze Skóry\nKażde trafienie krytyczne zadaje losowe dodatkowe obrażenia trafienia krytycznego, które skalują się do 50% twojej szansy na trafienie krytyczne."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663060.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663060.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16476,7 +16476,7 @@ window.ARENA_GAME_DATA = {
         "en": "Gain 100% Extra Experience\nOffers no stats, and cannot be sold......But will be worth it if you reach Level 30.",
         "pl": "Zdobywa 100% dodatkowego doświadczenia\nNie przyznaje żadnych statystyk i nie chcą go w sklepie…\n…ale będzie warty zachodu, jeśli zdobędziesz 30. poziom."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663064.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663064.png",
       "tier": "",
       "price": 900,
       "categories": []
@@ -16491,7 +16491,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Ability Power\n45 Attack Damage\n15% Omnivamp\nACTIVE\n(0s)\nLightning Bolt\nShocks the target enemy champion, dealing magic damage and Slowing them by 40% for 2 seconds.",
         "pl": "90 pkt. mocy umiejętności\n45 pkt. obrażeń od ataku\n15% wszechwampiryzmu\nUŻYCIE\n(0 sek.)\nPiorun\nRazi wrogiego bohatera obranego za cel, zadając 0 pkt. obrażeń magicznych i spowalniając go o 40% na 2 sek."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663146.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663146.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16512,7 +16512,7 @@ window.ARENA_GAME_DATA = {
         "en": "40% Attack Speed\n8% Move Speed\n25 Ability Haste\n20% Tenacity\nLike the Wind\nGain 5% Move Speed On-Hit for 6 seconds, stacking up to 25% Move Speed.",
         "pl": "40% prędkości ataku\n8% prędkości ruchu\n25 jedn. przyspieszenia umiejętności\n20% nieustępliwości\nJak Wiatr\nZyskujesz 5% prędkości ruchu przy trafieniu na 6 sek., kumulującej się do 25% prędkości ruchu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663172.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663172.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16533,7 +16533,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Armor\n55 Magic Resist\n10 Ability Haste\n8% Move Speed\nActive -\nUnbreakable:\nGain a Shield that decays and grow in size.",
         "pl": "55 pkt. pancerza\n55 pkt. odporności na magię\n10 jedn. przyspieszenia umiejętności\n8% prędkości ruchu\nUżycie —\nNiezłomność:\nZyskujesz zanikającą tarczę i zwiększasz swój rozmiar."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/663193.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/663193.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16554,7 +16554,7 @@ window.ARENA_GAME_DATA = {
         "en": "35 Ability Power\n150 Health\n10% Heal and Shield Power\n10 Ability Haste\nEffervescence\nGain + 1% Attack Speed for every 1% Heal and Shield Power you have.\nPeppermint\nOn-Hit, heal the lowest health ally champion near you for, prioritizing lower health allies.",
         "pl": "35 pkt. mocy umiejętności\n150 pkt. zdrowia\n10% siły leczenia i tarcz\n10 jedn. przyspieszenia umiejętności\nOżywienie\nZyskujesz + 1% prędkości ataku za każdy 1% posiadanej siły leczenia i tarcz.\nMiętówka\nprzy trafieniu leczy sojuszniczego pobliskiego bohatera z najniższym poziomem zdrowia o 0 pkt. Priorytetowo traktuje sojuszników z niskim zdrowiem."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664011.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664011.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16575,7 +16575,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Attack Damage\n125 Ability Power\n30% Attack Speed\n25% Critical Strike Chance\n250 Health\n10 Armor\n10 Magic Resist\n250 Mana\n20 Ability Haste\n10% Life Steal\n100% Base Health Regen\n100% Base Mana Regen\n\"It must do something...\nDeclined, it does EVERYTHING\"",
         "pl": "90 pkt. obrażeń od ataku\n125 pkt. mocy umiejętności\n30% prędkości ataku\n25% szansy na trafienie krytyczne\n250 pkt. zdrowia\n10 pkt. pancerza\n10 pkt. odporności na magię\n250 pkt. many\n20 jedn. przyspieszenia umiejętności\n10% kradzieży życia\n100% podstawowej regeneracji zdrowia\n100% podstawowej regeneracji many\n„Przecież musi coś robić…\nNie tylko coś, robi WSZYSTKO!”"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664403.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16604,7 +16604,7 @@ window.ARENA_GAME_DATA = {
         "en": "65 Ability Power\n250 Health\n600 Mana\n15 Ability Haste\nSafeguard\nYou are Safeguarded, reducing incoming champion damage by 40%. Safeguard persists for 3 seconds after taking champion damage. (0s).\nItem Cooldown is restarted when damage is taken from champions.",
         "pl": "65 pkt. mocy umiejętności\n250 pkt. zdrowia\n600 pkt. many\n15 jedn. przyspieszenia umiejętności\nOsłona\nMasz Osłonę, która zmniejsza obrażenia otrzymywane od bohaterów o 40%. Osłona utrzymuje się przez 3 sek. po otrzymaniu obrażeń od bohaterów. (0 sek.).\nOtrzymanie obrażeń od bohaterów resetuje czas odnowienia tego przedmiotu."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/664644.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/664644.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16624,7 +16624,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Adaptive Force\n10 Ability Haste\n15 Lethality\n15 Magic Penetration\n15% Move Speed\nPlaying for Time\nChampion takedowns while using Gambler's Blade delays Doom-boss Veigar's arrival by an additional 10 seconds. Deaths while carrying the Blade accelerate it by 10 seconds. (Will not lose time past the 14:30 minute mark)\nDouble Down\nChampion takedowns grant a stack, each granting 10 bonus gold on kill. Also take 5% increased damage per stack. Lose all stacks on death.",
         "pl": "55 pkt. siły adaptacyjnej\n10 jedn. przyspieszenia umiejętności\n15 pkt. destrukcji\n15 pkt. przebicia odporności na magię\n15% prędkości ruchu\nGra na Czas\nUdziały w zabójstwach bohaterów podczas korzystania z Ostrza Hazardzisty opóźniają przybycie Bossa Zagłady Veigara o dodatkowe 10 sek. Śmierć podczas korzystania z Ostrza przyspiesza jego przybycie o 10 sek. (Brak utraty czasu po 14:30)\nPodwojenie\nUdziały w zabójstwach bohaterów zapewniają ładunki, a każdy zapewnia dodatkowe 10 szt. złota przy zabójstwie. Otrzymujesz 5% więcej obrażeń za każdy ładunek. W momencie śmierci tracisz wszystkie ładunki."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667101.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667101.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16645,7 +16645,7 @@ window.ARENA_GAME_DATA = {
         "en": "60 Ability Power\n25 Armor\n25 Magic Resist\nWatch Them Fall\nOn Immobilize or Grounding an enemy champion, summon a comet above them. The comet lands after 1 second, dealing additional magic damage in the area. This effect has a 6s cooldown per target per spell cast.",
         "pl": "60 pkt. mocy umiejętności\n25 pkt. pancerza\n25 pkt. odporności na magię\nPodziwiaj Ich Upadek\nPrzy unieruchomieniu lub uziemieniu wrogiego bohatera przywołujesz nad nim kometę. Kometa ląduje po 1 sek., zadając dodatkowo 0 pkt. obrażeń magicznych na danym obszarze. Czas odnowienia tego efektu wynosi 6 sek. dla każdego użytego zaklęcia."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667109.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667109.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16664,7 +16664,7 @@ window.ARENA_GAME_DATA = {
         "en": "55 Adaptive Force\n500 Health\nHack the Meat\nDealing damage shreds 3 Armor and Magic Resist for 5 seconds, stacking up to 10 times. Applying stacks has a 1 second cooldown per Ability.\nCannibalize\nOn Champion Takedown, steal 10% of their stats and size for the rest of the round.",
         "pl": "55 pkt. siły adaptacyjnej\n500 pkt. zdrowia\nSiekać Mięso\nZadawanie obrażeń osłabia pancerz i odporność na magię o 3 pkt. na 5 sek. Efekt kumuluje się do 10 razy. Nakładanie ładunków ma 1 sek. czasu odnowienia na każdą umiejętność.\nKanibalizm\nPo udziale w zabójstwie bohatera ukradnij 10% jego statystyk i rozmiaru do końca rundy."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667112.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667112.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -16684,7 +16684,7 @@ window.ARENA_GAME_DATA = {
         "en": "50 Attack Damage\n10 Lethality\n25% Critical Strike Chance\nDeath\nYour damage executes champions that are below 5% Health.\nTaxes\nChampion kills grant 25 bonus gold.",
         "pl": "50 pkt. obrażeń od ataku\n10 pkt. destrukcji\n25% szansy na trafienie krytyczne\nŚmierć\nTwoje obrażenia wykańczają bohaterów, którzy mają poniżej 5% zdrowia.\nPodatki\nZabójstwa bohaterów zapewniają dodatkowo 25 szt. złota."
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/667666.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/667666.png",
       "tier": "",
       "price": 3000,
       "categories": [
@@ -16703,7 +16703,7 @@ window.ARENA_GAME_DATA = {
         "en": "90 Attack Damage\n110 Ability Power\n40% Attack Speed\n15% Critical Strike Chance\n200 Health\n20 Armor\n20 Magic Resist\n200 Mana\n20 Ability Haste\n10% Move Speed\n10% Life Steal\n50% Base Health Regen\n100% Base Mana Regen\nDoing Something\nYou are permanently On Fire!\n\"It must do something...\nDeclined, it does EVERYTHING\"",
         "pl": "90 pkt. obrażeń od ataku\n110 pkt. mocy umiejętności\n40% prędkości ataku\n15% szansy na trafienie krytyczne\n200 pkt. zdrowia\n20 pkt. pancerza\n20 pkt. odporności na magię\n200 pkt. many\n20 jedn. przyspieszenia umiejętności\n10% prędkości ruchu\n10% kradzieży życia\n50% podstawowej regeneracji zdrowia\n100% podstawowej regeneracji many\nRobi Coś\nStale igrasz z ogniem!\n„Przecież musi coś robić…\nNie tylko coś, robi WSZYSTKO!”"
       },
-      "icon": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/item/994403.png",
+      "icon": "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/item/994403.png",
       "tier": "",
       "price": 2500,
       "categories": [
@@ -17696,7 +17696,7 @@ window.ARENA_GAME_DATA = {
     "1104": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/minionmancer_small.png",
     "1105": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/homeguard_small.png",
     "1107": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/twicethrice_small.png",
-    "1108": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/maps/particles/kiwi/selfdestruct_small.mayhem_new_augments.png",
+    "1108": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/maps/particles/kiwi/selfdestruct_small.png",
     "1112": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/ultimateunstoppable_small.png",
     "1113": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/skilledsniper_small.png",
     "1115": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/scopiestweapons_small.png",
@@ -21267,8 +21267,8 @@ window.ARENA_GAME_DATA = {
         "pl": "Ładunkozaurus Rex"
       },
       "descriptions": {
-        "en": "When you gain permanent Stacks of an Ability, Augment, or Item gain 75% more!",
-        "pl": "Gdy zyskujesz ładunki umiejętności, ulepszenia lub przedmiotu, dostajesz ich o 75% więcej!"
+        "en": "When you gain permanent Stacks of an Ability, gain 75% more!",
+        "pl": "Gdy otrzymasz stałe ładunki umiejętności, zyskujesz 75% więcej!"
       },
       "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/cherry/augments/icons/stackosaurusrex_small.png",
       "tier": "silver",
@@ -24146,7 +24146,7 @@ window.ARENA_GAME_DATA = {
         "pl": "Samozniszczenie"
       },
       "descriptions": {},
-      "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/maps/particles/kiwi/selfdestruct_small.mayhem_new_augments.png",
+      "icon": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/maps/particles/kiwi/selfdestruct_small.png",
       "tier": "silver",
       "rarity": "kSilver",
       "price": 0,
