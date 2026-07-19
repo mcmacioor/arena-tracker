@@ -11,6 +11,8 @@ const ITEM_DETAILS = GAME_DATA.itemDetails || {};
 const AUGMENT_DETAILS = GAME_DATA.augmentDetails || {};
 const DEFAULT_AUTH_AVATAR = CHAMPION_ICONS.Malphite || "";
 const ARENA_MAX_PLACEMENT = 6;
+const ARENA_CURRENT_TEAM_SIZE = 3;
+const ARENA_CURRENT_PLAYER_COUNT = ARENA_MAX_PLACEMENT * ARENA_CURRENT_TEAM_SIZE;
 const RIOT_SEASON_SYNC_LIMIT = 500;
 const RIOT_SEASON_SYNC_BATCH = 80;
 const RIOT_SEASON_SYNC_TIMEOUT_MS = 480000;
@@ -3107,7 +3109,7 @@ function normalizeMatch(match) {
     : [];
   const partner = cleanText(match.partner);
 
-  return {
+  const normalized = {
     id: match.id || makeId(),
     date: cleanText(match.date),
     playedAt: cleanText(match.playedAt),
@@ -3126,6 +3128,31 @@ function normalizeMatch(match) {
     source: match.source && typeof match.source === "object" ? match.source : { type: "manual" },
     createdAt: match.createdAt || new Date().toISOString(),
   };
+
+  return isCurrentArenaMatch(normalized) ? normalized : null;
+}
+
+function isCurrentArenaMatch(match) {
+  if (!match) return false;
+  if (!isRiotMatch(match)) return true;
+  const players = Array.isArray(match.players) ? match.players : [];
+  if (players.length !== ARENA_CURRENT_PLAYER_COUNT) return false;
+
+  const grouped = new Map();
+  players.forEach((player) => {
+    const teamId = cleanText(player.teamId ?? player.playerSubteamId);
+    if (!teamId) return;
+    grouped.set(teamId, (grouped.get(teamId) || 0) + 1);
+  });
+
+  if (!grouped.size) return true;
+  return grouped.size === ARENA_MAX_PLACEMENT
+    && [...grouped.values()].every((count) => count === ARENA_CURRENT_TEAM_SIZE);
+}
+
+function isRiotMatch(match) {
+  const source = match?.source && typeof match.source === "object" ? match.source : {};
+  return cleanText(source.type).toLowerCase() === "riot" || Boolean(source.matchId) || Boolean(source.queueId);
 }
 
 function getChampionStats(matches) {

@@ -22,6 +22,8 @@ const DEFAULT_ARENA_QUEUE_IDS = [1740, 1750, 1700, 1710];
 const ARENA_QUEUE_IDS = parseNumberList(process.env.ARENA_QUEUE_IDS, DEFAULT_ARENA_QUEUE_IDS);
 const ARENA_QUEUE_ID_SET = new Set(ARENA_QUEUE_IDS);
 const ARENA_MAX_PLACEMENT = 6;
+const ARENA_CURRENT_TEAM_SIZE = 3;
+const ARENA_CURRENT_PLAYER_COUNT = ARENA_MAX_PLACEMENT * ARENA_CURRENT_TEAM_SIZE;
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 500;
 const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
@@ -95,6 +97,46 @@ function isArenaLiveGame(game) {
 function isArenaMatchDetail(detail) {
   const info = detail?.info || {};
   return isArenaQueueId(info.queueId) || isArenaGameMode(info.gameMode);
+}
+
+function isCurrentArenaMatchDetail(detail) {
+  const participants = Array.isArray(detail?.info?.participants) ? detail.info.participants : [];
+  return isArenaMatchDetail(detail) && hasCurrentArenaTeamShape(participants);
+}
+
+function teamIdFromPlayer(player) {
+  return cleanText(player?.teamId ?? player?.playerSubteamId ?? player?.subteamId ?? player?.subteam);
+}
+
+function hasCurrentArenaTeamShape(players, options = {}) {
+  const source = Array.isArray(players) ? players : [];
+  if (source.length !== ARENA_CURRENT_PLAYER_COUNT) return false;
+
+  const grouped = new Map();
+  source.forEach((player) => {
+    const teamId = teamIdFromPlayer(player);
+    if (!teamId) return;
+    grouped.set(teamId, (grouped.get(teamId) || 0) + 1);
+  });
+
+  if (!grouped.size) return Boolean(options.allowMissingTeamIds);
+  return grouped.size === ARENA_MAX_PLACEMENT
+    && [...grouped.values()].every((count) => count === ARENA_CURRENT_TEAM_SIZE);
+}
+
+function isRiotSourcedMatch(match) {
+  const type = cleanText(match?.source?.type).toLowerCase();
+  return type === "riot" || Boolean(match?.source?.matchId) || isArenaQueueId(match?.source?.queueId);
+}
+
+function isCurrentArenaStoredMatch(match) {
+  if (!match) return false;
+  if (!isRiotSourcedMatch(match)) return true;
+  return hasCurrentArenaTeamShape(match.players, { allowMissingTeamIds: true });
+}
+
+function filterCurrentArenaMatches(matches) {
+  return Array.isArray(matches) ? matches.filter(isCurrentArenaStoredMatch) : [];
 }
 
 function getSyncJob(store, jobId, options) {
@@ -216,6 +258,7 @@ async function routeApi(req, res, url) {
     const db = await readDb();
     const matches = db.matches
       .filter((match) => match.userId === auth.user.id)
+      .filter(isCurrentArenaStoredMatch)
       .sort((a, b) => new Date(b.date) - new Date(a.date));
     sendJson(res, 200, { matches });
     return;
@@ -257,7 +300,7 @@ async function routeApi(req, res, url) {
 
     const db = await readDb();
     sendJson(res, 200, {
-      matches: db.matches.filter((match) => match.userId === auth.user.id),
+      matches: db.matches.filter((match) => match.userId === auth.user.id).filter(isCurrentArenaStoredMatch),
     });
     return;
   }
@@ -528,6 +571,7 @@ async function getPublicProfile(req, res, url) {
   const matches = db.matches
     .filter((match) => match.userId === user.id)
     .map((match) => normalizeMatch(match, user.id, match.source?.type || "riot"))
+    .filter(isCurrentArenaStoredMatch)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const cached = findCachedPublicProfile(db, region, slug);
@@ -563,7 +607,10 @@ async function getLeaderboard(req, res, url) {
     const slug = publicProfileSlug({ ...profile, region });
     const key = publicProfileCacheId(region, slug);
     const normalizedMatches = Array.isArray(matches)
-      ? matches.map((match) => normalizeMatch(match, source, match.source?.type || "riot")).filter(Boolean)
+      ? matches
+          .map((match) => normalizeMatch(match, source, match.source?.type || "riot"))
+          .filter(Boolean)
+          .filter(isCurrentArenaStoredMatch)
       : [];
     const championStats = getChampionStatsForMatches(normalizedMatches);
     const championWins = championStats.filter((stat) => stat.wins > 0).length;
@@ -823,7 +870,10 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const rankedEntries = await fetchRankedEntries(region, account.puuid, summoner?.id)
     .catch(() => existing?.riotProfile?.rankedEntries || []);
   const existingMatches = Array.isArray(existing?.matches)
-    ? existing.matches.map((match) => normalizeMatch(match, "public", "riot"))
+    ? existing.matches
+        .map((match) => normalizeMatch(match, "public", "riot"))
+        .filter(Boolean)
+        .filter(isCurrentArenaStoredMatch)
     : [];
   const existingByMatchId = new Map(
     existingMatches
@@ -868,6 +918,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const matchIdSet = new Set(matchIds);
   const seasonExistingMatches = existingMatches.filter((match) => matchIdSet.has(match.source?.matchId));
   const matches = mergeMatchesByKey([...importedMatches, ...seasonExistingMatches])
+    .filter(isCurrentArenaStoredMatch)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
   if (!pendingCount) publicSyncJobs.delete(job.id);
   return {
@@ -909,6 +960,7 @@ async function savePublicProfileCache(profile) {
     const stored = {
       ...profile,
       id,
+      matches: filterCurrentArenaMatches(profile.matches || []),
       updatedAt: profile.updatedAt || new Date().toISOString(),
     };
     const index = db.publicProfiles.findIndex((item) => item.id === id);
@@ -962,7 +1014,8 @@ function searchResultFromRiotId(parsed, region, source, iconUrl = "") {
 }
 
 function buildPublicProfile(user, matches) {
-  const championStats = getChampionStatsForMatches(matches);
+  const currentMatches = filterCurrentArenaMatches(matches);
+  const championStats = getChampionStatsForMatches(currentMatches);
   const wonChampions = championStats
     .filter((stat) => stat.wins > 0)
     .sort((a, b) => a.champion.localeCompare(b.champion));
@@ -990,8 +1043,8 @@ function buildPublicProfile(user, matches) {
       averagePlacement: stat.avg,
       icon: GAME_DATA.championIcons?.[stat.champion] || "",
     })),
-    matches: matches.map(publicMatchSummary),
-    topDuo: getPartnerStatsForMatches(matches).slice(0, 8),
+    matches: currentMatches.map(publicMatchSummary),
+    topDuo: getPartnerStatsForMatches(currentMatches).slice(0, 8),
   };
 }
 
@@ -1116,6 +1169,9 @@ async function syncRiotMatches(req, res, user) {
         .filter((match) => match.userId === user.id && match.source?.type === "riot" && match.source?.matchId)
         .map((match) => [match.source.matchId, normalizeMatch(match, user.id, "riot")]),
     );
+    existingRiotMatches.forEach((match, matchId) => {
+      if (!isCurrentArenaStoredMatch(match)) existingRiotMatches.delete(matchId);
+    });
     const idsToFetch = [];
     matchIds.forEach((matchId) => {
       const existingMatch = existingRiotMatches.get(matchId);
@@ -1161,6 +1217,7 @@ async function syncRiotMatches(req, res, user) {
     };
 
     const importedByKey = new Map(imported.map((match) => [matchDedupeKey(match), match]));
+    db.matches = db.matches.filter((match) => match.userId !== user.id || isCurrentArenaStoredMatch(match));
     db.matches = db.matches.map((match) => {
       const key = matchDedupeKey(match);
       if (match.userId === user.id && importedByKey.has(key)) {
@@ -1197,7 +1254,7 @@ async function syncRiotMatches(req, res, user) {
     totalRiotMatchCount: matchIds.length,
     hasMore: pendingCount > 0,
     scope,
-    matches: db.matches.filter((match) => match.userId === user.id),
+    matches: db.matches.filter((match) => match.userId === user.id).filter(isCurrentArenaStoredMatch),
     user: publicUser(db.users.find((item) => item.id === user.id)),
   });
 }
@@ -1374,8 +1431,7 @@ async function fetchMatchDetails(routing, matchIds) {
 
 function matchHasCompletePlayerLoadout(match) {
   const players = Array.isArray(match?.players) ? match.players : [];
-  const expectedPlayerCount = ARENA_MAX_PLACEMENT * 3;
-  if (players.length < expectedPlayerCount) return false;
+  if (!hasCurrentArenaTeamShape(players, { allowMissingTeamIds: true })) return false;
   return players.every((player) => {
     const augments = Array.isArray(player.augments) ? player.augments : [];
     const items = Array.isArray(player.items) ? player.items : [];
@@ -1436,7 +1492,7 @@ async function riotFetch(routing, pathName, optionsOrAttempt = 0) {
 }
 
 function mapRiotMatch(detail, puuid, userId) {
-  if (!isArenaMatchDetail(detail)) return null;
+  if (!isCurrentArenaMatchDetail(detail)) return null;
   const participant = detail.info.participants.find((item) => item.puuid === puuid);
   if (!participant) return null;
   const placementFor = (item) => clamp(Number(item.placement || item.subteamPlacement || (item.win ? 1 : ARENA_MAX_PLACEMENT)), 1, ARENA_MAX_PLACEMENT);
