@@ -101,7 +101,9 @@ function isArenaMatchDetail(detail) {
 
 function isCurrentArenaMatchDetail(detail) {
   const participants = Array.isArray(detail?.info?.participants) ? detail.info.participants : [];
-  return isArenaMatchDetail(detail) && hasCurrentArenaTeamShape(participants);
+  return isArenaMatchDetail(detail)
+    && participants.length >= ARENA_CURRENT_PLAYER_COUNT
+    && !hasLegacyArenaTeamShape(participants);
 }
 
 function teamIdFromPlayer(player) {
@@ -124,6 +126,21 @@ function hasCurrentArenaTeamShape(players, options = {}) {
     && [...grouped.values()].every((count) => count === ARENA_CURRENT_TEAM_SIZE);
 }
 
+function hasLegacyArenaTeamShape(players) {
+  const source = Array.isArray(players) ? players : [];
+  if (!source.length || source.length % 2 !== 0) return false;
+
+  const grouped = new Map();
+  source.forEach((player) => {
+    const teamId = teamIdFromPlayer(player);
+    if (!teamId) return;
+    grouped.set(teamId, (grouped.get(teamId) || 0) + 1);
+  });
+
+  return grouped.size >= ARENA_MAX_PLACEMENT
+    && [...grouped.values()].every((count) => count === 2);
+}
+
 function isRiotSourcedMatch(match) {
   const type = cleanText(match?.source?.type).toLowerCase();
   return type === "riot" || Boolean(match?.source?.matchId) || isArenaQueueId(match?.source?.queueId);
@@ -132,7 +149,7 @@ function isRiotSourcedMatch(match) {
 function isCurrentArenaStoredMatch(match) {
   if (!match) return false;
   if (!isRiotSourcedMatch(match)) return true;
-  return hasCurrentArenaTeamShape(match.players, { allowMissingTeamIds: true });
+  return !hasLegacyArenaTeamShape(match.players);
 }
 
 function filterCurrentArenaMatches(matches) {

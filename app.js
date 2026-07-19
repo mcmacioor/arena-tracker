@@ -3136,18 +3136,23 @@ function isCurrentArenaMatch(match) {
   if (!match) return false;
   if (!isRiotMatch(match)) return true;
   const players = Array.isArray(match.players) ? match.players : [];
-  if (players.length !== ARENA_CURRENT_PLAYER_COUNT) return false;
+  if (!players.length) return true;
+  if (players.length >= ARENA_CURRENT_PLAYER_COUNT) return true;
+  return !hasLegacyArenaTeamShape(players);
+}
 
+function hasLegacyArenaTeamShape(players) {
+  const source = Array.isArray(players) ? players : [];
+  if (!source.length || source.length % 2 !== 0) return false;
   const grouped = new Map();
-  players.forEach((player) => {
+  source.forEach((player) => {
     const teamId = cleanText(player.teamId ?? player.playerSubteamId);
     if (!teamId) return;
     grouped.set(teamId, (grouped.get(teamId) || 0) + 1);
   });
 
-  if (!grouped.size) return true;
-  return grouped.size === ARENA_MAX_PLACEMENT
-    && [...grouped.values()].every((count) => count === ARENA_CURRENT_TEAM_SIZE);
+  return grouped.size >= ARENA_MAX_PLACEMENT
+    && [...grouped.values()].every((count) => count === 2);
 }
 
 function isRiotMatch(match) {
