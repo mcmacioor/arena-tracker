@@ -27,10 +27,11 @@ const ARENA_CURRENT_PLAYER_COUNT = ARENA_MAX_PLACEMENT * ARENA_CURRENT_TEAM_SIZE
 const RIOT_SYNC_DEFAULT_LIMIT = 80;
 const RIOT_SYNC_MAX_LIMIT = 500;
 const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
-const PUBLIC_PROFILE_FETCH_BATCH = RIOT_SYNC_DEFAULT_LIMIT;
+const PUBLIC_PROFILE_FETCH_BATCH = clamp(Number(process.env.PUBLIC_PROFILE_FETCH_BATCH || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
 const PUBLIC_PROFILE_CACHE_TTL_MS = 60 * 60 * 1000;
 const RIOT_FETCH_TIMEOUT_MS = 20_000;
-const RIOT_MATCH_DETAIL_CONCURRENCY = 4;
+const RIOT_RETRY_AFTER_CAP_MS = clamp(Number(process.env.RIOT_RETRY_AFTER_CAP_MS || 5_000), 1_000, 30_000);
+const RIOT_MATCH_DETAIL_CONCURRENCY = clamp(Number(process.env.RIOT_MATCH_DETAIL_CONCURRENCY || 6), 1, 12);
 const RIOT_LIVE_PARTICIPANT_CONCURRENCY = 18;
 const RIOT_LIVE_OPTIONAL_TIMEOUT_MS = 1_200;
 const LIVE_GAME_CACHE_TTL_MS = 30 * 1000;
@@ -547,7 +548,25 @@ async function getPublicProfile(req, res, url) {
 
   if (user && (forceRefresh || syncJobId)) {
     const cached = findCachedPublicProfile(db, region, slug);
-    const fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
+    let fetched = null;
+    try {
+      fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
+    } catch (error) {
+      const fallbackMatches = cached?.matches?.length
+        ? cached.matches
+        : db.matches
+            .filter((match) => match.userId === user.id)
+            .map((match) => normalizeMatch(match, user.id, match.source?.type || "riot"))
+            .filter(isCurrentArenaStoredMatch);
+      if (fallbackMatches.length) {
+        sendJson(res, 200, {
+          ...buildPublicProfile(cached || user, fallbackMatches),
+          warning: apiErrorMessage(error),
+        });
+        return;
+      }
+      throw error;
+    }
     if (fetched) {
       await savePublicProfileCache(fetched);
       sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
@@ -557,6 +576,11 @@ async function getPublicProfile(req, res, url) {
 
   if (!user) {
     const cached = findCachedPublicProfile(db, region, slug);
+    if (!forceRefresh && !syncJobId && cached) {
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+      return;
+    }
+
     const shouldRefresh = forceRefresh || Boolean(syncJobId) || !cached || isPublicProfileCacheStale(cached);
 
     if (!shouldRefresh && cached) {
@@ -568,7 +592,14 @@ async function getPublicProfile(req, res, url) {
     try {
       fetched = await fetchRiotPublicProfile(region, slug, { existing: cached, limit, batch, syncJobId });
     } catch (error) {
-      if (forceRefresh || !cached) throw error;
+      if (cached) {
+        sendJson(res, 200, {
+          ...buildPublicProfile(cached, cached.matches || []),
+          warning: apiErrorMessage(error),
+        });
+        return;
+      }
+      throw error;
     }
     if (fetched) {
       await savePublicProfileCache(fetched);
@@ -872,20 +903,22 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   let account;
   let summoner;
   let matchIds;
+  let rankedEntries;
 
   if (job) {
     account = job.account;
     summoner = job.summoner;
     matchIds = job.matchIds;
+    rankedEntries = job.rankedEntries || [];
   } else {
     account = await fetchRiotAccount({ ...parsed, routing });
     summoner = await fetchSummonerByPuuid(region, account.puuid).catch(() => null);
     matchIds = await fetchArenaMatchIds(account, routing, limit, {
       startTime: seasonStartTimestamp(),
     });
+    rankedEntries = await fetchRankedEntries(region, account.puuid, summoner?.id)
+      .catch(() => existing?.riotProfile?.rankedEntries || []);
   }
-  const rankedEntries = await fetchRankedEntries(region, account.puuid, summoner?.id)
-    .catch(() => existing?.riotProfile?.rankedEntries || []);
   const existingMatches = Array.isArray(existing?.matches)
     ? existing.matches
         .map((match) => normalizeMatch(match, "public", "riot"))
@@ -909,6 +942,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
       account,
       summoner,
       matchIds,
+      rankedEntries,
       remainingIds: idsToFetch,
     });
   }
@@ -956,7 +990,12 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
 
 function findCachedPublicProfile(db, region, slug) {
   const id = publicProfileCacheId(region, slug);
-  return db.publicProfiles.find((profile) => profile.id === id);
+  return db.publicProfiles.find((profile) => {
+    if (profile.id === id) return true;
+    const riotProfile = profile.riotProfile;
+    if (!riotProfile?.gameName || !riotProfile?.tagLine) return false;
+    return publicProfileCacheId(riotProfile.region, publicProfileSlug(riotProfile)) === id;
+  });
 }
 
 function isPublicProfileCacheStale(profile) {
@@ -974,13 +1013,28 @@ function apiErrorMessage(error) {
 async function savePublicProfileCache(profile) {
   await mutateDb((db) => {
     const id = publicProfileCacheId(profile.riotProfile.region, publicProfileSlug(profile.riotProfile));
+    const index = db.publicProfiles.findIndex((item) => {
+      if (item.id === id) return true;
+      const riotProfile = item.riotProfile;
+      if (!riotProfile?.gameName || !riotProfile?.tagLine) return false;
+      return publicProfileCacheId(riotProfile.region, publicProfileSlug(riotProfile)) === id;
+    });
+    const existing = index >= 0 ? db.publicProfiles[index] : null;
+    const mergedMatches = mergeMatchesByKey([
+      ...(profile.matches || []),
+      ...(existing?.matches || []),
+    ]);
     const stored = {
       ...profile,
       id,
-      matches: filterCurrentArenaMatches(profile.matches || []),
+      riotProfile: {
+        ...(existing?.riotProfile || {}),
+        ...profile.riotProfile,
+        lastSyncedAt: profile.riotProfile.lastSyncedAt || existing?.riotProfile?.lastSyncedAt || null,
+      },
+      matches: filterCurrentArenaMatches(mergedMatches),
       updatedAt: profile.updatedAt || new Date().toISOString(),
     };
-    const index = db.publicProfiles.findIndex((item) => item.id === id);
     if (index >= 0) db.publicProfiles[index] = stored;
     else db.publicProfiles.unshift(stored);
   });
@@ -1037,6 +1091,8 @@ function buildPublicProfile(user, matches) {
     .filter((stat) => stat.wins > 0)
     .sort((a, b) => a.champion.localeCompare(b.champion));
   const profile = user.riotProfile;
+  const sync = user.sync || null;
+  const isPartialSync = Boolean(sync?.hasMore);
 
   return {
     profile: {
@@ -1046,13 +1102,13 @@ function buildPublicProfile(user, matches) {
       slug: publicProfileSlug(profile),
       profileIconUrl: profileIconUrl(profile.profileIconId),
       rankedEntries: formatRankedEntries(profile.rankedEntries || []),
-      lastSyncedAt: profile.lastSyncedAt || user.updatedAt || null,
+      lastSyncedAt: isPartialSync ? profile.lastSyncedAt || null : profile.lastSyncedAt || user.updatedAt || null,
     },
     progress: {
       won: wonChampions.length,
       total: GAME_DATA.champions?.length || 0,
     },
-    sync: user.sync || null,
+    sync,
     wonChampions: wonChampions.map((stat) => ({
       champion: stat.champion,
       wins: stat.wins,
@@ -1490,7 +1546,7 @@ async function riotFetch(routing, pathName, optionsOrAttempt = 0) {
   if (!response.ok) {
     if (response.status === 429 && attempt < retries) {
       const retryAfter = Number(response.headers.get("retry-after") || 1);
-      await delay(Math.max(1000, retryAfter * 1000));
+      await delay(Math.min(RIOT_RETRY_AFTER_CAP_MS, Math.max(1000, retryAfter * 1000)));
       return riotFetch(routing, pathName, { ...options, attempt: attempt + 1 });
     }
     let message = `Riot API HTTP ${response.status}`;
@@ -2088,11 +2144,15 @@ function normalizePublicRegion(region) {
 }
 
 function normalizeSlug(value) {
-  return cleanText(safeDecode(String(value || ""))).toLowerCase();
+  return stripDiacritics(cleanText(safeDecode(String(value || "")))).toLowerCase();
 }
 
 function normalizeLookupKey(value) {
-  return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
+  return stripDiacritics(cleanText(value)).toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function stripDiacritics(value) {
+  return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 function safeDecode(value) {

@@ -1592,10 +1592,10 @@ function updateRoute() {
     state.activeMatchId = route === "match" ? decodeURIComponent(token || "") : "";
     setActiveRoute(knownRoute);
     if (knownRoute === "live-game") {
-      void checkLiveGameForCurrentProfile({ navigateIfActive: false })
-        .finally(() => loadPublicProfile(publicRoute));
+      void loadPublicProfile(publicRoute);
+      void checkLiveGameForCurrentProfile({ navigateIfActive: false });
     } else {
-      loadPublicProfile(publicRoute);
+      void loadPublicProfile(publicRoute);
     }
     renderResetTokenView();
     return;
@@ -1683,9 +1683,10 @@ async function loadPublicProfile(route, options = {}) {
       });
     };
 
-    let data = await fetchPublicBatch({ forceRefresh: Boolean(options.force) });
+    const shouldCompleteSync = Boolean(options.force);
+    let data = await fetchPublicBatch({ forceRefresh: shouldCompleteSync });
     let guard = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SEASON_SYNC_BATCH) + 2;
-    while (data?.sync?.hasMore && data.sync.jobId && guard > 0) {
+    while (shouldCompleteSync && !data?.warning && data?.sync?.hasMore && data.sync.jobId && guard > 0) {
       guard -= 1;
       state.publicProfile = {
         routeKey,
@@ -1702,11 +1703,11 @@ async function loadPublicProfile(route, options = {}) {
       routeKey,
       loading: false,
       refreshing: false,
-      error: data.sync?.hasMore
+      error: data.warning || (shouldCompleteSync && data.sync?.hasMore
         ? state.language === "en"
           ? "Sync stopped before finishing. Try again in a moment."
           : "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę."
-        : "",
+        : ""),
       data,
     };
   } catch (error) {
@@ -1828,12 +1829,23 @@ function renderProfileHero(matches) {
   dom.profileSyncNote.textContent = publicState?.error
     ? publicState.error
     : isSyncing
-    ? t("actions.syncing")
+    ? publicSyncProgressText(publicState)
     : profile || state.publicRoute
       ? ""
       : state.language === "en"
         ? "Search a player profile to sync public Arena data."
         : "Wyszukaj profil gracza, zeby synchronizowac publiczne dane Areny.";
+}
+
+function publicSyncProgressText(publicState) {
+  const sync = publicState?.data?.sync;
+  const total = Number(sync?.totalRiotMatchCount || 0);
+  const pending = Number(sync?.pendingCount || 0);
+  if (total > 0 && pending > 0) {
+    const done = Math.max(0, total - pending);
+    return `${t("actions.syncing")} ${done}/${total}`;
+  }
+  return t("actions.syncing");
 }
 
 function renderProfileMetaNodes(meta, rankedEntries = []) {
@@ -2164,7 +2176,11 @@ function renderPublicSyncState(publicState = state.publicProfile) {
     dom.publicSyncButton.textContent = isBusy ? t("actions.syncing") : t("actions.sync");
   }
   if (dom.publicSyncStatus) {
-    dom.publicSyncStatus.textContent = publicState?.error ? publicState.error : "";
+    dom.publicSyncStatus.textContent = publicState?.error
+      ? publicState.error
+      : isBusy
+        ? publicSyncProgressText(publicState)
+        : "";
   }
 }
 
@@ -2976,7 +2992,7 @@ async function apiRequest(path, options = {}) {
   const data = contentType.includes("application/json") ? await response.json() : {};
 
   if (!response.ok) {
-    const error = new Error(data.error || `HTTP ${response.status}`);
+    const error = new Error(data.error || data.message || data.detail || `HTTP ${response.status}`);
     error.status = response.status;
     throw error;
   }
@@ -3422,7 +3438,11 @@ function normalizeDescription(value) {
 }
 
 function normalizeLookupKey(value) {
-  return cleanText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
+  return stripDiacritics(cleanText(value)).toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function stripDiacritics(value) {
+  return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 function safeDecode(value) {
