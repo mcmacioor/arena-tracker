@@ -1646,6 +1646,28 @@ function isLeaderboardPath() {
   return window.location.pathname.replace(/\/+$/, "") === "/leaderboard";
 }
 
+function publicProfileCompletenessScore(data) {
+  if (!data) return { wins: 0, matches: 0 };
+  const wins = Number(data.progress?.won || data.wonChampions?.length || 0);
+  const matches = Array.isArray(data.matches) ? data.matches.length : 0;
+  return { wins, matches };
+}
+
+function chooseRicherPublicProfileData(previousData, incomingData) {
+  if (!previousData) return incomingData;
+  if (!incomingData) return previousData;
+  const previous = publicProfileCompletenessScore(previousData);
+  const incoming = publicProfileCompletenessScore(incomingData);
+  const previousIsRicher = previous.wins > incoming.wins
+    || (previous.wins === incoming.wins && previous.matches > incoming.matches);
+  if (!previousIsRicher) return incomingData;
+  return {
+    ...previousData,
+    sync: incomingData.sync || previousData.sync,
+    warning: incomingData.warning || previousData.warning || "",
+  };
+}
+
 async function loadPublicProfile(route, options = {}) {
   const routeKey = `${route.region}/${route.slug}`;
   if (!options.force && state.publicProfile?.routeKey === routeKey && !state.publicProfile.loading) {
@@ -1684,19 +1706,20 @@ async function loadPublicProfile(route, options = {}) {
     };
 
     const shouldCompleteSync = Boolean(options.force);
-    let data = await fetchPublicBatch({ forceRefresh: shouldCompleteSync });
+    let data = chooseRicherPublicProfileData(previousData, await fetchPublicBatch({ forceRefresh: shouldCompleteSync }));
     let guard = Math.ceil(RIOT_SEASON_SYNC_LIMIT / RIOT_SEASON_SYNC_BATCH) + 2;
     while (shouldCompleteSync && !data?.warning && data?.sync?.hasMore && data.sync.jobId && guard > 0) {
       guard -= 1;
+      const visibleData = chooseRicherPublicProfileData(state.publicProfile.data, data);
       state.publicProfile = {
         routeKey,
         loading: false,
         refreshing: true,
         error: "",
-        data,
+        data: visibleData,
       };
       render();
-      data = await fetchPublicBatch({ forceRefresh: true, syncJobId: data.sync.jobId });
+      data = chooseRicherPublicProfileData(visibleData, await fetchPublicBatch({ forceRefresh: true, syncJobId: data.sync.jobId }));
     }
 
     state.publicProfile = {
@@ -1708,7 +1731,7 @@ async function loadPublicProfile(route, options = {}) {
           ? "Sync stopped before finishing. Try again in a moment."
           : "Synchronizacja zatrzymała się przed końcem. Spróbuj ponownie za chwilę."
         : ""),
-      data,
+      data: chooseRicherPublicProfileData(state.publicProfile.data, data),
     };
   } catch (error) {
     state.publicProfile = {

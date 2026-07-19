@@ -18,9 +18,11 @@ const SESSION_COOKIE = "arena_session";
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const MAX_BODY_BYTES = 1_000_000;
-const DEFAULT_ARENA_QUEUE_IDS = [1740, 1750, 1700, 1710];
+const DEFAULT_ARENA_QUEUE_IDS = [1750, 1740];
 const ARENA_QUEUE_IDS = parseNumberList(process.env.ARENA_QUEUE_IDS, DEFAULT_ARENA_QUEUE_IDS);
 const ARENA_QUEUE_ID_SET = new Set(ARENA_QUEUE_IDS);
+const DEFAULT_ARENA_SEASON_START_ISO = "2026-05-01T00:00:00Z";
+const ARENA_SEASON_START_MS = parseDateMs(process.env.ARENA_SEASON_START || DEFAULT_ARENA_SEASON_START_ISO);
 const ARENA_MAX_PLACEMENT = 6;
 const ARENA_CURRENT_TEAM_SIZE = 3;
 const ARENA_CURRENT_PLAYER_COUNT = ARENA_MAX_PLACEMENT * ARENA_CURRENT_TEAM_SIZE;
@@ -30,8 +32,9 @@ const PUBLIC_PROFILE_MATCH_LIMIT = RIOT_SYNC_MAX_LIMIT;
 const PUBLIC_PROFILE_FETCH_BATCH = clamp(Number(process.env.PUBLIC_PROFILE_FETCH_BATCH || RIOT_SYNC_DEFAULT_LIMIT), 1, RIOT_SYNC_MAX_LIMIT);
 const PUBLIC_PROFILE_CACHE_TTL_MS = 60 * 60 * 1000;
 const RIOT_FETCH_TIMEOUT_MS = 20_000;
-const RIOT_RETRY_AFTER_CAP_MS = clamp(Number(process.env.RIOT_RETRY_AFTER_CAP_MS || 5_000), 1_000, 30_000);
-const RIOT_MATCH_DETAIL_CONCURRENCY = clamp(Number(process.env.RIOT_MATCH_DETAIL_CONCURRENCY || 6), 1, 12);
+const RIOT_FETCH_RETRIES = clamp(Number(process.env.RIOT_FETCH_RETRIES || 4), 0, 8);
+const RIOT_RETRY_AFTER_CAP_MS = clamp(Number(process.env.RIOT_RETRY_AFTER_CAP_MS || 120_000), 1_000, 180_000);
+const RIOT_MATCH_DETAIL_CONCURRENCY = clamp(Number(process.env.RIOT_MATCH_DETAIL_CONCURRENCY || 4), 1, 12);
 const RIOT_LIVE_PARTICIPANT_CONCURRENCY = 18;
 const RIOT_LIVE_OPTIONAL_TIMEOUT_MS = 1_200;
 const LIVE_GAME_CACHE_TTL_MS = 30 * 1000;
@@ -79,7 +82,7 @@ function parseNumberList(value, fallback) {
     .split(",")
     .map((item) => Number(item.trim()))
     .filter((item) => Number.isFinite(item) && item > 0);
-  return [...new Set([...(fallback || []), ...parsed])];
+  return [...new Set(parsed.length ? parsed : fallback || [])];
 }
 
 function isArenaQueueId(queueId) {
@@ -103,8 +106,22 @@ function isArenaMatchDetail(detail) {
 function isCurrentArenaMatchDetail(detail) {
   const participants = Array.isArray(detail?.info?.participants) ? detail.info.participants : [];
   return isArenaMatchDetail(detail)
+    && isCurrentArenaSeasonTimestamp(detail?.info?.gameStartTimestamp)
     && participants.length >= ARENA_CURRENT_PLAYER_COUNT
     && !hasLegacyArenaTeamShape(participants);
+}
+
+function isCurrentArenaSeasonTimestamp(value) {
+  const timestamp = Number(value);
+  if (!ARENA_SEASON_START_MS || !Number.isFinite(timestamp) || timestamp <= 0) return true;
+  return timestamp >= ARENA_SEASON_START_MS;
+}
+
+function isCurrentArenaSeasonDate(value) {
+  if (!ARENA_SEASON_START_MS) return true;
+  const ms = Date.parse(cleanText(value));
+  if (!Number.isFinite(ms)) return true;
+  return ms >= ARENA_SEASON_START_MS;
 }
 
 function teamIdFromPlayer(player) {
@@ -150,7 +167,10 @@ function isRiotSourcedMatch(match) {
 function isCurrentArenaStoredMatch(match) {
   if (!match) return false;
   if (!isRiotSourcedMatch(match)) return true;
-  return !hasLegacyArenaTeamShape(match.players);
+  const players = Array.isArray(match.players) ? match.players : [];
+  return isCurrentArenaSeasonDate(match.playedAt || match.date)
+    && (!players.length || players.length >= ARENA_CURRENT_PLAYER_COUNT)
+    && !hasLegacyArenaTeamShape(players);
 }
 
 function filterCurrentArenaMatches(matches) {
@@ -817,9 +837,13 @@ async function getLiveGame(req, res, url) {
   try {
     const routing = routingForRegion(region);
     const account = await fetchRiotAccount({ ...parsed, routing });
-    const liveFetchOptions = { timeoutMs: RIOT_LIVE_OPTIONAL_TIMEOUT_MS, retries: 0 };
+    const liveFetchOptions = { timeoutMs: RIOT_LIVE_OPTIONAL_TIMEOUT_MS, retries: 0, retryAfterCapMs: 1_500 };
     const summoner = await fetchSummonerByPuuid(region, account.puuid, liveFetchOptions).catch(() => null);
-    const activeGame = await fetchActiveGameByPuuid(region, account.puuid, { timeoutMs: 12_000, retries: 2 });
+    const activeGame = await fetchActiveGameByPuuid(region, account.puuid, {
+      timeoutMs: 12_000,
+      retries: 1,
+      retryAfterCapMs: 1_500,
+    });
 
     if (!isArenaLiveGame(activeGame)) {
       const payload = {
@@ -966,8 +990,7 @@ async function fetchRiotPublicProfile(region, slug, options = {}) {
   const importedMatches = details
     .map((detail) => mapRiotMatch(detail, account.puuid, "public"))
     .filter(Boolean);
-  const matchIdSet = new Set(matchIds);
-  const seasonExistingMatches = existingMatches.filter((match) => matchIdSet.has(match.source?.matchId));
+  const seasonExistingMatches = existingMatches;
   const matches = mergeMatchesByKey([...importedMatches, ...seasonExistingMatches])
     .filter(isCurrentArenaStoredMatch)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -1516,7 +1539,8 @@ async function riotFetch(routing, pathName, optionsOrAttempt = 0) {
   const options = typeof optionsOrAttempt === "number" ? { attempt: optionsOrAttempt } : optionsOrAttempt || {};
   const attempt = Number(options.attempt || 0);
   const timeoutMs = Number(options.timeoutMs || RIOT_FETCH_TIMEOUT_MS);
-  const retries = Number(options.retries ?? 2);
+  const retries = Number(options.retries ?? RIOT_FETCH_RETRIES);
+  const retryAfterCapMs = clamp(Number(options.retryAfterCapMs || RIOT_RETRY_AFTER_CAP_MS), 1_000, RIOT_RETRY_AFTER_CAP_MS);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   let response;
@@ -1546,7 +1570,7 @@ async function riotFetch(routing, pathName, optionsOrAttempt = 0) {
   if (!response.ok) {
     if (response.status === 429 && attempt < retries) {
       const retryAfter = Number(response.headers.get("retry-after") || 1);
-      await delay(Math.min(RIOT_RETRY_AFTER_CAP_MS, Math.max(1000, retryAfter * 1000)));
+      await delay(Math.min(retryAfterCapMs, Math.max(1000, retryAfter * 1000)));
       return riotFetch(routing, pathName, { ...options, attempt: attempt + 1 });
     }
     let message = `Riot API HTTP ${response.status}`;
@@ -2061,8 +2085,12 @@ function normalizeMatchNote(value) {
 }
 
 function seasonStartTimestamp() {
-  const now = new Date();
-  return Math.floor(Date.UTC(now.getUTCFullYear(), 0, 1, 0, 0, 0) / 1000);
+  return Math.floor(ARENA_SEASON_START_MS / 1000);
+}
+
+function parseDateMs(value) {
+  const ms = Date.parse(cleanText(value));
+  return Number.isFinite(ms) ? ms : 0;
 }
 
 function delay(ms) {
