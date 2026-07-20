@@ -1921,6 +1921,7 @@ function renderVictoryProgress(matches) {
     el("span", "progress-score", `${completed}/${total}`),
     el("span", "progress-percent", `${Math.round(percent)}%`),
   );
+  dom.progressCounter.closest(".progress-head")?.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.querySelector("span").style.width = `${percent}%`;
   dom.victoryProgress.setAttribute("aria-label", `${completed} / ${total} ${t("common.championsWon")}`);
@@ -2212,6 +2213,7 @@ function renderPublicProgress(progress) {
   const total = Number(progress?.total || CHAMPIONS.length);
   const percent = total ? (won / total) * 100 : 0;
   dom.publicProgressCounter.textContent = `${won} / ${total}`;
+  dom.publicProgressCounter.closest(".progress-head")?.style.setProperty("--progress", `${percent}%`);
   dom.publicVictoryProgress.style.setProperty("--progress", `${percent}%`);
   dom.publicVictoryProgress.querySelector("span").style.width = `${percent}%`;
 }
