@@ -73,6 +73,10 @@ const translations = {
     "common.noItems": "Brak itemów",
     "dashboard.wonChampions": "Championi z wygraną",
     "dashboard.recentMatches": "Ostatnie mecze",
+    "dashboard.viewChampions": "Zobacz wszystkich",
+    "dashboard.viewMatches": "Zobacz historię",
+    "dashboard.played": "Rozegrane",
+    "dashboard.winRate": "skuteczności",
     "dashboard.topDuo": "Najlepsze duo",
     "dashboard.noPartners": "Brak danych o partnerach.",
     "dashboard.noPartnersCaption": "Synchronizacja uzupełni graczy z Twojej drużyny.",
@@ -194,6 +198,10 @@ const translations = {
     "common.noItems": "No items",
     "dashboard.wonChampions": "Champions with a win",
     "dashboard.recentMatches": "Recent matches",
+    "dashboard.viewChampions": "View all champions",
+    "dashboard.viewMatches": "View all matches",
+    "dashboard.played": "Played",
+    "dashboard.winRate": "Win rate",
     "dashboard.topDuo": "Top duo",
     "dashboard.noPartners": "No partner data.",
     "dashboard.noPartnersCaption": "Sync will fill your Arena teammates.",
@@ -1809,7 +1817,7 @@ function render() {
   renderWonChampionStrip(matches);
   renderPartnerStats(matches);
   renderFriendRanking(matches);
-  renderMatchList(dom.recentMatches, matches.slice(0, 5), { compact: true });
+  renderSummaryMatches(dom.recentMatches, matches.slice(0, 5));
   renderHistoryMatches(matches);
   renderChampionCollection(matches);
   renderMatchDetailPage();
@@ -1918,10 +1926,10 @@ function renderVictoryProgress(matches) {
   const percent = total ? (completed / total) * 100 : 0;
 
   dom.progressCounter.replaceChildren(
-    el("span", "progress-score", `${completed}/${total}`),
+    el("span", "progress-score", `${completed} / ${total}`),
     el("span", "progress-percent", `${Math.round(percent)}%`),
   );
-  dom.progressCounter.closest(".progress-head")?.style.setProperty("--progress", `${percent}%`);
+  dom.progressCounter.closest(".progress-panel")?.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.style.setProperty("--progress", `${percent}%`);
   dom.victoryProgress.querySelector("span").style.width = `${percent}%`;
   dom.victoryProgress.setAttribute("aria-label", `${completed} / ${total} ${t("common.championsWon")}`);
@@ -2310,15 +2318,18 @@ function isViewingOwnProfile() {
 function renderMetrics(matches) {
   const games = matches.length;
   const wins = matches.filter((match) => match.placement === 1).length;
+  const winRate = games ? (wins / games) * 100 : 0;
 
   const cards = [
     {
       label: t("common.games"),
       value: games,
+      caption: t("dashboard.played"),
     },
     {
       label: t("common.wins"),
       value: wins,
+      caption: `${winRate.toFixed(1)}% ${t("dashboard.winRate")}`,
     },
   ];
 
@@ -2329,6 +2340,7 @@ function renderMetricCard(card) {
   const root = el("article", "metric-card");
   root.append(el("div", "metric-label", card.label));
   root.append(el("div", "metric-value", card.value));
+  root.append(el("div", "metric-caption", card.caption));
   return root;
 }
 
@@ -2340,7 +2352,7 @@ function renderWonChampionStrip(matches) {
   }
 
   dom.wonChampionStrip.replaceChildren(
-    ...won.map((stat) => renderChampionPill(stat)),
+    ...won.slice(0, 20).map((stat) => renderChampionPill(stat)),
   );
 }
 
@@ -2535,6 +2547,72 @@ function renderMatchList(container, matches, options = {}) {
   }
 
   container.replaceChildren(...matches.map((match) => renderMatchCard(match, options)));
+}
+
+function renderSummaryMatches(container, matches) {
+  if (!matches.length) {
+    container.replaceChildren(emptyState());
+    return;
+  }
+
+  container.replaceChildren(...matches.map(renderSummaryMatchRow));
+}
+
+function renderSummaryMatchRow(match) {
+  const placement = Number(match.placement) || 0;
+  const root = el("button", `summary-match-row is-place-${placement}`);
+  root.type = "button";
+  root.dataset.matchDetail = match.id;
+  root.title = formatTeamTitle(match);
+
+  const placementBlock = el("div", "summary-placement");
+  placementBlock.append(
+    el("strong", "", summaryPlacementLabel(placement)),
+    el("span", "", t("common.place")),
+  );
+
+  const context = el("div", "summary-match-context");
+  const identity = el("div", "summary-match-identity");
+  identity.append(renderTeamIconStack(match));
+  const copy = el("div", "summary-match-copy");
+  copy.append(
+    el("strong", "", t("live.arena")),
+    el("span", "", relativeTime(match.date)),
+    el("small", "", formatDate(match.date)),
+  );
+  identity.append(copy);
+  context.append(identity);
+
+  const augments = renderSummaryAssetColumn(t("common.augments"), match.augments, 4);
+  const items = renderSummaryAssetColumn(t("common.items"), match.items, 5);
+  const chevron = el("span", "summary-match-chevron", "›");
+  chevron.setAttribute("aria-hidden", "true");
+
+  root.append(placementBlock, context, augments, items, chevron);
+  return root;
+}
+
+function renderSummaryAssetColumn(label, tags = [], limit = 4) {
+  const root = el("div", "summary-asset-column");
+  root.append(el("span", "summary-asset-label", label));
+  const icons = el("div", "summary-asset-icons");
+  const values = Array.isArray(tags) ? tags : [];
+  values.slice(0, limit).forEach((tag) => {
+    const pill = renderTagPill(tag);
+    pill.classList.add("summary-asset-icon");
+    pill.tabIndex = -1;
+    icons.append(pill);
+  });
+  root.append(icons);
+  return root;
+}
+
+function summaryPlacementLabel(placement) {
+  if (state.language !== "en") return `${placement}.`;
+  const remainder = placement % 100;
+  if (remainder >= 11 && remainder <= 13) return `${placement}TH`;
+  const suffix = placement % 10 === 1 ? "ST" : placement % 10 === 2 ? "ND" : placement % 10 === 3 ? "RD" : "TH";
+  return `${placement}${suffix}`;
 }
 
 function renderHistoryMatches(matches) {

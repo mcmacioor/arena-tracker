@@ -9,7 +9,7 @@
       content="ArenaTracker is a minimalist League of Legends Arena wins tracker."
     />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css?v=0.6.0" />
+    <link rel="stylesheet" href="/styles.css?v=0.6.1" />
   </head>
   <body>
     <div class="app-shell">
@@ -103,25 +103,36 @@
 
         <section class="view-stack">
           <div class="view is-visible" id="dashboardView" data-view="dashboard">
-            <section class="progress-panel" aria-labelledby="progressTitle">
-              <div class="progress-head">
-                <div>
-                  <p class="eyebrow" data-i18n="progress.label">Postęp</p>
-                  <h2 id="progressTitle" data-i18n="progress.title">Wygrani championi</h2>
+            <div class="summary-overview">
+              <section class="progress-panel" aria-labelledby="progressTitle">
+                <div class="progress-medallion" aria-hidden="true">
+                  <span>🏆</span>
                 </div>
-                <strong id="progressCounter">0 / 0</strong>
-              </div>
-              <div class="victory-progress" id="victoryProgress" aria-hidden="true">
-                <span></span>
-              </div>
-            </section>
+                <div class="progress-content">
+                  <div class="progress-head">
+                    <div>
+                      <p class="eyebrow" data-i18n="progress.label">Postęp</p>
+                      <h2 id="progressTitle" data-i18n="progress.title">Wygrani championi</h2>
+                    </div>
+                    <strong id="progressCounter">0 / 0</strong>
+                  </div>
+                  <div class="victory-progress" id="victoryProgress" aria-hidden="true">
+                    <span></span>
+                  </div>
+                </div>
+              </section>
 
-            <div class="metrics-grid" id="metricsGrid" aria-live="polite"></div>
+              <div class="metrics-grid summary-metrics-panel" id="metricsGrid" aria-live="polite"></div>
+            </div>
 
             <div class="split-layout">
               <section class="panel" aria-labelledby="wonTitle">
                 <div class="panel-head">
                   <h2 id="wonTitle" data-i18n="dashboard.wonChampions">Championi z wygraną</h2>
+                  <a class="panel-route-link nav-link" href="#champions" data-route="champions">
+                    <span data-i18n="dashboard.viewChampions">Zobacz wszystkich</span>
+                    <span aria-hidden="true">›</span>
+                  </a>
                 </div>
                 <div class="champion-strip" id="wonChampionStrip"></div>
               </section>
@@ -129,8 +140,12 @@
               <section class="panel" aria-labelledby="recentTitle">
                 <div class="panel-head">
                   <h2 id="recentTitle" data-i18n="dashboard.recentMatches">Ostatnie mecze</h2>
+                  <a class="panel-route-link nav-link" href="#matches" data-route="matches">
+                    <span data-i18n="dashboard.viewMatches">Zobacz historię</span>
+                    <span aria-hidden="true">›</span>
+                  </a>
                 </div>
-                <div class="match-list compact" id="recentMatches"></div>
+                <div class="summary-match-list" id="recentMatches"></div>
               </section>
             </div>
           </div>
@@ -542,6 +557,6 @@
       </div>
     </template>
     <script src="/assets/game-data.js"></script>
-    <script src="/app.js?v=0.6.0" defer></script>
+    <script src="/app.js?v=0.6.1" defer></script>
   </body>
 </html>
