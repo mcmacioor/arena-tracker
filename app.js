@@ -2805,11 +2805,6 @@ function renderChampionCollectionCard(stat) {
   root.dataset.championDetail = stat.champion;
   setChampionCollectionCardBackground(root, stat.champion);
   root.setAttribute("aria-label", `${stat.champion}, ${stat.wins ? formatChampionWinCount(stat.wins) : stat.games ? `${t("champions.bestPlace")} ${stat.bestPlacement}` : t("champions.noGames")}`);
-  if (stat.wins) {
-    const mark = el("span", "champion-win-mark", "\u2655");
-    mark.setAttribute("aria-hidden", "true");
-    root.append(mark);
-  }
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(
@@ -2836,11 +2831,6 @@ function formatChampionWinCount(count) {
 }
 
 function setChampionCollectionCardBackground(root, champion) {
-  const splash = championSplashUrl(champion);
-  if (splash) {
-    root.style.setProperty("--champion-art", `url("${splash}")`);
-    return;
-  }
   setChampionCardBackground(root, champion);
 }
 

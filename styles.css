@@ -5786,25 +5786,6 @@ textarea:focus {
   color: #a1a7a6;
 }
 
-.champion-win-mark {
-  position: absolute;
-  z-index: 3;
-  top: 7px;
-  right: 7px;
-  display: grid !important;
-  width: 22px;
-  height: 22px;
-  place-items: center;
-  border: 1px solid rgb(232 195 89 / 42%);
-  border-radius: 4px;
-  color: #efc64f !important;
-  background: rgb(10 13 14 / 78%);
-  font-size: 0.74rem !important;
-  line-height: 1 !important;
-  text-shadow: none !important;
-  backdrop-filter: blur(5px);
-}
-
 .champion-collection.is-compact .champion-collection-grid {
   grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
   gap: 8px;
