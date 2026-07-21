@@ -4973,17 +4973,19 @@ textarea:focus {
 .history-toolbar-panel {
   display: grid;
   grid-template-columns: auto minmax(250px, 1fr) auto minmax(150px, 190px);
-  gap: 14px;
-  align-items: center;
-  min-height: 64px;
-  padding: 10px 14px;
+  gap: 12px;
+  align-items: end;
+  padding: 18px 20px 20px;
   border-color: #31383a;
   background: #0c1012;
 }
 
 .history-toolbar-title {
   display: grid;
+  align-content: center;
+  align-self: end;
   min-width: 150px;
+  min-height: 42px;
   gap: 2px;
   color: #f2f0e9;
   font-size: 0.82rem;
@@ -5000,13 +5002,37 @@ textarea:focus {
 
 .history-champion-search {
   position: relative;
+  display: grid;
+  grid-template-rows: auto 42px;
+  gap: 8px;
+  align-self: end;
+  min-width: 0;
+}
+
+.history-sort-control {
+  display: grid;
+  grid-template-rows: auto 42px;
+  gap: 8px;
+  align-self: end;
+  min-width: 0;
+}
+
+.history-champion-search > span:first-child,
+.history-sort-control > span:first-child {
   display: block;
+  min-height: 14px;
+  color: #a8afad;
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 14px;
 }
 
 .history-champion-search input,
 .history-sort-control select {
   width: 100%;
-  height: 40px;
+  height: 42px;
+  min-height: 42px;
+  margin: 0;
   border: 1px solid #30383c;
   border-radius: 5px;
   color: #e8e8e3;
@@ -5020,14 +5046,14 @@ textarea:focus {
 .history-search-icon {
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: auto;
+  bottom: 13px;
   left: 14px;
   width: 12px;
   height: 12px;
   border: 2px solid #8c9495;
   border-radius: 50%;
   pointer-events: none;
-  transform: translateY(-58%);
 }
 
 .history-search-icon::after {
@@ -5045,6 +5071,8 @@ textarea:focus {
 .history-placement-filter {
   display: grid;
   grid-template-columns: repeat(5, minmax(52px, auto));
+  align-self: end;
+  height: 42px;
   overflow: hidden;
   border: 1px solid #30383c;
   border-radius: 5px;
@@ -5053,7 +5081,8 @@ textarea:focus {
 
 .history-filter-button {
   min-width: 0;
-  height: 38px;
+  height: 40px;
+  min-height: 40px;
   padding: 0 12px;
   border: 0;
   border-right: 1px solid #30383c;
