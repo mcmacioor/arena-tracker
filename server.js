@@ -679,7 +679,7 @@ async function getPublicProfile(req, res, url) {
             .filter(isCurrentArenaStoredMatch);
       if (fallbackMatches.length) {
         sendJson(res, 200, {
-          ...buildPublicProfile(cached || user, fallbackMatches),
+          ...buildPublicProfile(cached || user, fallbackMatches, db),
           warning: apiErrorMessage(error),
         });
         return;
@@ -688,7 +688,7 @@ async function getPublicProfile(req, res, url) {
     }
     if (fetched) {
       if (!fetched.sync?.hasMore) await savePublicProfileCache(fetched);
-      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
+      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches, db));
       return;
     }
   }
@@ -696,14 +696,14 @@ async function getPublicProfile(req, res, url) {
   if (!user) {
     const cached = findCachedPublicProfile(db, region, slug);
     if (!forceRefresh && !syncJobId && cached) {
-      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || [], db));
       return;
     }
 
     const shouldRefresh = forceRefresh || Boolean(syncJobId) || !cached || isPublicProfileCacheStale(cached);
 
     if (!shouldRefresh && cached) {
-      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || [], db));
       return;
     }
 
@@ -719,7 +719,7 @@ async function getPublicProfile(req, res, url) {
     } catch (error) {
       if (cached) {
         sendJson(res, 200, {
-          ...buildPublicProfile(cached, cached.matches || []),
+          ...buildPublicProfile(cached, cached.matches || [], db),
           warning: apiErrorMessage(error),
         });
         return;
@@ -728,12 +728,12 @@ async function getPublicProfile(req, res, url) {
     }
     if (fetched) {
       if (!fetched.sync?.hasMore) await savePublicProfileCache(fetched);
-      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches));
+      sendJson(res, 200, buildPublicProfile(fetched, fetched.matches, db));
       return;
     }
 
     if (cached) {
-      sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+      sendJson(res, 200, buildPublicProfile(cached, cached.matches || [], db));
       return;
     }
 
@@ -749,11 +749,11 @@ async function getPublicProfile(req, res, url) {
 
   const cached = findCachedPublicProfile(db, region, slug);
   if (cached && Array.isArray(cached.matches) && cached.matches.length >= matches.length) {
-    sendJson(res, 200, buildPublicProfile(cached, cached.matches || []));
+    sendJson(res, 200, buildPublicProfile(cached, cached.matches || [], db));
     return;
   }
 
-  const payload = buildPublicProfile(user, matches);
+  const payload = buildPublicProfile(user, matches, db);
   if (cached?.riotProfile?.profileIconId) {
     payload.profile.profileIconUrl = profileIconUrl(cached.riotProfile.profileIconId);
   }
@@ -1231,7 +1231,7 @@ function searchResultFromRiotId(parsed, region, source, iconUrl = "") {
   };
 }
 
-function buildPublicProfile(user, matches) {
+function buildPublicProfile(user, matches, db) {
   const currentMatches = filterCurrentArenaMatches(matches);
   const championStats = getChampionStatsForMatches(currentMatches);
   const wonChampions = championStats
@@ -1264,7 +1264,10 @@ function buildPublicProfile(user, matches) {
       icon: GAME_DATA.championIcons?.[stat.champion] || "",
     })),
     matches: currentMatches.map(publicMatchSummary),
-    topDuo: getPartnerStatsForMatches(currentMatches).slice(0, 8),
+    topDuo: getPartnerStatsForMatches(
+      currentMatches,
+      getCachedProfileIconLookup(db, profile.region, user),
+    ).slice(0, 8),
   };
 }
 
@@ -1325,7 +1328,7 @@ function getChampionStatsForMatches(matches) {
   }));
 }
 
-function getPartnerStatsForMatches(matches) {
+function getPartnerStatsForMatches(matches, profileIcons = new Map()) {
   const partners = new Map();
 
   matches.forEach((match) => {
@@ -1344,8 +1347,30 @@ function getPartnerStatsForMatches(matches) {
       ...stat,
       winrate: stat.games ? stat.wins / stat.games : 0,
       averagePlacement: average(stat.placements),
+      profileIconUrl: profileIcons.get(normalizeLookupKey(stat.name)) || "",
     }))
     .sort((a, b) => b.games - a.games || a.averagePlacement - b.averagePlacement || a.name.localeCompare(b.name));
+}
+
+function getCachedProfileIconLookup(db, region, currentUser) {
+  const lookup = new Map();
+  const normalizedRegion = normalizePublicRegion(region);
+
+  const addProfile = (candidate) => {
+    const profile = candidate?.riotProfile || candidate;
+    if (!profile?.gameName || !profile?.tagLine || !profile?.profileIconId) return;
+    if (normalizePublicRegion(profile.region) !== normalizedRegion) return;
+
+    lookup.set(
+      normalizeLookupKey(`${profile.gameName}#${profile.tagLine}`),
+      profileIconUrl(profile.profileIconId),
+    );
+  };
+
+  (db?.users || []).forEach(addProfile);
+  (db?.publicProfiles || []).forEach(addProfile);
+  addProfile(currentUser);
+  return lookup;
 }
 
 async function syncRiotMatches(req, res, user) {

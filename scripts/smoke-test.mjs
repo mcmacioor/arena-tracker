@@ -329,7 +329,13 @@ try {
           progress: { won: 2, total: window.ARENA_GAME_DATA.champions.length },
           wonChampions: [],
           matches: state.matches,
-          topDuo: [],
+          topDuo: [{
+            name: "ShieldBot#EUNE",
+            games: 3,
+            wins: 2,
+            averagePlacement: 1.67,
+            profileIconUrl: "https://ddragon.leagueoflegends.com/cdn/16.14.1/img/profileicon/578.png",
+          }],
         },
       };
       state.activeMatchId = "";
@@ -344,6 +350,23 @@ try {
       && document.querySelector("[data-route='friends']") == null`,
   );
   assert(publicChromeVisible, "Public profiles should show the shared profile hero and tabs without the private group tab");
+  await evalPage(cdp, `setActiveRoute("matches"); render()`);
+  const partnerAvatars = await evalPage(
+    cdp,
+    `(() => {
+      const cards = [...document.querySelectorAll("#partnerStats .history-partner-card")];
+      const cached = cards.find((card) => card.dataset.partnerProfile === "ShieldBot#EUNE");
+      const uncached = cards.find((card) => card.dataset.partnerProfile === "GalioMain#EUNE");
+      return {
+        cachedSrc: cached?.querySelector("img.history-partner-avatar")?.src || "",
+        cachedUsesChampionIcon: Boolean(cached?.querySelector(".champion-icon")),
+        fallbackText: uncached?.querySelector(".history-partner-avatar.is-fallback")?.textContent || "",
+      };
+    })()`,
+  );
+  assert(partnerAvatars.cachedSrc.includes("/profileicon/578.png"), "Cached partners should use their Riot profile icon");
+  assert(!partnerAvatars.cachedUsesChampionIcon, "Partner cards should not use champion portraits as avatars");
+  assert(partnerAvatars.fallbackText === "GA", "Uncached partners should use neutral initials");
   await evalPage(cdp, `openMatchDetail("smoke-1")`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const publicMatchDetailFound = await evalPage(

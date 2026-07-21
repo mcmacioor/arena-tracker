@@ -2445,11 +2445,13 @@ function renderPublicProfile() {
   dom.publicTopDuo.replaceChildren(
     ...(data.topDuo.length
       ? data.topDuo.map((stat) => {
-          const root = el("article", "partner-card");
-          root.append(
+          const root = el("article", "partner-card public-partner-card");
+          const copy = el("span", "history-partner-copy");
+          copy.append(
             el("strong", "", stat.name),
             el("span", "", `${stat.games} ${t("common.gamesLower")} · ${t("common.average")} #${formatAveragePlacement(stat.averagePlacement)}`),
           );
+          root.append(renderPartnerAvatar(stat.name, stat.profileIconUrl), copy);
           return root;
         })
       : [emptyState(t("public.noDuo"), t("public.noDuoCaption"))]),
@@ -2631,13 +2633,20 @@ function renderPartnerStats(matches) {
     return;
   }
 
+  const profileIcons = new Map(
+    (state.publicProfile?.data?.topDuo || []).map((stat) => [
+      normalizeLookupKey(stat.name),
+      cleanText(stat.profileIconUrl),
+    ]),
+  );
+
   dom.partnerStats.replaceChildren(
     ...stats.slice(0, 4).map((stat) => {
       const root = el("button", "partner-card history-partner-card");
       root.type = "button";
       root.dataset.partnerProfile = stat.name;
       root.dataset.partnerRegion = state.publicRoute?.region || state.user?.riotProfile?.region || "euw1";
-      if (stat.champion) root.append(renderChampionIcon(stat.champion));
+      root.append(renderPartnerAvatar(stat.name, profileIcons.get(normalizeLookupKey(stat.name))));
       const copy = el("span", "history-partner-copy");
       copy.append(
         el("strong", "", stat.name),
@@ -2647,6 +2656,23 @@ function renderPartnerStats(matches) {
       return root;
     }),
   );
+}
+
+function renderPartnerAvatar(name, src = "") {
+  if (src) {
+    const image = imageIcon(src, "history-partner-avatar");
+    image.addEventListener("error", () => image.replaceWith(renderPartnerAvatar(name)), { once: true });
+    return image;
+  }
+
+  const gameName = cleanText(name).split("#")[0];
+  const words = gameName.split(/\s+/).filter(Boolean);
+  const initials = words.length > 1
+    ? words.slice(0, 2).map((word) => word[0]).join("")
+    : gameName.slice(0, 2);
+  const fallback = el("span", "history-partner-avatar is-fallback", initials.toUpperCase() || "?");
+  fallback.setAttribute("aria-hidden", "true");
+  return fallback;
 }
 
 function renderFriendRanking(matches) {

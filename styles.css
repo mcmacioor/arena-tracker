@@ -5132,11 +5132,31 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
-.history-partner-card .champion-icon {
+.history-partner-avatar {
   width: 38px;
   height: 38px;
+  min-width: 38px;
   border: 1px solid rgb(201 170 98 / 46%);
   border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgb(201 170 98 / 8%);
+}
+
+.history-partner-avatar.is-fallback {
+  display: grid;
+  place-items: center;
+  color: #d6bd78;
+  background:
+    radial-gradient(circle at 50% 35%, rgb(201 170 98 / 16%), transparent 52%),
+    #111617;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.public-partner-card {
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
 }
 
 .history-partner-copy {
