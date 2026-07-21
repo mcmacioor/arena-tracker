@@ -94,6 +94,9 @@ const translations = {
     "champions.noFilteredCaption": "Zmień filtr albo zsynchronizuj konto.",
     "champions.noSavedGames": "Brak zapisanych gier tym championem.",
     "champions.avgPlace": "Średnie miejsce",
+    "champions.profile": "Profil championa",
+    "champions.placementDistribution": "Rozkład miejsc",
+    "champions.matchHistory": "Historia meczów",
     "sort.wins": "Liczba winów",
     "sort.az": "A-Z",
     "sort.games": "Liczba gier",
@@ -219,6 +222,9 @@ const translations = {
     "champions.noFilteredCaption": "Change filter or sync the account.",
     "champions.noSavedGames": "No saved games with this champion.",
     "champions.avgPlace": "Average place",
+    "champions.profile": "Champion profile",
+    "champions.placementDistribution": "Placement distribution",
+    "champions.matchHistory": "Match history",
     "sort.wins": "Win count",
     "sort.az": "A-Z",
     "sort.games": "Game count",
@@ -541,10 +547,12 @@ function cacheDom() {
     championDetailOverlay: document.getElementById("championDetailOverlay"),
     championDetailBackdrop: document.getElementById("championDetailBackdrop"),
     championDetailClose: document.getElementById("championDetailClose"),
+    championDetailHero: document.getElementById("championDetailHero"),
     championDetailIcon: document.getElementById("championDetailIcon"),
     championDetailTitle: document.getElementById("championDetailTitle"),
     championDetailStats: document.getElementById("championDetailStats"),
     championDetailBuild: document.getElementById("championDetailBuild"),
+    championDetailPlacement: document.getElementById("championDetailPlacement"),
     championDetailHistory: document.getElementById("championDetailHistory"),
     matchDetailOverlay: document.getElementById("matchDetailOverlay"),
     matchDetailBackdrop: document.getElementById("matchDetailBackdrop"),
@@ -926,32 +934,112 @@ function openChampionDetail(champion) {
     games: 0,
     wins: 0,
     avg: 0,
+    bestPlacement: 0,
   };
 
+  const splash = championSplashUrl(champion);
+  dom.championDetailHero.style.setProperty("--champion-splash", splash ? `url("${splash}")` : "none");
   dom.championDetailIcon.replaceChildren(renderChampionIcon(champion));
   dom.championDetailTitle.textContent = champion;
   dom.championDetailStats.replaceChildren(
-    renderDetailStat(t("common.wins"), stat.wins),
-    renderDetailStat(t("common.games"), stat.games),
-    renderDetailStat(t("champions.avgPlace"), formatAveragePlacement(stat.avg)),
+    renderChampionProfileStat(t("common.wins"), stat.wins, "\u2605", true),
+    renderChampionProfileStat(t("common.games"), stat.games, "\u25C7"),
+    renderChampionProfileStat(t("champions.avgPlace"), formatAveragePlacement(stat.avg), "\u2300"),
+    renderChampionProfileStat(
+      t("champions.bestPlace"),
+      stat.bestPlacement ? `#${stat.bestPlacement}` : "-",
+      "\u2655",
+      true,
+    ),
   );
   renderChampionBuild(champion, matches);
-  dom.championDetailHistory.replaceChildren(
-    ...(matches.length
-      ? matches.map((match) => {
-          const row = el("button", "detail-history-row");
-          row.type = "button";
-          row.dataset.matchDetail = match.id;
-          row.append(
-            el("strong", "", `#${match.placement}`),
-            el("span", "", formatTeamTitle(match)),
-          );
-          return row;
-        })
-      : [el("article", "detail-history-row is-empty", t("champions.noSavedGames"))]),
-  );
+  renderChampionPlacementDistribution(matches);
+  renderChampionDetailHistory(matches);
   dom.championDetailOverlay.classList.add("is-open");
   dom.championDetailOverlay.setAttribute("aria-hidden", "false");
+}
+
+function renderChampionProfileStat(label, value, icon, accent = false) {
+  const root = el("article", `champion-profile-stat${accent ? " is-accent" : ""}`);
+  const iconRoot = el("span", "champion-profile-stat-icon", icon);
+  iconRoot.setAttribute("aria-hidden", "true");
+  const copy = el("div", "champion-profile-stat-copy");
+  copy.append(el("span", "", label), el("strong", "", value));
+  root.append(iconRoot, copy);
+  return root;
+}
+
+function renderChampionPlacementDistribution(matches) {
+  if (!dom.championDetailPlacement) return;
+  const groups = [
+    { label: "#1", tone: "first", count: matches.filter((match) => match.placement === 1).length },
+    { label: "#2", tone: "second", count: matches.filter((match) => match.placement === 2).length },
+    { label: "#3-4", tone: "middle", count: matches.filter((match) => [3, 4].includes(match.placement)).length },
+    { label: "#5-6", tone: "low", count: matches.filter((match) => match.placement >= 5).length },
+  ];
+  const total = Math.max(1, matches.length);
+  const root = el("div", "placement-distribution");
+  const bar = el("div", `placement-distribution-bar${matches.length ? "" : " is-empty"}`);
+  groups.forEach((group) => {
+    if (!group.count) return;
+    const segment = el("span", `placement-segment is-${group.tone}`);
+    segment.style.width = `${(group.count / total) * 100}%`;
+    bar.append(segment);
+  });
+  const legend = el("div", "placement-distribution-legend");
+  groups.forEach((group) => {
+    const item = el("div", `placement-legend-item is-${group.tone}`);
+    item.append(el("strong", "", group.label), el("span", "", group.count));
+    legend.append(item);
+  });
+  root.append(bar, legend);
+  dom.championDetailPlacement.replaceChildren(root);
+}
+
+function renderChampionDetailHistory(matches) {
+  const rows = matches.length
+    ? matches.map(renderChampionDetailMatchRow)
+    : [el("article", "champion-history-empty", t("champions.noSavedGames"))];
+  dom.championDetailHistory.replaceChildren(...rows);
+}
+
+function renderChampionDetailMatchRow(match) {
+  const placement = Number(match.placement) || ARENA_MAX_PLACEMENT;
+  const root = el("button", `champion-history-row is-place-${placement}`);
+  root.type = "button";
+  root.dataset.matchDetail = match.id;
+
+  const place = el("span", "champion-history-place", `#${placement}`);
+  const date = el("span", "champion-history-date");
+  date.append(el("strong", "", formatDate(match.date)), el("span", "", formatTime(match.date)));
+
+  const team = el("span", "champion-history-team");
+  const icons = el("span", "champion-history-team-icons");
+  [match.champion, ...getPartnerLabels(match)].slice(0, 3).forEach((champion) => {
+    icons.append(renderChampionIcon(champion));
+  });
+  team.append(icons, el("strong", "", formatTeamTitle(match)));
+
+  const augments = renderChampionHistoryAssets(t("common.augments"), match.augments, 4, "augment");
+  const items = renderChampionHistoryAssets(t("common.items"), match.items, 5, "item");
+  const chevron = el("span", "champion-history-chevron", ">");
+  chevron.setAttribute("aria-hidden", "true");
+  root.append(place, date, team, augments, items, chevron);
+  return root;
+}
+
+function renderChampionHistoryAssets(label, tags = [], limit, type) {
+  const root = el("span", `champion-history-assets is-${type}`);
+  root.append(el("span", "champion-history-assets-label", label));
+  const list = el("span", "champion-history-assets-list");
+  tags.slice(0, limit).forEach((tag) => {
+    const pill = renderTagPill(tag);
+    pill.classList.add("champion-history-asset");
+    pill.tabIndex = -1;
+    list.append(pill);
+  });
+  root.append(list);
+  return root;
 }
 
 function closeChampionDetail() {
@@ -967,7 +1055,7 @@ function renderChampionBuild(champion) {
   const link = el(
     "a",
     "metasrc-build-link",
-    state.language === "en" ? "Check build on MetaSRC" : "Sprawdź build na MetaSRC",
+    `${state.language === "en" ? "Check build on MetaSRC" : "Sprawdź build na MetaSRC"} \u2197`,
   );
   link.href = url;
   link.target = "_blank";
@@ -2523,6 +2611,15 @@ function setChampionCardBackground(root, champion) {
   if (src) root.style.setProperty("--champion-art", `url("${src}")`);
 }
 
+function championSplashUrl(champion) {
+  const championName = canonicalChampionName(champion);
+  const icon = championName ? CHAMPION_ICONS[championName] : "";
+  const filename = icon.split("/").pop()?.split("?")[0]?.replace(/\.png$/i, "");
+  return filename
+    ? `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${filename}_0.jpg`
+    : "";
+}
+
 function renderChampionIcon(champion) {
   const championName = canonicalChampionName(champion);
   const src = championName ? CHAMPION_ICONS[championName] : "";
@@ -3602,6 +3699,13 @@ function formatDateTime(value) {
     day: "2-digit",
     month: "short",
     year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
+function formatTime(value) {
+  return new Intl.DateTimeFormat(state.language === "en" ? "en" : "pl-PL", {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(value));

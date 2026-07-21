@@ -507,16 +507,29 @@
         aria-label="Zamknij szczegóły championa"
       ></button>
       <section class="champion-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="championDetailTitle">
-        <button class="dialog-close" id="championDetailClose" type="button" aria-label="Zamknij">×</button>
-        <div class="champion-detail-head">
-          <span id="championDetailIcon"></span>
-          <h2 id="championDetailTitle">Champion</h2>
-        </div>
-        <div class="detail-stats" id="championDetailStats"></div>
-        <div class="champion-build-section" id="championDetailBuild"></div>
-        <div>
-          <h3 data-i18n="history.title">History</h3>
-          <div class="detail-history" id="championDetailHistory"></div>
+        <header class="champion-profile-banner" id="championDetailHero">
+          <div class="champion-profile-actions">
+            <div class="champion-build-section" id="championDetailBuild"></div>
+            <button class="dialog-close" id="championDetailClose" type="button" aria-label="Zamknij">×</button>
+          </div>
+          <div class="champion-profile-identity">
+            <span class="champion-profile-portrait" id="championDetailIcon"></span>
+            <div>
+              <h2 id="championDetailTitle">Champion</h2>
+              <p data-i18n="champions.profile">Champion profile</p>
+            </div>
+          </div>
+        </header>
+        <div class="champion-profile-body">
+          <div class="champion-profile-stats" id="championDetailStats"></div>
+          <section class="champion-placement-section">
+            <h3 data-i18n="champions.placementDistribution">Placement distribution</h3>
+            <div id="championDetailPlacement"></div>
+          </section>
+          <section class="champion-match-history">
+            <h3 data-i18n="champions.matchHistory">Match history</h3>
+            <div class="detail-history" id="championDetailHistory"></div>
+          </section>
         </div>
       </section>
     </div>
