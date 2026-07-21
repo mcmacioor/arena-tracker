@@ -307,26 +307,20 @@
 
           <div class="view" id="matchDetailView" data-view="match-detail">
             <section class="panel match-detail-page" aria-labelledby="matchDetailPageTitle">
-              <div class="panel-head">
-                <div>
-                  <p class="eyebrow" data-i18n="matchDetails.title">Szczegóły meczu</p>
-                  <h2 id="matchDetailPageTitle">Mecz</h2>
+              <div class="match-detail-toolbar">
+                <div class="match-detail-heading">
+                  <span class="match-detail-back-mark" aria-hidden="true">&#8249;</span>
+                  <div>
+                    <p class="eyebrow" data-i18n="matchDetails.title">Szczegóły meczu</p>
+                    <h2 id="matchDetailPageTitle">Mecz</h2>
+                  </div>
                 </div>
                 <a class="ghost-action" href="#matches" data-i18n="actions.backToHistory">Wróć do historii</a>
               </div>
-              <div class="detail-stats" id="matchDetailPageStats"></div>
-              <div class="match-detail-section">
-                <h3 data-i18n="common.players">Gracze</h3>
-                <div class="player-detail-list" id="matchDetailPagePlayers"></div>
-              </div>
-              <div class="match-detail-section">
-                <h3 data-i18n="common.augments">Augmenty</h3>
-                <div class="match-tags detail-tags" id="matchDetailPageAugments"></div>
-              </div>
-              <div class="match-detail-section">
-                <h3 data-i18n="common.items">Itemy</h3>
-                <div class="match-tags detail-tags" id="matchDetailPageItems"></div>
-              </div>
+              <div class="match-detail-summary" id="matchDetailPageStats"></div>
+              <div class="player-detail-list" id="matchDetailPagePlayers"></div>
+              <div class="is-hidden" id="matchDetailPageAugments"></div>
+              <div class="is-hidden" id="matchDetailPageItems"></div>
             </section>
           </div>
 

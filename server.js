@@ -1895,6 +1895,10 @@ function mapRiotMatch(detail, puuid, userId) {
     puuid: item.puuid,
     placement: placementFor(item),
     teamId: cleanText(item.playerSubteamId),
+    level: Number(item.champLevel || 0),
+    kills: Number(item.kills || 0),
+    deaths: Number(item.deaths || 0),
+    assists: Number(item.assists || 0),
     augments: augmentsFor(item),
     items: itemsFor(item),
   }));
@@ -1917,6 +1921,7 @@ function mapRiotMatch(detail, puuid, userId) {
     teammates,
     players,
     placement: clamp(placement, 1, ARENA_MAX_PLACEMENT),
+    durationSeconds: Math.max(0, Number(detail.info.gameDuration || 0)),
     ratingDelta: 0,
     augments,
     items,
@@ -1972,6 +1977,7 @@ function normalizeMatch(match, userId, sourceType) {
     teammates,
     players,
     placement: clamp(Number(match.placement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
+    durationSeconds: Math.max(0, Number(match.durationSeconds || match.gameDuration || 0)),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
       ? match.augments.map(resolveAugmentTag).filter(Boolean)
@@ -2253,9 +2259,19 @@ function normalizePlayer(value) {
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     teamId: cleanText(value.teamId ?? value.playerSubteamId),
+    level: optionalMatchStat(value.level ?? value.champLevel),
+    kills: optionalMatchStat(value.kills),
+    deaths: optionalMatchStat(value.deaths),
+    assists: optionalMatchStat(value.assists),
     augments: Array.isArray(value.augments) ? value.augments.map(resolveAugmentTag).filter(Boolean) : [],
     items: Array.isArray(value.items) ? value.items.map(resolveItemTag).filter(Boolean) : [],
   };
+}
+
+function optionalMatchStat(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.max(0, number) : null;
 }
 
 function profileIconUrl(profileIconId) {

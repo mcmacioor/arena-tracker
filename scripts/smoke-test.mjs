@@ -198,8 +198,9 @@ try {
   );
   assert(detailOpen, "Champion detail modal should open after clicking a champion");
   const detailText = await evalPage(cdp, `document.querySelector("#championDetailOverlay").innerText`);
+  const normalizedDetailText = detailText.toLocaleLowerCase("pl");
   assert(
-    detailText.includes("Średnie miejsce") || detailText.includes("Average place"),
+    normalizedDetailText.includes("średnie miejsce") || normalizedDetailText.includes("average place"),
     "Champion detail should include average placement",
   );
   const metasrcBuildLink = await evalPage(
@@ -215,16 +216,21 @@ try {
   await evalPage(cdp, `location.hash = "matches"`);
   await evalPage(cdp, `new Promise((resolve) => setTimeout(resolve, 100))`, true);
   const matchText = await evalPage(cdp, `document.querySelector("#matchList").innerText`);
+  const matchAssetTitles = await evalPage(
+    cdp,
+    `Array.from(document.querySelectorAll("#matchList .asset-tag[title]"), (element) => element.title).join(" ")`,
+  );
   assert(
-    matchText.includes("Shake Proteinowy") || matchText.includes("Protein Shake"),
+    matchAssetTitles.includes("Shake Proteinowy") || matchAssetTitles.includes("Protein Shake"),
     "Numeric augment id should resolve to a localized name",
   );
-  assert(!matchText.includes("1324"), "Numeric augment id should not be rendered raw");
-  assert(
-    (matchText.toLowerCase().includes("augmenty") || matchText.toLowerCase().includes("augments"))
-      && (matchText.toLowerCase().includes("itemy") || matchText.toLowerCase().includes("items")),
-    "Match cards should split augments and items",
+  assert(!matchAssetTitles.includes("1324"), "Numeric augment id should not be rendered raw");
+  const matchAssetsSplit = await evalPage(
+    cdp,
+    `document.querySelector("#matchList .history-augments") != null
+      && document.querySelector("#matchList .history-items") != null`,
   );
+  assert(matchAssetsSplit, "Match cards should split augments and items");
   const matchChampionIconCount = await evalPage(
     cdp,
     `document.querySelectorAll("#matchList .match-champion-icons .champion-icon").length`,
@@ -247,22 +253,27 @@ try {
     `!document.querySelector("#matchDetailOverlay").classList.contains("is-open")`,
   );
   assert(legacyModalClosed, "Legacy match modal should stay closed");
-  const matchDetailText = await evalPage(cdp, `document.querySelector("#matchDetailView").innerText`);
+  const matchDetailAssetTitles = await evalPage(
+    cdp,
+    `Array.from(
+      document.querySelectorAll("#matchDetailPagePlayers .scoreboard-asset[title]"),
+      (element) => element.title,
+    ).join(" ")`,
+  );
   assert(
-    matchDetailText.includes("Shake Proteinowy") || matchDetailText.includes("Protein Shake"),
+    matchDetailAssetTitles.includes("Shake Proteinowy") || matchDetailAssetTitles.includes("Protein Shake"),
     "Match detail should include resolved augment names",
   );
-  assert(matchDetailText.includes("Gracze") || matchDetailText.includes("Players"), "Match detail should show players");
   const matchDetailTitle = await evalPage(cdp, `document.querySelector("#matchDetailPageTitle").textContent`);
   assert(!matchDetailTitle.includes("+"), "Match detail title should not duplicate the team title");
   const playerCards = await evalPage(
     cdp,
-    `document.querySelectorAll("#matchDetailPagePlayers .player-detail-card").length`,
+    `document.querySelectorAll("#matchDetailPagePlayers .scoreboard-player").length`,
   );
   assert(playerCards >= 3, "Match detail should include the team fallback players");
   const teamGroups = await evalPage(
     cdp,
-    `document.querySelectorAll("#matchDetailPagePlayers .match-team-group").length`,
+    `document.querySelectorAll("#matchDetailPagePlayers .match-scoreboard-row").length`,
   );
   assert(teamGroups >= 1, "Match detail should group players by team");
 

@@ -1173,22 +1173,48 @@ function renderMatchDetailPage() {
   const match = getSortedMatches().find((item) => item.id === state.activeMatchId);
   if (!match) {
     dom.matchDetailPageTitle.textContent = state.language === "en" ? "Match" : "Mecz";
-    dom.matchDetailPageStats.replaceChildren(renderDetailStat(t("common.status"), t("common.noData")));
+    dom.matchDetailPageStats.replaceChildren(emptyState(t("common.noData"), ""));
     dom.matchDetailPagePlayers.replaceChildren(emptyState(t("match.notFound"), t("match.notFoundCaption")));
     dom.matchDetailPageAugments.replaceChildren();
     dom.matchDetailPageItems.replaceChildren();
     return;
   }
 
-  dom.matchDetailPageTitle.textContent = formatDateTime(match.playedAt || match.date);
-  dom.matchDetailPageStats.replaceChildren(
-    renderDetailStat(t("common.date"), formatDateTime(match.playedAt || match.date)),
-    renderDetailStat(t("common.patch"), match.patch),
-    renderDetailStat(t("common.place"), `#${match.placement}`),
+  const groups = groupPlayersByTeam(getMatchPlayers(match));
+  dom.matchDetailPageTitle.textContent = t("matchDetails.title");
+  dom.matchDetailPageStats.replaceChildren(renderMatchDetailSummary(match, groups));
+  dom.matchDetailPagePlayers.replaceChildren(...renderMatchPlayers(match, groups));
+  dom.matchDetailPageAugments.replaceChildren();
+  dom.matchDetailPageItems.replaceChildren();
+}
+
+function renderMatchDetailSummary(match, groups) {
+  const viewedGroup = groups.find((group) => isViewedMatchGroup(group, match));
+  const viewedPlayers = viewedGroup?.players?.length ? viewedGroup.players : getMatchPlayers(match).slice(0, 3);
+  const root = el("article", `match-detail-lead ${placementToneClass(match.placement)}`);
+  const placement = el("div", "match-detail-lead-placement");
+  placement.append(
+    el("strong", "", placementOrdinal(match.placement)),
+    el("span", "", state.language === "en" ? "place" : "miejsce"),
   );
-  dom.matchDetailPagePlayers.replaceChildren(...renderMatchPlayers(match));
-  renderAssetTags(dom.matchDetailPageAugments, match.augments, t("common.noAugments"));
-  renderAssetTags(dom.matchDetailPageItems, match.items, t("common.noItems"));
+
+  const content = el("div", "match-detail-lead-content");
+  const titleRow = el("div", "match-detail-lead-title");
+  const champions = el("div", "match-detail-lead-champions");
+  viewedPlayers.slice(0, 3).forEach((player) => champions.append(renderChampionIcon(player.champion)));
+  titleRow.append(champions, el("strong", "", formatTeamTitle(match)));
+
+  const meta = el("div", "match-detail-lead-meta");
+  const playedAt = match.playedAt || match.date;
+  meta.append(
+    el("span", "", formatDate(playedAt)),
+    el("span", "", formatTime(playedAt)),
+  );
+  if (match.durationSeconds) meta.append(el("span", "", formatDuration(match.durationSeconds)));
+  meta.append(el("span", "", `${t("common.patch")} ${match.patch}`));
+  content.append(titleRow, meta);
+  root.append(placement, content);
+  return root;
 }
 
 function currentProfileForLive() {
@@ -1451,23 +1477,25 @@ function rankIconUrl(tierKey) {
     : `${RANK_EMBLEM_BASE_URL}/emblem-${tierKey}.png`;
 }
 
-function renderMatchPlayers(match) {
+function renderMatchPlayers(match, preparedGroups = null) {
   const players = getMatchPlayers(match);
   if (!players.length) return [emptyState(
     t("match.noFullPlayers"),
     t("match.noFullPlayersCaption"),
   )];
-  const groups = groupPlayersByTeam(players);
-  return groups.map((group, index) => {
-    const root = el("article", "match-team-group");
-    const header = el("div", "match-team-head");
-    header.append(
-      el("strong", "", `${t("common.team")} #${group.placement}`),
-      el("span", "", `${group.players.length} ${t("common.playersLower")}`),
+  const groups = preparedGroups || groupPlayersByTeam(players);
+  return groups.map((group) => {
+    const viewed = isViewedMatchGroup(group, match);
+    const root = el(
+      "article",
+      `match-scoreboard-row ${placementToneClass(group.placement)} ${viewed ? "is-viewed-team" : ""}`,
     );
-    const list = el("div", "match-team-players");
-    group.players.forEach((player) => list.append(renderPlayerCard(player)));
-    root.append(header, list);
+    const placement = el("div", "scoreboard-placement");
+    placement.append(el("strong", "", placementOrdinal(group.placement)));
+    if (viewed) placement.append(el("span", "", state.language === "en" ? "Viewed team" : "Oglądany skład"));
+    const list = el("div", "scoreboard-team");
+    group.players.forEach((player) => list.append(renderPlayerCard(player, isViewedMatchPlayer(player))));
+    root.append(placement, list);
     return root;
   });
 }
@@ -1482,34 +1510,86 @@ function groupPlayersByTeam(players) {
   return [...grouped.values()]
     .map((teamPlayers) => ({
       placement: Math.min(...teamPlayers.map((player) => Number(player.placement || ARENA_MAX_PLACEMENT))),
-      players: teamPlayers.sort((a, b) => (a.champion || "").localeCompare(b.champion || "")),
+      players: teamPlayers,
     }))
     .sort((a, b) => a.placement - b.placement);
 }
 
-function renderPlayerCard(player) {
-  const root = el("button", "player-detail-card");
+function renderPlayerCard(player, viewed = false) {
+  const root = el("button", `scoreboard-player ${viewed ? "is-viewed-player" : ""}`);
   root.type = "button";
   root.dataset.playerProfile = player.riotId || "";
   root.dataset.playerRegion = state.publicRoute?.region || state.user?.riotProfile?.region || "euw1";
   root.disabled = !player.riotId;
-  const playerCopy = el("span", "player-card-copy");
+
+  const portrait = el("span", "scoreboard-player-portrait");
+  portrait.append(renderChampionIcon(player.champion));
+  if (player.level) portrait.append(el("em", "scoreboard-level", String(player.level)));
+
+  const playerCopy = el("span", "scoreboard-player-copy");
   playerCopy.append(
     el("strong", "", player.riotId || t("common.unknownPlayer")),
     el("span", "", player.champion || "Unknown"),
   );
-  const assets = el("div", "player-card-assets");
-  const augmentGroup = renderAssetGroup(t("common.augments"), player.augments || [], 6);
-  const itemGroup = renderAssetGroup(t("common.items"), player.items || [], 7);
-  if (augmentGroup) assets.append(augmentGroup);
-  if (itemGroup) assets.append(itemGroup);
-  root.append(
-    renderChampionIcon(player.champion),
-    playerCopy,
-    el("em", "", `#${player.placement || "-"}`),
-  );
-  if (assets.childElementCount) root.append(assets);
+
+  const combat = el("span", "scoreboard-combat");
+  const hasCombat = [player.kills, player.deaths, player.assists].some((value) => Number.isFinite(value));
+  const kills = Number.isFinite(player.kills) ? player.kills : "-";
+  const deaths = Number.isFinite(player.deaths) ? player.deaths : "-";
+  const assists = Number.isFinite(player.assists) ? player.assists : "-";
+  combat.append(el("span", "", `${kills} / ${deaths} / ${assists}`));
+  if (hasCombat) {
+    const kda = ((Number(player.kills || 0) + Number(player.assists || 0)) / Math.max(1, Number(player.deaths || 0))).toFixed(2);
+    combat.append(el("span", "", `${kda} KDA`));
+  }
+
+  const assets = el("span", "scoreboard-player-assets");
+  const augments = renderScoreboardAssets(player.augments || [], "scoreboard-augments", 6);
+  const items = renderScoreboardAssets(player.items || [], "scoreboard-items", 7);
+  if (augments) assets.append(augments);
+  if (items) assets.append(items);
+  root.append(portrait, playerCopy, combat, assets);
   return root;
+}
+
+function renderScoreboardAssets(tags, className, limit) {
+  const visible = tags.slice(0, limit);
+  if (!visible.length) return null;
+  const root = el("span", `scoreboard-asset-line ${className}`);
+  visible.forEach((tag) => {
+    const pill = renderTagPill(tag);
+    pill.classList.add("scoreboard-asset");
+    root.append(pill);
+  });
+  return root;
+}
+
+function placementToneClass(placement) {
+  const value = clamp(Number(placement) || ARENA_MAX_PLACEMENT, 1, ARENA_MAX_PLACEMENT);
+  if (value === 1) return "is-place-1";
+  if (value === 2) return "is-place-2";
+  if (value === 3) return "is-place-3";
+  if (value === 4) return "is-place-4";
+  return "is-place-loss";
+}
+
+function placementOrdinal(placement) {
+  const value = clamp(Number(placement) || ARENA_MAX_PLACEMENT, 1, ARENA_MAX_PLACEMENT);
+  if (state.language !== "en") return `${value}.`;
+  const suffix = value === 1 ? "ST" : value === 2 ? "ND" : value === 3 ? "RD" : "TH";
+  return `${value}${suffix}`;
+}
+
+function isViewedMatchPlayer(player) {
+  const profile = currentProfileForLive();
+  if (!profile?.gameName || !profile?.tagLine || !player?.riotId) return false;
+  return normalizeLookupKey(player.riotId) === normalizeLookupKey(`${profile.gameName}#${profile.tagLine}`);
+}
+
+function isViewedMatchGroup(group, match) {
+  if (group.players.some(isViewedMatchPlayer)) return true;
+  return Number(group.placement) === Number(match.placement)
+    && group.players.some((player) => normalizeLookupKey(player.champion) === normalizeLookupKey(match.champion));
 }
 
 function renderMatchTeam(match) {
@@ -3566,6 +3646,7 @@ function normalizeMatch(match) {
     teammates,
     players,
     placement: clamp(Number(match.placement), 1, ARENA_MAX_PLACEMENT),
+    durationSeconds: Math.max(0, Number(match.durationSeconds || match.gameDuration || 0)),
     ratingDelta: Number(match.ratingDelta || 0),
     augments: Array.isArray(match.augments)
       ? match.augments.map(resolveAugmentTag).filter(Boolean)
@@ -3736,9 +3817,19 @@ function normalizePlayer(value) {
     puuid: cleanText(value.puuid),
     placement: clamp(Number(value.placement || value.subteamPlacement || ARENA_MAX_PLACEMENT), 1, ARENA_MAX_PLACEMENT),
     teamId: cleanText(value.teamId ?? value.playerSubteamId),
+    level: optionalMatchStat(value.level ?? value.champLevel),
+    kills: optionalMatchStat(value.kills),
+    deaths: optionalMatchStat(value.deaths),
+    assists: optionalMatchStat(value.assists),
     augments: Array.isArray(value.augments) ? value.augments.map(resolveAugmentTag).filter(Boolean) : [],
     items: Array.isArray(value.items) ? value.items.map(resolveItemTag).filter(Boolean) : [],
   };
+}
+
+function optionalMatchStat(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.max(0, number) : null;
 }
 
 function getMatchPlayers(match) {
@@ -3749,6 +3840,12 @@ function getMatchPlayers(match) {
       champion: match.champion,
       riotId: ownProfile ? `${ownProfile.gameName}#${ownProfile.tagLine}` : "",
       placement: match.placement,
+      level: match.level,
+      kills: match.kills,
+      deaths: match.deaths,
+      assists: match.assists,
+      augments: match.augments || [],
+      items: match.items || [],
     },
     ...(Array.isArray(match.teammates) ? match.teammates.map((teammate) => ({
       ...teammate,
