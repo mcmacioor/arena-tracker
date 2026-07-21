@@ -41,6 +41,15 @@ const translations = {
     "progress.label": "Postęp",
     "progress.title": "Wygrani championi",
     "history.title": "Historia",
+    "history.matchHistory": "Historia meczów",
+    "history.matchesCount": "meczów",
+    "history.mostPlayedWith": "Najczęściej grano z",
+    "history.first": "1.",
+    "history.second": "2.",
+    "history.middle": "3.-4.",
+    "history.low": "5.-6.",
+    "history.newest": "Najnowsze",
+    "history.oldest": "Najstarsze",
     "friends.title": "Moja grupa",
     "friends.loginRequired": "Zaloguj się, żeby utworzyć grupę.",
     "friends.privateCaption": "Ranking znajomych jest prywatny dla konta.",
@@ -169,6 +178,15 @@ const translations = {
     "progress.label": "Progress",
     "progress.title": "Champion wins",
     "history.title": "History",
+    "history.matchHistory": "Match history",
+    "history.matchesCount": "matches",
+    "history.mostPlayedWith": "Most played with",
+    "history.first": "1st",
+    "history.second": "2nd",
+    "history.middle": "3rd-4th",
+    "history.low": "5th-6th",
+    "history.newest": "Newest first",
+    "history.oldest": "Oldest first",
     "friends.title": "My group",
     "friends.loginRequired": "Log in to create a group.",
     "friends.privateCaption": "Friend rankings are private to your account.",
@@ -490,6 +508,9 @@ const state = {
     championSearch: "",
     collectionMode: "all",
     collectionSort: "wins",
+    historyChampion: "",
+    historyPlacement: "all",
+    historySort: "newest",
   },
 };
 
@@ -538,6 +559,11 @@ function cacheDom() {
     metricsGrid: document.getElementById("metricsGrid"),
     wonChampionStrip: document.getElementById("wonChampionStrip"),
     partnerStats: document.getElementById("partnerStats"),
+    historyMatchCount: document.getElementById("historyMatchCount"),
+    historyChampionInput: document.getElementById("historyChampionInput"),
+    historyChampionOptions: document.getElementById("historyChampionOptions"),
+    historyPlacementButtons: document.querySelectorAll("[data-history-placement]"),
+    historySortSelect: document.getElementById("historySortSelect"),
     friendRanking: document.getElementById("friendRanking"),
     recentMatches: document.getElementById("recentMatches"),
     matchList: document.getElementById("matchList"),
@@ -619,7 +645,14 @@ function cacheDom() {
 }
 
 function setDefaultFormValues() {
-  // Kept for the offline bootstrap path; manual match entry was removed from the UI.
+  if (!dom.historyChampionOptions) return;
+  dom.historyChampionOptions.replaceChildren(
+    ...CHAMPIONS.map((champion) => {
+      const option = document.createElement("option");
+      option.value = champion;
+      return option;
+    }),
+  );
 }
 
 async function initializeBackend() {
@@ -735,6 +768,26 @@ function bindEvents() {
     renderHistoryMatches(getSortedMatches());
   });
 
+  dom.historyChampionInput?.addEventListener("input", () => {
+    state.filters.historyChampion = dom.historyChampionInput.value;
+    state.visibleMatchCount = 8;
+    renderHistoryMatches(getSortedMatches());
+  });
+
+  dom.historySortSelect?.addEventListener("change", () => {
+    state.filters.historySort = dom.historySortSelect.value;
+    state.visibleMatchCount = 8;
+    renderHistoryMatches(getSortedMatches());
+  });
+
+  dom.historyPlacementButtons?.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.filters.historyPlacement = button.dataset.historyPlacement || "all";
+      state.visibleMatchCount = 8;
+      renderHistoryMatches(getSortedMatches());
+    });
+  });
+
   dom.collectionModeButtons.forEach((button) => {
     button.addEventListener("click", () => {
       state.filters.collectionMode = button.dataset.collectionMode;
@@ -809,6 +862,12 @@ function bindEvents() {
     const friend = event.target.closest("[data-friend-profile]");
     if (!friend) return;
     openPlayerProfile(friend.dataset.friendProfile, friend.dataset.friendRegion);
+  });
+
+  dom.partnerStats?.addEventListener("click", (event) => {
+    const partner = event.target.closest("[data-partner-profile]");
+    if (!partner) return;
+    openPlayerProfile(partner.dataset.partnerProfile, partner.dataset.partnerRegion);
   });
 
   dom.authSwitches?.forEach((switchButton) => {
@@ -2344,6 +2403,9 @@ function applyLanguage() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+    node.placeholder = t(node.dataset.i18nPlaceholder);
+  });
   dom.playerSearchForms?.forEach(updateSearchPlaceholder);
 }
 
@@ -2455,12 +2517,18 @@ function renderPartnerStats(matches) {
   }
 
   dom.partnerStats.replaceChildren(
-    ...stats.slice(0, 12).map((stat) => {
-      const root = el("article", "partner-card");
-      root.append(
+    ...stats.slice(0, 4).map((stat) => {
+      const root = el("button", "partner-card history-partner-card");
+      root.type = "button";
+      root.dataset.partnerProfile = stat.name;
+      root.dataset.partnerRegion = state.publicRoute?.region || state.user?.riotProfile?.region || "euw1";
+      if (stat.champion) root.append(renderChampionIcon(stat.champion));
+      const copy = el("span", "history-partner-copy");
+      copy.append(
         el("strong", "", stat.name),
-        el("span", "", `${stat.games} ${t("common.gamesLower")} · ${t("common.average")} #${formatAveragePlacement(stat.avg)}`),
+        el("span", "", `${stat.games} ${t("common.gamesLower")} · ${t("common.average")} ${formatAveragePlacement(stat.avg)}`),
       );
+      root.append(copy);
       return root;
     }),
   );
@@ -2713,11 +2781,83 @@ function summaryPlacementLabel(placement) {
 }
 
 function renderHistoryMatches(matches) {
-  const visible = matches.slice(0, state.visibleMatchCount);
-  renderMatchList(dom.matchList, visible, { dense: true });
-  const hasMore = matches.length > visible.length;
+  const query = normalize(state.filters.historyChampion);
+  const placementMode = state.filters.historyPlacement;
+  const direction = state.filters.historySort === "oldest" ? 1 : -1;
+  const filtered = matches
+    .filter((match) => !query || normalize(match.champion).includes(query))
+    .filter((match) => {
+      if (placementMode === "1") return match.placement === 1;
+      if (placementMode === "2") return match.placement === 2;
+      if (placementMode === "3-4") return match.placement >= 3 && match.placement <= 4;
+      if (placementMode === "5-6") return match.placement >= 5;
+      return true;
+    })
+    .sort((a, b) => (new Date(matchTimestamp(a)) - new Date(matchTimestamp(b))) * direction);
+
+  if (dom.historyMatchCount) {
+    dom.historyMatchCount.textContent = `${filtered.length} ${t("history.matchesCount")}`;
+  }
+  dom.historyPlacementButtons?.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.historyPlacement === placementMode);
+  });
+
+  const visible = filtered.slice(0, state.visibleMatchCount);
+  if (visible.length) {
+    dom.matchList.replaceChildren(...visible.map(renderHistoryMatchRow));
+  } else {
+    dom.matchList.replaceChildren(emptyState());
+  }
+  const hasMore = filtered.length > visible.length;
   dom.showMoreMatchesButton.classList.toggle("is-hidden", !hasMore);
   dom.showMoreMatchesButton.textContent = t("actions.showMore");
+}
+
+function renderHistoryMatchRow(match) {
+  const root = el("button", `history-match-row is-place-${match.placement}`);
+  root.type = "button";
+  root.dataset.matchDetail = match.id;
+
+  const placement = el("span", "history-placement");
+  placement.append(
+    el("strong", "", summaryPlacementLabel(match.placement)),
+    el("span", "", state.language === "en" ? "place" : "miejsce"),
+  );
+
+  const team = el("span", "history-team-summary");
+  team.append(renderTeamIconStack(match));
+  const teamCopy = el("span", "history-team-copy");
+  teamCopy.append(
+    el("strong", "", formatTeamTitle(match)),
+    el("span", "", `${formatDate(matchTimestamp(match))} · ${formatTime(matchTimestamp(match))} · ${t("common.patch")} ${match.patch}`),
+  );
+  team.append(teamCopy);
+
+  const augments = renderHistoryAssets(t("common.augments"), match.augments, "augment", 6);
+  const items = renderHistoryAssets(t("common.items"), match.items, "item", 7);
+  const chevron = el("span", "history-row-chevron", "›");
+  chevron.setAttribute("aria-hidden", "true");
+
+  root.append(placement, team, augments, items, chevron);
+  return root;
+}
+
+function renderHistoryAssets(label, assets, type, limit) {
+  const root = el("span", `history-assets history-${type}s`);
+  root.append(el("span", "history-assets-label", label));
+  const list = el("span", "history-assets-list");
+  (assets || []).slice(0, limit).forEach((asset) => {
+    const pill = renderTagPill(asset);
+    pill.classList.add("history-asset-pill", `is-${type}`);
+    list.append(pill);
+  });
+  if (!list.childElementCount) list.append(el("span", "history-assets-empty", "—"));
+  root.append(list);
+  return root;
+}
+
+function matchTimestamp(match) {
+  return match.playedAt || match.date;
 }
 
 function renderMatchCard(match, options) {
@@ -3444,16 +3584,24 @@ function increment(map, key) {
 function getPartnerStats(matches) {
   const partners = new Map();
   matches.forEach((match) => {
-    getPartnerLabels(match, { preferPlayers: true }).forEach((name) => {
-      if (!partners.has(name)) partners.set(name, { name, games: 0, wins: 0, placements: [] });
+    const teammates = Array.isArray(match.teammates) && match.teammates.length
+      ? match.teammates
+      : getPartnerLabels(match, { preferPlayers: true }).map((name) => ({ riotId: name, champion: "" }));
+    teammates.forEach((teammate) => {
+      const name = teammate.riotId || teammate.champion;
+      if (!name) return;
+      if (!partners.has(name)) {
+        partners.set(name, { name, games: 0, wins: 0, placements: [], champions: new Map() });
+      }
       const stat = partners.get(name);
       stat.games += 1;
       stat.placements.push(match.placement);
       if (match.placement === 1) stat.wins += 1;
+      increment(stat.champions, teammate.champion);
     });
   });
   return [...partners.values()]
-    .map((stat) => ({ ...stat, avg: average(stat.placements) }))
+    .map((stat) => ({ ...stat, avg: average(stat.placements), champion: mapLeader(stat.champions) }))
     .sort((a, b) => b.games - a.games || a.avg - b.avg || a.name.localeCompare(b.name));
 }
 
