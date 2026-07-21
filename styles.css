@@ -3973,7 +3973,7 @@ textarea:focus {
 }
 
 .split-layout {
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
 }
 
@@ -5576,10 +5576,10 @@ textarea:focus {
 .champion-collection-panel .collection-toolbar {
   z-index: 1;
   grid-template-columns: minmax(240px, 1fr) auto minmax(180px, 240px) 42px;
-  gap: 10px;
-  align-items: center;
+  gap: 12px;
+  align-items: end;
   margin: 0;
-  padding: 16px 20px 18px;
+  padding: 18px 20px 20px;
   border: 0;
   border-bottom: 1px solid #2b3235;
   border-radius: 0;
@@ -5589,14 +5589,28 @@ textarea:focus {
 .collection-search-control,
 .collection-sort-control {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-rows: auto 42px;
+  gap: 8px;
+  align-self: end;
   min-width: 0;
+}
+
+.collection-search-control > span:first-child,
+.collection-sort-control > span:first-child {
+  display: block;
+  min-height: 14px;
+  color: #a8afad;
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 14px;
 }
 
 .collection-search-control input,
 .collection-sort-control select {
   width: 100%;
-  min-height: 40px;
+  height: 42px;
+  min-height: 42px;
   margin: 0;
   border-color: #333b3e;
   border-radius: 5px;
@@ -5612,13 +5626,13 @@ textarea:focus {
 .collection-search-icon {
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: auto;
+  bottom: 13px;
   left: 14px;
   width: 12px;
   height: 12px;
   border: 2px solid #8b9394;
   border-radius: 50%;
-  transform: translateY(-58%);
   pointer-events: none;
 }
 
@@ -5637,7 +5651,9 @@ textarea:focus {
 
 .collection-mode-control.segmented-control {
   grid-template-columns: repeat(3, minmax(84px, 1fr));
+  align-self: end;
   gap: 0;
+  height: 42px;
   padding: 0;
   border-color: #343c3f;
   border-radius: 5px;
@@ -5645,7 +5661,8 @@ textarea:focus {
 }
 
 .collection-mode-control.segmented-control button {
-  min-height: 38px;
+  height: 40px;
+  min-height: 40px;
   border-right: 1px solid #30383b;
   border-radius: 0;
   font-size: 0.73rem;
@@ -5669,7 +5686,8 @@ textarea:focus {
 .collection-view-button {
   display: grid;
   width: 42px;
-  height: 40px;
+  height: 42px;
+  align-self: end;
   padding: 0;
   place-items: center;
   border: 1px solid #343c3f;
