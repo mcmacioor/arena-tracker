@@ -199,32 +199,62 @@
           </div>
 
           <div class="view" id="championsView" data-view="champions">
-            <section class="panel" aria-labelledby="championStatsTitle">
-              <div class="panel-head">
-                <h2 id="championStatsTitle" data-i18n="champions.title">Championi</h2>
-                <span class="status-pill collection-status" id="collectionStatus">Ukończono 0 z 0</span>
-              </div>
-              <div class="collection-toolbar" aria-label="Filtr wygranych championów">
-                <label>
-                  <span data-i18n="champions.search">Szukaj championa</span>
-                  <input id="championSearchInput" type="search" autocomplete="off" placeholder="np. Vi" />
-                </label>
-                <div class="segmented-control" aria-label="Status championów">
-                  <button type="button" data-collection-mode="won" data-i18n="champions.won">Wygrani</button>
-                  <button type="button" data-collection-mode="missing" data-i18n="champions.missing">Brakujący</button>
-                  <button class="is-active" type="button" data-collection-mode="all" data-i18n="champions.all">Wszyscy</button>
+            <section class="panel champion-collection-panel" aria-labelledby="championStatsTitle">
+              <header class="collection-overview">
+                <div class="collection-overview-copy">
+                  <h2 id="championStatsTitle" data-i18n="champions.collectionTitle">Champion collection</h2>
+                  <p data-i18n="champions.collectionSubtitle">Track your Arena wins across every champion.</p>
                 </div>
-                <label>
-                  <span data-i18n="champions.sort">Sortowanie</span>
+                <div class="collection-progress" aria-live="polite">
+                  <div class="collection-progress-copy">
+                    <strong id="collectionStatus">0 / 0 won</strong>
+                    <span id="collectionPercent">0% complete</span>
+                  </div>
+                  <div class="collection-progress-track" aria-hidden="true">
+                    <span id="collectionProgressFill"></span>
+                  </div>
+                </div>
+              </header>
+
+              <div class="collection-toolbar" data-i18n-aria-label="champions.filters">
+                <label class="collection-search-control">
+                  <span class="sr-only" data-i18n="champions.search">Search champion</span>
+                  <span class="collection-search-icon" aria-hidden="true"></span>
+                  <input
+                    id="championSearchInput"
+                    type="search"
+                    autocomplete="off"
+                    data-i18n-placeholder="champions.search"
+                    placeholder="Search champion"
+                  />
+                </label>
+                <div class="segmented-control collection-mode-control" data-i18n-aria-label="champions.status">
+                  <button class="is-active" type="button" data-collection-mode="all" data-i18n="champions.all">All</button>
+                  <button type="button" data-collection-mode="won" data-i18n="champions.won">Won</button>
+                  <button type="button" data-collection-mode="missing" data-i18n="champions.missing">Missing</button>
+                </div>
+                <label class="collection-sort-control">
+                  <span class="sr-only" data-i18n="champions.sort">Sort</span>
                   <select id="championSortSelect">
-                    <option value="wins" data-i18n="sort.wins">Liczba winów</option>
+                    <option value="wins" data-i18n="sort.winsThenAz">Wins, then A-Z</option>
                     <option value="az" data-i18n="sort.az">A-Z</option>
-                    <option value="games" data-i18n="sort.games">Liczba gier</option>
-                    <option value="best" data-i18n="sort.best">Najlepsze miejsce</option>
-                    <option value="avg" data-i18n="sort.avg">Średnie miejsce</option>
-                    <option value="missing" data-i18n="sort.missing">Najbliżej wygranej</option>
+                    <option value="games" data-i18n="sort.games">Games played</option>
+                    <option value="best" data-i18n="sort.best">Best place</option>
+                    <option value="avg" data-i18n="sort.avg">Average place</option>
+                    <option value="missing" data-i18n="sort.missing">Closest to a win</option>
                   </select>
                 </label>
+                <button
+                  class="collection-view-button"
+                  id="collectionViewButton"
+                  type="button"
+                  aria-pressed="false"
+                  data-i18n-aria-label="champions.compactView"
+                  data-i18n-title="champions.compactView"
+                  title="Compact view"
+                >
+                  <span aria-hidden="true"></span>
+                </button>
               </div>
               <div class="champion-collection" id="championCollection"></div>
             </section>

@@ -91,11 +91,20 @@ const translations = {
     "dashboard.noPartnersCaption": "Synchronizacja uzupełni graczy z Twojej drużyny.",
     "history.partners": "Partnerzy z Areny",
     "champions.title": "Championi",
+    "champions.collectionTitle": "Kolekcja championów",
+    "champions.collectionSubtitle": "Śledź wygrane w Arenie na każdym championie.",
     "champions.search": "Szukaj championa",
     "champions.won": "Wygrani",
     "champions.missing": "Brakujący",
     "champions.all": "Wszyscy",
     "champions.sort": "Sortowanie",
+    "champions.filters": "Filtry kolekcji championów",
+    "champions.status": "Status championów",
+    "champions.wonSuffix": "z wygraną",
+    "champions.completeSuffix": "ukończone",
+    "champions.stillMissing": "Nadal brakuje",
+    "champions.compactView": "Widok kompaktowy",
+    "champions.comfortableView": "Widok wygodny",
     "champions.completed": "Ukończono",
     "champions.bestPlace": "Najlepsze miejsce",
     "champions.noGames": "Brak gier",
@@ -107,6 +116,7 @@ const translations = {
     "champions.placementDistribution": "Rozkład miejsc",
     "champions.matchHistory": "Historia meczów",
     "sort.wins": "Liczba winów",
+    "sort.winsThenAz": "Winy, potem A-Z",
     "sort.az": "A-Z",
     "sort.games": "Liczba gier",
     "sort.best": "Najlepsze miejsce",
@@ -228,11 +238,20 @@ const translations = {
     "dashboard.noPartnersCaption": "Sync will fill your Arena teammates.",
     "history.partners": "Arena partners",
     "champions.title": "Champions",
+    "champions.collectionTitle": "Champion collection",
+    "champions.collectionSubtitle": "Track your Arena wins across every champion.",
     "champions.search": "Search champion",
     "champions.won": "Won",
     "champions.missing": "Missing",
     "champions.all": "All",
     "champions.sort": "Sort",
+    "champions.filters": "Champion collection filters",
+    "champions.status": "Champion status",
+    "champions.wonSuffix": "won",
+    "champions.completeSuffix": "complete",
+    "champions.stillMissing": "Still missing",
+    "champions.compactView": "Compact view",
+    "champions.comfortableView": "Comfortable view",
     "champions.completed": "Completed",
     "champions.bestPlace": "Best place",
     "champions.noGames": "No games",
@@ -244,6 +263,7 @@ const translations = {
     "champions.placementDistribution": "Placement distribution",
     "champions.matchHistory": "Match history",
     "sort.wins": "Win count",
+    "sort.winsThenAz": "Wins, then A-Z",
     "sort.az": "A-Z",
     "sort.games": "Game count",
     "sort.best": "Best place",
@@ -508,6 +528,7 @@ const state = {
     championSearch: "",
     collectionMode: "all",
     collectionSort: "wins",
+    collectionCompact: false,
     historyChampion: "",
     historyPlacement: "all",
     historySort: "newest",
@@ -553,6 +574,7 @@ function cacheDom() {
     accountDialogAvatar: document.getElementById("accountDialogAvatar"),
     championSearchInput: document.getElementById("championSearchInput"),
     championSortSelect: document.getElementById("championSortSelect"),
+    collectionViewButton: document.getElementById("collectionViewButton"),
     collectionModeButtons: document.querySelectorAll("[data-collection-mode]"),
     progressCounter: document.getElementById("progressCounter"),
     victoryProgress: document.getElementById("victoryProgress"),
@@ -569,6 +591,8 @@ function cacheDom() {
     matchList: document.getElementById("matchList"),
     showMoreMatchesButton: document.getElementById("showMoreMatchesButton"),
     collectionStatus: document.getElementById("collectionStatus"),
+    collectionPercent: document.getElementById("collectionPercent"),
+    collectionProgressFill: document.getElementById("collectionProgressFill"),
     championCollection: document.getElementById("championCollection"),
     championDetailOverlay: document.getElementById("championDetailOverlay"),
     championDetailBackdrop: document.getElementById("championDetailBackdrop"),
@@ -760,6 +784,11 @@ function bindEvents() {
 
   dom.championSortSelect.addEventListener("change", () => {
     state.filters.collectionSort = dom.championSortSelect.value;
+    renderChampionCollection(getSortedMatches());
+  });
+
+  dom.collectionViewButton?.addEventListener("click", () => {
+    state.filters.collectionCompact = !state.filters.collectionCompact;
     renderChampionCollection(getSortedMatches());
   });
 
@@ -2406,6 +2435,12 @@ function applyLanguage() {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
     node.placeholder = t(node.dataset.i18nPlaceholder);
   });
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => {
+    node.setAttribute("aria-label", t(node.dataset.i18nAriaLabel));
+  });
+  document.querySelectorAll("[data-i18n-title]").forEach((node) => {
+    node.title = t(node.dataset.i18nTitle);
+  });
   dom.playerSearchForms?.forEach(updateSearchPlaceholder);
 }
 
@@ -2602,6 +2637,7 @@ function refreshFriendProfiles() {
 function renderChampionCollection(matches) {
   const stats = getAllChampionCollectionStats(matches);
   const wonCount = stats.filter((stat) => stat.wins > 0).length;
+  const completion = CHAMPIONS.length ? Math.round((wonCount / CHAMPIONS.length) * 100) : 0;
   const search = normalize(state.filters.championSearch);
   const mode = state.filters.collectionMode;
   let collection = stats.filter((stat) => {
@@ -2624,10 +2660,20 @@ function renderChampionCollection(matches) {
     return b.wins - a.wins || a.champion.localeCompare(b.champion);
   });
 
-  dom.collectionStatus.textContent = `${t("champions.completed")} ${wonCount} / ${CHAMPIONS.length}`;
+  dom.collectionStatus.textContent = `${wonCount} / ${CHAMPIONS.length} ${t("champions.wonSuffix")}`;
+  dom.collectionPercent.textContent = `${completion}% ${t("champions.completeSuffix")}`;
+  dom.collectionProgressFill.style.width = `${completion}%`;
   dom.collectionModeButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.collectionMode === mode);
   });
+  dom.championCollection.classList.toggle("is-compact", state.filters.collectionCompact);
+  if (dom.collectionViewButton) {
+    const viewLabel = t(state.filters.collectionCompact ? "champions.comfortableView" : "champions.compactView");
+    dom.collectionViewButton.setAttribute("aria-pressed", String(state.filters.collectionCompact));
+    dom.collectionViewButton.setAttribute("aria-label", viewLabel);
+    dom.collectionViewButton.title = viewLabel;
+    dom.collectionViewButton.classList.toggle("is-active", state.filters.collectionCompact);
+  }
 
   if (!collection.length) {
     const empty = emptyState();
@@ -2636,7 +2682,29 @@ function renderChampionCollection(matches) {
     dom.championCollection.replaceChildren(empty);
     return;
   }
-  dom.championCollection.replaceChildren(...collection.map(renderChampionCollectionCard));
+
+  const wonChampions = collection.filter((stat) => stat.wins > 0);
+  const missingChampions = collection.filter((stat) => stat.wins === 0);
+  const groups = [];
+  if (wonChampions.length) groups.push(renderChampionCollectionGroup(wonChampions, "won"));
+  if (missingChampions.length) groups.push(renderChampionCollectionGroup(missingChampions, "missing", mode === "all"));
+  dom.championCollection.replaceChildren(...groups);
+}
+
+function renderChampionCollectionGroup(stats, type, separated = false) {
+  const group = el("section", `champion-collection-group is-${type}${separated ? " has-divider" : ""}`);
+  if (type === "missing") {
+    const heading = el("div", "champion-collection-group-title");
+    heading.append(
+      el("strong", "", t("champions.stillMissing")),
+      el("span", "", String(stats.length)),
+    );
+    group.append(heading);
+  }
+  const grid = el("div", "champion-collection-grid");
+  grid.append(...stats.map(renderChampionCollectionCard));
+  group.append(grid);
+  return group;
 }
 
 function renderChampionPill(stat) {
@@ -2655,7 +2723,13 @@ function renderChampionCollectionCard(stat) {
   const root = el("button", `champion-collection-card ${stat.wins ? "is-complete" : "is-missing"}`);
   root.type = "button";
   root.dataset.championDetail = stat.champion;
-  setChampionCardBackground(root, stat.champion);
+  setChampionCollectionCardBackground(root, stat.champion);
+  root.setAttribute("aria-label", `${stat.champion}, ${stat.wins ? formatChampionWinCount(stat.wins) : stat.games ? `${t("champions.bestPlace")} ${stat.bestPlacement}` : t("champions.noGames")}`);
+  if (stat.wins) {
+    const mark = el("span", "champion-win-mark", "\u2655");
+    mark.setAttribute("aria-hidden", "true");
+    root.append(mark);
+  }
   const body = el("div", "champion-card-copy");
   body.append(el("strong", "", stat.champion));
   body.append(
@@ -2663,7 +2737,7 @@ function renderChampionCollectionCard(stat) {
       "span",
       "",
       stat.wins
-        ? `${stat.wins} ${t("common.win")}`
+        ? formatChampionWinCount(stat.wins)
         : stat.games
           ? `${t("champions.bestPlace")} #${stat.bestPlacement}`
           : t("champions.noGames"),
@@ -2671,6 +2745,23 @@ function renderChampionCollectionCard(stat) {
   );
   root.append(body);
   return root;
+}
+
+function formatChampionWinCount(count) {
+  if (state.language === "en") return `${count} ${count === 1 ? "win" : "wins"}`;
+  const finalTwo = count % 100;
+  const finalDigit = count % 10;
+  const label = count === 1 ? "wygrana" : finalDigit >= 2 && finalDigit <= 4 && !(finalTwo >= 12 && finalTwo <= 14) ? "wygrane" : "wygranych";
+  return `${count} ${label}`;
+}
+
+function setChampionCollectionCardBackground(root, champion) {
+  const splash = championSplashUrl(champion);
+  if (splash) {
+    root.style.setProperty("--champion-art", `url("${splash}")`);
+    return;
+  }
+  setChampionCardBackground(root, champion);
 }
 
 function setChampionCardBackground(root, champion) {
